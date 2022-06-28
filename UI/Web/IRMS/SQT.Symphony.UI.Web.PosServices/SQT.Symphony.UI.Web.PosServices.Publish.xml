@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="F:\Softqube Technologies\BACKUP\Published\POS Service\06 june 2014_4overstya" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Services/CheckInGuestList.asmx" publishTime="06/28/2013 14:41:53" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.IRMS.DAL.dll" publishTime="06/06/2014 18:06:57" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.FrontDesk.DTO.pdb" publishTime="06/06/2014 18:06:39" />
+    <file relUrl="Global.asax" publishTime="06/28/2013 14:41:51" />
+    <file relUrl="Site.Master" publishTime="06/28/2013 14:41:51" />
+    <file relUrl="Styles/Site.css" publishTime="06/28/2013 14:41:53" />
+    <file relUrl="bin/SQT.Symphony.UI.Web.PosServices.pdb" publishTime="06/06/2014 18:07:09" />
+    <file relUrl="TestWebService.aspx" publishTime="06/28/2013 14:41:52" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.FrontDesk.DTO.dll" publishTime="06/06/2014 18:06:39" />
+    <file relUrl="Scripts/jquery-1.4.1.js" publishTime="06/28/2013 14:41:53" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.Configuration.DAL.dll" publishTime="06/06/2014 18:06:54" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb" publishTime="06/06/2014 18:06:59" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.Configuration.DAL.pdb" publishTime="06/06/2014 18:06:54" />
+    <file relUrl="Account/Web.config" publishTime="06/28/2013 14:41:52" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.Configuration.BLL.dll" publishTime="06/06/2014 18:07:03" />
+    <file relUrl="Account/Login.aspx" publishTime="06/28/2013 14:41:52" />
+    <file relUrl="bin/SQT.Symphony.UI.Web.PosServices.dll" publishTime="06/06/2014 18:07:09" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.Configuration.DTO.pdb" publishTime="06/06/2014 18:06:30" />
+    <file relUrl="bin/SQT.FRAMEWORK.LOGGER.pdb" publishTime="06/06/2014 18:06:44" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll" publishTime="03/14/2013 10:18:55" />
+    <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="06/28/2013 14:41:53" />
+    <file relUrl="bin/AjaxControlToolkit.dll" publishTime="03/14/2013 10:18:54" />
+    <file relUrl="bin/SQT.FRAMEWORK.SECURITY.pdb" publishTime="06/06/2014 18:06:41" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.FrontDesk.COMMON.dll" publishTime="06/06/2014 18:06:40" />
+    <file relUrl="bin/Microsoft.Practices.ObjectBuilder2.dll" publishTime="03/14/2013 10:18:55" />
+    <file relUrl="Account/ChangePasswordSuccess.aspx" publishTime="06/28/2013 14:41:52" />
+    <file relUrl="bin/Microsoft.Practices.Unity.dll" publishTime="03/14/2013 10:18:54" />
+    <file relUrl="bin/SQT.FRAMEWORK.DAL.dll" publishTime="06/06/2014 18:06:25" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.FrontDesk.DAL.dll" publishTime="06/06/2014 18:06:48" />
+    <file relUrl="Account/Register.aspx" publishTime="06/28/2013 14:41:52" />
+    <file relUrl="bin/SQT.FRAMEWORK.EXCEPTION.pdb" publishTime="06/06/2014 18:06:06" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.IRMS.DAL.pdb" publishTime="06/06/2014 18:06:57" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" publishTime="03/14/2013 10:18:54" />
+    <file relUrl="bin/SQT.FRAMEWORK.DAL.pdb" publishTime="06/06/2014 18:06:24" />
+    <file relUrl="bin/SQT.FRAMEWORK.COMMON.dll" publishTime="06/06/2014 18:06:42" />
+    <file relUrl="Account/ChangePassword.aspx" publishTime="06/28/2013 14:41:52" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.IRMS.DTO.dll" publishTime="06/06/2014 18:06:37" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.Configuration.BLL.pdb" publishTime="06/06/2014 18:07:03" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll" publishTime="06/06/2014 18:06:59" />
+    <file relUrl="bin/SQT.FRAMEWORK.SECURITY.dll" publishTime="06/06/2014 18:06:41" />
+    <file relUrl="bin/SQT.FRAMEWORK.EXCEPTION.dll" publishTime="06/06/2014 18:06:06" />
+    <file relUrl="Web.config" publishTime="06/06/2014 18:14:24" />
+    <file relUrl="Styles/script.js" publishTime="06/28/2013 14:41:53" />
+    <file relUrl="bin/SQT.FRAMEWORK.COMMON.pdb" publishTime="06/06/2014 18:06:42" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.FrontDesk.DAL.pdb" publishTime="06/06/2014 18:06:47" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.IRMS.DTO.pdb" publishTime="06/06/2014 18:06:36" />
+    <file relUrl="bin/SQT.FRAMEWORK.LOGGER.dll" publishTime="06/06/2014 18:06:44" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.FrontDesk.COMMON.pdb" publishTime="06/06/2014 18:06:40" />
+    <file relUrl="bin/SQT.Symphony.BusinessLogic.Configuration.DTO.dll" publishTime="06/06/2014 18:06:30" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll" publishTime="03/14/2013 10:18:54" />
+    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="06/28/2013 14:41:53" />
+  </publishProfile>
+</publishData>

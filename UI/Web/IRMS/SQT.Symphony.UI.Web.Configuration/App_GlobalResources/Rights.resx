@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lbl057718BD_90EB_413A_A611_79F8BD4501A2" xml:space="preserve">
+    <value>Login Log</value>
+  </data>
+  <data name="lbl0732B700_A4B9_4F68_824F_6E8C21E6DA75" xml:space="preserve">
+    <value>GDS Master</value>
+  </data>
+  <data name="lbl0D9626C4_5823_4493_8F7B_D4CEAA0763DC" xml:space="preserve">
+    <value>Amenities Setup</value>
+  </data>
+  <data name="lbl0E67E984_ABB4_4C9F_BECE_D5D1F523D4A1" xml:space="preserve">
+    <value>Counter Setup</value>
+  </data>
+  <data name="lbl11B918AE_8D7E_4274_8404_765D712DA8E4" xml:space="preserve">
+    <value>System Setup</value>
+  </data>
+  <data name="lbl1540F71D_0C48_469E_ACAD_844F662CB369" xml:space="preserve">
+    <value>Conference/Banquet Types</value>
+  </data>
+  <data name="lbl17A5AF01_4DAF_486B_AD79_A1BD61C6693A" xml:space="preserve">
+    <value>Infill Setup</value>
+  </data>
+  <data name="lbl2A0DF406_BD0E_4630_A6E4_D91B663C7DCA" xml:space="preserve">
+    <value>Employee Setup</value>
+  </data>
+  <data name="lbl2C75A70F_25BC_4E76_9829_ADD05446E505" xml:space="preserve">
+    <value>POS Points</value>
+  </data>
+  <data name="lbl2E0566FB_5225_4301_B030_96E52ED7AFB5" xml:space="preserve">
+    <value>Control No. Setup</value>
+  </data>
+  <data name="lbl31A5B394_F0ED_4024_9CB4_78E3000606D8" xml:space="preserve">
+    <value>Category Setup</value>
+  </data>
+  <data name="lbl3484241D_B7A6_4533_9959_97F3845122BA" xml:space="preserve">
+    <value>Unit Setup</value>
+  </data>
+  <data name="lbl38E02C76_12AE_4310_AB18_E18C82F45B34" xml:space="preserve">
+    <value>Rate Card List</value>
+  </data>
+  <data name="lbl3F7200AB_AE9D_41A7_8903_DED5714EF613" xml:space="preserve">
+    <value>Role Setup</value>
+  </data>
+  <data name="lbl42063A4C_0D4D_4C9F_B6AA_7277B03844D9" xml:space="preserve">
+    <value>List Of Guests</value>
+  </data>
+  <data name="lbl55758b5d_ab41_4d87_c11a_3db915ad9320" xml:space="preserve">
+    <value>Tax Setup</value>
+  </data>
+  <data name="lbl58C6D7AE_1674_4778_930E_8FA447EF3851" xml:space="preserve">
+    <value>Folio Configuration</value>
+  </data>
+  <data name="lbl5C3C43C7_C108_4745_8A73_DEBABBB33CE2" xml:space="preserve">
+    <value>Reservation Setup</value>
+  </data>
+  <data name="lbl60758B5C_AB41_4D87_B22B_5DB915AD9318" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="lbl60781DC4_DA1B_43C0_9352_1B23B5BEEFE7" xml:space="preserve">
+    <value>Vendor Master</value>
+  </data>
+  <data name="lbl63F74635_8321_4519_8799_1ABA1DBCAC3E" xml:space="preserve">
+    <value>Property Setup</value>
+  </data>
+  <data name="lbl6B865BEF_0064_4173_A0C7_8C41939C2AE8" xml:space="preserve">
+    <value>Item Management</value>
+  </data>
+  <data name="lbl6BE54095_6CCB_4356_81CD_A9D1A3F058CC" xml:space="preserve">
+    <value>GDS Room Inventory Details</value>
+  </data>
+  <data name="lbl6C563D5B_223E_4E11_9385_ABDDEEA4F323" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="lbl6D5D8338_922E_4203_B131_B66F6DDFADAC" xml:space="preserve">
+    <value>Unit Of Measure</value>
+  </data>
+  <data name="lbl6F0FCD4E_F60D_41AB_83CB_B6AF5F3E8644" xml:space="preserve">
+    <value>Email Configuration</value>
+  </data>
+  <data name="lbl7270E6E3_FE55_4637_A53D_E9A228093BDB" xml:space="preserve">
+    <value>VIP Types</value>
+  </data>
+  <data name="lbl7B119144_AF67_4DAD_9625_6DBD5E6D5E85" xml:space="preserve">
+    <value>Guest Types</value>
+  </data>
+  <data name="lbl7DE0EE93_DCE7_4D56_B361_A111C087667B" xml:space="preserve">
+    <value>Cancellation Policy</value>
+  </data>
+  <data name="lbl80505F6C_3D24_4E63_94EB_31738E2EEABE" xml:space="preserve">
+    <value>Reservation Policy</value>
+  </data>
+  <data name="lbl888C4C2E_6C9A_45CC_9448_698D734F3FC0" xml:space="preserve">
+    <value>Corporate Setup</value>
+  </data>
+  <data name="lbl942AFE75_038F_4180_9D3A_57D25B4A6B96" xml:space="preserve">
+    <value>Guest Preferences</value>
+  </data>
+  <data name="lbl97D9B57C_2EF5_4934_9571_908AB9D9FA24" xml:space="preserve">
+    <value>Error Log</value>
+  </data>
+  <data name="lbl98B53E22_8CF2_4667_A668_8690A5F5F76B" xml:space="preserve">
+    <value>Company Setup</value>
+  </data>
+  <data name="lbl9FA41B85_3C0A_4DD5_9890_2EDA71833D47" xml:space="preserve">
+    <value>Discount Setup</value>
+  </data>
+  <data name="lblA8DDF69F_A594_4DDD_8357_4C0F3D95FB3C" xml:space="preserve">
+    <value>User Setup</value>
+  </data>
+  <data name="lblADED2092_9019_4906_8081_47696933A2D2" xml:space="preserve">
+    <value>Billing</value>
+  </data>
+  <data name="lblB624DFDA_E74A_4F56_B948_BD55B152BC5E" xml:space="preserve">
+    <value>POS Configuration</value>
+  </data>
+  <data name="lblC04A821A_CFAF_47D4_8C76_F2E88AA70B05" xml:space="preserve">
+    <value>Stay Type Setup</value>
+  </data>
+  <data name="lblC8E9479C_E30E_4F7B_8B5C_9C67961070D8" xml:space="preserve">
+    <value>GDS Room Inventory Mgmt.</value>
+  </data>
+  <data name="lblCAA7D90D_D353_469E_8350_198371D51219" xml:space="preserve">
+    <value>Back List Guest</value>
+  </data>
+  <data name="lblCF7C3B00_45E1_428B_BCC5_7E343EDB1E68" xml:space="preserve">
+    <value>Add Ons Services</value>
+  </data>
+  <data name="lblD0618D58_0FB9_4413_98ED_002F08910AAE" xml:space="preserve">
+    <value>Action Log</value>
+  </data>
+  <data name="lblD90ECE83_26FF_4909_A5FB_03C60795EE18" xml:space="preserve">
+    <value>Web Settings</value>
+  </data>
+  <data name="lblE2170EE8_E8D1_4E8B_943C_53E438CB0B04" xml:space="preserve">
+    <value>Unit Type Setup</value>
+  </data>
+  <data name="lblE290D237_DC5D_43B4_A31D_FB4A5C119B30" xml:space="preserve">
+    <value>Block Room</value>
+  </data>
+  <data name="lblE52225B9_1328_4D0F_BFA4_128548656696" xml:space="preserve">
+    <value>Block / Floor</value>
+  </data>
+  <data name="lblEB02A3EB_5645_4633_961B_7E35A434EFAD" xml:space="preserve">
+    <value>HouseKeeping Section Setup</value>
+  </data>
+  <data name="lblF5B5CC90_4892_4E7C_B8C7_BC77833D6AF4" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="lblF74FD28D_248A_46FF_8074_8A5EFEF920C1" xml:space="preserve">
+    <value>Email Template Setup</value>
+  </data>
+  <data name="lblF83FF2D5_F909_4098_A7D0_C1386FE3B3AF" xml:space="preserve">
+    <value>Conference / Banquet</value>
+  </data>
+  <data name="lblF9A9921B_F0EE_4899_B515_A690E5397472" xml:space="preserve">
+    <value>Booking Agent</value>
+  </data>
+</root>

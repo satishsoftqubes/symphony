@@ -1,0 +1,2 @@
+D:\Projects\Symphony\SRC\Symphony\Backup\UI\Web\IRMS\SQT.Symphony.UI.Web.FrontDesk\obj\Debug\SQT.Symphony.UI.Web.FrontDesk.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\Backup\UI\Web\IRMS\SQT.Symphony.UI.Web.FrontDesk\obj\Debug\SQT.Symphony.UI.Web.FrontDesk.csproj.CoreCompileInputs.cache

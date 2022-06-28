@@ -1,0 +1,206 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.Master.cs" Inherits="SQT.Symphony.UI.Web.BackOffice.Master.master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Uniworld</title>
+    <link id="Link1" href="~/Style/style.css" runat="server" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="scptInnerHTML" runat="server">
+    </asp:ScriptManager>
+    <div id="wrap">
+        <div class="layout">
+            <div class="header">
+                <div class="header_left">
+                    <a href="<%=Page.ResolveUrl("~/GUI/AccountsHome.aspx") %>">
+                        <img src="<%=Page.ResolveUrl("~/images/logo.jpg") %>" border="0" alt="" class="logo" /></a>
+                    <div style="display: inline-block; vertical-align: top; margin-top: 40px;">
+                        <asp:UpdatePanel ID="uPnlMasterPropertyName" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>
+                                <asp:Label ID="lblPropertyName" runat="server" Style="font-size: x-large;"></asp:Label>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                </div>
+                <div class="header_right">
+                    <div class="header_right_col2">
+                        <div class="header_right_col2_content">
+                            <div class="header_right_col2_date">
+                                <asp:Literal ID="lblDate" runat="server"></asp:Literal>
+                                : <span>
+                                    <asp:Literal ID="litDate" runat="server"></asp:Literal></span></div>
+                            <div class="clear">
+                            </div>
+                            <div class="header_right_col2_time">
+                                <asp:Literal ID="lblTime" runat="server"></asp:Literal>
+                                : <span>
+                                    <asp:Literal ID="litTime" runat="server"></asp:Literal></span></div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="header_right_logout">
+                            <asp:LinkButton runat="server" ID="lnkLogout" OnClick="lnkLogOut_Click"></asp:LinkButton></div>
+                    </div>
+                    <div class="header_right_col1">
+                        <div class="header_right_col1_name">
+                            <%--<asp:LinkButton Style="font-size: 9pt; font-weight: normal;" runat="server" ID="lnkChangeModule"
+                                OnClick="lnkChangeModule_OnClick">
+                                <asp:Literal ID="litChangeModule" runat="server"></asp:Literal></asp:LinkButton>&nbsp;&nbsp;|&nbsp;--%>
+                            <asp:Literal ID="ltrModuleTitle" runat="server"></asp:Literal></div>
+                        <div class="header_right_col1_link">
+                            <asp:Label ID="lblUserDisplayName" runat="server"></asp:Label><%--<asp:Label
+                                ID="lblUserRoleType" runat="server" Visible="false"></asp:Label>--%>
+                            &nbsp;|<asp:LinkButton ID="lnkUserSettings" runat="server" OnClick="lnkUserSettings_OnClick">
+                                <asp:Literal ID="ltrSetting" runat="server"></asp:Literal></asp:LinkButton>
+                            <%--<a href="../UserSetup/UserSetting.aspx"><asp:Literal ID="ltrSetting" runat="server"></asp:Literal></a>--%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="main">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <tr>
+                        <td class="leftmargin_main">
+                            <div class="leftmargin">
+                                <div class="leftmargin_menu">
+                                    <ajx:Accordion ID="MyAccordion" runat="server" SelectedIndex="0" HeaderCssClass="leftmargin_head"
+                                        HeaderSelectedCssClass="leftmargin_head" FadeTransitions="false" FramesPerSecond="40"
+                                        TransitionDuration="250" AutoSize="none" RequireOpenedPane="false" SuppressHeaderPostbacks="true">
+                                        <Panes>
+                                            <ajx:AccordionPane ID="AcPnGeneralSetting" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="litLAccountConfig" runat="server"></asp:Literal></a>
+                                                    </div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <%--<li id="liLAcctSetting" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/AccountSetup/AccountConfiguration.aspx") %>">
+                                                            <asp:Literal ID="litLSettings" runat="server"></asp:Literal></a></li>--%>
+                                                        <li id="liLAcctGroup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/AccountSetup/AccountGroup.aspx") %>">
+                                                            <asp:Literal ID="litAcctGroup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLAccountSetUp" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/AccountSetup/ChartOfAccount.aspx") %>">
+                                                            <asp:Literal ID="litAccountSetup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLTaxList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/AccountSetup/TaxSetup1.aspx") %>">
+                                                            <asp:Literal ID="litTaxSetup" runat="server"></asp:Literal></a></li>
+                                                        <%--<li id="liLCompanyinvoice" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/AccountSetup/CompanyInvoice.aspx") %>"">
+                                                            <asp:Literal ID="litCompanyInvoice" runat="server" Text="Company invoice"></asp:Literal></a></li>--%>
+                                                        <li id="liLCompanyinvoice" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Invoice/CompanyInvoicing.aspx") %>">
+                                                            <asp:Literal ID="litCompanyInvoice" runat="server" Text="Company invoice"></asp:Literal></a></li>
+                                                        <li id="liReprintCompanyInvoice" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Invoice/ReprintCompanyInvoice.aspx") %>">
+                                                            <asp:Literal ID="lit1ReprintCompanyInvoice" runat="server" Text="Reprint invoice"></asp:Literal></a></li>
+                                                        <li id="liInvoiceSettlement" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Invoice/InvoiceSettlement.aspx") %>">
+                                                            <asp:Literal ID="Literal2" runat="server" Text="Invoice Settlement"></asp:Literal></a></li>
+                                                        <li id="liCompanyPosting" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Invoice/RPTCompanyPosting.aspx") %>">
+                                                            <asp:Literal ID="Literal1" runat="server" Text="Company Posting Report"></asp:Literal></a></li>
+                                                        <li id="li1DirectBill" runat="server" visible="false"><a href="<%=Page.ResolveUrl("~/GUI/Invoice/CompanyInvoices.aspx") %>">
+                                                            <asp:Literal ID="litDirectBill" runat="server" Text="Direct Bill & Settle Invoice"></asp:Literal></a></li>
+                                                        <%--<li id="liLDayEnd" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/DayEnd/DayEnd.aspx") %>">
+                                                            <asp:Literal ID="liDayEnd" runat="server" Text="Day End"></asp:Literal></a></li>--%>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                        </Panes>
+                                    </ajx:Accordion>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="main_content_td">
+                            <div class="main_content">
+                                <div class="mainmenu">
+                                    <ul class="mainnav">
+                                        <%--<li id="liMAcctConfig" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/AccountSetup/AccountConfiguration.aspx") %>">
+                                            <asp:Literal ID="litMAcctConfig" runat="server" Text="Account Configuration"></asp:Literal></a>
+                                        </li>--%>
+                                        <li id="liMAcctGroup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/AccountSetup/AccountGroup.aspx") %>">
+                                            <asp:Literal ID="litMAccGroup" runat="server" Text="Account Group"></asp:Literal></a>
+                                        </li>
+                                        <li id="liMAccount" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/AccountSetup/ChartOfAccount.aspx") %>">
+                                            <asp:Literal ID="litMAccount" runat="server" Text="Ledger Acct. Setup"></asp:Literal></a>
+                                        </li>
+                                        <li id="liMTax" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/AccountSetup/TaxSetup1.aspx") %>">
+                                            <asp:Literal ID="litMTax" runat="server" Text="Tax Setup"></asp:Literal></a>
+                                        </li>
+                                        <li id="liMCompanyInvoicing" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Invoice/CompanyInvoicing.aspx") %>">
+                                            <asp:Literal ID="litCompanyInvoicing" runat="server" Text="Company invoice"></asp:Literal></a></li>
+                                        <%--<li id="liMReprintCompanyInvoice" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Invoice/ReprintCompanyInvoice.aspx") %>">
+                                            <asp:Literal ID="litReprintCompanyInvoice" runat="server" Text="Reprint invoice"></asp:Literal></a></li>--%>
+                                        <li id="liMInvoiceSettlement" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Invoice/InvoiceSettlement.aspx") %>">
+                                            <asp:Literal ID="litInvoiceSettlement" runat="server" Text="Invoice Settlement"></asp:Literal></a></li>
+                                        <li id="liMCompanyPosting" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Invoice/RPTCompanyPosting.aspx") %>">
+                                                            <asp:Literal ID="Literal3" runat="server" Text="Company Posting Report"></asp:Literal></a></li>
+                                        <li id="liMCloseShift" runat="server" visible="false"><a href="#">
+                                            <asp:Literal ID="litMCloseShift" runat="server" Text="MIS Report"></asp:Literal></a>
+                                            <ul>
+                                                <li><a href="javascript:;">MIS Dashboard</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTOccupancyChartByBlockType.aspx") %>">
+                                                    Occupancy</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTYeildCalculation.aspx") %>">Yield</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTRevenueDetail.aspx") %>">Room Rent
+                                                    Revenue</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTVacantRoomList.aspx") %>">Vacant Room
+                                                    List</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTCFormReport.aspx") %>">C-Form Report</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTCancellationCharges.aspx") %>">Cancellation
+                                                    Report</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTRetentionCharges.aspx") %>">Retention
+                                                    Report</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liMAccountsReport" runat="server" visible="false"><a href="#">
+                                            <asp:Literal ID="Literal4" runat="server" Text="Acct. Report"></asp:Literal></a>
+                                            <ul>
+                                                <li><a href="javascript:;">Accounts Dashboard</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTCashReport.aspx") %>">Cash Report</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/CollectionSummaryReport.aspx") %>">Collection
+                                                    Report</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTRoomDeposit.aspx") %>">Security Deposit</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTRoomRentAdvance.aspx") %>">Room Rent
+                                                    Advance</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTAccountRevenue.aspx") %>">Ledger Accounts</a></li>
+                                                <li><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTCompanyPosting.aspx") %>">Company Posting</a></li>
+                                            </ul>
+                                        </li>
+                                        <%--<li id="liMDayEnd" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/DayEnd/DayEnd.aspx") %>">
+                                            <asp:Literal ID="litMDayEnd" runat="server" Text="Day End"></asp:Literal></a>
+                                        </li>--%>
+                                    </ul>
+                                </div>
+                                <div class="clear">
+                                </div>
+                                <div class="breadcrum">
+                                    <asp:UpdatePanel ID="uPnlBreadCrumb" runat="server" UpdateMode="Conditional">
+                                        <ContentTemplate>
+                                            <asp:DataList ID="dlBreadCrumb" runat="server" CellPadding="0" CellSpacing="0" RepeatDirection="Horizontal">
+                                                <ItemTemplate>
+                                                    <asp:HyperLink ID="hlNode" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "NameColumn") %>'
+                                                        NavigateUrl='<%#DataBinder.Eval(Container.DataItem, "Link") %>'>
+                                                    </asp:HyperLink>
+                                                </ItemTemplate>
+                                            </asp:DataList>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                                <div class="clear">
+                                </div>
+                                <div class="mainbox">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

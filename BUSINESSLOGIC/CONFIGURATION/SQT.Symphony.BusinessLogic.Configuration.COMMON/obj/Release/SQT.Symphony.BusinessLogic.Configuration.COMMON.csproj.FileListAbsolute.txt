@@ -1,0 +1,11 @@
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\bin\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\bin\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\obj\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\obj\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\obj\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\bin\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\bin\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\obj\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\obj\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\obj\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.COMMON\obj\Release\SQT.Symphony.BusinessLogic.Configuration.COMMON.pdb

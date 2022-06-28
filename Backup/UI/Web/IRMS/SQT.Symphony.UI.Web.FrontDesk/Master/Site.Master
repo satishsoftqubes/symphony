@@ -1,0 +1,1135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SQT.Symphony.UI.Web.FrontDesk.Master.Site" %>
+
+<%@ Register Src="~/UIControls/CommonControls/MsgBox.ascx" TagName="MsgBox" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Uniworld</title>
+    <script type="text/javascript">
+        function fnClearSearchData() {
+            document.getElementById('txtGuest').value = document.getElementById('txtResNo').value = document.getElementById('txtRoomNo').value = document.getElementById('txtMobileNo').value = document.getElementById('txtSrchCompany').value = "";
+            document.getElementById('ddlGroup').selectedIndex = document.getElementById('ddlBanquet').selectedIndex = 0;
+            return false;
+        }
+        function fnOpenTranscript(LinkValue) {
+
+            window.open("../GUI/Transcript.aspx?LinkValue=" + LinkValue + "", "mywindow", "left=420,top=50,width=550,height=550,status=0,toolbar=0,scrollbars=1");
+        }
+
+        function openRegistarionForm() {
+            var pageUrl = '<%# ResolveUrl("~/GUI/Reservation/RegistrationForm.aspx")%>';
+            window.open(pageUrl, "RegistrationForm", "height=700,width=800,status=1,toolbar=no,menubar=no,scrollbars=1,location=0");
+            return false;
+        }
+        function openReservationForm() {
+            var pageUrl = '<%# ResolveUrl("~/GUI/Reservation/ReservationForm.aspx")%>';
+            window.open(pageUrl, "ReservationForm", "height=700,width=800,status=1,toolbar=no,menubar=no,scrollbars=1,location=0");
+            return false;
+        }
+
+        function fnClearDate(para1) {
+            document.getElementById(para1).value = '';
+        }
+        function fnDisplayCatchErrorMessage() {
+            document.getElementById('errormessage').style.display = "block";
+        }
+        function stopKey(evt) {
+            var evt = (evt) ? evt : ((event) ? event : null);
+            var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+            if ((evt.keyCode == 8) && (node.type == "text")) { return false; }
+            else if ((evt.keyCode == 9) && (node.type == "text")) { return true; }
+            else if ((evt.keyCode == 46) && (node.type == "text")) { return false; }
+            else { return false; }
+        }
+
+    </script>
+    <link id="Link1" href="~/Styles/style.css" runat="server" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onkeydown="javascript:if(event.keyCode==13){return false;}">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="scptInnerHTML" runat="server">
+    </asp:ScriptManager>
+    <div id="wrap">
+        <div class="layout">
+            <div class="header">
+                <div class="header_left">
+                    <a href="<%=Page.ResolveUrl("~/GUI/Dashboard.aspx") %>">
+                        <img src="<%=Page.ResolveUrl("~/images/logo.jpg") %>" border="0" alt="" class="logo" /></a>
+                    <div style="display: inline-block; vertical-align: top; margin-top: 40px;">
+                        <asp:UpdatePanel ID="uPnlMasterPropertyName" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>
+                                <asp:Label ID="lblPropertyName" runat="server" Style="font-size: x-large;"></asp:Label>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                </div>
+                <div class="header_right">
+                    <div class="header_right_col2">
+                        <div class="header_right_col2_content">
+                            <div class="header_right_col2_date">
+                                <asp:Literal ID="lblDate" runat="server"></asp:Literal>
+                                : <span>
+                                    <asp:Literal ID="litDate" runat="server"></asp:Literal></span></div>
+                            <div class="clear">
+                            </div>
+                            <div class="header_right_col2_time">
+                                <asp:Literal ID="lblTime" runat="server"></asp:Literal>
+                                : <span>
+                                    <asp:Literal ID="litTime" runat="server"></asp:Literal></span></div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="header_right_logout">
+                            <asp:LinkButton runat="server" ID="lnkLogout" OnClick="lnkLogOut_Click"></asp:LinkButton></div>
+                    </div>
+                    <div class="header_right_col1">
+                        <div class="header_right_col1_name">
+                            <asp:Literal ID="ltrModuleTitle" runat="server"></asp:Literal></div>
+                        <div class="header_right_col1_link">
+                            <asp:Label ID="lblUserDisplayName" runat="server"></asp:Label><%--&nbsp;&nbsp;|&nbsp;&nbsp;<asp:Label
+                                ID="lblUserRoleType" runat="server"></asp:Label>--%>
+                            &nbsp;|<asp:LinkButton ID="lnkUserSettings" runat="server" OnClick="lnkUserSettings_OnClick">
+                                <asp:Literal ID="ltrSetting" runat="server"></asp:Literal></asp:LinkButton>
+                            <%--<a href="../UserSetup/UserSetting.aspx"><asp:Literal ID="ltrSetting" runat="server"></asp:Literal></a>--%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="main">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <tr>
+                        <td class="leftmargin_main">
+                            <ul class="mainnav">
+                                <li id="liDashboard" runat="server" style="width: 197px;"><a href="<%=Page.ResolveUrl("~/GUI/Dashboard.aspx") %>">
+                                    <asp:Literal ID="Literal7" runat="server" Text="Dashboard"></asp:Literal></a>
+                                </li>
+                            </ul>
+                            <div class="leftmargin">
+                                <div class="leftmargin_menu">
+                                    <table width="100%" cellpadding="0" cellspacing="0" style="padding-top: 3px;">
+                                        <tr>
+                                            <td>
+                                                <div style="height: 2px;">
+                                                </div>
+                                                <div class="leftmargin_attractive_box">
+                                                    <div class="leftmargin_attractive_box_head">
+                                                        <a id="A1" href="~/GUI/Guest/Message.aspx" runat="server">Guest Messages</a>
+                                                    </div>
+                                                    <div class="clear">
+                                                    </div>
+                                                    <div class="leftmargin_attractive_box_content">
+                                                        <asp:GridView ID="gvGuestMsgList" runat="server" OnRowCommand="gvGuestMsgList_RowCommand"
+                                                            AutoGenerateColumns="false" ShowHeader="false" CellPadding="3" CellSpacing="3"
+                                                            Width="100%">
+                                                            <Columns>
+                                                                <asp:TemplateField HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left">
+                                                                    <ItemTemplate>
+                                                                        <b>
+                                                                            <asp:Label ID="lblGuestName" runat="server" Text='<%#Eval("ContactName")+" : "%>'></asp:Label></b>
+                                                                        <asp:Label ID="lblGuestMessage" runat="server" Text='<%#TruncateString(Eval("Message").ToString(), 30)%>'></asp:Label>
+                                                                        <%-- </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField ItemStyle-Width="0px" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center">
+                                                                    <ItemTemplate>--%>
+                                                                        <ajx:HoverMenuExtender ID="hmeGuest" runat="server" TargetControlID="lblGuestName"
+                                                                            PopupControlID="Panel2" PopupPosition="Right">
+                                                                        </ajx:HoverMenuExtender>
+                                                                        <asp:Panel ID="Panel2" runat="server" BorderColor="#000000" BorderStyle="Solid" BorderWidth="1px"
+                                                                            Style="visibility: hidden; opacity: 100%;">
+                                                                            <table border="0" cellpadding="0" cellspacing="0" class="actionsbuttons_hover_lettmenu_table">
+                                                                                <tr>
+                                                                                    <td colspan="3" style="background-color: #FFFFF0">
+                                                                                        <table>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    Message For
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    :
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%#DataBinder.Eval(Container.DataItem, "ContactName")%>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    Message By
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    :
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%#DataBinder.Eval(Container.DataItem, "MessageFrom")%>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    Message
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    :
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%#DataBinder.Eval(Container.DataItem, "Message")%>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </asp:Panel>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderStyle-HorizontalAlign="Left" ItemStyle-VerticalAlign="Top"
+                                                                    ItemStyle-HorizontalAlign="Left">
+                                                                    <ItemTemplate>
+                                                                        <asp:LinkButton Style="background: none !important; border: none;" ID="lnkDeleteMsgMst"
+                                                                            runat="server" ToolTip="Delete" CommandName="MESSAGEDELETE" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "GuestMessageID")%>'>
+                                                                            <img src="../../images/no.png" style="border-style:None;height:10px;width:10px;" />
+                                                                            <%--<asp:ImageButton ID="imgClearMessage" runat="server" ImageUrl="~/images/no.png" BorderStyle="None"
+                                                                                Width="10px" Height="10px" />--%></asp:LinkButton>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                            </Columns>
+                                                            <EmptyDataTemplate>
+                                                                <div style="padding: 10px;">
+                                                                    <b>
+                                                                        <asp:Label ID="lblNoRecordFound" runat="server" Text="No Record Found."></asp:Label>
+                                                                    </b>
+                                                                </div>
+                                                            </EmptyDataTemplate>
+                                                        </asp:GridView>
+                                                        <div style="float: right; font-weight: bold; margin-top: -13px;">
+                                                            <a id="linMore" visible="false" href="~/GUI/Guest/GuestAllMsgList.aspx" runat="server">
+                                                                More</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%--Front Desk Alert Start--%>
+                                                <div style="height: 2px;">
+                                                </div>
+                                                <div class="leftmargin_attractive_box">
+                                                    <div class="leftmargin_attractive_box_head">
+                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <a id="A2" href="~/GUI/Guest/FrontDeskAlert.aspx" runat="server">Front Desk Alert</a>
+                                                                </td>
+                                                                <td>
+                                                                    <asp:ImageButton ID="imgMassegePopup" runat="server" OnClick="imgMassegePopup_OnClick"
+                                                                        ImageUrl="~/images/plus_button_orange.png" Style="border: none; height: 15px;
+                                                                        width: 15px; padding-left: 75px;" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="clear">
+                                                    </div>
+                                                    <div class="leftmargin_attractive_box_content">
+                                                        <asp:GridView ID="gvFrontDeskAlert" runat="server" AutoGenerateColumns="false" ShowHeader="false"
+                                                            CellPadding="3" CellSpacing="3" Width="100%" OnRowCommand="gvFrontDeskAlert_RowCommand">
+                                                            <Columns>
+                                                                <asp:TemplateField HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left">
+                                                                    <ItemTemplate>
+                                                                        <%#TruncateString(DataBinder.Eval(Container.DataItem, "Messege").ToString(), 35)%>
+                                                                        <%--<%#DataBinder.Eval(Container.DataItem, "Messege")%>--%>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderStyle-HorizontalAlign="Left" ItemStyle-VerticalAlign="Top"
+                                                                    ItemStyle-HorizontalAlign="Left">
+                                                                    <ItemTemplate>
+                                                                        <asp:ImageButton ID="imgClearMessage" runat="server" ImageUrl="~/images/no.png" BorderStyle="None"
+                                                                            Width="10px" Height="10px" CommandName="MESSAGEDELETE" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "FrontDeskAlertMsgID")%>' />
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                            </Columns>
+                                                            <EmptyDataTemplate>
+                                                                <div style="padding: 10px;">
+                                                                    <b>
+                                                                        <asp:Label ID="lblNoRecordFound" runat="server" Text="No Record Found."></asp:Label>
+                                                                    </b>
+                                                                </div>
+                                                            </EmptyDataTemplate>
+                                                        </asp:GridView>
+                                                        <div style="float: right; font-weight: bold; margin-top: -13px;">
+                                                            <%--<asp:LinkButton ID="lnkFrontDeskAlertMore" runat="server" Text="More"></asp:LinkButton>--%>
+                                                            <a id="FrontDeskMore" href="~/GUI/Guest/FrontDeskAlert.aspx" runat="server">More</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%--Front Desk Alert End--%>
+                                                <div style="height: 2px;">
+                                                </div>
+                                                <div class="leftmargin_attractive_box">
+                                                    <div class="leftmargin_attractive_box_head">
+                                                        <%--<asp:Literal ID="litSearch" runat="server" Text="Search Guest"></asp:Literal>--%>
+                                                        <asp:LinkButton ID="lnkSearchGuest" runat="server" Text="Search Guest"></asp:LinkButton>
+                                                    </div>
+                                                    <div class="clear">
+                                                    </div>
+                                                </div>
+                                                <div style="height: 2px;">
+                                                </div>
+                                                <div class="leftmargin_attractive_box" style="display: none;">
+                                                    <div class="leftmargin_attractive_box_head">
+                                                        <asp:Literal ID="Literal1" runat="server" Text="SOP's"></asp:Literal>
+                                                    </div>
+                                                    <div class="clear">
+                                                    </div>
+                                                    <div class="leftmargin_attractive_box_content">
+                                                        <asp:GridView ID="gvSOP" runat="server" AutoGenerateColumns="false" ShowHeader="false"
+                                                            CellPadding="3" CellSpacing="3" OnRowDataBound="gvSOP_RowDatabound" Width="100%">
+                                                            <Columns>
+                                                                <asp:TemplateField HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left">
+                                                                    <ItemTemplate>
+                                                                        <asp:LinkButton ID="lnkSOPTitle" runat="server" CommandName="TITLE" CommandArgument='<%#Eval("Title") %>'>
+                                                                            <asp:Label ID="lblSOPTitle" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "Title")%>'></asp:Label></asp:LinkButton>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                            </Columns>
+                                                            <EmptyDataTemplate>
+                                                                <div style="padding: 10px;">
+                                                                    <b>
+                                                                        <asp:Label ID="lblNoRecordFound" runat="server" Text="No Record Found."></asp:Label>
+                                                                    </b>
+                                                                </div>
+                                                            </EmptyDataTemplate>
+                                                        </asp:GridView>
+                                                    </div>
+                                                </div>
+                                                <div style="height: 2px;">
+                                                </div>
+                                                <div class="leftmargin_attractive_box">
+                                                    <div class="leftmargin_attractive_box_head">
+                                                        <asp:Literal ID="Literal5" runat="server" Text="Trouble Ticket"></asp:Literal>
+                                                    </div>
+                                                    <div class="clear">
+                                                    </div>
+                                                    <div class="leftmargin_attractive_box_content">
+                                                        <table width="100%" cellpadding="2" cellspacing="2">
+                                                            <tr>
+                                                                <td>
+                                                                    <a id="A5" href="~/GUI/Guest/CloseTroubleTicket.aspx?Ticket=Close" runat="server">
+                                                                        <asp:Literal ID="litNoOfOpenTicket" runat="server"></asp:Literal></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <a id="A3" href="~/GUI/Guest/TroubleTicket.aspx?Ticket=Generate" runat="server">Generate
+                                                                        Ticket</a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div style="height: 2px;">
+                                                </div>
+                                                <div class="leftmargin_attractive_box">
+                                                    <div class="leftmargin_attractive_box_head">
+                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <a id="AInquiryList" href="~/GUI/Guest/InquiryList.aspx" runat="server">Inquiry</a>
+                                                                </td>
+                                                                <td>
+                                                                    <asp:ImageButton ID="imgInquiryFormOpen" runat="server" OnClick="imgInquiryFormOpen_OnClick"
+                                                                        ImageUrl="~/images/plus_button_orange.png" Style="border: none; height: 15px;
+                                                                        width: 15px; padding-left: 126px;" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="leftmargin_attractive_box" style="display: none;">
+                                                    <div class="leftmargin_attractive_box_head">
+                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:Literal ID="litTroubleTicket" runat="server" Text="Trouble Ticket"></asp:Literal>
+                                                                </td>
+                                                                <td>
+                                                                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/plus_button_orange.png"
+                                                                        Style="border: none; height: 15px; width: 15px; padding-left: 85px;" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="clear">
+                                                    </div>
+                                                    <div class="leftmargin_attractive_box_content" style="display: none;">
+                                                        <asp:GridView ID="gvTroubleTicket" runat="server" AutoGenerateColumns="false" ShowHeader="false"
+                                                            CellPadding="3" CellSpacing="3" Width="100%">
+                                                            <Columns>
+                                                                <asp:TemplateField HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left">
+                                                                    <ItemTemplate>
+                                                                        <asp:Label ID="lblGuestName" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "Complain")%>'></asp:Label>
+                                                                        <%--</ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField ItemStyle-Width="0px" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center">
+                                                                    <ItemTemplate>--%>
+                                                                        <ajx:HoverMenuExtender ID="hmeTroubleTicket" runat="server" TargetControlID="lblGuestName"
+                                                                            PopupControlID="Panel2" PopupPosition="Right">
+                                                                        </ajx:HoverMenuExtender>
+                                                                        <asp:Panel ID="Panel2" runat="server" BorderColor="#000000" BorderStyle="Solid" BorderWidth="1px"
+                                                                            Style="visibility: hidden; opacity: 100%;">
+                                                                            <table border="0" cellpadding="0" cellspacing="0" class="actionsbuttons_hover_lettmenu_table">
+                                                                                <tr>
+                                                                                    <td colspan="3" style="background-color: #FFFFF0">
+                                                                                        <table>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    Complain By
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    :
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%#DataBinder.Eval(Container.DataItem, "ComplainBy")%>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    Complain
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    :
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%#DataBinder.Eval(Container.DataItem, "Complain")%>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    Date-Time
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    :
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%#DataBinder.Eval(Container.DataItem, "ComplainDateTime")%>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </asp:Panel>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderStyle-HorizontalAlign="Left" ItemStyle-VerticalAlign="Top"
+                                                                    ItemStyle-HorizontalAlign="Left">
+                                                                    <ItemTemplate>
+                                                                        <asp:ImageButton ID="imgClearMessage" runat="server" ImageUrl="~/images/no.png" BorderStyle="None"
+                                                                            Width="10px" Height="10px" />
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                            </Columns>
+                                                            <EmptyDataTemplate>
+                                                                <div style="padding: 10px;">
+                                                                    <b>
+                                                                        <asp:Label ID="lblNoRecordFound" runat="server" Text="No Record Found."></asp:Label>
+                                                                    </b>
+                                                                </div>
+                                                            </EmptyDataTemplate>
+                                                        </asp:GridView>
+                                                        <%--<div style="float: right; font-weight: bold; margin-top: -13px;">
+                                                            <a id="A4" href="#">More</a>
+                                                        </div>--%>
+                                                    </div>
+                                                </div>
+                                                <div style="height: 2px;">
+                                                </div>
+                                                <div class="leftmargin_attractive_box">
+                                                    <div class="leftmargin_attractive_box_head">
+                                                        <a id="ASendEmail" href="~/GUI/Guest/SendEmailToGuest.aspx" runat="server">Send Email</a>
+                                                    </div>
+                                                </div>
+                                                <div style="height: 2px;">
+                                                </div>
+                                                <div class="leftmargin_attractive_box">
+                                                    <div class="leftmargin_attractive_box_head">
+                                                        <asp:Literal ID="litHrdSmsEmail" runat="server" Text="SMS / Email"></asp:Literal>
+                                                    </div>
+                                                    <div class="clear">
+                                                    </div>
+                                                    <div class="leftmargin_attractive_box_content">
+                                                        <table width="100%" cellpadding="2" cellspacing="2">
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:LinkButton ID="lnkSms" runat="server" Text="SMS"></asp:LinkButton>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:LinkButton ID="lnkEmail" runat="server" Text="Email"></asp:LinkButton>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="main_content_td">
+                            <div class="main_content">
+                                <div class="mainmenu">
+                                    <ul class="mainnav">
+                                        <li id="liMRoomReservation" runat="server"><a href="#">
+                                            <asp:Literal ID="litMRoomReservation" runat="server" Text="Reservation"></asp:Literal></a>
+                                            <ul>
+                                                <li id="liMRoomAvailability" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/RoomAvailability.aspx") %>">
+                                                    Room Availability</a></li>
+                                                <li id="liMNewReservation" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/Reservation.aspx") %>">
+                                                    New Reservation</a></li>
+                                                <li id="liMAssignRoom" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/AssignRoom.aspx") %>">
+                                                    Assign Room</a></li>
+                                                <li id="liMGroupReservation" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/GroupReservationList.aspx") %>">
+                                                    Group Reservation</a></li>
+                                                <li id="liMAmendReservation" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/AmendmentList.aspx") %>">
+                                                    Amend Reservation </a></li>
+                                                <li id="liMReservationList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/RoomReservationList.aspx") %>">
+                                                    Reservation List</a></li>
+                                                <li id="liMRoomStatus" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/RoomStatus.aspx") %>">
+                                                    Room Status </a></li>
+                                                <li><a id="liMReservationForm" style="cursor: pointer;" runat="server" onclick="return openReservationForm();">
+                                                    Reservation Form</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liCheckIn" runat="server"><a href="#">
+                                            <asp:Literal ID="litMCheckIn" runat="server" Text="Check In"></asp:Literal></a>
+                                            <ul>
+                                                <li id="liMCheckInList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/CheckInList.aspx") %>">
+                                                    Arrival List</a></li>
+                                                <li id="liMWalkIn" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/Reservation.aspx?WalkIn=WalkIn") %>">
+                                                    Walk In</a></li>
+                                                <li id="liMGroupCheckIn" runat="server"><a href="#">Group Check In</a></li>
+                                                <li id="liMRegistrationForm" runat="server"><a style="cursor: pointer;" runat="server"
+                                                    onclick="return openRegistarionForm();">Registration Form</a></li>
+                                                <li id="liMCheckInLog" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/CheckInLog.aspx") %>">
+                                                    Checkin Log</a></li>
+                                                <li id="liMRoomStatusReport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/RoomStatusView.aspx") %>">
+                                                    Room Status Report</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liMGuestManagement" runat="server"><a href="#">
+                                            <asp:Literal ID="litMGuestManagement" runat="server" Text="Guest Mgmt."></asp:Literal></a>
+                                            <ul>
+                                                <li id="liMGuestList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/CurrentGuestList.aspx") %>">
+                                                    Guest List</a> </li>
+                                                <li id="liMFolio" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Folio/FolioList.aspx") %>">
+                                                    Folio</a></li>
+                                                <li id="liMExtendStay" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/ExtendReservation.aspx") %>">
+                                                    Extend Stay</a> </li>
+                                                <li id="liMChangeRoom" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Guest/ChangeRoom.aspx") %>">
+                                                    Change Room</a></li>
+                                                <li id="liMUpDownRoom" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Guest/UpgradeDowngradeRoom.aspx") %>">
+                                                    Up/Down Room</a> </li>
+                                                <%--<li><a href="<%=Page.ResolveUrl("~/GUI/Guest/UpgradeDowngradeRoom.aspx") %>">Up/Down
+                                                    Room New</a> </li>--%>
+                                                <li id="liMGuestHistory" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Guest/GuestMaster.aspx") %>">
+                                                    Guest History</a></li>
+                                                <li id="liMRoomHistory" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTRoomHistory.aspx") %>">
+                                                    Room History</a></li>
+                                                <li id="liPastGuestList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/PastGuestList.aspx") %>">
+                                                    Past Guest List</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liMCheckOut" runat="server"><a href="#">
+                                            <asp:Literal ID="litMCheckOut" runat="server" Text="Check Out"></asp:Literal></a>
+                                            <ul>
+                                                <li id="liMDeparturelist" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Billing/DepartureList.aspx") %>">
+                                                    Departure List</a></li>
+                                                <li id="liMunsetteledcheckout" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Billing/UnsettledCheckOut.aspx") %>">
+                                                    Unsettled Check Out</a></li>
+                                                <%--<li><a href="#">Company Receipt</a> </li>--%>
+                                            </ul>
+                                        </li>
+                                        <li id="liMCashier" runat="server"><a href="#">
+                                            <asp:Literal ID="litMCashier" runat="server" Text="Cashier"></asp:Literal></a>
+                                            <ul>
+                                                <li id="liMSecurityDeposit" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/CheckIn.aspx?Mode=Deposit") %>">
+                                                    Security Deposit</a></li>
+                                                <li id="liMRentReceipt" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/CheckIn.aspx?Mode=Payment") %>">
+                                                    Rent Receipt</a></li>
+                                                <li id="liMCahsierCheckOut" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Billing/CashierCheckOut.aspx") %>">
+                                                    Check Out</a> </li>
+                                                <li id="liMReprintPayment" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Billing/ReprintPaymentInvoice.aspx") %>">
+                                                    Reprint Payment</a> </li>
+                                                <li id="liMCancelReservation" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/CancelReservationList.aspx") %>">
+                                                    Cancel Reservation </a></li>
+                                                <li id="liMAddOnServices" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Guest/AddOnServices.aspx") %>">
+                                                    AddOn Services</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liMNightAudit" runat="server"><a href="#">
+                                            <asp:Literal ID="litNightAudit" runat="server" Text="Night Audit"></asp:Literal></a>
+                                            <ul>
+                                                <li id="liMCloseCounter" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Counter/CloseCounter.aspx") %>">
+                                                    <asp:Literal ID="litCloseCounter" runat="server" Text="Close Counter"></asp:Literal></a></li>
+                                                <li id="liMDayEnd" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/CommonControl/DayEnd.aspx") %>">
+                                                    <asp:Literal ID="Literal3" runat="server" Text="Day End"></asp:Literal></a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liMMISReport" runat="server"><a href="#">
+                                            <asp:Literal ID="litMMISReport" runat="server" Text="MIS Report"></asp:Literal></a>
+                                            <ul>
+                                                <li id="liMMisDashboard" runat="server"><a href="javascript:;">MIS Dashboard</a></li>
+                                                <li id="liMOccupancy" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTOccupancyChart.aspx") %>">
+                                                    Occupancy</a></li>
+                                                <li id="liMYieldreport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTYeildCalculation.aspx") %>">
+                                                    Yield</a></li>
+                                                <li id="liMRoomRentRevenue" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTRevenueDetail.aspx") %>">
+                                                    Room Rent Revenue</a></li>
+                                                <li id="liMVacantRoomList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTVacantRoomList.aspx") %>">
+                                                    Vacant Room List</a></li>
+                                                <li id="liMCFormReport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTCFormReport.aspx") %>">
+                                                    C-Form Report</a></li>
+                                                <li id="liMCancelationreport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTCancellationCharges.aspx") %>">
+                                                    Cancellation Report</a></li>
+                                                <li id="liMRetentionReport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTRetentionCharges.aspx") %>">
+                                                    Retention Report</a></li>
+                                                <li id="liMSearchRoom_Key" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Reservation/SearchKeyandRoom.aspx") %>">
+                                                    Search Room-Key</a></li>
+                                                <li id="liGuestBirthDayList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/BirthDayList.aspx") %>">
+                                                    Birthday report</a></li>
+                                                <li id="liRoomNightReport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RoomNightReport.aspx") %>">
+                                                    Room Night report</a></li>
+                                                <li id="liVoidReport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/VoidReport.aspx") %>">
+                                                    Void report</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liMAccountsReport" runat="server"><a href="#">
+                                            <asp:Literal ID="Literal4" runat="server" Text="Acct. Report"></asp:Literal></a>
+                                            <ul>
+                                                <li id="liMAccountsDashBoard" runat="server"><a href="javascript:;">Accounts Dashboard</a></li>
+                                                <li id="liMCashreport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTCashReport.aspx") %>">
+                                                    Cash Report</a></li>
+                                                <li id="liMCollectionreoprt" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/CollectionSummaryReport.aspx") %>">
+                                                    Collection Report</a></li>
+                                                <li id="li1" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTCreditcardwiseCollection.aspx") %>">
+                                                    Credit card Collection</a></li>
+                                                <li id="liMSecdepositreport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTRoomDeposit.aspx") %>">
+                                                    Security Deposit</a></li>
+                                                <li id="liMRoomrentadvancereport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTRoomRentAdvance.aspx") %>">
+                                                    Room Rent Advance</a></li>
+                                                <li id="li2" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTInfraServiceCharges.aspx") %>">
+                                                    Infra Service Charge</a></li>
+                                                <li id="liMLedgeracctreport" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTAccountRevenue.aspx") %>">
+                                                    Ledger Accounts</a></li>
+                                                <li id="liMCompanyposting" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Report/RPTCompanyPosting.aspx") %>">
+                                                    Company Posting</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liMCashCard" runat="server"><a href="#">
+                                            <asp:Literal ID="litMCashCard" runat="server" Text="Cash Card"></asp:Literal></a>
+                                            <ul>
+                                                <li id="liCashCardList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Card/CashCardList.aspx") %>">
+                                                    Assign Cash card</a> </li>
+                                                <li id="liMCardlist" runat="server"><a href="#">Card List</a> </li>
+                                                <li id="liMNewCard" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Card/IssueCard.aspx") %>">
+                                                    New Card</a> </li>
+                                                <li id="liMCancelCard" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Card/LostCard.aspx") %>">
+                                                    Block/Cancel Card</a> </li>
+                                                <li id="liMRecharge" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Card/CardRecharge.aspx") %>">
+                                                    Recharge</a> </li>
+                                                <li><a href="#">Refund</a> </li>
+                                                <li><a href="#">Recovery</a> </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clear">
+                                </div>
+                                <div class="breadcrum">
+                                    <asp:UpdatePanel ID="uPnlBreadCrumb" runat="server" UpdateMode="Conditional">
+                                        <ContentTemplate>
+                                            <asp:DataList ID="dlBreadCrumb" runat="server" CellPadding="0" CellSpacing="0" RepeatDirection="Horizontal">
+                                                <ItemTemplate>
+                                                    <asp:HyperLink ID="hlNode" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "NameColumn") %>'
+                                                        NavigateUrl='<%#DataBinder.Eval(Container.DataItem, "Link") %>'>
+                                                    </asp:HyperLink>
+                                                </ItemTemplate>
+                                            </asp:DataList>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                                <div class="clear">
+                                </div>
+                                <div class="mainbox">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <asp:UpdatePanel ID="updInqModalPopUp" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+            <ajx:ModalPopupExtender ID="mpeInquiryData" runat="server" TargetControlID="hdnInquiryData"
+                PopupControlID="pnlInquiryData" BackgroundCssClass="mod_background" CancelControlID="imgInquiryClose">
+            </ajx:ModalPopupExtender>
+            <asp:HiddenField ID="hdnInquiryData" runat="server" />
+            <asp:Panel ID="pnlInquiryData" runat="server" Width="600px" Style="display: none;">
+                <div class="box_col1">
+                    <div class="box_head">
+                        <div style="display: inline;">
+                            <span>
+                                <asp:Literal ID="litEnquiryHeader" runat="server" Text="Inquiry"></asp:Literal>
+                            </span>
+                        </div>
+                        <div style="float: right; display: inline; padding-top: 12px; padding-right: 10px;">
+                            <asp:ImageButton ID="imgInquiryClose" runat="server" ImageUrl="~/images/closepopup.png"
+                                Style="border: 0px; width: 16px; height: 16px; margin: -4px 0 0 5px; vertical-align: middle;" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="box_form">
+                        <table border="0" cellpadding="2" cellspacing="2" width="100%">
+                            <tr>
+                                <td colspan="2">
+                                    <div style="text-align: right;">
+                                        <b>
+                                            <asp:Label ID="lblInqCurrentTime" runat="server"></asp:Label></b>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <asp:Label ID="litDateValidationmsg" Visible="false" ForeColor="Red" runat="server"
+                                        Text="Departure date must be greater than Arrival date"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="isrequire" style="vertical-align: top;">
+                                    <asp:Literal ID="litInqStatus" runat="server" Text="Status"></asp:Literal>
+                                </td>
+                                <td>
+                                    <asp:RadioButtonList runat="server" AutoPostBack="true" ID="rblInquiryStatus" RepeatColumns="3"
+                                        RepeatDirection="Horizontal" OnSelectedIndexChanged="rblInquiryStatus_SelectedIndexChanged">
+                                        <asp:ListItem Text="Inquiry" Value="Inquiry" Selected="true"></asp:ListItem>
+                                        <asp:ListItem Text="Wait List" Value="Wait List"></asp:ListItem>
+                                        <asp:ListItem Text="Email Database" Value="Email Database"></asp:ListItem>
+                                    </asp:RadioButtonList>
+                                </td>
+                            </tr>
+                            <tr id="trMarketingValue" runat="server" visible="false">
+                                <td style="vertical-align: top; width: 113px !important;">
+                                    <asp:Literal ID="litMarketingValueStatus" runat="server" Text="Marketing Category"></asp:Literal>
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlMarketingValueStatus" runat="server">
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="isrequire" style="width: 80px !important;">
+                                    <asp:Literal ID="litInqGuestName" runat="server" Text="Name"></asp:Literal>
+                                </td>
+                                <td>
+                                    <div style="float: left;">
+                                        <asp:DropDownList ID="ddlInqGuestTitle" runat="server" Style="width: 80px; height: 25px;">
+                                            <asp:ListItem Selected="True" Text="-Select-" Value="00000000-0000-0000-0000-000000000000"></asp:ListItem>
+                                            <asp:ListItem Text="Mr." Value="Mr."></asp:ListItem>
+                                            <asp:ListItem Text="Mrs." Value="Mrs."></asp:ListItem>
+                                            <asp:ListItem Text="Ms" Value="Ms"></asp:ListItem>
+                                        </asp:DropDownList>
+                                        <span>
+                                            <asp:RequiredFieldValidator ID="rvfInqGuestTitle" InitialValue="00000000-0000-0000-0000-000000000000"
+                                                SetFocusOnError="true" CssClass="input-notification error png_bg" runat="server"
+                                                ValidationGroup="InquiryData" ControlToValidate="ddlInqGuestTitle" Display="Dynamic">
+                                            </asp:RequiredFieldValidator>
+                                        </span>
+                                        <asp:TextBox ID="txtInqGuestFirstName" runat="server" MaxLength="150" Style="width: 120px !important;"></asp:TextBox>
+                                        <ajx:TextBoxWatermarkExtender ID="txtwmeInqGuestFName" runat="server" TargetControlID="txtInqGuestFirstName"
+                                            WatermarkText="First Name">
+                                        </ajx:TextBoxWatermarkExtender>
+                                        <span>
+                                            <asp:RequiredFieldValidator ID="rvfInqGuestFirstName" SetFocusOnError="true" CssClass="input-notification error png_bg"
+                                                runat="server" ValidationGroup="InquiryData" ControlToValidate="txtInqGuestFirstName"
+                                                Display="Dynamic">
+                                            </asp:RequiredFieldValidator>
+                                        </span>
+                                        <asp:TextBox ID="txtInqGuestLastName" runat="server" MaxLength="150" Style="width: 120px !important;"></asp:TextBox>
+                                        <ajx:TextBoxWatermarkExtender ID="txtwmeInqGuestLastName" runat="server" TargetControlID="txtInqGuestLastName"
+                                            WatermarkText="Last Name">
+                                        </ajx:TextBoxWatermarkExtender>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="isrequire">
+                                    <asp:Literal ID="litInqGuestMobile" runat="server" Text="Mobile No."></asp:Literal>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtInqGuestCode" runat="server" Text="+91" Style="width: 30px !important;"></asp:TextBox>
+                                    <asp:TextBox ID="txtInqGuestMobile" Style="width: 190px;" runat="server" MaxLength="16"></asp:TextBox>
+                                    <ajx:FilteredTextBoxExtender ID="ftInqGuestMobile" runat="server" TargetControlID="txtInqGuestMobile"
+                                        ValidChars="0123456789" FilterMode="ValidChars">
+                                    </ajx:FilteredTextBoxExtender>
+                                    <span>
+                                        <asp:RequiredFieldValidator ID="rfvInqGuestMobile" SetFocusOnError="true" CssClass="input-notification error png_bg"
+                                            runat="server" ValidationGroup="InquiryData" ControlToValidate="txtInqGuestMobile"
+                                            Display="Dynamic">
+                                        </asp:RequiredFieldValidator>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Literal ID="litInqGuestGuestEmail" runat="server" Text="Email"></asp:Literal>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtInqGuestEmail" runat="server"></asp:TextBox>
+                                    <span>
+                                        <asp:RegularExpressionValidator ID="revInqGuestEmail" Display="Dynamic" ValidationGroup="InquiryData"
+                                            runat="server" ErrorMessage="Please Enter Valid Email" ForeColor="Red" ControlToValidate="txtInqGuestEmail"
+                                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Literal ID="litInqGuestGender" runat="server" Text="Gender"></asp:Literal>
+                                </td>
+                                <td>
+                                    <asp:RadioButtonList runat="server" ID="rblInqGuestGender" RepeatColumns="3" RepeatDirection="Horizontal">
+                                    </asp:RadioButtonList>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Literal ID="litInqGuestCompanyName" runat="server" Text="Company Name"></asp:Literal>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtInqGuestCompanyName" runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="isrequire" align="left" style="vertical-align: top;" runat="server" id="tdArrivalDateForClass">
+                                    <asp:Literal ID="litInqArrivalDate" runat="server" Text="Arrival Date"></asp:Literal>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtInqArrivalDate" Width="180px" SkinID="nowidth" runat="server"
+                                        onkeydown="return stopKey(event);"></asp:TextBox>
+                                    <asp:Image ID="imbInqArrivalDate" ToolTip="Choose Date" CssClass="small_img" runat="server"
+                                        ImageUrl="~/images/CalanderIcon.png" Height="20px" Width="20px" />
+                                    <ajx:CalendarExtender ID="calInqArrivalDate" Format="dd-MM-yyyy" PopupButtonID="imbInqArrivalDate"
+                                        TargetControlID="txtInqArrivalDate" runat="server">
+                                    </ajx:CalendarExtender>
+                                    <img src="../../images/clear.png" id="imgClearDate" title="Clear Date" style="vertical-align: middle;"
+                                        onclick="fnClearDate('<%= txtInqArrivalDate.ClientID %>');" />
+                                    <span>
+                                        <asp:RequiredFieldValidator ID="rfvInqArrivalDate" runat="server" ControlToValidate="txtInqArrivalDate"
+                                            SetFocusOnError="true" CssClass="input-notification error png_bg" ValidationGroup="InquiryData">
+                                        </asp:RequiredFieldValidator>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="isrequire" style="vertical-align: top;" runat="server" id="tdDeptDateForClass">
+                                    <asp:Literal ID="litInqDeptDate" runat="server" Text="Departure Date"></asp:Literal>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtInqDeptDate" Width="180px" SkinID="nowidth" runat="server" onkeydown="return stopKey(event);"></asp:TextBox>
+                                    <asp:Image ID="imbInqDeptDate" ToolTip="Choose Date" CssClass="small_img" runat="server"
+                                        ImageUrl="~/images/CalanderIcon.png" Height="20px" Width="20px" />
+                                    <ajx:CalendarExtender ID="calInqDeptDate" Format="dd-MM-yyyy" runat="server" PopupButtonID="imbInqDeptDate"
+                                        TargetControlID="txtInqDeptDate">
+                                    </ajx:CalendarExtender>
+                                    <img src="../../images/clear.png" title="Clear Date" id="img1" style="vertical-align: middle;"
+                                        onclick="fnClearDate('<%= txtInqDeptDate.ClientID %>');" />
+                                    <span>
+                                        <asp:RequiredFieldValidator ID="rfvInqDeptDate" runat="server" ControlToValidate="txtInqDeptDate"
+                                            SetFocusOnError="true" CssClass="input-notification error png_bg" ValidationGroup="InquiryData">
+                                        </asp:RequiredFieldValidator>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <div style="display: inline-block;">
+                                        <asp:Button ID="btnSaveInquiry" runat="server" CausesValidation="true" Text="Save"
+                                            ImageUrl="~/images/save.png" OnClick="btnSaveInquiry_Click" Style="float: right;
+                                            margin-left: 5px;" ValidationGroup="InquiryData" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </asp:Panel>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <asp:UpdateProgress AssociatedUpdatePanelID="updInqModalPopUp" ID="updprogressInqList"
+        runat="server">
+        <ProgressTemplate>
+            <div id="progressBackgroundFilter">
+            </div>
+            <div id="processMessage">
+                <center>
+                    <img src="../../images/ajax-loader.gif" /></center>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <ajx:ModalPopupExtender ID="mpeMessege" runat="server" TargetControlID="hdnMessege"
+        PopupControlID="pnlMessege" BackgroundCssClass="mod_background" CancelControlID="imgCloasemessageForpopup">
+    </ajx:ModalPopupExtender>
+    <asp:HiddenField ID="hdnMessege" runat="server" />
+    <asp:Panel ID="pnlMessege" runat="server" Width="600px" Style="display: none;">
+        <div class="box_col1">
+            <div class="box_head">
+                <div style="display: inline;">
+                    <span>
+                        <asp:Literal ID="lithdMassege" runat="server" Text="Messege"></asp:Literal>
+                    </span>
+                </div>
+                <div style="float: right; display: inline; padding-top: 12px; padding-right: 10px;">
+                    <asp:ImageButton ID="imgCloasemessageForpopup" runat="server" ImageUrl="~/images/closepopup.png"
+                        Style="border: 0px; width: 16px; height: 16px; margin: -4px 0 0 5px; vertical-align: middle;" />
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="box_form">
+                <table border="0" cellpadding="2" cellspacing="2" width="100%">
+                    <tr>
+                        <td style="width: 80px;" class="isrequire">
+                            <asp:Literal ID="litMassegeBy" runat="server" Text="Message By"></asp:Literal>
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="ddlMassegeBy" runat="server">
+                            </asp:DropDownList>
+                            <span>
+                                <asp:RequiredFieldValidator ID="rfvMassegeBy" InitialValue="00000000-0000-0000-0000-000000000000"
+                                    SetFocusOnError="true" CssClass="input-notification error png_bg" runat="server"
+                                    ValidationGroup="IsRequireFrontDeskAlert" ControlToValidate="ddlMassegeBy" Display="Dynamic">
+                                </asp:RequiredFieldValidator>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;" class="isrequire">
+                            <asp:Literal ID="litMassege" runat="server" Text="Messege"></asp:Literal>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtMassege" Style="width: 420px; height: 74px;" runat="server" TextMode="MultiLine"></asp:TextBox>
+                            <span>
+                                <asp:RequiredFieldValidator ID="rvfMassege" SetFocusOnError="true" CssClass="input-notification error png_bg"
+                                    runat="server" ValidationGroup="IsRequireFrontDeskAlert" ControlToValidate="txtMassege"
+                                    Display="Dynamic">
+                                </asp:RequiredFieldValidator>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;" class="isrequire">
+                            <asp:Literal ID="litSelectUser" runat="server" Text="Message For"></asp:Literal>
+                        </td>
+                        <td>
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td>
+                                        <div class="box_head">
+                                            <span>
+                                                <asp:Literal ID="litUserList" runat="server" Text="User list"></asp:Literal>
+                                            </span>
+                                        </div>
+                                        <div class="clear">
+                                        </div>
+                                        <div class="box_content">
+                                            <asp:GridView ID="gvUserList" runat="server" AutoGenerateColumns="false" DataKeyNames="EmployeeID"
+                                                ShowHeader="true" Width="100%">
+                                                <Columns>
+                                                    <asp:TemplateField ItemStyle-Width="10px" HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:CheckBox runat="server" ID="chkSelectUser" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField ItemStyle-Width="100px" HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left">
+                                                        <HeaderTemplate>
+                                                            <asp:Label ID="lblGvHdrUser" runat="server" Text="User Name"></asp:Label>
+                                                        </HeaderTemplate>
+                                                        <ItemTemplate>
+                                                            <%#DataBinder.Eval(Container.DataItem, "User")%>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField ItemStyle-Width="100px" HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left">
+                                                        <HeaderTemplate>
+                                                            <asp:Label ID="lblGvHdrDepartment" runat="server" Text="Department"></asp:Label>
+                                                        </HeaderTemplate>
+                                                        <ItemTemplate>
+                                                            <%#DataBinder.Eval(Container.DataItem, "Department")%>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EmptyDataTemplate>
+                                                    <div style="padding: 10px;">
+                                                        <b>
+                                                            <asp:Label ID="lblNoRecordFound" runat="server" Text="No Record Found."></asp:Label>
+                                                        </b>
+                                                    </div>
+                                                </EmptyDataTemplate>
+                                            </asp:GridView>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <div style="display: inline-block;">
+                                <asp:Button ID="btnSave" runat="server" CausesValidation="true" Text="Save" OnClick="btnSave_Click"
+                                    ImageUrl="~/images/save.png" Style="float: right; margin-left: 5px;" ValidationGroup="IsRequireFrontDeskAlert" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </asp:Panel>
+    <%--  <ajx:ModalPopupExtender ID="mpeConfirmDeleteMst" runat="server" TargetControlID="hdnConfirmDeleteMst"
+        PopupControlID="pnlDeleteDataMst" BackgroundCssClass="mod_background" CancelControlID="btnCancelDeleteMst"
+        BehaviorID="mpeConfirmDeleteMst">
+    </ajx:ModalPopupExtender>
+    <asp:HiddenField ID="hdnConfirmDeleteMst" runat="server" />
+    <asp:Panel ID="pnlDeleteDataMst" runat="server" Height="350px" Width="325px" Style="display: none;">
+        <div class="box_col1">
+            <div class="box_head">
+                <span>
+                    <asp:Literal ID="litHeaderConfirmDeletePopupMst" Text="Guest Messages" runat="server"></asp:Literal></span></div>
+            <div class="clear">
+            </div>
+            <div class="box_form">
+                <table cellpadding="2" cellspacing="2" width="100%">
+                    <tr>
+                        <td align="center" style="padding-bottom: 15px;">
+                            <asp:Literal ID="litConfirmDeleteMsgMst" Text="Sure you want to delete?" runat="server"></asp:Literal>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <asp:Button ID="btnYesMst" runat="server" Text="Yes" Style="display: inline; padding-right: 10px;"
+                                OnClientClick="fnDisplayCatchErrorMessageMst();" OnClick="btnYes_Click" />
+                            <asp:Button ID="btnCancelDeleteMst" Text="Cancel" runat="server" Style="display: inline;" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </asp:Panel>--%>
+    <ajx:ModalPopupExtender ID="mpeSearchGuest" runat="server" TargetControlID="lnkSearchGuest"
+        PopupControlID="pnlSearchGuest" CancelControlID="imgCloseserachguest" BackgroundCssClass="mod_background">
+    </ajx:ModalPopupExtender>
+    <asp:Panel ID="pnlSearchGuest" runat="server" Width="300px" Style="display: none;">
+        <div class="box_col1">
+            <div class="box_head">
+                <div style="display: inline;">
+                    <span>
+                        <asp:Literal ID="litPopupHrd" runat="server" Text="Search Guest"></asp:Literal>
+                    </span>
+                </div>
+                <div style="float: right; display: inline; padding-top: 12px; padding-right: 10px;">
+                    <asp:ImageButton ID="imgCloseserachguest" runat="server" OnClientClick="return fnClearSearchData();"
+                        ImageUrl="~/images/closepopup.png" Style="border: 0px; width: 16px; height: 16px;
+                        margin: -4px 0 0 5px; vertical-align: middle;" />
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="box_form">
+                <table width="100%" cellpadding="2" cellspacing="2">
+                    <tr>
+                        <td style="width: 70px;">
+                            <asp:Literal ID="litGuest" runat="server" Text="Name"></asp:Literal>
+                        </td>
+                        <td style="width: 112px;">
+                            <asp:TextBox ID="txtGuest" runat="server" Style="width: 170px !important;"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Literal ID="Literal8" runat="server" Text="Mobile"></asp:Literal>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtMobileNo" runat="server" Style="width: 170px !important;"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Literal ID="litResNo" runat="server" Text="Booking #"></asp:Literal>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtResNo" runat="server" Style="width: 170px !important;"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Literal ID="litRoomNo" runat="server" Text="Room No."></asp:Literal>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtRoomNo" runat="server" Style="width: 170px !important;"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Literal ID="Literal2" runat="server" Text="Company"></asp:Literal>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtSrchCompany" runat="server" Style="width: 170px !important;"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" style="padding-bottom: 5px;">
+                            <asp:Button ID="btnSearch" runat="server" Text="Search" Style="display: inline;" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </asp:Panel>
+    <%--  <ajx:ModalPopupExtender ID="mpeCommonMsg" TargetControlID="hdfCommonMsg" runat="server"
+        PopupControlID="pnlCommonMsg" CancelControlID="btmOkMst" BackgroundCssClass="mod_background">
+    </ajx:ModalPopupExtender>
+    <asp:HiddenField ID="hdfCommonMsg" runat="server" />
+    <asp:Panel ID="pnlCommonMsg" runat="server" Width="300px" Style="display: none;">
+        <div class="box_col1">
+            <div class="box_head">
+            </div>
+            <div class="clear">
+            </div>
+            <div class="box_form">
+                <table width="100%" cellpadding="2" cellspacing="2"> 
+                    <tr>
+                        <td style="width: 70px;" align="center">
+                            <asp:Literal ID="litCommonMsg" runat="server" Text="Record deleted successfully."></asp:Literal>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <asp:Button ID="btmOkMst" runat="server" Text="Ok" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </asp:Panel>--%>
+    <div id="errormessage" class="clear" style="display: none;">
+        <uc1:MsgBox ID="MessageBox" runat="server" />
+    </div>
+    </form>
+</body>
+</html>

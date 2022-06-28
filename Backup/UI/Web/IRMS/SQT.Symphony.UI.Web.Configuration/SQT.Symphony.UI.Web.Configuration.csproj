@@ -1,0 +1,2898 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FC781797-AEC8-4C7E-A640-875FA041A7E3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SQT.Symphony.UI.Web.Configuration</RootNamespace>
+    <AssemblyName>SQT.Symphony.UI.Web.Configuration</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\..\..\..\..\Symphony3.0\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.Configuration\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\..\..\..\..\..\..\Symphony3.0\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.Configuration\bin\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SQT.Symphony.UI.Web.IRMS\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SQT.Symphony.UI.Web.IRMS\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SQT.Symphony.UI.Web.IRMS\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SQT.Symphony.UI.Web.IRMS\bin\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SQT.Symphony.UI.Web.IRMS\bin\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ckeditor\adapters\jquery.js" />
+    <Content Include="ckeditor\CHANGES.html" />
+    <Content Include="ckeditor\ckeditor.js" />
+    <Content Include="ckeditor\ckeditor_basic.js" />
+    <Content Include="ckeditor\config.js" />
+    <Content Include="ckeditor\contents.css" />
+    <Content Include="ckeditor\images\spacer.gif" />
+    <Content Include="ckeditor\INSTALL.html" />
+    <Content Include="ckeditor\lang\af.js" />
+    <Content Include="ckeditor\lang\ar.js" />
+    <Content Include="ckeditor\lang\bg.js" />
+    <Content Include="ckeditor\lang\bn.js" />
+    <Content Include="ckeditor\lang\bs.js" />
+    <Content Include="ckeditor\lang\ca.js" />
+    <Content Include="ckeditor\lang\cs.js" />
+    <Content Include="ckeditor\lang\cy.js" />
+    <Content Include="ckeditor\lang\da.js" />
+    <Content Include="ckeditor\lang\de.js" />
+    <Content Include="ckeditor\lang\el.js" />
+    <Content Include="ckeditor\lang\en-au.js" />
+    <Content Include="ckeditor\lang\en-ca.js" />
+    <Content Include="ckeditor\lang\en-gb.js" />
+    <Content Include="ckeditor\lang\en.js" />
+    <Content Include="ckeditor\lang\eo.js" />
+    <Content Include="ckeditor\lang\es.js" />
+    <Content Include="ckeditor\lang\et.js" />
+    <Content Include="ckeditor\lang\eu.js" />
+    <Content Include="ckeditor\lang\fa.js" />
+    <Content Include="ckeditor\lang\fi.js" />
+    <Content Include="ckeditor\lang\fo.js" />
+    <Content Include="ckeditor\lang\fr-ca.js" />
+    <Content Include="ckeditor\lang\fr.js" />
+    <Content Include="ckeditor\lang\gl.js" />
+    <Content Include="ckeditor\lang\gu.js" />
+    <Content Include="ckeditor\lang\he.js" />
+    <Content Include="ckeditor\lang\hi.js" />
+    <Content Include="ckeditor\lang\hr.js" />
+    <Content Include="ckeditor\lang\hu.js" />
+    <Content Include="ckeditor\lang\is.js" />
+    <Content Include="ckeditor\lang\it.js" />
+    <Content Include="ckeditor\lang\ja.js" />
+    <Content Include="ckeditor\lang\km.js" />
+    <Content Include="ckeditor\lang\ko.js" />
+    <Content Include="ckeditor\lang\lt.js" />
+    <Content Include="ckeditor\lang\lv.js" />
+    <Content Include="ckeditor\lang\mn.js" />
+    <Content Include="ckeditor\lang\ms.js" />
+    <Content Include="ckeditor\lang\nb.js" />
+    <Content Include="ckeditor\lang\nl.js" />
+    <Content Include="ckeditor\lang\no.js" />
+    <Content Include="ckeditor\lang\pl.js" />
+    <Content Include="ckeditor\lang\pt-br.js" />
+    <Content Include="ckeditor\lang\pt.js" />
+    <Content Include="ckeditor\lang\ro.js" />
+    <Content Include="ckeditor\lang\ru.js" />
+    <Content Include="ckeditor\lang\sk.js" />
+    <Content Include="ckeditor\lang\sl.js" />
+    <Content Include="ckeditor\lang\sr-latn.js" />
+    <Content Include="ckeditor\lang\sr.js" />
+    <Content Include="ckeditor\lang\sv.js" />
+    <Content Include="ckeditor\lang\th.js" />
+    <Content Include="ckeditor\lang\tr.js" />
+    <Content Include="ckeditor\lang\uk.js" />
+    <Content Include="ckeditor\lang\vi.js" />
+    <Content Include="ckeditor\lang\zh-cn.js" />
+    <Content Include="ckeditor\lang\zh.js" />
+    <Content Include="ckeditor\lang\_languages.js" />
+    <Content Include="ckeditor\lang\_translationstatus.txt" />
+    <Content Include="ckeditor\LICENSE.html" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\lang\en.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\lang\he.js" />
+    <Content Include="ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="ckeditor\plugins\adobeair\plugin.js" />
+    <Content Include="ckeditor\plugins\autogrow\plugin.js" />
+    <Content Include="ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="ckeditor\plugins\iframedialog\plugin.js" />
+    <Content Include="ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="ckeditor\plugins\link\images\anchor.gif" />
+    <Content Include="ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="ckeditor\plugins\pastetext\dialogs\pastetext.js" />
+    <Content Include="ckeditor\plugins\placeholder\dialogs\placeholder.js" />
+    <Content Include="ckeditor\plugins\placeholder\lang\en.js" />
+    <Content Include="ckeditor\plugins\placeholder\placeholder.gif" />
+    <Content Include="ckeditor\plugins\placeholder\plugin.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="ckeditor\plugins\specialchar\lang\en.js" />
+    <Content Include="ckeditor\plugins\styles\styles\default.js" />
+    <Content Include="ckeditor\plugins\tableresize\plugin.js" />
+    <Content Include="ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="ckeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="ckeditor\plugins\uicolor\lang\en.js" />
+    <Content Include="ckeditor\plugins\uicolor\lang\he.js" />
+    <Content Include="ckeditor\plugins\uicolor\plugin.js" />
+    <Content Include="ckeditor\plugins\uicolor\uicolor.gif" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="ckeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="ckeditor\skins\kama\dialog.css" />
+    <Content Include="ckeditor\skins\kama\editor.css" />
+    <Content Include="ckeditor\skins\kama\icons.png" />
+    <Content Include="ckeditor\skins\kama\icons_rtl.png" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="ckeditor\skins\kama\images\noimage.png" />
+    <Content Include="ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="ckeditor\skins\kama\skin.js" />
+    <Content Include="ckeditor\skins\kama\templates.css" />
+    <Content Include="ckeditor\skins\office2003\dialog.css" />
+    <Content Include="ckeditor\skins\office2003\editor.css" />
+    <Content Include="ckeditor\skins\office2003\icons.png" />
+    <Content Include="ckeditor\skins\office2003\icons_rtl.png" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\office2003\images\mini.gif" />
+    <Content Include="ckeditor\skins\office2003\images\noimage.png" />
+    <Content Include="ckeditor\skins\office2003\images\sprites.png" />
+    <Content Include="ckeditor\skins\office2003\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\office2003\skin.js" />
+    <Content Include="ckeditor\skins\office2003\templates.css" />
+    <Content Include="ckeditor\skins\v2\dialog.css" />
+    <Content Include="ckeditor\skins\v2\editor.css" />
+    <Content Include="ckeditor\skins\v2\icons.png" />
+    <Content Include="ckeditor\skins\v2\icons_rtl.png" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\v2\images\mini.gif" />
+    <Content Include="ckeditor\skins\v2\images\noimage.png" />
+    <Content Include="ckeditor\skins\v2\images\sprites.png" />
+    <Content Include="ckeditor\skins\v2\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\v2\images\toolbar_start.gif" />
+    <Content Include="ckeditor\skins\v2\skin.js" />
+    <Content Include="ckeditor\skins\v2\templates.css" />
+    <Content Include="ckeditor\themes\default\theme.js" />
+    <Content Include="CompanyLogin.aspx" />
+    <Content Include="EmailTemplates\ChangePassword.htm" />
+    <Content Include="EmailTemplates\ConvertProspectToInvestor.htm" />
+    <Content Include="EmailTemplates\ForgotPassword.htm" />
+    <Content Include="EmailTemplates\InvestorRegistration.htm" />
+    <Content Include="EmailTemplates\NewUserToActivate.htm" />
+    <Content Include="EmailTemplates\PasswordResetMessage.htm" />
+    <Content Include="EmailTemplates\ProspectRegistration.htm" />
+    <Content Include="EmailTemplates\PurchaseUnit.htm" />
+    <Content Include="EmailTemplates\UnitInsuranceReceipt.htm" />
+    <Content Include="EmailTemplates\UnitPaymentReceipt.htm" />
+    <Content Include="EmailTemplates\UnitTaxReceipt.htm" />
+    <Content Include="EmailTemplates\UserRegistration.htm" />
+    <Content Include="fancybox\blank.gif" />
+    <Content Include="fancybox\fancybox-x.png" />
+    <Content Include="fancybox\fancybox-y.png" />
+    <Content Include="fancybox\fancybox.png" />
+    <Content Include="fancybox\fancy_close.png" />
+    <Content Include="fancybox\fancy_loading.png" />
+    <Content Include="fancybox\fancy_nav_left.png" />
+    <Content Include="fancybox\fancy_nav_right.png" />
+    <Content Include="fancybox\fancy_shadow_e.png" />
+    <Content Include="fancybox\fancy_shadow_n.png" />
+    <Content Include="fancybox\fancy_shadow_ne.png" />
+    <Content Include="fancybox\fancy_shadow_nw.png" />
+    <Content Include="fancybox\fancy_shadow_s.png" />
+    <Content Include="fancybox\fancy_shadow_se.png" />
+    <Content Include="fancybox\fancy_shadow_sw.png" />
+    <Content Include="fancybox\fancy_shadow_w.png" />
+    <Content Include="fancybox\fancy_title_left.png" />
+    <Content Include="fancybox\fancy_title_main.png" />
+    <Content Include="fancybox\fancy_title_over.png" />
+    <Content Include="fancybox\fancy_title_right.png" />
+    <Content Include="fancybox\jquery.easing-1.3.pack.js" />
+    <Content Include="fancybox\jquery.fancybox-1.3.4.css" />
+    <Content Include="fancybox\jquery.fancybox-1.3.4.js" />
+    <Content Include="fancybox\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="fancybox\style.css" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="greybox\AJS.js" />
+    <Content Include="greybox\AJS_fx.js" />
+    <Content Include="greybox\gb_scripts.js" />
+    <Content Include="greybox\gb_styles.css" />
+    <Content Include="greybox\g_close.gif" />
+    <Content Include="greybox\header_bg.gif" />
+    <Content Include="greybox\indicator.gif" />
+    <Content Include="greybox\loader_frame.html" />
+    <Content Include="greybox\next.gif" />
+    <Content Include="greybox\prev.gif" />
+    <Content Include="greybox\w_close.gif" />
+    <Content Include="GUI\AccessDenied.aspx" />
+    <Content Include="GUI\Configurations\Account.aspx" />
+    <Content Include="GUI\Configurations\ActionLog.aspx" />
+    <Content Include="GUI\Configurations\AmendmentPolicy.aspx" />
+    <Content Include="GUI\Configurations\AmenitiesSetup.aspx" />
+    <Content Include="GUI\Configurations\AutoNumber.aspx" />
+    <Content Include="GUI\Configurations\Billing.aspx" />
+    <Content Include="GUI\Configurations\BlockFloorSetup.aspx" />
+    <Content Include="GUI\Configurations\BlockRoom.aspx" />
+    <Content Include="GUI\Configurations\CancellationPolicy.aspx" />
+    <Content Include="GUI\Configurations\Conference.aspx" />
+    <Content Include="GUI\Configurations\ConferenceList.aspx" />
+    <Content Include="GUI\Configurations\ConferenceType.aspx" />
+    <Content Include="GUI\Configurations\CounterName.aspx" />
+    <Content Include="GUI\Configurations\CurrencySetup.aspx" />
+    <Content Include="GUI\Configurations\CurrencyType.aspx" />
+    <Content Include="GUI\Configurations\DenominationSetup.aspx" />
+    <Content Include="GUI\Configurations\Department.aspx" />
+    <Content Include="GUI\Configurations\Deposits.aspx" />
+    <Content Include="GUI\Configurations\EmailConfiguration.aspx" />
+    <Content Include="GUI\Configurations\EmailTempaltes.aspx" />
+    <Content Include="GUI\Configurations\EmployeeList.aspx" />
+    <Content Include="GUI\Configurations\EmployeeSetup.aspx" />
+    <Content Include="GUI\Configurations\ExchangeRate.aspx" />
+    <Content Include="GUI\Configurations\FolioConfiguration.aspx" />
+    <Content Include="GUI\Configurations\GuestPreferenceSetup.aspx" />
+    <Content Include="GUI\Configurations\GuestType.aspx" />
+    <Content Include="GUI\Configurations\HouseKeeping.aspx" />
+    <Content Include="GUI\Configurations\InfillSetup.aspx" />
+    <Content Include="GUI\Configurations\LanguageSetup.aspx" />
+    <Content Include="GUI\Configurations\LogInLog.aspx" />
+    <Content Include="GUI\Configurations\ManageResourceFile.aspx" />
+    <Content Include="GUI\Configurations\NewsLatterSetup.aspx" />
+    <Content Include="GUI\Configurations\POSConfiguration.aspx" />
+    <Content Include="GUI\Configurations\POSPoints.aspx" />
+    <Content Include="GUI\Configurations\Recovery.aspx" />
+    <Content Include="GUI\Configurations\ReservationConfig.aspx" />
+    <Content Include="GUI\Configurations\ReservationPolicy.aspx" />
+    <Content Include="GUI\Configurations\ResourceFileAssignment.aspx" />
+    <Content Include="GUI\Configurations\ResourceManagement.aspx" />
+    <Content Include="GUI\Configurations\rndOfDrag.aspx" />
+    <Content Include="GUI\Configurations\Room.aspx" />
+    <Content Include="GUI\Configurations\RoomList.aspx" />
+    <Content Include="GUI\Configurations\RoomService.aspx" />
+    <Content Include="GUI\Configurations\RoomType.aspx" />
+    <Content Include="GUI\Configurations\RoomTypeList.aspx" />
+    <Content Include="GUI\Configurations\SMS.aspx" />
+    <Content Include="GUI\Configurations\Sortable.asmx" />
+    <Content Include="GUI\Configurations\TestResource.aspx" />
+    <Content Include="GUI\Configurations\Transcript.aspx" />
+    <Content Include="GUI\Configurations\UnitOfMeasure.aspx" />
+    <Content Include="GUI\Configurations\VendorMaster.aspx" />
+    <Content Include="GUI\FileUpload.aspx" />
+    <Content Include="GUI\Index.aspx" />
+    <Content Include="GUI\Inventory\Category.aspx" />
+    <Content Include="GUI\Inventory\Item.aspx" />
+    <Content Include="GUI\Inventory\ItemList.aspx" />
+    <Content Include="GUI\PriceManager\AddOnsServices.aspx" />
+    <Content Include="GUI\PriceManager\BookingAgent.aspx" />
+    <Content Include="GUI\PriceManager\BookingAgentList.aspx" />
+    <Content Include="GUI\PriceManager\ConferenceRateCard.aspx" />
+    <Content Include="GUI\PriceManager\Corporate.aspx" />
+    <Content Include="GUI\PriceManager\CorporateList.aspx" />
+    <Content Include="GUI\PriceManager\CorporateRateCard.aspx" />
+    <Content Include="GUI\PriceManager\Discount.aspx" />
+    <Content Include="GUI\PriceManager\GDSRateCard.aspx" />
+    <Content Include="GUI\PriceManager\OldAddOnsServices.aspx" />
+    <Content Include="GUI\PriceManager\PackageRateCard.aspx" />
+    <Content Include="GUI\PriceManager\RateCardList.aspx" />
+    <Content Include="GUI\PriceManager\RateCardPOSCharge.aspx" />
+    <Content Include="GUI\PriceManager\RoomRateCard.aspx" />
+    <Content Include="GUI\PriceManager\StayType.aspx" />
+    <Content Include="GUI\PriceManager\VIPType.aspx" />
+    <Content Include="GUI\Property\CompanyConfiguration.aspx" />
+    <Content Include="GUI\Property\CompanyList.aspx" />
+    <Content Include="GUI\Property\CompanySetup.aspx" />
+    <Content Include="GUI\Property\Country.aspx" />
+    <Content Include="GUI\Property\PropertyBlockDetails.aspx" />
+    <Content Include="GUI\Property\PropertyConfiguration.aspx" />
+    <Content Include="GUI\Property\PropertyInformation.aspx" />
+    <Content Include="GUI\Property\PropertyList.aspx" />
+    <Content Include="GUI\Property\PropertySetup.aspx" />
+    <Content Include="GUI\UserSetup\Role.aspx" />
+    <Content Include="GUI\UserSetup\Users.aspx" />
+    <Content Include="GUI\UserSetup\UserSetting.aspx" />
+    <Content Include="images\24_alert.png" />
+    <Content Include="images\24_tick.png" />
+    <Content Include="images\24_x_false.png" />
+    <Content Include="images\accessDenied.gif" />
+    <Content Include="images\accounting_button.png" />
+    <Content Include="images\accountin_buttonbig.png" />
+    <Content Include="images\actionlog.png" />
+    <Content Include="images\active_inq.png" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\arrow_03.png" />
+    <Content Include="images\backoffice_button.png" />
+    <Content Include="images\backoffice_button1.png" />
+    <Content Include="images\bg_modal.png" />
+    <Content Include="images\bg_modal1.png" />
+    <Content Include="images\bg_modal1_old.png" />
+    <Content Include="images\BlankPhoto.jpg" />
+    <Content Include="images\BlankPhoto1.jpg" />
+    <Content Include="images\boxbottom.jpg" />
+    <Content Include="images\boxbottomleft.jpg" />
+    <Content Include="images\boxbottomright.jpg" />
+    <Content Include="images\boxhead.jpg" />
+    <Content Include="images\boxheadmodel_popup.png" />
+    <Content Include="images\boxleft.jpg" />
+    <Content Include="images\boxright.jpg" />
+    <Content Include="images\boxtop.jpg" />
+    <Content Include="images\boxtopleft.jpg" />
+    <Content Include="images\boxtopright.jpg" />
+    <Content Include="images\box_arrow.jpg" />
+    <Content Include="images\brid_divider.png" />
+    <Content Include="images\browse.png" />
+    <Content Include="images\BusinessCard.png" />
+    <Content Include="images\CalanderIcon.png" />
+    <Content Include="images\calendar.gif" />
+    <Content Include="images\clear.png" />
+    <Content Include="images\clearsearch.png" />
+    <Content Include="images\closepopup.png" />
+    <Content Include="images\colorfill.png" />
+    <Content Include="images\corporate_button.png" />
+    <Content Include="images\corporate_buttonbig.png" />
+    <Content Include="images\cross_circle.png" />
+    <Content Include="images\deactive_inq.png" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\DeleteFile.png" />
+    <Content Include="images\delete_icon.png" />
+    <Content Include="images\demo-config-on-tile.gif" />
+    <Content Include="images\demo-config-on.gif" />
+    <Content Include="images\demo-spindown-closed.gif" />
+    <Content Include="images\demo-spindown-open.gif" />
+    <Content Include="images\docviewer.png" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\elevation.gif" />
+    <Content Include="images\error.png" />
+    <Content Include="images\file.png" />
+    <Content Include="images\flat.png" />
+    <Content Include="images\fnb_button.png" />
+    <Content Include="images\frontdesk_button.png" />
+    <Content Include="images\frontdesk_buttonbig.png" />
+    <Content Include="images\housekeepingconfig_button.png" />
+    <Content Include="images\housekeepingconfig_buttonbig.png" />
+    <Content Include="images\housekeeping_button.png" />
+    <Content Include="images\housekeeping_button1.png" />
+    <Content Include="images\hr_button.png" />
+    <Content Include="images\hr_buttonbig.png" />
+    <Content Include="images\icon-docs-info.gif" />
+    <Content Include="images\loginbox_bottomleft.png" />
+    <Content Include="images\loginbox_bottomright.png" />
+    <Content Include="images\loginbox_bottom_midle.png" />
+    <Content Include="images\loginbox_topleft.png" />
+    <Content Include="images\loginbox_topmiddle.png" />
+    <Content Include="images\loginbox_topright.png" />
+    <Content Include="images\login_contentbg.png" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logoold.jpg" />
+    <Content Include="images\logout_bg.jpg" />
+    <Content Include="images\mainmodule_subbg.png" />
+    <Content Include="images\maintenance_button.png" />
+    <Content Include="images\maintenance_buttonbig.png" />
+    <Content Include="images\model_popup_boxbottomcenter.png" />
+    <Content Include="images\model_popup_boxbottomleft.png" />
+    <Content Include="images\model_popup_boxbottomright.png" />
+    <Content Include="images\model_popup_boxheadleft.png" />
+    <Content Include="images\model_popup_boxheadmiddle.png" />
+    <Content Include="images\model_popup_boxheadright.png" />
+    <Content Include="images\model_popup_boxleft.png" />
+    <Content Include="images\model_popup_boxright.png" />
+    <Content Include="images\no.png" />
+    <Content Include="images\percentage.png" />
+    <Content Include="images\pms_button.png" />
+    <Content Include="images\pms_buttonbig.png" />
+    <Content Include="images\posconfig_button.png" />
+    <Content Include="images\posconfig_buttonbig.png" />
+    <Content Include="images\pos_button.png" />
+    <Content Include="images\pos_button1.png" />
+    <Content Include="images\propertyadministrator_button.png" />
+    <Content Include="images\propertyadministrator_buttonbig.png" />
+    <Content Include="images\propertyadministrato_button.png" />
+    <Content Include="images\residentportal_button.png" />
+    <Content Include="images\saveicon.png" />
+    <Content Include="images\search-icon.png" />
+    <Content Include="images\security_button.png" />
+    <Content Include="images\security_buttonbig.png" />
+    <Content Include="images\store_button.png" />
+    <Content Include="images\store_buttonbig.png" />
+    <Content Include="images\success.png" />
+    <Content Include="images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="images\ui-icons_222222_256x240.png" />
+    <Content Include="images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="images\ui-icons_454545_256x240.png" />
+    <Content Include="images\ui-icons_888888_256x240.png" />
+    <Content Include="images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="images\updownarrow_03.png" />
+    <Content Include="images\updownarrow_05.png" />
+    <Content Include="images\user.png" />
+    <Content Include="images\View.png" />
+    <Content Include="images\viewdoc1616.png" />
+    <Content Include="images\viewdoc2222.png" />
+    <Content Include="images\yes.png" />
+    <Content Include="Index.aspx" />
+    <Content Include="Javascript\Common.js" />
+    <Content Include="Javascript\jquery-1.3.2-vsdoc2.js" />
+    <Content Include="Javascript\jquery-1.3.2.js" />
+    <Content Include="Javascript\jquery-1.3.2.min.js" />
+    <Content Include="Javascript\jquery-1.4.1.js" />
+    <Content Include="Javascript\jquery-1.4.1.min.js" />
+    <Content Include="Javascript\jquery-ui.min.js" />
+    <Content Include="Javascript\jquery.autocomplete.css" />
+    <Content Include="Javascript\jquery.autocomplete.js" />
+    <Content Include="Javascript\jquery.min.js" />
+    <Content Include="Javascript\jquery.MultiFile.js" />
+    <Content Include="Javascript\top_up-min.js" />
+    <Content Include="Javascript\top_up.js" />
+    <Content Include="JS\script.js" />
+    <Content Include="JS\tt_bottom.gif" />
+    <Content Include="JS\tt_left.gif" />
+    <Content Include="JS\tt_top.gif" />
+    <Content Include="Master\admin.Master" />
+    <Content Include="Module.aspx" />
+    <Content Include="ModuleSelection.aspx" />
+    <Content Include="MsgBox\CtrlAccessDenied.ascx" />
+    <Content Include="MsgBox\MsgBx.ascx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="Scripts\demos.css" />
+    <Content Include="Scripts\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery.autocomplete.css" />
+    <Content Include="Scripts\jquery.autocomplete.js" />
+    <Content Include="Scripts\jquery.ui.core.css" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.css" />
+    <Content Include="Scripts\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\jquery.ui.mouse.js" />
+    <Content Include="Scripts\jquery.ui.sortable.js" />
+    <Content Include="Scripts\jquery.ui.tabs.css" />
+    <Content Include="Scripts\jquery.ui.tabs.js" />
+    <Content Include="Scripts\jquery.ui.theme.css" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\top_up-min.js" />
+    <Content Include="Scripts\top_up.js" />
+    <Content Include="Style\jquery-ui.css" />
+    <Content Include="Style\login.css" />
+    <Content Include="Style\modelpopup.css" />
+    <Content Include="Style\Popup.css" />
+    <Content Include="Style\style.css" />
+    <Content Include="Style\tab_control.css" />
+    <Content Include="TestPopupPage.aspx" />
+    <Content Include="UIControls\CommonControls\CtrlAccessDenied.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlAddress.ascx" />
+    <Content Include="UIControls\CommonControls\MsgBox.ascx" />
+    <Content Include="UIControls\Configurations\CtrlAccount.ascx" />
+    <Content Include="UIControls\Configurations\CtrlActionLog.ascx" />
+    <Content Include="UIControls\Configurations\ctrlAmendmentPolicy.ascx" />
+    <Content Include="UIControls\Configurations\CtrlAmenitiesSetup.ascx" />
+    <Content Include="UIControls\Configurations\CtrlAutoNo.ascx" />
+    <Content Include="UIControls\Configurations\CtrlAutoNumber.ascx" />
+    <Content Include="UIControls\Configurations\CtrlBilling.ascx" />
+    <Content Include="UIControls\Configurations\CtrlBlockFloorSetup.ascx" />
+    <Content Include="UIControls\Configurations\CtrlBlockRoom.ascx" />
+    <Content Include="UIControls\Configurations\CtrlCancellationPolicy.ascx" />
+    <Content Include="UIControls\Configurations\CtrlConference.ascx" />
+    <Content Include="UIControls\Configurations\CtrlConferenceList.ascx" />
+    <Content Include="UIControls\Configurations\CtrlConferenceType.ascx" />
+    <Content Include="UIControls\Configurations\CtrlCounterName.ascx" />
+    <Content Include="UIControls\Configurations\CtrlCurrencySetup.ascx" />
+    <Content Include="UIControls\Configurations\CtrlCurrencyType.ascx" />
+    <Content Include="UIControls\Configurations\CtrlDenominationSetup.ascx" />
+    <Content Include="UIControls\Configurations\CtrlDepartment.ascx" />
+    <Content Include="UIControls\Configurations\CtrlDeposits.ascx" />
+    <Content Include="UIControls\Configurations\CtrlEmailConfiguration.ascx" />
+    <Content Include="UIControls\Configurations\CtrlEmailTemplate.ascx" />
+    <Content Include="UIControls\Configurations\CtrlEmployee.ascx" />
+    <Content Include="UIControls\Configurations\CtrlEmployeeList.ascx" />
+    <Content Include="UIControls\Configurations\CtrlExchangeRate.ascx" />
+    <Content Include="UIControls\Configurations\CtrlGuestPreferenceSetup.ascx" />
+    <Content Include="UIControls\Configurations\CtrlGuestType.ascx" />
+    <Content Include="UIControls\Configurations\CtrlHouseKeeping.ascx" />
+    <Content Include="UIControls\Configurations\CtrlInfillSetup.ascx" />
+    <Content Include="UIControls\Configurations\CtrlLanguageSetup.ascx" />
+    <Content Include="UIControls\Configurations\CtrlLoginLog.ascx" />
+    <Content Include="UIControls\Configurations\CtrlManageResourceFile.ascx" />
+    <Content Include="UIControls\Configurations\CtrlNewsLatterSetup.ascx" />
+    <Content Include="UIControls\Configurations\CtrlPOSConfiguration.ascx" />
+    <Content Include="UIControls\Configurations\CtrlPOSPoints.ascx" />
+    <Content Include="UIControls\Configurations\CtrlRecovery.ascx" />
+    <Content Include="UIControls\Configurations\CtrlReservationConfig.ascx" />
+    <Content Include="UIControls\Configurations\CtrlReservationPolicy.ascx" />
+    <Content Include="UIControls\Configurations\CtrlResourceFileAssignment.ascx" />
+    <Content Include="UIControls\Configurations\CtrlRoom.ascx" />
+    <Content Include="UIControls\Configurations\CtrlRoomList.ascx" />
+    <Content Include="UIControls\Configurations\CtrlRoomService.ascx" />
+    <Content Include="UIControls\Configurations\CtrlRoomType.ascx" />
+    <Content Include="UIControls\Configurations\CtrlRoomTypeList.ascx" />
+    <Content Include="UIControls\Configurations\CtrlSMS.ascx" />
+    <Content Include="UIControls\Configurations\CtrlTranscript.ascx" />
+    <Content Include="UIControls\Configurations\CtrlUnitOfMeasure.ascx" />
+    <Content Include="UIControls\Configurations\CtrlVendorMaster.ascx" />
+    <Content Include="UIControls\Configurations\FolioConfiguration.ascx" />
+    <Content Include="UIControls\Inventory\CtrlCategory.ascx" />
+    <Content Include="UIControls\Inventory\CtrlItem.ascx" />
+    <Content Include="UIControls\Inventory\CtrlItemList.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlAdddEditStayType.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlAddEditDiscount.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlAddEditVIPType.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlAddOnsServices.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlBookingAgent.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlBookingAgentList.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlConferenceRateCard.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlCorporate.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlCorporateRateCard.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlCorporsteList.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlDiscount.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlGDSRateCard.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlOldAddOnsServices.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlPackagerRateCard.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlRateCardBasicInfo.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlRateCardCheckInDays.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlRateCardConferences.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlRateCardCorporates.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlRateCardList.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlRateCardRoomTypes.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlRateCardServices.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlRateCardTaxes.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlRateCardTermsAndConditions.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlRoomRateCard.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlStayType.ascx" />
+    <Content Include="UIControls\PriceManager\CtrlVIPType.ascx" />
+    <Content Include="UIControls\PriceManager\RateCardPOSCharge.ascx" />
+    <Content Include="UIControls\Property\CtrlCompanyConfiguration.ascx" />
+    <Content Include="UIControls\Property\CtrlCompanyList.ascx" />
+    <Content Include="UIControls\Property\CtrlCompanySetup.ascx" />
+    <Content Include="UIControls\Property\CtrlPropertyBlockInformation.ascx" />
+    <Content Include="UIControls\Property\CtrlPropertyInfomation.ascx" />
+    <Content Include="UIControls\Property\CtrlPropertyList.ascx" />
+    <Content Include="UIControls\Property\CtrlPropertySetup.ascx" />
+    <Content Include="UIControls\UserSetup\CtrlRoles.ascx" />
+    <Content Include="UIControls\UserSetup\CtrlUsers.ascx" />
+    <Content Include="UIControls\UserSetup\CtrlUserSetting.ascx" />
+    <Content Include="UserActivation.aspx" />
+    <Content Include="UserModuleSelection.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm.aspx" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCode\clsCommon.cs" />
+    <Compile Include="AppCode\clsSession.cs" />
+    <Compile Include="AppCode\LanguageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppCode\SentMail.cs" />
+    <Compile Include="App_GlobalResources\AccessDenied.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessDenied.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ActionLog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionLog.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\AddOnsServices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddOnsServices.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Address.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Address.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\AdminMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminMaster.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\AmenitiesSetup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmenitiesSetup.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\AutoNumber.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoNumber.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\BlockFloorSetup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlockFloorSetup.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\BlockInformation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlockInformation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\BlockRoom.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlockRoom.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\BreadCrumb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BreadCrumb.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Category.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Common.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Common.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CommonMessage.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonMessage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CompanyList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CompanySetup.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanySetup.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Conference.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Conference.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ConferenceList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConferenceList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ConferenceType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConferenceType.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Corporate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Corporate.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CorporateList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CorporateList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CounterName.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CounterName.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CurrencySetup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurrencySetup.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Denomination.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Denomination.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Department.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Department.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Deposits.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Deposits.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Discount.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Discount.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\EmailConfiguration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailConfiguration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\EmailTemplate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailTemplate.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Employee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employee.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\EmployeeList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ExchangeRate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExchangeRate.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\FolioConfiguration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FolioConfiguration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ForgotPassword.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgotPassword.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\HouseKeepingConfiguration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HouseKeepingConfiguration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\InfillSetup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InfillSetup.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Item.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Item.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ItemList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\LanguageSetup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageSetup.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Login.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\LoginLog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginLog.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\NewsLatterSetup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewsLatterSetup.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\POSConfiguration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSConfiguration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\POSPoints.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSPoints.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\PropertyInformation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PropertyInformation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\PropertyList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PropertyList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\PropertySetup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PropertySetup.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RateCard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RateCard.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RateCardConferences.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RateCardConferences.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RateCardCorporates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RateCardCorporates.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RateCardList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RateCardList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RateCardRoomTypes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RateCardRoomTypes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RateCardServices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RateCardServices.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ReservationCancellationPolicy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservationCancellationPolicy.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ReservationConfig.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservationConfig.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ReservationPolicy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservationPolicy.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ResetPassword.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPassword.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ResourceFileManagement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceFileManagement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Rights.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rights.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Role.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Role.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Room.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Room.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RoomList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RoomType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomType.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RoomTypeList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomTypeList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\SMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMS.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\StayType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StayType.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\SystemSetup.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemSetup.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Tax.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tax.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\UnitOfMeasure.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitOfMeasure.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Users.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Users.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\UserSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserSettings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\VendorMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorMaster.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\VIPType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VIPType.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Class\clsUtility.cs" />
+    <Compile Include="CommonPages\MasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyLogin.aspx.cs">
+      <DependentUpon>CompanyLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyLogin.aspx.designer.cs">
+      <DependentUpon>CompanyLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\ActionLog.aspx.cs">
+      <DependentUpon>ActionLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\ActionLog.aspx.designer.cs">
+      <DependentUpon>ActionLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\AmendmentPolicy.aspx.cs">
+      <DependentUpon>AmendmentPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\AmendmentPolicy.aspx.designer.cs">
+      <DependentUpon>AmendmentPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\AmenitiesAutoComplete.ashx.cs">
+      <DependentUpon>AmenitiesAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\AmenitiesSetup.aspx.cs">
+      <DependentUpon>AmenitiesSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\AmenitiesSetup.aspx.designer.cs">
+      <DependentUpon>AmenitiesSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\AutoNumber.aspx.cs">
+      <DependentUpon>AutoNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\AutoNumber.aspx.designer.cs">
+      <DependentUpon>AutoNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\Billing.aspx.cs">
+      <DependentUpon>Billing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\Billing.aspx.designer.cs">
+      <DependentUpon>Billing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\BlockAutoComplete.ashx.cs">
+      <DependentUpon>BlockAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\BlockFloorSetup.aspx.cs">
+      <DependentUpon>BlockFloorSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\BlockFloorSetup.aspx.designer.cs">
+      <DependentUpon>BlockFloorSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\BlockRoom.aspx.cs">
+      <DependentUpon>BlockRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\BlockRoom.aspx.designer.cs">
+      <DependentUpon>BlockRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\CancellationPolicy.aspx.cs">
+      <DependentUpon>CancellationPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\CancellationPolicy.aspx.designer.cs">
+      <DependentUpon>CancellationPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\Conference.aspx.cs">
+      <DependentUpon>Conference.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\Conference.aspx.designer.cs">
+      <DependentUpon>Conference.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\ConferenceList.aspx.cs">
+      <DependentUpon>ConferenceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\ConferenceList.aspx.designer.cs">
+      <DependentUpon>ConferenceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\ConferenceType.aspx.cs">
+      <DependentUpon>ConferenceType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\ConferenceType.aspx.designer.cs">
+      <DependentUpon>ConferenceType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\CounterName.aspx.cs">
+      <DependentUpon>CounterName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\CounterName.aspx.designer.cs">
+      <DependentUpon>CounterName.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\CurrencySetup.aspx.cs">
+      <DependentUpon>CurrencySetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\CurrencySetup.aspx.designer.cs">
+      <DependentUpon>CurrencySetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\CurrencyType.aspx.cs">
+      <DependentUpon>CurrencyType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\CurrencyType.aspx.designer.cs">
+      <DependentUpon>CurrencyType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\DenominationSetup.aspx.cs">
+      <DependentUpon>DenominationSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\DenominationSetup.aspx.designer.cs">
+      <DependentUpon>DenominationSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\Department.aspx.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\Department.aspx.designer.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\Deposits.aspx.cs">
+      <DependentUpon>Deposits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\Deposits.aspx.designer.cs">
+      <DependentUpon>Deposits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\EmailConfiguration.aspx.cs">
+      <DependentUpon>EmailConfiguration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\EmailConfiguration.aspx.designer.cs">
+      <DependentUpon>EmailConfiguration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\EmailTempaltes.aspx.cs">
+      <DependentUpon>EmailTempaltes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\EmailTempaltes.aspx.designer.cs">
+      <DependentUpon>EmailTempaltes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\EmployeeAutoComplete.ashx.cs">
+      <DependentUpon>EmployeeAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\EmployeeList.aspx.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\EmployeeList.aspx.designer.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\EmployeeSetup.aspx.cs">
+      <DependentUpon>EmployeeSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\EmployeeSetup.aspx.designer.cs">
+      <DependentUpon>EmployeeSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\ExchangeRate.aspx.cs">
+      <DependentUpon>ExchangeRate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\ExchangeRate.aspx.designer.cs">
+      <DependentUpon>ExchangeRate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\FloorAutoComplete.ashx.cs">
+      <DependentUpon>FloorAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\FolioConfiguration.aspx.cs">
+      <DependentUpon>FolioConfiguration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\FolioConfiguration.aspx.designer.cs">
+      <DependentUpon>FolioConfiguration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\GuestPreferenceSetup.aspx.cs">
+      <DependentUpon>GuestPreferenceSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\GuestPreferenceSetup.aspx.designer.cs">
+      <DependentUpon>GuestPreferenceSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\GuestType.aspx.cs">
+      <DependentUpon>GuestType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\GuestType.aspx.designer.cs">
+      <DependentUpon>GuestType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\HouseKeeping.aspx.cs">
+      <DependentUpon>HouseKeeping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\HouseKeeping.aspx.designer.cs">
+      <DependentUpon>HouseKeeping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\InfillSetup.aspx.cs">
+      <DependentUpon>InfillSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\InfillSetup.aspx.designer.cs">
+      <DependentUpon>InfillSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\Item.cs" />
+    <Compile Include="GUI\Configurations\LanguageSetup.aspx.cs">
+      <DependentUpon>LanguageSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\LanguageSetup.aspx.designer.cs">
+      <DependentUpon>LanguageSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\LogInLog.aspx.cs">
+      <DependentUpon>LogInLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\LogInLog.aspx.designer.cs">
+      <DependentUpon>LogInLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\ManageResourceFile.aspx.cs">
+      <DependentUpon>ManageResourceFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\ManageResourceFile.aspx.designer.cs">
+      <DependentUpon>ManageResourceFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\NewsLatterSetup.aspx.cs">
+      <DependentUpon>NewsLatterSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\NewsLatterSetup.aspx.designer.cs">
+      <DependentUpon>NewsLatterSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\POSConfiguration.aspx.cs">
+      <DependentUpon>POSConfiguration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\POSConfiguration.aspx.designer.cs">
+      <DependentUpon>POSConfiguration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\POSPoints.aspx.cs">
+      <DependentUpon>POSPoints.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\POSPoints.aspx.designer.cs">
+      <DependentUpon>POSPoints.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\Recovery.aspx.cs">
+      <DependentUpon>Recovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\Recovery.aspx.designer.cs">
+      <DependentUpon>Recovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\ReservationConfig.aspx.cs">
+      <DependentUpon>ReservationConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\ReservationConfig.aspx.designer.cs">
+      <DependentUpon>ReservationConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\ReservationPolicy.aspx.cs">
+      <DependentUpon>ReservationPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\ReservationPolicy.aspx.designer.cs">
+      <DependentUpon>ReservationPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\ResourceFileAssignment.aspx.cs">
+      <DependentUpon>ResourceFileAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\ResourceFileAssignment.aspx.designer.cs">
+      <DependentUpon>ResourceFileAssignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\ResourceManagement.aspx.cs">
+      <DependentUpon>ResourceManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\ResourceManagement.aspx.designer.cs">
+      <DependentUpon>ResourceManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\rndOfDrag.aspx.cs">
+      <DependentUpon>rndOfDrag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\rndOfDrag.aspx.designer.cs">
+      <DependentUpon>rndOfDrag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\Room.aspx.cs">
+      <DependentUpon>Room.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\Room.aspx.designer.cs">
+      <DependentUpon>Room.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\RoomList.aspx.cs">
+      <DependentUpon>RoomList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\RoomList.aspx.designer.cs">
+      <DependentUpon>RoomList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\RoomService.aspx.cs">
+      <DependentUpon>RoomService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\RoomService.aspx.designer.cs">
+      <DependentUpon>RoomService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\RoomType.aspx.cs">
+      <DependentUpon>RoomType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\RoomType.aspx.designer.cs">
+      <DependentUpon>RoomType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\RoomTypeList.aspx.cs">
+      <DependentUpon>RoomTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\RoomTypeList.aspx.designer.cs">
+      <DependentUpon>RoomTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\SMS.aspx.cs">
+      <DependentUpon>SMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\SMS.aspx.designer.cs">
+      <DependentUpon>SMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\Sortable.asmx.cs">
+      <DependentUpon>Sortable.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\TestResource.aspx.cs">
+      <DependentUpon>TestResource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\TestResource.aspx.designer.cs">
+      <DependentUpon>TestResource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\Transcript.aspx.cs">
+      <DependentUpon>Transcript.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\Transcript.aspx.designer.cs">
+      <DependentUpon>Transcript.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\UnitAutoComplete.ashx.cs">
+      <DependentUpon>UnitAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\UnitOfMeasure.aspx.cs">
+      <DependentUpon>UnitOfMeasure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\UnitOfMeasure.aspx.designer.cs">
+      <DependentUpon>UnitOfMeasure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\UserAutoComplete.ashx.cs">
+      <DependentUpon>UserAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Configurations\VendorMaster.aspx.cs">
+      <DependentUpon>VendorMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Configurations\VendorMaster.aspx.designer.cs">
+      <DependentUpon>VendorMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FileUpload.aspx.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\FileUpload.aspx.designer.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Inventory\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Inventory\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Inventory\CategoryAutoComplete.ashx.cs">
+      <DependentUpon>CategoryAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Inventory\Item.aspx.cs">
+      <DependentUpon>Item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Inventory\Item.aspx.designer.cs">
+      <DependentUpon>Item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Inventory\ItemAutoComplete.ashx.cs">
+      <DependentUpon>ItemAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Inventory\ItemList.aspx.cs">
+      <DependentUpon>ItemList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Inventory\ItemList.aspx.designer.cs">
+      <DependentUpon>ItemList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\AddOnsServices.aspx.cs">
+      <DependentUpon>AddOnsServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\AddOnsServices.aspx.designer.cs">
+      <DependentUpon>AddOnsServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\BookingAgent.aspx.cs">
+      <DependentUpon>BookingAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\BookingAgent.aspx.designer.cs">
+      <DependentUpon>BookingAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\BookingAgentAutoComplete.ashx.cs">
+      <DependentUpon>BookingAgentAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\BookingAgentList.aspx.cs">
+      <DependentUpon>BookingAgentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\BookingAgentList.aspx.designer.cs">
+      <DependentUpon>BookingAgentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\ConferenceRateCard.aspx.cs">
+      <DependentUpon>ConferenceRateCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\ConferenceRateCard.aspx.designer.cs">
+      <DependentUpon>ConferenceRateCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\Corporate.aspx.cs">
+      <DependentUpon>Corporate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\Corporate.aspx.designer.cs">
+      <DependentUpon>Corporate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\CorporateAutoComplete.ashx.cs">
+      <DependentUpon>CorporateAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\CorporateList.aspx.cs">
+      <DependentUpon>CorporateList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\CorporateList.aspx.designer.cs">
+      <DependentUpon>CorporateList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\CorporateRateCard.aspx.cs">
+      <DependentUpon>CorporateRateCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\CorporateRateCard.aspx.designer.cs">
+      <DependentUpon>CorporateRateCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\Discount.aspx.cs">
+      <DependentUpon>Discount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\Discount.aspx.designer.cs">
+      <DependentUpon>Discount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\DiscountAutoComplete.ashx.cs">
+      <DependentUpon>DiscountAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\GDSRateCard.aspx.cs">
+      <DependentUpon>GDSRateCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\GDSRateCard.aspx.designer.cs">
+      <DependentUpon>GDSRateCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\OldAddOnsServices.aspx.cs">
+      <DependentUpon>OldAddOnsServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\OldAddOnsServices.aspx.designer.cs">
+      <DependentUpon>OldAddOnsServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\PackageRateCard.aspx.cs">
+      <DependentUpon>PackageRateCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\PackageRateCard.aspx.designer.cs">
+      <DependentUpon>PackageRateCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\RateCardAutoComplete.ashx.cs">
+      <DependentUpon>RateCardAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\RateCardList.aspx.cs">
+      <DependentUpon>RateCardList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\RateCardList.aspx.designer.cs">
+      <DependentUpon>RateCardList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\RateCardPOSCharge.aspx.cs">
+      <DependentUpon>RateCardPOSCharge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\RateCardPOSCharge.aspx.designer.cs">
+      <DependentUpon>RateCardPOSCharge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\RoomRateCard.aspx.cs">
+      <DependentUpon>RoomRateCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\RoomRateCard.aspx.designer.cs">
+      <DependentUpon>RoomRateCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\StayType.aspx.cs">
+      <DependentUpon>StayType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\StayType.aspx.designer.cs">
+      <DependentUpon>StayType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PriceManager\VIPType.aspx.cs">
+      <DependentUpon>VIPType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PriceManager\VIPType.aspx.designer.cs">
+      <DependentUpon>VIPType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Property\CompanyConfiguration.aspx.cs">
+      <DependentUpon>CompanyConfiguration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Property\CompanyConfiguration.aspx.designer.cs">
+      <DependentUpon>CompanyConfiguration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Property\CompanyList.aspx.cs">
+      <DependentUpon>CompanyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Property\CompanyList.aspx.designer.cs">
+      <DependentUpon>CompanyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Property\CompanySetup.aspx.cs">
+      <DependentUpon>CompanySetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Property\CompanySetup.aspx.designer.cs">
+      <DependentUpon>CompanySetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Property\Country.aspx.cs">
+      <DependentUpon>Country.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Property\Country.aspx.designer.cs">
+      <DependentUpon>Country.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Property\PropertyAutoComplete.ashx.cs">
+      <DependentUpon>PropertyAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Property\PropertyBlockDetails.aspx.cs">
+      <DependentUpon>PropertyBlockDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Property\PropertyBlockDetails.aspx.designer.cs">
+      <DependentUpon>PropertyBlockDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Property\PropertyConfiguration.aspx.cs">
+      <DependentUpon>PropertyConfiguration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Property\PropertyConfiguration.aspx.designer.cs">
+      <DependentUpon>PropertyConfiguration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Property\PropertyInformation.aspx.cs">
+      <DependentUpon>PropertyInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Property\PropertyInformation.aspx.designer.cs">
+      <DependentUpon>PropertyInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Property\PropertyList.aspx.cs">
+      <DependentUpon>PropertyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Property\PropertyList.aspx.designer.cs">
+      <DependentUpon>PropertyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Property\PropertySetup.aspx.cs">
+      <DependentUpon>PropertySetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Property\PropertySetup.aspx.designer.cs">
+      <DependentUpon>PropertySetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserSetup\Role.aspx.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\UserSetup\Role.aspx.designer.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserSetup\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\UserSetup\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserSetup\UserSetting.aspx.cs">
+      <DependentUpon>UserSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\UserSetup\UserSetting.aspx.designer.cs">
+      <DependentUpon>UserSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Module.aspx.cs">
+      <DependentUpon>Module.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module.aspx.designer.cs">
+      <DependentUpon>Module.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleSelection.aspx.cs">
+      <DependentUpon>ModuleSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleSelection.aspx.designer.cs">
+      <DependentUpon>ModuleSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MsgBox\CtrlAccessDenied.ascx.cs">
+      <DependentUpon>CtrlAccessDenied.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MsgBox\CtrlAccessDenied.ascx.designer.cs">
+      <DependentUpon>CtrlAccessDenied.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MsgBox\MsgBx.ascx.cs">
+      <DependentUpon>MsgBx.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MsgBox\MsgBx.ascx.designer.cs">
+      <DependentUpon>MsgBx.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPopupPage.aspx.cs">
+      <DependentUpon>TestPopupPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPopupPage.aspx.designer.cs">
+      <DependentUpon>TestPopupPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAccessDenied.ascx.cs">
+      <DependentUpon>CtrlAccessDenied.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAccessDenied.ascx.designer.cs">
+      <DependentUpon>CtrlAccessDenied.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAddress.ascx.cs">
+      <DependentUpon>CtrlAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAddress.ascx.designer.cs">
+      <DependentUpon>CtrlAddress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\MsgBox.ascx.cs">
+      <DependentUpon>MsgBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\MsgBox.ascx.designer.cs">
+      <DependentUpon>MsgBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlAccount.ascx.cs">
+      <DependentUpon>CtrlAccount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlAccount.ascx.designer.cs">
+      <DependentUpon>CtrlAccount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlActionLog.ascx.cs">
+      <DependentUpon>CtrlActionLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlActionLog.ascx.designer.cs">
+      <DependentUpon>CtrlActionLog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\ctrlAmendmentPolicy.ascx.cs">
+      <DependentUpon>ctrlAmendmentPolicy.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\ctrlAmendmentPolicy.ascx.designer.cs">
+      <DependentUpon>ctrlAmendmentPolicy.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlAmenitiesSetup.ascx.cs">
+      <DependentUpon>CtrlAmenitiesSetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlAmenitiesSetup.ascx.designer.cs">
+      <DependentUpon>CtrlAmenitiesSetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlAutoNo.ascx.cs">
+      <DependentUpon>CtrlAutoNo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlAutoNo.ascx.designer.cs">
+      <DependentUpon>CtrlAutoNo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlAutoNumber.ascx.cs">
+      <DependentUpon>CtrlAutoNumber.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlAutoNumber.ascx.designer.cs">
+      <DependentUpon>CtrlAutoNumber.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlBilling.ascx.cs">
+      <DependentUpon>CtrlBilling.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlBilling.ascx.designer.cs">
+      <DependentUpon>CtrlBilling.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlBlockFloorSetup.ascx.cs">
+      <DependentUpon>CtrlBlockFloorSetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlBlockFloorSetup.ascx.designer.cs">
+      <DependentUpon>CtrlBlockFloorSetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlBlockRoom.ascx.cs">
+      <DependentUpon>CtrlBlockRoom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlBlockRoom.ascx.designer.cs">
+      <DependentUpon>CtrlBlockRoom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlCancellationPolicy.ascx.cs">
+      <DependentUpon>CtrlCancellationPolicy.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlCancellationPolicy.ascx.designer.cs">
+      <DependentUpon>CtrlCancellationPolicy.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlConference.ascx.cs">
+      <DependentUpon>CtrlConference.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlConference.ascx.designer.cs">
+      <DependentUpon>CtrlConference.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlConferenceList.ascx.cs">
+      <DependentUpon>CtrlConferenceList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlConferenceList.ascx.designer.cs">
+      <DependentUpon>CtrlConferenceList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlConferenceType.ascx.cs">
+      <DependentUpon>CtrlConferenceType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlConferenceType.ascx.designer.cs">
+      <DependentUpon>CtrlConferenceType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlCounterName.ascx.cs">
+      <DependentUpon>CtrlCounterName.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlCounterName.ascx.designer.cs">
+      <DependentUpon>CtrlCounterName.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlCurrencySetup.ascx.cs">
+      <DependentUpon>CtrlCurrencySetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlCurrencySetup.ascx.designer.cs">
+      <DependentUpon>CtrlCurrencySetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlCurrencyType.ascx.cs">
+      <DependentUpon>CtrlCurrencyType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlCurrencyType.ascx.designer.cs">
+      <DependentUpon>CtrlCurrencyType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlDenominationSetup.ascx.cs">
+      <DependentUpon>CtrlDenominationSetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlDenominationSetup.ascx.designer.cs">
+      <DependentUpon>CtrlDenominationSetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlDepartment.ascx.cs">
+      <DependentUpon>CtrlDepartment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlDepartment.ascx.designer.cs">
+      <DependentUpon>CtrlDepartment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlDeposits.ascx.cs">
+      <DependentUpon>CtrlDeposits.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlDeposits.ascx.designer.cs">
+      <DependentUpon>CtrlDeposits.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlEmailConfiguration.ascx.cs">
+      <DependentUpon>CtrlEmailConfiguration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlEmailConfiguration.ascx.designer.cs">
+      <DependentUpon>CtrlEmailConfiguration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlEmailTemplate.ascx.cs">
+      <DependentUpon>CtrlEmailTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlEmailTemplate.ascx.designer.cs">
+      <DependentUpon>CtrlEmailTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlEmployee.ascx.cs">
+      <DependentUpon>CtrlEmployee.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlEmployee.ascx.designer.cs">
+      <DependentUpon>CtrlEmployee.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlEmployeeList.ascx.cs">
+      <DependentUpon>CtrlEmployeeList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlEmployeeList.ascx.designer.cs">
+      <DependentUpon>CtrlEmployeeList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlExchangeRate.ascx.cs">
+      <DependentUpon>CtrlExchangeRate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlExchangeRate.ascx.designer.cs">
+      <DependentUpon>CtrlExchangeRate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlGuestPreferenceSetup.ascx.cs">
+      <DependentUpon>CtrlGuestPreferenceSetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlGuestPreferenceSetup.ascx.designer.cs">
+      <DependentUpon>CtrlGuestPreferenceSetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlGuestType.ascx.cs">
+      <DependentUpon>CtrlGuestType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlGuestType.ascx.designer.cs">
+      <DependentUpon>CtrlGuestType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlHouseKeeping.ascx.cs">
+      <DependentUpon>CtrlHouseKeeping.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlHouseKeeping.ascx.designer.cs">
+      <DependentUpon>CtrlHouseKeeping.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlInfillSetup.ascx.cs">
+      <DependentUpon>CtrlInfillSetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlInfillSetup.ascx.designer.cs">
+      <DependentUpon>CtrlInfillSetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlLanguageSetup.ascx.cs">
+      <DependentUpon>CtrlLanguageSetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlLanguageSetup.ascx.designer.cs">
+      <DependentUpon>CtrlLanguageSetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlLoginLog.ascx.cs">
+      <DependentUpon>CtrlLoginLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlLoginLog.ascx.designer.cs">
+      <DependentUpon>CtrlLoginLog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlManageResourceFile.ascx.cs">
+      <DependentUpon>CtrlManageResourceFile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlManageResourceFile.ascx.designer.cs">
+      <DependentUpon>CtrlManageResourceFile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlNewsLatterSetup.ascx.cs">
+      <DependentUpon>CtrlNewsLatterSetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlNewsLatterSetup.ascx.designer.cs">
+      <DependentUpon>CtrlNewsLatterSetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPOSConfiguration.ascx.cs">
+      <DependentUpon>CtrlPOSConfiguration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPOSConfiguration.ascx.designer.cs">
+      <DependentUpon>CtrlPOSConfiguration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPOSPoints.ascx.cs">
+      <DependentUpon>CtrlPOSPoints.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPOSPoints.ascx.designer.cs">
+      <DependentUpon>CtrlPOSPoints.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRecovery.ascx.cs">
+      <DependentUpon>CtrlRecovery.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRecovery.ascx.designer.cs">
+      <DependentUpon>CtrlRecovery.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlReservationConfig.ascx.cs">
+      <DependentUpon>CtrlReservationConfig.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlReservationConfig.ascx.designer.cs">
+      <DependentUpon>CtrlReservationConfig.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlReservationPolicy.ascx.cs">
+      <DependentUpon>CtrlReservationPolicy.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlReservationPolicy.ascx.designer.cs">
+      <DependentUpon>CtrlReservationPolicy.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlResourceFileAssignment.ascx.cs">
+      <DependentUpon>CtrlResourceFileAssignment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlResourceFileAssignment.ascx.designer.cs">
+      <DependentUpon>CtrlResourceFileAssignment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRoom.ascx.cs">
+      <DependentUpon>CtrlRoom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRoom.ascx.designer.cs">
+      <DependentUpon>CtrlRoom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRoomList.ascx.cs">
+      <DependentUpon>CtrlRoomList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRoomList.ascx.designer.cs">
+      <DependentUpon>CtrlRoomList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRoomService.ascx.cs">
+      <DependentUpon>CtrlRoomService.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRoomService.ascx.designer.cs">
+      <DependentUpon>CtrlRoomService.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRoomType.ascx.cs">
+      <DependentUpon>CtrlRoomType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRoomType.ascx.designer.cs">
+      <DependentUpon>CtrlRoomType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRoomTypeList.ascx.cs">
+      <DependentUpon>CtrlRoomTypeList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlRoomTypeList.ascx.designer.cs">
+      <DependentUpon>CtrlRoomTypeList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlSMS.ascx.cs">
+      <DependentUpon>CtrlSMS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlSMS.ascx.designer.cs">
+      <DependentUpon>CtrlSMS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlTranscript.ascx.cs">
+      <DependentUpon>CtrlTranscript.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlTranscript.ascx.designer.cs">
+      <DependentUpon>CtrlTranscript.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlUnitOfMeasure.ascx.cs">
+      <DependentUpon>CtrlUnitOfMeasure.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlUnitOfMeasure.ascx.designer.cs">
+      <DependentUpon>CtrlUnitOfMeasure.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlVendorMaster.ascx.cs">
+      <DependentUpon>CtrlVendorMaster.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlVendorMaster.ascx.designer.cs">
+      <DependentUpon>CtrlVendorMaster.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\FolioConfiguration.ascx.cs">
+      <DependentUpon>FolioConfiguration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\FolioConfiguration.ascx.designer.cs">
+      <DependentUpon>FolioConfiguration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Inventory\CtrlCategory.ascx.cs">
+      <DependentUpon>CtrlCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Inventory\CtrlCategory.ascx.designer.cs">
+      <DependentUpon>CtrlCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Inventory\CtrlItem.ascx.cs">
+      <DependentUpon>CtrlItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Inventory\CtrlItem.ascx.designer.cs">
+      <DependentUpon>CtrlItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Inventory\CtrlItemList.ascx.cs">
+      <DependentUpon>CtrlItemList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Inventory\CtrlItemList.ascx.designer.cs">
+      <DependentUpon>CtrlItemList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlAdddEditStayType.ascx.cs">
+      <DependentUpon>CtrlAdddEditStayType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlAdddEditStayType.ascx.designer.cs">
+      <DependentUpon>CtrlAdddEditStayType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlAddEditDiscount.ascx.cs">
+      <DependentUpon>CtrlAddEditDiscount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlAddEditDiscount.ascx.designer.cs">
+      <DependentUpon>CtrlAddEditDiscount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlAddEditVIPType.ascx.cs">
+      <DependentUpon>CtrlAddEditVIPType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlAddEditVIPType.ascx.designer.cs">
+      <DependentUpon>CtrlAddEditVIPType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlAddOnsServices.ascx.cs">
+      <DependentUpon>CtrlAddOnsServices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlAddOnsServices.ascx.designer.cs">
+      <DependentUpon>CtrlAddOnsServices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlBookingAgent.ascx.cs">
+      <DependentUpon>CtrlBookingAgent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlBookingAgent.ascx.designer.cs">
+      <DependentUpon>CtrlBookingAgent.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlBookingAgentList.ascx.cs">
+      <DependentUpon>CtrlBookingAgentList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlBookingAgentList.ascx.designer.cs">
+      <DependentUpon>CtrlBookingAgentList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlConferenceRateCard.ascx.cs">
+      <DependentUpon>CtrlConferenceRateCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlConferenceRateCard.ascx.designer.cs">
+      <DependentUpon>CtrlConferenceRateCard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlCorporate.ascx.cs">
+      <DependentUpon>CtrlCorporate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlCorporate.ascx.designer.cs">
+      <DependentUpon>CtrlCorporate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlCorporateRateCard.ascx.cs">
+      <DependentUpon>CtrlCorporateRateCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlCorporateRateCard.ascx.designer.cs">
+      <DependentUpon>CtrlCorporateRateCard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlCorporsteList.ascx.cs">
+      <DependentUpon>CtrlCorporsteList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlCorporsteList.ascx.designer.cs">
+      <DependentUpon>CtrlCorporsteList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlDiscount.ascx.cs">
+      <DependentUpon>CtrlDiscount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlDiscount.ascx.designer.cs">
+      <DependentUpon>CtrlDiscount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlGDSRateCard.ascx.cs">
+      <DependentUpon>CtrlGDSRateCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlGDSRateCard.ascx.designer.cs">
+      <DependentUpon>CtrlGDSRateCard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlOldAddOnsServices.ascx.cs">
+      <DependentUpon>CtrlOldAddOnsServices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlOldAddOnsServices.ascx.designer.cs">
+      <DependentUpon>CtrlOldAddOnsServices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlPackagerRateCard.ascx.cs">
+      <DependentUpon>CtrlPackagerRateCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlPackagerRateCard.ascx.designer.cs">
+      <DependentUpon>CtrlPackagerRateCard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardBasicInfo.ascx.cs">
+      <DependentUpon>CtrlRateCardBasicInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardBasicInfo.ascx.designer.cs">
+      <DependentUpon>CtrlRateCardBasicInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardCheckInDays.ascx.cs">
+      <DependentUpon>CtrlRateCardCheckInDays.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardCheckInDays.ascx.designer.cs">
+      <DependentUpon>CtrlRateCardCheckInDays.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardConferences.ascx.cs">
+      <DependentUpon>CtrlRateCardConferences.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardConferences.ascx.designer.cs">
+      <DependentUpon>CtrlRateCardConferences.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardCorporates.ascx.cs">
+      <DependentUpon>CtrlRateCardCorporates.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardCorporates.ascx.designer.cs">
+      <DependentUpon>CtrlRateCardCorporates.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardList.ascx.cs">
+      <DependentUpon>CtrlRateCardList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardList.ascx.designer.cs">
+      <DependentUpon>CtrlRateCardList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardRoomTypes.ascx.cs">
+      <DependentUpon>CtrlRateCardRoomTypes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardRoomTypes.ascx.designer.cs">
+      <DependentUpon>CtrlRateCardRoomTypes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardServices.ascx.cs">
+      <DependentUpon>CtrlRateCardServices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardServices.ascx.designer.cs">
+      <DependentUpon>CtrlRateCardServices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardTaxes.ascx.cs">
+      <DependentUpon>CtrlRateCardTaxes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardTaxes.ascx.designer.cs">
+      <DependentUpon>CtrlRateCardTaxes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardTermsAndConditions.ascx.cs">
+      <DependentUpon>CtrlRateCardTermsAndConditions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRateCardTermsAndConditions.ascx.designer.cs">
+      <DependentUpon>CtrlRateCardTermsAndConditions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRoomRateCard.ascx.cs">
+      <DependentUpon>CtrlRoomRateCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlRoomRateCard.ascx.designer.cs">
+      <DependentUpon>CtrlRoomRateCard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlStayType.ascx.cs">
+      <DependentUpon>CtrlStayType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlStayType.ascx.designer.cs">
+      <DependentUpon>CtrlStayType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlVIPType.ascx.cs">
+      <DependentUpon>CtrlVIPType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\CtrlVIPType.ascx.designer.cs">
+      <DependentUpon>CtrlVIPType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\RateCardPOSCharge.ascx.cs">
+      <DependentUpon>RateCardPOSCharge.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PriceManager\RateCardPOSCharge.ascx.designer.cs">
+      <DependentUpon>RateCardPOSCharge.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlCompanyConfiguration.ascx.cs">
+      <DependentUpon>CtrlCompanyConfiguration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlCompanyConfiguration.ascx.designer.cs">
+      <DependentUpon>CtrlCompanyConfiguration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlCompanyList.ascx.cs">
+      <DependentUpon>CtrlCompanyList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlCompanyList.ascx.designer.cs">
+      <DependentUpon>CtrlCompanyList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlCompanySetup.ascx.cs">
+      <DependentUpon>CtrlCompanySetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlCompanySetup.ascx.designer.cs">
+      <DependentUpon>CtrlCompanySetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlPropertyBlockInformation.ascx.cs">
+      <DependentUpon>CtrlPropertyBlockInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlPropertyBlockInformation.ascx.designer.cs">
+      <DependentUpon>CtrlPropertyBlockInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlPropertyInfomation.ascx.cs">
+      <DependentUpon>CtrlPropertyInfomation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlPropertyInfomation.ascx.designer.cs">
+      <DependentUpon>CtrlPropertyInfomation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlPropertyList.ascx.cs">
+      <DependentUpon>CtrlPropertyList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlPropertyList.ascx.designer.cs">
+      <DependentUpon>CtrlPropertyList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlPropertySetup.ascx.cs">
+      <DependentUpon>CtrlPropertySetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Property\CtrlPropertySetup.ascx.designer.cs">
+      <DependentUpon>CtrlPropertySetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\UserSetup\CtrlRoles.ascx.cs">
+      <DependentUpon>CtrlRoles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\UserSetup\CtrlRoles.ascx.designer.cs">
+      <DependentUpon>CtrlRoles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\UserSetup\CtrlUsers.ascx.cs">
+      <DependentUpon>CtrlUsers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\UserSetup\CtrlUsers.ascx.designer.cs">
+      <DependentUpon>CtrlUsers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\UserSetup\CtrlUserSetting.ascx.cs">
+      <DependentUpon>CtrlUserSetting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\UserSetup\CtrlUserSetting.ascx.designer.cs">
+      <DependentUpon>CtrlUserSetting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserActivation.aspx.cs">
+      <DependentUpon>UserActivation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserActivation.aspx.designer.cs">
+      <DependentUpon>UserActivation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserModuleSelection.aspx.cs">
+      <DependentUpon>UserModuleSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserModuleSelection.aspx.designer.cs">
+      <DependentUpon>UserModuleSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm.aspx.cs">
+      <DependentUpon>WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm.aspx.designer.cs">
+      <DependentUpon>WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="CompanyDocuments\14f1a0dc-3a5b-4e7e-9869-96979a03ea3a\Documents\" />
+    <Folder Include="CompanyDocuments\14f1a0dc-3a5b-4e7e-9869-96979a03ea3a\Logo\" />
+    <Folder Include="CompanyDocuments\793f4f7b-3f72-4741-82a4-f788283103ad\Documents\" />
+    <Folder Include="CompanyDocuments\793f4f7b-3f72-4741-82a4-f788283103ad\Logo\" />
+    <Folder Include="GUI\Configuration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\CONFIG\CONFIG.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.BLL\SQT.Symphony.BusinessLogic.Configuration.BLL.csproj">
+      <Project>{3CB4A6BB-55FA-4E51-8067-B7539E836259}</Project>
+      <Name>SQT.Symphony.BusinessLogic.Configuration.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\SQT.Symphony.BusinessLogic.Configuration.DTO.csproj">
+      <Project>{0B8BD7D0-5B6B-4675-A002-5180AC8E4BCD}</Project>
+      <Name>SQT.Symphony.BusinessLogic.Configuration.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\SQT.Symphony.BusinessLogic.FrontDesk.BLL.csproj">
+      <Project>{5C863304-BF8E-4F62-BDBE-8BF32B77EB53}</Project>
+      <Name>SQT.Symphony.BusinessLogic.FrontDesk.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.DTO\SQT.Symphony.BusinessLogic.FrontDesk.DTO.csproj">
+      <Project>{B0A07EF7-397F-4B27-9B19-0937E576AB95}</Project>
+      <Name>SQT.Symphony.BusinessLogic.FrontDesk.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.BLL\SQT.Symphony.BusinessLogic.IRMS.BLL.csproj">
+      <Project>{B39B6372-4D26-4AA5-9112-E3A7EA41F5C3}</Project>
+      <Name>SQT.Symphony.BusinessLogic.IRMS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DTO\SQT.Symphony.BusinessLogic.IRMS.DTO.csproj">
+      <Project>{6B11022B-F840-4950-A789-DB98DED29EEB}</Project>
+      <Name>SQT.Symphony.BusinessLogic.IRMS.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\FRAMEWORK\SQT.FRAMEWORK.DAL\SQT.FRAMEWORK.DAL.csproj">
+      <Project>{9523644A-8EA4-4C73-AB7B-4C25181837BA}</Project>
+      <Name>SQT.FRAMEWORK.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\SQT.FRAMEWORK.EXCEPTION.csproj">
+      <Project>{9431D7F1-8C0F-41A2-A43E-9E8980694650}</Project>
+      <Name>SQT.FRAMEWORK.EXCEPTION</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\FRAMEWORK\SQT.FRAMEWORK.LOGGER\SQT.FRAMEWORK.LOGGER.csproj">
+      <Project>{F6E4F7D0-70C5-429E-A70E-F473B5ACC038}</Project>
+      <Name>SQT.FRAMEWORK.LOGGER</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Address.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Address.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\CommonMessage.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>CommonMessage.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\CompanySetup.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>CompanySetup.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Login.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Login.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\SystemSetup.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>SystemSetup.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Common.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Common.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\PropertySetup.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>PropertySetup.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\PropertyList.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>PropertyList.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\AmenitiesSetup.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>AmenitiesSetup.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\BlockFloorSetup.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>BlockFloorSetup.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Department.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Department.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\CurrencySetup.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>CurrencySetup.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Denomination.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Denomination.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\NewsLatterSetup.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>NewsLatterSetup.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\StayType.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>StayType.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\VIPType.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>VIPType.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Discount.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Discount.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\AdminMaster.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>AdminMaster.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\AddOnsServices.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>AddOnsServices.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Corporate.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Corporate.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\CorporateList.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>CorporateList.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ActionLog.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ActionLog.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\AutoNumber.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>AutoNumber.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\BlockRoom.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>BlockRoom.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Conference.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Conference.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ConferenceList.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ConferenceList.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ConferenceType.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ConferenceType.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Deposits.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Deposits.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Employee.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Employee.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\EmployeeList.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>EmployeeList.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ExchangeRate.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ExchangeRate.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\FolioConfiguration.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>FolioConfiguration.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\InfillSetup.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>InfillSetup.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\LanguageSetup.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>LanguageSetup.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\POSPoints.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>POSPoints.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Rights.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Rights.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Role.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Role.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Room.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Room.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RoomList.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RoomList.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RoomType.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RoomType.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RoomTypeList.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RoomTypeList.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\SMS.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>SMS.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\UnitOfMeasure.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>UnitOfMeasure.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Users.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Users.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RateCardList.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RateCardList.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RateCard.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RateCard.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RateCardServices.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RateCardServices.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RateCardRoomTypes.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RateCardRoomTypes.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RateCardConferences.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RateCardConferences.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RateCardCorporates.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RateCardCorporates.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\CounterName.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>CounterName.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ItemList.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ItemList.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Item.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Item.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\EmailConfiguration.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>EmailConfiguration.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\EmailTemplate.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>EmailTemplate.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\HouseKeepingConfiguration.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>HouseKeepingConfiguration.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\LoginLog.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>LoginLog.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\POSConfiguration.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>POSConfiguration.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ReservationConfig.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ReservationConfig.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ForgotPassword.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ForgotPassword.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ResetPassword.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ResetPassword.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\CompanyList.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>CompanyList.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ReservationPolicy.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ReservationPolicy.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\AccessDenied.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>AccessDenied.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\UserSettings.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>UserSettings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\BreadCrumb.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>BreadCrumb.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ckeditor\.htaccess" />
+    <None Include="ckeditor\images\Thumbs.db" />
+    <Content Include="GUI\Configurations\AutoComplete.ashx" />
+    <Content Include="GUI\Configurations\CityAutoComplete.ashx" />
+    <Content Include="GUI\Configurations\StateAutoComplete.ashx" />
+    <Content Include="UIControls\CommonControls\AutoComplete.ashx" />
+    <Content Include="UIControls\CommonControls\CityAutoComplete.ashx" />
+    <Content Include="UIControls\CommonControls\StateAutoComplete.ashx" />
+    <Content Include="GUI\Configurations\UserAutoComplete.ashx" />
+    <Content Include="GUI\Property\PropertyAutoComplete.ashx" />
+    <Content Include="GUI\Configurations\AmenitiesAutoComplete.ashx" />
+    <Content Include="GUI\Configurations\EmployeeAutoComplete.ashx" />
+    <Content Include="GUI\Inventory\CategoryAutoComplete.ashx" />
+    <Content Include="GUI\Inventory\ItemAutoComplete.ashx" />
+    <Content Include="GUI\PriceManager\CorporateAutoComplete.ashx" />
+    <Content Include="GUI\PriceManager\DiscountAutoComplete.ashx" />
+    <Content Include="GUI\PriceManager\RateCardAutoComplete.ashx" />
+    <Content Include="GUI\Configurations\UnitAutoComplete.ashx" />
+    <Content Include="GUI\Configurations\BlockAutoComplete.ashx" />
+    <Content Include="GUI\Configurations\FloorAutoComplete.ashx" />
+    <Content Include="GUI\PriceManager\BookingAgentAutoComplete.ashx" />
+    <None Include="GUI\requirements.doc" />
+    <None Include="images\Thumbs.db" />
+    <None Include="requirements.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\ResourceFileManagement.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ResourceFileManagement.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Category.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Category.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Tax.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Tax.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ReservationCancellationPolicy.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ReservationCancellationPolicy.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\PropertyInformation.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>PropertyInformation.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\BlockInformation.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>BlockInformation.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\VendorMaster.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>VendorMaster.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>34743</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,61 @@
+﻿<asp:Button CssClass="button1" runat="server"></asp:Button>
+<asp:DropDownList runat="server" Height="25px" width="227px" CssClass="dropdown"></asp:DropDownList>
+<asp:DropDownList runat="server" SkinID="nowidth" Height="25px" CssClass="dropdown"></asp:DropDownList>
+<asp:DropDownList runat="server" width="180px" SkinID="searchddl" Height="25px" CssClass="dropdown"></asp:DropDownList>
+
+<asp:TextBox runat="server" width="225px" CssClass="input" ></asp:TextBox>
+<asp:TextBox runat="server" SkinID="nowidth" CssClass="input" ></asp:TextBox>
+<asp:TextBox runat="server" width="180px" SkinID="searchtextbox" CssClass="input" ></asp:TextBox>
+<asp:TextBox runat="server" width="684px" SkinID="BigInput"></asp:TextBox>
+
+<asp:GridView runat="server"
+AutoGenerateColumns="False"
+GridLines="None"
+AllowPaging="true"
+PagerStyle-CssClass="pgr"
+PageSize="25"
+UseAccessibleHeader="true"
+AlternatingRowStyle-CssClass="alt"
+ HeaderStyle-HorizontalAlign="Left">
+<HeaderStyle Height="32px" />
+</asp:GridView>
+
+<asp:GridView runat="server"
+AutoGenerateColumns="False"
+GridLines="None"
+AllowPaging="False"
+CssClass="mGrid"
+PagerStyle-CssClass="pgr"
+PageSize="15"
+UseAccessibleHeader="true"
+AlternatingRowStyle-CssClass="alt"
+SkinID="gvNoPaging"
+HeaderStyle-HorizontalAlign="Left">
+<HeaderStyle Height="32px" />
+</asp:GridView>
+
+<asp:GridView runat="server"
+AutoGenerateColumns="False"
+GridLines="None"
+AllowPaging="true"
+PagerStyle-CssClass="pgr"
+PageSize="50"
+SkinID="gvMorePaging"
+UseAccessibleHeader="true"
+AlternatingRowStyle-CssClass="alt"
+ HeaderStyle-HorizontalAlign="Left">
+<HeaderStyle Height="32px" />
+</asp:GridView>
+
+<asp:GridView runat="server"
+AutoGenerateColumns="True"
+SkinID="gvAutoColumns"
+GridLines="None"
+AllowPaging="true"
+PagerStyle-CssClass="pgr"
+PageSize="25"
+UseAccessibleHeader="true"
+AlternatingRowStyle-CssClass="alt"
+ HeaderStyle-HorizontalAlign="Left">
+<HeaderStyle Height="32px" />
+</asp:GridView>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D6750A5-E793-49D7-9499-88B2DAB3DCEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SQT.Symphony.BusinessLogic.FrontDesk.DAL</RootNamespace>
+    <AssemblyName>SQT.Symphony.BusinessLogic.FrontDesk.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\..\..\..\..\..\..\Symphony3.0\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\..\..\UI\Web\IRMS\SQT.Symphony.UI.Web.Configuration\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlockDateRateDAL.cs" />
+    <Compile Include="BookKeepingDAL.cs" />
+    <Compile Include="BookKeeping_HistoryDAL.cs" />
+    <Compile Include="CheckinTimeLogDAL.cs" />
+    <Compile Include="CollectionDAL.cs" />
+    <Compile Include="FolioDAL.cs" />
+    <Compile Include="FolioReRouteDAL.cs" />
+    <Compile Include="ForeignNationalInfoDAL.cs" />
+    <Compile Include="FrontDeskAlertDAL.cs" />
+    <Compile Include="FrontDeskAlertMasterDAL.cs" />
+    <Compile Include="GuestCommentsDAL.cs" />
+    <Compile Include="GuestComplaintDAL.cs" />
+    <Compile Include="GuestDAL.cs" />
+    <Compile Include="GuestLaundryDAL.cs" />
+    <Compile Include="GuestManagementNoteDAL.cs" />
+    <Compile Include="GuestMsgJoinDAL.cs" />
+    <Compile Include="GuestPreferenceDAL.cs" />
+    <Compile Include="InquiryDAL.cs" />
+    <Compile Include="InvoiceDAL.cs" />
+    <Compile Include="JournalDAL.cs" />
+    <Compile Include="MoveRoomDAL.cs" />
+    <Compile Include="POSChargePerDayDAL.cs" />
+    <Compile Include="PreferenceMasterDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResAddOnServiceListDAL.cs" />
+    <Compile Include="ResAuditLogDAL.cs" />
+    <Compile Include="ReservationDAL.cs" />
+    <Compile Include="ReservationDetailDAL.cs" />
+    <Compile Include="ReservationGuestDAL.cs" />
+    <Compile Include="ReservationHistoryDAL.cs" />
+    <Compile Include="ReservationUpdateLogDAL.cs" />
+    <Compile Include="Reservation_LaundryDetailDAL.cs" />
+    <Compile Include="ResGuestPaymentInfoDAL.cs" />
+    <Compile Include="ResHouseKeepingDAL.cs" />
+    <Compile Include="ResRoomInventoryDAL.cs" />
+    <Compile Include="ResServiceListDAL.cs" />
+    <Compile Include="TaxExemptDAL.cs" />
+    <Compile Include="TaxExemptValueDAL.cs" />
+    <Compile Include="TaxSlabeDAL.cs" />
+    <Compile Include="TransactionDAL.cs" />
+    <Compile Include="Transfer_Deposit_JoinDAL.cs" />
+    <Compile Include="TroubleTicketDAL.cs" />
+    <Compile Include="VoucherDetailDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.COMMON\SQT.FRAMEWORK.COMMON.csproj">
+      <Project>{EFABBC06-7201-4446-80F2-80C9D525916C}</Project>
+      <Name>SQT.FRAMEWORK.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.DAL\SQT.FRAMEWORK.DAL.csproj">
+      <Project>{9523644A-8EA4-4C73-AB7B-4C25181837BA}</Project>
+      <Name>SQT.FRAMEWORK.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\SQT.FRAMEWORK.EXCEPTION.csproj">
+      <Project>{9431D7F1-8C0F-41A2-A43E-9E8980694650}</Project>
+      <Name>SQT.FRAMEWORK.EXCEPTION</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.LOGGER\SQT.FRAMEWORK.LOGGER.csproj">
+      <Project>{F6E4F7D0-70C5-429E-A70E-F473B5ACC038}</Project>
+      <Name>SQT.FRAMEWORK.LOGGER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.csproj">
+      <Project>{63EB9D37-91F6-4B68-BBDE-CCF48058BE2E}</Project>
+      <Name>SQT.Symphony.BusinessLogic.FrontDesk.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQT.Symphony.BusinessLogic.FrontDesk.DTO\SQT.Symphony.BusinessLogic.FrontDesk.DTO.csproj">
+      <Project>{B0A07EF7-397F-4B27-9B19-0937E576AB95}</Project>
+      <Name>SQT.Symphony.BusinessLogic.FrontDesk.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

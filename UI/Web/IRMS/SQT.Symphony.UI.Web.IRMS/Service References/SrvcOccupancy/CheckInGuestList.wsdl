@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetCheckInGuestListWihtXML">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCheckInGuestListWihtXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCheckInGuestListWihtXMLResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataForOccupancyReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataForOccupancyReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataForOccupancyReportResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataForRoomAvailabilityChart">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RoomTypeID" nillable="true" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="Hrs" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataForRoomAvailabilityChartResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataForRoomAvailabilityChartResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataForRoomType">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDataForRoomTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataForRoomTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRentPayOutPerQuarterData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRentPayOutPerQuarterDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRentPayOutPerQuarterDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTotalRevenueForQuarterForIR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTotalRevenueForQuarterForIRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTotalRevenueForQuarterForIRResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNoOfBedsAndNoOfOccupiedBeds">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNoOfBedsAndNoOfOccupiedBedsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNoOfBedsAndNoOfOccupiedBedsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCheckInGuestListWihtXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCheckInGuestListWihtXML" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckInGuestListWihtXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCheckInGuestListWihtXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataForOccupancyReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataForOccupancyReport" />
+  </wsdl:message>
+  <wsdl:message name="GetDataForOccupancyReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataForOccupancyReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataForRoomAvailabilityChartSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataForRoomAvailabilityChart" />
+  </wsdl:message>
+  <wsdl:message name="GetDataForRoomAvailabilityChartSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataForRoomAvailabilityChartResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataForRoomTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataForRoomType" />
+  </wsdl:message>
+  <wsdl:message name="GetDataForRoomTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataForRoomTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRentPayOutPerQuarterDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRentPayOutPerQuarterData" />
+  </wsdl:message>
+  <wsdl:message name="GetRentPayOutPerQuarterDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRentPayOutPerQuarterDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalRevenueForQuarterForIRSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTotalRevenueForQuarterForIR" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalRevenueForQuarterForIRSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTotalRevenueForQuarterForIRResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNoOfBedsAndNoOfOccupiedBedsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNoOfBedsAndNoOfOccupiedBeds" />
+  </wsdl:message>
+  <wsdl:message name="GetNoOfBedsAndNoOfOccupiedBedsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNoOfBedsAndNoOfOccupiedBedsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CheckInGuestListSoap">
+    <wsdl:operation name="GetCheckInGuestListWihtXML">
+      <wsdl:input message="tns:GetCheckInGuestListWihtXMLSoapIn" />
+      <wsdl:output message="tns:GetCheckInGuestListWihtXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForOccupancyReport">
+      <wsdl:input message="tns:GetDataForOccupancyReportSoapIn" />
+      <wsdl:output message="tns:GetDataForOccupancyReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForRoomAvailabilityChart">
+      <wsdl:input message="tns:GetDataForRoomAvailabilityChartSoapIn" />
+      <wsdl:output message="tns:GetDataForRoomAvailabilityChartSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForRoomType">
+      <wsdl:input message="tns:GetDataForRoomTypeSoapIn" />
+      <wsdl:output message="tns:GetDataForRoomTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentPayOutPerQuarterData">
+      <wsdl:input message="tns:GetRentPayOutPerQuarterDataSoapIn" />
+      <wsdl:output message="tns:GetRentPayOutPerQuarterDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalRevenueForQuarterForIR">
+      <wsdl:input message="tns:GetTotalRevenueForQuarterForIRSoapIn" />
+      <wsdl:output message="tns:GetTotalRevenueForQuarterForIRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNoOfBedsAndNoOfOccupiedBeds">
+      <wsdl:input message="tns:GetNoOfBedsAndNoOfOccupiedBedsSoapIn" />
+      <wsdl:output message="tns:GetNoOfBedsAndNoOfOccupiedBedsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CheckInGuestListSoap" type="tns:CheckInGuestListSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCheckInGuestListWihtXML">
+      <soap:operation soapAction="http://tempuri.org/GetCheckInGuestListWihtXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForOccupancyReport">
+      <soap:operation soapAction="http://tempuri.org/GetDataForOccupancyReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForRoomAvailabilityChart">
+      <soap:operation soapAction="http://tempuri.org/GetDataForRoomAvailabilityChart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForRoomType">
+      <soap:operation soapAction="http://tempuri.org/GetDataForRoomType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRentPayOutPerQuarterData">
+      <soap:operation soapAction="http://tempuri.org/GetRentPayOutPerQuarterData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalRevenueForQuarterForIR">
+      <soap:operation soapAction="http://tempuri.org/GetTotalRevenueForQuarterForIR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoOfBedsAndNoOfOccupiedBeds">
+      <soap:operation soapAction="http://tempuri.org/GetNoOfBedsAndNoOfOccupiedBeds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CheckInGuestListSoap12" type="tns:CheckInGuestListSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCheckInGuestListWihtXML">
+      <soap12:operation soapAction="http://tempuri.org/GetCheckInGuestListWihtXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForOccupancyReport">
+      <soap12:operation soapAction="http://tempuri.org/GetDataForOccupancyReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForRoomAvailabilityChart">
+      <soap12:operation soapAction="http://tempuri.org/GetDataForRoomAvailabilityChart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForRoomType">
+      <soap12:operation soapAction="http://tempuri.org/GetDataForRoomType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRentPayOutPerQuarterData">
+      <soap12:operation soapAction="http://tempuri.org/GetRentPayOutPerQuarterData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalRevenueForQuarterForIR">
+      <soap12:operation soapAction="http://tempuri.org/GetTotalRevenueForQuarterForIR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoOfBedsAndNoOfOccupiedBeds">
+      <soap12:operation soapAction="http://tempuri.org/GetNoOfBedsAndNoOfOccupiedBeds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CheckInGuestList">
+    <wsdl:port name="CheckInGuestListSoap" binding="tns:CheckInGuestListSoap">
+      <soap:address location="http://localhost:21665/Services/CheckInGuestList.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CheckInGuestListSoap12" binding="tns:CheckInGuestListSoap12">
+      <soap12:address location="http://localhost:21665/Services/CheckInGuestList.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

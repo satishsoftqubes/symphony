@@ -1,0 +1,10 @@
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\bin\Release\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\bin\Release\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Release\SQT.FRAMEWORK.EXCEPTION.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Release\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Release\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\bin\Release\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\bin\Release\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Release\SQT.FRAMEWORK.EXCEPTION.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Release\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Release\SQT.FRAMEWORK.EXCEPTION.pdb

@@ -1,0 +1,21 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb

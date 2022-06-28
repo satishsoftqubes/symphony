@@ -1,0 +1,2 @@
+D:\Projects\Symphony\SRC\Symphony\Backup\UI\Web\IRMS\SQT.Symphony.UI.Web.IRServices\obj\Debug\SQT.Symphony.UI.Web.IRServices.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\Backup\UI\Web\IRMS\SQT.Symphony.UI.Web.IRServices\obj\Debug\SQT.Symphony.UI.Web.IRServices.csproj.CoreCompileInputs.cache

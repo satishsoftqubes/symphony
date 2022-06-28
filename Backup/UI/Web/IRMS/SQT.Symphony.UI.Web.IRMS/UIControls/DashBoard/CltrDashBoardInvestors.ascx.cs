@@ -1,0 +1,150 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using SQT.Symphony.BusinessLogic.Configuration.BLL;
+using SQT.Symphony.BusinessLogic.Configuration.DTO;
+
+namespace SQT.Symphony.UI.Web.IRMS.UIControls.DashBoard
+{
+    public partial class CltrDashBoardInvestors : System.Web.UI.UserControl
+    {
+        #region Property and Variables
+
+        public Guid CompanyID
+        {
+            get
+            {
+                return ViewState["CompanyID"] != null ? new Guid(Convert.ToString(ViewState["CompanyID"])) : Guid.Empty;
+            }
+            set
+            {
+                ViewState["CompanyID"] = value;
+            }
+        }
+
+        #endregion Property and Variables
+
+        #region PageLoad Event
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["CompanyID"] == null)
+            {
+                Session.Clear();
+                Response.Redirect("~/Default.aspx");
+            }
+            else
+            {
+                if (!IsPostBack)
+                {
+                    this.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
+                    BindInvestorData();
+                }
+            }
+        }
+
+        #endregion PageLoad Event
+
+        #region PrivateMethod
+
+        private void BindInvestorData()
+        {
+            try
+            {
+                Guid? UserID;
+                string UserType = Convert.ToString(Session["UserType"]);
+                if (UserType.ToUpper() == "ADMIN")
+                    UserID = null;
+                else
+                    UserID = new Guid(Convert.ToString(Session["UserID"]));
+
+                DataSet dsInvestor = PropertyBLL.GetIndexDashBoard(this.CompanyID, UserID);
+                if (dsInvestor != null)
+                {
+                    if (dsInvestor.Tables[2].Rows.Count != 0)
+                    {
+                        DataTable dtMainInvestor = dsInvestor.Tables[2];
+                        DataTable dtToBindInvestor = dtMainInvestor.Clone();
+
+                        int forForLoopInvestor = dtMainInvestor.Rows.Count >= 2 ? 2 : dtMainInvestor.Rows.Count;
+
+                        for (int i = 0; i < forForLoopInvestor; i++)
+                        {
+                            dtToBindInvestor.ImportRow(dtMainInvestor.Rows[i]);
+                        }
+                        gvInvestors.DataSource = dtToBindInvestor;
+                        gvInvestors.DataBind();
+                        lblInvestorsCount.Text = Convert.ToString(dsInvestor.Tables[2].Rows.Count);
+                    }
+                    else
+                    {
+                        gvInvestors.DataSource = null;
+                        gvInvestors.DataBind();
+                        lblInvestorsCount.Text = "0";
+                    }
+                }
+                else
+                {
+                    gvInvestors.DataSource = null;
+                    gvInvestors.DataBind();
+                    lblInvestorsCount.Text = "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessageForInvestors();", true);
+                MsgBoxInvestors.Show(ex.Message.ToString());
+            }
+        }
+
+        private string MobileNo(string strMobileNo)
+        {
+            string strPhNo = "";
+
+            string[] words = strMobileNo.Split('-');
+
+            if (words.Length > 1)
+            {
+                if (words[0] != "")
+                    strPhNo = Convert.ToString(words[0]);
+
+                if (words[1] != "")
+                {
+                    if (strPhNo != "")
+                        strPhNo = strPhNo + "-" + words[1];
+                    else
+                        strPhNo = words[1];
+                }
+            }
+
+            return strPhNo;
+        }
+
+        #endregion PrivateMethod
+
+        #region Grid Event
+
+        protected void gvInvestors_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                Literal litDBMobileNo = (Literal)e.Row.FindControl("litDBMobileNo");
+
+                string strMobileNo = Convert.ToString(DataBinder.Eval(e.Row.DataItem, "MobileNo"));
+
+                if (litDBMobileNo != null)
+                {
+                    if (Convert.ToString(strMobileNo) != "")
+                        litDBMobileNo.Text = Convert.ToString(MobileNo(strMobileNo));
+                    else
+                        litDBMobileNo.Text = "";
+                }
+            }
+        }
+        #endregion
+    }
+}

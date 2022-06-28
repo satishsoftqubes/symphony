@@ -1,0 +1,3 @@
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.BLL\obj\Release\SQT.Symphony.BusinessLogic.Configuration.BLL.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.BLL\obj\Release\SQT.Symphony.BusinessLogic.Configuration.BLL.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.BLL\obj\Release\SQT.Symphony.BusinessLogic.Configuration.BLL.csproj.CoreCompileInputs.cache

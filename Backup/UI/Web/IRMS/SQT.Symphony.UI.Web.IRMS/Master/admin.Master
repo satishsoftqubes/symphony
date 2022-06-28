@@ -1,0 +1,220 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="SQT.Symphony.UI.Web.IRMS.Master.admin" %>
+
+<%@ Register Src="../UIControls/Reports/CtrlProspectsList.ascx" TagName="CtrlProspectsList"
+    TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Uniworld</title>
+    <link href="~/Style/style.css" runat="server" rel="stylesheet" type="text/css" />
+    <link href="~/Style/modelpopup.css" rel="Stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="scptInnerHTML" runat="server" EnablePageMethods="true">
+    </asp:ScriptManager>
+    <%--<ajx:ToolkitScriptManager EnableScriptGlobalization="true" EnableScriptLocalization="true"
+                ID="ToolkitScriptManager1" runat="server">
+                <Services>
+                <asp:ServiceReference Path="~/Applications/UsersSetUp/UserAvailability.asmx"/>
+                    
+                </Services>
+            </ajx:ToolkitScriptManager>--%>
+    <div id="wrap">
+        <div class="layout">
+            <div class="header">
+                <div class="header_left">
+                    <a href="<%=Page.ResolveUrl("~/Applications/Index.aspx") %>">
+                        <img src="<%=Page.ResolveUrl("~/images/logo.jpg") %>" border="0" alt="" class="logo" /></a>
+                </div>
+                <div class="header_right">
+                    <div class="header_right_col2">
+                        <div class="header_right_col2_content">
+                            <div class="header_right_col2_date">
+                                Date : <span>
+                                    <asp:Literal ID="litDate" runat="server"></asp:Literal></span></div>
+                            <div class="clear">
+                            </div>
+                            <div class="header_right_col2_time">
+                                Time : <span>
+                                    <asp:Literal ID="litTime" runat="server"></asp:Literal></span></div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="header_right_logout">
+                            <asp:LinkButton Text="Log Out" runat="server" ID="lnkLogout" OnClick="lnkLogOut_Click"></asp:LinkButton></div>
+                    </div>
+                    <div class="header_right_col1">
+                        <div class="header_right_col1_name">
+                            Investor Relations Module</div>
+                        <div class="header_right_col1_link">
+                            <asp:Label ID="lblUserName" runat="server"></asp:Label>
+                            | Admin | <a href="<%=Page.ResolveUrl("~/Applications/Activity/Settings.aspx") %>">Settings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="mains">
+                <div class="leftmargin">
+                    <div class="leftmargin_head_investor">
+                        <span id="spnInvestorName" runat="server">
+                            <asp:Label ID="lblInvestorName" runat="server"></asp:Label>
+                        </span>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="leftmargin_menu">
+                        <ul class="leftmargin_nav">
+                            <% if (Request.QueryString["Val"] != null)
+                               {%>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorSetUp.aspx?Val=True") %>">
+                                Investor Information</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorUnitList.aspx?Val=True") %>">
+                                Unit Information</a></li>
+                            <%--<li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorDocumentList.aspx?Val=True") %>">
+                                Documentation</a></li>--%>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorPaymentSchedule.aspx?Val=True") %>">
+                                Payment Schedule Setup</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorPaymentList.aspx?Val=True") %>">
+                                Payment Information</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorTaxList.aspx?Val=True") %>">
+                                Property Tax & Insurance</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Activity/RentPayout.aspx?Val=True") %>">
+                                Rent Payout</a></li>
+                            <%--<li><a href="#">Buy / Sell Unit</a></li>
+                            <li><a href="#">Room Reservation</a></li>--%>
+                            <%}
+                               else
+                               {%>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/CompanySetup.aspx") %>">Company
+                                Setup</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyConfiruation.aspx") %>">
+                                System Setup</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/ProjectTermSetUp.aspx") %>">Infill
+                                Setup</a></li>
+                            <%--<li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/ControlNumberSetup.aspx") %>">
+                                Auto Number Setup</a></li>--%>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyList.aspx") %>">Property
+                                Setup</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/FloorSetUp.aspx") %>">Block /
+                                Floor Setup</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/RoomTypeSetup.aspx") %>">Unit
+                                Type Setup</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/RoomSetup.aspx") %>">Unit Setup</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/AmenitiesSetup.aspx") %>">Amenities
+                                Setup</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/IRMSConfig/PaymentSlabeSetUp.aspx") %>">
+                                Payment Milestone Setup</a></li>
+                            <li class="menusubheader">Team Setup</li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/DepartmentSetp.aspx") %>">Department</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/IRMSConfig/EmployeeSetUp.aspx") %>">
+                                Employee</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/UsersSetUp/RoleSetUP.aspx") %>">Role
+                                Setup</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/UsersSetUp/UserSetUp.aspx") %>">User
+                                Setup</a></li>
+                            <li class="menusubheader">Templates Setup</li>
+                            <%--<li><a href="<%=Page.ResolveUrl("~/Applications/Activity/NewLattersSetUp.aspx") %>">
+                                News Letter</a></li>--%>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Activity/EmailTemplateSetup.aspx") %>">
+                                Email Template</a></li>
+                            <li style="border-bottom: 0px;"><a href="<%=Page.ResolveUrl("~/Applications/Activity/SMSTemplateSetUp.aspx") %>">
+                                SMS</a></li>
+                            <%} %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main_content">
+                    <div class="mainmenu">
+                        <ul class="mainnav">
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Index.aspx") %>">Home</a></li>
+                            <li><a href="#">Back Office</a>
+                                <ul>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/ProspectsList.aspx") %>">Prospects</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorList.aspx") %>">Investors</a></li>
+                                    <%--<li><a href="<%=Page.ResolveUrl("~/Applications/Investors/SalesTeamSetUp.aspx") %>">
+                                        Sales Team</a></li>--%>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/ChannerlPartnerList.aspx") %>">
+                                        Channel Partners</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Activity/GeneralDocumentList.aspx") %>">
+                                        Documents</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorPaymentReceiptSetUP.aspx") %>">
+                                        Payment Receipts</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/PropertyTaxReceipt.aspx") %>">
+                                        Property Tax</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/PropertyInsurance.aspx") %>">
+                                        Property Insurance</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Activity/UnitTypeMarketRateList.aspx") %>">
+                                        Market Value of Unit</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Activity/AdminRentPayout.aspx") %>">
+                                        Rent Payout</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Activity/RoomBookingList.aspx") %>">
+                                        Room Booking</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/UnitResell.aspx") %>">
+                                        Resell Unit</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Reports</a>
+                                <ul>
+                                    <%--<li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTProspectsList.aspx") %>">
+                                        Prospects</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTInvestorList.aspx") %>">Investors
+                                    </a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTChannelPartnerList.aspx") %>">
+                                        Channel Partners</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTSalesList.aspx") %>">Sales
+                                        Teams</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTUnitBookingList.aspx") %>">
+                                        Sold Units</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTDuePaymentReport.aspx?Val=Due") %>">
+                                        Due Payments</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTPaymentReceiptReportList.aspx") %>">
+                                        Payment Receipts</a></li>--%>
+                                    <li style="display: none;"><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTConversionExecutive.aspx") %>">
+                                        Conversion report-Executives</a></li>
+                                    <li style="display: none;"><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTConversionReport_RefThrough.aspx") %>">
+                                        Conversion report-Ref. Through</a></li>
+                                    <li style="display: none;"><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTConversionReport_CP.aspx") %>">
+                                        Conversion report-Channel partner</a></li>
+                                    <li style="display: none;"><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTPaymentDueReport.aspx") %>">
+                                        Payment Due Report</a></li>
+                                    <li style="display: none;"><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTTotalSales.aspx") %>">
+                                        Sales Report</a></li>
+                                    <li style="display: none;"><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTLocationAnalysis.aspx") %>">
+                                        Location Analysis</a></li>
+                                    <li style="display: none;"><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTInvestorTerms.aspx") %>">
+                                        Investor Terms</a></li>
+                                    <li style="display: none;"><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTInvestorBankDetail.aspx") %>">
+                                        Investor Bank Detail</a></li>
+                                    <li style="display: none;"><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTInvestorDocumentation.aspx") %>">
+                                        Investor Documentation</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTInvestorDetails.aspx") %>">
+                                        Investor List</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Activity/RentPayoutInvestorList.aspx") %>">
+                                        Rent Payout Report</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTLogInLogList.aspx") %>">User
+                                        Login Log</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTActionLogList.aspx") %>">
+                                        User Action Log</a></li>
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="mainbox">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

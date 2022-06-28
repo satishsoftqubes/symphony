@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SymphonyDAL.DAL" GeneratedClassName="DBConnection">
+  <Profiles />
+  <Settings>
+    <Setting Name="Oracle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=VEGA;User Id=hari;Password=hari;Integrated Security=no;</Value>
+    </Setting>
+    <Setting Name="Odbc" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Driver={Microsoft ODBC for Oracle};Server=Vega.world;Uid=hari;Pwd=hari;</Value>
+    </Setting>
+    <Setting Name="Oledb" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Provider=OraOLEDB.Oracle;Data Source=Vega;User Id=hari;Password=hari; </Value>
+    </Setting>
+    <Setting Name="SQL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=HARI;Initial Catalog=QuestPMS_Test;User ID=sa; Password=Umlup01cli;timeout=60;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

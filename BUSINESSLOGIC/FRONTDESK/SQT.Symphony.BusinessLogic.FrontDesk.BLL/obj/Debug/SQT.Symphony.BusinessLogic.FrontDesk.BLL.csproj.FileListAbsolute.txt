@@ -1,0 +1,116 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.LOGGER.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.COMMON.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.LOGGER.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DTO.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.COMMON.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\log4net.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.COMMON.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\log4net.xml
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.COMMON.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\log4net.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.COMMON.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\log4net.xml
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.COMMON.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.csproj.CopyComplete
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DAL.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DAL.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DTO.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\log4net.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.COMMON.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DAL.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DAL.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.DTO.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\log4net.xml
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\bin\Debug\SQT.FRAMEWORK.COMMON.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.csproj.CopyComplete
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb

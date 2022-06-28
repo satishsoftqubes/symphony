@@ -1,0 +1,54 @@
+﻿ <asp:Button CssClass="button1" runat="server"></asp:Button>
+<asp:DropDownList runat="server" Height="25px" width="163px" CssClass="dropdown"></asp:DropDownList>
+<asp:DropDownList runat="server" Height="25px" width="60px" SkinID="Title" CssClass="dropdown"></asp:DropDownList>
+<asp:DropDownList runat="server" Height="25px" width="103px" SkinID="Search" CssClass="dropdown"></asp:DropDownList>
+
+<asp:TextBox runat="server" SkinID="nowidth"></asp:TextBox>
+<asp:TextBox runat="server" width="163px" CssClass="content_input" ></asp:TextBox>
+<asp:TextBox runat="server" width="100px" Height="20px" SkinID="Simple"></asp:TextBox>
+<asp:TextBox runat="server" width="100px" SkinID="Search"></asp:TextBox>
+<asp:TextBox runat="server" width="100%" SkinID="Long"></asp:TextBox>
+<asp:TextBox runat="server" width="90%" SkinID="Small_Long"></asp:TextBox>
+<asp:TextBox runat="server" width="200px" SkinID="Medium"></asp:TextBox>
+<asp:TextBox runat="server" width="125px" CssClass="content_input" SkinID="FileUploadTextbox" ></asp:TextBox>
+<asp:TextBox runat="server" width="200px" CssClass="content_input" SkinID="CmpTextbox" ></asp:TextBox>
+<asp:TextBox runat="server" width="60px" CssClass="content_input" SkinID="TextBoxDate" ></asp:TextBox>
+
+<asp:GridView runat="server"
+AutoGenerateColumns="False"
+GridLines="None"
+AllowPaging="true"
+PagerStyle-CssClass="pgr"
+PageSize="25"
+UseAccessibleHeader="true"
+AlternatingRowStyle-CssClass="alt"
+ HeaderStyle-HorizontalAlign="Left">
+<HeaderStyle Height="32px" />
+</asp:GridView>
+
+<asp:GridView runat="server"
+AutoGenerateColumns="False"
+GridLines="None"
+AllowPaging="False"
+CssClass="mGrid"
+PagerStyle-CssClass="pgr"
+PageSize="15"
+UseAccessibleHeader="true"
+AlternatingRowStyle-CssClass="alt"
+SkinID="gvNoPaging"
+HeaderStyle-HorizontalAlign="Left">
+<HeaderStyle Height="32px" />
+</asp:GridView>
+
+<asp:GridView runat="server"
+AutoGenerateColumns="True"
+SkinID="gvAutoColumns"
+GridLines="None"
+AllowPaging="true"
+PagerStyle-CssClass="pgr"
+PageSize="25"
+UseAccessibleHeader="true"
+AlternatingRowStyle-CssClass="alt"
+ HeaderStyle-HorizontalAlign="Left">
+<HeaderStyle Height="32px" />
+</asp:GridView>

@@ -1,0 +1,13 @@
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\bin\Release\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\bin\Release\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\bin\Release\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Release\SQT.FRAMEWORK.DAL.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Release\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Release\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\bin\Release\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\bin\Release\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\bin\Release\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Release\SQT.FRAMEWORK.DAL.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Release\SQT.FRAMEWORK.DAL.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Release\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Release\SQT.FRAMEWORK.DAL.pdb

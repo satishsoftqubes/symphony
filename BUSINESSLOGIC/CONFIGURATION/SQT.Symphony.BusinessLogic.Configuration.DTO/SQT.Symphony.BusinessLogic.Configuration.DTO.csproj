@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B8BD7D0-5B6B-4675-A002-5180AC8E4BCD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SQT.Symphony.BusinessLogic.Configuration.DTO</RootNamespace>
+    <AssemblyName>SQT.Symphony.BusinessLogic.Configuration.DTO</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="ActionLog.cs" />
+    <Compile Include="AddOnItems.cs" />
+    <Compile Include="AddOns.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="Amenities.cs" />
+    <Compile Include="CalenderEvent.cs" />
+    <Compile Include="CancellationPolicy.cs" />
+    <Compile Include="CancellationPolicyMaster.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="CategoryPOSPoints.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="ConfConferenceType.cs" />
+    <Compile Include="Conference.cs" />
+    <Compile Include="ConferenceType.cs" />
+    <Compile Include="ControlNumber.cs" />
+    <Compile Include="Corporate.cs" />
+    <Compile Include="CorporateRates.cs" />
+    <Compile Include="CounterClose_Summary.cs" />
+    <Compile Include="CounterLoginLog.cs" />
+    <Compile Include="Counters.cs" />
+    <Compile Include="Counter_Close_Detail.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="Currency.cs" />
+    <Compile Include="CurrencyType.cs" />
+    <Compile Include="Denomination.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="Deposits.cs" />
+    <Compile Include="Discounts.cs" />
+    <Compile Include="EmailConfig.cs" />
+    <Compile Include="EMailTemplates.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="ExchangeRate.cs" />
+    <Compile Include="Floor.cs" />
+    <Compile Include="FolioConfig.cs" />
+    <Compile Include="HousekeepingConfig.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemAvailability.cs" />
+    <Compile Include="ItemCategory.cs" />
+    <Compile Include="ItemTax.cs" />
+    <Compile Include="ItemUOM.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="LoginLog.cs" />
+    <Compile Include="NewsLetters.cs" />
+    <Compile Include="PaymentSlabe.cs" />
+    <Compile Include="POSConfig.cs" />
+    <Compile Include="POSPoints.cs" />
+    <Compile Include="PreferenceMaster.cs" />
+    <Compile Include="ProjectTerm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property.cs" />
+    <Compile Include="PropertyConfiguration.cs" />
+    <Compile Include="RateCard.cs" />
+    <Compile Include="RateCardDetails.cs" />
+    <Compile Include="RateServiceJoin.cs" />
+    <Compile Include="RateTaxes.cs" />
+    <Compile Include="Recovery.cs" />
+    <Compile Include="ResCancellationPolicy.cs" />
+    <Compile Include="ReservationConfig.cs" />
+    <Compile Include="ReservationPolicies.cs" />
+    <Compile Include="ResourceFiles.cs" />
+    <Compile Include="Right.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="RoleRightJoin.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="RoomAmenities.cs" />
+    <Compile Include="RoomBlock.cs" />
+    <Compile Include="RoomBlockDetails.cs" />
+    <Compile Include="RoomLayoutPlane.cs" />
+    <Compile Include="RoomLayoutPlaneDetail.cs" />
+    <Compile Include="RoomSellOrder.cs" />
+    <Compile Include="RoomType.cs" />
+    <Compile Include="RoomTypeAmenities.cs" />
+    <Compile Include="RoomTypeDeposit.cs" />
+    <Compile Include="RoomTypeServices.cs" />
+    <Compile Include="ServiceVendorMaster.cs" />
+    <Compile Include="SMSTemplates.cs" />
+    <Compile Include="State.cs" />
+    <Compile Include="StayType.cs" />
+    <Compile Include="SubCategory.cs" />
+    <Compile Include="TaxRate.cs" />
+    <Compile Include="TaxSlabe.cs" />
+    <Compile Include="Test_Item.cs" />
+    <Compile Include="Transcript.cs" />
+    <Compile Include="UOM.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserRole.cs" />
+    <Compile Include="VIPTypes.cs" />
+    <Compile Include="Wing.cs" />
+    <Compile Include="WingFloorJoin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.DAL\SQT.FRAMEWORK.DAL.csproj">
+      <Project>{9523644A-8EA4-4C73-AB7B-4C25181837BA}</Project>
+      <Name>SQT.FRAMEWORK.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

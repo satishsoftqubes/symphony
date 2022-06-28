@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetInvestorListInDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InvestorID" nillable="true" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvestorListInDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvestorListInDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVoucherListByInvestorIDInDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InvestorID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVoucherListByInvestorIDInDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVoucherListByInvestorIDInDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVoucherDetailByVoucherID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResVoucherID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVoucherDetailByVoucherIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVoucherDetailByVoucherIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ReservationAndAllocatedRoomID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResVoucherID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReservationID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="AllocatedRoomID" nillable="true" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ReservationAndAllocatedRoomIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Update_ReservationAndAllocatedRoomIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvestorEmailAddress">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInvestorEmailAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvestorEmailAddressResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetInvestorListInDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvestorListInDataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetInvestorListInDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvestorListInDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVoucherListByInvestorIDInDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVoucherListByInvestorIDInDataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetVoucherListByInvestorIDInDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVoucherListByInvestorIDInDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVoucherDetailByVoucherIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVoucherDetailByVoucherID" />
+  </wsdl:message>
+  <wsdl:message name="GetVoucherDetailByVoucherIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVoucherDetailByVoucherIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_ReservationAndAllocatedRoomIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_ReservationAndAllocatedRoomID" />
+  </wsdl:message>
+  <wsdl:message name="Update_ReservationAndAllocatedRoomIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_ReservationAndAllocatedRoomIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvestorEmailAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvestorEmailAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetInvestorEmailAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvestorEmailAddressResponse" />
+  </wsdl:message>
+  <wsdl:portType name="InvestorListSoap">
+    <wsdl:operation name="GetInvestorListInDataSet">
+      <wsdl:input message="tns:GetInvestorListInDataSetSoapIn" />
+      <wsdl:output message="tns:GetInvestorListInDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucherListByInvestorIDInDataSet">
+      <wsdl:input message="tns:GetVoucherListByInvestorIDInDataSetSoapIn" />
+      <wsdl:output message="tns:GetVoucherListByInvestorIDInDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucherDetailByVoucherID">
+      <wsdl:input message="tns:GetVoucherDetailByVoucherIDSoapIn" />
+      <wsdl:output message="tns:GetVoucherDetailByVoucherIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_ReservationAndAllocatedRoomID">
+      <wsdl:input message="tns:Update_ReservationAndAllocatedRoomIDSoapIn" />
+      <wsdl:output message="tns:Update_ReservationAndAllocatedRoomIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvestorEmailAddress">
+      <wsdl:input message="tns:GetInvestorEmailAddressSoapIn" />
+      <wsdl:output message="tns:GetInvestorEmailAddressSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InvestorListSoap" type="tns:InvestorListSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInvestorListInDataSet">
+      <soap:operation soapAction="http://tempuri.org/GetInvestorListInDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucherListByInvestorIDInDataSet">
+      <soap:operation soapAction="http://tempuri.org/GetVoucherListByInvestorIDInDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucherDetailByVoucherID">
+      <soap:operation soapAction="http://tempuri.org/GetVoucherDetailByVoucherID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_ReservationAndAllocatedRoomID">
+      <soap:operation soapAction="http://tempuri.org/Update_ReservationAndAllocatedRoomID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvestorEmailAddress">
+      <soap:operation soapAction="http://tempuri.org/GetInvestorEmailAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InvestorListSoap12" type="tns:InvestorListSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInvestorListInDataSet">
+      <soap12:operation soapAction="http://tempuri.org/GetInvestorListInDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucherListByInvestorIDInDataSet">
+      <soap12:operation soapAction="http://tempuri.org/GetVoucherListByInvestorIDInDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucherDetailByVoucherID">
+      <soap12:operation soapAction="http://tempuri.org/GetVoucherDetailByVoucherID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_ReservationAndAllocatedRoomID">
+      <soap12:operation soapAction="http://tempuri.org/Update_ReservationAndAllocatedRoomID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvestorEmailAddress">
+      <soap12:operation soapAction="http://tempuri.org/GetInvestorEmailAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InvestorList">
+    <wsdl:port name="InvestorListSoap" binding="tns:InvestorListSoap">
+      <soap:address location="http://localhost:4360/Services/InvestorList.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InvestorListSoap12" binding="tns:InvestorListSoap12">
+      <soap12:address location="http://localhost:4360/Services/InvestorList.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

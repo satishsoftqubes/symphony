@@ -1,0 +1,405 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="SQT.Symphony.UI.Web.Configuration.Master.admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Uniworld</title>
+    <link href="~/Style/style.css" runat="server" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="scptInnerHTML" runat="server">
+    </asp:ScriptManager>
+    <div id="wrap">
+        <div class="layout"> 
+            <div class="header">
+                <div class="header_left">
+                    <a href="<%=Page.ResolveUrl("~/GUI/Index.aspx") %>">
+                        <img src="<%=Page.ResolveUrl("~/images/logo.jpg") %>" border="0" alt="" class="logo" /></a>
+                    <div style="display: inline-block; vertical-align: top; margin-top: 40px;">
+                        <asp:UpdatePanel ID="uPnlMasterPropertyName" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>
+                                <asp:Label ID="lblPropertyName" runat="server" Style="font-size: x-large;"></asp:Label>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                </div>
+                <div class="header_right">
+                    <div class="header_right_col2">
+                        <div class="header_right_col2_content">
+                            <div class="header_right_col2_date">
+                                <asp:Literal ID="lblDate" runat="server"></asp:Literal>
+                                : <span>
+                                    <asp:Literal ID="litDate" runat="server"></asp:Literal></span></div>
+                            <div class="clear">
+                            </div>
+                            <div class="header_right_col2_time">
+                                <asp:Literal ID="lblTime" runat="server"></asp:Literal>
+                                : <span>
+                                    <asp:Literal ID="litTime" runat="server"></asp:Literal></span></div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="header_right_logout">
+                            <asp:LinkButton runat="server" ID="lnkLogout" OnClick="lnkLogOut_Click"></asp:LinkButton></div>
+                    </div>
+                    <div class="header_right_col1">
+                        <div class="header_right_col1_name">
+                            <%--<asp:LinkButton Style="font-size: 9pt; font-weight: normal;" runat="server" ID="lnkChangeModule"
+                                OnClick="lnkChangeModule_OnClick">
+                                <asp:Literal ID="litChangeModule" runat="server"></asp:Literal></asp:LinkButton>&nbsp;&nbsp;|&nbsp;--%>
+                            <asp:Literal ID="ltrModuleTitle" runat="server"></asp:Literal></div>
+                        <div class="header_right_col1_link">
+                            <asp:Label ID="lblUserDisplayName" runat="server"></asp:Label><%--&nbsp;&nbsp;|&nbsp;&nbsp;<asp:Label
+                                ID="lblUserRoleType" runat="server"></asp:Label>--%>
+                            &nbsp;|<asp:LinkButton ID="lnkUserSettings" runat="server" OnClick="lnkUserSettings_OnClick">
+                                <asp:Literal ID="ltrSetting" runat="server"></asp:Literal></asp:LinkButton>
+                            <%--<a href="../UserSetup/UserSetting.aspx"><asp:Literal ID="ltrSetting" runat="server"></asp:Literal></a>--%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="main">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <tr>
+                        <td class="leftmargin_main">
+                            <div class="leftmargin">
+                                <div class="leftmargin_menu">
+                                    <ajx:Accordion ID="MyAccordion" runat="server" SelectedIndex="0" HeaderCssClass="leftmargin_head"
+                                        HeaderSelectedCssClass="leftmargin_head" FadeTransitions="false" FramesPerSecond="40"
+                                        TransitionDuration="250" AutoSize="none" RequireOpenedPane="false" SuppressHeaderPostbacks="true">
+                                        <Panes>
+                                            <ajx:AccordionPane ID="AcPnGeneralSetting" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="litLGeneralSettings" runat="server"></asp:Literal></a>
+                                                    </div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <li id="liLCompanyList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Property/CompanyList.aspx") %>">
+                                                            <asp:Literal ID="litLCompanySetup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLPropertyList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Property/PropertyList.aspx") %>">
+                                                            <asp:Literal ID="litPropertySetup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLSystemSetup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Property/PropertyConfiguration.aspx") %>">
+                                                            <asp:Literal ID="litSystemSetup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liInfillSetup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/InfillSetup.aspx") %>">
+                                                            <asp:Literal ID="litLInfillSetup" runat="server"></asp:Literal></a></li>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                            <ajx:AccordionPane ID="AcPnPropertySetup" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="lblLPropertyConfiguration" runat="server"></asp:Literal></a>
+                                                    </div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <li style="display: none;"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/CurrencySetup.aspx") %>">
+                                                            <asp:Literal ID="litLCurrencyManagement" runat="server"></asp:Literal></a></li>
+                                                        <li style="display: none;"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/DenominationSetup.aspx") %>">
+                                                            <asp:Literal ID="litLDenominationsManagment" runat="server"></asp:Literal></a></li>
+                                                        <li style="display: none;"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/ExchangeRate.aspx") %>">
+                                                            <asp:Literal ID="litLExchangeRate" runat="server"></asp:Literal></a></li>
+                                                        <li style="display: none;"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/LanguageSetup.aspx") %>">
+                                                            <asp:Literal ID="litLLanguageSetup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLBlockFloorSetup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/BlockFloorSetup.aspx") %>">
+                                                            <asp:Literal ID="litLBlocks" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLAmenitiesSetup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/AmenitiesSetup.aspx") %>">
+                                                            <asp:Literal ID="litLAmenities" runat="server"></asp:Literal></a></li>
+                                                        <li id="liRoomTypeServices" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/RoomService.aspx") %>">
+                                                            <asp:Literal ID="litRoomTypeServices" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLRoomTypeList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/RoomTypeList.aspx") %>">
+                                                            <asp:Literal ID="litLUnitTypes" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLRoomList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/RoomList.aspx") %>">
+                                                            <asp:Literal ID="litLUnit" runat="server"></asp:Literal></a></li>
+                                                        <%--<li id="liLBlockRoom" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/BlockRoom.aspx") %>">
+                                                            <asp:Literal ID="litLBlockRoom" runat="server"></asp:Literal></a></li>--%>
+                                                        <li id="liLConferenceType" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/ConferenceType.aspx") %>">
+                                                            <asp:Literal ID="litLConferenceBanquetTypes" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLConference" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/ConferenceList.aspx") %>">
+                                                            <asp:Literal ID="litLConferenceBanquet" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLCounterName" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/CounterName.aspx") %>">
+                                                            <asp:Literal ID="litLCounters" runat="server"></asp:Literal></a></li>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                            <ajx:AccordionPane ID="acpnSystemSetup" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="lblLSystemSetup" runat="server"></asp:Literal></a>
+                                                    </div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <li id="liLEmailConfiguration" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/EmailConfiguration.aspx") %>">
+                                                            <asp:Literal ID="litLEmailConfiguration" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLEmailTemplates" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/EmailTempaltes.aspx") %>">
+                                                            <asp:Literal ID="litLEmailTemplates" runat="server"></asp:Literal></a></li>
+                                                        <li id="li1" runat="server"><a href="#">
+                                                            <asp:Literal ID="Literal1" runat="server" Text="SMS Setup"></asp:Literal></a></li>
+                                                        <li id="li2" runat="server"><a href="#">
+                                                            <asp:Literal ID="Literal2" runat="server" Text="SMS Templates"></asp:Literal></a></li>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                            <ajx:AccordionPane ID="acPnFrontOfficeSetup" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="ltrFrontOfficeSetup" runat="server"></asp:Literal></a></div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <li id="liLReservationConfig" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/ReservationConfig.aspx") %>">
+                                                            <asp:Literal ID="litLReservationSetup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLCancellation" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/CancellationPolicy.aspx") %>">
+                                                            <asp:Literal ID="litLCancellation" runat="server"></asp:Literal></a></li>
+                                                        <li id="liAmendment" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/AmendmentPolicy.aspx") %>">
+                                                            <asp:Literal ID="litLAmendment" runat="server"></asp:Literal></a></li>
+                                                        <%--as per discussion with vijay 10-sep-2012--%>
+                                                        <%--<li id="liLBilling" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/Billing.aspx") %>">
+                                                            <asp:Literal ID="litLBilling" runat="server"></asp:Literal></a></li>--%>
+                                                        <li id="liLFolioConfiguration" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/FolioConfiguration.aspx") %>">
+                                                            <asp:Literal ID="litLFolioConfiguration" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLTranscriptAndSOP" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/Transcript.aspx") %>">
+                                                            <asp:Literal ID="litTranscriptAndSOP" runat="server"></asp:Literal></a></li>
+                                                        <li id="lilRecovery" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/Recovery.aspx") %>">
+                                                            <asp:Literal ID="litRecovery" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLGuestTypes" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/GuestType.aspx") %>">
+                                                            <asp:Literal ID="litLGuestTypes" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLPreferences" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/GuestPreferenceSetup.aspx") %>">
+                                                            <asp:Literal ID="litLPreferences" runat="server"></asp:Literal></a></li>
+                                                        <%--<li id="liLReservationPolicy" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/ReservationPolicy.aspx") %>">
+                                                            <asp:Literal ID="litLReservationPolicy" runat="server"></asp:Literal></a></li>--%>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                            <ajx:AccordionPane ID="AcPnPriceManager" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="litLPriceManager" runat="server"></asp:Literal></a></div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <li id="liLRateCardList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/PriceManager/RateCardList.aspx") %>">
+                                                            <asp:Literal ID="litLRateCardList" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLAccount" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/Account.aspx") %>">
+                                                            <asp:Literal ID="litTaxSetup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLDiscount" visible="false" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/PriceManager/Discount.aspx") %>">
+                                                            <asp:Literal ID="litLDiscountManagement" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLDeposits" runat="server" visible="false"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/Deposits.aspx") %>">
+                                                            <asp:Literal ID="litLDepositeManagement" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLAddOnsServices" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/PriceManager/AddOnsServices.aspx") %>">
+                                                            <asp:Literal ID="litLServices" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLCorporateList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/PriceManager/CorporateList.aspx") %>">
+                                                            <asp:Literal ID="litLCorporateSetup" runat="server"></asp:Literal></a></li>                                                        
+                                                        <li id="liLBookingAgent" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/PriceManager/BookingAgentList.aspx") %>">
+                                                            <asp:Literal ID="litLBookingAgent" runat="server"></asp:Literal></a></li>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                            <ajx:AccordionPane ID="AcPnGuestManagement" runat="server" Visible="false">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="litLGuestManagement" runat="server"></asp:Literal></a></div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <%--<li id="liLGuestTypes" runat="server"><a href="#">
+                                                            <asp:Literal ID="litLGuestTypes" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLPreferences" runat="server"><a href="#">
+                                                            <asp:Literal ID="litLPreferences" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLListofGuests" runat="server"><a href="#">
+                                                            <asp:Literal ID="litLListofGuests" runat="server"></asp:Literal></a></li>--%>
+                                                        <li id="liLVIPType" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/PriceManager/VIPType.aspx") %>">
+                                                            <asp:Literal ID="litLVIPType" runat="server"></asp:Literal></a></li>
+                                                        <%--<li id="liLBlackListGuest" runat="server"><a href="#">
+                                                            <asp:Literal ID="litLBlackListGuest" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLGuestPreferences" runat="server"><a href="#">
+                                                            <asp:Literal ID="litLGuestPreferences" runat="server"></asp:Literal></a></li>--%>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                            <ajx:AccordionPane ID="AcPnRoomInventoryWEBSetup" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="litLWebManager" runat="server"></asp:Literal></a></div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <li id="liLWebSetting" runat="server"><a href="#">
+                                                            <asp:Literal ID="litLWebSettings" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLGDSMaster" runat="server"><a href="#">
+                                                            <asp:Literal ID="litLGDSMaster" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLGDSRoomInventory" runat="server"><a href="#">
+                                                            <asp:Literal ID="litLGDSRoomInventoryMang" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLGDSRoomInventoryDetail" runat="server"><a href="#">
+                                                            <asp:Literal ID="litLGDSRoomInventoryDetails" runat="server"></asp:Literal></a></li>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                            <ajx:AccordionPane ID="acPnPOSSetup" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="ltrPOSSetup" runat="server"></asp:Literal></a></div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <li id="liLPOSConfiguration" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/POSConfiguration.aspx") %>">
+                                                            <asp:Literal ID="litLPOSConfiguration" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLVendorMaster" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/VendorMaster.aspx") %>">
+                                                            <asp:Literal ID="litLVendorMaster" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLPOSPoints" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/POSPoints.aspx") %>">
+                                                            <asp:Literal ID="litPOSPoints" runat="server"></asp:Literal></a></li>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                            <ajx:AccordionPane ID="AcPnMaterialManagement" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="ltrLMaterialManagement" runat="server"></asp:Literal></a></div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <li id="liLUnitOfMeasure" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/UnitOfMeasure.aspx") %>">
+                                                            <asp:Literal ID="litLUnitOfMeasureManagement" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLCategory" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Inventory/Category.aspx") %>">
+                                                            <asp:Literal ID="litLCategorySetup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLItem" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Inventory/ItemList.aspx") %>">
+                                                            <asp:Literal ID="litLItemsManagement" runat="server"></asp:Literal></a></li>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                            <ajx:AccordionPane ID="AcPnHouseKeeping" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="litLHouseKeepingSetup" runat="server"></asp:Literal></a></div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <li id="liLHouseKeeping" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/HouseKeeping.aspx") %>">
+                                                            <asp:Literal ID="litLHouseKeepingSectionSetup" runat="server"></asp:Literal></a></li>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                            <ajx:AccordionPane ID="AcPnlUserSettings" runat="server">
+                                                <Header>
+                                                    <div class="leftmargin_head">
+                                                        <a href="" class="accordionLink">
+                                                            <asp:Literal ID="litLUserSettings" runat="server"></asp:Literal></a></div>
+                                                </Header>
+                                                <Content>
+                                                    <ul class="leftmargin_nav">
+                                                        <li id="liLDepartment" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/Department.aspx") %>">
+                                                            <asp:Literal ID="litLDepartment" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLRole" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/UserSetup/Role.aspx") %>">
+                                                            <asp:Literal ID="litLRoleSetup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLEmployeeList" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/EmployeeList.aspx") %>">
+                                                            <asp:Literal ID="litLEmployeeSetup" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLUsers" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/UserSetup/Users.aspx") %>">
+                                                            <asp:Literal ID="litLUserManagement" runat="server"></asp:Literal></a></li>
+                                                        <%--<li id="liLActionLog" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/ActionLog.aspx") %>">
+                                                            <asp:Literal ID="litLActionLogView" runat="server"></asp:Literal></a></li>
+                                                        <li id="liLLogInLog" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/LogInLog.aspx") %>">
+                                                            <asp:Literal ID="litLLoginLogView" runat="server"></asp:Literal></a></li>--%>
+                                                        <%--<li><a href="#">
+                                                            <asp:Literal ID="litLErroLogView" runat="server"></asp:Literal></a></li>--%>
+                                                    </ul>
+                                                </Content>
+                                            </ajx:AccordionPane>
+                                        </Panes>
+                                    </ajx:Accordion>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="main_content_td">
+                            <div class="main_content">
+                                <div class="mainmenu">
+                                    <ul class="mainnav">
+                                        <li id="liMCategories" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Inventory/Category.aspx") %>">
+                                            <asp:Literal ID="litMCategories" runat="server" Text="Item Category Setup"></asp:Literal></a>
+                                        </li>
+                                        <li id="liMItemManagement" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Inventory/ItemList.aspx") %>">
+                                            <asp:Literal ID="litMItemManagement" runat="server" Text="Item Management"></asp:Literal></a>
+                                        </li>
+                                        <li id="liMRateCards" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/PriceManager/RateCardList.aspx") %>">
+                                            <asp:Literal ID="litMRateCards" runat="server" Text="Ratecard Setup"></asp:Literal></a>
+                                        </li>
+                                        <li id="liAddOnsServices" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/PriceManager/AddOnsServices.aspx") %>">
+                                            <asp:Literal ID="litMAddOnsServices" runat="server" Text="Add Ons Services"></asp:Literal></a></li>
+                                        <li id="liMCorporateSetup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/PriceManager/CorporateList.aspx") %>">
+                                            <asp:Literal ID="litMCorporateSetup" runat="server" Text="Company Master"></asp:Literal></a></li>
+                                        <%--<li id="liMDiscountSetup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/PriceManager/Discount.aspx") %>">
+                                            <asp:Literal ID="litMDiscountSetup" runat="server" Text="Discount Setup"></asp:Literal></a></li>--%>
+                                        <%--<li id="liMPropertySetup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Property/PropertyList.aspx") %>">
+                                            <asp:Literal ID="litMPropertySetup" runat="server" Text="Property Setup"></asp:Literal></a>
+                                        </li>--%>
+                                        <%--<li id="liMUnitSetup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/RoomList.aspx") %>">
+                                            <asp:Literal ID="litMUnitSetup" runat="server" Text="Unit Setup"></asp:Literal></a>
+                                        </li>
+                                        <li id="liMBlockFloor" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/BlockFloorSetup.aspx") %>">
+                                            <asp:Literal ID="litMBlockFloor" runat="server" Text="Block/Floor"></asp:Literal></a>
+                                        </li>--%>
+                                        <%--<li id="liMEmployeeSetup" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/EmployeeList.aspx") %>">
+                                            <asp:Literal ID="litMEmployeeSetup" runat="server" Text="Employee Setup"></asp:Literal></a>
+                                        </li>--%>
+                                        <%--<li id="liMListOfGuests" runat="server"><a href="#">
+                                            <asp:Literal ID="litMListOfGuests" runat="server" Text="Guest Lists"></asp:Literal></a>
+                                        </li>--%>
+                                        <li id="liMReport" runat="server"><a href="#">
+                                            <asp:Literal ID="litMReport" runat="server"></asp:Literal></a>
+                                            <ul>
+                                                <li id="liMActionLog" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/ActionLog.aspx") %>">
+                                                    <asp:Literal ID="litMActionLogView" runat="server"></asp:Literal></a> </li>
+                                                <li id="liMLoginLog" runat="server"><a href="<%=Page.ResolveUrl("~/GUI/Configurations/LogInLog.aspx") %>">
+                                                    <asp:Literal ID="LitMLoginLog" runat="server"></asp:Literal></a> </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clear">
+                                </div>
+                                <div class="breadcrum">
+                                    <asp:UpdatePanel ID="uPnlBreadCrumb" runat="server" UpdateMode="Conditional">
+                                        <ContentTemplate>
+                                            <asp:DataList ID="dlBreadCrumb" runat="server" CellPadding="0" CellSpacing="0" RepeatDirection="Horizontal">
+                                                <ItemTemplate>
+                                                    <asp:HyperLink ID="hlNode" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "NameColumn") %>'
+                                                        NavigateUrl='<%#DataBinder.Eval(Container.DataItem, "Link") %>'>
+                                                    </asp:HyperLink>
+                                                </ItemTemplate>
+                                            </asp:DataList>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                                <div class="clear">
+                                </div>
+                                <div class="mainbox">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

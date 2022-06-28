@@ -1,0 +1,3149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D403FE1C-FC80-4188-A016-33BC59238606}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SQT.Symphony.UI.Web.FrontDesk</RootNamespace>
+    <AssemblyName>SQT.Symphony.UI.Web.FrontDesk</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\SQT.Symphony.UI.Web.Configuration\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\..\..\..\..\..\..\Symphony3.0\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.FrontDesk\bin\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\..\..\..\Symphony3.0\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.FrontDesk\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ckeditor\adapters\jquery.js" />
+    <Content Include="ckeditor\CHANGES.html" />
+    <Content Include="ckeditor\ckeditor.js" />
+    <Content Include="ckeditor\ckeditor_basic.js" />
+    <Content Include="ckeditor\config.js" />
+    <Content Include="ckeditor\contents.css" />
+    <Content Include="ckeditor\images\spacer.gif" />
+    <Content Include="ckeditor\INSTALL.html" />
+    <Content Include="ckeditor\lang\af.js" />
+    <Content Include="ckeditor\lang\ar.js" />
+    <Content Include="ckeditor\lang\bg.js" />
+    <Content Include="ckeditor\lang\bn.js" />
+    <Content Include="ckeditor\lang\bs.js" />
+    <Content Include="ckeditor\lang\ca.js" />
+    <Content Include="ckeditor\lang\cs.js" />
+    <Content Include="ckeditor\lang\cy.js" />
+    <Content Include="ckeditor\lang\da.js" />
+    <Content Include="ckeditor\lang\de.js" />
+    <Content Include="ckeditor\lang\el.js" />
+    <Content Include="ckeditor\lang\en-au.js" />
+    <Content Include="ckeditor\lang\en-ca.js" />
+    <Content Include="ckeditor\lang\en-gb.js" />
+    <Content Include="ckeditor\lang\en.js" />
+    <Content Include="ckeditor\lang\eo.js" />
+    <Content Include="ckeditor\lang\es.js" />
+    <Content Include="ckeditor\lang\et.js" />
+    <Content Include="ckeditor\lang\eu.js" />
+    <Content Include="ckeditor\lang\fa.js" />
+    <Content Include="ckeditor\lang\fi.js" />
+    <Content Include="ckeditor\lang\fo.js" />
+    <Content Include="ckeditor\lang\fr-ca.js" />
+    <Content Include="ckeditor\lang\fr.js" />
+    <Content Include="ckeditor\lang\gl.js" />
+    <Content Include="ckeditor\lang\gu.js" />
+    <Content Include="ckeditor\lang\he.js" />
+    <Content Include="ckeditor\lang\hi.js" />
+    <Content Include="ckeditor\lang\hr.js" />
+    <Content Include="ckeditor\lang\hu.js" />
+    <Content Include="ckeditor\lang\is.js" />
+    <Content Include="ckeditor\lang\it.js" />
+    <Content Include="ckeditor\lang\ja.js" />
+    <Content Include="ckeditor\lang\ka.js" />
+    <Content Include="ckeditor\lang\km.js" />
+    <Content Include="ckeditor\lang\ko.js" />
+    <Content Include="ckeditor\lang\lt.js" />
+    <Content Include="ckeditor\lang\lv.js" />
+    <Content Include="ckeditor\lang\mn.js" />
+    <Content Include="ckeditor\lang\ms.js" />
+    <Content Include="ckeditor\lang\nb.js" />
+    <Content Include="ckeditor\lang\nl.js" />
+    <Content Include="ckeditor\lang\no.js" />
+    <Content Include="ckeditor\lang\pl.js" />
+    <Content Include="ckeditor\lang\pt-br.js" />
+    <Content Include="ckeditor\lang\pt.js" />
+    <Content Include="ckeditor\lang\ro.js" />
+    <Content Include="ckeditor\lang\ru.js" />
+    <Content Include="ckeditor\lang\sk.js" />
+    <Content Include="ckeditor\lang\sl.js" />
+    <Content Include="ckeditor\lang\sr-latn.js" />
+    <Content Include="ckeditor\lang\sr.js" />
+    <Content Include="ckeditor\lang\sv.js" />
+    <Content Include="ckeditor\lang\th.js" />
+    <Content Include="ckeditor\lang\tr.js" />
+    <Content Include="ckeditor\lang\uk.js" />
+    <Content Include="ckeditor\lang\vi.js" />
+    <Content Include="ckeditor\lang\zh-cn.js" />
+    <Content Include="ckeditor\lang\zh.js" />
+    <Content Include="ckeditor\lang\_languages.js" />
+    <Content Include="ckeditor\lang\_translationstatus.txt" />
+    <Content Include="ckeditor\LICENSE.html" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\lang\en.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\lang\he.js" />
+    <Content Include="ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="ckeditor\plugins\adobeair\plugin.js" />
+    <Content Include="ckeditor\plugins\ajax\plugin.js" />
+    <Content Include="ckeditor\plugins\autogrow\plugin.js" />
+    <Content Include="ckeditor\plugins\bbcode\plugin.js" />
+    <Content Include="ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="ckeditor\plugins\devtools\lang\en.js" />
+    <Content Include="ckeditor\plugins\devtools\plugin.js" />
+    <Content Include="ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="ckeditor\plugins\docprops\dialogs\docprops.js" />
+    <Content Include="ckeditor\plugins\docprops\plugin.js" />
+    <Content Include="ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="ckeditor\plugins\iframedialog\plugin.js" />
+    <Content Include="ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="ckeditor\plugins\link\images\anchor.gif" />
+    <Content Include="ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="ckeditor\plugins\pastetext\dialogs\pastetext.js" />
+    <Content Include="ckeditor\plugins\placeholder\dialogs\placeholder.js" />
+    <Content Include="ckeditor\plugins\placeholder\lang\en.js" />
+    <Content Include="ckeditor\plugins\placeholder\lang\he.js" />
+    <Content Include="ckeditor\plugins\placeholder\placeholder.gif" />
+    <Content Include="ckeditor\plugins\placeholder\plugin.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="ckeditor\plugins\specialchar\lang\en.js" />
+    <Content Include="ckeditor\plugins\stylesheetparser\plugin.js" />
+    <Content Include="ckeditor\plugins\styles\styles\default.js" />
+    <Content Include="ckeditor\plugins\tableresize\plugin.js" />
+    <Content Include="ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="ckeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="ckeditor\plugins\uicolor\lang\en.js" />
+    <Content Include="ckeditor\plugins\uicolor\lang\he.js" />
+    <Content Include="ckeditor\plugins\uicolor\plugin.js" />
+    <Content Include="ckeditor\plugins\uicolor\uicolor.gif" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="ckeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="ckeditor\plugins\xml\plugin.js" />
+    <Content Include="ckeditor\skins\kama\dialog.css" />
+    <Content Include="ckeditor\skins\kama\editor.css" />
+    <Content Include="ckeditor\skins\kama\icons.png" />
+    <Content Include="ckeditor\skins\kama\icons_rtl.png" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="ckeditor\skins\kama\images\noimage.png" />
+    <Content Include="ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="ckeditor\skins\kama\skin.js" />
+    <Content Include="ckeditor\skins\kama\templates.css" />
+    <Content Include="ckeditor\skins\office2003\dialog.css" />
+    <Content Include="ckeditor\skins\office2003\editor.css" />
+    <Content Include="ckeditor\skins\office2003\icons.png" />
+    <Content Include="ckeditor\skins\office2003\icons_rtl.png" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\office2003\images\mini.gif" />
+    <Content Include="ckeditor\skins\office2003\images\noimage.png" />
+    <Content Include="ckeditor\skins\office2003\images\sprites.png" />
+    <Content Include="ckeditor\skins\office2003\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\office2003\skin.js" />
+    <Content Include="ckeditor\skins\office2003\templates.css" />
+    <Content Include="ckeditor\skins\v2\dialog.css" />
+    <Content Include="ckeditor\skins\v2\editor.css" />
+    <Content Include="ckeditor\skins\v2\icons.png" />
+    <Content Include="ckeditor\skins\v2\icons_rtl.png" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\v2\images\mini.gif" />
+    <Content Include="ckeditor\skins\v2\images\noimage.png" />
+    <Content Include="ckeditor\skins\v2\images\sprites.png" />
+    <Content Include="ckeditor\skins\v2\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\v2\images\toolbar_start.gif" />
+    <Content Include="ckeditor\skins\v2\skin.js" />
+    <Content Include="ckeditor\skins\v2\templates.css" />
+    <Content Include="ckeditor\themes\default\theme.js" />
+    <Content Include="CounterLogin.aspx" />
+    <Content Include="EmailTemplates\ReservationVoucher.htm" />
+    <Content Include="EmailTemplates\SendInquiryEmail.htm" />
+    <Content Include="EmailTemplate\ComplementoryReservationVoucher.htm" />
+    <Content Include="EmailTemplate\ExtendReservationVoucher.htm" />
+    <Content Include="EmailTemplate\InvoiceTemplate.htm" />
+    <Content Include="EmailTemplate\PaymentReceipt.htm" />
+    <Content Include="EmailTemplate\ReservationVoucher.htm" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="GUI\AccessIsDenied.aspx" />
+    <Content Include="GUI\Banquet\BanquetManagement.aspx" />
+    <Content Include="GUI\Banquet\BanquetProposal.aspx" />
+    <Content Include="GUI\Banquet\ServiceManager.aspx" />
+    <Content Include="GUI\Billing\CashierCheckOut.aspx" />
+    <Content Include="GUI\Billing\CheckOut.aspx" />
+    <Content Include="GUI\Billing\CheckOutNew.aspx" />
+    <Content Include="GUI\Billing\CheckOutVoucher.aspx" />
+    <Content Include="GUI\Billing\CompanyInvoicePrint.aspx" />
+    <Content Include="GUI\Billing\DepartureList.aspx" />
+    <Content Include="GUI\Billing\InfraCharges.aspx" />
+    <Content Include="GUI\Billing\NewCashierCheckout.aspx" />
+    <Content Include="GUI\Billing\ReprintPaymentInvoice.aspx" />
+    <Content Include="GUI\Billing\UnsettledCheckOut.aspx" />
+    <Content Include="GUI\Card\CardRecharge.aspx" />
+    <Content Include="GUI\Card\CashCardList.aspx" />
+    <Content Include="GUI\Card\IssueCard.aspx" />
+    <Content Include="GUI\Card\LostCard.aspx" />
+    <Content Include="GUI\Card\PrintStatement.aspx" />
+    <Content Include="GUI\CommonControl\AccessDenied.aspx" />
+    <Content Include="GUI\CommonControl\DayEnd.aspx" />
+    <Content Include="GUI\Counter\CloseCounter.aspx" />
+    <Content Include="GUI\Counter\CounterCloseHistoryOnThisMachine.aspx" />
+    <Content Include="GUI\Counter\DetailCounterReport.aspx" />
+    <Content Include="GUI\Dashboard.aspx" />
+    <Content Include="GUI\Folio\FolioDetails.aspx" />
+    <Content Include="GUI\Folio\FolioDetailsOld.aspx" />
+    <Content Include="GUI\Folio\FolioDetailsReceipt.aspx" />
+    <Content Include="GUI\Folio\FolioList.aspx" />
+    <Content Include="GUI\Folio\GuestProfile.aspx" />
+    <Content Include="GUI\Folio\LedgerReport.aspx" />
+    <Content Include="GUI\Folio\RerouteFolioSetup.aspx" />
+    <Content Include="GUI\Folio\SubFolioList.aspx" />
+    <Content Include="GUI\Folio\TransferFolioTransaction.asmx" />
+    <Content Include="GUI\Folio\TransferTransactionFolio.aspx" />
+    <Content Include="GUI\Guest\AddOnServices.aspx" />
+    <Content Include="GUI\Guest\AddServices.aspx" />
+    <Content Include="GUI\Guest\ChangeRoom.aspx" />
+    <Content Include="GUI\Guest\CloseTroubleTicket.aspx" />
+    <Content Include="GUI\Guest\Complain.aspx" />
+    <Content Include="GUI\Guest\ExtendStay.aspx" />
+    <Content Include="GUI\Guest\FrontDeskAlert.aspx" />
+    <Content Include="GUI\Guest\GuestAllMsgList.aspx" />
+    <Content Include="GUI\Guest\GuestMaster.aspx" />
+    <Content Include="GUI\Guest\InquiryList.aspx" />
+    <Content Include="GUI\Guest\Message.aspx" />
+    <Content Include="GUI\Guest\MoveRoom.aspx" />
+    <Content Include="GUI\Guest\Preference.aspx" />
+    <Content Include="GUI\Guest\SearchServices.aspx" />
+    <Content Include="GUI\Guest\SendEmailToGuest.aspx" />
+    <Content Include="GUI\Guest\SwapRoom.aspx" />
+    <Content Include="GUI\Guest\TroubleTicket.aspx" />
+    <Content Include="GUI\Guest\UpgradeDownGradePrint.aspx" />
+    <Content Include="GUI\Guest\UpgradeDowngradeRoom.aspx" />
+    <Content Include="GUI\Guest\UpgradeRoom.aspx" />
+    <Content Include="GUI\Report\BirthDayList.aspx" />
+    <Content Include="GUI\Report\BirthDayListPrint.aspx" />
+    <Content Include="GUI\Report\CollectionSummaryReport.aspx" />
+    <Content Include="GUI\Report\RoomNightReport.aspx" />
+    <Content Include="GUI\Report\RPTAccountRevenue.aspx" />
+    <Content Include="GUI\Report\RPTBillFormat.aspx" />
+    <Content Include="GUI\Report\RPTCancellationCharges.aspx" />
+    <Content Include="GUI\Report\RPTCashReport.aspx" />
+    <Content Include="GUI\Report\RPTCFormReport.aspx" />
+    <Content Include="GUI\Report\RPTCompanyPosting.aspx" />
+    <Content Include="GUI\Report\RPTCreditcardwiseCollection.aspx" />
+    <Content Include="GUI\Report\RPTInfraServiceCharges.aspx" />
+    <Content Include="GUI\Report\RPTOccupancyChart.aspx" />
+    <Content Include="GUI\Report\RPTOccupancyChartByBlockAndRateCard.aspx" />
+    <Content Include="GUI\Report\RPTOccupancyChartByBlockAndRoomType.aspx" />
+    <Content Include="GUI\Report\RPTOccupancyChartByBlockType.aspx" />
+    <Content Include="GUI\Report\RPTOccupancyReoprtByType.aspx" />
+    <Content Include="GUI\Report\RPTRetentionCharges.aspx" />
+    <Content Include="GUI\Report\RPTRevenueDetail.aspx" />
+    <Content Include="GUI\Report\RPTRoomDeposit.aspx" />
+    <Content Include="GUI\Report\RPTRoomHistory.aspx" />
+    <Content Include="GUI\Report\RPTRoomRentAdvance.aspx" />
+    <Content Include="GUI\Report\RPTVacantRoomList.aspx" />
+    <Content Include="GUI\Report\RPTYeildCalculation.aspx" />
+    <Content Include="GUI\Report\VoidReport.aspx" />
+    <Content Include="GUI\Report\VoidReportPrint.aspx" />
+    <Content Include="GUI\Reservation\AddGroupGuest.aspx" />
+    <Content Include="GUI\Reservation\AmendmentList.aspx" />
+    <Content Include="GUI\Reservation\AmendReservation.aspx" />
+    <Content Include="GUI\Reservation\ArrivalAndDeparture.aspx" />
+    <Content Include="GUI\Reservation\AssignRoom.aspx" />
+    <Content Include="GUI\Reservation\AvailabilityByBlock.aspx" />
+    <Content Include="GUI\Reservation\AvailabilityByFloor.aspx" />
+    <Content Include="GUI\Reservation\CancellationVoucher.aspx" />
+    <Content Include="GUI\Reservation\CancelReservation.aspx" />
+    <Content Include="GUI\Reservation\CancelReservationList.aspx" />
+    <Content Include="GUI\Reservation\ChangeRoomNumOnly.aspx" />
+    <Content Include="GUI\Reservation\CheckIn.aspx" />
+    <Content Include="GUI\Reservation\CheckInList.aspx" />
+    <Content Include="GUI\Reservation\CheckInLog.aspx" />
+    <Content Include="GUI\Reservation\CheckInLogPrint.aspx" />
+    <Content Include="GUI\Reservation\CheckInOld.aspx" />
+    <Content Include="GUI\Reservation\CheckInPaymentRecipt.aspx" />
+    <Content Include="GUI\Reservation\CheckInVoucher.aspx" />
+    <Content Include="GUI\Reservation\CompanyBillPrint.aspx" />
+    <Content Include="GUI\Reservation\ConferenceReservation.aspx" />
+    <Content Include="GUI\Reservation\ConferenceReservationList.aspx" />
+    <Content Include="GUI\Reservation\CurrentGuestList.aspx" />
+    <Content Include="GUI\Reservation\Deposit.aspx" />
+    <Content Include="GUI\Reservation\EditReservation.aspx" />
+    <Content Include="GUI\Reservation\ExtandReservationVoucherPrint.aspx" />
+    <Content Include="GUI\Reservation\ExtendReservation.aspx" />
+    <Content Include="GUI\Reservation\FindBlackList.asmx" />
+    <Content Include="GUI\Reservation\GroupReservation.aspx" />
+    <Content Include="GUI\Reservation\GroupReservationList.aspx" />
+    <Content Include="GUI\Reservation\GuestListPrint.aspx" />
+    <Content Include="GUI\Reservation\InvestorBooking.aspx" />
+    <Content Include="GUI\Reservation\NewCheckInList.aspx" />
+    <Content Include="GUI\Reservation\PastGuestList.aspx" />
+    <Content Include="GUI\Reservation\QuickRoomReservation.aspx" />
+    <Content Include="GUI\Reservation\RateCardList.aspx" />
+    <Content Include="GUI\Reservation\RatecardPrint.aspx" />
+    <Content Include="GUI\Reservation\RegistrationForm.aspx" />
+    <Content Include="GUI\Reservation\RegistrationVoucher.aspx" />
+    <Content Include="GUI\Reservation\Reservation.aspx" />
+    <Content Include="GUI\Reservation\ReservationForm.aspx" />
+    <Content Include="GUI\Reservation\RoomAvailability.aspx" />
+    <Content Include="GUI\Reservation\RoomReservation.aspx" />
+    <Content Include="GUI\Reservation\RoomReservationList.aspx" />
+    <Content Include="GUI\Reservation\RoomStatus.aspx" />
+    <Content Include="GUI\Reservation\RoomStatusView.aspx" />
+    <Content Include="GUI\Reservation\RoomToSell.aspx" />
+    <Content Include="GUI\Reservation\SearchKeyandRoom.aspx" />
+    <Content Include="GUI\Reservation\TodayArrivalPrint.aspx" />
+    <Content Include="GUI\Reservation\TodaysDeparturePrintt.aspx" />
+    <Content Include="GUI\Reservation\WalkIn.aspx" />
+    <Content Include="GUI\Transcript.aspx" />
+    <Content Include="images\001_38.gif" />
+    <Content Include="images\24_alert.png" />
+    <Content Include="images\24_tick.png" />
+    <Content Include="images\24_x_false.png" />
+    <Content Include="images\accessDenied.gif" />
+    <Content Include="images\actionlog.png" />
+    <Content Include="images\active_inq.png" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\Arrival22x22.png" />
+    <Content Include="images\arrow_03.png" />
+    <Content Include="images\bg_modal.png" />
+    <Content Include="images\bg_modal1.png" />
+    <Content Include="images\bg_modal1_old.png" />
+    <Content Include="images\BlankPhoto.jpg" />
+    <Content Include="images\Blocked22x22.png" />
+    <Content Include="images\boxbottom.jpg" />
+    <Content Include="images\boxbottomleft.jpg" />
+    <Content Include="images\boxbottomright.jpg" />
+    <Content Include="images\boxhead.jpg" />
+    <Content Include="images\boxheadmodel_popup.png" />
+    <Content Include="images\boxleft.jpg" />
+    <Content Include="images\boxright.jpg" />
+    <Content Include="images\boxtop.jpg" />
+    <Content Include="images\boxtopleft.jpg" />
+    <Content Include="images\boxtopright.jpg" />
+    <Content Include="images\box_arrow.jpg" />
+    <Content Include="images\brid_divider.png" />
+    <Content Include="images\browse.png" />
+    <Content Include="images\BusinessCard.png" />
+    <Content Include="images\CalanderIcon.png" />
+    <Content Include="images\Cancelled22x22.png" />
+    <Content Include="images\Cancelled32x32.png" />
+    <Content Include="images\CheckIn22x22.png" />
+    <Content Include="images\CheckIn32x32.png" />
+    <Content Include="images\CheckOut22x22.png" />
+    <Content Include="images\CheckOut32x32.png" />
+    <Content Include="images\clear.png" />
+    <Content Include="images\clearsearch.png" />
+    <Content Include="images\colorfill.png" />
+    <Content Include="images\Confirmed22x22.png" />
+    <Content Include="images\Confirmed32x32.png" />
+    <Content Include="images\confirmod.gif" />
+    <Content Include="images\cross_circle.png" />
+    <Content Include="images\currentstatus_03.png" />
+    <Content Include="images\deactive_inq.png" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\DeleteFile.png" />
+    <Content Include="images\delete_icon.png" />
+    <Content Include="images\Departure22X22.png" />
+    <Content Include="images\docviewer.png" />
+    <Content Include="images\downarrow.jpg" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\elevation.gif" />
+    <Content Include="images\error.png" />
+    <Content Include="images\file.png" />
+    <Content Include="images\flat.png" />
+    <Content Include="images\groupreservation.png" />
+    <Content Include="images\Guarented22x22.png" />
+    <Content Include="images\Guarented32x32.png" />
+    <Content Include="images\Guest_Message.png" />
+    <Content Include="images\HKP.png" />
+    <Content Include="images\HKP22x22.png" />
+    <Content Include="images\HKP28x28.png" />
+    <Content Include="images\hovermenu_left.png" />
+    <Content Include="images\hovermenu_middle.png" />
+    <Content Include="images\hovermenu_right.png" />
+    <Content Include="images\icon111.png" />
+    <Content Include="images\icon222.png" />
+    <Content Include="images\InHouse22x22.png" />
+    <Content Include="images\Inquiry25X25.png" />
+    <Content Include="images\loginbox_bottomleft.png" />
+    <Content Include="images\loginbox_bottomright.png" />
+    <Content Include="images\loginbox_bottom_midle.png" />
+    <Content Include="images\loginbox_topleft.png" />
+    <Content Include="images\loginbox_topmiddle.png" />
+    <Content Include="images\loginbox_topright.png" />
+    <Content Include="images\login_contentbg.png" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logoold.jpg" />
+    <Content Include="images\logout_bg.jpg" />
+    <Content Include="images\model_popup_boxbottomcenter.png" />
+    <Content Include="images\model_popup_boxbottomleft.png" />
+    <Content Include="images\model_popup_boxbottomright.png" />
+    <Content Include="images\model_popup_boxheadleft.png" />
+    <Content Include="images\model_popup_boxheadmiddle.png" />
+    <Content Include="images\model_popup_boxheadright.png" />
+    <Content Include="images\model_popup_boxleft.png" />
+    <Content Include="images\model_popup_boxright.png" />
+    <Content Include="images\No-Show22x22.png" />
+    <Content Include="images\no.png" />
+    <Content Include="images\Non-Arrival22x22.png" />
+    <Content Include="images\payment_info.gif" />
+    <Content Include="images\percentage.png" />
+    <Content Include="images\plus_button.png" />
+    <Content Include="images\plus_button_orange.png" />
+    <Content Include="images\plus_minus.png" />
+    <Content Include="images\Print32x32.png" />
+    <Content Include="images\QuickPost32x32.png" />
+    <Content Include="images\Refresh_F5.png" />
+    <Content Include="images\Refresh_F532x32.png" />
+    <Content Include="images\report_pdf.png" />
+    <Content Include="images\report_word.png" />
+    <Content Include="images\report_xlsx.png" />
+    <Content Include="images\saveicon.png" />
+    <Content Include="images\search-icon.png" />
+    <Content Include="images\ServiceStatus32x32.png" />
+    <Content Include="images\success.png" />
+    <Content Include="images\un-confirm-rservation.gif" />
+    <Content Include="images\un-confirm-rservation_small.gif" />
+    <Content Include="images\UnConfirmed22x22.png" />
+    <Content Include="images\UnConfirmed32x32.png" />
+    <Content Include="images\uparrow.jpg" />
+    <Content Include="images\updownarrow_03.png" />
+    <Content Include="images\updownarrow_05.png" />
+    <Content Include="images\user.png" />
+    <Content Include="images\UserBlankPhoto.jpg" />
+    <Content Include="images\Vacant22x22.png" />
+    <Content Include="images\View.png" />
+    <Content Include="images\viewdoc1616.png" />
+    <Content Include="images\viewdoc2222.png" />
+    <Content Include="images\waitinglist.gif" />
+    <Content Include="images\WaitingList22x22.png" />
+    <Content Include="images\waitinglist_small.gif" />
+    <Content Include="images\yes.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="ReportFiles\frmViewer.aspx" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-1.4.3.js" />
+    <Content Include="Scripts\jquery-1.4.3.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-ui-1.8.5.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.autocomplete.css" />
+    <Content Include="Scripts\jquery.autocomplete.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.tabs.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <None Include="ckeditor\.htaccess" />
+    <None Include="ckeditor\images\Thumbs.db" />
+    <None Include="ckeditor\plugins\about\dialogs\Thumbs.db" />
+    <None Include="ckeditor\plugins\placeholder\Thumbs.db" />
+    <Content Include="GUI\Billing\AutoGuestSuggest.ashx" />
+    <Content Include="GUI\Billing\CheckedInGuestAutoSuggest.ashx" />
+    <Content Include="GUI\Reservation\GuestCompanyAutoSuggest.ashx" />
+    <Content Include="GUI\Reservation\RoomNoAutosuggest.ashx" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="ReportDataSet\FRONTDESK_DATASET.xsc">
+      <DependentUpon>FRONTDESK_DATASET.xsd</DependentUpon>
+    </None>
+    <None Include="ReportDataSet\FRONTDESK_DATASET.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FRONTDESK_DATASET1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportDataSet\FRONTDESK_DATASET.xss">
+      <DependentUpon>FRONTDESK_DATASET.xsd</DependentUpon>
+    </None>
+    <None Include="Service References\SrvcRefInvestorList\InvestorList.disco" />
+    <None Include="Service References\SrvcRefInvestorList\configuration91.svcinfo" />
+    <None Include="Service References\SrvcRefInvestorList\configuration.svcinfo" />
+    <None Include="Service References\SrvcRefInvestorList\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Styles\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Styles\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Styles\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Styles\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Styles\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Styles\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Styles\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Styles\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Styles\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-1.8.5.custom.css" />
+    <Content Include="Styles\jquery-ui.css" />
+    <Content Include="Styles\jquery.ui.core.css" />
+    <Content Include="Styles\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery.ui.timepicker.css" />
+    <Content Include="Styles\login.css" />
+    <Content Include="Styles\modelpopup.css" />
+    <Content Include="Styles\Popup.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Styles\tab_control.css" />
+    <Content Include="UIControls\Banquet\ctrlBanquetManagement.ascx" />
+    <Content Include="UIControls\Banquet\CtrlBanquetProposal.ascx" />
+    <Content Include="UIControls\Banquet\CtrlControlNotes.ascx" />
+    <Content Include="UIControls\Banquet\CtrlServiceManager.ascx" />
+    <Content Include="UIControls\Banquet\CtrlToDoStask.ascx" />
+    <Content Include="UIControls\Billing\CtrlCashierCheckOut.ascx" />
+    <Content Include="UIControls\Billing\CtrlCheckOut.ascx" />
+    <Content Include="UIControls\Billing\CtrlCheckOutNew.ascx" />
+    <Content Include="UIControls\Billing\CtrlCheckOutVoucher.ascx" />
+    <Content Include="UIControls\Billing\CtrlInfraCharges.ascx" />
+    <Content Include="UIControls\Billing\CtrlNewCashierCheckout.ascx" />
+    <Content Include="UIControls\Billing\CtrlReprintPaymentInvoice.ascx" />
+    <Content Include="UIControls\Billing\CtrlUnsettledCheckOut.ascx" />
+    <Content Include="UIControls\Billing\DepartureList.ascx" />
+    <Content Include="UIControls\Card\CtrlCardRecharge.ascx" />
+    <Content Include="UIControls\Card\CtrlCashCardList.ascx" />
+    <Content Include="UIControls\Card\CtrlCommonSearchGuest.ascx" />
+    <Content Include="UIControls\Card\ctrlIssueCard.ascx" />
+    <Content Include="UIControls\Card\CtrlLostCard.ascx" />
+    <Content Include="UIControls\Card\CtrlPrintStatement.ascx" />
+    <Content Include="UIControls\CommonControls\CtrCommonGuestInfo.ascx" />
+    <Content Include="UIControls\CommonControls\CtrCommonInvBookingGuestInfo.ascx" />
+    <Content Include="UIControls\CommonControls\CtrGuestProfile.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlAccessDenied.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlAccessIsDenied.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlAddress.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlAutoAssignUnit.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonAddServices.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonArrivalList.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonCardInfo.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonCheckIn.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonCounterLogin.ascx" />
+    <Content Include="UIControls\CommonControls\ctrlCommonDayEnd.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonDepatureList.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonExtendReservation.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonFolioTransactionDetails.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonFrontDeskAlert.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonGuestHistory.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonHouseKeeping.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonInvoiceBillingName.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonMessage.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonMoveUnitSetup.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonOterhInformation.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonPayment.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonQuickPost.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonRoomAvailabilityChart.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonStayInformation.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonVoidTransaction.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCommonVoucherDetails.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCounterClose.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCounterCloseHistoryOnThisMachine.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlCounterLogin.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlDetailsCounterReport.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlGuestAllMsgList.ascx" />
+    <Content Include="UIControls\CommonControls\CtrlUpgradeDowngradeRoom.ascx" />
+    <Content Include="UIControls\CommonControls\MsgBox.ascx" />
+    <Content Include="UIControls\Dashboard\CtrlCommonRatecardDashboard.ascx" />
+    <Content Include="UIControls\Dashboard\CtrlRoomToSellDashboard.ascx" />
+    <Content Include="UIControls\Folio\CtrlCommonAddDeposit.ascx" />
+    <Content Include="UIControls\Folio\CtrlCommonFolioOverrideTransaction.ascx" />
+    <Content Include="UIControls\Folio\CtrlCommonFolioPostCharge.ascx" />
+    <Content Include="UIControls\Folio\CtrlCommonPostCredit.ascx" />
+    <Content Include="UIControls\Folio\CtrlCommonSubFolioConfiguration.ascx" />
+    <Content Include="UIControls\Folio\CtrlDepositList.ascx" />
+    <Content Include="UIControls\Folio\CtrlDiscountOnTransaction.ascx" />
+    <Content Include="UIControls\Folio\CtrlFolioAssignPackage.ascx" />
+    <Content Include="UIControls\Folio\CtrlFolioDetails.ascx" />
+    <Content Include="UIControls\Folio\CtrlFolioDetailsOld.ascx" />
+    <Content Include="UIControls\Folio\CtrlFolioList.ascx" />
+    <Content Include="UIControls\Folio\CtrlLedgerReport.ascx" />
+    <Content Include="UIControls\Folio\CtrlPostUnitCharges.ascx" />
+    <Content Include="UIControls\Folio\CtrlRefundDeposit.ascx" />
+    <Content Include="UIControls\Folio\CtrlReRouteFolioSetup.ascx" />
+    <Content Include="UIControls\Folio\CtrlSubFolioList.ascx" />
+    <Content Include="UIControls\Folio\CtrlTransferDeposit.ascx" />
+    <Content Include="UIControls\Folio\ctrlTransferTransactionFolio.ascx" />
+    <Content Include="UIControls\Guest\CtrlAddOnServices.ascx" />
+    <Content Include="UIControls\Guest\CtrlAddServices.ascx" />
+    <Content Include="UIControls\Guest\CtrlChangeRoom.ascx" />
+    <Content Include="UIControls\Guest\CtrlCloseTroubleTicket.ascx" />
+    <Content Include="UIControls\Guest\CtrlCommonGuestMaster.ascx" />
+    <Content Include="UIControls\Guest\CtrlComplain.ascx" />
+    <Content Include="UIControls\Guest\CtrlInquiryList.ascx" />
+    <Content Include="UIControls\Guest\CtrlMoveRoom.ascx" />
+    <Content Include="UIControls\Guest\CtrlPreference.ascx" />
+    <Content Include="UIControls\Guest\CtrlRateUpdateforDifferentRoomType.ascx" />
+    <Content Include="UIControls\Guest\CtrlSearchServices.ascx" />
+    <Content Include="UIControls\Guest\CtrlSendEmailToGuest.ascx" />
+    <Content Include="UIControls\Guest\CtrlSwapRoom.ascx" />
+    <Content Include="UIControls\Guest\CtrlTroubleTicket.ascx" />
+    <Content Include="UIControls\Report\CtrlAccountRevenueDetail.ascx" />
+    <Content Include="UIControls\Report\CtrlBillFormat.ascx" />
+    <Content Include="UIControls\Report\CtrlBirthDayList.ascx" />
+    <Content Include="UIControls\Report\CtrlCancellationCharges.ascx" />
+    <Content Include="UIControls\Report\CtrlCashReport.ascx" />
+    <Content Include="UIControls\Report\CtrlCFormReport.ascx" />
+    <Content Include="UIControls\Report\CtrlCollectionReport.ascx" />
+    <Content Include="UIControls\Report\CtrlCompanyPosting.ascx" />
+    <Content Include="UIControls\Report\CtrlCreditcardwisecollectionReport.ascx" />
+    <Content Include="UIControls\Report\CtrlOccupancyChart.ascx" />
+    <Content Include="UIControls\Report\CtrlOccupancyChartByBlockAndRateCard.ascx" />
+    <Content Include="UIControls\Report\CtrlOccupancyChartByBlockAndRoomType.ascx" />
+    <Content Include="UIControls\Report\CtrlOccupancyChartByBlockType.ascx" />
+    <Content Include="UIControls\Report\CtrlOccupancyReportByType.ascx" />
+    <Content Include="UIControls\Report\CtrlRetentionCharges.ascx" />
+    <Content Include="UIControls\Report\CtrlRevenueDetail.ascx" />
+    <Content Include="UIControls\Report\CtrlRoomDeposit.ascx" />
+    <Content Include="UIControls\Report\CtrlRoomHistory.ascx" />
+    <Content Include="UIControls\Report\CtrlRoomNightReport.ascx" />
+    <Content Include="UIControls\Report\CtrlRoomRentAdvance.ascx" />
+    <Content Include="UIControls\Report\CtrlVacantRoomList.ascx" />
+    <Content Include="UIControls\Report\CtrlVoidReport.ascx" />
+    <Content Include="UIControls\Report\InfraServiceCharges.ascx" />
+    <Content Include="UIControls\Report\YeildCalculation.ascx" />
+    <Content Include="UIControls\Reservation\AvailabilityByBlock.ascx" />
+    <Content Include="UIControls\Reservation\ChangeRoomNumOnly.ascx" />
+    <Content Include="UIControls\Reservation\ctrlAddGuest.ascx" />
+    <Content Include="UIControls\Reservation\ctrlAmendmentList.ascx" />
+    <Content Include="UIControls\Reservation\CtrlAmendReservation.ascx" />
+    <Content Include="UIControls\Reservation\CtrlArrivalAndDeparture.ascx" />
+    <Content Include="UIControls\Reservation\CtrlAssignRoom.ascx" />
+    <Content Include="UIControls\Reservation\CtrlAvailabilityByFloor.ascx" />
+    <Content Include="UIControls\Reservation\CtrlCancellationVoucher.ascx" />
+    <Content Include="UIControls\Reservation\CtrlCancelReservation.ascx" />
+    <Content Include="UIControls\Reservation\CtrlCancelReservationList.ascx" />
+    <Content Include="UIControls\Reservation\CtrlCheckIn.ascx" />
+    <Content Include="UIControls\Reservation\ctrlCheckInList.ascx" />
+    <Content Include="UIControls\Reservation\ctrlCheckInListOld.ascx" />
+    <Content Include="UIControls\Reservation\CtrlCheckInLog.ascx" />
+    <Content Include="UIControls\Reservation\CtrlCommonBillToCompany.ascx" />
+    <Content Include="UIControls\Reservation\CtrlConferenceReservation.ascx" />
+    <Content Include="UIControls\Reservation\CtrlConferenceReservationList.ascx" />
+    <Content Include="UIControls\Reservation\CtrlCurrentGuestList.ascx" />
+    <Content Include="UIControls\Reservation\CtrlEditReservation.ascx" />
+    <Content Include="UIControls\Reservation\CtrlExtendReservation.ascx" />
+    <Content Include="UIControls\Reservation\CtrlGroupReservation.ascx" />
+    <Content Include="UIControls\Reservation\CtrlGroupReservationList.ascx" />
+    <Content Include="UIControls\Reservation\CtrlInvestorBooking.ascx" />
+    <Content Include="UIControls\Reservation\ctrlNewCheckInList.ascx" />
+    <Content Include="UIControls\Reservation\CtrlPastGuestList.ascx" />
+    <Content Include="UIControls\Reservation\CtrlQuickRoomReservation.ascx" />
+    <Content Include="UIControls\Reservation\CtrlRateCardList.ascx" />
+    <Content Include="UIControls\Reservation\CtrlReservation.ascx" />
+    <Content Include="UIControls\Reservation\CtrlReservationGuestMgt.ascx" />
+    <Content Include="UIControls\Reservation\CtrlReservationVoucher.ascx" />
+    <Content Include="UIControls\Reservation\CtrlRoomAvailability.ascx" />
+    <Content Include="UIControls\Reservation\CtrlRoomReservation.ascx" />
+    <Content Include="UIControls\Reservation\CtrlRoomReservationList.ascx" />
+    <Content Include="UIControls\Reservation\CtrlRoomStatus.ascx" />
+    <Content Include="UIControls\Reservation\CtrlRoomStatusView.ascx" />
+    <Content Include="UIControls\Reservation\CtrlRoomsToSell.ascx" />
+    <Content Include="UIControls\Reservation\CtrlSearchKeyandRoomNo.ascx" />
+    <Content Include="UIControls\Reservation\CtrlWalkIn.ascx" />
+    <Content Include="UIControls\Reservation\PaymentReceipt.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCode\clsBlockDateRate.cs" />
+    <Compile Include="AppCode\clsCommon.cs" />
+    <Compile Include="AppCode\clsSession.cs" />
+    <Compile Include="AppCode\clsTemp.cs" />
+    <Compile Include="AppCode\SentMail.cs" />
+    <Compile Include="CounterLogin.aspx.cs">
+      <DependentUpon>CounterLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CounterLogin.aspx.designer.cs">
+      <DependentUpon>CounterLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AccessIsDenied.aspx.cs">
+      <DependentUpon>AccessIsDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\AccessIsDenied.aspx.designer.cs">
+      <DependentUpon>AccessIsDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Banquet\BanquetManagement.aspx.cs">
+      <DependentUpon>BanquetManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Banquet\BanquetManagement.aspx.designer.cs">
+      <DependentUpon>BanquetManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Banquet\BanquetProposal.aspx.cs">
+      <DependentUpon>BanquetProposal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Banquet\BanquetProposal.aspx.designer.cs">
+      <DependentUpon>BanquetProposal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Banquet\ServiceManager.aspx.cs">
+      <DependentUpon>ServiceManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Banquet\ServiceManager.aspx.designer.cs">
+      <DependentUpon>ServiceManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\AutoGuestSuggest.ashx.cs">
+      <DependentUpon>AutoGuestSuggest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\CashierCheckOut.aspx.cs">
+      <DependentUpon>CashierCheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Billing\CashierCheckOut.aspx.designer.cs">
+      <DependentUpon>CashierCheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\CheckedInGuestAutoSuggest.ashx.cs">
+      <DependentUpon>CheckedInGuestAutoSuggest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\CheckOut.aspx.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Billing\CheckOut.aspx.designer.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\CheckOutNew.aspx.cs">
+      <DependentUpon>CheckOutNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Billing\CheckOutNew.aspx.designer.cs">
+      <DependentUpon>CheckOutNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\CheckOutVoucher.aspx.cs">
+      <DependentUpon>CheckOutVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Billing\CheckOutVoucher.aspx.designer.cs">
+      <DependentUpon>CheckOutVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\CompanyInvoicePrint.aspx.cs">
+      <DependentUpon>CompanyInvoicePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Billing\CompanyInvoicePrint.aspx.designer.cs">
+      <DependentUpon>CompanyInvoicePrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\DepartureList.aspx.cs">
+      <DependentUpon>DepartureList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Billing\DepartureList.aspx.designer.cs">
+      <DependentUpon>DepartureList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\InfraCharges.aspx.cs">
+      <DependentUpon>InfraCharges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Billing\InfraCharges.aspx.designer.cs">
+      <DependentUpon>InfraCharges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\NewCashierCheckout.aspx.cs">
+      <DependentUpon>NewCashierCheckout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Billing\NewCashierCheckout.aspx.designer.cs">
+      <DependentUpon>NewCashierCheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\ReprintPaymentInvoice.aspx.cs">
+      <DependentUpon>ReprintPaymentInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Billing\ReprintPaymentInvoice.aspx.designer.cs">
+      <DependentUpon>ReprintPaymentInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Billing\UnsettledCheckOut.aspx.cs">
+      <DependentUpon>UnsettledCheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Billing\UnsettledCheckOut.aspx.designer.cs">
+      <DependentUpon>UnsettledCheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Card\CardRecharge.aspx.cs">
+      <DependentUpon>CardRecharge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Card\CardRecharge.aspx.designer.cs">
+      <DependentUpon>CardRecharge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Card\CashCardList.aspx.cs">
+      <DependentUpon>CashCardList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Card\CashCardList.aspx.designer.cs">
+      <DependentUpon>CashCardList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Card\IssueCard.aspx.cs">
+      <DependentUpon>IssueCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Card\IssueCard.aspx.designer.cs">
+      <DependentUpon>IssueCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Card\LostCard.aspx.cs">
+      <DependentUpon>LostCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Card\LostCard.aspx.designer.cs">
+      <DependentUpon>LostCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Card\PrintStatement.aspx.cs">
+      <DependentUpon>PrintStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Card\PrintStatement.aspx.designer.cs">
+      <DependentUpon>PrintStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CommonControl\AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\CommonControl\AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CommonControl\DayEnd.aspx.cs">
+      <DependentUpon>DayEnd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\CommonControl\DayEnd.aspx.designer.cs">
+      <DependentUpon>DayEnd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Counter\CloseCounter.aspx.cs">
+      <DependentUpon>CloseCounter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Counter\CloseCounter.aspx.designer.cs">
+      <DependentUpon>CloseCounter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Counter\CounterCloseHistoryOnThisMachine.aspx.cs">
+      <DependentUpon>CounterCloseHistoryOnThisMachine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Counter\CounterCloseHistoryOnThisMachine.aspx.designer.cs">
+      <DependentUpon>CounterCloseHistoryOnThisMachine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Counter\DetailCounterReport.aspx.cs">
+      <DependentUpon>DetailCounterReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Counter\DetailCounterReport.aspx.designer.cs">
+      <DependentUpon>DetailCounterReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Folio\FolioDetails.aspx.cs">
+      <DependentUpon>FolioDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Folio\FolioDetails.aspx.designer.cs">
+      <DependentUpon>FolioDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Folio\FolioDetailsOld.aspx.cs">
+      <DependentUpon>FolioDetailsOld.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Folio\FolioDetailsOld.aspx.designer.cs">
+      <DependentUpon>FolioDetailsOld.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Folio\FolioDetailsReceipt.aspx.cs">
+      <DependentUpon>FolioDetailsReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Folio\FolioDetailsReceipt.aspx.designer.cs">
+      <DependentUpon>FolioDetailsReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Folio\FolioList.aspx.cs">
+      <DependentUpon>FolioList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Folio\FolioList.aspx.designer.cs">
+      <DependentUpon>FolioList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Folio\GuestProfile.aspx.cs">
+      <DependentUpon>GuestProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Folio\GuestProfile.aspx.designer.cs">
+      <DependentUpon>GuestProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Folio\LedgerReport.aspx.cs">
+      <DependentUpon>LedgerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Folio\LedgerReport.aspx.designer.cs">
+      <DependentUpon>LedgerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Folio\RerouteFolioSetup.aspx.cs">
+      <DependentUpon>RerouteFolioSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Folio\RerouteFolioSetup.aspx.designer.cs">
+      <DependentUpon>RerouteFolioSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Folio\SubFolioList.aspx.cs">
+      <DependentUpon>SubFolioList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Folio\SubFolioList.aspx.designer.cs">
+      <DependentUpon>SubFolioList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Folio\TransferFolioTransaction.asmx.cs">
+      <DependentUpon>TransferFolioTransaction.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Folio\TransferTransactionFolio.aspx.cs">
+      <DependentUpon>TransferTransactionFolio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Folio\TransferTransactionFolio.aspx.designer.cs">
+      <DependentUpon>TransferTransactionFolio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\AddOnServices.aspx.cs">
+      <DependentUpon>AddOnServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\AddOnServices.aspx.designer.cs">
+      <DependentUpon>AddOnServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\AddServices.aspx.cs">
+      <DependentUpon>AddServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\AddServices.aspx.designer.cs">
+      <DependentUpon>AddServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\ChangeRoom.aspx.cs">
+      <DependentUpon>ChangeRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\ChangeRoom.aspx.designer.cs">
+      <DependentUpon>ChangeRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\CloseTroubleTicket.aspx.cs">
+      <DependentUpon>CloseTroubleTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\CloseTroubleTicket.aspx.designer.cs">
+      <DependentUpon>CloseTroubleTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\Complain.aspx.cs">
+      <DependentUpon>Complain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\Complain.aspx.designer.cs">
+      <DependentUpon>Complain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\ExtendStay.aspx.cs">
+      <DependentUpon>ExtendStay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\ExtendStay.aspx.designer.cs">
+      <DependentUpon>ExtendStay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\FrontDeskAlert.aspx.cs">
+      <DependentUpon>FrontDeskAlert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\FrontDeskAlert.aspx.designer.cs">
+      <DependentUpon>FrontDeskAlert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\GuestAllMsgList.aspx.cs">
+      <DependentUpon>GuestAllMsgList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\GuestAllMsgList.aspx.designer.cs">
+      <DependentUpon>GuestAllMsgList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\GuestMaster.aspx.cs">
+      <DependentUpon>GuestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\GuestMaster.aspx.designer.cs">
+      <DependentUpon>GuestMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\InquiryList.aspx.cs">
+      <DependentUpon>InquiryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\InquiryList.aspx.designer.cs">
+      <DependentUpon>InquiryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\Message.aspx.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\Message.aspx.designer.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\MoveRoom.aspx.cs">
+      <DependentUpon>MoveRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\MoveRoom.aspx.designer.cs">
+      <DependentUpon>MoveRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\Preference.aspx.cs">
+      <DependentUpon>Preference.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\Preference.aspx.designer.cs">
+      <DependentUpon>Preference.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\SearchServices.aspx.cs">
+      <DependentUpon>SearchServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\SearchServices.aspx.designer.cs">
+      <DependentUpon>SearchServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\SendEmailToGuest.aspx.cs">
+      <DependentUpon>SendEmailToGuest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\SendEmailToGuest.aspx.designer.cs">
+      <DependentUpon>SendEmailToGuest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\SwapRoom.aspx.cs">
+      <DependentUpon>SwapRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\SwapRoom.aspx.designer.cs">
+      <DependentUpon>SwapRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\TroubleTicket.aspx.cs">
+      <DependentUpon>TroubleTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\TroubleTicket.aspx.designer.cs">
+      <DependentUpon>TroubleTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\UpgradeDownGradePrint.aspx.cs">
+      <DependentUpon>UpgradeDownGradePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\UpgradeDownGradePrint.aspx.designer.cs">
+      <DependentUpon>UpgradeDownGradePrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\UpgradeDowngradeRoom.aspx.cs">
+      <DependentUpon>UpgradeDowngradeRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\UpgradeDowngradeRoom.aspx.designer.cs">
+      <DependentUpon>UpgradeDowngradeRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\UpgradeRoom.aspx.cs">
+      <DependentUpon>UpgradeRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\UpgradeRoom.aspx.designer.cs">
+      <DependentUpon>UpgradeRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\BirthDayList.aspx.cs">
+      <DependentUpon>BirthDayList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\BirthDayList.aspx.designer.cs">
+      <DependentUpon>BirthDayList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\BirthDayListPrint.aspx.cs">
+      <DependentUpon>BirthDayListPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\BirthDayListPrint.aspx.designer.cs">
+      <DependentUpon>BirthDayListPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\CollectionSummaryReport.aspx.cs">
+      <DependentUpon>CollectionSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\CollectionSummaryReport.aspx.designer.cs">
+      <DependentUpon>CollectionSummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RoomNightReport.aspx.cs">
+      <DependentUpon>RoomNightReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RoomNightReport.aspx.designer.cs">
+      <DependentUpon>RoomNightReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTAccountRevenue.aspx.cs">
+      <DependentUpon>RPTAccountRevenue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTAccountRevenue.aspx.designer.cs">
+      <DependentUpon>RPTAccountRevenue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTBillFormat.aspx.cs">
+      <DependentUpon>RPTBillFormat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTBillFormat.aspx.designer.cs">
+      <DependentUpon>RPTBillFormat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTCancellationCharges.aspx.cs">
+      <DependentUpon>RPTCancellationCharges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTCancellationCharges.aspx.designer.cs">
+      <DependentUpon>RPTCancellationCharges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTCashReport.aspx.cs">
+      <DependentUpon>RPTCashReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTCashReport.aspx.designer.cs">
+      <DependentUpon>RPTCashReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTCFormReport.aspx.cs">
+      <DependentUpon>RPTCFormReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTCFormReport.aspx.designer.cs">
+      <DependentUpon>RPTCFormReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTCompanyPosting.aspx.cs">
+      <DependentUpon>RPTCompanyPosting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTCompanyPosting.aspx.designer.cs">
+      <DependentUpon>RPTCompanyPosting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTCreditcardwiseCollection.aspx.cs">
+      <DependentUpon>RPTCreditcardwiseCollection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTCreditcardwiseCollection.aspx.designer.cs">
+      <DependentUpon>RPTCreditcardwiseCollection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTInfraServiceCharges.aspx.cs">
+      <DependentUpon>RPTInfraServiceCharges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTInfraServiceCharges.aspx.designer.cs">
+      <DependentUpon>RPTInfraServiceCharges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTOccupancyChart.aspx.cs">
+      <DependentUpon>RPTOccupancyChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTOccupancyChart.aspx.designer.cs">
+      <DependentUpon>RPTOccupancyChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTOccupancyChartByBlockAndRateCard.aspx.cs">
+      <DependentUpon>RPTOccupancyChartByBlockAndRateCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTOccupancyChartByBlockAndRateCard.aspx.designer.cs">
+      <DependentUpon>RPTOccupancyChartByBlockAndRateCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTOccupancyChartByBlockAndRoomType.aspx.cs">
+      <DependentUpon>RPTOccupancyChartByBlockAndRoomType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTOccupancyChartByBlockAndRoomType.aspx.designer.cs">
+      <DependentUpon>RPTOccupancyChartByBlockAndRoomType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTOccupancyChartByBlockType.aspx.cs">
+      <DependentUpon>RPTOccupancyChartByBlockType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTOccupancyChartByBlockType.aspx.designer.cs">
+      <DependentUpon>RPTOccupancyChartByBlockType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTOccupancyReoprtByType.aspx.cs">
+      <DependentUpon>RPTOccupancyReoprtByType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTOccupancyReoprtByType.aspx.designer.cs">
+      <DependentUpon>RPTOccupancyReoprtByType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTRetentionCharges.aspx.cs">
+      <DependentUpon>RPTRetentionCharges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTRetentionCharges.aspx.designer.cs">
+      <DependentUpon>RPTRetentionCharges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTRevenueDetail.aspx.cs">
+      <DependentUpon>RPTRevenueDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTRevenueDetail.aspx.designer.cs">
+      <DependentUpon>RPTRevenueDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTRoomDeposit.aspx.cs">
+      <DependentUpon>RPTRoomDeposit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTRoomDeposit.aspx.designer.cs">
+      <DependentUpon>RPTRoomDeposit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTRoomHistory.aspx.cs">
+      <DependentUpon>RPTRoomHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTRoomHistory.aspx.designer.cs">
+      <DependentUpon>RPTRoomHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTRoomRentAdvance.aspx.cs">
+      <DependentUpon>RPTRoomRentAdvance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTRoomRentAdvance.aspx.designer.cs">
+      <DependentUpon>RPTRoomRentAdvance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTVacantRoomList.aspx.cs">
+      <DependentUpon>RPTVacantRoomList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTVacantRoomList.aspx.designer.cs">
+      <DependentUpon>RPTVacantRoomList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\RPTYeildCalculation.aspx.cs">
+      <DependentUpon>RPTYeildCalculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\RPTYeildCalculation.aspx.designer.cs">
+      <DependentUpon>RPTYeildCalculation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\VoidReport.aspx.cs">
+      <DependentUpon>VoidReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\VoidReport.aspx.designer.cs">
+      <DependentUpon>VoidReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\VoidReportPrint.aspx.cs">
+      <DependentUpon>VoidReportPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\VoidReportPrint.aspx.designer.cs">
+      <DependentUpon>VoidReportPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\AddGroupGuest.aspx.cs">
+      <DependentUpon>AddGroupGuest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\AddGroupGuest.aspx.designer.cs">
+      <DependentUpon>AddGroupGuest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\AmendmentList.aspx.cs">
+      <DependentUpon>AmendmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\AmendmentList.aspx.designer.cs">
+      <DependentUpon>AmendmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\AmendReservation.aspx.cs">
+      <DependentUpon>AmendReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\AmendReservation.aspx.designer.cs">
+      <DependentUpon>AmendReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\ArrivalAndDeparture.aspx.cs">
+      <DependentUpon>ArrivalAndDeparture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\ArrivalAndDeparture.aspx.designer.cs">
+      <DependentUpon>ArrivalAndDeparture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\AssignRoom.aspx.cs">
+      <DependentUpon>AssignRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\AssignRoom.aspx.designer.cs">
+      <DependentUpon>AssignRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\AvailabilityByBlock.aspx.cs">
+      <DependentUpon>AvailabilityByBlock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\AvailabilityByBlock.aspx.designer.cs">
+      <DependentUpon>AvailabilityByBlock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\AvailabilityByFloor.aspx.cs">
+      <DependentUpon>AvailabilityByFloor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\AvailabilityByFloor.aspx.designer.cs">
+      <DependentUpon>AvailabilityByFloor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CancellationVoucher.aspx.cs">
+      <DependentUpon>CancellationVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CancellationVoucher.aspx.designer.cs">
+      <DependentUpon>CancellationVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CancelReservation.aspx.cs">
+      <DependentUpon>CancelReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CancelReservation.aspx.designer.cs">
+      <DependentUpon>CancelReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CancelReservationList.aspx.cs">
+      <DependentUpon>CancelReservationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CancelReservationList.aspx.designer.cs">
+      <DependentUpon>CancelReservationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\ChangeRoomNumOnly.aspx.cs">
+      <DependentUpon>ChangeRoomNumOnly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\ChangeRoomNumOnly.aspx.designer.cs">
+      <DependentUpon>ChangeRoomNumOnly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckIn.aspx.cs">
+      <DependentUpon>CheckIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckIn.aspx.designer.cs">
+      <DependentUpon>CheckIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInList.aspx.cs">
+      <DependentUpon>CheckInList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInList.aspx.designer.cs">
+      <DependentUpon>CheckInList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInLog.aspx.cs">
+      <DependentUpon>CheckInLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInLog.aspx.designer.cs">
+      <DependentUpon>CheckInLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInLogPrint.aspx.cs">
+      <DependentUpon>CheckInLogPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInLogPrint.aspx.designer.cs">
+      <DependentUpon>CheckInLogPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInOld.aspx.cs">
+      <DependentUpon>CheckInOld.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInOld.aspx.designer.cs">
+      <DependentUpon>CheckInOld.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInPaymentRecipt.aspx.cs">
+      <DependentUpon>CheckInPaymentRecipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInPaymentRecipt.aspx.designer.cs">
+      <DependentUpon>CheckInPaymentRecipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInVoucher.aspx.cs">
+      <DependentUpon>CheckInVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CheckInVoucher.aspx.designer.cs">
+      <DependentUpon>CheckInVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CompanyBillPrint.aspx.cs">
+      <DependentUpon>CompanyBillPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CompanyBillPrint.aspx.designer.cs">
+      <DependentUpon>CompanyBillPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\ConferenceReservation.aspx.cs">
+      <DependentUpon>ConferenceReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\ConferenceReservation.aspx.designer.cs">
+      <DependentUpon>ConferenceReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\ConferenceReservationList.aspx.cs">
+      <DependentUpon>ConferenceReservationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\ConferenceReservationList.aspx.designer.cs">
+      <DependentUpon>ConferenceReservationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\CurrentGuestList.aspx.cs">
+      <DependentUpon>CurrentGuestList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\CurrentGuestList.aspx.designer.cs">
+      <DependentUpon>CurrentGuestList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\Deposit.aspx.cs">
+      <DependentUpon>Deposit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\Deposit.aspx.designer.cs">
+      <DependentUpon>Deposit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\EditReservation.aspx.cs">
+      <DependentUpon>EditReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\EditReservation.aspx.designer.cs">
+      <DependentUpon>EditReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\ExtandReservationVoucherPrint.aspx.cs">
+      <DependentUpon>ExtandReservationVoucherPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\ExtandReservationVoucherPrint.aspx.designer.cs">
+      <DependentUpon>ExtandReservationVoucherPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\ExtendReservation.aspx.cs">
+      <DependentUpon>ExtendReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\ExtendReservation.aspx.designer.cs">
+      <DependentUpon>ExtendReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\FindBlackList.asmx.cs">
+      <DependentUpon>FindBlackList.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\GroupReservation.aspx.cs">
+      <DependentUpon>GroupReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\GroupReservation.aspx.designer.cs">
+      <DependentUpon>GroupReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\GroupReservationList.aspx.cs">
+      <DependentUpon>GroupReservationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\GroupReservationList.aspx.designer.cs">
+      <DependentUpon>GroupReservationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\GuestCompanyAutoSuggest.ashx.cs">
+      <DependentUpon>GuestCompanyAutoSuggest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\GuestListPrint.aspx.cs">
+      <DependentUpon>GuestListPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\GuestListPrint.aspx.designer.cs">
+      <DependentUpon>GuestListPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\InvestorBooking.aspx.cs">
+      <DependentUpon>InvestorBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\InvestorBooking.aspx.designer.cs">
+      <DependentUpon>InvestorBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\NewCheckInList.aspx.cs">
+      <DependentUpon>NewCheckInList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\NewCheckInList.aspx.designer.cs">
+      <DependentUpon>NewCheckInList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\PastGuestList.aspx.cs">
+      <DependentUpon>PastGuestList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\PastGuestList.aspx.designer.cs">
+      <DependentUpon>PastGuestList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\QuickRoomReservation.aspx.cs">
+      <DependentUpon>QuickRoomReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\QuickRoomReservation.aspx.designer.cs">
+      <DependentUpon>QuickRoomReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RateCardList.aspx.cs">
+      <DependentUpon>RateCardList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\RateCardList.aspx.designer.cs">
+      <DependentUpon>RateCardList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RatecardPrint.aspx.cs">
+      <DependentUpon>RatecardPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\RatecardPrint.aspx.designer.cs">
+      <DependentUpon>RatecardPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RegistrationForm.aspx.cs">
+      <DependentUpon>RegistrationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\RegistrationForm.aspx.designer.cs">
+      <DependentUpon>RegistrationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RegistrationVoucher.aspx.cs">
+      <DependentUpon>RegistrationVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\RegistrationVoucher.aspx.designer.cs">
+      <DependentUpon>RegistrationVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\Reservation.aspx.cs">
+      <DependentUpon>Reservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\Reservation.aspx.designer.cs">
+      <DependentUpon>Reservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\ReservationForm.aspx.cs">
+      <DependentUpon>ReservationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\ReservationForm.aspx.designer.cs">
+      <DependentUpon>ReservationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomAvailability.aspx.cs">
+      <DependentUpon>RoomAvailability.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomAvailability.aspx.designer.cs">
+      <DependentUpon>RoomAvailability.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomNoAutosuggest.ashx.cs">
+      <DependentUpon>RoomNoAutosuggest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomReservation.aspx.cs">
+      <DependentUpon>RoomReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomReservation.aspx.designer.cs">
+      <DependentUpon>RoomReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomReservationList.aspx.cs">
+      <DependentUpon>RoomReservationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomReservationList.aspx.designer.cs">
+      <DependentUpon>RoomReservationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomStatus.aspx.cs">
+      <DependentUpon>RoomStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomStatus.aspx.designer.cs">
+      <DependentUpon>RoomStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomStatusView.aspx.cs">
+      <DependentUpon>RoomStatusView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomStatusView.aspx.designer.cs">
+      <DependentUpon>RoomStatusView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomToSell.aspx.cs">
+      <DependentUpon>RoomToSell.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\RoomToSell.aspx.designer.cs">
+      <DependentUpon>RoomToSell.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\SearchKeyandRoom.aspx.cs">
+      <DependentUpon>SearchKeyandRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\SearchKeyandRoom.aspx.designer.cs">
+      <DependentUpon>SearchKeyandRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\TodayArrivalPrint.aspx.cs">
+      <DependentUpon>TodayArrivalPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\TodayArrivalPrint.aspx.designer.cs">
+      <DependentUpon>TodayArrivalPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\TodaysDeparturePrintt.aspx.cs">
+      <DependentUpon>TodaysDeparturePrintt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\TodaysDeparturePrintt.aspx.designer.cs">
+      <DependentUpon>TodaysDeparturePrintt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reservation\WalkIn.aspx.cs">
+      <DependentUpon>WalkIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Reservation\WalkIn.aspx.designer.cs">
+      <DependentUpon>WalkIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Transcript.aspx.cs">
+      <DependentUpon>Transcript.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Transcript.aspx.designer.cs">
+      <DependentUpon>Transcript.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDataSet\FRONTDESK_DATASET.Designer.cs" />
+    <Compile Include="ReportDataSet\FRONTDESK_DATASET1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FRONTDESK_DATASET.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportFiles\frmViewer.aspx.cs">
+      <DependentUpon>frmViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\frmViewer.aspx.designer.cs">
+      <DependentUpon>frmViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportFiles\GDI\clsReportMaster.cs" />
+    <Compile Include="ReportFiles\GDI\PrintControllerFile.cs" />
+    <Compile Include="ReportFiles\GDI\PrintReportGeneral.cs" />
+    <Compile Include="ReportFiles\GDI\PrintReportGeneralDV.cs" />
+    <Compile Include="ReportFiles\GDI\ReportFunctions.cs" />
+    <Compile Include="ReportFiles\rptCancellationCharges.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptCashReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptCForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptCollectionDetail_Summary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptCollectionSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptCompanyPosting.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptCounterClose.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptCounterCloseHistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptCounterClose_Summary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptFolioStatement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptFolioStatementSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptInvoice.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptInvoiceSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptOccupancyChartByBlockAndRateCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptOccupancyChartByBlockAndRoomType.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptRetentionCharges.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptRevenueDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptRoomDeposit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptRoomHistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptRoomRentAdvance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptRoomRentAdvance_Summary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptRoomRentRevenueSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFiles\rptVacantList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service References\SrvcRefInvestorList\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Banquet\ctrlBanquetManagement.ascx.cs">
+      <DependentUpon>ctrlBanquetManagement.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Banquet\ctrlBanquetManagement.ascx.designer.cs">
+      <DependentUpon>ctrlBanquetManagement.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Banquet\CtrlBanquetProposal.ascx.cs">
+      <DependentUpon>CtrlBanquetProposal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Banquet\CtrlBanquetProposal.ascx.designer.cs">
+      <DependentUpon>CtrlBanquetProposal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Banquet\CtrlControlNotes.ascx.cs">
+      <DependentUpon>CtrlControlNotes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Banquet\CtrlControlNotes.ascx.designer.cs">
+      <DependentUpon>CtrlControlNotes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Banquet\CtrlServiceManager.ascx.cs">
+      <DependentUpon>CtrlServiceManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Banquet\CtrlServiceManager.ascx.designer.cs">
+      <DependentUpon>CtrlServiceManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Banquet\CtrlToDoStask.ascx.cs">
+      <DependentUpon>CtrlToDoStask.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Banquet\CtrlToDoStask.ascx.designer.cs">
+      <DependentUpon>CtrlToDoStask.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlCashierCheckOut.ascx.cs">
+      <DependentUpon>CtrlCashierCheckOut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlCashierCheckOut.ascx.designer.cs">
+      <DependentUpon>CtrlCashierCheckOut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlCheckOut.ascx.cs">
+      <DependentUpon>CtrlCheckOut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlCheckOut.ascx.designer.cs">
+      <DependentUpon>CtrlCheckOut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlCheckOutNew.ascx.cs">
+      <DependentUpon>CtrlCheckOutNew.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlCheckOutNew.ascx.designer.cs">
+      <DependentUpon>CtrlCheckOutNew.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlCheckOutVoucher.ascx.cs">
+      <DependentUpon>CtrlCheckOutVoucher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlCheckOutVoucher.ascx.designer.cs">
+      <DependentUpon>CtrlCheckOutVoucher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlInfraCharges.ascx.cs">
+      <DependentUpon>CtrlInfraCharges.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlInfraCharges.ascx.designer.cs">
+      <DependentUpon>CtrlInfraCharges.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlNewCashierCheckout.ascx.cs">
+      <DependentUpon>CtrlNewCashierCheckout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlNewCashierCheckout.ascx.designer.cs">
+      <DependentUpon>CtrlNewCashierCheckout.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlReprintPaymentInvoice.ascx.cs">
+      <DependentUpon>CtrlReprintPaymentInvoice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlReprintPaymentInvoice.ascx.designer.cs">
+      <DependentUpon>CtrlReprintPaymentInvoice.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlUnsettledCheckOut.ascx.cs">
+      <DependentUpon>CtrlUnsettledCheckOut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Billing\CtrlUnsettledCheckOut.ascx.designer.cs">
+      <DependentUpon>CtrlUnsettledCheckOut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Billing\DepartureList.ascx.cs">
+      <DependentUpon>DepartureList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Billing\DepartureList.ascx.designer.cs">
+      <DependentUpon>DepartureList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Card\CtrlCardRecharge.ascx.cs">
+      <DependentUpon>CtrlCardRecharge.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Card\CtrlCardRecharge.ascx.designer.cs">
+      <DependentUpon>CtrlCardRecharge.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Card\CtrlCashCardList.ascx.cs">
+      <DependentUpon>CtrlCashCardList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Card\CtrlCashCardList.ascx.designer.cs">
+      <DependentUpon>CtrlCashCardList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Card\CtrlCommonSearchGuest.ascx.cs">
+      <DependentUpon>CtrlCommonSearchGuest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Card\CtrlCommonSearchGuest.ascx.designer.cs">
+      <DependentUpon>CtrlCommonSearchGuest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Card\ctrlIssueCard.ascx.cs">
+      <DependentUpon>ctrlIssueCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Card\ctrlIssueCard.ascx.designer.cs">
+      <DependentUpon>ctrlIssueCard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Card\CtrlLostCard.ascx.cs">
+      <DependentUpon>CtrlLostCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Card\CtrlLostCard.ascx.designer.cs">
+      <DependentUpon>CtrlLostCard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Card\CtrlPrintStatement.ascx.cs">
+      <DependentUpon>CtrlPrintStatement.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Card\CtrlPrintStatement.ascx.designer.cs">
+      <DependentUpon>CtrlPrintStatement.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrCommonGuestInfo.ascx.cs">
+      <DependentUpon>CtrCommonGuestInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrCommonGuestInfo.ascx.designer.cs">
+      <DependentUpon>CtrCommonGuestInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrCommonInvBookingGuestInfo.ascx.cs">
+      <DependentUpon>CtrCommonInvBookingGuestInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrCommonInvBookingGuestInfo.ascx.designer.cs">
+      <DependentUpon>CtrCommonInvBookingGuestInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrGuestProfile.ascx.cs">
+      <DependentUpon>CtrGuestProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrGuestProfile.ascx.designer.cs">
+      <DependentUpon>CtrGuestProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAccessDenied.ascx.cs">
+      <DependentUpon>CtrlAccessDenied.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAccessDenied.ascx.designer.cs">
+      <DependentUpon>CtrlAccessDenied.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAccessIsDenied.ascx.cs">
+      <DependentUpon>CtrlAccessIsDenied.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAccessIsDenied.ascx.designer.cs">
+      <DependentUpon>CtrlAccessIsDenied.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAddress.ascx.cs">
+      <DependentUpon>CtrlAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAddress.ascx.designer.cs">
+      <DependentUpon>CtrlAddress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAutoAssignUnit.ascx.cs">
+      <DependentUpon>CtrlAutoAssignUnit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlAutoAssignUnit.ascx.designer.cs">
+      <DependentUpon>CtrlAutoAssignUnit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonAddServices.ascx.cs">
+      <DependentUpon>CtrlCommonAddServices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonAddServices.ascx.designer.cs">
+      <DependentUpon>CtrlCommonAddServices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonArrivalList.ascx.cs">
+      <DependentUpon>CtrlCommonArrivalList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonArrivalList.ascx.designer.cs">
+      <DependentUpon>CtrlCommonArrivalList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonCardInfo.ascx.cs">
+      <DependentUpon>CtrlCommonCardInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonCardInfo.ascx.designer.cs">
+      <DependentUpon>CtrlCommonCardInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonCheckIn.ascx.cs">
+      <DependentUpon>CtrlCommonCheckIn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonCheckIn.ascx.designer.cs">
+      <DependentUpon>CtrlCommonCheckIn.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonCounterLogin.ascx.cs">
+      <DependentUpon>CtrlCommonCounterLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonCounterLogin.ascx.designer.cs">
+      <DependentUpon>CtrlCommonCounterLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\ctrlCommonDayEnd.ascx.cs">
+      <DependentUpon>ctrlCommonDayEnd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\ctrlCommonDayEnd.ascx.designer.cs">
+      <DependentUpon>ctrlCommonDayEnd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonDepatureList.ascx.cs">
+      <DependentUpon>CtrlCommonDepatureList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonDepatureList.ascx.designer.cs">
+      <DependentUpon>CtrlCommonDepatureList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonExtendReservation.ascx.cs">
+      <DependentUpon>CtrlCommonExtendReservation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonExtendReservation.ascx.designer.cs">
+      <DependentUpon>CtrlCommonExtendReservation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonFolioTransactionDetails.ascx.cs">
+      <DependentUpon>CtrlCommonFolioTransactionDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonFolioTransactionDetails.ascx.designer.cs">
+      <DependentUpon>CtrlCommonFolioTransactionDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonFrontDeskAlert.ascx.cs">
+      <DependentUpon>CtrlCommonFrontDeskAlert.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonFrontDeskAlert.ascx.designer.cs">
+      <DependentUpon>CtrlCommonFrontDeskAlert.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonGuestHistory.ascx.cs">
+      <DependentUpon>CtrlCommonGuestHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonGuestHistory.ascx.designer.cs">
+      <DependentUpon>CtrlCommonGuestHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonHouseKeeping.ascx.cs">
+      <DependentUpon>CtrlCommonHouseKeeping.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonHouseKeeping.ascx.designer.cs">
+      <DependentUpon>CtrlCommonHouseKeeping.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonInvoiceBillingName.ascx.cs">
+      <DependentUpon>CtrlCommonInvoiceBillingName.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonInvoiceBillingName.ascx.designer.cs">
+      <DependentUpon>CtrlCommonInvoiceBillingName.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonMessage.ascx.cs">
+      <DependentUpon>CtrlCommonMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonMessage.ascx.designer.cs">
+      <DependentUpon>CtrlCommonMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonMoveUnitSetup.ascx.cs">
+      <DependentUpon>CtrlCommonMoveUnitSetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonMoveUnitSetup.ascx.designer.cs">
+      <DependentUpon>CtrlCommonMoveUnitSetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonOterhInformation.ascx.cs">
+      <DependentUpon>CtrlCommonOterhInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonOterhInformation.ascx.designer.cs">
+      <DependentUpon>CtrlCommonOterhInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonPayment.ascx.cs">
+      <DependentUpon>CtrlCommonPayment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonPayment.ascx.designer.cs">
+      <DependentUpon>CtrlCommonPayment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonQuickPost.ascx.cs">
+      <DependentUpon>CtrlCommonQuickPost.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonQuickPost.ascx.designer.cs">
+      <DependentUpon>CtrlCommonQuickPost.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonRoomAvailabilityChart.ascx.cs">
+      <DependentUpon>CtrlCommonRoomAvailabilityChart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonRoomAvailabilityChart.ascx.designer.cs">
+      <DependentUpon>CtrlCommonRoomAvailabilityChart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonStayInformation.ascx.cs">
+      <DependentUpon>CtrlCommonStayInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonStayInformation.ascx.designer.cs">
+      <DependentUpon>CtrlCommonStayInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonVoidTransaction.ascx.cs">
+      <DependentUpon>CtrlCommonVoidTransaction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonVoidTransaction.ascx.designer.cs">
+      <DependentUpon>CtrlCommonVoidTransaction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonVoucherDetails.ascx.cs">
+      <DependentUpon>CtrlCommonVoucherDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCommonVoucherDetails.ascx.designer.cs">
+      <DependentUpon>CtrlCommonVoucherDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCounterClose.ascx.cs">
+      <DependentUpon>CtrlCounterClose.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCounterClose.ascx.designer.cs">
+      <DependentUpon>CtrlCounterClose.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCounterCloseHistoryOnThisMachine.ascx.cs">
+      <DependentUpon>CtrlCounterCloseHistoryOnThisMachine.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCounterCloseHistoryOnThisMachine.ascx.designer.cs">
+      <DependentUpon>CtrlCounterCloseHistoryOnThisMachine.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCounterLogin.ascx.cs">
+      <DependentUpon>CtrlCounterLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlCounterLogin.ascx.designer.cs">
+      <DependentUpon>CtrlCounterLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlDetailsCounterReport.ascx.cs">
+      <DependentUpon>CtrlDetailsCounterReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlDetailsCounterReport.ascx.designer.cs">
+      <DependentUpon>CtrlDetailsCounterReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlGuestAllMsgList.ascx.cs">
+      <DependentUpon>CtrlGuestAllMsgList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlGuestAllMsgList.ascx.designer.cs">
+      <DependentUpon>CtrlGuestAllMsgList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlUpgradeDowngradeRoom.ascx.cs">
+      <DependentUpon>CtrlUpgradeDowngradeRoom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\CtrlUpgradeDowngradeRoom.ascx.designer.cs">
+      <DependentUpon>CtrlUpgradeDowngradeRoom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\MsgBox.ascx.cs">
+      <DependentUpon>MsgBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CommonControls\MsgBox.ascx.designer.cs">
+      <DependentUpon>MsgBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Dashboard\CtrlCommonRatecardDashboard.ascx.cs">
+      <DependentUpon>CtrlCommonRatecardDashboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Dashboard\CtrlCommonRatecardDashboard.ascx.designer.cs">
+      <DependentUpon>CtrlCommonRatecardDashboard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Dashboard\CtrlRoomToSellDashboard.ascx.cs">
+      <DependentUpon>CtrlRoomToSellDashboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Dashboard\CtrlRoomToSellDashboard.ascx.designer.cs">
+      <DependentUpon>CtrlRoomToSellDashboard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlCommonAddDeposit.ascx.cs">
+      <DependentUpon>CtrlCommonAddDeposit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlCommonAddDeposit.ascx.designer.cs">
+      <DependentUpon>CtrlCommonAddDeposit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlCommonFolioOverrideTransaction.ascx.cs">
+      <DependentUpon>CtrlCommonFolioOverrideTransaction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlCommonFolioOverrideTransaction.ascx.designer.cs">
+      <DependentUpon>CtrlCommonFolioOverrideTransaction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlCommonFolioPostCharge.ascx.cs">
+      <DependentUpon>CtrlCommonFolioPostCharge.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlCommonFolioPostCharge.ascx.designer.cs">
+      <DependentUpon>CtrlCommonFolioPostCharge.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlCommonPostCredit.ascx.cs">
+      <DependentUpon>CtrlCommonPostCredit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlCommonPostCredit.ascx.designer.cs">
+      <DependentUpon>CtrlCommonPostCredit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlCommonSubFolioConfiguration.ascx.cs">
+      <DependentUpon>CtrlCommonSubFolioConfiguration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlCommonSubFolioConfiguration.ascx.designer.cs">
+      <DependentUpon>CtrlCommonSubFolioConfiguration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlDepositList.ascx.cs">
+      <DependentUpon>CtrlDepositList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlDepositList.ascx.designer.cs">
+      <DependentUpon>CtrlDepositList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlDiscountOnTransaction.ascx.cs">
+      <DependentUpon>CtrlDiscountOnTransaction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlDiscountOnTransaction.ascx.designer.cs">
+      <DependentUpon>CtrlDiscountOnTransaction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlFolioAssignPackage.ascx.cs">
+      <DependentUpon>CtrlFolioAssignPackage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlFolioAssignPackage.ascx.designer.cs">
+      <DependentUpon>CtrlFolioAssignPackage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlFolioDetails.ascx.cs">
+      <DependentUpon>CtrlFolioDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlFolioDetails.ascx.designer.cs">
+      <DependentUpon>CtrlFolioDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlFolioDetailsOld.ascx.cs">
+      <DependentUpon>CtrlFolioDetailsOld.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlFolioDetailsOld.ascx.designer.cs">
+      <DependentUpon>CtrlFolioDetailsOld.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlFolioList.ascx.cs">
+      <DependentUpon>CtrlFolioList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlFolioList.ascx.designer.cs">
+      <DependentUpon>CtrlFolioList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlLedgerReport.ascx.cs">
+      <DependentUpon>CtrlLedgerReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlLedgerReport.ascx.designer.cs">
+      <DependentUpon>CtrlLedgerReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlPostUnitCharges.ascx.cs">
+      <DependentUpon>CtrlPostUnitCharges.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlPostUnitCharges.ascx.designer.cs">
+      <DependentUpon>CtrlPostUnitCharges.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlRefundDeposit.ascx.cs">
+      <DependentUpon>CtrlRefundDeposit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlRefundDeposit.ascx.designer.cs">
+      <DependentUpon>CtrlRefundDeposit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlReRouteFolioSetup.ascx.cs">
+      <DependentUpon>CtrlReRouteFolioSetup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlReRouteFolioSetup.ascx.designer.cs">
+      <DependentUpon>CtrlReRouteFolioSetup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlSubFolioList.ascx.cs">
+      <DependentUpon>CtrlSubFolioList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlSubFolioList.ascx.designer.cs">
+      <DependentUpon>CtrlSubFolioList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlTransferDeposit.ascx.cs">
+      <DependentUpon>CtrlTransferDeposit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\CtrlTransferDeposit.ascx.designer.cs">
+      <DependentUpon>CtrlTransferDeposit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Folio\ctrlTransferTransactionFolio.ascx.cs">
+      <DependentUpon>ctrlTransferTransactionFolio.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Folio\ctrlTransferTransactionFolio.ascx.designer.cs">
+      <DependentUpon>ctrlTransferTransactionFolio.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlAddOnServices.ascx.cs">
+      <DependentUpon>CtrlAddOnServices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlAddOnServices.ascx.designer.cs">
+      <DependentUpon>CtrlAddOnServices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlAddServices.ascx.cs">
+      <DependentUpon>CtrlAddServices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlAddServices.ascx.designer.cs">
+      <DependentUpon>CtrlAddServices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlChangeRoom.ascx.cs">
+      <DependentUpon>CtrlChangeRoom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlChangeRoom.ascx.designer.cs">
+      <DependentUpon>CtrlChangeRoom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlCloseTroubleTicket.ascx.cs">
+      <DependentUpon>CtrlCloseTroubleTicket.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlCloseTroubleTicket.ascx.designer.cs">
+      <DependentUpon>CtrlCloseTroubleTicket.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlCommonGuestMaster.ascx.cs">
+      <DependentUpon>CtrlCommonGuestMaster.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlCommonGuestMaster.ascx.designer.cs">
+      <DependentUpon>CtrlCommonGuestMaster.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlComplain.ascx.cs">
+      <DependentUpon>CtrlComplain.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlComplain.ascx.designer.cs">
+      <DependentUpon>CtrlComplain.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlInquiryList.ascx.cs">
+      <DependentUpon>CtrlInquiryList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlInquiryList.ascx.designer.cs">
+      <DependentUpon>CtrlInquiryList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlMoveRoom.ascx.cs">
+      <DependentUpon>CtrlMoveRoom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlMoveRoom.ascx.designer.cs">
+      <DependentUpon>CtrlMoveRoom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlPreference.ascx.cs">
+      <DependentUpon>CtrlPreference.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlPreference.ascx.designer.cs">
+      <DependentUpon>CtrlPreference.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlRateUpdateforDifferentRoomType.ascx.cs">
+      <DependentUpon>CtrlRateUpdateforDifferentRoomType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlRateUpdateforDifferentRoomType.ascx.designer.cs">
+      <DependentUpon>CtrlRateUpdateforDifferentRoomType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlSearchServices.ascx.cs">
+      <DependentUpon>CtrlSearchServices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlSearchServices.ascx.designer.cs">
+      <DependentUpon>CtrlSearchServices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlSendEmailToGuest.ascx.cs">
+      <DependentUpon>CtrlSendEmailToGuest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlSendEmailToGuest.ascx.designer.cs">
+      <DependentUpon>CtrlSendEmailToGuest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlSwapRoom.ascx.cs">
+      <DependentUpon>CtrlSwapRoom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlSwapRoom.ascx.designer.cs">
+      <DependentUpon>CtrlSwapRoom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlTroubleTicket.ascx.cs">
+      <DependentUpon>CtrlTroubleTicket.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Guest\CtrlTroubleTicket.ascx.designer.cs">
+      <DependentUpon>CtrlTroubleTicket.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlAccountRevenueDetail.ascx.cs">
+      <DependentUpon>CtrlAccountRevenueDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlAccountRevenueDetail.ascx.designer.cs">
+      <DependentUpon>CtrlAccountRevenueDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlBillFormat.ascx.cs">
+      <DependentUpon>CtrlBillFormat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlBillFormat.ascx.designer.cs">
+      <DependentUpon>CtrlBillFormat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlBirthDayList.ascx.cs">
+      <DependentUpon>CtrlBirthDayList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlBirthDayList.ascx.designer.cs">
+      <DependentUpon>CtrlBirthDayList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCancellationCharges.ascx.cs">
+      <DependentUpon>CtrlCancellationCharges.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCancellationCharges.ascx.designer.cs">
+      <DependentUpon>CtrlCancellationCharges.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCashReport.ascx.cs">
+      <DependentUpon>CtrlCashReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCashReport.ascx.designer.cs">
+      <DependentUpon>CtrlCashReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCFormReport.ascx.cs">
+      <DependentUpon>CtrlCFormReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCFormReport.ascx.designer.cs">
+      <DependentUpon>CtrlCFormReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCollectionReport.ascx.cs">
+      <DependentUpon>CtrlCollectionReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCollectionReport.ascx.designer.cs">
+      <DependentUpon>CtrlCollectionReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCompanyPosting.ascx.cs">
+      <DependentUpon>CtrlCompanyPosting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCompanyPosting.ascx.designer.cs">
+      <DependentUpon>CtrlCompanyPosting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCreditcardwisecollectionReport.ascx.cs">
+      <DependentUpon>CtrlCreditcardwisecollectionReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlCreditcardwisecollectionReport.ascx.designer.cs">
+      <DependentUpon>CtrlCreditcardwisecollectionReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlOccupancyChart.ascx.cs">
+      <DependentUpon>CtrlOccupancyChart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlOccupancyChart.ascx.designer.cs">
+      <DependentUpon>CtrlOccupancyChart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlOccupancyChartByBlockAndRateCard.ascx.cs">
+      <DependentUpon>CtrlOccupancyChartByBlockAndRateCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlOccupancyChartByBlockAndRateCard.ascx.designer.cs">
+      <DependentUpon>CtrlOccupancyChartByBlockAndRateCard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlOccupancyChartByBlockAndRoomType.ascx.cs">
+      <DependentUpon>CtrlOccupancyChartByBlockAndRoomType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlOccupancyChartByBlockAndRoomType.ascx.designer.cs">
+      <DependentUpon>CtrlOccupancyChartByBlockAndRoomType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlOccupancyChartByBlockType.ascx.cs">
+      <DependentUpon>CtrlOccupancyChartByBlockType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlOccupancyChartByBlockType.ascx.designer.cs">
+      <DependentUpon>CtrlOccupancyChartByBlockType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlOccupancyReportByType.ascx.cs">
+      <DependentUpon>CtrlOccupancyReportByType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlOccupancyReportByType.ascx.designer.cs">
+      <DependentUpon>CtrlOccupancyReportByType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRetentionCharges.ascx.cs">
+      <DependentUpon>CtrlRetentionCharges.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRetentionCharges.ascx.designer.cs">
+      <DependentUpon>CtrlRetentionCharges.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRevenueDetail.ascx.cs">
+      <DependentUpon>CtrlRevenueDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRevenueDetail.ascx.designer.cs">
+      <DependentUpon>CtrlRevenueDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRoomDeposit.ascx.cs">
+      <DependentUpon>CtrlRoomDeposit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRoomDeposit.ascx.designer.cs">
+      <DependentUpon>CtrlRoomDeposit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRoomHistory.ascx.cs">
+      <DependentUpon>CtrlRoomHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRoomHistory.ascx.designer.cs">
+      <DependentUpon>CtrlRoomHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRoomNightReport.ascx.cs">
+      <DependentUpon>CtrlRoomNightReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRoomNightReport.ascx.designer.cs">
+      <DependentUpon>CtrlRoomNightReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRoomRentAdvance.ascx.cs">
+      <DependentUpon>CtrlRoomRentAdvance.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlRoomRentAdvance.ascx.designer.cs">
+      <DependentUpon>CtrlRoomRentAdvance.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlVacantRoomList.ascx.cs">
+      <DependentUpon>CtrlVacantRoomList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlVacantRoomList.ascx.designer.cs">
+      <DependentUpon>CtrlVacantRoomList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlVoidReport.ascx.cs">
+      <DependentUpon>CtrlVoidReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\CtrlVoidReport.ascx.designer.cs">
+      <DependentUpon>CtrlVoidReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\InfraServiceCharges.ascx.cs">
+      <DependentUpon>InfraServiceCharges.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\InfraServiceCharges.ascx.designer.cs">
+      <DependentUpon>InfraServiceCharges.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Report\YeildCalculation.ascx.cs">
+      <DependentUpon>YeildCalculation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Report\YeildCalculation.ascx.designer.cs">
+      <DependentUpon>YeildCalculation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\AvailabilityByBlock.ascx.cs">
+      <DependentUpon>AvailabilityByBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\AvailabilityByBlock.ascx.designer.cs">
+      <DependentUpon>AvailabilityByBlock.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ChangeRoomNumOnly.ascx.cs">
+      <DependentUpon>ChangeRoomNumOnly.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ChangeRoomNumOnly.ascx.designer.cs">
+      <DependentUpon>ChangeRoomNumOnly.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ctrlAddGuest.ascx.cs">
+      <DependentUpon>ctrlAddGuest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ctrlAddGuest.ascx.designer.cs">
+      <DependentUpon>ctrlAddGuest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ctrlAmendmentList.ascx.cs">
+      <DependentUpon>ctrlAmendmentList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ctrlAmendmentList.ascx.designer.cs">
+      <DependentUpon>ctrlAmendmentList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlAmendReservation.ascx.cs">
+      <DependentUpon>CtrlAmendReservation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlAmendReservation.ascx.designer.cs">
+      <DependentUpon>CtrlAmendReservation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlArrivalAndDeparture.ascx.cs">
+      <DependentUpon>CtrlArrivalAndDeparture.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlArrivalAndDeparture.ascx.designer.cs">
+      <DependentUpon>CtrlArrivalAndDeparture.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlAssignRoom.ascx.cs">
+      <DependentUpon>CtrlAssignRoom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlAssignRoom.ascx.designer.cs">
+      <DependentUpon>CtrlAssignRoom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlAvailabilityByFloor.ascx.cs">
+      <DependentUpon>CtrlAvailabilityByFloor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlAvailabilityByFloor.ascx.designer.cs">
+      <DependentUpon>CtrlAvailabilityByFloor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCancellationVoucher.ascx.cs">
+      <DependentUpon>CtrlCancellationVoucher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCancellationVoucher.ascx.designer.cs">
+      <DependentUpon>CtrlCancellationVoucher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCancelReservation.ascx.cs">
+      <DependentUpon>CtrlCancelReservation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCancelReservation.ascx.designer.cs">
+      <DependentUpon>CtrlCancelReservation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCancelReservationList.ascx.cs">
+      <DependentUpon>CtrlCancelReservationList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCancelReservationList.ascx.designer.cs">
+      <DependentUpon>CtrlCancelReservationList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCheckIn.ascx.cs">
+      <DependentUpon>CtrlCheckIn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCheckIn.ascx.designer.cs">
+      <DependentUpon>CtrlCheckIn.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ctrlCheckInList.ascx.cs">
+      <DependentUpon>ctrlCheckInList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ctrlCheckInList.ascx.designer.cs">
+      <DependentUpon>ctrlCheckInList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ctrlCheckInListOld.ascx.cs">
+      <DependentUpon>ctrlCheckInListOld.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ctrlCheckInListOld.ascx.designer.cs">
+      <DependentUpon>ctrlCheckInListOld.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCheckInLog.ascx.cs">
+      <DependentUpon>CtrlCheckInLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCheckInLog.ascx.designer.cs">
+      <DependentUpon>CtrlCheckInLog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCommonBillToCompany.ascx.cs">
+      <DependentUpon>CtrlCommonBillToCompany.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCommonBillToCompany.ascx.designer.cs">
+      <DependentUpon>CtrlCommonBillToCompany.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlConferenceReservation.ascx.cs">
+      <DependentUpon>CtrlConferenceReservation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlConferenceReservation.ascx.designer.cs">
+      <DependentUpon>CtrlConferenceReservation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlConferenceReservationList.ascx.cs">
+      <DependentUpon>CtrlConferenceReservationList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlConferenceReservationList.ascx.designer.cs">
+      <DependentUpon>CtrlConferenceReservationList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCurrentGuestList.ascx.cs">
+      <DependentUpon>CtrlCurrentGuestList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlCurrentGuestList.ascx.designer.cs">
+      <DependentUpon>CtrlCurrentGuestList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlEditReservation.ascx.cs">
+      <DependentUpon>CtrlEditReservation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlEditReservation.ascx.designer.cs">
+      <DependentUpon>CtrlEditReservation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlExtendReservation.ascx.cs">
+      <DependentUpon>CtrlExtendReservation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlExtendReservation.ascx.designer.cs">
+      <DependentUpon>CtrlExtendReservation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlGroupReservation.ascx.cs">
+      <DependentUpon>CtrlGroupReservation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlGroupReservation.ascx.designer.cs">
+      <DependentUpon>CtrlGroupReservation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlGroupReservationList.ascx.cs">
+      <DependentUpon>CtrlGroupReservationList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlGroupReservationList.ascx.designer.cs">
+      <DependentUpon>CtrlGroupReservationList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlInvestorBooking.ascx.cs">
+      <DependentUpon>CtrlInvestorBooking.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlInvestorBooking.ascx.designer.cs">
+      <DependentUpon>CtrlInvestorBooking.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ctrlNewCheckInList.ascx.cs">
+      <DependentUpon>ctrlNewCheckInList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\ctrlNewCheckInList.ascx.designer.cs">
+      <DependentUpon>ctrlNewCheckInList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlPastGuestList.ascx.cs">
+      <DependentUpon>CtrlPastGuestList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlPastGuestList.ascx.designer.cs">
+      <DependentUpon>CtrlPastGuestList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlQuickRoomReservation.ascx.cs">
+      <DependentUpon>CtrlQuickRoomReservation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlQuickRoomReservation.ascx.designer.cs">
+      <DependentUpon>CtrlQuickRoomReservation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRateCardList.ascx.cs">
+      <DependentUpon>CtrlRateCardList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRateCardList.ascx.designer.cs">
+      <DependentUpon>CtrlRateCardList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlReservation.ascx.cs">
+      <DependentUpon>CtrlReservation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlReservation.ascx.designer.cs">
+      <DependentUpon>CtrlReservation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlReservationGuestMgt.ascx.cs">
+      <DependentUpon>CtrlReservationGuestMgt.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlReservationGuestMgt.ascx.designer.cs">
+      <DependentUpon>CtrlReservationGuestMgt.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlReservationVoucher.ascx.cs">
+      <DependentUpon>CtrlReservationVoucher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlReservationVoucher.ascx.designer.cs">
+      <DependentUpon>CtrlReservationVoucher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomAvailability.ascx.cs">
+      <DependentUpon>CtrlRoomAvailability.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomAvailability.ascx.designer.cs">
+      <DependentUpon>CtrlRoomAvailability.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomReservation.ascx.cs">
+      <DependentUpon>CtrlRoomReservation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomReservation.ascx.designer.cs">
+      <DependentUpon>CtrlRoomReservation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomReservationList.ascx.cs">
+      <DependentUpon>CtrlRoomReservationList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomReservationList.ascx.designer.cs">
+      <DependentUpon>CtrlRoomReservationList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomStatus.ascx.cs">
+      <DependentUpon>CtrlRoomStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomStatus.ascx.designer.cs">
+      <DependentUpon>CtrlRoomStatus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomStatusView.ascx.cs">
+      <DependentUpon>CtrlRoomStatusView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomStatusView.ascx.designer.cs">
+      <DependentUpon>CtrlRoomStatusView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomsToSell.ascx.cs">
+      <DependentUpon>CtrlRoomsToSell.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlRoomsToSell.ascx.designer.cs">
+      <DependentUpon>CtrlRoomsToSell.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlSearchKeyandRoomNo.ascx.cs">
+      <DependentUpon>CtrlSearchKeyandRoomNo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlSearchKeyandRoomNo.ascx.designer.cs">
+      <DependentUpon>CtrlSearchKeyandRoomNo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlWalkIn.ascx.cs">
+      <DependentUpon>CtrlWalkIn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\CtrlWalkIn.ascx.designer.cs">
+      <DependentUpon>CtrlWalkIn.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Reservation\PaymentReceipt.ascx.cs">
+      <DependentUpon>PaymentReceipt.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Reservation\PaymentReceipt.ascx.designer.cs">
+      <DependentUpon>PaymentReceipt.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm.aspx.cs">
+      <DependentUpon>WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm.aspx.designer.cs">
+      <DependentUpon>WebForm.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\FRONTDESK\FRONTDESK.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Master\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvcRefInvestorList\InvestorList.wsdl" />
+    <None Include="Styles\images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SrvcRefInvestorList\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.BLL\SQT.Symphony.BusinessLogic.BackOffice.BLL.csproj">
+      <Project>{22ED0AD2-7463-438A-BBD8-EB51826D09A8}</Project>
+      <Name>SQT.Symphony.BusinessLogic.BackOffice.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\SQT.Symphony.BusinessLogic.BackOffice.DTO.csproj">
+      <Project>{E396BE3E-4AA6-4A90-88C0-977837268609}</Project>
+      <Name>SQT.Symphony.BusinessLogic.BackOffice.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.BLL\SQT.Symphony.BusinessLogic.Configuration.BLL.csproj">
+      <Project>{3CB4A6BB-55FA-4E51-8067-B7539E836259}</Project>
+      <Name>SQT.Symphony.BusinessLogic.Configuration.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\SQT.Symphony.BusinessLogic.Configuration.DTO.csproj">
+      <Project>{0B8BD7D0-5B6B-4675-A002-5180AC8E4BCD}</Project>
+      <Name>SQT.Symphony.BusinessLogic.Configuration.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.BLL\SQT.Symphony.BusinessLogic.FrontDesk.BLL.csproj">
+      <Project>{5C863304-BF8E-4F62-BDBE-8BF32B77EB53}</Project>
+      <Name>SQT.Symphony.BusinessLogic.FrontDesk.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.DTO\SQT.Symphony.BusinessLogic.FrontDesk.DTO.csproj">
+      <Project>{B0A07EF7-397F-4B27-9B19-0937E576AB95}</Project>
+      <Name>SQT.Symphony.BusinessLogic.FrontDesk.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\FRAMEWORK\SQT.FRAMEWORK.COMMON\SQT.FRAMEWORK.COMMON.csproj">
+      <Project>{EFABBC06-7201-4446-80F2-80C9D525916C}</Project>
+      <Name>SQT.FRAMEWORK.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\FRAMEWORK\SQT.FRAMEWORK.DAL\SQT.FRAMEWORK.DAL.csproj">
+      <Project>{9523644A-8EA4-4C73-AB7B-4C25181837BA}</Project>
+      <Name>SQT.FRAMEWORK.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\SQT.FRAMEWORK.EXCEPTION.csproj">
+      <Project>{9431D7F1-8C0F-41A2-A43E-9E8980694650}</Project>
+      <Name>SQT.FRAMEWORK.EXCEPTION</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\FRAMEWORK\SQT.FRAMEWORK.LOGGER\SQT.FRAMEWORK.LOGGER.csproj">
+      <Project>{F6E4F7D0-70C5-429E-A70E-F473B5ACC038}</Project>
+      <Name>SQT.FRAMEWORK.LOGGER</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReportFiles\rptCancellationCharges.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCancellationCharges1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptCashReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCashReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptCForm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCForm1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptCollectionDetail_Summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCollectionDetail_Summary1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptCollectionSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCollectionSummary1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptCompanyPosting.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCompanyPosting1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptCounterClose.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCounterClose1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptCounterCloseHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCounterCloseHistory1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptCounterClose_Summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCounterClose_Summary1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptFolioStatement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFolioStatement2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptFolioStatementSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFolioStatementSummary1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInvoice1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptInvoiceSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInvoiceSummary1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptOccupancyChartByBlockAndRateCard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOccupancyChartByBlockAndRateCard1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptOccupancyChartByBlockAndRoomType.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOccupancyChartByBlockAndRoomType1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptRetentionCharges.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRetentionCharges1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptRevenueDetail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRevenueDetail1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptRoomDeposit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRoomDeposit1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptRoomHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRoomHistory1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptRoomRentAdvance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRoomRentAdvance1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptRoomRentAdvance_Summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRoomRentAdvance_Summary1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptRoomRentRevenueSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRoomRentRevenueSummary1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFiles\rptVacantList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptVacantList1.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>34737</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,3 @@
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.PosServices\obj\Release\SQT.Symphony.UI.Web.PosServices.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.PosServices\obj\Release\SQT.Symphony.UI.Web.PosServices.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.PosServices\obj\Release\SQT.Symphony.UI.Web.PosServices.csproj.CoreCompileInputs.cache

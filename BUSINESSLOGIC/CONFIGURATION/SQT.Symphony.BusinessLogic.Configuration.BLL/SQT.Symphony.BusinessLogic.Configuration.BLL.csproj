@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3CB4A6BB-55FA-4E51-8067-B7539E836259}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SQT.Symphony.BusinessLogic.Configuration.BLL</RootNamespace>
+    <AssemblyName>SQT.Symphony.BusinessLogic.Configuration.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\..\..\..\..\..\..\Symphony3.0\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountBLL.cs" />
+    <Compile Include="ActionLogBLL.cs" />
+    <Compile Include="AddOnItemsBLL.cs" />
+    <Compile Include="AddOnsBLL.cs" />
+    <Compile Include="AddressBLL.cs" />
+    <Compile Include="AmenitiesBLL.cs" />
+    <Compile Include="CalenderEventBLL.cs" />
+    <Compile Include="CancellationPolicyBLL.cs" />
+    <Compile Include="CancellationPolicyMasterBLL.cs" />
+    <Compile Include="CategoryBLL.cs" />
+    <Compile Include="CategoryPOSPointsBLL.cs" />
+    <Compile Include="CityBLL.cs" />
+    <Compile Include="CompanyBLL.cs" />
+    <Compile Include="ConfConferenceTypeBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConferenceBLL.cs" />
+    <Compile Include="ConferenceTypeBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlNumberBLL.cs" />
+    <Compile Include="CorporateBLL.cs" />
+    <Compile Include="CorporateRatesBLL.cs" />
+    <Compile Include="CounterClose_SummaryBLL.cs" />
+    <Compile Include="CounterLoginLogBLL.cs" />
+    <Compile Include="CountersBLL.cs" />
+    <Compile Include="Counter_Close_DetailBLL.cs" />
+    <Compile Include="CountryBLL.cs" />
+    <Compile Include="CurrencyBLL.cs" />
+    <Compile Include="CurrencyTypeBLL.cs" />
+    <Compile Include="DenominationBLL.cs" />
+    <Compile Include="DepartmentBLL.cs" />
+    <Compile Include="DepositsBLL.cs" />
+    <Compile Include="DiscountsBLL.cs" />
+    <Compile Include="EmailConfigBLL.cs" />
+    <Compile Include="EMailTemplatesBLL.cs" />
+    <Compile Include="EmployeeBLL.cs" />
+    <Compile Include="ExchangeRateBLL.cs" />
+    <Compile Include="FloorBLL.cs" />
+    <Compile Include="FolioConfigBLL.cs" />
+    <Compile Include="HousekeepingConfigBLL.cs" />
+    <Compile Include="ItemAvailabilityBLL.cs" />
+    <Compile Include="ItemBLL.cs" />
+    <Compile Include="ItemCategoryBLL.cs" />
+    <Compile Include="ItemTaxBLL.cs" />
+    <Compile Include="ItemUOMBLL.cs" />
+    <Compile Include="LanguageBLL.cs" />
+    <Compile Include="LoginLogBLL.cs" />
+    <Compile Include="NewsLettersBLL.cs" />
+    <Compile Include="PaymentSlabeBLL.cs" />
+    <Compile Include="POSConfigBLL.cs" />
+    <Compile Include="POSPointsBLL.cs" />
+    <Compile Include="PreferenceMasterBLL.cs" />
+    <Compile Include="ProjectTermBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyBLL.cs" />
+    <Compile Include="PropertyConfigurationBLL.cs" />
+    <Compile Include="RateCardBLL.cs" />
+    <Compile Include="RateCardDetailsBLL.cs" />
+    <Compile Include="RateServiceJoinBLL.cs" />
+    <Compile Include="RateTaxesBLL.cs" />
+    <Compile Include="RecoveryBLL.cs" />
+    <Compile Include="ResCancellationPolicyBLL.cs" />
+    <Compile Include="ReservationConfigBLL.cs" />
+    <Compile Include="ReservationPoliciesBLL.cs" />
+    <Compile Include="ResourceFilesBLL.cs" />
+    <Compile Include="RightBLL.cs" />
+    <Compile Include="RoleBLL.cs" />
+    <Compile Include="RoleRightJoinBLL.cs" />
+    <Compile Include="RoomAmenitiesBLL.cs" />
+    <Compile Include="RoomBLL.cs" />
+    <Compile Include="RoomBlockBLL.cs" />
+    <Compile Include="RoomBlockDetailsBLL.cs" />
+    <Compile Include="RoomLayoutPlaneBLL.cs" />
+    <Compile Include="RoomLayoutPlaneDetailBLL.cs" />
+    <Compile Include="RoomSellOrderBLL.cs" />
+    <Compile Include="RoomTypeAmenitiesBLL.cs" />
+    <Compile Include="RoomTypeBLL.cs" />
+    <Compile Include="RoomTypeDepositBLL.cs" />
+    <Compile Include="RoomTypeServicesBLL.cs" />
+    <Compile Include="ServiceVendorMasterBLL.cs" />
+    <Compile Include="SMSTemplatesBLL.cs" />
+    <Compile Include="StateBLL.cs" />
+    <Compile Include="StayTypeBLL.cs" />
+    <Compile Include="TaxRateBLL.cs" />
+    <Compile Include="TaxSlabeBLL.cs" />
+    <Compile Include="Test_ItemBLL.cs" />
+    <Compile Include="TranscriptBLL.cs" />
+    <Compile Include="UOMBLL.cs" />
+    <Compile Include="UserBLL.cs" />
+    <Compile Include="UserRoleBLL.cs" />
+    <Compile Include="VIPTypesBLL.cs" />
+    <Compile Include="WingBLL.cs" />
+    <Compile Include="WingFloorJoinBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.DAL\SQT.FRAMEWORK.DAL.csproj">
+      <Project>{9523644A-8EA4-4C73-AB7B-4C25181837BA}</Project>
+      <Name>SQT.FRAMEWORK.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\SQT.FRAMEWORK.EXCEPTION.csproj">
+      <Project>{9431D7F1-8C0F-41A2-A43E-9E8980694650}</Project>
+      <Name>SQT.FRAMEWORK.EXCEPTION</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.LOGGER\SQT.FRAMEWORK.LOGGER.csproj">
+      <Project>{F6E4F7D0-70C5-429E-A70E-F473B5ACC038}</Project>
+      <Name>SQT.FRAMEWORK.LOGGER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\SQT.Symphony.BusinessLogic.IRMS.DAL.csproj">
+      <Project>{46B2DBC2-1911-47AA-99CE-B4F4630AC614}</Project>
+      <Name>SQT.Symphony.BusinessLogic.IRMS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IRMS\SQT.Symphony.BusinessLogic.IRMS.DTO\SQT.Symphony.BusinessLogic.IRMS.DTO.csproj">
+      <Project>{6B11022B-F840-4950-A789-DB98DED29EEB}</Project>
+      <Name>SQT.Symphony.BusinessLogic.IRMS.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQT.Symphony.BusinessLogic.Configuration.DAL\SQT.Symphony.BusinessLogic.Configuration.DAL.csproj">
+      <Project>{AA6BD733-19D8-42F6-A5BE-8D6208F9BEEE}</Project>
+      <Name>SQT.Symphony.BusinessLogic.Configuration.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQT.Symphony.BusinessLogic.Configuration.DTO\SQT.Symphony.BusinessLogic.Configuration.DTO.csproj">
+      <Project>{0B8BD7D0-5B6B-4675-A002-5180AC8E4BCD}</Project>
+      <Name>SQT.Symphony.BusinessLogic.Configuration.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

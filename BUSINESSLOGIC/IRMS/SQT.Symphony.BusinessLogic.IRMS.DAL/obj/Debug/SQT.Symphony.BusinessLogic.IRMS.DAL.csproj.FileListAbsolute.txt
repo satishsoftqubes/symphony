@@ -1,0 +1,85 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.COMMON.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.LOGGER.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.COMMON.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.LOGGER.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DTO.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.COMMON.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\log4net.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.COMMON.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\log4net.xml
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.COMMON.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\log4net.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.COMMON.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\log4net.xml
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.csproj.CopyComplete
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.COMMON.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DTO.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\log4net.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.COMMON.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.COMMON.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\SQT.Symphony.BusinessLogic.IRMS.DTO.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\log4net.xml
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.csproj.CopyComplete
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\obj\Debug\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb

@@ -1,0 +1,34 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.csproj.CopyComplete
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.csproj.CopyComplete
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\CONFIGURATION\SQT.Symphony.BusinessLogic.Configuration.DTO\obj\Debug\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb

@@ -1,0 +1,43 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.Properties.Resources.resources
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.Properties.Resources.resources
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.csproj.GenerateResource.Cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.Properties.Resources.resources
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.csproj.GenerateResource.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.csproj.CopyComplete
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.Properties.Resources.resources
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.csproj.GenerateResource.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\bin\Debug\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.csproj.CopyComplete
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\BACKOFFICE\SQT.Symphony.BusinessLogic.BackOffice.DTO\obj\x86\Debug\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb

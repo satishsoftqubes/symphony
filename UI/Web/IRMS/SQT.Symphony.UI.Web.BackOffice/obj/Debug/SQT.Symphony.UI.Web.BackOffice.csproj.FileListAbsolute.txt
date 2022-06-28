@@ -1,0 +1,147 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.UI.Web.BackOffice.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.UI.Web.BackOffice.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.ObjectBuilder2.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.Unity.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.COMMON.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.EXCEPTION.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.LOGGER.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.MESSAGES.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.SECURITY.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.BLL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.BLL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DTO.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.BLL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.BLL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DTO.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.COMMON.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.EXCEPTION.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.LOGGER.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.MESSAGES.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.SECURITY.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DTO.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\AjaxControlToolkit.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.UI.Web.BackOffice.dll.config
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.UI.Web.BackOffice.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.UI.Web.BackOffice.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\AjaxControlToolkit.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.ObjectBuilder2.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.Unity.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.COMMON.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.MESSAGES.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.SECURITY.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.BLL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.BLL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DTO.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\log4net.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.BLL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.BLL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.COMMON.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.MESSAGES.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.SECURITY.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DTO.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\log4net.xml
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.UI.Web.BackOffice.dll.config
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.UI.Web.BackOffice.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.UI.Web.BackOffice.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\AjaxControlToolkit.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.ObjectBuilder2.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\Microsoft.Practices.Unity.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.COMMON.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.MESSAGES.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.SECURITY.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.BLL.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.BLL.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.BLL.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DTO.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\log4net.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.BLL.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.BLL.dll.config
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.BLL.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.BLL.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.COMMON.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.MESSAGES.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.FRAMEWORK.SECURITY.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.BackOffice.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.Configuration.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DTO.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.IRMS.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\SQT.Symphony.BusinessLogic.FrontDesk.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\bin\log4net.xml
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.csproj.CopyComplete
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.dll
+D:\Projects\symphonyForSQT\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.pdb
+D:\Projects\Symphony\SRC\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\UI\Web\IRMS\SQT.Symphony.UI.Web.BackOffice\obj\Debug\SQT.Symphony.UI.Web.BackOffice.csproj.CoreCompileInputs.cache

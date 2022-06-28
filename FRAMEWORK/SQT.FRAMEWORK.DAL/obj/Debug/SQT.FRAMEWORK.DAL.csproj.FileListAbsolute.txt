@@ -1,0 +1,25 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.dll.config
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.dll
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.dll
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.DAL\obj\Debug\SQT.FRAMEWORK.DAL.pdb

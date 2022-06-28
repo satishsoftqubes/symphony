@@ -1,0 +1,21 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.pdb
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.dll
+D:\Projects\symphonyForSQT\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\bin\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.pdb
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.dll
+D:\Projects\Symphony\SRC\Symphony\BUSINESSLOGIC\FRONTDESK\SQT.Symphony.BusinessLogic.FrontDesk.COMMON\obj\Debug\SQT.Symphony.BusinessLogic.FrontDesk.COMMON.pdb

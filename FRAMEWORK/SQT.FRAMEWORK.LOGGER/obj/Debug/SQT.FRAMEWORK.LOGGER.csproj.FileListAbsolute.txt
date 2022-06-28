@@ -1,0 +1,24 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.LOGGER.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.LOGGER.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.csproj.CopyComplete
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.LOGGER.pdb
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.csproj.CopyComplete
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.dll
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.LOGGER\obj\Debug\SQT.FRAMEWORK.LOGGER.pdb

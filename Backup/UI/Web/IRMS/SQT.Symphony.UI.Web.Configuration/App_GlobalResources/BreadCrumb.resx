@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblAccessDenied" xml:space="preserve">
+    <value>Access Denied</value>
+  </data>
+  <data name="lblActionLog" xml:space="preserve">
+    <value>ActionLog</value>
+  </data>
+  <data name="lblAddOnsServices" xml:space="preserve">
+    <value>Add On Services</value>
+  </data>
+  <data name="lblAmenities" xml:space="preserve">
+    <value>Amenities</value>
+  </data>
+  <data name="lblAutonumberSetup" xml:space="preserve">
+    <value>Autonumber Setup</value>
+  </data>
+  <data name="lblBlockFloor" xml:space="preserve">
+    <value>Block/Floor</value>
+  </data>
+  <data name="lblBlockRoom" xml:space="preserve">
+    <value>Disabled Units</value>
+  </data>
+  <data name="lblConferenceBanquet" xml:space="preserve">
+    <value>Conference hall Name</value>
+  </data>
+  <data name="lblConferenceBanquetList" xml:space="preserve">
+    <value>Conference hall List</value>
+  </data>
+  <data name="lblConferenceBanquetTypes" xml:space="preserve">
+    <value>Conference Sitting Arrangement</value>
+  </data>
+  <data name="lblConferenceRatecard" xml:space="preserve">
+    <value>Conference Ratecard</value>
+  </data>
+  <data name="lblCorporate" xml:space="preserve">
+    <value>Corporate</value>
+  </data>
+  <data name="lblCorporateList" xml:space="preserve">
+    <value>Corporate List</value>
+  </data>
+  <data name="lblCorporateRatecard" xml:space="preserve">
+    <value>Corporate Ratecard</value>
+  </data>
+  <data name="lblCounterSetup" xml:space="preserve">
+    <value>Counter Setup</value>
+  </data>
+  <data name="lblCurrencySetup" xml:space="preserve">
+    <value>Currency Setup</value>
+  </data>
+  <data name="lblDashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="lblDenominationSetup" xml:space="preserve">
+    <value>Denomination Setup</value>
+  </data>
+  <data name="lblDepartment" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="lblDeposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="lblDiscount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="lblEmailConfiguration" xml:space="preserve">
+    <value>Email Configuration</value>
+  </data>
+  <data name="lblEmailTemplates" xml:space="preserve">
+    <value>Email Notification Template</value>
+  </data>
+  <data name="lblEmployee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="lblEmployeeList" xml:space="preserve">
+    <value>Employee List</value>
+  </data>
+  <data name="lblFolioConfiguration" xml:space="preserve">
+    <value>Folio Configuration</value>
+  </data>
+  <data name="lblGDSRatecard" xml:space="preserve">
+    <value>GDS Ratecard</value>
+  </data>
+  <data name="lblHouseKeepingSection" xml:space="preserve">
+    <value>House Keeping Section</value>
+  </data>
+  <data name="lblInfillSetup" xml:space="preserve">
+    <value>Infill Setup</value>
+  </data>
+  <data name="lblItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="lblItemList" xml:space="preserve">
+    <value>Item List</value>
+  </data>
+  <data name="lblLoginLog" xml:space="preserve">
+    <value>LoginLog</value>
+  </data>
+  <data name="lblPackageRatecard" xml:space="preserve">
+    <value>Package Ratecard</value>
+  </data>
+  <data name="lblPOSConfiguration" xml:space="preserve">
+    <value>POS Configuration</value>
+  </data>
+  <data name="lblPOSPoints" xml:space="preserve">
+    <value>POS Points</value>
+  </data>
+  <data name="lblProperty" xml:space="preserve">
+    <value>Property</value>
+  </data>
+  <data name="lblPropertyList" xml:space="preserve">
+    <value>Property List</value>
+  </data>
+  <data name="lblRatecardList" xml:space="preserve">
+    <value>Ratecard Setup</value>
+  </data>
+  <data name="lblReservationConfiguration" xml:space="preserve">
+    <value>Reservation</value>
+  </data>
+  <data name="lblReservationPolicy" xml:space="preserve">
+    <value>Reservation Policy</value>
+  </data>
+  <data name="lblRoles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="lblRoomRatecard" xml:space="preserve">
+    <value>Room Ratecard</value>
+  </data>
+  <data name="lblStayType" xml:space="preserve">
+    <value>Stay Type</value>
+  </data>
+  <data name="lblSystemSetup" xml:space="preserve">
+    <value>System Setup</value>
+  </data>
+  <data name="lblUnit" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="lblUnitList" xml:space="preserve">
+    <value>Room List</value>
+  </data>
+  <data name="lblUnitOfMeasure" xml:space="preserve">
+    <value>Unit Of Measure</value>
+  </data>
+  <data name="lblUnitType" xml:space="preserve">
+    <value>Room Type</value>
+  </data>
+  <data name="lblUnitTypesList" xml:space="preserve">
+    <value>Room Types List</value>
+  </data>
+  <data name="lblUsers" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="lblUserSetting" xml:space="preserve">
+    <value>User Setting</value>
+  </data>
+  <data name="lblVIPType" xml:space="preserve">
+    <value>VIP Type</value>
+  </data>
+  <data name="lblManageResourceFiles" xml:space="preserve">
+    <value>Manage Resource files</value>
+  </data>
+  <data name="lblGeneralSettings" xml:space="preserve">
+    <value>General Settings</value>
+  </data>
+  <data name="lblGuestManagement" xml:space="preserve">
+    <value>Guest Setup</value>
+  </data>
+  <data name="lblInventorySetup" xml:space="preserve">
+    <value>Inventory Setup</value>
+  </data>
+  <data name="lblPriceManager" xml:space="preserve">
+    <value>Tariff Setup</value>
+  </data>
+  <data name="lblPropertyConfiguration" xml:space="preserve">
+    <value>Property Setup</value>
+  </data>
+  <data name="lblRoomManager" xml:space="preserve">
+    <value>Room Manager</value>
+  </data>
+  <data name="lblUserSettiongs" xml:space="preserve">
+    <value>User Setup</value>
+  </data>
+  <data name="lblNewAddonsService" xml:space="preserve">
+    <value>New Add On Service</value>
+  </data>
+  <data name="lblNewAmenities" xml:space="preserve">
+    <value>New Amenity</value>
+  </data>
+  <data name="lblNewEmailTemplate" xml:space="preserve">
+    <value>New Email Template</value>
+  </data>
+  <data name="lblNewRole" xml:space="preserve">
+    <value>New Role</value>
+  </data>
+  <data name="lblNewUser" xml:space="preserve">
+    <value>New User</value>
+  </data>
+  <data name="lblFrontOfficeSetup" xml:space="preserve">
+    <value>Policy &amp; Configuration</value>
+  </data>
+  <data name="lblCategoryList" xml:space="preserve">
+    <value>Category List</value>
+  </data>
+  <data name="lblNewCategory" xml:space="preserve">
+    <value>New Category</value>
+  </data>
+  <data name="lblHouseKeeping" xml:space="preserve">
+    <value>House Keeping</value>
+  </data>
+  <data name="lblNewTax" xml:space="preserve">
+    <value>New Tax</value>
+  </data>
+  <data name="lblTaxList" xml:space="preserve">
+    <value>Tax List</value>
+  </data>
+  <data name="lblPOSSetup" xml:space="preserve">
+    <value>POS Setup</value>
+  </data>
+  <data name="lblMaterialManagementSetup" xml:space="preserve">
+    <value>Item Master Setup</value>
+  </data>
+  <data name="lblSystemSetupHeader" xml:space="preserve">
+    <value>System Setup</value>
+  </data>
+  <data name="lblBlockInformation" xml:space="preserve">
+    <value>Block Information</value>
+  </data>
+  <data name="lblPropertyInformation" xml:space="preserve">
+    <value>Property Information</value>
+  </data>
+  <data name="lblVendorMaster" xml:space="preserve">
+    <value>Vendor Master</value>
+  </data>
+  <data name="lblNewVendor" xml:space="preserve">
+    <value>New Vendor</value>
+  </data>
+  <data name="lblCommunicationSetup" xml:space="preserve">
+    <value>Communication Setup</value>
+  </data>
+</root>

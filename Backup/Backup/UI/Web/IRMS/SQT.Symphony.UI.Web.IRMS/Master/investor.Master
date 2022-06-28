@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="investor.master.cs" Inherits="SQT.Symphony.UI.Web.IRMS.Master.investor" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Uniworld</title>
+    <link id="Link1" href="~/Style/style.css" runat="server" rel="stylesheet" type="text/css" />
+    <link href="~/Style/modelpopup.css" rel="Stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="scptInnerHTML" runat="server" EnablePageMethods="true">
+    </asp:ScriptManager>
+    <div id="wrap">
+        <div class="layout">
+            <div class="header">
+                <div class="header_left">
+                    <a href="<%=Page.ResolveUrl("~/Applications/investordashboard.aspx") %>">
+                        <img src="<%=Page.ResolveUrl("~/images/logo.jpg") %>" border="0" alt="" class="logo" /></a>
+                </div>
+                <div class="header_right">
+                    <div class="header_right_col2">
+                        <div class="header_right_col2_content">
+                            <div class="header_right_col2_date">
+                                Date : <span>
+                                    <asp:Literal ID="litDate" runat="server"></asp:Literal></span></div>
+                            <div class="clear">
+                            </div>
+                            <div class="header_right_col2_time">
+                                Time : <span>
+                                    <asp:Literal ID="litTime" runat="server"></asp:Literal></span></div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="header_right_logout">
+                            <asp:LinkButton Text="Log Out" runat="server" ID="lnkLogout" OnClick="lnkLogOut_Click"></asp:LinkButton></div>
+                    </div>
+                    <div class="header_right_col1">
+                        <div class="header_right_col1_name">
+                            Investor Relations Module</div>
+                        <div class="header_right_col1_link">
+                            <asp:Label ID="lblUserName" runat="server"></asp:Label>
+                            | Investor | <a href="<%=Page.ResolveUrl("~/Applications/Activity/Settings.aspx") %>">
+                                Settings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="mains">
+                <div class="leftmargin">
+                    <div class="leftmargin_head_investor">
+                        <asp:Label ID="lblInvestorName" runat="server"></asp:Label></div>
+                    <div class="clear">
+                    </div>
+                    <div class="leftmargin_menu">
+                        <ul class="leftmargin_nav">
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorProfile.aspx") %>">
+                                Investor Information</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorUnitList.aspx") %>">
+                                Unit Information</a></li>
+                            <%--<li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorPaymentReceiptSetUp.aspx?Val=True") %>">Payment Receipt</a></li>--%>
+                            <%--<li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorDocumentList.aspx") %>">
+                                Documentation</a></li>--%>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorPaymentList.aspx") %>">
+                                Payment Information</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/PropertyInsuranceView.aspx") %>">
+                                Property Tax & Insurance</a></li>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Activity/RentPayout.aspx") %>">Rent
+                                Payout</a></li>
+                            <%-- <li><a href="#">Rent
+                                Payout</a></li>--%>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/Activity/UnitTypeMarketRateList.aspx") %>">
+                                Market Value of Unit</a></li>
+                        </ul>
+                        <div style="height: 2px;">
+                        </div><%--
+                        <table cellpadding="0" cellspacing="0" width="100%" id="tblUpdateIndication" runat="server">
+                            <tr>
+                                <td>
+                                    <div class="leftmargin_attractive_box">
+                                        <div class="leftmargin_attractive_box_head" style="color: Red;">
+                                            <asp:Literal ID="litHrdSmsEmail" runat="server" Text="Please Update"></asp:Literal>
+                                        </div>
+                                        <div class="clear">
+                                        </div>
+                                        <div class="leftmargin_attractive_box_content">
+                                            <table width="100%" cellpadding="2" cellspacing="1">
+                                                <tr id="trUpdtFristOwnerTitle" runat="server">
+                                                    <td style="border-bottom: 1px solid Gray; color: #0067a4; font-weight: bold;">
+                                                        First Owner's
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdateOwnerDOB" runat="server">
+                                                    <td>
+                                                        Date of Birth
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdateOwnerPANNo" runat="server">
+                                                    <td>
+                                                        PAN No.
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdateOwnerBankName" runat="server">
+                                                    <td>
+                                                        Bank Name
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdateOwnerBankAcctNo" runat="server">
+                                                    <td>
+                                                        Bank Acct. No.
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdateOwnerIFSCCode" runat="server">
+                                                    <td>
+                                                        Bank IFSC Code
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdtJointOwnerTitle" runat="server">
+                                                    <td style="border-bottom: 1px solid Gray; padding-top: 10px; color: #0067a4; font-weight: bold;">
+                                                        Joint Owner's
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdtJointOwnerDOB" runat="server">
+                                                    <td>
+                                                        Date of Birth
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdtJointOwnerPANNo" runat="server">
+                                                    <td>
+                                                        PAN No.
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdtJointOwnerBankName" runat="server">
+                                                    <td>
+                                                        Bank Name
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdtJointOwnerBankAcctNo" runat="server">
+                                                    <td>
+                                                        Bank Acct. No.
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdtJointOwnerIFSCCode" runat="server">
+                                                    <td>
+                                                        Bank IFSC Code
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdt2ndJointOwnerTitle" runat="server">
+                                                    <td style="border-bottom: 1px solid Gray; padding-top: 10px; color: #0067a4; font-weight: bold;">
+                                                        2nd Joint Owner's
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdt2ndJointOwnerDOB" runat="server">
+                                                    <td>
+                                                        Date of Birth
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdt2ndJointOwnerPANNo" runat="server">
+                                                    <td>
+                                                        PAN No.
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdt2ndJointOwnerBankName" runat="server">
+                                                    <td>
+                                                        Bank Name
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdt2ndJointOwnerBankAcctNo" runat="server">
+                                                    <td>
+                                                        Bank Acct. No.
+                                                    </td>
+                                                </tr>
+                                                <tr id="trUpdt2ndJointOwnerIFSCCode" runat="server">
+                                                    <td>
+                                                        Bank IFSC Code
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>--%>
+                    </div>
+                </div>
+                <div class="main_content">
+                    <div class="mainmenu">
+                        <ul class="mainnav">
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/investordashboard.aspx") %>">Home</a></li>
+                            <%--<li><a href="<%=Page.ResolveUrl("~/Applications/Investors/UnitBooking.aspx") %>">Unit
+                                Booking</a></li>--%>
+                            <li style="display:none;"><a href="#">Room Reservation</a></li>
+                            <li style="display:none;"><a href="#">Reports</a>
+                                <ul>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTUnitPurchaseInformation.aspx") %>">
+                                        Unit Purchase Summary</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTPaymentScheduleReport.aspx?Val=Due") %>">
+                                        Payment Schedule</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/Reports/RPTPaymentAlertList.aspx") %>">
+                                        Payments</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="mainbox">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

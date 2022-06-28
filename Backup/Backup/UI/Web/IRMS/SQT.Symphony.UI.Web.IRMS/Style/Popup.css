@@ -1,0 +1,19 @@
+﻿
+/* MEDIUM SIZE */
+
+.ajax__balloon_popup .oval 
+{
+
+}
+
+
+.ajax__balloon_popup .oval .medium {
+	min-width:250px;
+	min-height:200px;
+}
+
+.ajax_contentarea
+{
+	background-color:#c6ddeb; padding:25px;
+	border:1px solid #0067a4;
+}

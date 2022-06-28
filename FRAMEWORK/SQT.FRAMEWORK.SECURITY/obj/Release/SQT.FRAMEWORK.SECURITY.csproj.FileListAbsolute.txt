@@ -1,0 +1,17 @@
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\bin\Release\SQT.FRAMEWORK.SECURITY.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\bin\Release\SQT.FRAMEWORK.SECURITY.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\bin\Release\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\bin\Release\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\obj\Release\SQT.FRAMEWORK.SECURITY.csprojResolveAssemblyReference.cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\obj\Release\SQT.FRAMEWORK.SECURITY.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\obj\Release\SQT.FRAMEWORK.SECURITY.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\bin\Release\SQT.FRAMEWORK.SECURITY.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\bin\Release\SQT.FRAMEWORK.SECURITY.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\bin\Release\SQT.FRAMEWORK.DAL.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\bin\Release\SQT.FRAMEWORK.DAL.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\bin\Release\SQT.FRAMEWORK.DAL.dll.config
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\obj\Release\SQT.FRAMEWORK.SECURITY.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\obj\Release\SQT.FRAMEWORK.SECURITY.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\obj\Release\SQT.FRAMEWORK.SECURITY.csproj.CopyComplete
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\obj\Release\SQT.FRAMEWORK.SECURITY.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.SECURITY\obj\Release\SQT.FRAMEWORK.SECURITY.pdb

@@ -1,0 +1,38 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.exe
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.ProjectInstaller.resources
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.SrvcOverStay.resources
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.exe
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.exe.config
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.exe.config
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.exe
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.ProjectInstaller.resources
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.SrvcOverStay.resources
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.csproj.GenerateResource.Cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.exe
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.exe.config
+D:\Projects\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.exe
+D:\Projects\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.pdb
+D:\Projects\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.ProjectInstaller.resources
+D:\Projects\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.SrvcOverStay.resources
+D:\Projects\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.csproj.GenerateResource.cache
+D:\Projects\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.exe
+D:\Projects\symphonyForSQT\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.pdb
+D:\Projects\Symphony\SRC\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.exe.config
+D:\Projects\Symphony\SRC\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.exe
+D:\Projects\Symphony\SRC\Symphony\UI\Window\SrvcGuestOverstay\bin\Debug\SrvcGuestOverstay.pdb
+D:\Projects\Symphony\SRC\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.ProjectInstaller.resources
+D:\Projects\Symphony\SRC\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.SrvcOverStay.resources
+D:\Projects\Symphony\SRC\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.csproj.GenerateResource.cache
+D:\Projects\Symphony\SRC\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.exe
+D:\Projects\Symphony\SRC\Symphony\UI\Window\SrvcGuestOverstay\obj\x86\Debug\SrvcGuestOverstay.pdb

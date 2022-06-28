@@ -1,0 +1,21 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.EXCEPTION.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.EXCEPTION.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.EXCEPTION.pdb
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.dll
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\obj\Debug\SQT.FRAMEWORK.EXCEPTION.pdb

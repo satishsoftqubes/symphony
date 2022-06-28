@@ -1,0 +1,30 @@
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.MESSAGES.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.MESSAGES.pdb
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\ResolveAssemblyReference.cache
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.Properties.Resources.resources
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\GenerateResource.read.1.tlog
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\GenerateResource.write.1.tlog
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.dll
+F:\Softqube Technologies\Symphony3.0 TFS\symphony\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.MESSAGES.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.MESSAGES.pdb
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.Properties.Resources.resources
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.csproj.GenerateResource.Cache
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.dll
+D:\Projects\symphonyForSQT\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.MESSAGES.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.MESSAGES.pdb
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.csprojAssemblyReference.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.Properties.Resources.resources
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.csproj.GenerateResource.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.csproj.CoreCompileInputs.cache
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.dll
+D:\Projects\symphonyForSQT\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.pdb
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.MESSAGES.dll
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\Executables\SQT.FRAMEWORK.MESSAGES.pdb
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.csproj.AssemblyReference.cache
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.Properties.Resources.resources
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.csproj.GenerateResource.cache
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.csproj.CoreCompileInputs.cache
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.dll
+D:\Projects\Symphony\SRC\Symphony\FRAMEWORK\SQT.FRAMEWORK.MESSAGES\obj\Debug\SQT.FRAMEWORK.MESSAGES.pdb

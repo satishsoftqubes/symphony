@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46B2DBC2-1911-47AA-99CE-B4F4630AC614}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SQT.Symphony.BusinessLogic.IRMS.DAL</RootNamespace>
+    <AssemblyName>SQT.Symphony.BusinessLogic.IRMS.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\..\..\..\..\..\..\Symphony3.0\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\..\..\..\..\..\..\Symphony3.0\Symphony\BUSINESSLOGIC\IRMS\SQT.Symphony.BusinessLogic.IRMS.DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChannelPartnerDAL.cs" />
+    <Compile Include="DocumentsDAL.cs" />
+    <Compile Include="EMailTemplatesDAL.cs" />
+    <Compile Include="InsuranceDetailsDAL.cs" />
+    <Compile Include="InvestorDAL.cs" />
+    <Compile Include="InvestorPaymentReceiptDAL.cs" />
+    <Compile Include="InvestorsUnitDAL.cs" />
+    <Compile Include="PaymentScheduleDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProspectsDAL.cs" />
+    <Compile Include="RentPayOutPerQuarterDAL.cs" />
+    <Compile Include="RentPayoutQuarterSetupDAL.cs" />
+    <Compile Include="ReservationVoucherDAL.cs" />
+    <Compile Include="SalesTeamDAL.cs" />
+    <Compile Include="UnitTypeMarketRateDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.COMMON\SQT.FRAMEWORK.COMMON.csproj">
+      <Project>{EFABBC06-7201-4446-80F2-80C9D525916C}</Project>
+      <Name>SQT.FRAMEWORK.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.DAL\SQT.FRAMEWORK.DAL.csproj">
+      <Project>{9523644A-8EA4-4C73-AB7B-4C25181837BA}</Project>
+      <Name>SQT.FRAMEWORK.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.EXCEPTION\SQT.FRAMEWORK.EXCEPTION.csproj">
+      <Project>{9431D7F1-8C0F-41A2-A43E-9E8980694650}</Project>
+      <Name>SQT.FRAMEWORK.EXCEPTION</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FRAMEWORK\SQT.FRAMEWORK.LOGGER\SQT.FRAMEWORK.LOGGER.csproj">
+      <Project>{F6E4F7D0-70C5-429E-A70E-F473B5ACC038}</Project>
+      <Name>SQT.FRAMEWORK.LOGGER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQT.Symphony.BusinessLogic.IRMS.COMMON\SQT.Symphony.BusinessLogic.IRMS.COMMON.csproj">
+      <Project>{2562A355-DFAA-431E-BB08-53A1D3D8D134}</Project>
+      <Name>SQT.Symphony.BusinessLogic.IRMS.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQT.Symphony.BusinessLogic.IRMS.DTO\SQT.Symphony.BusinessLogic.IRMS.DTO.csproj">
+      <Project>{6B11022B-F840-4950-A789-DB98DED29EEB}</Project>
+      <Name>SQT.Symphony.BusinessLogic.IRMS.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
