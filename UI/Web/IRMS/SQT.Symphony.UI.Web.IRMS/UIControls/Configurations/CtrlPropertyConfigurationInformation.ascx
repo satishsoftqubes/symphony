@@ -153,6 +153,20 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <asp:Label ID="Label2" runat="server" Text="Purchase Option" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rvfPurchaseOption" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
+                                                    ControlToValidate="ddlPurchaseOption" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlPurchaseOption" Style="width: 202px;" runat="server">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
                                             <asp:Literal ID="litSBArea" runat="server" Text="SBA (Sft) (Residential)"></asp:Literal>
                                         </td>
                                         <td>

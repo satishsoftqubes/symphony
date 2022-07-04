@@ -317,6 +317,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 .AddParameter("@SEACNOC", dtoObject.SEACNOC)
 .AddParameter("@CertificationNo", dtoObject.CertificationNo)
 .AddParameter("@LicenceNo", dtoObject.LicenceNo)
+.AddParameter("@PurchaseOptionID", dtoObject.PurchaseOptionID)
 
                         .WithTransaction(dbtr)
                         .Execute();
@@ -394,6 +395,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 .AddParameter("@SEACNOC", dtoObject.SEACNOC)
 .AddParameter("@CertificationNo", dtoObject.CertificationNo)
 .AddParameter("@LicenceNo", dtoObject.LicenceNo)
+.AddParameter("@PurchaseOptionID", dtoObject.PurchaseOptionID)
 
                         .WithTransaction(dbtr)
                         .Execute();

@@ -65,6 +65,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			Guid? _companyID;
 			int? _seqNo;
 			Guid? _propertyTypeID;
+            Guid? _purchaseOptionID;
 			string _propertyCode;
 			string _propertyName;
 			Guid? _addressID;
@@ -161,6 +162,20 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 				 }
 			 }
 		}
+
+        [DataMember]
+        public Guid? PurchaseOptionID
+        {
+            get { return _purchaseOptionID; }
+            set
+            {
+                if (_purchaseOptionID != value)
+                {
+                    _purchaseOptionID = value;
+                    PropertyHasChanged("PurchaseOptionID");
+                }
+            }
+        }
 
 		[DataMember]
 		public string  PropertyCode

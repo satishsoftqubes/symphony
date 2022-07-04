@@ -112,6 +112,33 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::System.Web.UI.WebControls.DropDownList ddlPropertyType;
         
         /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// rvfPurchaseOption control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfPurchaseOption;
+        
+        /// <summary>
+        /// ddlPurchaseOption control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPurchaseOption;
+        
+        /// <summary>
         /// litSBArea control.
         /// </summary>
         /// <remarks>

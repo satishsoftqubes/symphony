@@ -122,6 +122,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 LoadDocumentGrid();
                 BindPropertyType();
+                BindPurchaseOption();
                 LoadValidation();
                 BindGrid();
             }
@@ -152,6 +153,36 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     tdZipCode.Attributes.Add("class", "RequireFile");                
             }
         }
+
+        /// <summary>
+        /// Load Purchase Option
+        /// </summary>
+        private void BindPurchaseOption()
+        {
+            List<ProjectTerm> lstProjectTermPO = null;
+            ProjectTerm objProjectTermPT = new ProjectTerm();
+            objProjectTermPT.IsActive = true;
+            objProjectTermPT.Category = "PURCHASEOPTION";
+            objProjectTermPT.CompanyID = this.CompanyID;
+
+            lstProjectTermPO = ProjectTermBLL.GetAll(objProjectTermPT);
+
+            if (lstProjectTermPO.Count != 0)
+            {
+                lstProjectTermPO.Sort((ProjectTerm p1, ProjectTerm p2) => p1.DisplayTerm.CompareTo(p2.DisplayTerm));
+
+                ddlPurchaseOption.DataSource = lstProjectTermPO;
+                ddlPurchaseOption.DataTextField = "DisplayTerm";
+                ddlPurchaseOption.DataValueField = "TermID";
+                ddlPurchaseOption.DataBind();
+                ddlPurchaseOption.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+            }
+            else
+            {
+                ddlPurchaseOption.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+            }
+        }
+
         /// <summary>
         /// Load Property Type
         /// </summary>
@@ -255,6 +286,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             //BindAddressType();
             //ddlAddressType.SelectedValue = Guid.Empty.ToString();
             BindPropertyType();
+            BindPurchaseOption();
             ddlPropertyType.SelectedValue = Guid.Empty.ToString();
             BindGrid();
             this.PropertyID = Guid.Empty;
@@ -273,6 +305,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             if (ds.Tables[0].Rows.Count != 0)
             {
                 BindPropertyType();
+                BindPurchaseOption();
                 //BindAddressType();
                 txtPropertyName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]);
                 //txtPropertyDisplayName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyDisplayName"]);
@@ -302,6 +335,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                 if (Convert.ToString(ds.Tables[0].Rows[0]["ProperyType"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["ProperyType"]) != null)
                     ddlPropertyType.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PropertyTypeID"]));
+
+                if (Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOption"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOption"]) != null)
+                    ddlPurchaseOption.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOptionID"]));
 
                 //if (Convert.ToString(ds.Tables[0].Rows[0]["AddressTypeTermID"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["AddressTypeTermID"]) != null)
                 //    ddlAddressType.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["AddressTypeTermID"]));
@@ -396,6 +432,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             objUpdProperty.PropertyTypeID = new Guid(ddlPropertyType.SelectedValue);
                         else
                             objUpdProperty.PropertyTypeID = null;
+
+                        if (ddlPurchaseOption.SelectedValue != Guid.Empty.ToString())
+                            objUpdProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);
+                        else
+                            objUpdProperty.PurchaseOptionID = null;
+
                         objUpdProperty.PropManagerName = txtPropertyManagerName.Text.Trim();
                         objUpdProperty.PrimaryContactNo = txtPrimaryContactNo.Text.Trim();
                         objUpdProperty.PrimaryEmail = txtPrimaryEmail.Text.Trim();
@@ -500,6 +542,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             objInsProperty.PropertyTypeID = new Guid(ddlPropertyType.SelectedValue);
                         else
                             objInsProperty.PropertyTypeID = null;
+
+                        if (ddlPurchaseOption.SelectedValue != Guid.Empty.ToString())
+                            objInsProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);
+                        else
+                            objInsProperty.PurchaseOptionID = null;
+
                         objInsProperty.PropManagerName = txtPropertyManagerName.Text.Trim();
                         objInsProperty.PrimaryContactNo = txtPrimaryContactNo.Text.Trim();
                         objInsProperty.PrimaryEmail = txtPrimaryEmail.Text.Trim();
