@@ -287,6 +287,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             //ddlAddressType.SelectedValue = Guid.Empty.ToString();
             BindPropertyType();
             BindPurchaseOption();
+            txtSurveyNo.Text = "";
             ddlPropertyType.SelectedValue = Guid.Empty.ToString();
             BindGrid();
             this.PropertyID = Guid.Empty;
@@ -310,6 +311,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 txtPropertyName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]);
                 //txtPropertyDisplayName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyDisplayName"]);
                 txtPropertyCode.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyCode"]);
+                txtSurveyNo.Text = Convert.ToString(ds.Tables[0].Rows[0]["SurveyNo"]);
                 txtPropertyManagerName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropManagerName"]);
                 txtPrimaryContactNo.Text = Convert.ToString(ds.Tables[0].Rows[0]["PrimaryContactNo"]);
                 txtPrimaryEmail.Text = Convert.ToString(ds.Tables[0].Rows[0]["PrimaryEmail"]);
@@ -437,7 +439,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             objUpdProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);
                         else
                             objUpdProperty.PurchaseOptionID = null;
-
+                        objUpdProperty.SurveyNo = txtSurveyNo.Text.Trim();
                         objUpdProperty.PropManagerName = txtPropertyManagerName.Text.Trim();
                         objUpdProperty.PrimaryContactNo = txtPrimaryContactNo.Text.Trim();
                         objUpdProperty.PrimaryEmail = txtPrimaryEmail.Text.Trim();
@@ -547,7 +549,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             objInsProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);
                         else
                             objInsProperty.PurchaseOptionID = null;
-
+                        objInsProperty.SurveyNo = txtSurveyNo.Text.Trim();
                         objInsProperty.PropManagerName = txtPropertyManagerName.Text.Trim();
                         objInsProperty.PrimaryContactNo = txtPrimaryContactNo.Text.Trim();
                         objInsProperty.PrimaryEmail = txtPrimaryEmail.Text.Trim();

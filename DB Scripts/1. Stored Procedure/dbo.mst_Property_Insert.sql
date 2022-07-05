@@ -2,7 +2,7 @@ DROP PROCEDURE IF EXISTS dbo.mst_Property_Insert
 
 GO
 
-CREATE PROCEDURE [dbo].[mst_Property_Insert]
+CREATE PROCEDURE dbo.mst_Property_Insert
 (
 	@PropertyID uniqueidentifier ,
 	@CompanyID uniqueidentifier = null ,
@@ -43,7 +43,8 @@ CREATE PROCEDURE [dbo].[mst_Property_Insert]
 	@SEACNOC nvarchar(MAX) = null ,
 	@CertificationNo nvarchar(MAX) = null ,
 	@LicenceNo nvarchar(MAX) = null,
-	@PurchaseOptionID uniqueidentifier = null
+	@PurchaseOptionID uniqueidentifier = null,
+	@SurveyNo nvarchar(65) = null
 
 )
 AS
@@ -96,7 +97,8 @@ INSERT [dbo].[mst_Property]
 	[SEACNOC],
 	[CertificationNo],
 	[LicenceNo],
-	[PurchaseOptionID]
+	[PurchaseOptionID],
+	[SurveyNo]
 
 )
 VALUES
@@ -139,7 +141,8 @@ VALUES
 	@SEACNOC,
 	@CertificationNo,
 	@LicenceNo,
-	@PurchaseOptionID
+	@PurchaseOptionID,
+	@SurveyNo
 
 )
 

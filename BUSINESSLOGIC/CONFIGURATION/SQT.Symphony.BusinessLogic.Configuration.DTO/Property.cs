@@ -55,7 +55,9 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			KPSBNoc,
 			SEACNOC,
 			CertificationNo,
-			LicenceNo
+			LicenceNo,
+            PurchaseOptionID,
+            SurveyNo
 		}
 		#endregion
 
@@ -64,8 +66,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			Guid _propertyID;
 			Guid? _companyID;
 			int? _seqNo;
-			Guid? _propertyTypeID;
-            Guid? _purchaseOptionID;
+			Guid? _propertyTypeID;            
 			string _propertyCode;
 			string _propertyName;
 			Guid? _addressID;
@@ -102,6 +103,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			string _sEACNOC;
 			string _certificationNo;
 			string _licenceNo;
+            Guid? _purchaseOptionID;
+            string _surveyNo;
 
 		#endregion
 
@@ -681,6 +684,19 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			 }
 		}
 
+        [DataMember]
+        public string SurveyNo
+        {
+            get { return _surveyNo; }
+            set
+            {
+                if (_surveyNo != value)
+                {
+                    _surveyNo = value;
+                    PropertyHasChanged("SurveyNo");
+                }
+            }
+        }
 
 		#endregion
 
@@ -707,7 +723,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("KPSBNoc", "KPSBNoc",2147483647));
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("SEACNOC", "SEACNOC",2147483647));
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("CertificationNo", "CertificationNo",2147483647));
-			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("LicenceNo", "LicenceNo",2147483647));
+            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("LicenceNo", "LicenceNo", 2147483647));
+            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("SurveyNo", "SurveyNo", 2147483647));            
 		}
 
 		[OperationContract]
@@ -754,7 +771,9 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			"SEACNOC = {37}~\n"+
 			"CertificationNo = {38}~\n"+
 			"LicenceNo = {39}~\n",
-			PropertyID,			CompanyID,			SeqNo,			PropertyTypeID,			PropertyCode,			PropertyName,			AddressID,			PropManagerName,			PrimaryContactNo,			PrimaryEmail,			PrimaryFax,			PropertyDisplayName,			PropertyRegisteredOn,			PropertyRegisteredBy,			PropertyCreatedOn,			IsApproved,			ApprovedBy,			ApprovedOn,			PropertyRating,			PropertyComments,			LastUpdateOn,			LastUpdateBy,			IsSynch,			IsActive,			ActivationKey,			ActivationCode,			LicenseNoOfUsers,			Thumb,			SynchOn,			UpdateLog,			SBArea,			CarpetArea,			PhotoLocal,			SBAreaCommercial,			KhataNo,			BuldingPlanApprovalNo,			KPSBNoc,			SEACNOC,			CertificationNo,			LicenceNo);			return objValue;
+            "PurchaseOptionID = {40}~\n",
+            "SurveyNo = {41}~\n",
+			PropertyID,			CompanyID,			SeqNo,			PropertyTypeID,			PropertyCode,			PropertyName,			AddressID,			PropManagerName,			PrimaryContactNo,			PrimaryEmail,			PrimaryFax,			PropertyDisplayName,			PropertyRegisteredOn,			PropertyRegisteredBy,			PropertyCreatedOn,			IsApproved,			ApprovedBy,			ApprovedOn,			PropertyRating,			PropertyComments,			LastUpdateOn,			LastUpdateBy,			IsSynch,			IsActive,			ActivationKey,			ActivationCode,			LicenseNoOfUsers,			Thumb,			SynchOn,			UpdateLog,			SBArea,			CarpetArea,			PhotoLocal,			SBAreaCommercial,			KhataNo,			BuldingPlanApprovalNo,			KPSBNoc,			SEACNOC,			CertificationNo,			LicenceNo,          PurchaseOptionID,           SurveyNo);			return objValue;
 		}
 
 		#endregion

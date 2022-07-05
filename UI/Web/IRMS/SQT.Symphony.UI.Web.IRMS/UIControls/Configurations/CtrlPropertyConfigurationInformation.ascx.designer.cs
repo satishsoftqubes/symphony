@@ -112,13 +112,13 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::System.Web.UI.WebControls.DropDownList ddlPropertyType;
         
         /// <summary>
-        /// Label2 control.
+        /// litPurchaseOption control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label litPurchaseOption;
         
         /// <summary>
         /// rvfPurchaseOption control.
@@ -137,6 +137,33 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPurchaseOption;
+        
+        /// <summary>
+        /// litSurveyNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label litSurveyNo;
+        
+        /// <summary>
+        /// rvfSurveyNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfSurveyNo;
+        
+        /// <summary>
+        /// txtSurveyNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSurveyNo;
         
         /// <summary>
         /// litSBArea control.

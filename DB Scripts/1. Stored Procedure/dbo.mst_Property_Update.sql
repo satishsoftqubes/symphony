@@ -44,7 +44,8 @@ CREATE PROCEDURE dbo.mst_Property_Update
 	@SEACNOC nvarchar(MAX) = null,
 	@CertificationNo nvarchar(MAX) = null,
 	@LicenceNo nvarchar(MAX) = null,
-	@PurchaseOptionID uniqueidentifier = null
+	@PurchaseOptionID uniqueidentifier = null,
+	@SurveyNo nvarchar(65) = null
 
 )
 AS
@@ -89,7 +90,8 @@ SET
 	[SEACNOC] = @SEACNOC,
 	[CertificationNo] = @CertificationNo,
 	[LicenceNo] = @LicenceNo,
-	[PurchaseOptionID] = @PurchaseOptionID
+	[PurchaseOptionID] = @PurchaseOptionID,
+	[SurveyNo] = @SurveyNo
  WHERE 
 	[PropertyID] = @PropertyID
 END

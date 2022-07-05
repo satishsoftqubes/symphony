@@ -1,2 +1,0 @@
-ALTER TABLE mst_Property 
-ADD PurchaseOptionID UNIQUEIDENTIFIER

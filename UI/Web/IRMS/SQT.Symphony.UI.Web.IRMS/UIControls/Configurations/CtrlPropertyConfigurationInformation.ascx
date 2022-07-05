@@ -153,7 +153,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Label ID="Label2" runat="server" Text="Purchase Option" CssClass="RequireFile"></asp:Label>
+                                            <asp:Label ID="litPurchaseOption" runat="server" Text="Purchase Option" CssClass="RequireFile"></asp:Label>
                                             <span class="erroraleart">
                                                 <asp:RequiredFieldValidator ID="rvfPurchaseOption" SetFocusOnError="true" CssClass="rfv_ErrorStar"
                                                     InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
@@ -163,6 +163,19 @@
                                         <td>
                                             <asp:DropDownList ID="ddlPurchaseOption" Style="width: 202px;" runat="server">
                                             </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="litSurveyNo" runat="server" Text="Survey No" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rvfSurveyNo" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtSurveyNo"
+                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtSurveyNo" SkinID="CmpTextbox" runat="server"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
