@@ -180,6 +180,20 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <asp:Label ID="litPaymentTerm" runat="server" Text="Payment Term" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rvfPaymentTerm" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
+                                                    ControlToValidate="ddlPaymentTerm" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlPaymentTerm" Style="width: 202px;" runat="server">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
                                             <asp:Literal ID="litSBArea" runat="server" Text="SBA (Sft) (Residential)"></asp:Literal>
                                         </td>
                                         <td>

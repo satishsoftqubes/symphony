@@ -13,11 +13,11 @@ CREATE PROCEDURE dbo.mst_Property_SelectData
 AS  
 BEGIN  
  SELECT   
-  mst_Property.PropertyID, mst_Property.CompanyID, mst_Property.SeqNo, [PropertyTypeID], [PropertyCode], [PropertyName], [PurchaseOptionID], [SurveyNo], mst_Property.AddressID, [PropManagerName], [PrimaryContactNo], [PrimaryEmail], [PrimaryFax], [PropertyDisplayName], [PropertyRegisteredOn], 
+  mst_Property.PropertyID, mst_Property.CompanyID, mst_Property.SeqNo, [PropertyTypeID], [PropertyCode], [PropertyName], [PurchaseOptionID], [SurveyNo], [PaymentTermID], mst_Property.AddressID, [PropManagerName], [PrimaryContactNo], [PrimaryEmail], [PrimaryFax], [PropertyDisplayName], [PropertyRegisteredOn], 
   [PropertyRegisteredBy], [PropertyCreatedOn], [IsApproved], [ApprovedBy], [ApprovedOn], [PropertyRating], [PropertyComments], [LastUpdateOn], [LastUpdateBy], mst_Property.IsSynch,mst_Property.IsActive, [ActivationKey], [ActivationCode], [LicenseNoOfUsers], mst_Property.Thumb, mst_Property.SynchOn, mst_Property.UpdateLog, [SBArea], [CarpetArea], [PhotoLocal],  
   mst_Address.Add1,mst_Address.Add2,mst_Address.ZipCode,mst_Address.City,mst_Address.AddressTypeTermID,mst_Country.CountryName,mst_State.StateName,p1.Term 'ProperyType',p2.Term 'AddressType',mst_Address.AddressID,  
   SBAreaCommercial,KhataNo,BuldingPlanApprovalNo,KPSBNoc,SEACNOC,LicenceNo,CertificationNo,  
-  mst_Address.CityID,mst_City.CityName as CityName, p3.Term 'PurchaseOption',
+  mst_Address.CityID,mst_City.CityName as CityName, p3.Term 'PurchaseOption', p4.Term 'PaymentTerm',
   (Select COUNT(*) From mst_Wing Where mst_Wing.PropertyID = mst_Property.PropertyID and mst_Wing.IsActive = 1) AS WingCount,  
   (Select COUNT(*) From mst_RoomType Where mst_RoomType.PropertyID = mst_Property.PropertyID and mst_RoomType.IsActive = 1) AS UnitTypesCount,  
   (Select COUNT(*) From mst_Room Where mst_Room.PropertyID = mst_Property.PropertyID and mst_Room.IsActive = 1) AS UnitsCount,  
@@ -32,6 +32,7 @@ BEGIN
  left join mst_State on mst_State.StateID = mst_Address.StateID  
  left join mst_City on mst_City.CityID = mst_Address.CityID
  left join mst_ProjectTerm p3 on p3.TermID = mst_Property.PurchaseOptionID  
+ left join mst_ProjectTerm p4 on p4.TermID = mst_Property.PaymentTermID  
  
  WHERE   
  ISNULL(mst_Property.CompanyID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627') = ISNULL(@CompanyID, ISNULL(mst_Property.CompanyID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627')) and   

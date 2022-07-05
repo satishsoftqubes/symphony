@@ -104,6 +104,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			string _certificationNo;
 			string _licenceNo;
             Guid? _purchaseOptionID;
+            Guid? _paymentTermID;
             string _surveyNo;
 
 		#endregion
@@ -176,6 +177,20 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 {
                     _purchaseOptionID = value;
                     PropertyHasChanged("PurchaseOptionID");
+                }
+            }
+        }
+
+        [DataMember]
+        public Guid? PaymentTermID
+        {
+            get { return _paymentTermID; }
+            set
+            {
+                if (_paymentTermID != value)
+                {
+                    _paymentTermID = value;
+                    PropertyHasChanged("[PaymentTermID");
                 }
             }
         }
@@ -773,7 +788,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			"LicenceNo = {39}~\n",
             "PurchaseOptionID = {40}~\n",
             "SurveyNo = {41}~\n",
-			PropertyID,			CompanyID,			SeqNo,			PropertyTypeID,			PropertyCode,			PropertyName,			AddressID,			PropManagerName,			PrimaryContactNo,			PrimaryEmail,			PrimaryFax,			PropertyDisplayName,			PropertyRegisteredOn,			PropertyRegisteredBy,			PropertyCreatedOn,			IsApproved,			ApprovedBy,			ApprovedOn,			PropertyRating,			PropertyComments,			LastUpdateOn,			LastUpdateBy,			IsSynch,			IsActive,			ActivationKey,			ActivationCode,			LicenseNoOfUsers,			Thumb,			SynchOn,			UpdateLog,			SBArea,			CarpetArea,			PhotoLocal,			SBAreaCommercial,			KhataNo,			BuldingPlanApprovalNo,			KPSBNoc,			SEACNOC,			CertificationNo,			LicenceNo,          PurchaseOptionID,           SurveyNo);			return objValue;
+            "PaymentTermID = {42}~\n",
+			PropertyID,			CompanyID,			SeqNo,			PropertyTypeID,			PropertyCode,			PropertyName,			AddressID,			PropManagerName,			PrimaryContactNo,			PrimaryEmail,			PrimaryFax,			PropertyDisplayName,			PropertyRegisteredOn,			PropertyRegisteredBy,			PropertyCreatedOn,			IsApproved,			ApprovedBy,			ApprovedOn,			PropertyRating,			PropertyComments,			LastUpdateOn,			LastUpdateBy,			IsSynch,			IsActive,			ActivationKey,			ActivationCode,			LicenseNoOfUsers,			Thumb,			SynchOn,			UpdateLog,			SBArea,			CarpetArea,			PhotoLocal,			SBAreaCommercial,			KhataNo,			BuldingPlanApprovalNo,			KPSBNoc,			SEACNOC,			CertificationNo,			LicenceNo,          PurchaseOptionID,           SurveyNo,          PaymentTermID);			return objValue;
 		}
 
 		#endregion

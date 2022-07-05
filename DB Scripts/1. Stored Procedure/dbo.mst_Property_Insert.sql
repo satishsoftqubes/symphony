@@ -44,7 +44,8 @@ CREATE PROCEDURE dbo.mst_Property_Insert
 	@CertificationNo nvarchar(MAX) = null ,
 	@LicenceNo nvarchar(MAX) = null,
 	@PurchaseOptionID uniqueidentifier = null,
-	@SurveyNo nvarchar(65) = null
+	@SurveyNo nvarchar(65) = null,
+	@PaymentTermID uniqueidentifier = null
 
 )
 AS
@@ -98,7 +99,8 @@ INSERT [dbo].[mst_Property]
 	[CertificationNo],
 	[LicenceNo],
 	[PurchaseOptionID],
-	[SurveyNo]
+	[SurveyNo],
+	[PaymentTermID]
 
 )
 VALUES
@@ -142,7 +144,8 @@ VALUES
 	@CertificationNo,
 	@LicenceNo,
 	@PurchaseOptionID,
-	@SurveyNo
+	@SurveyNo,
+	@PaymentTermID
 
 )
 
