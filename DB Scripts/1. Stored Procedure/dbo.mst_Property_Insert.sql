@@ -45,8 +45,8 @@ CREATE PROCEDURE dbo.mst_Property_Insert
 	@LicenceNo nvarchar(MAX) = null,
 	@PurchaseOptionID uniqueidentifier = null,
 	@SurveyNo nvarchar(65) = null,
-	@PaymentTermID uniqueidentifier = null
-
+	@PaymentTermID uniqueidentifier = null,
+	@Jantri decimal(18,2) = null
 )
 AS
 BEGIN
@@ -100,7 +100,8 @@ INSERT [dbo].[mst_Property]
 	[LicenceNo],
 	[PurchaseOptionID],
 	[SurveyNo],
-	[PaymentTermID]
+	[PaymentTermID],
+	[Jantri]
 
 )
 VALUES
@@ -145,7 +146,8 @@ VALUES
 	@LicenceNo,
 	@PurchaseOptionID,
 	@SurveyNo,
-	@PaymentTermID
+	@PaymentTermID,
+	@Jantri
 
 )
 

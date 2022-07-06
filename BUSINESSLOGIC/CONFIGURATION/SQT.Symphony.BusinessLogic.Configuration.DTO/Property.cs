@@ -93,6 +93,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			string _thumb;
 			DateTime? _synchOn;
 			byte[] _updateLog;
+            decimal? _jantri;
 			decimal? _sBArea;
 			decimal? _carpetArea;
 			byte[] _photoLocal;
@@ -558,6 +559,20 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 				 }
 			 }
 		}
+
+        [DataMember]
+        public decimal? Jantri
+        {
+            get { return _jantri; }
+            set
+            {
+                if (_jantri != value)
+                {
+                    _jantri = value;
+                    PropertyHasChanged("Jantri");
+                }
+            }
+        }
 
 		[DataMember]
 		public decimal?  SBArea

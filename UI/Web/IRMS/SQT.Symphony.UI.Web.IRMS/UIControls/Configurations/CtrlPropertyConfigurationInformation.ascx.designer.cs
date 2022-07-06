@@ -193,6 +193,33 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::System.Web.UI.WebControls.DropDownList ddlPaymentTerm;
         
         /// <summary>
+        /// litJantri control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litJantri;
+        
+        /// <summary>
+        /// txtJantri control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtJantri;
+        
+        /// <summary>
+        /// filtxtJantri control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender filtxtJantri;
+        
+        /// <summary>
         /// litSBArea control.
         /// </summary>
         /// <remarks>

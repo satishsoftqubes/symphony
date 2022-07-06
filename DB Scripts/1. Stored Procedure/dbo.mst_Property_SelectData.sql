@@ -13,7 +13,7 @@ CREATE PROCEDURE dbo.mst_Property_SelectData
 AS  
 BEGIN  
  SELECT   
-  mst_Property.PropertyID, mst_Property.CompanyID, mst_Property.SeqNo, [PropertyTypeID], [PropertyCode], [PropertyName], [PurchaseOptionID], [SurveyNo], [PaymentTermID], mst_Property.AddressID, [PropManagerName], [PrimaryContactNo], [PrimaryEmail], [PrimaryFax], [PropertyDisplayName], [PropertyRegisteredOn], 
+  mst_Property.PropertyID, mst_Property.CompanyID, mst_Property.SeqNo, [PropertyTypeID], [PropertyCode], [PropertyName], [PurchaseOptionID], [SurveyNo], [PaymentTermID], [Jantri], mst_Property.AddressID, [PropManagerName], [PrimaryContactNo], [PrimaryEmail], [PrimaryFax], [PropertyDisplayName], [PropertyRegisteredOn], 
   [PropertyRegisteredBy], [PropertyCreatedOn], [IsApproved], [ApprovedBy], [ApprovedOn], [PropertyRating], [PropertyComments], [LastUpdateOn], [LastUpdateBy], mst_Property.IsSynch,mst_Property.IsActive, [ActivationKey], [ActivationCode], [LicenseNoOfUsers], mst_Property.Thumb, mst_Property.SynchOn, mst_Property.UpdateLog, [SBArea], [CarpetArea], [PhotoLocal],  
   mst_Address.Add1,mst_Address.Add2,mst_Address.ZipCode,mst_Address.City,mst_Address.AddressTypeTermID,mst_Country.CountryName,mst_State.StateName,p1.Term 'ProperyType',p2.Term 'AddressType',mst_Address.AddressID,  
   SBAreaCommercial,KhataNo,BuldingPlanApprovalNo,KPSBNoc,SEACNOC,LicenceNo,CertificationNo,  

@@ -46,7 +46,8 @@ CREATE PROCEDURE dbo.mst_Property_Update
 	@LicenceNo nvarchar(MAX) = null,
 	@PurchaseOptionID uniqueidentifier = null,
 	@SurveyNo nvarchar(65) = null,
-	@PaymentTermID uniqueidentifier = null
+	@PaymentTermID uniqueidentifier = null,
+	@Jantri decimal(18,2) = null
 
 )
 AS
@@ -93,7 +94,8 @@ SET
 	[LicenceNo] = @LicenceNo,
 	[PurchaseOptionID] = @PurchaseOptionID,
 	[SurveyNo] = @SurveyNo,
-	[PaymentTermID] = @PaymentTermID
+	[PaymentTermID] = @PaymentTermID,
+	[Jantri] = @Jantri
  WHERE 
 	[PropertyID] = @PropertyID
 END

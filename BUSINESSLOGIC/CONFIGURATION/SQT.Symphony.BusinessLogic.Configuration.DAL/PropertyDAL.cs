@@ -320,6 +320,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 .AddParameter("@PurchaseOptionID", dtoObject.PurchaseOptionID)
 .AddParameter("@SurveyNo", dtoObject.SurveyNo)
 .AddParameter("@PaymentTermID", dtoObject.PaymentTermID)
+.AddParameter("@Jantri", dtoObject.Jantri)
 
                         .WithTransaction(dbtr)
                         .Execute();
@@ -400,6 +401,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 .AddParameter("@PurchaseOptionID", dtoObject.PurchaseOptionID)
 .AddParameter("@SurveyNo", dtoObject.SurveyNo)
 .AddParameter("@PaymentTermID", dtoObject.PaymentTermID)
+.AddParameter("@Jantri", dtoObject.Jantri)
 
                         .WithTransaction(dbtr)
                         .Execute();

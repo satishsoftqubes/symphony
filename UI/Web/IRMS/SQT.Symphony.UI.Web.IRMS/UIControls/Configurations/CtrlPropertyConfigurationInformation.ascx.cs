@@ -320,6 +320,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             BindPaymentTerm();
             txtSurveyNo.Text = "";
             ddlPropertyType.SelectedValue = Guid.Empty.ToString();
+            txtJantri.Text = "";
             BindGrid();
             this.PropertyID = Guid.Empty;
             this.AddressID = Guid.Empty;
@@ -348,6 +349,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 txtPrimaryContactNo.Text = Convert.ToString(ds.Tables[0].Rows[0]["PrimaryContactNo"]);
                 txtPrimaryEmail.Text = Convert.ToString(ds.Tables[0].Rows[0]["PrimaryEmail"]);
                 //txtPrimaryFax.Text = Convert.ToString(ds.Tables[0].Rows[0]["PrimaryFax"]);
+
+                if (Convert.ToString(ds.Tables[0].Rows[0]["Jantri"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["Jantri"]) != null)
+                    txtJantri.Text = Convert.ToDecimal(ds.Tables[0].Rows[0]["Jantri"]).ToString("0");
+                else
+                    txtJantri.Text = "";
+
                 if (Convert.ToString(ds.Tables[0].Rows[0]["SBArea"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["SBArea"]) != null)
                     txtSBAreaResidential.Text = Convert.ToDecimal(ds.Tables[0].Rows[0]["SBArea"]).ToString("0");
                 else
@@ -486,6 +493,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         objUpdProperty.PrimaryContactNo = txtPrimaryContactNo.Text.Trim();
                         objUpdProperty.PrimaryEmail = txtPrimaryEmail.Text.Trim();
                         //objUpdProperty.PrimaryFax = txtPrimaryFax.Text.Trim();
+
+                        if (!(txtJantri.Text.Trim().Equals("")))
+                            objUpdProperty.Jantri = Convert.ToDecimal(txtJantri.Text.Trim());
+                        else
+                            objUpdProperty.Jantri = null;
+
                         if (!(txtSBAreaResidential.Text.Trim().Equals("")))
                             objUpdProperty.SBArea = Convert.ToDecimal(txtSBAreaResidential.Text.Trim());
                         else
@@ -603,6 +616,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         objInsProperty.PrimaryContactNo = txtPrimaryContactNo.Text.Trim();
                         objInsProperty.PrimaryEmail = txtPrimaryEmail.Text.Trim();
                         //objInsProperty.PrimaryFax = txtPrimaryFax.Text.Trim();
+                        
+                        if (!(txtJantri.Text.Trim().Equals("")))
+                            objInsProperty.Jantri = Convert.ToDecimal(txtJantri.Text.Trim());
+                        else
+                            objInsProperty.Jantri = null;
+
                         if (!(txtSBAreaResidential.Text.Trim().Equals("")))
                             objInsProperty.SBArea = Convert.ToDecimal(txtSBAreaResidential.Text.Trim());
                         else
