@@ -194,6 +194,16 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <asp:Literal ID="litJantri" runat="server" Text="Jantri"></asp:Literal>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtJantri" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
+                                            <ajx:FilteredTextBoxExtender ID="filtxtJantri" runat="server" TargetControlID="txtJantri"
+                                                FilterType="Numbers" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
                                             <asp:Literal ID="litSBArea" runat="server" Text="SBA (Sft) (Residential)"></asp:Literal>
                                         </td>
                                         <td>
