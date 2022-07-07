@@ -391,6 +391,7 @@
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\accessDenied.gif" />
+    <Content Include="images\add_icon.png" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\Attachment.png" />
     <Content Include="images\bg_modal.png" />

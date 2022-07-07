@@ -11,6 +11,7 @@ using System.IO;
 using SQT.Symphony.BusinessLogic.IRMS.BLL;
 using SQT.Symphony.BusinessLogic.IRMS.DTO;
 using System.Web.UI.HtmlControls;
+using System.Collections.Specialized;
 
 namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 {
@@ -121,6 +122,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             try
             {
                 LoadDocumentGrid();
+                LoadLandIssueGrid();
                 BindPropertyType();
                 BindPurchaseOption();
                 BindPaymentTerm();
@@ -325,6 +327,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             this.PropertyID = Guid.Empty;
             this.AddressID = Guid.Empty;
             LoadDocumentGrid();
+            LoadLandIssueGrid();
         }
 
         /// <summary>
@@ -388,6 +391,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                 this.AddressID = new Guid(Convert.ToString(ds.Tables[0].Rows[0]["AddressID"]));
                 LoadDocumentGrid();
+                LoadLandIssueGrid();
             }
         }
 
@@ -408,6 +412,164 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 gvDocument.DataSource = dsDocumentList.Tables[0];
                 gvDocument.DataBind();
             }
+        }
+
+        /// <summary>
+        /// Load Land Issue Grid
+        /// </summary>
+        private void LoadLandIssueGrid()
+        {
+            DataTable dt = new DataTable();
+            DataRow dr = null;
+
+            dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
+            dt.Columns.Add(new DataColumn("Column1", typeof(string)));//for Label
+            dt.Columns.Add(new DataColumn("Column2", typeof(string)));//for TextBox value   
+            dt.Columns.Add(new DataColumn("Column3", typeof(string)));//for file selection   
+            dt.Columns.Add(new DataColumn("Column4", typeof(string)));//for view and delete   
+            dt.Columns.Add(new DataColumn("Column5", typeof(string)));//for add new row
+
+            dr = dt.NewRow();
+            dr["RowNumber"] = 1;
+            dr["Column2"] = string.Empty;
+            dt.Rows.Add(dr);
+
+            ViewState["CurrentTable"] = dt;
+
+            gvLandIssueModification.DataSource = dt;
+            gvLandIssueModification.DataBind();  
+  
+        }
+
+        protected void fnAddNewLandIssueDocument(object sender, EventArgs e)
+        {
+            AddNewRowToGrid();
+        }
+
+        private void AddNewRowToGrid()
+        {
+            if (ViewState["CurrentTable"] != null)
+            {
+                DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
+                DataRow drCurrentRow = null;
+
+                if (dtCurrentTable.Rows.Count > 0)
+                {
+                    drCurrentRow = dtCurrentTable.NewRow();
+                    drCurrentRow["RowNumber"] = dtCurrentTable.Rows.Count + 1;
+                    //add new row to DataTable   
+                    dtCurrentTable.Rows.Add(drCurrentRow);
+                    //Store the current data to ViewState for future reference   
+                    ViewState["CurrentTable"] = dtCurrentTable;
+
+                    for (int i = 0; i < dtCurrentTable.Rows.Count - 1; i++)
+                    {
+                        TextBox box1 = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
+                        dtCurrentTable.Rows[i]["Column2"] = box1.Text;
+                    }
+                    gvLandIssueModification.DataSource = dtCurrentTable;
+                    gvLandIssueModification.DataBind();  
+                }
+            }
+            else
+            {
+                Response.Write("ViewState is null");
+            }
+            //Set Previous Data on Postbacks   
+            SetPreviousData();  
+        }
+
+        private void ResetRowID(DataTable dt)
+        {
+            int rowNumber = 1;
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    row[0] = rowNumber;
+                    rowNumber++;
+                }
+            }
+        }  
+
+        protected void fnRemoveRow_Click(object sender, EventArgs e)
+        {
+            ImageButton lb = (ImageButton)sender;
+            GridViewRow gvRow = (GridViewRow)lb.NamingContainer;
+            int rowID = gvRow.RowIndex;
+            if (ViewState["CurrentTable"] != null)
+            {
+
+                DataTable dt = (DataTable)ViewState["CurrentTable"];
+                if (dt.Rows.Count > 1)
+                {
+                    if (gvRow.RowIndex < dt.Rows.Count - 1)
+                    {
+                        //Remove the Selected Row data and reset row number  
+                        dt.Rows.Remove(dt.Rows[rowID]);
+                        ResetRowID(dt);
+                    }
+                }
+
+                //Store the current data in ViewState for future reference  
+                ViewState["CurrentTable"] = dt;
+
+                //Re bind the GridView for the updated data  
+                gvLandIssueModification.DataSource = dt;
+                gvLandIssueModification.DataBind();
+            }
+
+            //Set Previous Data on Postbacks  
+            SetPreviousData();
+        }  
+
+        private void SetPreviousData()
+        {
+
+            int rowIndex = 0;
+            if (ViewState["CurrentTable"] != null)
+            {
+
+                DataTable dt = (DataTable)ViewState["CurrentTable"];
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+
+                        TextBox box1 = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
+
+                        if (i < dt.Rows.Count - 1)
+                        {
+                            //Assign the value from DataTable to the TextBox   
+                            box1.Text = dt.Rows[i]["Column2"].ToString();
+                        }
+                        rowIndex++;
+                    }
+                }
+            }
+        }  
+
+        protected void gvLandIssueRowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                DataTable dt = (DataTable)ViewState["CurrentTable"];
+                ImageButton lb = (ImageButton)e.Row.FindControl("btnRemoveRow");
+                if (lb != null)
+                {
+                    if (dt.Rows.Count > 1)
+                    {
+                        if (e.Row.RowIndex == dt.Rows.Count - 1)
+                        {
+                            lb.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        lb.Visible = false;
+                    }
+                }
+            }  
         }
 
         #endregion Private Method
@@ -544,7 +706,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             TextBox txtStatutoryName = (TextBox)gvDocument.Rows[i].FindControl("txtStatutoryName");
                             FileUpload fuDocument = (FileUpload)gvDocument.Rows[i].FindControl("fuDocument");
                             HiddenField hdnDocumentName = (HiddenField)gvDocument.Rows[i].FindControl("hdnDocumentName");
-
+                           
                             if (fuDocument.FileName != "")
                             {
                                 Documents d1 = new Documents();
@@ -579,6 +741,28 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                                 lstDocuments.Add(d5);
                             }
                         }
+
+                        // Land Issue/Modification
+                        int rowIndex = 0;
+                        StringCollection sc = new StringCollection();
+                        if (ViewState["CurrentTable"] != null)
+                        {
+                            DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
+                            if (dtCurrentTable.Rows.Count > 0)
+                            {
+                                for (int i = 1; i <= dtCurrentTable.Rows.Count; i++)
+                                {
+                                    //extract the TextBox values  
+                                    TextBox box2 = (TextBox)gvLandIssueModification.Rows[rowIndex].Cells[1].FindControl("txtLandIssueModification");
+                                    //then add it to the collections with a comma "," as the delimited values  
+                                    sc.Add(string.Format("{0}", box2.Text));
+                                    rowIndex++;
+                                }
+                                
+                                //InsertRecords(sc);
+                            }
+                        }
+
 
                         PropertyBLL.Update(objUpdProperty, objUpdAddres, lstDocuments);
                         ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Update", objOldPropertyData.ToString(), objUpdProperty.ToString(), "mst_Property");
@@ -813,6 +997,43 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        protected void gvLandIssueDocument_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            try
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    DataRowView row = (DataRowView)e.Row.DataItem;
+
+                    string DocumentName = string.Empty;
+                    DocumentName = DataBinder.Eval(e.Row.DataItem, "DocumentName").ToString();
+                    string str = "~/Document/" + DocumentName;
+
+                    HtmlAnchor aDocumentLink = (HtmlAnchor)e.Row.FindControl("aDocumentLink");
+                    ImageButton imgbtn = (ImageButton)e.Row.FindControl("btnDelete");
+
+
+
+                    if (DocumentName != string.Empty && DocumentName != null)
+                    {
+                        imgbtn.Visible = Convert.ToBoolean(ViewState["Delete"]);
+                        aDocumentLink.Visible = true;
+                        aDocumentLink.HRef = str;
+                    }
+                    else
+                    {
+                        imgbtn.Visible = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
         #endregion Grid Event
 
         #region Popup Button Event
@@ -878,6 +1099,18 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         #endregion Popup Button Event
 
         protected void gvDocument_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("DELETEDATA"))
+            {
+                DocumentsBLL.Delete(new Guid(Convert.ToString(e.CommandArgument)));
+                this.PropertyID = this.PropertyID;
+                Session.Add("Property", this.PropertyID);
+                //LoadData();
+                LoadDocumentGrid();
+            }
+        }
+
+        protected void gvLandIssueDocument_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName.Equals("DELETEDATA"))
             {

@@ -31,11 +31,10 @@
             return false;
         }
     }
-    </script>
+</script>
 
 <style type="text/css">
-    #progressBackgroundFilter
-    {
+    #progressBackgroundFilter {
         position: fixed;
         top: 0px;
         width: 100%;
@@ -51,8 +50,8 @@
         opacity: 0.5;
         z-index: 1111111;
     }
-    #processMessage
-    {
+
+    #processMessage {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -71,19 +70,15 @@
                 <td class="content" style="padding-left: 0px; width: 66.66%">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
                         <tr>
-                            <td class="boxtopleft">
-                                &nbsp;
+                            <td class="boxtopleft">&nbsp;
                             </td>
-                            <td class="boxtopcenter">
-                                PROPERTY SETUP
+                            <td class="boxtopcenter">PROPERTY SETUP
                             </td>
-                            <td class="boxtopright">
-                                &nbsp;
+                            <td class="boxtopright">&nbsp;
                             </td>
                         </tr>
                         <tr>
-                            <td class="boxleft">
-                                &nbsp;
+                            <td class="boxleft">&nbsp;
                             </td>
                             <td>
                                 <table cellpadding="3" cellspacing="3" border="0" width="100%">
@@ -94,9 +89,11 @@
                                                   { %>
                                                 <div class="ResetSuccessfully">
                                                     <div style="float: left; padding-top: 7px; width: 25px; height: 24px; margin-right: 10px;">
-                                                        <img src="../../images/success.png" /></div>
+                                                        <img src="../../images/success.png" />
+                                                    </div>
                                                     <div>
-                                                        <asp:Label ID="lblErrorMessage" runat="server"></asp:Label></div>
+                                                        <asp:Label ID="lblErrorMessage" runat="server"></asp:Label>
+                                                    </div>
                                                     <div style="height: 10px;">
                                                     </div>
                                                 </div>
@@ -393,8 +390,47 @@
                                                                 <a id="aDocumentLink" runat="server" visible="false" target="_blank">
                                                                     <asp:Image ID="imgView" runat="server" Style="float: left;" ImageUrl="~/images/View.png" /></a>
                                                                 <asp:ImageButton ID="btnDelete" ToolTip="Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"DocumentID") %>'
-                                                                    CommandName="DELETEDATA" runat="server" ImageUrl="~/images/DeleteFile.png" Style="float: right;
-                                                                    width: 19px; margin-left: 3px; border: 0px;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                    CommandName="DELETEDATA" runat="server" ImageUrl="~/images/DeleteFile.png" Style="float: right; width: 19px; margin-left: 3px; border: 0px;"
+                                                                    OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                    </Columns>
+                                                </asp:GridView>
+                                                <div class="pagesubheader" style="padding: 1px 0px; margin-top: 10px;">
+                                                    <asp:Literal ID="Literal3" runat="server" Text="Land Issue/Modification"></asp:Literal>
+                                                    <asp:ImageButton ID="ButtonAdd" ToolTip="Add" OnClick="fnAddNewLandIssueDocument"
+                                                        CommandName="ADDDATA" runat="server" ImageUrl="~/images/add_icon.png" Style="border-radius:50%; float: right; width: 19px; margin-bottom: 10px; border: 0px;"
+                                                        OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                </div>
+                                                <asp:GridView ID="gvLandIssueModification" runat="server" ShowFooter="true"
+                                                    AutoGenerateColumns="false"
+                                                    OnRowCreated="gvLandIssueRowCreated">
+                                                    <Columns>
+                                                        <asp:BoundField DataField="RowNumber" HeaderText="Row Number" />
+                                                        <asp:TemplateField HeaderText="Description">
+                                                            <ItemTemplate>
+                                                                <asp:TextBox ID="txtLandIssueModification" runat="server"></asp:TextBox>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField ItemStyle-Width="95px" HeaderText="File" HeaderStyle-HorizontalAlign="Left">
+                                                            <ItemTemplate>
+                                                                <span class="erroraleart">
+                                                                    <asp:RegularExpressionValidator ID="rfvLandIssueDocument" runat="server" ControlToValidate="fuLandIssueDocument"
+                                                                        SetFocusOnError="true" CssClass="rfv_ErrorStar" ValidationGroup="Configuration"
+                                                                        Display="Dynamic" ErrorMessage="*" ValidationExpression="^.+(.pdf|.PDF|.doc|.jpg|.jpeg|.gif|.png|.bmp|.JPG|.JPEG|.GIF|.PNG|.BMP|.TIF|.tif|.DOC|.docx|.DOCX|xlsx|XLSX)$"></asp:RegularExpressionValidator>
+                                                                </span>
+                                                                <div id='browse_file_grid'>
+                                                                    <asp:FileUpload ID="fuLandIssueDocument" ToolTip=".pdf|.PDF|.doc|.jpg|.jpeg|.gif|.png|.bmp|.JPG|.JPEG|.GIF|.PNG|.BMP|.TIF|.tif|.DOC|.docx|.DOCX|xlsx|XLSX"
+                                                                        runat="server" Height="22px" size="4" Style="float: left; width: 100px;" />
+                                                                </div>
+                                                                <%--<asp:HiddenField ID="hdnDocumentName" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "DocumentName")%>' />--%>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField ItemStyle-Width="40px" HeaderText="View" HeaderStyle-HorizontalAlign="Left">
+                                                            <ItemTemplate>
+                                                                <asp:ImageButton ID="btnRemoveRow" ToolTip="Delete" OnClick="fnRemoveRow_Click"
+                                                                    CommandName="DELETEDATA" runat="server" ImageUrl="~/images/DeleteFile.png" Style="float: right; width: 19px; margin-left: 3px; border: 0px;"
+                                                                    OnClientClick="fnDisplayCatchErrorMessage()" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                     </Columns>
@@ -405,8 +441,8 @@
                                     <tr>
                                         <td align="left" valign="top" colspan="2" style="text-align: right;">
                                             <div style="float: right; width: auto; display: inline-block;">
-                                                <asp:Button ID="btnNew" runat="server" Style="display: inline-block; margin-left: 5px;
-                                                    display: inline;" Text="New" OnClick="btnNew_Click" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                <asp:Button ID="btnNew" runat="server" Style="display: inline-block; margin-left: 5px; display: inline;"
+                                                    Text="New" OnClick="btnNew_Click" OnClientClick="fnDisplayCatchErrorMessage()" />
                                                 <asp:Button ID="btnSave" Text="Save" Style="display: inline-block; margin-left: 5px;"
                                                     runat="server" ImageUrl="~/images/save.png" ValidationGroup="Configuration" CausesValidation="true"
                                                     OnClick="btnSave_Click" OnClientClick="return postbackButtonClick();" />
@@ -417,19 +453,15 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td class="boxright">
-                                &nbsp;
+                            <td class="boxright">&nbsp;
                             </td>
                         </tr>
                         <tr>
-                            <td class="boxbottomleft">
-                                &nbsp;
+                            <td class="boxbottomleft">&nbsp;
                             </td>
-                            <td class="boxbottomcenter">
-                                &nbsp;
+                            <td class="boxbottomcenter">&nbsp;
                             </td>
-                            <td class="boxbottomright">
-                                &nbsp;
+                            <td class="boxbottomright">&nbsp;
                             </td>
                         </tr>
                     </table>
@@ -439,43 +471,35 @@
                         <uc1:MsgBox ID="MessageBox" runat="server" />
                     </div>--%>
                 </td>
-                <td style="width: 2px;">
-                    &#160;
+                <td style="width: 2px;">&#160;
                 </td>
                 <td class="content">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
                         <tr>
-                            <td class="boxtopleft">
-                                &nbsp;
+                            <td class="boxtopleft">&nbsp;
                             </td>
-                            <td class="boxtopcenter">
-                                QUICK SEARCH
+                            <td class="boxtopcenter">QUICK SEARCH
                             </td>
-                            <td class="boxtopright">
-                                &nbsp;
+                            <td class="boxtopright">&nbsp;
                             </td>
                         </tr>
                         <tr>
-                            <td class="boxleft">
-                                &nbsp;
+                            <td class="boxleft">&nbsp;
                             </td>
                             <td>
                                 <div class="box_leftmargin_content">
                                     <div>
                                         <table id="tbl" cellpadding="2" cellspacing="0" width="100%" border="0" class="pageinfo">
                                             <tr>
-                                                <td align="left" valign="middle" style="vertical-align: middle; margin-top: 7px;">
-                                                    Property Name
+                                                <td align="left" valign="middle" style="vertical-align: middle; margin-top: 7px;">Property Name
                                                 </td>
                                                 <td>
-                                                    <asp:TextBox ID="txtSPropertyName" runat="server" Style="vertical-align: middle;
-                                                        margin-top: 7px; width: 125px !important;" MaxLength="65"></asp:TextBox>
+                                                    <asp:TextBox ID="txtSPropertyName" runat="server" Style="vertical-align: middle; margin-top: 7px; width: 125px !important;"
+                                                        MaxLength="65"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="left" valign="middle" style="vertical-align: middle; line-height: 17px;
-                                                    height: 19px;">
-                                                    City
+                                                <td align="left" valign="middle" style="vertical-align: middle; line-height: 17px; height: 19px;">City
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="txtQSLocation" runat="server" Style="width: 127px !important;">
@@ -483,8 +507,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="left" valign="middle" style="vertical-align: middle;">
-                                                    Property Type
+                                                <td align="left" valign="middle" style="vertical-align: middle;">Property Type
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpQSPropertyType" runat="server" SkinID="Search">
@@ -539,19 +562,15 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="boxright">
-                                &nbsp;
+                            <td class="boxright">&nbsp;
                             </td>
                         </tr>
                         <tr>
-                            <td class="boxbottomleft">
-                                &nbsp;
+                            <td class="boxbottomleft">&nbsp;
                             </td>
-                            <td class="boxbottomcenter">
-                                &nbsp;
+                            <td class="boxbottomcenter">&nbsp;
                             </td>
-                            <td class="boxbottomright">
-                                &nbsp;
+                            <td class="boxbottomright">&nbsp;
                             </td>
                         </tr>
                     </table>
@@ -562,23 +581,19 @@
             BackgroundCssClass="mod_background">
         </ajx:ModalPopupExtender>
         <asp:HiddenField ID="hfMessage" runat="server" />
-        <asp:Panel ID="Panel1" runat="server" style="display:none;">
+        <asp:Panel ID="Panel1" runat="server" Style="display: none;">
             <div style="width: 500px; height: 200px; margin-top: 25px;">
                 <table border="0" cellspacing="0" cellpadding="0" class="modelpopup_box">
                     <tr>
-                        <td class="modelpopup_boxtopleft">
-                            &nbsp;
+                        <td class="modelpopup_boxtopleft">&nbsp;
                         </td>
-                        <td class="modelpopup_boxtopcenter">
-                            &nbsp;
+                        <td class="modelpopup_boxtopcenter">&nbsp;
                         </td>
-                        <td class="modelpopup_boxtopright">
-                            &nbsp;
+                        <td class="modelpopup_boxtopright">&nbsp;
                         </td>
                     </tr>
                     <tr>
-                        <td class="modelpopup_boxleft">
-                            &nbsp;
+                        <td class="modelpopup_boxleft">&nbsp;
                         </td>
                         <td class="modelpopup_box_bg">
                             <div style="width: 100px; float: left; margin-top: 10px;">
@@ -601,18 +616,14 @@
                                 </tr>
                             </table>
                         </td>
-                        <td class="modelpopup_boxright">
-                            &nbsp;
+                        <td class="modelpopup_boxright">&nbsp;
                         </td>
                     </tr>
                     <tr>
-                        <td class="modelpopup_boxbottomleft">
-                            &nbsp;
+                        <td class="modelpopup_boxbottomleft">&nbsp;
                         </td>
-                        <td class="modelpopup_boxbottomcenter">
-                        </td>
-                        <td class="modelpopup_boxbottomright">
-                            &nbsp;
+                        <td class="modelpopup_boxbottomcenter"></td>
+                        <td class="modelpopup_boxbottomright">&nbsp;
                         </td>
                     </tr>
                 </table>

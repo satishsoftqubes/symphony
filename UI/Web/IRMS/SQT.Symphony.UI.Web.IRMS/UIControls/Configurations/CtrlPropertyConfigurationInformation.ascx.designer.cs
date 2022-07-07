@@ -634,6 +634,33 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::System.Web.UI.WebControls.GridView gvDocument;
         
         /// <summary>
+        /// Literal3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal3;
+        
+        /// <summary>
+        /// ButtonAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ButtonAdd;
+        
+        /// <summary>
+        /// gvLandIssueModification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvLandIssueModification;
+        
+        /// <summary>
         /// btnNew control.
         /// </summary>
         /// <remarks>
