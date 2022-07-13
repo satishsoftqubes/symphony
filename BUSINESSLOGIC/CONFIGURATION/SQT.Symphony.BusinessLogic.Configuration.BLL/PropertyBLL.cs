@@ -71,7 +71,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             }
         }
 
-        public static bool Save(Property objSaveProperty, Address objSaveAddress, List<Documents> lstSaveDocuments)
+        public static bool Save(Property objSaveProperty, Address objSaveAddress, List<Documents> lstSaveDocuments, List<Documents> lstLandIssueModificationDocuments)
         {
             bool flag = false;
             PropertyDAL _objProperty = null;
@@ -115,6 +115,21 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                     {
                         _objDocuments = new DocumentsDAL(lt.Transaction);
                         foreach (Documents item in lstSaveDocuments)
+                        {
+                            item.DocumentID = Guid.NewGuid();
+                            item.PropertyID = objSaveProperty.PropertyID;
+                            item.AssociationID = objSaveProperty.PropertyID;
+                            if (!item.IsValid)
+                            {
+                                throw new InvalidBusinessObjectException(item.BrokenRulesList.ToString());
+                            }
+                            flag = _objDocuments.Insert(item);
+                        }
+                    }
+
+                    if (lstLandIssueModificationDocuments != null && lstLandIssueModificationDocuments.Count != 0)
+                    {
+                        foreach (Documents item in lstLandIssueModificationDocuments)
                         {
                             item.DocumentID = Guid.NewGuid();
                             item.PropertyID = objSaveProperty.PropertyID;
@@ -265,7 +280,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             }
         }
 
-        public static bool Update(Property objUpdateProperty, Address objUpdateAddress, List<Documents> lstUpdateDocuments)
+        public static bool Update(Property objUpdateProperty, Address objUpdateAddress, List<Documents> lstUpdateDocuments, List<Documents> lstLandIssueModificationDocuments)
         {
             bool flag = false;
             PropertyDAL _objProperty = null;
@@ -315,6 +330,20 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                     if (lstUpdateDocuments != null && lstUpdateDocuments.Count != 0)
                     {
                         foreach (Documents item in lstUpdateDocuments)
+                        {
+                            item.DocumentID = Guid.NewGuid();
+                            item.PropertyID = objUpdateProperty.PropertyID;
+                            item.AssociationID = objUpdateProperty.PropertyID;
+                            if (!item.IsValid)
+                            {
+                                throw new InvalidBusinessObjectException(item.BrokenRulesList.ToString());
+                            }
+                            flag = _objDocuments.Insert(item);
+                        }
+                    }
+                    if (lstLandIssueModificationDocuments != null && lstLandIssueModificationDocuments.Count != 0)
+                    {
+                        foreach (Documents item in lstLandIssueModificationDocuments)
                         {
                             item.DocumentID = Guid.NewGuid();
                             item.PropertyID = objUpdateProperty.PropertyID;

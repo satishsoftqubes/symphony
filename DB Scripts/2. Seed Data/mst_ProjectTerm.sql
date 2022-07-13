@@ -177,4 +177,48 @@ VALUES
 	'1'
 )
 
+-- Land issue/modification
+INSERT [dbo].[mst_ProjectTerm]
+(
+	[TermID],
+	[CompanyID],
+	[Category],
+	[Term],
+	[TermCode],
+	[ForeColor],
+	[BackColor],
+	[Thumb],
+	[SeqNo],
+	[IsActive],
+	[LastUpdatedOn],
+	[LastUpdatedBy],
+	[IsSynch],
+	[PropertyID],
+	[TermValue],
+	[HardCodeTermID] ,
+	[DisplayTerm] ,
+	[IsDefault]
+)
+VALUES
+(
+	'C78C8F86-C59F-4C02-8088-5DE1F9DA0EEC',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	'LANDISSUE',
+	'Land Issue/Modification',
+	'LIM',
+	NULL,
+	NULL,
+	NULL,
+	'1',
+	'1',
+	GETUTCDATE(),
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	'C78C8F86-C59F-4C02-8088-5DE1F9DA0EEC',
+	'LANDISSUE',
+	'1'
+)
+
 

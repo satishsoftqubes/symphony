@@ -402,14 +402,15 @@
                                                         CommandName="ADDDATA" runat="server" ImageUrl="~/images/add_icon.png" Style="border-radius:50%; float: right; width: 19px; margin-bottom: 10px; border: 0px;"
                                                         OnClientClick="fnDisplayCatchErrorMessage()" />
                                                 </div>
-                                                <asp:GridView ID="gvLandIssueModification" runat="server" ShowFooter="true"
-                                                    AutoGenerateColumns="false"
+                                                <asp:GridView ID="gvLandIssueModification" AutoGenerateColumns="false" SkinID="gvNoPaging"
+                                                     runat="server" ShowFooter="true" ShowHeader="true" 
+                                                    OnRowDataBound="gvLandIssueDocument_RowDataBound" OnRowCommand="gvLandIssueDocument_RowCommand"
                                                     OnRowCreated="gvLandIssueRowCreated">
                                                     <Columns>
-                                                        <asp:BoundField DataField="RowNumber" HeaderText="Row Number" />
+                                                        <%--<asp:BoundField DataField="RowNumber" HeaderText="No." />--%>
                                                         <asp:TemplateField HeaderText="Description">
                                                             <ItemTemplate>
-                                                                <asp:TextBox ID="txtLandIssueModification" runat="server"></asp:TextBox>
+                                                                <asp:TextBox ID="txtLandIssueModification" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "Notes")%>'></asp:TextBox>
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                         <asp:TemplateField ItemStyle-Width="95px" HeaderText="File" HeaderStyle-HorizontalAlign="Left">
@@ -423,11 +424,13 @@
                                                                     <asp:FileUpload ID="fuLandIssueDocument" ToolTip=".pdf|.PDF|.doc|.jpg|.jpeg|.gif|.png|.bmp|.JPG|.JPEG|.GIF|.PNG|.BMP|.TIF|.tif|.DOC|.docx|.DOCX|xlsx|XLSX"
                                                                         runat="server" Height="22px" size="4" Style="float: left; width: 100px;" />
                                                                 </div>
-                                                                <%--<asp:HiddenField ID="hdnDocumentName" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "DocumentName")%>' />--%>
+                                                                <asp:HiddenField ID="hdnLandIssueDocumentName" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "DocumentName")%>' />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                         <asp:TemplateField ItemStyle-Width="40px" HeaderText="View" HeaderStyle-HorizontalAlign="Left">
                                                             <ItemTemplate>
+                                                                <a id="aLandIssueDocumentLink" runat="server" visible="false" target="_blank">
+                                                                    <asp:Image ID="imgView" runat="server" Style="float: left;" ImageUrl="~/images/View.png" /></a>
                                                                 <asp:ImageButton ID="btnRemoveRow" ToolTip="Delete" OnClick="fnRemoveRow_Click"
                                                                     CommandName="DELETEDATA" runat="server" ImageUrl="~/images/DeleteFile.png" Style="float: right; width: 19px; margin-left: 3px; border: 0px;"
                                                                     OnClientClick="fnDisplayCatchErrorMessage()" />
