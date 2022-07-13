@@ -431,7 +431,7 @@
                                                             <ItemTemplate>
                                                                 <a id="aLandIssueDocumentLink" runat="server" visible="false" target="_blank">
                                                                     <asp:Image ID="imgView" runat="server" Style="float: left;" ImageUrl="~/images/View.png" /></a>
-                                                                <asp:ImageButton ID="btnRemoveRow" ToolTip="Delete" OnClick="fnRemoveRow_Click"
+                                                                <asp:ImageButton ID="btnRemoveRow" ToolTip="Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"DocumentID") %>'
                                                                     CommandName="DELETEDATA" runat="server" ImageUrl="~/images/DeleteFile.png" Style="float: right; width: 19px; margin-left: 3px; border: 0px;"
                                                                     OnClientClick="fnDisplayCatchErrorMessage()" />
                                                             </ItemTemplate>

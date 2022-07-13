@@ -419,19 +419,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// </summary>
         private void LoadLandIssueGrid()
         {
-            //Guid? PropertyID;
-            //if (this.PropertyID != Guid.Empty)
-            //    PropertyID = this.PropertyID;
-            //else
-            //    PropertyID = null;
-
-            //DataSet dsDocumentList = DocumentsBLL.GetDocumentGrid(null, null, this.CompanyID, "LANDISSUE", PropertyID);
-            //if (dsDocumentList.Tables[0].Rows.Count != 0)
-            //{
-            //    gvLandIssueModification.DataSource = dsDocumentList.Tables[0];
-            //    gvLandIssueModification.DataBind();
-            //}
-
             DataTable dt = new DataTable();
             DataRow dr = null;
 
@@ -440,21 +427,17 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 Guid landIssueTypeID = (Guid)dsLandIssueDocumentList.Tables[0].Rows[0]["TermID"];
                 ViewState["LandIssueTypeID"] = landIssueTypeID;
-
-                //gvLandIssueModification.DataSource = dsLandIssueDocumentList.Tables[0];
-                //gvLandIssueModification.DataBind();
-
             }
 
             dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
-            dt.Columns.Add(new DataColumn("Column2", typeof(string)));//for TextBox value   
             dt.Columns.Add(new DataColumn("DocumentName", typeof(string)));//document name
+            dt.Columns.Add(new DataColumn("DocumentID", typeof(string)));//document id
             dt.Columns.Add(new DataColumn("Notes", typeof(string)));//Land issue description
 
             dr = dt.NewRow();
             dr["RowNumber"] = 1;
-            dr["Column2"] = string.Empty;
             dr["DocumentName"] = string.Empty;
+            dr["DocumentID"] = string.Empty;
             dr["Notes"] = string.Empty;
 
             dt.Rows.Add(dr);
@@ -475,7 +458,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         private void AddNewRowToGrid()
         {
-            LoadLandIssueGrid();
+            //LoadLandIssueGrid();
             if (ViewState["CurrentTable"] != null)
             {
                 DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
@@ -485,15 +468,17 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 {
                     drCurrentRow = dtCurrentTable.NewRow();
                     drCurrentRow["RowNumber"] = dtCurrentTable.Rows.Count + 1;
+                    
                     //add new row to DataTable   
                     dtCurrentTable.Rows.Add(drCurrentRow);
+                    
                     //Store the current data to ViewState for future reference   
                     ViewState["CurrentTable"] = dtCurrentTable;
 
                     for (int i = 0; i < dtCurrentTable.Rows.Count - 1; i++)
                     {
                         TextBox box1 = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
-                        dtCurrentTable.Rows[i]["Column2"] = box1.Text;
+                        dtCurrentTable.Rows[i]["Notes"] = box1.Text;
                     }
                     gvLandIssueModification.DataSource = dtCurrentTable;
                     gvLandIssueModification.DataBind();  
@@ -562,7 +547,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         TextBox box1 = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
                         if (i < dt.Rows.Count - 1)
                         {
-                            box1.Text = dt.Rows[i]["Column2"].ToString();
+                            box1.Text = dt.Rows[i]["Notes"].ToString();
                         }
                         rowIndex++;
                     }
@@ -773,8 +758,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             for (int i = 0; i < gvLandIssueModification.Rows.Count; i++)
                             {
                                 TextBox txtLandIssueName = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
-                                FileUpload fuLandIssueDocument = (FileUpload)gvLandIssueModification.Rows[i].FindControl("fuLandIssueDocument");
-                                HiddenField hdnLandIssueDocumentName = (HiddenField)gvLandIssueModification.Rows[i].FindControl("hdnLandIssueDocumentName");
+                                FileUpload fuLandIssueDocument = (FileUpload)gvLandIssueModification.Rows[i].Cells[2].FindControl("fuLandIssueDocument");
+                                HiddenField hdnLandIssueDocumentName = (HiddenField)gvLandIssueModification.Rows[i].Cells[2].FindControl("hdnLandIssueDocumentName");
 
                                 if (fuLandIssueDocument.FileName != "")
                                 {
@@ -1195,7 +1180,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 DocumentsBLL.Delete(new Guid(Convert.ToString(e.CommandArgument)));
                 this.PropertyID = this.PropertyID;
                 Session.Add("Property", this.PropertyID);
-                //LoadData();
                 LoadDocumentGrid();
             }
         }
@@ -1207,7 +1191,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 DocumentsBLL.Delete(new Guid(Convert.ToString(e.CommandArgument)));
                 this.PropertyID = this.PropertyID;
                 Session.Add("Property", this.PropertyID);
-                //LoadData();
                 LoadLandIssueGrid();
             }
         }
