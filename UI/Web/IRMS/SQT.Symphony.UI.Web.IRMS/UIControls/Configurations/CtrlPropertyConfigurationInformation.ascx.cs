@@ -466,6 +466,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                 if (dtCurrentTable.Rows.Count > 0)
                 {
+                    var rows = dtCurrentTable.Rows.Count;
+
                     drCurrentRow = dtCurrentTable.NewRow();
                     drCurrentRow["RowNumber"] = dtCurrentTable.Rows.Count + 1;
                     
@@ -475,10 +477,14 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     //Store the current data to ViewState for future reference   
                     ViewState["CurrentTable"] = dtCurrentTable;
 
-                    for (int i = 0; i < dtCurrentTable.Rows.Count - 1; i++)
+                    for (int i = 0; i < dtCurrentTable.Rows.Count; i++)
                     {
-                        TextBox box1 = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
-                        dtCurrentTable.Rows[i]["Notes"] = box1.Text;
+                        if (rows > i)
+                        {
+                            TextBox box1 = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
+                            dtCurrentTable.Rows[i]["Notes"] = box1.Text;
+                        }
+                        
                     }
                     gvLandIssueModification.DataSource = dtCurrentTable;
                     gvLandIssueModification.DataBind();  

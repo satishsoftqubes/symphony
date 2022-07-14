@@ -164,6 +164,41 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <asp:Literal ID="litSBArea" runat="server" Text="SBA (Sft) (Residential)"></asp:Literal>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtSBAreaResidential" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
+                                            <ajx:FilteredTextBoxExtender ID="filtxtSBAreaResidential" runat="server" TargetControlID="txtSBAreaResidential"
+                                                FilterType="Numbers" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Literal ID="Literal1" runat="server" Text="SBA (Sft) (Commercial)"></asp:Literal>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtSbAreaCommercial" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
+                                            <ajx:FilteredTextBoxExtender ID="ftSbAreaCommercial" runat="server" TargetControlID="txtSbAreaCommercial"
+                                                FilterType="Numbers" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="litCarpetArea" runat="server" Text="Total Built Up Area" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rfvCarpetArea" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtCarpetArea"
+                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtCarpetArea" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
+                                            <ajx:FilteredTextBoxExtender ID="filtxtCarpetArea" runat="server" TargetControlID="txtCarpetArea"
+                                                FilterType="Numbers" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
                                             <asp:Label ID="litSurveyNo" runat="server" Text="Survey No" CssClass="RequireFile"></asp:Label>
                                             <span class="erroraleart">
                                                 <asp:RequiredFieldValidator ID="rvfSurveyNo" SetFocusOnError="true" CssClass="rfv_ErrorStar"
@@ -198,42 +233,7 @@
                                             <ajx:FilteredTextBoxExtender ID="filtxtJantri" runat="server" TargetControlID="txtJantri"
                                                 FilterType="Numbers" />
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Literal ID="litSBArea" runat="server" Text="SBA (Sft) (Residential)"></asp:Literal>
-                                        </td>
-                                        <td>
-                                            <asp:TextBox ID="txtSBAreaResidential" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
-                                            <ajx:FilteredTextBoxExtender ID="filtxtSBAreaResidential" runat="server" TargetControlID="txtSBAreaResidential"
-                                                FilterType="Numbers" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Literal ID="Literal1" runat="server" Text="SBA (Sft) (Commercial)"></asp:Literal>
-                                        </td>
-                                        <td>
-                                            <asp:TextBox ID="txtSbAreaCommercial" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
-                                            <ajx:FilteredTextBoxExtender ID="ftSbAreaCommercial" runat="server" TargetControlID="txtSbAreaCommercial"
-                                                FilterType="Numbers" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="litCarpetArea" runat="server" Text="Total Built Up Area" CssClass="RequireFile"></asp:Label>
-                                            <span class="erroraleart">
-                                                <asp:RequiredFieldValidator ID="rfvCarpetArea" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtCarpetArea"
-                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <asp:TextBox ID="txtCarpetArea" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
-                                            <ajx:FilteredTextBoxExtender ID="filtxtCarpetArea" runat="server" TargetControlID="txtCarpetArea"
-                                                FilterType="Numbers" />
-                                        </td>
-                                    </tr>
+                                    </tr>                                    
                                     <tr>
                                         <td colspan="2" class="pagesubheader">
                                             <asp:Literal ID="Literal2" runat="server" Text="Contact Information"></asp:Literal>

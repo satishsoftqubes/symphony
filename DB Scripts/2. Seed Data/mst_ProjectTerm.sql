@@ -221,4 +221,92 @@ VALUES
 	'1'
 )
 
+-- Expense Type
+INSERT [dbo].[mst_ProjectTerm]
+(
+	[TermID],
+	[CompanyID],
+	[Category],
+	[Term],
+	[TermCode],
+	[ForeColor],
+	[BackColor],
+	[Thumb],
+	[SeqNo],
+	[IsActive],
+	[LastUpdatedOn],
+	[LastUpdatedBy],
+	[IsSynch],
+	[PropertyID],
+	[TermValue],
+	[HardCodeTermID] ,
+	[DisplayTerm] ,
+	[IsDefault]
+)
+VALUES
+(
+	'8556A3CF-5122-4596-BB71-C5AD80267E86',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	'EXPENSETYPE',
+	'Expense Type',
+	'EXPT',
+	NULL,
+	NULL,
+	NULL,
+	'1',
+	'1',
+	GETUTCDATE(),
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	'8556A3CF-5122-4596-BB71-C5AD80267E86',
+	'EXPENSETYPE',
+	'1'
+)
+
+-- Property Status
+INSERT [dbo].[mst_ProjectTerm]
+(
+	[TermID],
+	[CompanyID],
+	[Category],
+	[Term],
+	[TermCode],
+	[ForeColor],
+	[BackColor],
+	[Thumb],
+	[SeqNo],
+	[IsActive],
+	[LastUpdatedOn],
+	[LastUpdatedBy],
+	[IsSynch],
+	[PropertyID],
+	[TermValue],
+	[HardCodeTermID] ,
+	[DisplayTerm] ,
+	[IsDefault]
+)
+VALUES
+(
+	'A681B36D-4AF3-4B59-882C-54AFF84270A9',
+	'14F1A0DC-3A5B-4E7E-9869-96979A03EA3A',
+	'PROPERTY STATUS',
+	'Property Status',
+	'PS',
+	NULL,
+	NULL,
+	NULL,
+	'1',
+	'1',
+	GETUTCDATE(),
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	'A681B36D-4AF3-4B59-882C-54AFF84270A9',
+	'PROPERTY STATUS',
+	'1'
+)
+
 
