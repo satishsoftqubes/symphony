@@ -321,6 +321,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 .AddParameter("@SurveyNo", dtoObject.SurveyNo)
 .AddParameter("@PaymentTermID", dtoObject.PaymentTermID)
 .AddParameter("@Jantri", dtoObject.Jantri)
+.AddParameter("@PropertyStatusID", dtoObject.PropertyStatusID)
 
                         .WithTransaction(dbtr)
                         .Execute();
@@ -402,6 +403,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 .AddParameter("@SurveyNo", dtoObject.SurveyNo)
 .AddParameter("@PaymentTermID", dtoObject.PaymentTermID)
 .AddParameter("@Jantri", dtoObject.Jantri)
+.AddParameter("@PropertyStatusID", dtoObject.PropertyStatusID)
 
                         .WithTransaction(dbtr)
                         .Execute();

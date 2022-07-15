@@ -13,3 +13,7 @@ ADD PaymentTermID UNIQUEIDENTIFIER
 -- Jantri
 ALTER TABLE mst_Property 
 ADD Jantri decimal(18,2)
+
+-- PropertyStatusID
+ALTER TABLE mst_Property 
+ADD PropertyStatusID UNIQUEIDENTIFIER

@@ -46,7 +46,8 @@ CREATE PROCEDURE dbo.mst_Property_Insert
 	@PurchaseOptionID uniqueidentifier = null,
 	@SurveyNo nvarchar(65) = null,
 	@PaymentTermID uniqueidentifier = null,
-	@Jantri decimal(18,2) = null
+	@Jantri decimal(18,2) = null,
+	@PropertyStatusID uniqueidentifier = null
 )
 AS
 BEGIN
@@ -101,7 +102,8 @@ INSERT [dbo].[mst_Property]
 	[PurchaseOptionID],
 	[SurveyNo],
 	[PaymentTermID],
-	[Jantri]
+	[Jantri],
+	[PropertyStatusID]
 
 )
 VALUES
@@ -147,7 +149,8 @@ VALUES
 	@PurchaseOptionID,
 	@SurveyNo,
 	@PaymentTermID,
-	@Jantri
+	@Jantri,
+	@PropertyStatusID
 
 )
 

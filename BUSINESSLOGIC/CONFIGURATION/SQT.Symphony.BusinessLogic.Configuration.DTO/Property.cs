@@ -66,7 +66,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			Guid _propertyID;
 			Guid? _companyID;
 			int? _seqNo;
-			Guid? _propertyTypeID;            
+			Guid? _propertyTypeID;
+			Guid? _propertyStatusID;
 			string _propertyCode;
 			string _propertyName;
 			Guid? _addressID;
@@ -168,7 +169,21 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			 }
 		}
 
-        [DataMember]
+		[DataMember]
+		public Guid? PropertyStatusID
+		{
+			get { return _propertyStatusID; }
+			set
+			{
+				if (_propertyStatusID != value)
+				{
+					_propertyStatusID = value;
+					PropertyHasChanged("PropertyStatusID");
+				}
+			}
+		}
+
+		[DataMember]
         public Guid? PurchaseOptionID
         {
             get { return _purchaseOptionID; }

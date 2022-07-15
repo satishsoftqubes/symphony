@@ -124,6 +124,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 LoadDocumentGrid();
                 LoadLandIssueGrid();
                 BindPropertyType();
+                BindPropertyStatus();
                 BindPurchaseOption();
                 BindPaymentTerm();
                 LoadValidation();
@@ -265,6 +266,39 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 txtQSLocation.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
         }
 
+        private void BindPropertyStatus()
+        {
+            List<ProjectTerm> lstProjectTermPT = null;
+            ProjectTerm objProjectTermPT = new ProjectTerm();
+            objProjectTermPT.IsActive = true;
+            objProjectTermPT.Category = "PROPERTY STATUS";
+            objProjectTermPT.CompanyID = this.CompanyID;
+
+            lstProjectTermPT = ProjectTermBLL.GetAll(objProjectTermPT);
+
+            if (lstProjectTermPT.Count != 0)
+            {
+                lstProjectTermPT.Sort((ProjectTerm p1, ProjectTerm p2) => p1.DisplayTerm.CompareTo(p2.DisplayTerm));
+
+                ddlPropertyStatus.DataSource = lstProjectTermPT;
+                ddlPropertyStatus.DataTextField = "DisplayTerm";
+                ddlPropertyStatus.DataValueField = "TermID";
+                ddlPropertyStatus.DataBind();
+                ddlPropertyStatus.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+
+                drpQSPropertyType.DataSource = lstProjectTermPT;
+                drpQSPropertyType.DataTextField = "DisplayTerm";
+                drpQSPropertyType.DataValueField = "TermID";
+                drpQSPropertyType.DataBind();
+                drpQSPropertyType.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
+            }
+            else
+            {
+                ddlPropertyStatus.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                drpQSPropertyType.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
+            }
+        }
+
         /// <summary>
         /// Bind Grid Information
         /// </summary>
@@ -322,6 +356,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             BindPaymentTerm();
             txtSurveyNo.Text = "";
             ddlPropertyType.SelectedValue = Guid.Empty.ToString();
+            ddlPropertyStatus.SelectedValue = Guid.Empty.ToString();
             txtJantri.Text = "";
             BindGrid();
             this.PropertyID = Guid.Empty;
@@ -379,6 +414,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                 if (Convert.ToString(ds.Tables[0].Rows[0]["ProperyType"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["ProperyType"]) != null)
                     ddlPropertyType.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PropertyTypeID"]));
+
+                if (Convert.ToString(ds.Tables[0].Rows[0]["PropertyStatus"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PropertyStatus"]) != null)
+                    ddlPropertyStatus.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PropertyStatusID"]));
 
                 if (Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOption"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOption"]) != null)
                     ddlPurchaseOption.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOptionID"]));
@@ -652,6 +690,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         else
                             objUpdProperty.PropertyTypeID = null;
 
+                        if (ddlPropertyStatus.SelectedValue != Guid.Empty.ToString())
+                            objUpdProperty.PropertyStatusID = new Guid(ddlPropertyStatus.SelectedValue);
+                        else
+                            objUpdProperty.PropertyStatusID = null;
+
                         if (ddlPurchaseOption.SelectedValue != Guid.Empty.ToString())
                             objUpdProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);
                         else
@@ -823,6 +866,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             objInsProperty.PropertyTypeID = new Guid(ddlPropertyType.SelectedValue);
                         else
                             objInsProperty.PropertyTypeID = null;
+
+                        if (ddlPropertyStatus.SelectedValue != Guid.Empty.ToString())
+                            objInsProperty.PropertyStatusID = new Guid(ddlPropertyStatus.SelectedValue);
+                        else
+                            objInsProperty.PropertyStatusID = null;
 
                         if (ddlPurchaseOption.SelectedValue != Guid.Empty.ToString())
                             objInsProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);

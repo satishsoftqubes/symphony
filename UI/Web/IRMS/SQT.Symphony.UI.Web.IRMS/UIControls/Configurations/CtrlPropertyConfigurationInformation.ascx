@@ -150,6 +150,20 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <asp:Label ID="litPropertyStatus" runat="server" Text="Property Status" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rfvPropertyStatus" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
+                                                    ControlToValidate="ddlPropertyStatus" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlPropertyStatus" Style="width: 202px;" runat="server">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
                                             <asp:Label ID="litPurchaseOption" runat="server" Text="Purchase Option" CssClass="RequireFile"></asp:Label>
                                             <span class="erroraleart">
                                                 <asp:RequiredFieldValidator ID="rvfPurchaseOption" SetFocusOnError="true" CssClass="rfv_ErrorStar"
