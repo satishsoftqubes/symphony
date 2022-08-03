@@ -352,7 +352,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                             {
                                 throw new InvalidBusinessObjectException(item.BrokenRulesList.ToString());
                             }
-                            flag = _objDocuments.Insert(item);
+                            flag = _objDocuments.InsertLandDocument(item);
                         }
                     }
                     if (flag)

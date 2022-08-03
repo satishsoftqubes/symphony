@@ -82,6 +82,7 @@ namespace SQT.Symphony.BusinessLogic.IRMS.COMMON
         public const string SalesTeamGetAllSalesForEmailSubscription = "[dbo].[irm_SalesTeam_GetAllSalesForEmailSubscription]";
 
         //SPs for  dms_Documents
+        public const string LandDocumentsInsert = "[dbo].[dms_LandDocuments_Insert]";
         public const string DocumentsInsert = "[dbo].[dms_Documents_Insert]";
         public const string DocumentsUpdate = "[dbo].[dms_Documents_Update]";
         public const string DocumentsSelectByPrimaryKey = "[dbo].[dms_Documents_SelectByPrimaryKey]";

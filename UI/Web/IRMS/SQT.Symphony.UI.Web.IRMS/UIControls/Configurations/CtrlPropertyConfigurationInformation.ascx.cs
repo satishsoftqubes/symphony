@@ -457,6 +457,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// </summary>
         private void LoadLandIssueGrid()
         {
+
             DataTable dt = new DataTable();
             DataRow dr = null;
 
@@ -466,21 +467,24 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 Guid landIssueTypeID = (Guid)dsLandIssueDocumentList.Tables[0].Rows[0]["TermID"];
                 ViewState["LandIssueTypeID"] = landIssueTypeID;
             }
-
+            
+            dt = dsLandIssueDocumentList.Tables[0];
+            //dt.Columns.Add();
             dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
-            dt.Columns.Add(new DataColumn("DocumentName", typeof(string)));//document name
-            dt.Columns.Add(new DataColumn("DocumentID", typeof(string)));//document id
-            dt.Columns.Add(new DataColumn("Notes", typeof(string)));//Land issue description
+            //dt.Columns.Add(new DataColumn("DocumentName", typeof(string)));//document name
+            //dt.Columns.Add(new DataColumn("DocumentID", typeof(string)));//document id
+            //dt.Columns.Add(new DataColumn("Notes", typeof(string)));//Land issue description
 
             dr = dt.NewRow();
             dr["RowNumber"] = 1;
             dr["DocumentName"] = string.Empty;
-            dr["DocumentID"] = string.Empty;
+            dr["DocumentID"] = new Guid();
             dr["Notes"] = string.Empty;
 
             dt.Rows.Add(dr);
 
             ViewState["CurrentTable"] = dt;
+            dsLandIssueDocumentList.Tables.Clear();
 
             // DataTable to DataSet
             dsLandIssueDocumentList.Tables.Add(dt);
@@ -496,7 +500,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         private void AddNewRowToGrid()
         {
-            //LoadLandIssueGrid();
             if (ViewState["CurrentTable"] != null)
             {
                 DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
@@ -504,36 +507,34 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                 if (dtCurrentTable.Rows.Count > 0)
                 {
-                    var rows = dtCurrentTable.Rows.Count;
-
                     drCurrentRow = dtCurrentTable.NewRow();
                     drCurrentRow["RowNumber"] = dtCurrentTable.Rows.Count + 1;
-                    
+
                     //add new row to DataTable   
                     dtCurrentTable.Rows.Add(drCurrentRow);
-                    
                     //Store the current data to ViewState for future reference   
+
                     ViewState["CurrentTable"] = dtCurrentTable;
 
-                    for (int i = 0; i < dtCurrentTable.Rows.Count; i++)
+
+                    for (int i = 0; i < dtCurrentTable.Rows.Count - 1; i++)
                     {
-                        if (rows > i)
-                        {
-                            TextBox box1 = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
-                            dtCurrentTable.Rows[i]["Notes"] = box1.Text;
-                        }
-                        
+                        //extract the TextBox values   
+                        TextBox box1 = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
+                        dtCurrentTable.Rows[i]["Notes"] = box1.Text;
                     }
+
+                    //Rebind the Grid with the current data to reflect changes   
                     gvLandIssueModification.DataSource = dtCurrentTable;
-                    gvLandIssueModification.DataBind();  
+                    gvLandIssueModification.DataBind();
                 }
             }
             else
             {
                 Response.Write("ViewState is null");
+
             }
-            //Set Previous Data on Postbacks   
-            SetPreviousData();  
+            SetPreviousData();
         }
 
         private void ResetRowID(DataTable dt)
@@ -806,6 +807,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             //Land Issue/Modification Documents
                             for (int i = 0; i < gvLandIssueModification.Rows.Count; i++)
                             {
+                                TextBox txtStatutoryName = (TextBox)gvLandIssueModification.Rows[i].FindControl("txtLandIssueModification");
+                                FileUpload fuDocument = (FileUpload)gvLandIssueModification.Rows[i].FindControl("fuLandIssueDocument");
+                                HiddenField hdnDocumentName = (HiddenField)gvLandIssueModification.Rows[i].FindControl("hdnLandIssueDocumentName");
+
                                 TextBox txtLandIssueName = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
                                 FileUpload fuLandIssueDocument = (FileUpload)gvLandIssueModification.Rows[i].Cells[2].FindControl("fuLandIssueDocument");
                                 HiddenField hdnLandIssueDocumentName = (HiddenField)gvLandIssueModification.Rows[i].Cells[2].FindControl("hdnLandIssueDocumentName");

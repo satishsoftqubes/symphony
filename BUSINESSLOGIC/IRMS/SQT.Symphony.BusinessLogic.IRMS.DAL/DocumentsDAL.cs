@@ -220,6 +220,65 @@ namespace SQT.Symphony.BusinessLogic.IRMS.DAL
             }
             return obj;
         }
+
+        /// <summary>
+        /// insert new row in the table
+        /// </summary>
+		/// <param name="businessObject">business object</param>
+		/// <returns>true of successfully insert</returns>
+		public bool InsertLandDocument(Documents dtoObject)
+        {
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    if (dtoObject == null)
+                        throw (new ParameterNullException("Object can not be null"));
+
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+                    parameterList.Add(dtoObject);
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    StoredProcedure(MasterDALConstant.LandDocumentsInsert)
+                        .AddParameter("@DocumentID", dtoObject.DocumentID)
+.AddParameter("@CategoryID", dtoObject.CategoryID)
+.AddParameter("@TypeID", dtoObject.TypeID)
+.AddParameter("@StatusTermID", dtoObject.StatusTermID)
+.AddParameter("@DocumentName", dtoObject.DocumentName)
+.AddParameter("@Notes", dtoObject.Notes)
+.AddParameter("@DocumentPath", dtoObject.DocumentPath)
+.AddParameter("@Extension", dtoObject.Extension)
+.AddParameter("@DateOfSubmission", dtoObject.DateOfSubmission)
+.AddParameter("@AssociationID", dtoObject.AssociationID)
+.AddParameter("@AssociationType", dtoObject.AssociationType)
+.AddParameter("@CreatedOn", dtoObject.CreatedOn)
+.AddParameter("@UpdatedOn", dtoObject.UpdatedOn)
+.AddParameter("@CreatedBy", dtoObject.CreatedBy)
+.AddParameter("@UpdatedBy", dtoObject.UpdatedBy)
+.AddParameter("@IsActive", dtoObject.IsActive)
+.AddParameter("@IsSynch", dtoObject.IsSynch)
+.AddParameter("@SynchOn", dtoObject.SynchOn)
+.AddParameter("@SeqNo", dtoObject.SeqNo)
+.AddParameter("@PropertyID", dtoObject.PropertyID)
+.AddParameter("@CompanyID", dtoObject.CompanyID)
+
+                        .WithTransaction(dbtr)
+                        .Execute();
+                }
+            }
+            catch (Exception ex)
+            {
+                //Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return true;
+        }
+
         /// <summary>
         /// insert new row in the table
         /// </summary>
