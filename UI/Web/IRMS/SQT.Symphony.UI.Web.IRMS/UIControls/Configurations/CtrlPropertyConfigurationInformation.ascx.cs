@@ -475,13 +475,13 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             //dt.Columns.Add(new DataColumn("DocumentID", typeof(string)));//document id
             //dt.Columns.Add(new DataColumn("Notes", typeof(string)));//Land issue description
 
-            dr = dt.NewRow();
-            dr["RowNumber"] = 1;
-            dr["DocumentName"] = string.Empty;
-            dr["DocumentID"] = new Guid();
-            dr["Notes"] = string.Empty;
+            //dr = dt.NewRow();
+            //dr["RowNumber"] = 1;
+            //dr["DocumentName"] = string.Empty;
+            //dr["DocumentID"] = new Guid();
+            //dr["Notes"] = string.Empty;
 
-            dt.Rows.Add(dr);
+            //dt.Rows.Add(dr);
 
             ViewState["CurrentTable"] = dt;
             dsLandIssueDocumentList.Tables.Clear();
@@ -523,6 +523,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         TextBox box1 = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
                         dtCurrentTable.Rows[i]["Notes"] = box1.Text;
                     }
+
+
 
                     //Rebind the Grid with the current data to reflect changes   
                     gvLandIssueModification.DataSource = dtCurrentTable;

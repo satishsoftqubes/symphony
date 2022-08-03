@@ -425,6 +425,9 @@
                                                         <asp:TemplateField HeaderText="Description">
                                                             <ItemTemplate>
                                                                 <asp:TextBox ID="txtLandIssueModification" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "Notes")%>'></asp:TextBox>
+                                                                <span class="erroralert">
+                                                                    <asp:RequiredFieldValidator ID="txtLandDocumentName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtLandIssueModification" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                </span>
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                         <asp:TemplateField ItemStyle-Width="95px" HeaderText="File" HeaderStyle-HorizontalAlign="Left">
