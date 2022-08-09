@@ -1,0 +1,19 @@
+CREATE TABLE tra_propertyexpensesdetail
+(
+	[PropertyExpenseDetailID]	CHAR(38)		NOT NULL PRIMARY KEY,	
+	[PropertyID]				CHAR(38)		NULL DEFAULT NULL,
+	[VendorName]				VARCHAR(161)	NULL DEFAULT NULL,
+	[VendorID]					CHAR(38)		NULL DEFAULT NULL,
+	[ReferenceNo]				VARCHAR(161)	NULL DEFAULT NULL,
+	[PurchaseNote]				VARCHAR(161)	NULL DEFAULT NULL,
+	[TotalAmount]				DECIMAL(18,2)	NULL DEFAULT NULL,
+	[TotalPaid]					DECIMAL(18,2)	NULL DEFAULT NULL,
+	[TotalDue]					DECIMAL(18,2)	NULL DEFAULT NULL,
+	[BillAttached]				VARCHAR(361)	NULL DEFAULT NULL,
+	[PurchaseTypeTerm]			VARCHAR(61)		NULL DEFAULT NULL,
+	[ItemTypeTerm]				VARCHAR(61)		NULL DEFAULT NULL,
+	[IsActive]					BIT				NULL DEFAULT NULL,
+	[UpdateLog]					TIMESTAMP		NULL DEFAULT NULL,	
+	[SeqNo]						INT				NULL DEFAULT NULL
+)
+GO

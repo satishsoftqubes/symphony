@@ -1,0 +1,16 @@
+CREATE TABLE tra_propertypayment
+(
+	[PropertyPaymentID]			CHAR(38)			NOT NULL PRIMARY KEY,
+	[PropertyID]				CHAR(38)			NULL DEFAULT NULL,
+	[PropertyScheduleID]		CHAR(38)			NULL DEFAULT NULL,
+	[AmountPaid]				DECIMAL(18,2)		NULL DEFAULT NULL,	
+	[MOPTerm]					VARCHAR(37)			NULL DEFAULT NULL,
+	[DateOfTransaction]			DATETIME			NULL DEFAULT NULL,
+	[BankName]					VARCHAR(161)		NULL DEFAULT NULL,
+	[ChequeNo]					VARCHAR(11)			NULL DEFAULT NULL,
+	[ChequeTo]					VARCHAR(161)		NULL DEFAULT NULL,
+	[OrderNo]					INT					NULL DEFAULT NULL,
+	[UserID]					CHAR(38)			NULL DEFAULT NULL,
+	[Description]				VARCHAR(3710)		NULL DEFAULT NULL
+)
+GO
