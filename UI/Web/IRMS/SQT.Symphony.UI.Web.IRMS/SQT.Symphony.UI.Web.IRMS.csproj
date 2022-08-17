@@ -206,6 +206,7 @@
     <Content Include="Applications\SetUp\BlockDetail.aspx" />
     <Content Include="Applications\SetUp\CompanySetup.aspx" />
     <Content Include="Applications\SetUp\ConfigurationPropertyInfo.aspx" />
+    <Content Include="Applications\SetUp\ConfigurationPurchaseScheduleInfo.aspx" />
     <Content Include="Applications\SetUp\ControlNumberSetup.aspx" />
     <Content Include="Applications\SetUp\DepartmentSetp.aspx" />
     <Content Include="Applications\SetUp\FloorSetUp.aspx" />
@@ -213,6 +214,7 @@
     <Content Include="Applications\SetUp\PropertyConfiruation.aspx" />
     <Content Include="Applications\SetUp\PropertyList.aspx" />
     <Content Include="Applications\SetUp\PropertyUnits.aspx" />
+    <Content Include="Applications\SetUp\PurchaseScheduleList.aspx" />
     <Content Include="Applications\SetUp\RoomSetup.aspx" />
     <Content Include="Applications\SetUp\RoomTypeSetup.aspx" />
     <Content Include="Applications\Test1.aspx" />
@@ -520,6 +522,8 @@
     <Content Include="UIControls\Configurations\CtrlPropertyConfigurationInformation.ascx" />
     <Content Include="UIControls\Configurations\CtrlPropertyInformation.ascx" />
     <Content Include="UIControls\Configurations\CtrlPropertyList.ascx" />
+    <Content Include="UIControls\Configurations\CtrlPurchaseScheduleConfigurationInformation.ascx" />
+    <Content Include="UIControls\Configurations\CtrlPurchaseScheduleList.ascx" />
     <Content Include="UIControls\Configurations\CtrlRoom.ascx" />
     <Content Include="UIControls\Configurations\CtrlRoomType.ascx" />
     <Content Include="UIControls\Configurations\PropertyUnits.ascx" />
@@ -1259,6 +1263,13 @@
     <Compile Include="Applications\SetUp\ConfigurationPropertyInfo.aspx.designer.cs">
       <DependentUpon>ConfigurationPropertyInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Applications\SetUp\ConfigurationPurchaseScheduleInfo.aspx.cs">
+      <DependentUpon>ConfigurationPurchaseScheduleInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\ConfigurationPurchaseScheduleInfo.aspx.designer.cs">
+      <DependentUpon>ConfigurationPurchaseScheduleInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Applications\SetUp\ControlNumberSetup.aspx.cs">
       <DependentUpon>ControlNumberSetup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1313,6 +1324,13 @@
     </Compile>
     <Compile Include="Applications\SetUp\PropertyUnits.aspx.designer.cs">
       <DependentUpon>PropertyUnits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\SetUp\PurchaseScheduleList.aspx.cs">
+      <DependentUpon>PurchaseScheduleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\PurchaseScheduleList.aspx.designer.cs">
+      <DependentUpon>PurchaseScheduleList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Applications\SetUp\RoomNoAutoComplete.ashx.cs">
       <DependentUpon>RoomNoAutoComplete.ashx</DependentUpon>
@@ -1835,6 +1853,20 @@
     </Compile>
     <Compile Include="UIControls\Configurations\CtrlPropertyList.ascx.designer.cs">
       <DependentUpon>CtrlPropertyList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPurchaseScheduleConfigurationInformation.ascx.cs">
+      <DependentUpon>CtrlPurchaseScheduleConfigurationInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPurchaseScheduleConfigurationInformation.ascx.designer.cs">
+      <DependentUpon>CtrlPurchaseScheduleConfigurationInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPurchaseScheduleList.ascx.cs">
+      <DependentUpon>CtrlPurchaseScheduleList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPurchaseScheduleList.ascx.designer.cs">
+      <DependentUpon>CtrlPurchaseScheduleList.ascx</DependentUpon>
     </Compile>
     <Compile Include="UIControls\Configurations\CtrlRoom.ascx.cs">
       <DependentUpon>CtrlRoom.ascx</DependentUpon>

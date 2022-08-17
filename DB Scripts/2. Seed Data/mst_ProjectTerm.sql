@@ -350,4 +350,267 @@ VALUES
 	'0'
 )
 
+-- Property Installments
+INSERT [dbo].[mst_ProjectTerm]
+(
+	[TermID],
+	[CompanyID],
+	[Category],
+	[Term],
+	[TermCode],
+	[ForeColor],
+	[BackColor],
+	[Thumb],
+	[SeqNo],
+	[IsActive],
+	[LastUpdatedOn],
+	[LastUpdatedBy],
+	[IsSynch],
+	[PropertyID],
+	[TermValue],
+	[HardCodeTermID] ,
+	[DisplayTerm] ,
+	[IsDefault]
+)
+VALUES
+(
+	'3BBB5E71-35E7-4078-9828-FEE71885A5EE',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	'PROPERTYINSTALLMENTS',
+	'Property Installments',
+	'PRPINS',
+	NULL,
+	NULL,
+	NULL,
+	'1',
+	'1',
+	GETUTCDATE(),
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	'3BBB5E71-35E7-4078-9828-FEE71885A5EE',
+	'PROPERTYINSTALLMENTS',
+	'0'
+)
+
+-- Payment period -- Monthly
+INSERT [dbo].[mst_ProjectTerm]
+(
+	[TermID],
+	[CompanyID],
+	[Category],
+	[Term],
+	[TermCode],
+	[ForeColor],
+	[BackColor],
+	[Thumb],
+	[SeqNo],
+	[IsActive],
+	[LastUpdatedOn],
+	[LastUpdatedBy],
+	[IsSynch],
+	[PropertyID],
+	[TermValue],
+	[HardCodeTermID] ,
+	[DisplayTerm] ,
+	[IsDefault]
+)
+VALUES
+(
+	'F01B26F3-724E-4AEB-AB25-7290287CF717',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	'PAYMENTPERIOD',
+	'Monthly',
+	'PAYMON',
+	NULL,
+	NULL,
+	NULL,
+	'1',
+	'1',
+	GETUTCDATE(),
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	'F01B26F3-724E-4AEB-AB25-7290287CF717',
+	'Monthly',
+	'0'
+)
+
+-- Payment period -- Bimonthly
+INSERT [dbo].[mst_ProjectTerm]
+(
+	[TermID],
+	[CompanyID],
+	[Category],
+	[Term],
+	[TermCode],
+	[ForeColor],
+	[BackColor],
+	[Thumb],
+	[SeqNo],
+	[IsActive],
+	[LastUpdatedOn],
+	[LastUpdatedBy],
+	[IsSynch],
+	[PropertyID],
+	[TermValue],
+	[HardCodeTermID] ,
+	[DisplayTerm] ,
+	[IsDefault]
+)
+VALUES
+(
+	'F6F0415F-706E-4E1E-9FC5-431A012C1526',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	'PAYMENTPERIOD',
+	'Bimonthly',
+	'PAYBMON',
+	NULL,
+	NULL,
+	NULL,
+	'2',
+	'1',
+	GETUTCDATE(),
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	'F6F0415F-706E-4E1E-9FC5-431A012C1526',
+	'Bimonthly',
+	'0'
+)
+
+-- Payment period -- Three month
+INSERT [dbo].[mst_ProjectTerm]
+(
+	[TermID],
+	[CompanyID],
+	[Category],
+	[Term],
+	[TermCode],
+	[ForeColor],
+	[BackColor],
+	[Thumb],
+	[SeqNo],
+	[IsActive],
+	[LastUpdatedOn],
+	[LastUpdatedBy],
+	[IsSynch],
+	[PropertyID],
+	[TermValue],
+	[HardCodeTermID] ,
+	[DisplayTerm] ,
+	[IsDefault]
+)
+VALUES
+(
+	'06610F7A-48AC-4556-A4D1-34F617F4E272',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	'PAYMENTPERIOD',
+	'Three Month',
+	'PAYTMON',
+	NULL,
+	NULL,
+	NULL,
+	'3',
+	'1',
+	GETUTCDATE(),
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	'06610F7A-48AC-4556-A4D1-34F617F4E272',
+	'Three Month',
+	'0'
+)
+
+-- Payment period -- Quaterly
+INSERT [dbo].[mst_ProjectTerm]
+(
+	[TermID],
+	[CompanyID],
+	[Category],
+	[Term],
+	[TermCode],
+	[ForeColor],
+	[BackColor],
+	[Thumb],
+	[SeqNo],
+	[IsActive],
+	[LastUpdatedOn],
+	[LastUpdatedBy],
+	[IsSynch],
+	[PropertyID],
+	[TermValue],
+	[HardCodeTermID] ,
+	[DisplayTerm] ,
+	[IsDefault]
+)
+VALUES
+(
+	'5B78E892-10C5-467F-8235-1B375F68CFAB',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	'PAYMENTPERIOD',
+	'Quaterly',
+	'PAYQMON',
+	NULL,
+	NULL,
+	NULL,
+	'4',
+	'1',
+	GETUTCDATE(),
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	'5B78E892-10C5-467F-8235-1B375F68CFAB',
+	'Quaterly',
+	'0'
+)
+
+-- Payment period -- Sixmonthly
+INSERT [dbo].[mst_ProjectTerm]
+(
+	[TermID],
+	[CompanyID],
+	[Category],
+	[Term],
+	[TermCode],
+	[ForeColor],
+	[BackColor],
+	[Thumb],
+	[SeqNo],
+	[IsActive],
+	[LastUpdatedOn],
+	[LastUpdatedBy],
+	[IsSynch],
+	[PropertyID],
+	[TermValue],
+	[HardCodeTermID] ,
+	[DisplayTerm] ,
+	[IsDefault]
+)
+VALUES
+(
+	'E4B846A9-D8D6-445C-8564-E3FE45DC464E',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	'PAYMENTPERIOD',
+	'Sixmonthly',
+	'PAYSMON',
+	NULL,
+	NULL,
+	NULL,
+	'5',
+	'1',
+	GETUTCDATE(),
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	'E4B846A9-D8D6-445C-8564-E3FE45DC464E',
+	'Sixmonthly',
+	'0'
+)
 

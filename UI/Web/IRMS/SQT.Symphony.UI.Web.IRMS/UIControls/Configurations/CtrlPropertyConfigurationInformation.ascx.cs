@@ -286,16 +286,16 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 ddlPropertyStatus.DataBind();
                 ddlPropertyStatus.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
 
-                drpQSPropertyType.DataSource = lstProjectTermPT;
-                drpQSPropertyType.DataTextField = "DisplayTerm";
-                drpQSPropertyType.DataValueField = "TermID";
-                drpQSPropertyType.DataBind();
-                drpQSPropertyType.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
+                //drpQSPropertyType.DataSource = lstProjectTermPT;
+                //drpQSPropertyType.DataTextField = "DisplayTerm";
+                //drpQSPropertyType.DataValueField = "TermID";
+                //drpQSPropertyType.DataBind();
+                //drpQSPropertyType.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
             }
             else
             {
                 ddlPropertyStatus.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
-                drpQSPropertyType.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
+                //drpQSPropertyType.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
             }
         }
 

@@ -11,17 +11,26 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 {
 
 
-    public partial class CtrlPropertyList
+    public partial class CtrlPurchaseScheduleList
     {
 
         /// <summary>
-        /// updPropertyList control.
+        /// updPurchaseScheduleList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updPropertyList;
+        protected global::System.Web.UI.UpdatePanel updPurchaseScheduleList;
+
+        /// <summary>
+        /// btnAddPurchaseSchedule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddPurchaseSchedule;
 
         /// <summary>
         /// lblErrorMessage control.
@@ -39,160 +48,205 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litPropertyName;
+        protected global::System.Web.UI.WebControls.Label litPropertyName;
 
         /// <summary>
-        /// txtPropertyName control.
+        /// rfvPropertyName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtPropertyName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPropertyName;
 
         /// <summary>
-        /// Literal1 control.
+        /// ddlPropertyName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPropertyName;
 
         /// <summary>
-        /// txtLocation control.
+        /// litPurchaseOption control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtLocation;
+        protected global::System.Web.UI.WebControls.Label litPurchaseOption;
 
         /// <summary>
-        /// Literal2 control.
+        /// rfvPurchaseOption control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPurchaseOption;
 
         /// <summary>
-        /// ddlPropertyType control.
+        /// ddlPurchaseOption control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPropertyType;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPurchaseOption;
 
         /// <summary>
-        /// btnSearch control.
+        /// litPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnSearch;
+        protected global::System.Web.UI.WebControls.Label litPrice;
 
         /// <summary>
-        /// btnAddTop control.
+        /// rfvPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddTop;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrice;
 
         /// <summary>
-        /// grdPropertyList control.
+        /// txtPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdPropertyList;
+        protected global::System.Web.UI.WebControls.TextBox txtPrice;
 
         /// <summary>
-        /// btnAdd control.
+        /// filtxtPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender filtxtPrice;
 
         /// <summary>
-        /// msgbx control.
+        /// litPurchaseArea control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender msgbx;
+        protected global::System.Web.UI.WebControls.Label litPurchaseArea;
 
         /// <summary>
-        /// hfMessage control.
+        /// rfvPurchaseArea control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfMessage;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPurchaseArea;
 
         /// <summary>
-        /// Panel1 control.
+        /// txtPurchaseArea control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.TextBox txtPurchaseArea;
 
         /// <summary>
-        /// HyperLink1 control.
+        /// filtxtPurchaseArea control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender filtxtPurchaseArea;
 
         /// <summary>
-        /// Image1 control.
+        /// btnCalcTotalCost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Button btnCalcTotalCost;
 
         /// <summary>
-        /// Label1 control.
+        /// litTotalCost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label litTotalCost;
 
         /// <summary>
-        /// btnPropertyYes control.
+        /// rfvTotalCost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPropertyYes;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTotalCost;
 
         /// <summary>
-        /// btnPropertyNo control.
+        /// txtTotalCost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPropertyNo;
+        protected global::System.Web.UI.WebControls.TextBox txtTotalCost;
+
+        /// <summary>
+        /// filtxtTotalCost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender filtxtTotalCost;
+
+        /// <summary>
+        /// Literal3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal3;
+
+        /// <summary>
+        /// ButtonAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ButtonAdd;
+
+        /// <summary>
+        /// gvPropertyInstallments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvPropertyInstallments;
+
+        /// <summary>
+        /// btnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
         /// MessageBox control.
@@ -202,14 +256,5 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SQT.Symphony.UI.Web.IRMS.MsgBox.MsgBox MessageBox;
-
-        /// <summary>
-        /// UpdateProgressPropertyList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgressPropertyList;
     }
 }

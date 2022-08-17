@@ -99,6 +99,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="PropertyConfiguration.cs" />
+    <Compile Include="PurchaseSchedule.cs" />
     <Compile Include="RateCard.cs" />
     <Compile Include="RateCardDetails.cs" />
     <Compile Include="RateServiceJoin.cs" />

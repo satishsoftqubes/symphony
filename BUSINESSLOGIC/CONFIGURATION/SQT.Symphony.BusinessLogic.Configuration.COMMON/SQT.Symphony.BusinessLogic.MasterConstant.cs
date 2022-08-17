@@ -254,6 +254,10 @@ namespace SQT.Symphony.BusinessLogic.Configuration.COMMON
         public const string PropertyBlockUnitView = "[dbo].[mst_Property_PropertyBlockUnitView]";
         public const string PropertySelectAddressInfo = "[dbo].[mst_Property_SelectAddressInfo]";
 
+        //SPs for propertypurchase_schedule
+        public const string PurchaseScheduleInsert = "[dbo].[purchaseSchedule_Insert]";
+
+
         //SPs for  mst_PropertyConfiguration
         public const string PropertyConfigurationInsert = "[dbo].[mst_PropertyConfiguration_Insert]";
         public const string PropertyConfigurationUpdate = "[dbo].[mst_PropertyConfiguration_Update]";
