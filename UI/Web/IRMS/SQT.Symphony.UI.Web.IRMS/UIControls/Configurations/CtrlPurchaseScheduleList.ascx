@@ -3,9 +3,9 @@
 
 <%@ Register Src="../../MsgBox/MsgBox.ascx" TagName="MsgBox" TagPrefix="uc1" %>
 <script language="javascript" type="text/javascript">
-    //function fnDisplayCatchErrorMessage() {
-    //    document.getElementById('errormessage').style.display = "block";
-    //}
+    function fnDisplayCatchErrorMessage() {
+        document.getElementById('errormessage').style.display = "block";
+    }
 </script>
 <asp:UpdatePanel ID="updPurchaseScheduleList" runat="server">
     <ContentTemplate>
