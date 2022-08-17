@@ -442,6 +442,7 @@
     <Content Include="GUI\Property\PropertyInformation.aspx" />
     <Content Include="GUI\Property\PropertyList.aspx" />
     <Content Include="GUI\Property\PropertySetup.aspx" />
+    <Content Include="GUI\PurchaseSchedule\PurchaseScheduleList.aspx" />
     <Content Include="GUI\UserSetup\Role.aspx" />
     <Content Include="GUI\UserSetup\Users.aspx" />
     <Content Include="GUI\UserSetup\UserSetting.aspx" />
@@ -720,6 +721,7 @@
     <Content Include="UIControls\Property\CtrlPropertyInfomation.ascx" />
     <Content Include="UIControls\Property\CtrlPropertyList.ascx" />
     <Content Include="UIControls\Property\CtrlPropertySetup.ascx" />
+    <Content Include="UIControls\PurchaseSchedule\CtrlPurchaseScheduleList.ascx" />
     <Content Include="UIControls\UserSetup\CtrlRoles.ascx" />
     <Content Include="UIControls\UserSetup\CtrlUsers.ascx" />
     <Content Include="UIControls\UserSetup\CtrlUserSetting.ascx" />
@@ -1741,6 +1743,13 @@
     <Compile Include="GUI\Property\PropertySetup.aspx.designer.cs">
       <DependentUpon>PropertySetup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\PurchaseSchedule\PurchaseScheduleList.aspx.cs">
+      <DependentUpon>PurchaseScheduleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PurchaseSchedule\PurchaseScheduleList.aspx.designer.cs">
+      <DependentUpon>PurchaseScheduleList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserSetup\Role.aspx.cs">
       <DependentUpon>Role.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2435,6 +2444,13 @@
     <Compile Include="UIControls\Property\CtrlPropertySetup.ascx.designer.cs">
       <DependentUpon>CtrlPropertySetup.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UIControls\PurchaseSchedule\CtrlPurchaseScheduleList.ascx.cs">
+      <DependentUpon>CtrlPurchaseScheduleList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\PurchaseSchedule\CtrlPurchaseScheduleList.ascx.designer.cs">
+      <DependentUpon>CtrlPurchaseScheduleList.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UIControls\UserSetup\CtrlRoles.ascx.cs">
       <DependentUpon>CtrlRoles.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2572,6 +2588,7 @@
     <Content Include="App_GlobalResources\PropertyList.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>PropertyList.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,6 @@ CREATE TABLE propertypurchase_schedule
 	[TotalDue]			 		DECIMAL(18,2)		NULL DEFAULT NULL,	
 	[IsActive]			 		BIT					NULL DEFAULT NULL,	
 	[SeqNo]						INT					NULL DEFAULT NULL,	
-	[UpdateLog]					TIMESTAMP			NULL DEFAULT NULL	
+	[UpdateLog]					DATETIME			NULL DEFAULT NULL	
 )
 GO
