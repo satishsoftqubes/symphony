@@ -13,7 +13,7 @@ CREATE TABLE tra_propertyexpenses
 	[PurchaseAssociationID]		CHAR(38)		NULL DEFAULT NULL,
 	[IsSettled]					BIT				NULL DEFAULT NULL,
 	[IsActive]					BIT				NULL DEFAULT NULL,
-	[UpdateLog]					TIMESTAMP		NULL DEFAULT NULL,
+	[UpdateLog]					DATETIME		NULL DEFAULT NULL,
 	[CreatedOn]					DATETIME		NULL DEFAULT NULL,	
 	[SeqNo]						INT				NULL DEFAULT NULL
 )

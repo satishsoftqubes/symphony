@@ -12,7 +12,7 @@ CREATE TABLE tra_partnerpayment
 	[ReceivedBy]			CHAR(38)		NULL DEFAULT NULL,
 	[SeqNo]					INT				NULL DEFAULT NULL,
 	[IsActive]				BIT				NULL DEFAULT NULL,
-	[UpdateLog]				TIMESTAMP		NULL DEFAULT NULL,
+	[UpdateLog]				DATETIME		NULL DEFAULT NULL,
 	[UploadDocument]		VARCHAR(361)	NULL DEFAULT NULL,
 	[Description]			VARCHAR(3710)	NULL DEFAULT NULL
 )

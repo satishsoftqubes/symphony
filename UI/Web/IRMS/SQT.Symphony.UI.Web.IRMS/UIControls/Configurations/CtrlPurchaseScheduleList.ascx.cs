@@ -72,7 +72,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                 if (!IsPostBack)
                 {
-                    this.PurchaseScheduleID = new Guid(Convert.ToString(Session["PurchaseScheduleID"]));
+                    //this.PurchaseScheduleID = new Guid(Convert.ToString(Session["PurchaseScheduleID"]));
                     LoadDefaultValue();
                 }
 

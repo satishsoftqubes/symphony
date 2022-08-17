@@ -1,0 +1,38 @@
+INSERT [dbo].[usr_Right]
+(
+	[RightID],
+	[CompanyID],
+	[PropertyID],
+	[ReportID],
+	[FormName],
+	[FullName],
+	[MenuName],
+	[ParentID],
+	[MenuParentOrderID],
+	[MenuChileOrderID],
+	[IsMenuOption],
+	[MenuIcon],
+	[IsBlock],
+	[Description],
+	[IsSynch],
+	[SynchOn]
+)
+VALUES
+(
+	'32559F9D-37D5-4036-ADB9-DB74831BA019',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	NULL,
+	NULL,
+	'ConfigurationPurchaseScheduleInfo.aspx',
+	'~/Applications/SetUp/ConfigurationPurchaseScheduleInfo.aspx',
+	'Purchase Schedule',
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL
+)

@@ -13,7 +13,7 @@ CREATE TABLE tra_propertyexpensesdetail
 	[PurchaseTypeTerm]			VARCHAR(61)		NULL DEFAULT NULL,
 	[ItemTypeTerm]				VARCHAR(61)		NULL DEFAULT NULL,
 	[IsActive]					BIT				NULL DEFAULT NULL,
-	[UpdateLog]					TIMESTAMP		NULL DEFAULT NULL,	
+	[UpdateLog]					DATETIME		NULL DEFAULT NULL,	
 	[SeqNo]						INT				NULL DEFAULT NULL
 )
 GO
