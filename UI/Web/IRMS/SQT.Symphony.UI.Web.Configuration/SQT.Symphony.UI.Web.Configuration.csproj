@@ -443,6 +443,7 @@
     <Content Include="GUI\Property\PropertyList.aspx" />
     <Content Include="GUI\Property\PropertySetup.aspx" />
     <Content Include="GUI\PurchaseSchedule\PurchaseScheduleList.aspx" />
+    <Content Include="GUI\SalerPartner\SalerPartner.aspx" />
     <Content Include="GUI\UserSetup\Role.aspx" />
     <Content Include="GUI\UserSetup\Users.aspx" />
     <Content Include="GUI\UserSetup\UserSetting.aspx" />
@@ -722,6 +723,7 @@
     <Content Include="UIControls\Property\CtrlPropertyList.ascx" />
     <Content Include="UIControls\Property\CtrlPropertySetup.ascx" />
     <Content Include="UIControls\PurchaseSchedule\CtrlPurchaseScheduleList.ascx" />
+    <Content Include="UIControls\SalerPartner\CtrlSalerPartner.ascx" />
     <Content Include="UIControls\UserSetup\CtrlRoles.ascx" />
     <Content Include="UIControls\UserSetup\CtrlUsers.ascx" />
     <Content Include="UIControls\UserSetup\CtrlUserSetting.ascx" />
@@ -1750,6 +1752,13 @@
     <Compile Include="GUI\PurchaseSchedule\PurchaseScheduleList.aspx.designer.cs">
       <DependentUpon>PurchaseScheduleList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\SalerPartner\SalerPartner.aspx.cs">
+      <DependentUpon>SalerPartner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\SalerPartner\SalerPartner.aspx.designer.cs">
+      <DependentUpon>SalerPartner.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserSetup\Role.aspx.cs">
       <DependentUpon>Role.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2450,6 +2459,13 @@
     </Compile>
     <Compile Include="UIControls\PurchaseSchedule\CtrlPurchaseScheduleList.ascx.designer.cs">
       <DependentUpon>CtrlPurchaseScheduleList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\SalerPartner\CtrlSalerPartner.ascx.cs">
+      <DependentUpon>CtrlSalerPartner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\SalerPartner\CtrlSalerPartner.ascx.designer.cs">
+      <DependentUpon>CtrlSalerPartner.ascx</DependentUpon>
     </Compile>
     <Compile Include="UIControls\UserSetup\CtrlRoles.ascx.cs">
       <DependentUpon>CtrlRoles.ascx</DependentUpon>
