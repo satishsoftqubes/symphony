@@ -217,6 +217,7 @@
     <Content Include="Applications\SetUp\PurchaseScheduleList.aspx" />
     <Content Include="Applications\SetUp\RoomSetup.aspx" />
     <Content Include="Applications\SetUp\RoomTypeSetup.aspx" />
+    <Content Include="Applications\SetUp\SalerPartner.aspx" />
     <Content Include="Applications\Test1.aspx" />
     <Content Include="Applications\TestChart.aspx" />
     <Content Include="Applications\UsersSetUp\ActionLogTracker.aspx" />
@@ -527,6 +528,8 @@
     <Content Include="UIControls\Configurations\CtrlRoom.ascx" />
     <Content Include="UIControls\Configurations\CtrlRoomType.ascx" />
     <Content Include="UIControls\Configurations\PropertyUnits.ascx" />
+    <Content Include="UIControls\Configurations\CtrlSalerPartner.ascx" />
+    <Content Include="UIControls\CtrlSalerPartner.ascx" />
     <Content Include="UIControls\DashBoard\CltrDahsBoardProspects.ascx" />
     <Content Include="UIControls\DashBoard\CltrDashBoardChannelPartners.ascx" />
     <Content Include="UIControls\DashBoard\CltrDashBoardInvestors.ascx" />
@@ -1349,6 +1352,13 @@
     <Compile Include="Applications\SetUp\RoomTypeSetup.aspx.designer.cs">
       <DependentUpon>RoomTypeSetup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Applications\SetUp\SalerPartner.aspx.cs">
+      <DependentUpon>SalerPartner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\SalerPartner.aspx.designer.cs">
+      <DependentUpon>SalerPartner.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Applications\SetUp\UnitAutoComplete.ashx.cs">
       <DependentUpon>UnitAutoComplete.ashx</DependentUpon>
     </Compile>
@@ -1888,6 +1898,20 @@
     </Compile>
     <Compile Include="UIControls\Configurations\PropertyUnits.ascx.designer.cs">
       <DependentUpon>PropertyUnits.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlSalerPartner.ascx.cs">
+      <DependentUpon>CtrlSalerPartner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlSalerPartner.ascx.designer.cs">
+      <DependentUpon>CtrlSalerPartner.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\CtrlSalerPartner.ascx.cs">
+      <DependentUpon>CtrlSalerPartner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\CtrlSalerPartner.ascx.designer.cs">
+      <DependentUpon>CtrlSalerPartner.ascx</DependentUpon>
     </Compile>
     <Compile Include="UIControls\DashBoard\CltrDahsBoardProspects.ascx.cs">
       <DependentUpon>CltrDahsBoardProspects.ascx</DependentUpon>

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompanySetup.aspx.cs" Inherits="SQT.Symphony.UI.Web.IRMS.Applications.SetUp.CompanySetup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompanySetup.aspx.cs"
+    Inherits="SQT.Symphony.UI.Web.IRMS.Applications.SetUp.CompanySetup" %>
 
 <%@ Register Src="~/UIControls/Configurations/CtrlCompanyInfo.ascx" TagName="CtrlCompanyInfo"
     TagPrefix="uc1" %>
