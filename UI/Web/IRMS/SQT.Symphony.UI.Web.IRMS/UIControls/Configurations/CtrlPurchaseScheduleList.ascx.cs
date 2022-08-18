@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -73,6 +74,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 if (!IsPostBack)
                 {
                     //this.PurchaseScheduleID = new Guid(Convert.ToString(Session["PurchaseScheduleID"]));
+                    this.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
                     LoadDefaultValue();
                 }
 
@@ -147,10 +149,13 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         public void btnCalculateTotalCost_Click(object sender, EventArgs e)
         {
-            float price = Convert.ToInt32(txtPrice.Text);
-            int purchaseArea = Convert.ToInt32(txtPurchaseArea.Text);
-            decimal totalCost = Convert.ToDecimal(price * purchaseArea);
-            txtTotalCost.Text = Convert.ToString(totalCost);
+            if (txtPrice.Text != "" && txtPurchaseArea.Text != "")
+            {
+                float price = Convert.ToInt32(txtPrice.Text);
+                int purchaseArea = Convert.ToInt32(txtPurchaseArea.Text);
+                decimal totalCost = Convert.ToDecimal(price * purchaseArea);
+                txtTotalCost.Text = Convert.ToString(totalCost);
+            }
         }
 
         /// <summary>
@@ -194,6 +199,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
                 DataRow drCurrentRow = null;
+                CultureInfo objCultureInfo = CultureInfo.CurrentCulture;
 
                 if (dtCurrentTable.Rows.Count > 0)
                 {
@@ -221,6 +227,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                         TextBox amount = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtInstallmentAmount");
                         dtCurrentTable.Rows[i]["InstallmentAmount"] = amount.Text;
+
+                        // payment date
+                        TextBox paymentDate = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtPaymentDate");
+                        dtCurrentTable.Rows[i]["ActualPaymentDate"] = DateTime.Parse(paymentDate.Text.Trim(), objCultureInfo);
                     }
                     //Rebind the Grid with the current data to reflect changes   
                     gvPropertyInstallments.DataSource = dtCurrentTable;
@@ -241,6 +251,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             if (ViewState["CurrentTable"] != null)
             {
                 DataTable dt = (DataTable)ViewState["CurrentTable"];
+
                 if (dt.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
@@ -249,12 +260,15 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         TextBox percentage = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtInstallmentPercent");
                         DropDownList ddlPaymentMode = (gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentMode") as DropDownList);
                         TextBox amount = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtInstallmentAmount");
+                        TextBox paymentDate = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtPaymentDate");
+                        
                         if (i < dt.Rows.Count - 1)
                         {
                             ddlInstallmentType.SelectedValue = dt.Rows[i]["InstallmentTypeTerm"].ToString();
                             percentage.Text = dt.Rows[i]["InstallmentInPercentage"].ToString();
                             ddlPaymentMode.SelectedValue = dt.Rows[i]["MOPTerm"].ToString();
                             amount.Text = dt.Rows[i]["InstallmentAmount"].ToString();
+                            paymentDate.Text = dt.Rows[i]["ActualPaymentDate"].ToString();
                         }
                         rowIndex++;
                     }
@@ -373,8 +387,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
             dt.Columns.Add(new DataColumn("InstallmentTypeTerm", typeof(string))); //Installment type
             dt.Columns.Add(new DataColumn("InstallmentInPercentage", typeof(string))); //installment percentage
-            dt.Columns.Add(new DataColumn("MOPTerm", typeof(string))); //Payment mode
-            dt.Columns.Add(new DataColumn("InstallmentAmount", typeof(string))); //installment amount
+            dt.Columns.Add(new DataColumn("MOPTerm", typeof(string))); // Payment mode
+            dt.Columns.Add(new DataColumn("InstallmentAmount", typeof(string))); // Installment amount
+            dt.Columns.Add(new DataColumn("ActualPaymentDate", typeof(string))); //Payment date
 
             ViewState["CurrentTable"] = dt;
             dsPropertyInstallmentDocumentList.Tables.Clear();

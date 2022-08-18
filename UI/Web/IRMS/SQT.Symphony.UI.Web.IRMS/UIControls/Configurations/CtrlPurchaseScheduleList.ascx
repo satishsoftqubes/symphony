@@ -3,8 +3,22 @@
 
 <%@ Register Src="../../MsgBox/MsgBox.ascx" TagName="MsgBox" TagPrefix="uc1" %>
 <script language="javascript" type="text/javascript">
+
     function fnDisplayCatchErrorMessage() {
         document.getElementById('errormessage').style.display = "block";
+    }
+
+    function fnClearDate(para1) {
+        var payDate = para1.previousElementSibling;
+        payDate.value = '';
+    }
+
+    function fnCalcInstallmentAmount(percentage) {
+        var currentAmount = percentage.parentElement.nextSibling.nextSibling.childNodes[1];
+        var percentage = parseFloat(percentage.value);
+        var totalCost = parseFloat(document.getElementById('ctl00_ContentPlaceHolder1_CtrlPurchaseScheduleList1_txtTotalCost').value);
+        var amount = (parseFloat(totalCost * percentage) / 100);
+        currentAmount.value = amount;
     }
 </script>
 <asp:UpdatePanel ID="updPurchaseScheduleList" runat="server">
@@ -175,33 +189,54 @@
                                         <asp:RequiredFieldValidator ID="rfvInstallmentType" SetFocusOnError="true" CssClass="rfv_ErrorStar"
                                             InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
                                             ControlToValidate="ddlInstallmentType" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                        <asp:DropDownList ID="ddlInstallmentType" Style="width: 205px;" runat="server">
+                                        <asp:DropDownList ID="ddlInstallmentType" Style="width: 140px;" runat="server">
                                         </asp:DropDownList>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Percentage">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txtInstallmentPercent" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentInPercentage")%>'></asp:TextBox>
+                                        <asp:TextBox onKeyUp="fnCalcInstallmentAmount(this)" ID="txtInstallmentPercent" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentInPercentage")%>'></asp:TextBox>
                                         <span class="erroralert">
                                             <asp:RequiredFieldValidator ID="txtInstallmentPercentName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtInstallmentPercent" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                                         </span>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Mode">
+                                <asp:TemplateField HeaderText="Payment Mode">
                                     <ItemTemplate>
                                         <asp:RequiredFieldValidator ID="rfvPaymentMode" SetFocusOnError="true" CssClass="rfv_ErrorStar"
                                             InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
                                             ControlToValidate="ddlPaymentMode" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                        <asp:DropDownList ID="ddlPaymentMode" Style="width: 205px;" runat="server">
+                                        <asp:DropDownList ID="ddlPaymentMode" Style="width: 140px;" runat="server">
                                         </asp:DropDownList>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Amount">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txtInstallmentAmount" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentAmount")%>'></asp:TextBox>
+                                        <asp:TextBox ID="txtInstallmentAmount" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentAmount")%>'  Style="background: #dcdddf;"></asp:TextBox>
                                         <span class="erroralert">
                                             <asp:RequiredFieldValidator ID="txtInstallmentAmountName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtInstallmentAmount" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                                         </span>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Payment Date">
+                                    <ItemTemplate>
+                                        <div style="display: flex;">
+                                            <asp:TextBox ID="txtPaymentDate" runat="server" autocomplete="off"
+                                                Style="width: 90px !important;" SkinID="searchtextbox" onkeydown="return stopKey(event);"></asp:TextBox>
+                                            <%--<asp:Image ID="imgSearchFromDate" CssClass="small_img" runat="server" ImageUrl="~/images/CalanderIcon.png"
+                                                Height="20px" Width="20px" />--%>
+
+                                            <ajx:CalendarExtender ID="calPaymentDate" PopupButtonID="imgPaymentDate" TargetControlID="txtPaymentDate"
+                                                runat="server" Format="dd/MM/yyyy h:mm">
+                                            </ajx:CalendarExtender>
+                                            <img src="../../images/clear.png" onclick="fnClearDate(this);" 
+                                                CssClass="small_img" style="height:17px; width:17px;"  id="imgclearDateFrom" title="Clear Date" />
+                                            <asp:RequiredFieldValidator ID="rvfFromDate" runat="server" ControlToValidate="txtPaymentDate"
+                                                    SetFocusOnError="true" CssClass="input-notification error png_bg" ValidationGroup="IsRequireSearch"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <%--onclick="fnClearDate('<%= txtPaymentDate.ClientID %>');"--%>
+                                        <asp:RequiredFieldValidator ID="rvfPaymentDate" runat="server" ControlToValidate="txtPaymentDate"
+                                            SetFocusOnError="true" CssClass="input-notification error png_bg" ValidationGroup="IsRequireSearch"></asp:RequiredFieldValidator>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
