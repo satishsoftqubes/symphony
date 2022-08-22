@@ -57,7 +57,13 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			CertificationNo,
 			LicenceNo,
             PurchaseOptionID,
-            SurveyNo
+            SurveyNo,			
+			PaymentTermID,
+			Jantri,
+			PropertyStatusID,
+			Price,
+			PurchaseArea,
+			TotalCost
 		}
 		#endregion
 
@@ -108,12 +114,15 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             Guid? _purchaseOptionID;
             Guid? _paymentTermID;
             string _surveyNo;
+			decimal? _price;
+			decimal? _purchaseArea;
+			decimal? _totalCost;
 
 		#endregion
 
 		#region Properties
 
-		[DataMember]
+	[DataMember]
 		public Guid  PropertyID
 		{
 			 get { return _propertyID; }
@@ -743,6 +752,48 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             }
         }
 
+		[DataMember]
+		public decimal? Price
+		{
+			get { return _price; }
+			set
+			{
+				if (_price != value)
+				{
+					_price = value;
+					PropertyHasChanged("Price");
+				}
+			}
+		}
+
+		[DataMember]
+		public decimal? PurchaseArea
+		{
+			get { return _purchaseArea; }
+			set
+			{
+				if (_purchaseArea != value)
+				{
+					_purchaseArea = value;
+					PropertyHasChanged("PurchaseArea");
+				}
+			}
+		}
+
+		[DataMember]
+		public decimal? TotalCost
+		{
+			get { return _totalCost; }
+			set
+			{
+				if (_totalCost != value)
+				{
+					_totalCost = value;
+					PropertyHasChanged("TotalCost");
+				}
+			}
+		}
+
 		#endregion
 
 		#region Validation
@@ -769,7 +820,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("SEACNOC", "SEACNOC",2147483647));
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("CertificationNo", "CertificationNo",2147483647));
             ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("LicenceNo", "LicenceNo", 2147483647));
-            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("SurveyNo", "SurveyNo", 2147483647));            
+            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("SurveyNo", "SurveyNo", 2147483647));
 		}
 
 		[OperationContract]

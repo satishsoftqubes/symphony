@@ -1,4 +1,4 @@
-CREATE TABLE mst_partner
+CREATE TABLE dbo.mst_partner
 (
 	[PartnerID]				CHAR(38)			NOT NULL PRIMARY KEY,
 	[FirstName]				VARCHAR(61)			NULL DEFAULT NULL,
@@ -17,6 +17,6 @@ CREATE TABLE mst_partner
 	[TotalInvestment]		DECIMAL(18,2)		NULL DEFAULT NULL,
 	[IsActive]				BIT					NULL DEFAULT NULL,
 	[UpdateLog]				DATETIME			NULL DEFAULT NULL,
-	[SeqNo]					INT					NULL DEFAULT NULL	
+	[SeqNo]					INT					IDENTITY(1,1) NOT NULL
 )
 GO

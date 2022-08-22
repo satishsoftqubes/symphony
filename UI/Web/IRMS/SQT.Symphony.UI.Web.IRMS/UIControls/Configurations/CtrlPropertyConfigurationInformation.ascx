@@ -162,7 +162,7 @@
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <%--<tr>
                                         <td>
                                             <asp:Label ID="litPurchaseOption" runat="server" Text="Purchase Option" CssClass="RequireFile"></asp:Label>
                                             <span class="erroraleart">
@@ -175,8 +175,8 @@
                                             <asp:DropDownList ID="ddlPurchaseOption" Style="width: 202px;" runat="server">
                                             </asp:DropDownList>
                                         </td>
-                                    </tr>
-                                    <tr>
+                                    </tr>--%>
+                                    <%--<tr>
                                         <td>
                                             <asp:Literal ID="litSBArea" runat="server" Text="SBA (Sft) (Residential)"></asp:Literal>
                                         </td>
@@ -185,8 +185,8 @@
                                             <ajx:FilteredTextBoxExtender ID="filtxtSBAreaResidential" runat="server" TargetControlID="txtSBAreaResidential"
                                                 FilterType="Numbers" />
                                         </td>
-                                    </tr>
-                                    <tr>
+                                    </tr>--%>
+                                    <%--<tr>
                                         <td>
                                             <asp:Literal ID="Literal1" runat="server" Text="SBA (Sft) (Commercial)"></asp:Literal>
                                         </td>
@@ -195,8 +195,8 @@
                                             <ajx:FilteredTextBoxExtender ID="ftSbAreaCommercial" runat="server" TargetControlID="txtSbAreaCommercial"
                                                 FilterType="Numbers" />
                                         </td>
-                                    </tr>
-                                    <tr>
+                                    </tr>--%>
+                                    <%--<tr>
                                         <td>
                                             <asp:Label ID="litCarpetArea" runat="server" Text="Total Built Up Area" CssClass="RequireFile"></asp:Label>
                                             <span class="erroraleart">
@@ -210,7 +210,7 @@
                                             <ajx:FilteredTextBoxExtender ID="filtxtCarpetArea" runat="server" TargetControlID="txtCarpetArea"
                                                 FilterType="Numbers" />
                                         </td>
-                                    </tr>
+                                    </tr>--%>
                                     <tr>
                                         <td>
                                             <asp:Label ID="litSurveyNo" runat="server" Text="Survey No" CssClass="RequireFile"></asp:Label>
@@ -224,7 +224,7 @@
                                             <asp:TextBox ID="txtSurveyNo" SkinID="CmpTextbox" runat="server"></asp:TextBox>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <%--<tr>
                                         <td>
                                             <asp:Label ID="litPaymentTerm" runat="server" Text="Payment Term" CssClass="RequireFile"></asp:Label>
                                             <span class="erroraleart">
@@ -237,7 +237,7 @@
                                             <asp:DropDownList ID="ddlPaymentTerm" Style="width: 202px;" runat="server">
                                             </asp:DropDownList>
                                         </td>
-                                    </tr>
+                                    </tr>--%>
                                     <tr>
                                         <td>
                                             <asp:Literal ID="litJantri" runat="server" Text="Jantri"></asp:Literal>

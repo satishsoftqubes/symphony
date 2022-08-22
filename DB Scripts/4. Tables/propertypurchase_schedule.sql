@@ -1,4 +1,4 @@
-CREATE TABLE propertypurchase_schedule
+CREATE TABLE dbo.propertypurchase_schedule
 (
 	[PurchaseScheduleID]		CHAR(38)			NOT NULL PRIMARY KEY,
 	[PropertyID]				CHAR(38)			NULL DEFAULT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE propertypurchase_schedule
 	[TotalPaid]			 		DECIMAL(18,2)		NULL DEFAULT NULL,	
 	[TotalDue]			 		DECIMAL(18,2)		NULL DEFAULT NULL,	
 	[IsActive]			 		BIT					NULL DEFAULT NULL,	
-	[SeqNo]						INT					NULL DEFAULT NULL,	
+	[SeqNo]						INT					IDENTITY(1,1) NOT NULL,
 	[UpdateLog]					DATETIME			NULL DEFAULT NULL	
 )
 GO

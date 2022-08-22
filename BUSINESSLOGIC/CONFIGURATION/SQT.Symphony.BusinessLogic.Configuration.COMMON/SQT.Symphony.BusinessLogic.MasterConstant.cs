@@ -243,6 +243,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.COMMON
         //SPs for  mst_Property
         public const string PropertyInsert = "[dbo].[mst_Property_Insert]";
         public const string PropertyUpdate = "[dbo].[mst_Property_Update]";
+        public const string PropertyPurchaseUpdate = "[dbo].[mst_PropertyPurchase_Update]";
         public const string PropertySelectByPrimaryKey = "[dbo].[mst_Property_SelectByPrimaryKey]";
         public const string PropertySelectAll = "[dbo].[mst_Property_SelectAll]";
         public const string PropertySelectByField = "[dbo].[mst_Property_SelectByField]";

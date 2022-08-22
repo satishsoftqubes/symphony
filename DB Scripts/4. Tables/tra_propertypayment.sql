@@ -1,4 +1,4 @@
-CREATE TABLE tra_propertypayment
+CREATE TABLE dbo.tra_propertypayment
 (
 	[PropertyPaymentID]			CHAR(38)			NOT NULL PRIMARY KEY,
 	[PropertyID]				CHAR(38)			NULL DEFAULT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE tra_propertypayment
 	[BankName]					VARCHAR(161)		NULL DEFAULT NULL,
 	[ChequeNo]					VARCHAR(11)			NULL DEFAULT NULL,
 	[ChequeTo]					VARCHAR(161)		NULL DEFAULT NULL,
-	[OrderNo]					INT					NULL DEFAULT NULL,
+	[OrderNo]					INT					IDENTITY(1,1) NOT NULL,
 	[UserID]					CHAR(38)			NULL DEFAULT NULL,
 	[Description]				VARCHAR(3710)		NULL DEFAULT NULL
 )

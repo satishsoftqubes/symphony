@@ -1,4 +1,4 @@
-CREATE TABLE tra_propertyexpenses
+CREATE TABLE dbo.tra_propertyexpenses
 (
 	[ExpenseID]					CHAR(38)		NOT NULL PRIMARY KEY,	
 	[PropertyID]				CHAR(38)		NULL DEFAULT NULL,
@@ -15,6 +15,6 @@ CREATE TABLE tra_propertyexpenses
 	[IsActive]					BIT				NULL DEFAULT NULL,
 	[UpdateLog]					DATETIME		NULL DEFAULT NULL,
 	[CreatedOn]					DATETIME		NULL DEFAULT NULL,	
-	[SeqNo]						INT				NULL DEFAULT NULL
+	[SeqNo]						INT				IDENTITY(1,1) NOT NULL
 )
 GO

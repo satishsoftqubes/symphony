@@ -1,4 +1,4 @@
-CREATE TABLE tra_partnerpayment
+CREATE TABLE dbo.tra_partnerpayment
 (
 	[PartnerPaymentID]		CHAR(38)		NOT NULL PRIMARY KEY,
 	[PartnerID]				CHAR(38)		NULL DEFAULT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE tra_partnerpayment
 	[ChequeNo]				VARCHAR(11)		NULL DEFAULT NULL,
 	[TransactionDate]		DATETIME		NULL DEFAULT NULL,
 	[ReceivedBy]			CHAR(38)		NULL DEFAULT NULL,
-	[SeqNo]					INT				NULL DEFAULT NULL,
+	[SeqNo]					INT				IDENTITY(1,1) NOT NULL,
 	[IsActive]				BIT				NULL DEFAULT NULL,
 	[UpdateLog]				DATETIME		NULL DEFAULT NULL,
 	[UploadDocument]		VARCHAR(361)	NULL DEFAULT NULL,

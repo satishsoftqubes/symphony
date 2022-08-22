@@ -547,7 +547,7 @@ namespace SQT.Symphony.UI.Web.Configuration.UIControls.Property
                             }
                         }
 
-                        PropertyBLL.Update(UpdtProperty, UpdtAdres, lstDocuments);
+                        PropertyBLL.Update(UpdtProperty, UpdtAdres, lstDocuments, null);
                         ActionLogBLL.SaveConfigurationActionLog(clsSession.UserID, "Update", OldProperty.ToString(), UpdtProperty.ToString(), "mst_Property");
                         IsInsert = true;
                         litSuccessfully.Text = clsCommon.GetGlobalResourceText("CommonMessage", "lblMsgRecordUpdatedSuccessfully", "Record updated successfully.");
@@ -629,7 +629,7 @@ namespace SQT.Symphony.UI.Web.Configuration.UIControls.Property
                             }
                         }
 
-                        PropertyBLL.Save(Ins, InsAdd, lstDocuments);
+                        PropertyBLL.Save(Ins, InsAdd, lstDocuments, null);
                         SQT.Symphony.BusinessLogic.Configuration.DTO.Property ojbProperty4Hotelcode = PropertyBLL.GetByPrimaryKey(Ins.PropertyID);
                         clsSession.PropertyID = this.PropertyID = Ins.PropertyID;
                         CreateResourceFiles(Convert.ToString(ojbProperty4Hotelcode.LicenceNo));

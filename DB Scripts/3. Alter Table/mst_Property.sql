@@ -17,3 +17,16 @@ ADD Jantri decimal(18,2)
 -- PropertyStatusID
 ALTER TABLE mst_Property 
 ADD PropertyStatusID UNIQUEIDENTIFIER
+
+-- Price
+ALTER TABLE mst_Property 
+ADD Price decimal(18,2)
+
+-- Purchase Area
+ALTER TABLE mst_Property 
+ADD PurchaseArea decimal(18,2)
+
+-- Total Cost
+ALTER TABLE mst_Property 
+ADD TotalCost decimal(18,2)
+
