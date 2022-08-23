@@ -8,6 +8,37 @@
     <title>Uniworld | Investor Login</title>
     <link href="Style/style.css" type="text/css" rel="Stylesheet" />
     <link href="Style/modelpopup.css" type="text/css" rel="Stylesheet" />
+    <style type="text/css">
+        #progressBackgroundFilter
+        {
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            background-color: #000;
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+            z-index: 1111111;
+        }
+        #processMessage
+        {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            padding: 10px;
+            width: 30px;
+            border-radius: 10px;
+            z-index: 1111112;
+            background-color: #fff;
+            border: solid 1px #efefef;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -173,6 +204,17 @@
     <div id="errormessage" class="clear" style="display: none;">
         <uc1:MsgBox ID="MessageBox" runat="server" />
     </div>
+        <asp:UpdateProgress AssociatedUpdatePanelID="pnlLogni" ID="UpdateProgressPropertyList"
+            runat="server">
+            <ProgressTemplate>
+                <div id="progressBackgroundFilter">
+                </div>
+                <div id="processMessage">
+                    <center>
+                        <img src="../../images/ajax-loader.gif" /></center>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
     </form>
 </body>
 </html>

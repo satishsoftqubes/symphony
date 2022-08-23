@@ -24,6 +24,60 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         protected global::System.Web.UI.UpdatePanel updPurchaseScheduleList;
 
         /// <summary>
+        /// lblErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
+
+        /// <summary>
+        /// litPropertyName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litPropertyName;
+
+        /// <summary>
+        /// txtPropertyName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList txtPropertyName;
+
+        /// <summary>
+        /// btnSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnSearch;
+
+        /// <summary>
+        /// btnAddPurchaseScheduleTop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddPurchaseScheduleTop;
+
+        /// <summary>
+        /// grdPurchaseScheduleList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdPurchaseScheduleList;
+
+        /// <summary>
         /// btnAddPurchaseSchedule control.
         /// </summary>
         /// <remarks>
@@ -40,5 +94,14 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SQT.Symphony.UI.Web.IRMS.MsgBox.MsgBox MessageBox;
+
+        /// <summary>
+        /// UpdateProgressPropertyList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress UpdateProgressPropertyList;
     }
 }

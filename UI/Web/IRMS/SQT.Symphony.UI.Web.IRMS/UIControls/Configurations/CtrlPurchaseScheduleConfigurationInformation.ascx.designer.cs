@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
-{
-
-
-    public partial class CtrlPurchaseScheduleConfigurationInformation
-    {
-
+namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
+    
+    
+    public partial class CtrlPurchaseScheduleConfigurationInformation {
+        
         /// <summary>
         /// updPurchaseSchedule control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel updPurchaseSchedule;
-
+        
         /// <summary>
         /// lblErrorMessage control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
-
+        
         /// <summary>
         /// litPropertyName control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label litPropertyName;
-
+        
         /// <summary>
         /// rfvPropertyName control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPropertyName;
-
+        
         /// <summary>
         /// ddlPropertyName control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPropertyName;
-
+        
         /// <summary>
         /// litPurchaseOption control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label litPurchaseOption;
-
+        
         /// <summary>
         /// rfvPurchaseOption control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPurchaseOption;
-
+        
         /// <summary>
         /// ddlPurchaseOption control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPurchaseOption;
-
+        
         /// <summary>
         /// litPrice control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label litPrice;
-
+        
         /// <summary>
         /// rfvPrice control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrice;
-
+        
         /// <summary>
         /// txtPrice control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrice;
-
+        
         /// <summary>
         /// filtxtPrice control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender filtxtPrice;
-
+        
         /// <summary>
         /// litPurchaseArea control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label litPurchaseArea;
-
+        
         /// <summary>
         /// rfvPurchaseArea control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPurchaseArea;
-
+        
         /// <summary>
         /// txtPurchaseArea control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPurchaseArea;
-
+        
         /// <summary>
         /// filtxtPurchaseArea control.
         /// </summary>
@@ -157,7 +155,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender filtxtPurchaseArea;
-
+        
         /// <summary>
         /// btnCalcTotalCost control.
         /// </summary>
@@ -166,7 +164,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCalcTotalCost;
-
+        
         /// <summary>
         /// litTotalCost control.
         /// </summary>
@@ -175,7 +173,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label litTotalCost;
-
+        
         /// <summary>
         /// rfvTotalCost control.
         /// </summary>
@@ -184,7 +182,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTotalCost;
-
+        
         /// <summary>
         /// txtTotalCost control.
         /// </summary>
@@ -193,7 +191,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTotalCost;
-
+        
         /// <summary>
         /// filtxtTotalCost control.
         /// </summary>
@@ -202,7 +200,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender filtxtTotalCost;
-
+        
         /// <summary>
         /// Literal3 control.
         /// </summary>
@@ -211,7 +209,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal Literal3;
-
+        
         /// <summary>
         /// ButtonAdd control.
         /// </summary>
@@ -220,7 +218,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton ButtonAdd;
-
+        
         /// <summary>
         /// gvPropertyInstallments control.
         /// </summary>
@@ -229,7 +227,16 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvPropertyInstallments;
-
+        
+        /// <summary>
+        /// btnNew control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNew;
+        
         /// <summary>
         /// btnSave control.
         /// </summary>
@@ -238,7 +245,16 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
-
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
+        
         /// <summary>
         /// MessageBox control.
         /// </summary>
@@ -247,7 +263,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SQT.Symphony.UI.Web.IRMS.MsgBox.MsgBox MessageBox;
-
+        
         /// <summary>
         /// UpdateProgressPurchaseSchedule control.
         /// </summary>

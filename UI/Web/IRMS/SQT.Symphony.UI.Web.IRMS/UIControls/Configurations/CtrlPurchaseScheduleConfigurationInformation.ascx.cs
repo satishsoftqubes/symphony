@@ -118,8 +118,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 ddlPropertyName.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
         }
 
-
-
         private void BindPurchaseOption()
         {
             List<ProjectTerm> lstProjectTermPO = null;
@@ -474,5 +472,41 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             }
         }
 
+        /// <summary>
+        /// Button Cancel Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Session.Remove("PurchaseSchedule");
+                Response.Redirect("~/Applications/SetUp/PurchaseScheduleList.aspx");
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Add New Property Into the System
+        /// </summary>
+        /// <param name="sender">sender as Object</param>
+        /// <param name="e">e as EventArgs</param>
+        protected void btnNew_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Response.Redirect("~/Applications/SetUp/ConfigurationPurchaseScheduleInfo.aspx");
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
     }
 }
