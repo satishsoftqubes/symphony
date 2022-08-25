@@ -32,13 +32,40 @@
         var percentage = parseFloat(percentage.value);
         var totalCost = parseFloat(document.getElementById('ctl00_ContentPlaceHolder1_CtrlPropertyConfigurationInformation1_txtTotalCost').value);
         var amount = (parseFloat(totalCost * percentage) / 100);
-        currentAmount.value = amount;
+        if (!isNaN(amount)) {
+            currentAmount.value = amount;
+        }
+        else {
+            currentAmount.value = null;
+        }
     }
+
+    function disableAmount()
+    {
+        return false;
+    }
+
+    //function fnCalculateTotalCost() {
+    //    var price = document.getElementById("ctl00_ContentPlaceHolder1_CtrlPropertyConfigurationInformation1_txtPrice").value;
+    //    var purchaseArea = document.getElementById("ctl00_ContentPlaceHolder1_CtrlPropertyConfigurationInformation1_txtPurchaseArea").value;
+    //    var totalCost = document.getElementById('ctl00_ContentPlaceHolder1_CtrlPropertyConfigurationInformation1_txtTotalCost');
+    //    if (price != "" && purchaseArea != "") {
+    //        var totalCostCalc = parseFloat(price * purchaseArea);
+    //        if (!isNaN(totalCostCalc)) {
+    //            totalCost.value = totalCostCalc;
+    //        }
+    //        else {
+    //            totalCost.value = null;
+    //        }
+    //    }
+    //    else {
+    //        totalCost.value = null;
+    //    }
+    //}
 
 </script>
 <style type="text/css">
-    #progressBackgroundFilter
-    {
+    #progressBackgroundFilter {
         position: fixed;
         top: 0px;
         width: 100%;
@@ -54,8 +81,8 @@
         opacity: 0.5;
         z-index: 1111111;
     }
-    #processMessage
-    {
+
+    #processMessage {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -122,6 +149,8 @@
                                             </span>
                                         </td>
                                         <td>
+                                            <%-- <asp:TextBox ID="txtPropertyName" runat="server" Style="vertical-align: middle; margin-top: 7px; width: 200px !important;"
+                                                        MaxLength="65"></asp:TextBox>--%>
                                             <asp:DropDownList ID="ddlPropertyName" runat="server" Style="width: 205px;">
                                             </asp:DropDownList>
                                         </td>
@@ -150,26 +179,17 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <asp:TextBox AutoPostBack="true" ID="txtPrice" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
-                                            <ajx:FilteredTextBoxExtender ID="filtxtPrice" runat="server" TargetControlID="txtPrice"
-                                                FilterType="Numbers" />
+                                            <%-- onKeyUp="fnCalculateTotalCost()" --%>
+                                            <asp:TextBox ID="txtPrice" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
+                                                ControlToValidate="txtPrice" runat="server"
+                                                ErrorMessage="Only Numbers are allowed"
+                                                ValidationExpression="^\d+(\.\d+)*$">
+                                            </asp:RegularExpressionValidator>
+                                           <%-- <ajx:FilteredTextBoxExtender ID="filtxtPrice" runat="server" TargetControlID="txtPrice"
+                                                FilterType="Numbers" />--%>
                                         </td>
                                     </tr>
-                                    <%--<tr>
-                                        <td>
-                                            <asp:Label ID="litPurchaseArea" runat="server" SkinID="CmpTextbox" Text="Purchase Area" CssClass="RequireFile"></asp:Label>
-                                            <span class="erroraleart">
-                                                <asp:RequiredFieldValidator ID="rfvPurchaseArea" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtPurchaseArea"
-                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <asp:TextBox ID="txtPurchaseArea" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
-                                            <ajx:FilteredTextBoxExtender ID="filtxtPurchaseArea" runat="server" TargetControlID="txtPurchaseArea"
-                                                FilterType="Numbers" />
-                                        </td>
-                                    </tr>--%>
                                     <tr>
                                         <td>
                                             <asp:Label ID="litPurchaseArea" runat="server" Text="Purchase Area" CssClass="RequireFile"></asp:Label>
@@ -180,27 +200,27 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <asp:TextBox AutoPostBack="true" ID="txtPurchaseArea" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
-                                            <ajx:FilteredTextBoxExtender ID="filtxtPurchaseArea" runat="server" TargetControlID="txtPrice"
-                                                FilterType="Numbers" />
+                                            <asp:TextBox ID="txtPurchaseArea" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
+                                           <%-- <ajx:FilteredTextBoxExtender ID="filtxtPurchaseArea" runat="server" TargetControlID="txtPurchaseArea"
+                                                FilterType="Numbers" />--%>
                                         </td>
-                                        <td>
-                                            <asp:Button ID="btnCalcTotalCost" runat="server" Text="Calculate" OnClick="btnCalculateTotalCost_Click" />
-                                        </td>
+                                        <%--<td>
+                                            <asp:Button ID="btnCalcTotalCost" runat="server" Text="Calculate" OnClick="fnCalculateTotalCost" />
+                                        </td>--%>
                                     </tr>
                                     <tr>
                                         <td>
                                             <asp:Label ID="litTotalCost" runat="server" Text="Total Cost" CssClass="RequireFile"></asp:Label>
-                                            <span class="erroraleart">
+                                            <%--<span class="erroraleart">
                                                 <asp:RequiredFieldValidator ID="rfvTotalCost" SetFocusOnError="true" CssClass="rfv_ErrorStar"
                                                     runat="server" ValidationGroup="Configuration" ControlToValidate="txtTotalCost"
                                                     ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>
+                                            </span>--%>
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10" ReadOnly="true" Style="background: #dcdddf;"></asp:TextBox>
-                                            <ajx:FilteredTextBoxExtender ID="filtxtTotalCost" runat="server" TargetControlID="txtTotalCost"
-                                                FilterType="Numbers" />
+                                           <%-- <ajx:FilteredTextBoxExtender ID="filtxtTotalCost" runat="server" TargetControlID="txtTotalCost"
+                                                FilterType="Numbers" />--%>
                                         </td>
                                     </tr>
                                 </table>
@@ -232,9 +252,9 @@
                                     <ItemTemplate>
                                         <div style="justify-content: space-around; display: flex;">
                                             <asp:RequiredFieldValidator ID="rfvInstallmentType" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                            InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
-                                            ControlToValidate="ddlPaymentPeriod" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            <asp:DropDownList ID="ddlPaymentPeriod" Style="width: 140px; margin-left:5px;" runat="server">
+                                                InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
+                                                ControlToValidate="ddlPaymentPeriod" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            <asp:DropDownList ID="ddlPaymentPeriod" Style="width: 140px; margin-left: 5px;" runat="server">
                                             </asp:DropDownList>
                                         </div>
                                     </ItemTemplate>
@@ -245,7 +265,8 @@
                                             <span class="erroralert">
                                                 <asp:RequiredFieldValidator ID="txtInstallmentPercentName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtInstallmentPercent" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                                             </span>
-                                            <asp:TextBox onKeyUp="fnCalcInstallmentAmount(this)" style="margin-left:5px;" ID="txtInstallmentPercent" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentInPercentage")%>'></asp:TextBox>
+                                            <%-- onKeyUp="fnCalcInstallmentAmount(this)" --%>
+                                            <asp:TextBox onKeyUp="fnCalcInstallmentAmount(this)"  Style="margin-left: 5px;" ID="txtInstallmentPercent" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentInPercentage")%>'></asp:TextBox>
                                         </div>
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -253,43 +274,22 @@
                                     <ItemTemplate>
                                         <div style="justify-content: space-around; display: flex;">
                                             <asp:RequiredFieldValidator ID="rfvPaymentMode" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                            InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
-                                            ControlToValidate="ddlPaymentMode" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            <asp:DropDownList ID="ddlPaymentMode" Style="width: 140px; margin-left:5px;" runat="server">
+                                                InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
+                                                ControlToValidate="ddlPaymentMode" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            <asp:DropDownList ID="ddlPaymentMode" Style="width: 140px; margin-left: 5px;" runat="server">
                                             </asp:DropDownList>
                                         </div>
-                                        
+
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Amount">
                                     <ItemTemplate>
                                         <div style="justify-content: space-around; display: flex;">
-                                            <span class="erroralert">
+                                           <%-- <span class="erroralert">
                                                 <asp:RequiredFieldValidator ID="txtInstallmentAmountName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtInstallmentAmount" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>
-                                            <asp:TextBox ID="txtInstallmentAmount" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentAmount")%>' Style="background: #dcdddf; margin-left:5px;"></asp:TextBox>
+                                            </span>--%>
+                                            <asp:TextBox onKeyPress="return disableAmount();" ID="txtInstallmentAmount" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentAmount")%>' Style="background: #dcdddf; margin-left: 5px;"></asp:TextBox>
                                         </div>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Payment Date">
-                                    <ItemTemplate>
-                                        <div style="display: flex;">
-                                            <asp:TextBox ID="txtPaymentDate" runat="server" autocomplete="off"
-                                                Style="width: 90px !important;" SkinID="searchtextbox" onkeydown="return stopKey(event);"></asp:TextBox>
-                                            <%--<asp:Image ID="imgSearchFromDate" CssClass="small_img" runat="server" ImageUrl="~/images/CalanderIcon.png"
-                                                Height="20px" Width="20px" />--%>
-
-                                            <ajx:CalendarExtender ID="calPaymentDate" PopupButtonID="imgPaymentDate" TargetControlID="txtPaymentDate"
-                                                runat="server" Format="dd/MM/yyyy h:mm">
-                                            </ajx:CalendarExtender>
-                                            <img src="../../images/clear.png" onclick="fnClearDate(this);" 
-                                                CssClass="small_img" style="height:17px; width:17px;"  id="imgclearDateFrom" title="Clear Date" />
-                                            <asp:RequiredFieldValidator ID="rvfFromDate" runat="server" ControlToValidate="txtPaymentDate"
-                                                    SetFocusOnError="true" CssClass="input-notification error png_bg" ValidationGroup="IsRequireSearch"></asp:RequiredFieldValidator>
-                                        </div>
-                                        <%--onclick="fnClearDate('<%= txtPaymentDate.ClientID %>');"--%>
-                                        <asp:RequiredFieldValidator ID="rvfPaymentDate" runat="server" ControlToValidate="txtPaymentDate"
-                                            SetFocusOnError="true" CssClass="input-notification error png_bg" ValidationGroup="IsRequireSearch"></asp:RequiredFieldValidator>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
@@ -300,8 +300,8 @@
             <tr>
                 <td style="float: right; width: auto; display: inline-block;">
                     <asp:Button ID="btnNew" runat="server" Style="display: inline-block; margin-left: 5px; display: inline;"
-                        Text="New" OnClick="btnNew_Click" OnClientClick="fnDisplayCatchErrorMessage()" />
-                     <asp:Button ID="btnSave" Text="Save" Style="display: inline-block; margin-left: 5px;"
+                        Text="New" OnClick="btnAdd_Click" OnClientClick="fnDisplayCatchErrorMessage()" />
+                    <asp:Button ID="btnSave" Text="Save" Style="display: inline-block; margin-left: 5px;"
                         runat="server" ImageUrl="~/images/save.png" ValidationGroup="Configuration" CausesValidation="true"
                         OnClick="btnSave_Click" OnClientClick="return postbackButtonClick();" />
                     <asp:Button ID="btnCancel" Text="Cancel" Style="display: inline-block; margin-left: 5px;"

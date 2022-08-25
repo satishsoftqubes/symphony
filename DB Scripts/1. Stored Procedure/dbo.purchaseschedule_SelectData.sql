@@ -11,7 +11,7 @@ CREATE PROCEDURE dbo.purchaseschedule_SelectData
 AS  
 BEGIN  
 
-	SELECT P.PropertyID, P.PropertyName, COUNT(PS.PurchaseScheduleID) AS PurchaseScheduleCount
+	SELECT P.PropertyID, P.PropertyName, P.PurchaseOptionID, P.Price, P.PurchaseArea, P.TotalCost, COUNT(PS.PurchaseScheduleID) AS PurchaseScheduleCount
 		FROM propertypurchase_schedule PS
 		INNER JOIN mst_property P ON P.PropertyID = PS.PropertyID
 	WHERE   
@@ -19,5 +19,5 @@ BEGIN
 		ISNULL(P.PropertyID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627') = ISNULL(@PropertyID, ISNULL(P.PropertyID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627')) and    
 		ISNULL(PropertyName,'-aa#$$')  like '%'+ ISNULL(@PropertyName, ISNULL(PropertyName,'-aa#$$'))+'%' and   
 		ISNULL(PS.IsActive,1) = 1
-	GROUP BY P.PropertyID, P.PropertyName
+	GROUP BY P.PropertyID, P.PropertyName, P.PurchaseOptionID, P.Price, P.PurchaseArea, P.TotalCost
 END

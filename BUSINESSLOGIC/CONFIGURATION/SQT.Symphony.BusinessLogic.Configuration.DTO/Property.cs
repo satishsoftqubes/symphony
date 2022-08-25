@@ -766,7 +766,6 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			}
 		}
 
-		[DataMember]
 		public decimal? PurchaseArea
 		{
 			get { return _purchaseArea; }
@@ -780,7 +779,6 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			}
 		}
 
-		[DataMember]
 		public decimal? TotalCost
 		{
 			get { return _totalCost; }
@@ -866,11 +864,16 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			"KPSBNoc = {36}~\n"+
 			"SEACNOC = {37}~\n"+
 			"CertificationNo = {38}~\n"+
-			"LicenceNo = {39}~\n",
-            "PurchaseOptionID = {40}~\n",
-            "SurveyNo = {41}~\n",
-            "PaymentTermID = {42}~\n",
-			PropertyID,			CompanyID,			SeqNo,			PropertyTypeID,			PropertyCode,			PropertyName,			AddressID,			PropManagerName,			PrimaryContactNo,			PrimaryEmail,			PrimaryFax,			PropertyDisplayName,			PropertyRegisteredOn,			PropertyRegisteredBy,			PropertyCreatedOn,			IsApproved,			ApprovedBy,			ApprovedOn,			PropertyRating,			PropertyComments,			LastUpdateOn,			LastUpdateBy,			IsSynch,			IsActive,			ActivationKey,			ActivationCode,			LicenseNoOfUsers,			Thumb,			SynchOn,			UpdateLog,			SBArea,			CarpetArea,			PhotoLocal,			SBAreaCommercial,			KhataNo,			BuldingPlanApprovalNo,			KPSBNoc,			SEACNOC,			CertificationNo,			LicenceNo,          PurchaseOptionID,           SurveyNo,          PaymentTermID);			return objValue;
+			"LicenceNo = {39}~\n"+
+			"PurchaseOptionID = {40}~\n"+
+			"SurveyNo = {41}~\n"+
+			"PaymentTermID = {42}~\n"+
+			"Jantri = {43}~\n"+
+			"PropertyStatusID = {44}~\n"+
+			"Price = {45}~\n"+
+			"PurchaseArea = {46}~\n"+
+			"TotalCost = {47}~\n",
+			PropertyID,			CompanyID,			SeqNo,			PropertyTypeID,			PropertyCode,			PropertyName,			AddressID,			PropManagerName,			PrimaryContactNo,			PrimaryEmail,			PrimaryFax,			PropertyDisplayName,			PropertyRegisteredOn,			PropertyRegisteredBy,			PropertyCreatedOn,			IsApproved,			ApprovedBy,			ApprovedOn,			PropertyRating,			PropertyComments,			LastUpdateOn,			LastUpdateBy,			IsSynch,			IsActive,			ActivationKey,			ActivationCode,			LicenseNoOfUsers,			Thumb,			SynchOn,			UpdateLog,			SBArea,			CarpetArea,			PhotoLocal,			SBAreaCommercial,			KhataNo,			BuldingPlanApprovalNo,			KPSBNoc,			SEACNOC,			CertificationNo,			LicenceNo,          PurchaseOptionID,           SurveyNo,          PaymentTermID, Jantri, PropertyStatusID,	Price, PurchaseArea, TotalCost);			return objValue;
 		}
 
 		#endregion

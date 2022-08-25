@@ -52,7 +52,6 @@ CREATE PROCEDURE dbo.mst_Property_Update
 	@Price decimal(18,2) = null,
 	@PurchaseArea decimal(18,2) = null,
 	@TotalCost decimal(18,2) = null
-
 )
 AS
 BEGIN
@@ -104,6 +103,7 @@ SET
 	[Price] = @Price,
 	[PurchaseArea] = @PurchaseArea,
 	[TotalCost] = @TotalCost
+	
  WHERE 
 	[PropertyID] = @PropertyID
 END

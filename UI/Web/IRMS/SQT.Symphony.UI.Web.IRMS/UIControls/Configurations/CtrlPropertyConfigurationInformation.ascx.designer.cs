@@ -33,6 +33,33 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
 
         /// <summary>
+        /// hdnPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnPrice;
+
+        /// <summary>
+        /// hdnPurchaseArea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnPurchaseArea;
+
+        /// <summary>
+        /// hdnTotalCost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnTotalCost;
+
+        /// <summary>
         /// litPropertyName control.
         /// </summary>
         /// <remarks>

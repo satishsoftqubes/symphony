@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using SQT.FRAMEWORK.DAL.Linq;
@@ -66,6 +67,13 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                 throw;
             }
             return flag;
+        }
+
+        public static DataSet GetPurchaseScheduleData(Guid? PropertyID, Guid? CompanyID, string PropertyName)
+        {
+            PurchaseScheduleDAL _dataObject = new PurchaseScheduleDAL();
+            DataSet ds = _dataObject.SelectPurchaseScheduleData(PropertyID, CompanyID, PropertyName);
+            return ds;
         }
 
         #endregion

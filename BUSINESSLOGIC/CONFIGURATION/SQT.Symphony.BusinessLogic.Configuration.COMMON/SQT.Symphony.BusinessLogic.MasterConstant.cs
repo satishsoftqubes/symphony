@@ -257,6 +257,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.COMMON
 
         //SPs for propertypurchase_schedule
         public const string PurchaseScheduleInsert = "[dbo].[purchaseSchedule_Insert]";
+        public const string PurchaseScheduleUpdate = "[dbo].[purchaseSchedule_Update]";
         public const string PurchaseScheduleSelectData = "[dbo].[purchaseSchedule_SelectData]";
 
 

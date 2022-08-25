@@ -86,7 +86,7 @@
                                         <td colspan="2">
                                             <div style="height: 26px;">
                                                 <%if (IsMessage)
-                                                  { %>
+                                                    { %>
                                                 <div class="ResetSuccessfully">
                                                     <div style="float: left; padding-top: 7px; width: 25px; height: 24px; margin-right: 10px;">
                                                         <img src="../../images/success.png" />
@@ -106,6 +106,13 @@
                                             <div style="float: right;">
                                                 <b>All Bold Fields are Mandatory</b>
                                             </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:HiddenField id="hdnPrice" runat="server" />  
+                                            <asp:HiddenField id="hdnPurchaseArea" runat="server" />  
+                                            <asp:HiddenField id="hdnTotalCost" runat="server" />  
                                         </td>
                                     </tr>
                                     <tr>

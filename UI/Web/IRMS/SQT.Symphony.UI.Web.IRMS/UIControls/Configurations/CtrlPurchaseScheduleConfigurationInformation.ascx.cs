@@ -34,11 +34,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         {
             get
             {
-                return ViewState["PropertyID"] != null ? new Guid(Convert.ToString(ViewState["PropertyID"])) : Guid.Empty;
+                return ViewState["Property"] != null ? new Guid(Convert.ToString(ViewState["Property"])) : Guid.Empty;
             }
             set
             {
-                ViewState["PropertyID"] = value;
+                ViewState["Property"] = value;
             }
         }
 
@@ -67,14 +67,29 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 if (RoleRightJoinBLL.GetAccessString("ConfigurationPurchaseScheduleInfo.aspx", new Guid(Convert.ToString(Session["UserID"]))) == "NO")
                     Response.Redirect("~/Applications/AccessDenied.aspx");
                 LoadAccess();
-
+                
                 if (!IsPostBack)
                 {
-                    //this.PurchaseScheduleID = new Guid(Convert.ToString(Session["PurchaseScheduleID"]));
+                   // Session["PropertyID"] = null;
                     this.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
-                    LoadDefaultValue();
+                   
+                    if (Session["PropertyID"] != null)
+                    {
+                        ddlPropertyName.Enabled = false;
+                        this.PropertyID = new Guid(Convert.ToString(Session["PropertyID"]));
+                        LoadData();
+                        Session["PropertyID"] = null;
+                    }
+                    else
+                    {
+                         LoadDefaultValue();
+                    }
                 }
-
+                else
+                {
+                    ddlPropertyName.Enabled = true;
+                }
+                
                 if (Session["UserType"].ToString().ToUpper().Equals("SALES") || Session["UserType"].ToString().ToUpper().Equals("CHANNELPARTNER"))
                 {
                     //btnAddPurchaseSchedule.Visible = false;
@@ -83,16 +98,43 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             }
         }
 
+        private void LoadDefaultValue()
+        {
+            try
+            {
+                BindDDL();
+                BindPurchaseOption();
+                LoadPropertyInstallmentGrid();
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
         /// <summary>
         /// Load Default Value
         /// </summary>
-        private void LoadDefaultValue()
+        private void LoadData()
         {
             try
             {
                 BindDDL();
                 LoadPropertyInstallmentGrid();
                 BindPurchaseOption();
+
+                DataSet ds = new DataSet();
+                ds = PurchaseScheduleBLL.GetPurchaseScheduleData(this.PropertyID, this.CompanyID, null);
+                if (ds.Tables[0].Rows.Count != 0)
+                {
+                    ddlPropertyName.SelectedValue = Convert.ToString(ds.Tables[0].Rows[0]["PropertyID"]);
+                    ddlPurchaseOption.SelectedValue = Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOptionID"]);
+                    txtPrice.Text = Convert.ToString(ds.Tables[0].Rows[0]["Price"]);
+                    txtPurchaseArea.Text = Convert.ToString(ds.Tables[0].Rows[0]["PurchaseArea"]);
+                    txtTotalCost.Text = Convert.ToString(ds.Tables[0].Rows[0]["TotalCost"]);
+                }
+                
             }
             catch (Exception ex)
             {
@@ -144,12 +186,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             }
         }
 
-        public void btnCalculateTotalCost_Click(object sender, EventArgs e)
+        public void fnCalculateTotalCost(object sender, EventArgs e)
         {
             if (txtPrice.Text != "" && txtPurchaseArea.Text != "")
             {
-                float price = Convert.ToInt32(txtPrice.Text);
-                int purchaseArea = Convert.ToInt32(txtPurchaseArea.Text);
+                decimal price = Convert.ToDecimal(txtPrice.Text);
+                decimal purchaseArea = Convert.ToDecimal(txtPurchaseArea.Text);
                 decimal totalCost = Convert.ToDecimal(price * purchaseArea);
                 txtTotalCost.Text = Convert.ToString(totalCost);
             }
@@ -165,7 +207,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 ViewState["Delete"] = Convert.ToBoolean(DV[0]["IsDelete"]);
                 ViewState["Edit"] = Convert.ToBoolean(DV[0]["IsUpdate"]);
-                //btnAddPurchaseSchedule.Visible = Convert.ToBoolean(DV[0]["IsCreate"]);
+                ViewState["Add"] = Convert.ToBoolean(DV[0]["IsCreate"]);
                 ViewState["View"] = Convert.ToBoolean(DV[0]["IsView"]);
             }
             else
@@ -193,6 +235,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                     //add new row to DataTable   
                     dtCurrentTable.Rows.Add(drCurrentRow);
+                    
                     //Store the current data to ViewState for future reference   
                     ViewState["CurrentTable"] = dtCurrentTable;
 
@@ -212,10 +255,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                         TextBox amount = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtInstallmentAmount");
                         dtCurrentTable.Rows[i]["InstallmentAmount"] = amount.Text;
-
-                        // payment date
-                        TextBox paymentDate = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtPaymentDate");
-                        dtCurrentTable.Rows[i]["ActualPaymentDate"] = DateTime.Parse(paymentDate.Text.Trim(), objCultureInfo);
                     }
                     //Rebind the Grid with the current data to reflect changes   
                     gvPropertyInstallments.DataSource = dtCurrentTable;
@@ -246,7 +285,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         TextBox percentage = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtInstallmentPercent");
                         DropDownList ddlPaymentMode = (gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentMode") as DropDownList);
                         TextBox amount = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtInstallmentAmount");
-                        TextBox paymentDate = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtPaymentDate");
 
                         if (i < dt.Rows.Count - 1)
                         {
@@ -254,7 +292,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             percentage.Text = dt.Rows[i]["InstallmentInPercentage"].ToString();
                             ddlPaymentMode.SelectedValue = dt.Rows[i]["MOPTerm"].ToString();
                             amount.Text = dt.Rows[i]["InstallmentAmount"].ToString();
-                            paymentDate.Text = dt.Rows[i]["ActualPaymentDate"].ToString();
                         }
                         rowIndex++;
                     }
@@ -349,7 +386,13 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         protected void gvPropertyInstallments_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("DELETEDATA"))
+            if (e.CommandName.Equals("EditData"))
+            {
+                this.PropertyID = new Guid(Convert.ToString(e.CommandArgument));
+                LoadAccess();
+                LoadData();
+            }
+            else if (e.CommandName.Equals("DELETEDATA"))
             {
                 DocumentsBLL.Delete(new Guid(Convert.ToString(e.CommandArgument)));
                 this.PropertyID = this.PropertyID;
@@ -360,6 +403,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         private void LoadPropertyInstallmentGrid()
         {
+            Guid? PropertyID;
+            if (this.PropertyID != Guid.Empty)
+                PropertyID = this.PropertyID;
+            else
+                PropertyID = null;
 
             DataTable dt = new DataTable();
             DataRow dr = null;
@@ -377,7 +425,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             dt.Columns.Add(new DataColumn("InstallmentInPercentage", typeof(string))); //installment percentage
             dt.Columns.Add(new DataColumn("MOPTerm", typeof(string))); // Payment mode
             dt.Columns.Add(new DataColumn("InstallmentAmount", typeof(string))); // Installment amount
-            dt.Columns.Add(new DataColumn("ActualPaymentDate", typeof(string))); //Payment date
 
             ViewState["CurrentTable"] = dt;
             dsPropertyInstallmentDocumentList.Tables.Clear();
@@ -405,8 +452,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     PurchaseSchedule objPurchaseSchedule = new PurchaseSchedule();
 
                     // property name
-                    if (ddlPropertyName.SelectedValue != Guid.Empty.ToString())
-                        objProperty.PropertyID = new Guid(ddlPropertyName.SelectedValue);
+                    //if (ddlPropertyName.SelectedValue != Guid.Empty.ToString())
+                    //    objProperty.PropertyID = new Guid(ddlPropertyName.SelectedValue);
+                    // property id
+                    objProperty.PropertyID = new Guid(ddlPropertyName.SelectedValue);
 
                     // purchase option
                     if (ddlPurchaseOption.SelectedValue != Guid.Empty.ToString())
@@ -432,10 +481,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     else
                         objProperty.TotalCost = null;
 
-                    // property id for purchase schedule
-                    objPurchaseSchedule.PropertyID = objProperty.PropertyID;
-
                     PropertyBLL.UpdatePropertyPurchase(objProperty);
+
+                    // property id for purchase schedule
+                    objPurchaseSchedule.PropertyID = new Guid(ddlPropertyName.SelectedValue);
 
                     for (int i = 0; i < gvPropertyInstallments.Rows.Count; i++)
                     {
@@ -445,6 +494,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         //    objPurchaseSchedule.PurchaseOptionID = new Guid(ddlPaymentPeriod.SelectedValue);
                         //else
                         //    objPurchaseSchedule.PurchaseOptionID = null;
+
+                        // Payment period
+                        DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");
+                        objPurchaseSchedule.InstallmentTypeTerm = ddlPaymentPeriod.SelectedItem.Text;
 
                         // Installment Percentage
                         TextBox txtInstallmentPercent = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtInstallmentPercent");
@@ -458,11 +511,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         TextBox txtAmount = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtInstallmentAmount");
                         objPurchaseSchedule.InstallmentAmount = Convert.ToDecimal(txtAmount.Text);
 
-                        //DateTime txtPaymentDate = DateTime.Parse(gvPropertyInstallments.Rows[i].FindControl("txtPaymentDate"));
-
                         PurchaseScheduleBLL.Save(objPurchaseSchedule);
                     }
-
+                    LoadData();
+                    LoadPropertyInstallmentGrid();
+                    IsMessage = true;
+                    lblErrorMessage.Text = global::Resources.IRMSMsg.UpdateMsg.ToString().Trim();
                 }
                 catch (Exception ex)
                 {
@@ -496,17 +550,22 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// </summary>
         /// <param name="sender">sender as Object</param>
         /// <param name="e">e as EventArgs</param>
-        protected void btnNew_Click(object sender, EventArgs e)
+        protected void btnAdd_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Response.Redirect("~/Applications/SetUp/ConfigurationPurchaseScheduleInfo.aspx");
-            }
-            catch (Exception ex)
-            {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
-                MessageBox.Show(ex.Message.ToString());
-            }
+            Session.Remove("PropertyID");
+            ClearControl();
+            btnSave.Visible = Convert.ToBoolean(ViewState["Add"]);
+        }
+
+        private void ClearControl()
+        {
+            BindDDL();
+            BindPurchaseOption();
+            txtPrice.Text = "";
+            txtPurchaseArea.Text = "";
+            txtTotalCost.Text = "";
+            this.PropertyID = Guid.Empty;
+            LoadPropertyInstallmentGrid();
         }
     }
 }

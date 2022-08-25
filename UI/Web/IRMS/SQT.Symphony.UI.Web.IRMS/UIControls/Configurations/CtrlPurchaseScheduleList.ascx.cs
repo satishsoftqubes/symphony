@@ -183,7 +183,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 if (e.CommandName.Equals("EDITDATA"))
                 {
-                    Session.Add("PurchaseSchedule", new Guid(Convert.ToString(e.CommandArgument)));
+                    Session.Add("PropertyID", new Guid(Convert.ToString(e.CommandArgument)));
                     Response.Redirect("~/Applications/SetUp/ConfigurationPurchaseScheduleInfo.aspx");
                 }
                 else if (e.CommandName.Equals("DELETEDATA"))

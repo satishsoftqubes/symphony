@@ -14,7 +14,6 @@ AS
 BEGIN
 UPDATE [dbo].[mst_Property]
 SET
-	[PropertyID] = @PropertyID,		
 	[PurchaseOptionID] = @PurchaseOptionID,
 	[Price] = @Price,
 	[PurchaseArea] = @PurchaseArea,

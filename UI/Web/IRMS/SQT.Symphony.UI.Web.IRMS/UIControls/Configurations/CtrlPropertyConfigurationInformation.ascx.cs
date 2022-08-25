@@ -379,6 +379,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 BindPurchaseOption();
                 BindPaymentTerm();
                 //BindAddressType();
+                hdnPrice.Value = Convert.ToString(ds.Tables[0].Rows[0]["Price"]);
+                hdnPurchaseArea.Value = Convert.ToString(ds.Tables[0].Rows[0]["PurchaseArea"]);
+                hdnTotalCost.Value = Convert.ToString(ds.Tables[0].Rows[0]["TotalCost"]);
                 txtPropertyName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]);
                 //txtPropertyDisplayName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyDisplayName"]);
                 txtPropertyCode.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyCode"]);
@@ -457,6 +460,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// </summary>
         private void LoadLandIssueGrid()
         {
+            Guid? PropertyID;
+            if (this.PropertyID != Guid.Empty)
+                PropertyID = this.PropertyID;
+            else
+                PropertyID = null;
 
             DataTable dt = new DataTable();
             DataRow dr = null;
@@ -681,9 +689,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     {
                         Property objUpdProperty = new Property();
                         Property objOldPropertyData = new Property();
-
+                        
                         objUpdProperty = PropertyBLL.GetByPrimaryKey(this.PropertyID);
                         objOldPropertyData = PropertyBLL.GetByPrimaryKey(this.PropertyID);
+                        objUpdProperty.Price = Convert.ToDecimal(hdnPrice.Value);
+                        objUpdProperty.PurchaseArea = Convert.ToDecimal(hdnPurchaseArea.Value);
+                        objUpdProperty.TotalCost = Convert.ToDecimal(hdnTotalCost.Value);
 
                         objUpdProperty.PropertyName = txtPropertyName.Text.Trim();
                         //objUpdProperty.PropertyDisplayName = txtPropertyDisplayName.Text.Trim();
