@@ -76,6 +76,13 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             return ds;
         }
 
+        public static DataSet GetPurchaseSchedulePropertyInstallmentData(Guid? PropertyID, Guid? CompanyID, string PropertyName)
+        {
+            PurchaseScheduleDAL _dataObject = new PurchaseScheduleDAL();
+            DataSet ds = _dataObject.SelectPurchaseSchedulePropertyInstallmentData(PropertyID, CompanyID, PropertyName);
+            return ds;
+        }
+
         #endregion
     }
 }

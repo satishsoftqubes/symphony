@@ -45,24 +45,6 @@
         return false;
     }
 
-    //function fnCalculateTotalCost() {
-    //    var price = document.getElementById("ctl00_ContentPlaceHolder1_CtrlPropertyConfigurationInformation1_txtPrice").value;
-    //    var purchaseArea = document.getElementById("ctl00_ContentPlaceHolder1_CtrlPropertyConfigurationInformation1_txtPurchaseArea").value;
-    //    var totalCost = document.getElementById('ctl00_ContentPlaceHolder1_CtrlPropertyConfigurationInformation1_txtTotalCost');
-    //    if (price != "" && purchaseArea != "") {
-    //        var totalCostCalc = parseFloat(price * purchaseArea);
-    //        if (!isNaN(totalCostCalc)) {
-    //            totalCost.value = totalCostCalc;
-    //        }
-    //        else {
-    //            totalCost.value = null;
-    //        }
-    //    }
-    //    else {
-    //        totalCost.value = null;
-    //    }
-    //}
-
 </script>
 <style type="text/css">
     #progressBackgroundFilter {

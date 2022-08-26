@@ -125,6 +125,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 BindPurchaseOption();
 
                 DataSet ds = new DataSet();
+                DataSet dsPropertyInstallment = new DataSet();
+                DataTable dt = new DataTable();
+
                 ds = PurchaseScheduleBLL.GetPurchaseScheduleData(this.PropertyID, this.CompanyID, null);
                 if (ds.Tables[0].Rows.Count != 0)
                 {
@@ -133,8 +136,33 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     txtPrice.Text = Convert.ToString(ds.Tables[0].Rows[0]["Price"]);
                     txtPurchaseArea.Text = Convert.ToString(ds.Tables[0].Rows[0]["PurchaseArea"]);
                     txtTotalCost.Text = Convert.ToString(ds.Tables[0].Rows[0]["TotalCost"]);
+
+                    // Bind property installment grid
+                    dsPropertyInstallment = PurchaseScheduleBLL.GetPurchaseSchedulePropertyInstallmentData(this.PropertyID, this.CompanyID, null);
+                    dt = dsPropertyInstallment.Tables[0];
+                    
+                    dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
+
+                    ViewState["CurrentTable"] = dt;
+                    dsPropertyInstallment.Tables.Clear();
+
+                    // DataTable to DataSet
+                    dsPropertyInstallment.Tables.Add(dt);
+                    gvPropertyInstallments.DataSource = dsPropertyInstallment;
+                    gvPropertyInstallments.DataBind();
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        DropDownList ddlPaymentPeriod = (gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentPeriod") as DropDownList);
+                        ddlPaymentPeriod.SelectedValue = dsPropertyInstallment.Tables[0].Rows[i]["InstallmentTypeTerm"].ToString();
+                        //dt.Rows[i]["InstallmentTypeTerm"] = ddlPaymentPeriod.Text;
+
+                    }
+
+
+
                 }
-                
+
             }
             catch (Exception ex)
             {

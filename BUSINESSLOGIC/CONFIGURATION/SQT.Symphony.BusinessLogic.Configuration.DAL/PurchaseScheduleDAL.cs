@@ -112,6 +112,38 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return obj;
         }
 
+        public DataSet SelectPurchaseSchedulePropertyInstallmentData(Guid? PropertyID, Guid? CompanyID, string PropertyName)
+        {
+            DataSet obj = null;
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    obj = StoredProcedure(MasterConstant.PurchaseschedulePropertyInstallmentGrid_SelectData)
+                                            .AddParameter("@PropertyID", PropertyID)
+                                            .AddParameter("@CompanyID", CompanyID)
+                                            .AddParameter("@PropertyName", PropertyName)
+                                            .WithTransaction(dbtr)
+                                            .FetchDataSet();
+                }
+            }
+            catch (Exception ex)
+            {
+                ////Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+
         #endregion
     }
 }
