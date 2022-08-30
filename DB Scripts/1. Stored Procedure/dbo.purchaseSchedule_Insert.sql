@@ -18,8 +18,6 @@ CREATE PROCEDURE dbo.purchaseSchedule_Insert
 AS
 BEGIN
 
---DELETE FROM propertypurchase_schedule WHERE PropertyID = @PropertyID
-
 INSERT [dbo].[propertypurchase_schedule]
 (
 	[PurchaseScheduleID], 

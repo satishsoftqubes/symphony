@@ -3,6 +3,15 @@
 
 <%@ Register Src="../../MsgBox/MsgBox.ascx" TagName="MsgBox" TagPrefix="uc1" %>
 <script language="javascript" type="text/javascript">
+
+    function fnConfirmDelete(id) {
+        debugger;
+        document.getElementById('errormessage').style.display = "block";
+        document.getElementById('<%= hdnPropertyData.ClientID %>').value = id;
+        $find('DeletePropertyData').show();
+        return false;
+    }
+
     function fnDisplayCatchErrorMessage() {
         document.getElementById('errormessage').style.display = "block";
     }
@@ -36,6 +45,11 @@
         background-color: #fff;
         border: solid 1px #efefef;
     }
+
+    /*.mod_background
+    {
+	    background:url(../images/bg_modal1.png);
+    }*/
 </style>
 <asp:UpdatePanel ID="updPurchaseScheduleList" runat="server">
     <ContentTemplate>
@@ -115,14 +129,14 @@
                                                     CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <%--<asp:TemplateField HeaderText="Delete" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
+                                        <asp:TemplateField HeaderText="Delete" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <ItemTemplate>
                                                 <asp:ImageButton ID="btnDelete" runat="server" ToolTip="Delete" ImageUrl="~/images/delete_icon.png"
                                                     Style="border: 0px; vertical-align: middle; margin-top: 1px;" CommandName="DELETEDATA"
                                                     CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
                                             </ItemTemplate>
-                                        </asp:TemplateField>--%>
+                                        </asp:TemplateField>
                                     </Columns>
                                     <EmptyDataTemplate>
                                         <div class="pagecontent_info">
@@ -144,8 +158,41 @@
                 </td>
             </tr>
         </table>
-        <div class="clear_divider">
-        </div>
+
+        <!-- Delete Popup Box-->
+        <ajx:ModalPopupExtender ID="DeletePropertyData" runat="server" TargetControlID="hdnPropertyData"
+            PopupControlID="pnlPropertyData" BackgroundCssClass="mod_background" CancelControlID="btnNo">
+        </ajx:ModalPopupExtender>
+        <asp:HiddenField ID="hdnPropertyData" runat="server" />
+        <asp:Panel ID="pnlPropertyData" runat="server" Height="350px" Width="325px" style="display:none;">
+            <div class="box_col1">
+                <div class="box_head">
+                    <span>
+                        <asp:Literal ID="litPropertyDataHeader" runat="server"></asp:Literal></span></div>
+                <div class="clear">
+                </div>
+                <div class="box_form">
+                    <table cellpadding="2" cellspacing="2" width="100%">
+                        <tr>
+                            <td align="center" style="padding-bottom: 15px;">
+                                <asp:Literal ID="litPropertyDataMsg" runat="server"></asp:Literal>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <asp:Button ID="btnYes" runat="server" Style="display: inline; padding-right: 10px;"
+                                   OnClick="btnYes_Click" OnClientClick="fnDisplayCatchErrorMessage();" />
+                                <asp:Button ID="btnNo" runat="server" Style="display: inline;" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </asp:Panel>
+        <!-- End Delete Popup Box-->
+
     </ContentTemplate>
 </asp:UpdatePanel>
 

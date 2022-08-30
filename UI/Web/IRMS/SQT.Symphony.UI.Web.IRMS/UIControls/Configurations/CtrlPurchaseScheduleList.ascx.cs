@@ -68,6 +68,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 if (RoleRightJoinBLL.GetAccessString("ConfigurationPropertyInfo.aspx", new Guid(Convert.ToString(Session["UserID"]))) == "NO")
                     Response.Redirect("~/Applications/AccessDenied.aspx");
                 LoadAccess();
+                SetPageLables();
 
                 if (!IsPostBack)
                 {
@@ -121,6 +122,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     else if (Convert.ToBoolean(ViewState["View"]) == true)
                         e.Row.Cells[1].Text = "View";
                     e.Row.Cells[1].Visible = Convert.ToBoolean(ViewState["View"]);
+                    e.Row.Cells[2].Visible = Convert.ToBoolean(ViewState["Delete"]);
                     //e.Row.Cells[2].Visible = Convert.ToBoolean(ViewState["Delete"]);
                     if (Session["UserType"].ToString().ToUpper().Equals("SALES") || Session["UserType"].ToString().ToUpper().Equals("CHANNELPARTNER") || Session["UserType"].ToString().ToUpper().Equals("INVESTOR"))
                     {
@@ -133,6 +135,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 {
                     ImageButton EditImg = (ImageButton)e.Row.FindControl("btnEdit");
                     ImageButton DelImg = (ImageButton)e.Row.FindControl("btnDelete");
+                    ((ImageButton)e.Row.FindControl("btnDelete")).OnClientClick = string.Format("return fnConfirmDelete('{0}');", Convert.ToString(DataBinder.Eval(e.Row.DataItem, "PropertyID")));
+
 
                     //Label lbl = (Label)e.Row.FindControl("lblCarpetArea");
                     //lbl.Text = lbl.Text.Substring(0, lbl.Text.Length - 3).ToString();
@@ -188,14 +192,52 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 }
                 else if (e.CommandName.Equals("DELETEDATA"))
                 {
-                    //Label1.Text = global::Resources.IRMSMsg.DeleteWarMsg.ToString().Trim();
-                    //this.PropertyID = new Guid(Convert.ToString(e.CommandArgument));
-                    //msgbx.Show();
+                    this.PropertyID = new Guid(Convert.ToString(e.CommandArgument));
+                    DeletePropertyData.Show();                   
                 }
             }
             catch (Exception ex)
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void SetPageLables()
+        {
+            btnYes.Text = "Yes";
+            btnNo.Text = "Cancel";
+            litPropertyDataMsg.Text = "Sure you want to delete?";
+        }
+
+        /// <summary>
+        /// Yes Button Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToString(hdnPropertyData.Value) != string.Empty)
+                {
+                    //SQT.Symphony.BusinessLogic.Configuration.DTO.Property objDelete = PurchaseScheduleBLL.GetPurchaseScheduleData(new Guid(Convert.ToString(hdnPropertyData.Value)));
+                    PurchaseScheduleBLL.Delete(new Guid(Convert.ToString(hdnPropertyData.Value)));
+                    //ActionLogBLL.SaveConfigurationActionLog(clsSession.UserID, "Delete", objDelete.ToString(), null, "mst_Property");
+                    IsMessage = true;
+                    lblErrorMessage.Text = "Record deleted successfully.";
+                    DeletePropertyData.Hide();
+                    BindGrid();
+                    //if (new Guid(Convert.ToString(hdnPropertyData.Value)) == clsSession.PropertyID)
+                    //{
+                    //    clsSession.PropertyID = Guid.Empty;
+                    //    BindPropertyName();
+                    //}
+                }
+                //ClearControl();
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message.ToString());
             }
         }
@@ -223,14 +265,14 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         private void BindDDL()
         {
 
-            string PropertyNameQuery = "Select Distinct(PropertyName) From mst_Property Where IsActive = 1";
+            string PropertyNameQuery = "Select Distinct(PropertyName), PropertyID From mst_Property Where IsActive = 1";
             DataSet Dst = InvestorBLL.GetSearchData(PropertyNameQuery);
             DataView Dv = new DataView(Dst.Tables[0]);
             if (Dv.Count > 0)
             {
                 txtPropertyName.DataSource = Dv;
                 txtPropertyName.DataTextField = "PropertyName";
-                txtPropertyName.DataValueField = "PropertyName";
+                txtPropertyName.DataValueField = "PropertyID";
                 txtPropertyName.DataBind();
                 txtPropertyName.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
             }
@@ -241,14 +283,15 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         private void BindGrid()
         {
             string PropertyName = null;
-            string Location = null;
-            Guid? PropertyType = null;
+            Guid PropertyID = new Guid();
 
             if (!(txtPropertyName.SelectedValue.Equals(Guid.Empty.ToString())))
-                PropertyName = Convert.ToString(txtPropertyName.SelectedValue);
+            {
+                PropertyName = Convert.ToString(txtPropertyName.SelectedItem.Text);
+                PropertyID = new Guid(txtPropertyName.SelectedValue);
+            }
 
-            //DataSet ds = PropertyBLL.GetPropertyData(null, this.CompanyID, PropertyName, Location, PropertyType);
-            DataSet ds = PurchaseScheduleBLL.GetPurchaseScheduleData(null, this.CompanyID, PropertyName);
+            DataSet ds = PurchaseScheduleBLL.GetPropertyListForPurchaseSchedule(PropertyID, this.CompanyID, PropertyName);
             DataView dv = new DataView(ds.Tables[0]);
             dv.Sort = "PropertyName Asc";
             grdPurchaseScheduleList.DataSource = dv;

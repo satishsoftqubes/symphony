@@ -80,6 +80,99 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return true;
         }
 
+        public bool Update(PurchaseSchedule dtoObject)
+        {
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    if (dtoObject == null)
+                        throw (new ParameterNullException("Object can not be null"));
+
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+                    parameterList.Add(dtoObject);
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    StoredProcedure(MasterConstant.PurchaseScheduleUpdate)
+                            .AddParameter("@PurchaseScheduleID", dtoObject.PurchaseScheduleID)
+                            .AddParameter("@PropertyID", dtoObject.PropertyID)
+                            .AddParameter("@InstallmentTypeTerm", dtoObject.InstallmentTypeTerm)
+                            .AddParameter("@InstallmentAmount", dtoObject.InstallmentAmount)
+                            .AddParameter("@InstallmentInPercentage", dtoObject.InstallmentInPercentage)
+                            .AddParameter("@StatusTerm", dtoObject.StatusTerm)
+                            .AddParameter("@MOPTerm", dtoObject.MOPTerm)
+
+                        .WithTransaction(dbtr)
+                        .Execute();
+                }
+            }
+            catch (Exception ex)
+            {
+                //Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return true;
+        }
+
+        public bool Delete(Guid Keys)
+        {
+            try
+            {
+                StoredProcedure(MasterConstant.PurchaseScheduleDeleteByPrimaryKey)
+                    .AddParameter("@PropertyID"
+, Keys)
+                    .WithTransaction(dbtr)
+                    .Execute();
+            }
+            catch (Exception ex)
+            {
+                //Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return true;
+        }
+
+        public DataSet GetPropertyListForPurchaseSchedule(Guid? PropertyID, Guid? CompanyID, string PropertyName)
+        {
+            DataSet obj = null;
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    obj = StoredProcedure(MasterConstant.PropertyListForPurchaseSchedule)
+                                            .AddParameter("@PropertyID", PropertyID)
+                                            .AddParameter("@CompanyID", CompanyID)
+                                            .AddParameter("@PropertyName", PropertyName)
+                                            .WithTransaction(dbtr)
+                                            .FetchDataSet();
+                }
+            }
+            catch (Exception ex)
+            {
+                ////Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+
         public DataSet SelectPurchaseScheduleData(Guid? PropertyID, Guid? CompanyID, string PropertyName)
         {
             DataSet obj = null;

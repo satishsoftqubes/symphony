@@ -229,6 +229,13 @@
                             OnRowDataBound="gvPropertyInstallments_RowDataBound" OnRowCommand="gvPropertyInstallments_RowCommand"
                             OnRowCreated="gvPropertyInstallmentRowCreated">
                             <Columns>
+                                <%--<asp:TemplateField>
+                                    <ItemTemplate>
+                                        <asp:HiddenField ID="hdnPurchaseScheduleID" runat="server" 
+                                            Value='<%# Eval("PurchaseScheduleID") %>' />
+                                    </ItemTemplate>
+                                </asp:TemplateField>--%>
+                                <%--<asp:BoundField DataField="PurchaseScheduleID"/>--%>
                                 <asp:BoundField DataField="RowNumber" HeaderText="Installment" />
                                 <asp:TemplateField HeaderText="Payment Period">
                                     <ItemTemplate>
@@ -267,9 +274,9 @@
                                 <asp:TemplateField HeaderText="Amount">
                                     <ItemTemplate>
                                         <div style="justify-content: space-around; display: flex;">
-                                           <%-- <span class="erroralert">
+                                            <span class="erroralert">
                                                 <asp:RequiredFieldValidator ID="txtInstallmentAmountName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtInstallmentAmount" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>--%>
+                                            </span>
                                             <asp:TextBox onKeyPress="return disableAmount();" ID="txtInstallmentAmount" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentAmount")%>' Style="background: #dcdddf; margin-left: 5px;"></asp:TextBox>
                                         </div>
                                     </ItemTemplate>
