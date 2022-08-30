@@ -290,8 +290,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 PropertyName = Convert.ToString(txtPropertyName.SelectedItem.Text);
                 PropertyID = new Guid(txtPropertyName.SelectedValue);
             }
+            else
+            {
+                PropertyID = Guid.Empty;
+            }
 
-            DataSet ds = PurchaseScheduleBLL.GetPropertyListForPurchaseSchedule(PropertyID, this.CompanyID, PropertyName);
+            DataSet ds = PurchaseScheduleBLL.GetPropertyListForPurchaseSchedule(null, this.CompanyID, PropertyName);
             DataView dv = new DataView(ds.Tables[0]);
             dv.Sort = "PropertyName Asc";
             grdPurchaseScheduleList.DataSource = dv;

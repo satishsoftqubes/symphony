@@ -229,13 +229,11 @@
                             OnRowDataBound="gvPropertyInstallments_RowDataBound" OnRowCommand="gvPropertyInstallments_RowCommand"
                             OnRowCreated="gvPropertyInstallmentRowCreated">
                             <Columns>
-                                <%--<asp:TemplateField>
+                                <asp:TemplateField>
                                     <ItemTemplate>
-                                        <asp:HiddenField ID="hdnPurchaseScheduleID" runat="server" 
-                                            Value='<%# Eval("PurchaseScheduleID") %>' />
+                                        <asp:HiddenField ID="hdnPurchaseScheduleID" runat="server" />
                                     </ItemTemplate>
-                                </asp:TemplateField>--%>
-                                <%--<asp:BoundField DataField="PurchaseScheduleID"/>--%>
+                                </asp:TemplateField>
                                 <asp:BoundField DataField="RowNumber" HeaderText="Installment" />
                                 <asp:TemplateField HeaderText="Payment Period">
                                     <ItemTemplate>
