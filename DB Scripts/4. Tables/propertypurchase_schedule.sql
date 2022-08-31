@@ -1,7 +1,7 @@
 CREATE TABLE dbo.propertypurchase_schedule
 (
-	[PurchaseScheduleID]		CHAR(38)			NOT NULL PRIMARY KEY,
-	[PropertyID]				CHAR(38)			NULL DEFAULT NULL,
+	[PurchaseScheduleID]		UNIQUEIDENTIFIER	NOT NULL PRIMARY KEY,
+	[PropertyID]				UNIQUEIDENTIFIER	NULL DEFAULT NULL,
 	[InstallmentTypeTerm]  		VARCHAR(39)			NULL DEFAULT NULL,	
 	[InstallmentAmount] 		DECIMAL(18,2)		NULL DEFAULT NULL,	
 	[InstallmentInPercentage] 	DECIMAL(5,2)		NULL DEFAULT NULL,	

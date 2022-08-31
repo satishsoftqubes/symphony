@@ -74,7 +74,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                     if (Session["PropertyID"] != null)
                     {
-                        ddlPropertyName.Enabled = false;
+                        //ddlPropertyName.Enabled = false;
                         this.PropertyID = new Guid(Convert.ToString(Session["PropertyID"]));
                         LoadData();
                         Session["PropertyID"] = null;
@@ -84,10 +84,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                          LoadDefaultValue();
                     }
                 }
-                else
-                {
-                    ddlPropertyName.Enabled = true;
-                }
+                //else
+                //{
+                //    ddlPropertyName.Enabled = true;
+                //}
                 
                 if (Session["UserType"].ToString().ToUpper().Equals("SALES") || Session["UserType"].ToString().ToUpper().Equals("CHANNELPARTNER"))
                 {
@@ -174,9 +174,20 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         private void BindDDL()
         {
-            string PropertyNameQuery = "Select Distinct(PropertyName), PropertyID From mst_Property Where IsActive = 1";
+            string PropertyNameQuery = string.Empty;
+            if (Session["PropertyID"] != null)
+            {
+                this.PropertyID = new Guid(Session["PropertyID"].ToString());
+                PropertyNameQuery = "Select Distinct(PropertyName), PropertyID From mst_Property Where IsActive = 1 AND PropertyID = '" + this.PropertyID + "'";
+            }
+            else
+            {
+                PropertyNameQuery = "Select Distinct(PropertyName), PropertyID From mst_Property Where IsActive = 1";
+            }
+
             DataSet Dst = InvestorBLL.GetSearchData(PropertyNameQuery);
             DataView Dv = new DataView(Dst.Tables[0]);
+            Dv = new DataView(Dst.Tables[0]);
             if (Dv.Count > 0)
             {
                 ddlPropertyName.DataSource = Dv;

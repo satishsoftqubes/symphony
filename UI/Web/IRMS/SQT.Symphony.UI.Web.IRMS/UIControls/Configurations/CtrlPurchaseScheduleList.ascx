@@ -55,35 +55,40 @@
     <ContentTemplate>
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td class="content" style="padding-left: 0px;">
+                <td class="content" style="padding-left: 0px; width: 66.66%">
                     <table width="100%" cellspacing="0" cellpadding="0" class="box">
                         <tr>
                             <td class="boxtopcenter">PURCHASE SCHEDULE
                             </td>
                         </tr>
                         <tr>
+                            <td class="boxleft">
+                                &nbsp;
+                            </td>
                             <td>
-                                <table cellpadding="2" cellspacing="0" border="0" width="100%">
-                                    <tr>
-                                        <td>
-                                            <div style="height: 26px;">
-                                                <%if (IsMessage)
-                                                    { %>
-                                                <div class="ResetSuccessfully">
-                                                    <div style="float: left; padding-top: 7px; width: 25px; height: 24px; margin-right: 10px;">
-                                                        <img src="../../images/success.png" />
+                                <div class="box_form">
+                                    <table cellpadding="2" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td>
+                                                <div style="height: 26px;">
+                                                    <%if (IsMessage)
+                                                        { %>
+                                                    <div class="ResetSuccessfully">
+                                                        <div style="float: left; padding-top: 7px; width: 25px; height: 24px; margin-right: 10px;">
+                                                            <img src="../../images/success.png" />
+                                                        </div>
+                                                        <div>
+                                                            <asp:Label ID="lblErrorMessage" runat="server"></asp:Label>
+                                                        </div>
+                                                        <div style="height: 10px;">
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                        <asp:Label ID="lblErrorMessage" runat="server"></asp:Label>
-                                                    </div>
-                                                    <div style="height: 10px;">
-                                                    </div>
+                                                    <%}%>
                                                 </div>
-                                                <%}%>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </td>
                         </tr>
                         <tr>
