@@ -182,7 +182,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             }
             else
             {
-                PropertyNameQuery = "Select Distinct(PropertyName), PropertyID From mst_Property Where IsActive = 1";
+                PropertyNameQuery = "Select Distinct(PropertyName), p.PropertyID From mst_Property p inner join propertypurchase_schedule ps on ps.PropertyID != p.PropertyID Where p.IsActive = 1";
             }
 
             DataSet Dst = InvestorBLL.GetSearchData(PropertyNameQuery);
@@ -194,7 +194,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 ddlPropertyName.DataTextField = "PropertyName";
                 ddlPropertyName.DataValueField = "PropertyID";
                 ddlPropertyName.DataBind();
-                ddlPropertyName.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
+                if (Session["PropertyID"] == null)
+                    ddlPropertyName.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
             }
             else
                 ddlPropertyName.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
