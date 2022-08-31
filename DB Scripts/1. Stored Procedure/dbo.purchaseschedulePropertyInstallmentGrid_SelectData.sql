@@ -15,7 +15,7 @@ BEGIN
 			P1.TermID 'InstallmentTypeTermID', P2.TermID 'MOPTermID'
 		FROM propertypurchase_schedule PS
 		INNER JOIN mst_property P ON P.PropertyID = PS.PropertyID
-		LEFT JOIN mst_ProjectTerm P1 on P1.Term = PS.InstallmentTypeTerm  
+		LEFT JOIN mst_ProjectTerm P1 on P1.Term = PS.InstallmentTypeTerm and P1.Category = 'PAYMENTPERIOD' 
 		LEFT JOIN mst_ProjectTerm P2 on P2.Term = PS.MOPTerm  
 	WHERE   
 		ISNULL(P.CompanyID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627') = ISNULL(@CompanyID, ISNULL(P.CompanyID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627')) and   

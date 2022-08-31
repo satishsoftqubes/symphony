@@ -146,9 +146,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         {
                             AddNewRowToGrid();
                         }
-
                         HiddenField hdnPurchaseScheduleID = (HiddenField)gvPropertyInstallments.Rows[i].Cells[1].FindControl("hdnPurchaseScheduleID");
                         hdnPurchaseScheduleID.Value = Convert.ToString(dsPropertyInstallment.Tables[0].Rows[i]["PurchaseScheduleID"]).Trim();
+
+                        //dsPropertyInstallment.Tables[0].Rows[0]["RowNumber"] = "Installment 1";
 
                         DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentPeriod");
                         ddlPaymentPeriod.Text = Convert.ToString(dsPropertyInstallment.Tables[0].Rows[i]["InstallmentTypeTermID"]);
@@ -542,8 +543,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             IsMessage = true;
                             lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();
 
-                            Response.Redirect("~/Applications/SetUp/PurchaseScheduleList.aspx");
+                            
                         }
+                        Response.Redirect("~/Applications/SetUp/PurchaseScheduleList.aspx");
                     }
                     else
                     {
@@ -575,6 +577,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             }
                             else
                             {
+                                objPurchaseSchedule.PurchaseScheduleID = new Guid(h1.Value);
                                 PurchaseScheduleBLL.Update(objPurchaseSchedule);
                                 IsMessage = true;
                                 lblErrorMessage.Text = global::Resources.IRMSMsg.UpdateMsg.ToString().Trim();
