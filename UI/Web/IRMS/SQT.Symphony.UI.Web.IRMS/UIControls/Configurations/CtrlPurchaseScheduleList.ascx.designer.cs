@@ -87,67 +87,76 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         protected global::System.Web.UI.WebControls.Button btnAddPurchaseSchedule;
 
         /// <summary>
-        /// DeletePropertyData control.
+        /// msgbx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender DeletePropertyData;
+        protected global::AjaxControlToolkit.ModalPopupExtender msgbx;
 
         /// <summary>
-        /// hdnPropertyData control.
+        /// hfMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnPropertyData;
+        protected global::System.Web.UI.WebControls.HiddenField hfMessage;
 
         /// <summary>
-        /// pnlPropertyData control.
+        /// Panel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlPropertyData;
+        protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
-        /// litPropertyDataHeader control.
+        /// HyperLink2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litPropertyDataHeader;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
 
         /// <summary>
-        /// litPropertyDataMsg control.
+        /// Image2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litPropertyDataMsg;
+        protected global::System.Web.UI.WebControls.Image Image2;
 
         /// <summary>
-        /// btnYes control.
+        /// deleteText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnYes;
+        protected global::System.Web.UI.WebControls.Label deleteText;
 
         /// <summary>
-        /// btnNo control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNo;
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
         /// MessageBox control.

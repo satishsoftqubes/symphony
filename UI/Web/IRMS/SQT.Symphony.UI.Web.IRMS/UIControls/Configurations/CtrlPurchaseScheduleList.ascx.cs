@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using SQT.Symphony.BusinessLogic.Configuration.BLL;
 using SQT.Symphony.BusinessLogic.Configuration.DTO;
@@ -68,7 +63,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 if (RoleRightJoinBLL.GetAccessString("ConfigurationPropertyInfo.aspx", new Guid(Convert.ToString(Session["UserID"]))) == "NO")
                     Response.Redirect("~/Applications/AccessDenied.aspx");
                 LoadAccess();
-                SetPageLables();
 
                 if (!IsPostBack)
                 {
@@ -123,11 +117,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         e.Row.Cells[1].Text = "View";
                     e.Row.Cells[1].Visible = Convert.ToBoolean(ViewState["View"]);
                     e.Row.Cells[2].Visible = Convert.ToBoolean(ViewState["Delete"]);
-                    //e.Row.Cells[2].Visible = Convert.ToBoolean(ViewState["Delete"]);
                     if (Session["UserType"].ToString().ToUpper().Equals("SALES") || Session["UserType"].ToString().ToUpper().Equals("CHANNELPARTNER") || Session["UserType"].ToString().ToUpper().Equals("INVESTOR"))
                     {
                         e.Row.Cells[1].Visible = false;
-                        //e.Row.Cells[2].Visible = false;
                     }
                 }
 
@@ -135,11 +127,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 {
                     ImageButton EditImg = (ImageButton)e.Row.FindControl("btnEdit");
                     ImageButton DelImg = (ImageButton)e.Row.FindControl("btnDelete");
-                    ((ImageButton)e.Row.FindControl("btnDelete")).OnClientClick = string.Format("return fnConfirmDelete('{0}');", Convert.ToString(DataBinder.Eval(e.Row.DataItem, "PropertyID")));
-
-
-                    //Label lbl = (Label)e.Row.FindControl("lblCarpetArea");
-                    //lbl.Text = lbl.Text.Substring(0, lbl.Text.Length - 3).ToString();
 
                     if (Convert.ToBoolean(ViewState["Edit"]) == true)
                         EditImg.ToolTip = "View/Edit";
@@ -147,15 +134,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         EditImg.ToolTip = "View";
 
                     EditImg.Visible = Convert.ToBoolean(ViewState["View"]);
-                    //DelImg.Visible = Convert.ToBoolean(ViewState["Delete"]);
 
                     e.Row.Cells[1].Visible = Convert.ToBoolean(ViewState["View"]);
-                    //e.Row.Cells[2].Visible = Convert.ToBoolean(ViewState["Delete"]);
 
                 if (Session["UserType"].ToString().ToUpper().Equals("SALES") || Session["UserType"].ToString().ToUpper().Equals("CHANNELPARTNER") || Session["UserType"].ToString().ToUpper().Equals("INVESTOR"))
                 {
                     e.Row.Cells[1].Visible = false;
-                    //e.Row.Cells[2].Visible = false;
                 }
 
                 }
@@ -192,8 +176,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 }
                 else if (e.CommandName.Equals("DELETEDATA"))
                 {
+                    deleteText.Text = global::Resources.IRMSMsg.DeleteWarMsg.ToString().Trim();
                     this.PropertyID = new Guid(Convert.ToString(e.CommandArgument));
-                    DeletePropertyData.Show();                   
+                    msgbx.Show();
                 }
             }
             catch (Exception ex)
@@ -201,13 +186,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
                 MessageBox.Show(ex.Message.ToString());
             }
-        }
-
-        private void SetPageLables()
-        {
-            btnYes.Text = "Yes";
-            btnNo.Text = "Cancel";
-            litPropertyDataMsg.Text = "Sure you want to delete?";
         }
 
         /// <summary>
@@ -219,27 +197,44 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         {
             try
             {
-                if (Convert.ToString(hdnPropertyData.Value) != string.Empty)
+                if (this.PropertyID != Guid.Empty)
                 {
-                    //SQT.Symphony.BusinessLogic.Configuration.DTO.Property objDelete = PurchaseScheduleBLL.GetPurchaseScheduleData(new Guid(Convert.ToString(hdnPropertyData.Value)));
-                    PurchaseScheduleBLL.Delete(new Guid(Convert.ToString(hdnPropertyData.Value)));
-                    //ActionLogBLL.SaveConfigurationActionLog(clsSession.UserID, "Delete", objDelete.ToString(), null, "mst_Property");
-                    IsMessage = true;
-                    lblErrorMessage.Text = "Record deleted successfully.";
-                    DeletePropertyData.Hide();
+                    msgbx.Hide();
+                    Property objDelete = PropertyBLL.GetByPrimaryKey(this.PropertyID);
+                    PurchaseScheduleBLL.Delete(this.PropertyID);
+                    BindDDL();
                     BindGrid();
-                    //if (new Guid(Convert.ToString(hdnPropertyData.Value)) == clsSession.PropertyID)
-                    //{
-                    //    clsSession.PropertyID = Guid.Empty;
-                    //    BindPropertyName();
-                    //}
+                    ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Delete", objDelete.ToString(), null, "propertypurchase_schedule");
+                    IsMessage = true;
+                    lblErrorMessage.Text = global::Resources.IRMSMsg.DeleteMsg.ToString().Trim();
                 }
-                //ClearControl();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        /// <summary>
+        /// Cancel Button Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                msgbx.Hide();
+                txtPropertyName.SelectedIndex = 0;
+                this.PropertyID = Guid.Empty;
+                Session.Remove("Property");
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
+
         }
 
         protected void grdPurchaseScheduleList_OnPageIndexChanging(object sender, GridViewPageEventArgs e)

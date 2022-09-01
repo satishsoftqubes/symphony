@@ -4,14 +4,6 @@
 <%@ Register Src="../../MsgBox/MsgBox.ascx" TagName="MsgBox" TagPrefix="uc1" %>
 <script language="javascript" type="text/javascript">
 
-    function fnConfirmDelete(id) {
-        debugger;
-        document.getElementById('errormessage').style.display = "block";
-        document.getElementById('<%= hdnPropertyData.ClientID %>').value = id;
-        $find('DeletePropertyData').show();
-        return false;
-    }
-
     function fnDisplayCatchErrorMessage() {
         document.getElementById('errormessage').style.display = "block";
     }
@@ -62,9 +54,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="boxleft">
-                                &nbsp;
-                            </td>
                             <td>
                                 <div class="box_form">
                                     <table cellpadding="2" cellspacing="0" border="0" width="100%">
@@ -164,39 +153,66 @@
             </tr>
         </table>
 
-        <!-- Delete Popup Box-->
-        <ajx:ModalPopupExtender ID="DeletePropertyData" runat="server" TargetControlID="hdnPropertyData"
-            PopupControlID="pnlPropertyData" BackgroundCssClass="mod_background" CancelControlID="btnNo">
+        <ajx:ModalPopupExtender ID="msgbx" runat="server" TargetControlID="hfMessage" PopupControlID="Panel1"
+            BackgroundCssClass="mod_background">
         </ajx:ModalPopupExtender>
-        <asp:HiddenField ID="hdnPropertyData" runat="server" />
-        <asp:Panel ID="pnlPropertyData" runat="server" Height="350px" Width="325px" style="display:none;">
-            <div class="box_col1">
-                <div class="box_head">
-                    <span>
-                        <asp:Literal ID="litPropertyDataHeader" runat="server"></asp:Literal></span></div>
-                <div class="clear">
-                </div>
-                <div class="box_form">
-                    <table cellpadding="2" cellspacing="2" width="100%">
-                        <tr>
-                            <td align="center" style="padding-bottom: 15px;">
-                                <asp:Literal ID="litPropertyDataMsg" runat="server"></asp:Literal>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <asp:Button ID="btnYes" runat="server" Style="display: inline; padding-right: 10px;"
-                                   OnClick="btnYes_Click" OnClientClick="fnDisplayCatchErrorMessage();" />
-                                <asp:Button ID="btnNo" runat="server" Style="display: inline;" />
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="clear">
-                </div>
+        <asp:HiddenField ID="hfMessage" runat="server" />
+        <asp:Panel ID="Panel1" runat="server" Style="display: none;">
+            <div style="width: 500px; height: 200px; margin-top: 25px;">
+                <table border="0" cellspacing="0" cellpadding="0" class="modelpopup_box">
+                    <tr>
+                        <td class="modelpopup_boxtopleft">
+                            &nbsp;
+                        </td>
+                        <td class="modelpopup_boxtopcenter">
+                            &nbsp;
+                        </td>
+                        <td class="modelpopup_boxtopright">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="modelpopup_boxleft">
+                            &nbsp;
+                        </td>
+                        <td class="modelpopup_box_bg">
+                            <div style="width: 100px; float: left; margin-top: 10px;">
+                                <asp:HyperLink ID="HyperLink2" runat="server">
+                                    <asp:Image ImageUrl="~/images/error.png" AlternateText="" Height="75px" Width="75px"
+                                        ID="Image2" runat="server" />
+                                </asp:HyperLink>
+                            </div>
+                            <div style="float: left; width: 225px; margin-top: 40px; margin-left: 10px;">
+                                <asp:Label ID="deleteText" runat="server" Text="Sure you want to delete?"></asp:Label>
+                            </div>
+                            <table cellpadding="3" cellspacing="3" width="100%" style="margin-left: 5px; margin-top: 15px;">
+                                <tr>
+                                    <td align="center" valign="middle">
+                                        <asp:Button ID="Button1" Text="Yes" runat="server" ImageUrl="~/images/save.png"
+                                            OnClick="btnYes_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                        <asp:Button ID="Button2" Text="Cancel" runat="server" ImageUrl="~/images/cancle.png"
+                                            OnClick="btnNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="modelpopup_boxright">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="modelpopup_boxbottomleft">
+                            &nbsp;
+                        </td>
+                        <td class="modelpopup_boxbottomcenter">
+                        </td>
+                        <td class="modelpopup_boxbottomright">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
             </div>
         </asp:Panel>
-        <!-- End Delete Popup Box-->
 
     </ContentTemplate>
 </asp:UpdatePanel>

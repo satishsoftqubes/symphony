@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SQT.Symphony.BusinessLogic.Configuration.BLL;
@@ -74,7 +71,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                     if (Session["PropertyID"] != null)
                     {
-                        //ddlPropertyName.Enabled = false;
                         this.PropertyID = new Guid(Convert.ToString(Session["PropertyID"]));
                         LoadData();
                         Session["PropertyID"] = null;
@@ -84,10 +80,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                          LoadDefaultValue();
                     }
                 }
-                //else
-                //{
-                //    ddlPropertyName.Enabled = true;
-                //}
                 
                 if (Session["UserType"].ToString().ToUpper().Equals("SALES") || Session["UserType"].ToString().ToUpper().Equals("CHANNELPARTNER"))
                 {
@@ -175,14 +167,25 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         private void BindDDL()
         {
             string PropertyNameQuery = string.Empty;
-            if (Session["PropertyID"] != null)
+            string PurchaseScheduleQuery = string.Empty;
+            string AllPurchaseScheduleQuery = string.Empty;
+
+            AllPurchaseScheduleQuery = "Select COUNT(PurchaseScheduleID) AS PurchaseScheduleCount From propertypurchase_schedule Where IsActive = 1";
+            DataSet allDsps = InvestorBLL.GetSearchData(AllPurchaseScheduleQuery);
+
+            PurchaseScheduleQuery = "Select COUNT(PurchaseScheduleID) AS PurchaseScheduleCount From propertypurchase_schedule Where IsActive = 1 AND PropertyID='"+ this.PropertyID+"'";
+            DataSet Dsps = InvestorBLL.GetSearchData(PurchaseScheduleQuery);
+
+            if (Convert.ToInt32(allDsps.Tables[0].Rows[0]["PurchaseScheduleCount"]) == 0)
             {
-                this.PropertyID = new Guid(Session["PropertyID"].ToString());
-                PropertyNameQuery = "Select Distinct(PropertyName), PropertyID From mst_Property Where IsActive = 1 AND PropertyID = '" + this.PropertyID + "'";
+                PropertyNameQuery = "Select Distinct(PropertyName), PropertyID From mst_Property Where IsActive = 1";
             }
             else
             {
-                PropertyNameQuery = "Select Distinct(PropertyName), p.PropertyID From mst_Property p inner join propertypurchase_schedule ps on ps.PropertyID != p.PropertyID Where p.IsActive = 1";
+                if (Session["PropertyID"] == null)
+                    PropertyNameQuery = "Select Distinct(PropertyName), p.PropertyID From mst_Property p inner join propertypurchase_schedule ps on ps.PropertyID != p.PropertyID Where p.IsActive = 1";
+                else
+                    PropertyNameQuery = "Select Distinct(PropertyName), PropertyID From mst_Property Where IsActive = 1 AND PropertyID='" + this.PropertyID + "'";
             }
 
             DataSet Dst = InvestorBLL.GetSearchData(PropertyNameQuery);
@@ -194,11 +197,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 ddlPropertyName.DataTextField = "PropertyName";
                 ddlPropertyName.DataValueField = "PropertyID";
                 ddlPropertyName.DataBind();
-                if (Session["PropertyID"] == null)
-                    ddlPropertyName.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
+                ddlPropertyName.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
             }
-            else
-                ddlPropertyName.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
         }
 
         private void BindPurchaseOption()
