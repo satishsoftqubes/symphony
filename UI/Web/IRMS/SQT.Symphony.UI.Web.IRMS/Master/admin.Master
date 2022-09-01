@@ -100,8 +100,8 @@
                                 Auto Number Setup</a></li>--%>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyList.aspx") %>">Property
                                 Setup</a></li>
-                            <%--<li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PurchaseScheduleList.aspx") %>">Purchase
-                                Schedule</a></li>--%>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyPartnerList.aspx") %>">Property
+                                Partner</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/FloorSetUp.aspx") %>">Block /
                                 Floor Setup</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/RoomTypeSetup.aspx") %>">Unit
@@ -138,6 +138,7 @@
                                 <ul>
                                     <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/ProspectsList.aspx") %>">Prospects</a></li>
                                     <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PurchaseScheduleList.aspx") %>">Purchase Schedule</a></li>
+                                    <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyPaymentList.aspx") %>">Property Payment</a></li>
                                     <li><a href="<%=Page.ResolveUrl("~/Applications/Investors/InvestorList.aspx") %>">Investors</a></li>
                                     <%--<li><a href="<%=Page.ResolveUrl("~/Applications/Investors/SalesTeamSetUp.aspx") %>">
                                         Sales Team</a></li>--%>

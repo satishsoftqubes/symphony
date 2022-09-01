@@ -13,14 +13,5 @@ namespace SQT.Symphony.UI.Web.Configuration.GUI.PurchaseSchedule
 
     public partial class PurchaseScheduleList
     {
-
-        /// <summary>
-        /// ucCtrlPurchaseScheduleList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SQT.Symphony.UI.Web.Configuration.UIControls.PurchaseSchedule.CtrlPurchaseScheduleList ucCtrlPurchaseScheduleList;
     }
 }

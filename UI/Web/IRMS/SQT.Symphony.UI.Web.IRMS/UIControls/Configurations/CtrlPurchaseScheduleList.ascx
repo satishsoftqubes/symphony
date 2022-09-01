@@ -37,11 +37,6 @@
         background-color: #fff;
         border: solid 1px #efefef;
     }
-
-    /*.mod_background
-    {
-	    background:url(../images/bg_modal1.png);
-    }*/
 </style>
 <asp:UpdatePanel ID="updPurchaseScheduleList" runat="server">
     <ContentTemplate>

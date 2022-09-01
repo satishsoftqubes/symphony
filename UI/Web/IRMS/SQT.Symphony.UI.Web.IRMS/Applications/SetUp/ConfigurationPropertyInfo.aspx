@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" 
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true"
     CodeBehind="ConfigurationPropertyInfo.aspx.cs" Inherits="SQT.Symphony.UI.Web.IRMS.Applications.SetUp.ConfigurationPropertyInfo" %>
 <%@ Register src="~/UIControls/Configurations/CtrlPropertyConfigurationInformation.ascx" tagname="CtrlPropertyConfigurationInformation" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

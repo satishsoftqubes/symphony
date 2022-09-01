@@ -36,3 +36,43 @@ VALUES
 	NULL,
 	NULL
 )
+
+INSERT [dbo].[usr_Right]
+(
+	[RightID],
+	[CompanyID],
+	[PropertyID],
+	[ReportID],
+	[FormName],
+	[FullName],
+	[MenuName],
+	[ParentID],
+	[MenuParentOrderID],
+	[MenuChileOrderID],
+	[IsMenuOption],
+	[MenuIcon],
+	[IsBlock],
+	[Description],
+	[IsSynch],
+	[SynchOn]
+)
+VALUES
+(
+	'B170B05D-2F15-46A3-B9D4-9EA000382093',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	NULL,
+	NULL,
+	'ConfigurationPropertyPartnerInfo.aspx',
+	'~/Applications/SetUp/ConfigurationPropertyPartnerInfo.aspx',
+	'Property Partner',
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL
+)
+
