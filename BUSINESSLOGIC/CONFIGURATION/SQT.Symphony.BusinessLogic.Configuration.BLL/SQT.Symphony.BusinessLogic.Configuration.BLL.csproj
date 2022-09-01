@@ -40,9 +40,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -88,6 +90,7 @@
     <Compile Include="EMailTemplatesBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="ExchangeRateBLL.cs" />
+    <Compile Include="ExpenseBLL.cs" />
     <Compile Include="FloorBLL.cs" />
     <Compile Include="FolioConfigBLL.cs" />
     <Compile Include="HousekeepingConfigBLL.cs" />
@@ -131,6 +134,7 @@
     <Compile Include="RoomTypeBLL.cs" />
     <Compile Include="RoomTypeDepositBLL.cs" />
     <Compile Include="RoomTypeServicesBLL.cs" />
+    <Compile Include="SalerPartnerBLL.cs" />
     <Compile Include="ServiceVendorMasterBLL.cs" />
     <Compile Include="SMSTemplatesBLL.cs" />
     <Compile Include="StateBLL.cs" />
@@ -142,6 +146,7 @@
     <Compile Include="UOMBLL.cs" />
     <Compile Include="UserBLL.cs" />
     <Compile Include="UserRoleBLL.cs" />
+    <Compile Include="VendorBLL.cs" />
     <Compile Include="VIPTypesBLL.cs" />
     <Compile Include="WingBLL.cs" />
     <Compile Include="WingFloorJoinBLL.cs" />

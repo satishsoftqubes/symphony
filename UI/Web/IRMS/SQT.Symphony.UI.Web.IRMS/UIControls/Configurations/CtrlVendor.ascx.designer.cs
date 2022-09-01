@@ -10,7 +10,7 @@
 namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
     
     
-    public partial class SalerPartner {
+    public partial class CtrlVendor {
         
         /// <summary>
         /// updPropertyList control.
@@ -31,13 +31,13 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
         
         /// <summary>
-        /// txtSearchFirstName control.
+        /// txtSearchVendorName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchFirstName;
+        protected global::System.Web.UI.WebControls.TextBox txtSearchVendorName;
         
         /// <summary>
         /// txtSearchMobileNo control.
@@ -67,22 +67,22 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::System.Web.UI.WebControls.ImageButton btnClear;
         
         /// <summary>
-        /// btnAddTop control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddTop;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
-        /// grdSalerList control.
+        /// grdVendorList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdSalerList;
+        protected global::System.Web.UI.WebControls.GridView grdVendorList;
         
         /// <summary>
         /// Button1 control.
@@ -148,22 +148,22 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// btnSalerYes control.
+        /// btnVendorYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalerYes;
+        protected global::System.Web.UI.WebControls.Button btnVendorYes;
         
         /// <summary>
-        /// btnSalerNo control.
+        /// btnVendorNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalerNo;
+        protected global::System.Web.UI.WebControls.Button btnVendorNo;
         
         /// <summary>
         /// MessageBox control.
