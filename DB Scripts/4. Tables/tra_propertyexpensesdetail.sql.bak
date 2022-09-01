@@ -1,9 +1,9 @@
-CREATE TABLE dbo.tra_propertyexpensesdetail
+CREATE TABLE tra_propertyexpensesdetail
 (
-	[PropertyExpenseDetailID]	uniqueidentifier		NOT NULL PRIMARY KEY,	
-	[PropertyID]				uniqueidentifier		NULL DEFAULT NULL,
-	[VendorName]				VARCHAR(161)	        NULL DEFAULT NULL,
-	[VendorID]					uniqueidentifier		NULL DEFAULT NULL,
+	[PropertyExpenseDetailID]	CHAR(38)		NOT NULL PRIMARY KEY,	
+	[PropertyID]				CHAR(38)		NULL DEFAULT NULL,
+	[VendorName]				VARCHAR(161)	NULL DEFAULT NULL,
+	[VendorID]					CHAR(38)		NULL DEFAULT NULL,
 	[ReferenceNo]				VARCHAR(161)	NULL DEFAULT NULL,
 	[PurchaseNote]				VARCHAR(161)	NULL DEFAULT NULL,
 	[TotalAmount]				DECIMAL(18,2)	NULL DEFAULT NULL,
@@ -13,8 +13,10 @@ CREATE TABLE dbo.tra_propertyexpensesdetail
 	[PurchaseTypeTerm]			VARCHAR(61)		NULL DEFAULT NULL,
 	[ItemTypeTerm]				VARCHAR(61)		NULL DEFAULT NULL,
 	[IsActive]					BIT				NULL DEFAULT NULL,
-	[UpdateLog]					DATETIME		NULL DEFAULT NULL,	
-	[SeqNo]						INT				IDENTITY(1,1),
+	[UpdateLog]					TIMESTAMP		NULL DEFAULT NULL,	
+	[SeqNo]						INT				NULL DEFAULT NULL,
 	[ExpenseID]                 CHAR(38)        NULL DEFAULT NULL
 )
 GO
+
+   

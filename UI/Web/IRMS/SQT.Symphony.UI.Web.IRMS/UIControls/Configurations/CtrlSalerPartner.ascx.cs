@@ -271,5 +271,19 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+        protected void btnclear_Click(object sender, ImageClickEventArgs e)
+        {
+            try
+            {
+                txtSearchFirstName.Text = "";
+                txtSearchMobileNo.Text = "";
+                BindGrid();
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
     }
 }

@@ -91,6 +91,7 @@
     <Compile Include="EMailTemplatesDAL.cs" />
     <Compile Include="EmployeeDAL.cs" />
     <Compile Include="ExchangeRateDAL.cs" />
+    <Compile Include="ExpenseDAL.cs" />
     <Compile Include="FloorDAL.cs" />
     <Compile Include="FolioConfigDAL.cs" />
     <Compile Include="HousekeepingConfigDAL.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="RoomTypeDAL.cs" />
     <Compile Include="RoomTypeDepositDAL.cs" />
     <Compile Include="RoomTypeServicesDAL.cs" />
+    <Compile Include="SalerPartnerDAL.cs" />
     <Compile Include="ServiceVendorMasterDAL.cs" />
     <Compile Include="SMSTemplatesDAL.cs" />
     <Compile Include="StateDAL.cs" />
@@ -145,6 +147,7 @@
     <Compile Include="UOMDAL.cs" />
     <Compile Include="UserDAL.cs" />
     <Compile Include="UserRoleDAL.cs" />
+    <Compile Include="VendorDAL.cs" />
     <Compile Include="VIPTypesDAL.cs" />
     <Compile Include="WingDAL.cs" />
     <Compile Include="WingFloorJoinDAL.cs" />

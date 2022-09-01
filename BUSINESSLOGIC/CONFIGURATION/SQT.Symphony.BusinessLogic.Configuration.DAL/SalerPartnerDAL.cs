@@ -99,12 +99,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                 {
                     if (objSP == null)
                         throw (new ParameterNullException("Object can not be null"));
-
-                    //Log Method Parameteres.
-                    //ArrayList parameterList = new ArrayList();
-                    //parameterList.Add(objSP);
-                    //SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
-
+                    
                     StoredProcedure(MasterConstant.SalerPartnerUpdate)
                         .AddParameter("@PartnerID", objSP.PartnerID)
                         .AddParameter("@FirstName", objSP.FirstName)

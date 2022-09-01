@@ -205,10 +205,14 @@
     <Content Include="Applications\SetUp\AmenitiesSetup.aspx" />
     <Content Include="Applications\SetUp\BlockDetail.aspx" />
     <Content Include="Applications\SetUp\CompanySetup.aspx" />
+    <Content Include="Applications\SetUp\ConfigurationExpense.aspx" />
     <Content Include="Applications\SetUp\ConfigurationPropertyInfo.aspx" />
     <Content Include="Applications\SetUp\ConfigurationPurchaseScheduleInfo.aspx" />
+    <Content Include="Applications\SetUp\ConfigurationSalerPartner.aspx" />
+    <Content Include="Applications\SetUp\ConfigurationVendor.aspx" />
     <Content Include="Applications\SetUp\ControlNumberSetup.aspx" />
     <Content Include="Applications\SetUp\DepartmentSetp.aspx" />
+    <Content Include="Applications\SetUp\Expense.aspx" />
     <Content Include="Applications\SetUp\FloorSetUp.aspx" />
     <Content Include="Applications\SetUp\ProjectTermSetUp.aspx" />
     <Content Include="Applications\SetUp\PropertyConfiruation.aspx" />
@@ -218,6 +222,7 @@
     <Content Include="Applications\SetUp\RoomSetup.aspx" />
     <Content Include="Applications\SetUp\RoomTypeSetup.aspx" />
     <Content Include="Applications\SetUp\SalerPartner.aspx" />
+    <Content Include="Applications\SetUp\Vendor.aspx" />
     <Content Include="Applications\Test1.aspx" />
     <Content Include="Applications\TestChart.aspx" />
     <Content Include="Applications\UsersSetUp\ActionLogTracker.aspx" />
@@ -518,6 +523,8 @@
     <Content Include="UIControls\Configurations\CtrlCompanyInfo.ascx" />
     <Content Include="UIControls\Configurations\CtrlControlNumber.ascx" />
     <Content Include="UIControls\Configurations\CtrlDepartment.ascx" />
+    <Content Include="UIControls\Configurations\CtrlExpense.ascx" />
+    <Content Include="UIControls\Configurations\CtrlExpenseConfigurationInformation.ascx" />
     <Content Include="UIControls\Configurations\CtrlFloor.ascx" />
     <Content Include="UIControls\Configurations\CtrlProjectTerm.ascx" />
     <Content Include="UIControls\Configurations\CtrlPropertyConfigurationInformation.ascx" />
@@ -527,6 +534,9 @@
     <Content Include="UIControls\Configurations\CtrlPurchaseScheduleList.ascx" />
     <Content Include="UIControls\Configurations\CtrlRoom.ascx" />
     <Content Include="UIControls\Configurations\CtrlRoomType.ascx" />
+    <Content Include="UIControls\Configurations\CtrlSalerPartnerConfigurationInformation.ascx" />
+    <Content Include="UIControls\Configurations\CtrlVendor.ascx" />
+    <Content Include="UIControls\Configurations\CtrlVendorConfigurationInformation.ascx" />
     <Content Include="UIControls\Configurations\PropertyUnits.ascx" />
     <Content Include="UIControls\Configurations\CtrlSalerPartner.ascx" />
     <Content Include="UIControls\CtrlSalerPartner.ascx" />
@@ -1259,6 +1269,13 @@
     <Compile Include="Applications\SetUp\CompanySetup.aspx.designer.cs">
       <DependentUpon>CompanySetup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Applications\SetUp\ConfigurationExpense.aspx.cs">
+      <DependentUpon>ConfigurationExpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\ConfigurationExpense.aspx.designer.cs">
+      <DependentUpon>ConfigurationExpense.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Applications\SetUp\ConfigurationPropertyInfo.aspx.cs">
       <DependentUpon>ConfigurationPropertyInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1272,6 +1289,20 @@
     </Compile>
     <Compile Include="Applications\SetUp\ConfigurationPurchaseScheduleInfo.aspx.designer.cs">
       <DependentUpon>ConfigurationPurchaseScheduleInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\SetUp\ConfigurationSalerPartner.aspx.cs">
+      <DependentUpon>ConfigurationSalerPartner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\ConfigurationSalerPartner.aspx.designer.cs">
+      <DependentUpon>ConfigurationSalerPartner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\SetUp\ConfigurationVendor.aspx.cs">
+      <DependentUpon>ConfigurationVendor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\ConfigurationVendor.aspx.designer.cs">
+      <DependentUpon>ConfigurationVendor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Applications\SetUp\ControlNumberSetup.aspx.cs">
       <DependentUpon>ControlNumberSetup.aspx</DependentUpon>
@@ -1289,6 +1320,13 @@
     </Compile>
     <Compile Include="Applications\SetUp\EmployeeAutoComplete.ashx.cs">
       <DependentUpon>EmployeeAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\SetUp\Expense.aspx.cs">
+      <DependentUpon>Expense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\Expense.aspx.designer.cs">
+      <DependentUpon>Expense.aspx</DependentUpon>
     </Compile>
     <Compile Include="Applications\SetUp\FloorSetUp.aspx.cs">
       <DependentUpon>FloorSetUp.aspx</DependentUpon>
@@ -1364,6 +1402,13 @@
     </Compile>
     <Compile Include="Applications\SetUp\UnitTypeAutoComplete.ashx.cs">
       <DependentUpon>UnitTypeAutoComplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\SetUp\Vendor.aspx.cs">
+      <DependentUpon>Vendor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\Vendor.aspx.designer.cs">
+      <DependentUpon>Vendor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Applications\Test1.aspx.cs">
       <DependentUpon>Test1.aspx</DependentUpon>
@@ -1829,6 +1874,20 @@
     <Compile Include="UIControls\Configurations\CtrlDepartment.ascx.designer.cs">
       <DependentUpon>CtrlDepartment.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UIControls\Configurations\CtrlExpense.ascx.cs">
+      <DependentUpon>CtrlExpense.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlExpense.ascx.designer.cs">
+      <DependentUpon>CtrlExpense.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlExpenseConfigurationInformation.ascx.cs">
+      <DependentUpon>CtrlExpenseConfigurationInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlExpenseConfigurationInformation.ascx.designer.cs">
+      <DependentUpon>CtrlExpenseConfigurationInformation.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UIControls\Configurations\CtrlFloor.ascx.cs">
       <DependentUpon>CtrlFloor.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1891,6 +1950,27 @@
     </Compile>
     <Compile Include="UIControls\Configurations\CtrlRoomType.ascx.designer.cs">
       <DependentUpon>CtrlRoomType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlSalerPartnerConfigurationInformation.ascx.cs">
+      <DependentUpon>CtrlSalerPartnerConfigurationInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlSalerPartnerConfigurationInformation.ascx.designer.cs">
+      <DependentUpon>CtrlSalerPartnerConfigurationInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlVendor.ascx.cs">
+      <DependentUpon>CtrlVendor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlVendor.ascx.designer.cs">
+      <DependentUpon>CtrlVendor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlVendorConfigurationInformation.ascx.cs">
+      <DependentUpon>CtrlVendorConfigurationInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlVendorConfigurationInformation.ascx.designer.cs">
+      <DependentUpon>CtrlVendorConfigurationInformation.ascx</DependentUpon>
     </Compile>
     <Compile Include="UIControls\Configurations\PropertyUnits.ascx.cs">
       <DependentUpon>PropertyUnits.ascx</DependentUpon>
