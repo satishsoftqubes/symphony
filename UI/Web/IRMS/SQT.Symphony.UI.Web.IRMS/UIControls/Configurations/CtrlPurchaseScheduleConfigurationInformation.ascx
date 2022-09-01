@@ -29,13 +29,13 @@
     function fnCalcInstallmentAmount(percentage) {
         var rowIndex = percentage.parentNode.parentNode.parentNode.rowIndex + 1;
         var currentAmount = document.getElementById("ctl00_ContentPlaceHolder1_CtrlPropertyConfigurationInformation1_gvPropertyInstallments_ctl0" + rowIndex + "_txtInstallmentAmount");
-        var percentage = parseFloat(percentage.value);
         var totalCost = parseFloat(document.getElementById('ctl00_ContentPlaceHolder1_CtrlPropertyConfigurationInformation1_txtTotalCost').value);
-        var amount = (parseFloat(totalCost * percentage) / 100);
-        if (!isNaN(amount)) {
+        var percentage = parseFloat(percentage.value);
+        if (!isNaN(percentage)) {
+            var amount = (parseFloat(totalCost * percentage) / 100);
             currentAmount.value = amount;
         }
-        else {
+        else{
             currentAmount.value = null;
         }
     }
@@ -131,8 +131,6 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <%-- <asp:TextBox ID="txtPropertyName" runat="server" Style="vertical-align: middle; margin-top: 7px; width: 200px !important;"
-                                                        MaxLength="65"></asp:TextBox>--%>
                                             <asp:DropDownList ID="ddlPropertyName" runat="server" Style="width: 205px;">
                                             </asp:DropDownList>
                                         </td>
@@ -161,15 +159,7 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <%-- onKeyUp="fnCalculateTotalCost()" --%>
-                                            <asp:TextBox ID="txtPrice" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
-                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
-                                                ControlToValidate="txtPrice" runat="server"
-                                                ErrorMessage="Only Numbers are allowed"
-                                                ValidationExpression="^\d+(\.\d+)*$">
-                                            </asp:RegularExpressionValidator>
-                                           <%-- <ajx:FilteredTextBoxExtender ID="filtxtPrice" runat="server" TargetControlID="txtPrice"
-                                                FilterType="Numbers" />--%>
+                                            <asp:TextBox autocomplete="off" ID="txtPrice" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
@@ -182,30 +172,20 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="txtPurchaseArea" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
-                                           <%-- <ajx:FilteredTextBoxExtender ID="filtxtPurchaseArea" runat="server" TargetControlID="txtPurchaseArea"
-                                                FilterType="Numbers" />--%>
+                                            <asp:TextBox  autocomplete="off" ID="txtPurchaseArea" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
                                         </td>
-                                        <%--<td>
-                                            <asp:Button ID="btnCalcTotalCost" runat="server" Text="Calculate" OnClick="fnCalculateTotalCost" />
-                                        </td>--%>
                                     </tr>
                                     <tr>
                                         <td>
                                             <asp:Label ID="litTotalCost" runat="server" Text="Total Cost" CssClass="RequireFile"></asp:Label>
-                                            <%--<span class="erroraleart">
-                                                <asp:RequiredFieldValidator ID="rfvTotalCost" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtTotalCost"
-                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>--%>
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10" ReadOnly="true" Style="background: #dcdddf;"></asp:TextBox>
-                                           <%-- <ajx:FilteredTextBoxExtender ID="filtxtTotalCost" runat="server" TargetControlID="txtTotalCost"
-                                                FilterType="Numbers" />--%>
                                         </td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td class="boxright">
                             </td>
                         </tr>
                     </table>
@@ -252,8 +232,7 @@
                                             <span class="erroralert">
                                                 <asp:RequiredFieldValidator ID="txtInstallmentPercentName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtInstallmentPercent" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                                             </span>
-                                            <%-- onKeyUp="fnCalcInstallmentAmount(this)" --%>
-                                            <asp:TextBox onKeyUp="fnCalcInstallmentAmount(this)"  Style="margin-left: 5px;" ID="txtInstallmentPercent" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentInPercentage")%>'></asp:TextBox>
+                                            <asp:TextBox autocomplete="off" onKeyUp="fnCalcInstallmentAmount(this)"  Style="margin-left: 5px;" ID="txtInstallmentPercent" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentInPercentage")%>'></asp:TextBox>
                                         </div>
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -266,7 +245,6 @@
                                             <asp:DropDownList ID="ddlPaymentMode" Style="width: 140px; margin-left: 5px;" runat="server">
                                             </asp:DropDownList>
                                         </div>
-
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Amount">
@@ -275,7 +253,7 @@
                                             <span class="erroralert">
                                                 <asp:RequiredFieldValidator ID="txtInstallmentAmountName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtInstallmentAmount" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                                             </span>
-                                            <asp:TextBox onKeyPress="return disableAmount();" ID="txtInstallmentAmount" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentAmount")%>' Style="background: #dcdddf; margin-left: 5px;"></asp:TextBox>
+                                            <asp:TextBox autocomplete="off" disabled="true"  ID="txtInstallmentAmount" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentAmount")%>' Style="background: #dcdddf; margin-left: 5px;"></asp:TextBox>
                                         </div>
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -312,6 +290,3 @@
         </div>
     </ProgressTemplate>
 </asp:UpdateProgress>
-
-
-

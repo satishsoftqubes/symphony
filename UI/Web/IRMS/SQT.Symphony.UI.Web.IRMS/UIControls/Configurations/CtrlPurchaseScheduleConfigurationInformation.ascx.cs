@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SQT.Symphony.BusinessLogic.Configuration.BLL;
@@ -64,9 +65,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 if (RoleRightJoinBLL.GetAccessString("ConfigurationPurchaseScheduleInfo.aspx", new Guid(Convert.ToString(Session["UserID"]))) == "NO")
                     Response.Redirect("~/Applications/AccessDenied.aspx");
                 LoadAccess();
-                
+
                 if (!IsPostBack)
-                {   
+                {
                     this.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
 
                     if (Session["PropertyID"] != null)
@@ -77,10 +78,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     }
                     else
                     {
-                         LoadDefaultValue();
+                        LoadDefaultValue();
                     }
                 }
-                
+
                 if (Session["UserType"].ToString().ToUpper().Equals("SALES") || Session["UserType"].ToString().ToUpper().Equals("CHANNELPARTNER"))
                 {
                     //btnAddPurchaseSchedule.Visible = false;
@@ -141,8 +142,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         HiddenField hdnPurchaseScheduleID = (HiddenField)gvPropertyInstallments.Rows[i].Cells[1].FindControl("hdnPurchaseScheduleID");
                         hdnPurchaseScheduleID.Value = Convert.ToString(dsPropertyInstallment.Tables[0].Rows[i]["PurchaseScheduleID"]).Trim();
 
-                        //dsPropertyInstallment.Tables[0].Rows[0]["RowNumber"] = "Installment 1";
-
                         DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentPeriod");
                         ddlPaymentPeriod.Text = Convert.ToString(dsPropertyInstallment.Tables[0].Rows[i]["InstallmentTypeTermID"]);
 
@@ -173,7 +172,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             AllPurchaseScheduleQuery = "Select COUNT(PurchaseScheduleID) AS PurchaseScheduleCount From propertypurchase_schedule Where IsActive = 1";
             DataSet allDsps = InvestorBLL.GetSearchData(AllPurchaseScheduleQuery);
 
-            PurchaseScheduleQuery = "Select COUNT(PurchaseScheduleID) AS PurchaseScheduleCount From propertypurchase_schedule Where IsActive = 1 AND PropertyID='"+ this.PropertyID+"'";
+            PurchaseScheduleQuery = "Select COUNT(PurchaseScheduleID) AS PurchaseScheduleCount From propertypurchase_schedule Where IsActive = 1 AND PropertyID='" + this.PropertyID + "'";
             DataSet Dsps = InvestorBLL.GetSearchData(PurchaseScheduleQuery);
 
             if (Convert.ToInt32(allDsps.Tables[0].Rows[0]["PurchaseScheduleCount"]) == 0)
@@ -229,12 +228,24 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         public void fnCalculateTotalCost(object sender, EventArgs e)
         {
+            string pattern = @"^\d+(\.\d+)*$";
+            Regex rg = new Regex(pattern);
+
             if (txtPrice.Text != "" && txtPurchaseArea.Text != "")
             {
-                decimal price = Convert.ToDecimal(txtPrice.Text);
-                decimal purchaseArea = Convert.ToDecimal(txtPurchaseArea.Text);
-                decimal totalCost = Convert.ToDecimal(price * purchaseArea);
-                txtTotalCost.Text = Convert.ToString(totalCost);
+                if (rg.Matches(txtPrice.Text).Count > 0 && rg.Matches(txtPurchaseArea.Text).Count > 0)
+                {
+                    decimal price = Convert.ToDecimal(txtPrice.Text);
+                    decimal purchaseArea = Convert.ToDecimal(txtPurchaseArea.Text);
+                    decimal totalCost = Convert.ToDecimal(price * purchaseArea);
+                    txtTotalCost.Text = Convert.ToString(totalCost);
+                }
+                else
+                {
+                    txtPrice.Text = "";
+                    txtPurchaseArea.Text = "";
+                    txtTotalCost.Text = "";
+                }
             }
         }
 
@@ -274,7 +285,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                     //add new row to DataTable   
                     dtCurrentTable.Rows.Add(drCurrentRow);
-                    
+
                     //Store the current data to ViewState for future reference   
                     ViewState["CurrentTable"] = dtCurrentTable;
 
@@ -530,7 +541,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     objPurchaseSchedule.PropertyID = new Guid(ddlPropertyName.SelectedValue);
                     DataSet ds = new DataSet();
                     ds = PurchaseScheduleBLL.GetPurchaseScheduleData(objPurchaseSchedule.PropertyID, this.CompanyID, null);
-                    
+
                     if (ds.Tables[0].Rows.Count == 0)
                     {
                         for (int i = 0; i < gvPropertyInstallments.Rows.Count; i++)
@@ -555,7 +566,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             IsMessage = true;
                             lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();
 
-                            
+
                         }
                         Response.Redirect("~/Applications/SetUp/PurchaseScheduleList.aspx");
                     }
@@ -596,7 +607,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             }
                         }
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
