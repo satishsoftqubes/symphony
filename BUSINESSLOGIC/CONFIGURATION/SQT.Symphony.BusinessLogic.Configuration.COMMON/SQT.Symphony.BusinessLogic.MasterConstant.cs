@@ -980,6 +980,31 @@ namespace SQT.Symphony.BusinessLogic.Configuration.COMMON
         public const string CurrencyTypeSelectByField = "[dbo].[con_CurrencyType_SelectByField]";
         public const string CurrencyTypeDeleteByPrimaryKey = "[dbo].[con_CurrencyType_DeleteByPrimaryKey]";
         public const string CurrencyTypeDeleteByField = "[dbo].[con_CurrencyType_DeleteByField]";
+
+        //SPs for  mst_SalerParner
+        public const string SalerPartnerInsert = "[dbo].[mst_SalerPartner_Insert]";
+        public const string SalerPartnerGetAll = "[dbo].[mst_SalerPartner_GetAll]";
+        public const string GetByIdWise_SalePartnerData = "[dbo].[mst_SalePartnerData_GetByIdWise]";
+        public const string SalerDelete_IdWise = "[dbo].[mst_SalerDelete_IdWise]";
+        public const string SalerPartnerUpdate = "[dbo].[mst_SalerPartner_Update]";
+
+        //SPs for  mst_Vendor
+        public const string VendorInsert = "[dbo].[mst_Vendor_Insert]";
+        public const string VendorGetAll = "[dbo].[mst_Vendor_GetAll]";
+        public const string GetByIdWise_VendorData = "[dbo].[mst_VendorData_GetByIdWise]";
+        public const string VendorDelete_IdWise = "[dbo].[mst_VendorDelete_IdWise]";
+        public const string VendorUpdate = "[dbo].[mst_Vendor_Update]";
+
+        //SPs for mst_Expense
+        public const string GetPropertyName = "[dbo].[mst_Expense_PropertyGetName]";
+        public const string GetVendorName = "[dbo].[mst_Expense_VendorGetName]";
+        public const string ExpenseInsert = "[dbo].[mst_Expense_Insert]";
+        public const string ExpenseUpdate = "[dbo].[mst_Expense_Update]";
+        public const string Multiple_ExpenseInsert = "[dbo].[mst_ExpenseDetail_Insert]";
+        public const string ExpenseGetAll = "[dbo].[mst_Expense_GetAll]";
+        public const string GetByIdWise_ExpenseData = "[dbo].[mst_Expense_GetByIdWise]";
+        public const string Multiple_ExpenseUpdate = "[dbo].[mst_ExpenseDetail_Update]";
+        public const string ExpenseDelete_IdWise = "[dbo].[mst_ExpenseDelete_IdWise]";
     }
 }
 
