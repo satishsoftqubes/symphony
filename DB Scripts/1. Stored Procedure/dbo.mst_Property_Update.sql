@@ -48,8 +48,10 @@ CREATE PROCEDURE dbo.mst_Property_Update
 	@SurveyNo nvarchar(65) = null,
 	@PaymentTermID uniqueidentifier = null,
 	@Jantri decimal(18,2) = null,
-	@PropertyStatusID uniqueidentifier = null
-
+	@PropertyStatusID uniqueidentifier = null,
+	@Price decimal(18,2) = null,
+	@PurchaseArea decimal(18,2) = null,
+	@TotalCost decimal(18,2) = null
 )
 AS
 BEGIN
@@ -97,7 +99,11 @@ SET
 	[SurveyNo] = @SurveyNo,
 	[PaymentTermID] = @PaymentTermID,
 	[Jantri] = @Jantri,
-	[PropertyStatusID] = @PropertyStatusID
+	[PropertyStatusID] = @PropertyStatusID,
+	[Price] = @Price,
+	[PurchaseArea] = @PurchaseArea,
+	[TotalCost] = @TotalCost
+	
  WHERE 
 	[PropertyID] = @PropertyID
 END

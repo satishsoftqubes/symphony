@@ -57,7 +57,13 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			CertificationNo,
 			LicenceNo,
             PurchaseOptionID,
-            SurveyNo
+            SurveyNo,			
+			PaymentTermID,
+			Jantri,
+			PropertyStatusID,
+			Price,
+			PurchaseArea,
+			TotalCost
 		}
 		#endregion
 
@@ -108,12 +114,15 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             Guid? _purchaseOptionID;
             Guid? _paymentTermID;
             string _surveyNo;
+			decimal? _price;
+			decimal? _purchaseArea;
+			decimal? _totalCost;
 
 		#endregion
 
 		#region Properties
 
-		[DataMember]
+	[DataMember]
 		public Guid  PropertyID
 		{
 			 get { return _propertyID; }
@@ -743,6 +752,46 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             }
         }
 
+		[DataMember]
+		public decimal? Price
+		{
+			get { return _price; }
+			set
+			{
+				if (_price != value)
+				{
+					_price = value;
+					PropertyHasChanged("Price");
+				}
+			}
+		}
+
+		public decimal? PurchaseArea
+		{
+			get { return _purchaseArea; }
+			set
+			{
+				if (_purchaseArea != value)
+				{
+					_purchaseArea = value;
+					PropertyHasChanged("PurchaseArea");
+				}
+			}
+		}
+
+		public decimal? TotalCost
+		{
+			get { return _totalCost; }
+			set
+			{
+				if (_totalCost != value)
+				{
+					_totalCost = value;
+					PropertyHasChanged("TotalCost");
+				}
+			}
+		}
+
 		#endregion
 
 		#region Validation
@@ -769,7 +818,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("SEACNOC", "SEACNOC",2147483647));
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("CertificationNo", "CertificationNo",2147483647));
             ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("LicenceNo", "LicenceNo", 2147483647));
-            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("SurveyNo", "SurveyNo", 2147483647));            
+            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("SurveyNo", "SurveyNo", 2147483647));
 		}
 
 		[OperationContract]
@@ -815,11 +864,16 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			"KPSBNoc = {36}~\n"+
 			"SEACNOC = {37}~\n"+
 			"CertificationNo = {38}~\n"+
-			"LicenceNo = {39}~\n",
-            "PurchaseOptionID = {40}~\n",
-            "SurveyNo = {41}~\n",
-            "PaymentTermID = {42}~\n",
-			PropertyID,			CompanyID,			SeqNo,			PropertyTypeID,			PropertyCode,			PropertyName,			AddressID,			PropManagerName,			PrimaryContactNo,			PrimaryEmail,			PrimaryFax,			PropertyDisplayName,			PropertyRegisteredOn,			PropertyRegisteredBy,			PropertyCreatedOn,			IsApproved,			ApprovedBy,			ApprovedOn,			PropertyRating,			PropertyComments,			LastUpdateOn,			LastUpdateBy,			IsSynch,			IsActive,			ActivationKey,			ActivationCode,			LicenseNoOfUsers,			Thumb,			SynchOn,			UpdateLog,			SBArea,			CarpetArea,			PhotoLocal,			SBAreaCommercial,			KhataNo,			BuldingPlanApprovalNo,			KPSBNoc,			SEACNOC,			CertificationNo,			LicenceNo,          PurchaseOptionID,           SurveyNo,          PaymentTermID);			return objValue;
+			"LicenceNo = {39}~\n"+
+			"PurchaseOptionID = {40}~\n"+
+			"SurveyNo = {41}~\n"+
+			"PaymentTermID = {42}~\n"+
+			"Jantri = {43}~\n"+
+			"PropertyStatusID = {44}~\n"+
+			"Price = {45}~\n"+
+			"PurchaseArea = {46}~\n"+
+			"TotalCost = {47}~\n",
+			PropertyID,			CompanyID,			SeqNo,			PropertyTypeID,			PropertyCode,			PropertyName,			AddressID,			PropManagerName,			PrimaryContactNo,			PrimaryEmail,			PrimaryFax,			PropertyDisplayName,			PropertyRegisteredOn,			PropertyRegisteredBy,			PropertyCreatedOn,			IsApproved,			ApprovedBy,			ApprovedOn,			PropertyRating,			PropertyComments,			LastUpdateOn,			LastUpdateBy,			IsSynch,			IsActive,			ActivationKey,			ActivationCode,			LicenseNoOfUsers,			Thumb,			SynchOn,			UpdateLog,			SBArea,			CarpetArea,			PhotoLocal,			SBAreaCommercial,			KhataNo,			BuldingPlanApprovalNo,			KPSBNoc,			SEACNOC,			CertificationNo,			LicenceNo,          PurchaseOptionID,           SurveyNo,          PaymentTermID, Jantri, PropertyStatusID,	Price, PurchaseArea, TotalCost);			return objValue;
 		}
 
 		#endregion

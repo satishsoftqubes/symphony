@@ -207,6 +207,7 @@
     <Content Include="Applications\SetUp\CompanySetup.aspx" />
     <Content Include="Applications\SetUp\ConfigurationExpense.aspx" />
     <Content Include="Applications\SetUp\ConfigurationPropertyInfo.aspx" />
+    <Content Include="Applications\SetUp\ConfigurationPropertyPartnerInfo.aspx" />
     <Content Include="Applications\SetUp\ConfigurationPurchaseScheduleInfo.aspx" />
     <Content Include="Applications\SetUp\ConfigurationSalerPartner.aspx" />
     <Content Include="Applications\SetUp\ConfigurationVendor.aspx" />
@@ -217,6 +218,8 @@
     <Content Include="Applications\SetUp\ProjectTermSetUp.aspx" />
     <Content Include="Applications\SetUp\PropertyConfiruation.aspx" />
     <Content Include="Applications\SetUp\PropertyList.aspx" />
+    <Content Include="Applications\SetUp\PropertyPartnerList.aspx" />
+    <Content Include="Applications\SetUp\PropertyPaymentList.aspx" />
     <Content Include="Applications\SetUp\PropertyUnits.aspx" />
     <Content Include="Applications\SetUp\PurchaseScheduleList.aspx" />
     <Content Include="Applications\SetUp\RoomSetup.aspx" />
@@ -530,6 +533,9 @@
     <Content Include="UIControls\Configurations\CtrlPropertyConfigurationInformation.ascx" />
     <Content Include="UIControls\Configurations\CtrlPropertyInformation.ascx" />
     <Content Include="UIControls\Configurations\CtrlPropertyList.ascx" />
+    <Content Include="UIControls\Configurations\CtrlPropertyPartnerConfigurationInformation.ascx" />
+    <Content Include="UIControls\Configurations\CtrlPropertyPartnerList.ascx" />
+    <Content Include="UIControls\Configurations\CtrlPropertyPaymentList.ascx" />
     <Content Include="UIControls\Configurations\CtrlPurchaseScheduleConfigurationInformation.ascx" />
     <Content Include="UIControls\Configurations\CtrlPurchaseScheduleList.ascx" />
     <Content Include="UIControls\Configurations\CtrlRoom.ascx" />
@@ -1283,6 +1289,13 @@
     <Compile Include="Applications\SetUp\ConfigurationPropertyInfo.aspx.designer.cs">
       <DependentUpon>ConfigurationPropertyInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Applications\SetUp\ConfigurationPropertyPartnerInfo.aspx.cs">
+      <DependentUpon>ConfigurationPropertyPartnerInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\ConfigurationPropertyPartnerInfo.aspx.designer.cs">
+      <DependentUpon>ConfigurationPropertyPartnerInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Applications\SetUp\ConfigurationPurchaseScheduleInfo.aspx.cs">
       <DependentUpon>ConfigurationPurchaseScheduleInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1358,6 +1371,20 @@
     </Compile>
     <Compile Include="Applications\SetUp\PropertyList.aspx.designer.cs">
       <DependentUpon>PropertyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\SetUp\PropertyPartnerList.aspx.cs">
+      <DependentUpon>PropertyPartnerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\PropertyPartnerList.aspx.designer.cs">
+      <DependentUpon>PropertyPartnerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\SetUp\PropertyPaymentList.aspx.cs">
+      <DependentUpon>PropertyPaymentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Applications\SetUp\PropertyPaymentList.aspx.designer.cs">
+      <DependentUpon>PropertyPaymentList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Applications\SetUp\PropertyUnits.aspx.cs">
       <DependentUpon>PropertyUnits.aspx</DependentUpon>
@@ -1922,6 +1949,27 @@
     </Compile>
     <Compile Include="UIControls\Configurations\CtrlPropertyList.ascx.designer.cs">
       <DependentUpon>CtrlPropertyList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPropertyPartnerConfigurationInformation.ascx.cs">
+      <DependentUpon>CtrlPropertyPartnerConfigurationInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPropertyPartnerConfigurationInformation.ascx.designer.cs">
+      <DependentUpon>CtrlPropertyPartnerConfigurationInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPropertyPartnerList.ascx.cs">
+      <DependentUpon>CtrlPropertyPartnerList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPropertyPartnerList.ascx.designer.cs">
+      <DependentUpon>CtrlPropertyPartnerList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPropertyPaymentList.ascx.cs">
+      <DependentUpon>CtrlPropertyPaymentList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Configurations\CtrlPropertyPaymentList.ascx.designer.cs">
+      <DependentUpon>CtrlPropertyPaymentList.ascx</DependentUpon>
     </Compile>
     <Compile Include="UIControls\Configurations\CtrlPurchaseScheduleConfigurationInformation.ascx.cs">
       <DependentUpon>CtrlPurchaseScheduleConfigurationInformation.ascx</DependentUpon>

@@ -175,15 +175,15 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 lstProjectTermPO.Sort((ProjectTerm p1, ProjectTerm p2) => p1.DisplayTerm.CompareTo(p2.DisplayTerm));
 
-                ddlPurchaseOption.DataSource = lstProjectTermPO;
-                ddlPurchaseOption.DataTextField = "DisplayTerm";
-                ddlPurchaseOption.DataValueField = "TermID";
-                ddlPurchaseOption.DataBind();
-                ddlPurchaseOption.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                //ddlPurchaseOption.DataSource = lstProjectTermPO;
+                //ddlPurchaseOption.DataTextField = "DisplayTerm";
+                //ddlPurchaseOption.DataValueField = "TermID";
+                //ddlPurchaseOption.DataBind();
+                //ddlPurchaseOption.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
             }
             else
             {
-                ddlPurchaseOption.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                //ddlPurchaseOption.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
             }
         }
 
@@ -204,15 +204,15 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 lstProjectTermPayTerm.Sort((ProjectTerm p1, ProjectTerm p2) => p1.DisplayTerm.CompareTo(p2.DisplayTerm));
 
-                ddlPaymentTerm.DataSource = lstProjectTermPayTerm;
-                ddlPaymentTerm.DataTextField = "DisplayTerm";
-                ddlPaymentTerm.DataValueField = "TermID";
-                ddlPaymentTerm.DataBind();
-                ddlPaymentTerm.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                //ddlPaymentTerm.DataSource = lstProjectTermPayTerm;
+                //ddlPaymentTerm.DataTextField = "DisplayTerm";
+                //ddlPaymentTerm.DataValueField = "TermID";
+                //ddlPaymentTerm.DataBind();
+                //ddlPaymentTerm.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
             }
             else
             {
-                ddlPaymentTerm.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                //ddlPaymentTerm.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
             }
         }
 
@@ -340,9 +340,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             txtPrimaryContactNo.Text = "";
             txtPrimaryEmail.Text = "";
             //txtPrimaryFax.Text = "";
-            txtSBAreaResidential.Text = "";
-            txtSbAreaCommercial.Text = "";
-            txtCarpetArea.Text = "";
+            //txtSBAreaResidential.Text = "";
+            //txtSbAreaCommercial.Text = "";
+            //txtCarpetArea.Text = "";
             txtAddressLine1.Text = "";
             //txtAddressLine2.Text = "";
             txtZipCode.Text = "";
@@ -379,6 +379,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 BindPurchaseOption();
                 BindPaymentTerm();
                 //BindAddressType();
+                hdnPrice.Value = Convert.ToString(ds.Tables[0].Rows[0]["Price"]);
+                hdnPurchaseArea.Value = Convert.ToString(ds.Tables[0].Rows[0]["PurchaseArea"]);
+                hdnTotalCost.Value = Convert.ToString(ds.Tables[0].Rows[0]["TotalCost"]);
                 txtPropertyName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]);
                 //txtPropertyDisplayName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyDisplayName"]);
                 txtPropertyCode.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyCode"]);
@@ -393,18 +396,18 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 else
                     txtJantri.Text = "";
 
-                if (Convert.ToString(ds.Tables[0].Rows[0]["SBArea"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["SBArea"]) != null)
-                    txtSBAreaResidential.Text = Convert.ToDecimal(ds.Tables[0].Rows[0]["SBArea"]).ToString("0");
-                else
-                    txtSBAreaResidential.Text = "";
-                if (Convert.ToString(ds.Tables[0].Rows[0]["SBAreaCommercial"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["SBAreaCommercial"]) != null)
-                    txtSbAreaCommercial.Text = Convert.ToDecimal(ds.Tables[0].Rows[0]["SBAreaCommercial"]).ToString("0");
-                else
-                    txtSbAreaCommercial.Text = "";
-                if (Convert.ToString(ds.Tables[0].Rows[0]["CarpetArea"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["CarpetArea"]) != null)
-                    txtCarpetArea.Text = Convert.ToDecimal((ds.Tables[0].Rows[0]["CarpetArea"])).ToString("0");
-                else
-                    txtCarpetArea.Text = "";
+                //if (Convert.ToString(ds.Tables[0].Rows[0]["SBArea"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["SBArea"]) != null)
+                //    txtSBAreaResidential.Text = Convert.ToDecimal(ds.Tables[0].Rows[0]["SBArea"]).ToString("0");
+                //else
+                //    txtSBAreaResidential.Text = "";
+                //if (Convert.ToString(ds.Tables[0].Rows[0]["SBAreaCommercial"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["SBAreaCommercial"]) != null)
+                //    txtSbAreaCommercial.Text = Convert.ToDecimal(ds.Tables[0].Rows[0]["SBAreaCommercial"]).ToString("0");
+                //else
+                //    txtSbAreaCommercial.Text = "";
+                //if (Convert.ToString(ds.Tables[0].Rows[0]["CarpetArea"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["CarpetArea"]) != null)
+                //    txtCarpetArea.Text = Convert.ToDecimal((ds.Tables[0].Rows[0]["CarpetArea"])).ToString("0");
+                //else
+                //    txtCarpetArea.Text = "";
                 txtAddressLine1.Text = Convert.ToString(ds.Tables[0].Rows[0]["Add1"]);
                 //txtAddressLine2.Text = Convert.ToString(ds.Tables[0].Rows[0]["Add2"]);
                 txtZipCode.Text = Convert.ToString(ds.Tables[0].Rows[0]["ZipCode"]);
@@ -418,11 +421,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 if (Convert.ToString(ds.Tables[0].Rows[0]["PropertyStatus"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PropertyStatus"]) != null)
                     ddlPropertyStatus.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PropertyStatusID"]));
 
-                if (Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOption"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOption"]) != null)
-                    ddlPurchaseOption.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOptionID"]));
+                //if (Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOption"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOption"]) != null)
+                //    ddlPurchaseOption.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PurchaseOptionID"]));
 
-                if (Convert.ToString(ds.Tables[0].Rows[0]["PaymentTerm"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PaymentTerm"]) != null)
-                    ddlPaymentTerm.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PaymentTermID"]));
+                //if (Convert.ToString(ds.Tables[0].Rows[0]["PaymentTerm"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PaymentTerm"]) != null)
+                //    ddlPaymentTerm.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PaymentTermID"]));
 
                 //if (Convert.ToString(ds.Tables[0].Rows[0]["AddressTypeTermID"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["AddressTypeTermID"]) != null)
                 //    ddlAddressType.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["AddressTypeTermID"]));
@@ -457,6 +460,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// </summary>
         private void LoadLandIssueGrid()
         {
+            Guid? PropertyID;
+            if (this.PropertyID != Guid.Empty)
+                PropertyID = this.PropertyID;
+            else
+                PropertyID = null;
 
             DataTable dt = new DataTable();
             DataRow dr = null;
@@ -681,9 +689,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     {
                         Property objUpdProperty = new Property();
                         Property objOldPropertyData = new Property();
-
+                        
                         objUpdProperty = PropertyBLL.GetByPrimaryKey(this.PropertyID);
                         objOldPropertyData = PropertyBLL.GetByPrimaryKey(this.PropertyID);
+                        objUpdProperty.Price = Convert.ToDecimal(hdnPrice.Value);
+                        objUpdProperty.PurchaseArea = Convert.ToDecimal(hdnPurchaseArea.Value);
+                        objUpdProperty.TotalCost = Convert.ToDecimal(hdnTotalCost.Value);
 
                         objUpdProperty.PropertyName = txtPropertyName.Text.Trim();
                         //objUpdProperty.PropertyDisplayName = txtPropertyDisplayName.Text.Trim();
@@ -698,17 +709,17 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         else
                             objUpdProperty.PropertyStatusID = null;
 
-                        if (ddlPurchaseOption.SelectedValue != Guid.Empty.ToString())
-                            objUpdProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);
-                        else
-                            objUpdProperty.PurchaseOptionID = null;
+                        //if (ddlPurchaseOption.SelectedValue != Guid.Empty.ToString())
+                        //    objUpdProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);
+                        //else
+                        //    objUpdProperty.PurchaseOptionID = null;
 
                         objUpdProperty.SurveyNo = txtSurveyNo.Text.Trim();
 
-                        if (ddlPaymentTerm.SelectedValue != Guid.Empty.ToString())
-                            objUpdProperty.PaymentTermID = new Guid(ddlPaymentTerm.SelectedValue);
-                        else
-                            objUpdProperty.PaymentTermID = null;
+                        //if (ddlPaymentTerm.SelectedValue != Guid.Empty.ToString())
+                        //    objUpdProperty.PaymentTermID = new Guid(ddlPaymentTerm.SelectedValue);
+                        //else
+                        //    objUpdProperty.PaymentTermID = null;
 
                         objUpdProperty.PropManagerName = txtPropertyManagerName.Text.Trim();
                         objUpdProperty.PrimaryContactNo = txtPrimaryContactNo.Text.Trim();
@@ -720,18 +731,18 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         else
                             objUpdProperty.Jantri = null;
 
-                        if (!(txtSBAreaResidential.Text.Trim().Equals("")))
-                            objUpdProperty.SBArea = Convert.ToDecimal(txtSBAreaResidential.Text.Trim());
-                        else
-                            objUpdProperty.SBArea = null;
-                        if (!(txtSbAreaCommercial.Text.Trim().Equals("")))
-                            objUpdProperty.SBAreaCommercial = Convert.ToDecimal(txtSbAreaCommercial.Text.Trim());
-                        else
-                            objUpdProperty.SBAreaCommercial = null;
-                        if (!(txtCarpetArea.Text.Trim().Equals("")))
-                            objUpdProperty.CarpetArea = Convert.ToDecimal(txtCarpetArea.Text.Trim());
-                        else
-                            objUpdProperty.CarpetArea = null;
+                        //if (!(txtSBAreaResidential.Text.Trim().Equals("")))
+                        //    objUpdProperty.SBArea = Convert.ToDecimal(txtSBAreaResidential.Text.Trim());
+                        //else
+                        //    objUpdProperty.SBArea = null;
+                        //if (!(txtSbAreaCommercial.Text.Trim().Equals("")))
+                        //    objUpdProperty.SBAreaCommercial = Convert.ToDecimal(txtSbAreaCommercial.Text.Trim());
+                        //else
+                        //    objUpdProperty.SBAreaCommercial = null;
+                        //if (!(txtCarpetArea.Text.Trim().Equals("")))
+                        //    objUpdProperty.CarpetArea = Convert.ToDecimal(txtCarpetArea.Text.Trim());
+                        //else
+                        //    objUpdProperty.CarpetArea = null;
                         objUpdProperty.LastUpdateOn = DateTime.Now;
                         //objUpdProperty.KhataNo = txtKhataNo.Text.Trim();
                         //objUpdProperty.BuldingPlanApprovalNo = txtBuldingPlanApprovalNo.Text.Trim();
@@ -879,17 +890,17 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         else
                             objInsProperty.PropertyStatusID = null;
 
-                        if (ddlPurchaseOption.SelectedValue != Guid.Empty.ToString())
-                            objInsProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);
-                        else
-                            objInsProperty.PurchaseOptionID = null;
+                        //if (ddlPurchaseOption.SelectedValue != Guid.Empty.ToString())
+                        //    objInsProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);
+                        //else
+                        //    objInsProperty.PurchaseOptionID = null;
                         
                         objInsProperty.SurveyNo = txtSurveyNo.Text.Trim();
 
-                        if (ddlPaymentTerm.SelectedValue != Guid.Empty.ToString())
-                            objInsProperty.PaymentTermID = new Guid(ddlPaymentTerm.SelectedValue);
-                        else
-                            objInsProperty.PaymentTermID = null;
+                        //if (ddlPaymentTerm.SelectedValue != Guid.Empty.ToString())
+                        //    objInsProperty.PaymentTermID = new Guid(ddlPaymentTerm.SelectedValue);
+                        //else
+                        //    objInsProperty.PaymentTermID = null;
 
                         objInsProperty.PropManagerName = txtPropertyManagerName.Text.Trim();
                         objInsProperty.PrimaryContactNo = txtPrimaryContactNo.Text.Trim();
@@ -901,18 +912,18 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         else
                             objInsProperty.Jantri = null;
 
-                        if (!(txtSBAreaResidential.Text.Trim().Equals("")))
-                            objInsProperty.SBArea = Convert.ToDecimal(txtSBAreaResidential.Text.Trim());
-                        else
-                            objInsProperty.SBArea = null;
-                        if (!(txtSbAreaCommercial.Text.Trim().Equals("")))
-                            objInsProperty.SBAreaCommercial = Convert.ToDecimal(txtSbAreaCommercial.Text.Trim());
-                        else
-                            objInsProperty.SBAreaCommercial = null;
-                        if (!(txtCarpetArea.Text.Trim().Equals("")))
-                            objInsProperty.CarpetArea = Convert.ToDecimal(txtCarpetArea.Text.Trim());
-                        else
-                            objInsProperty.CarpetArea = null;
+                        //if (!(txtSBAreaResidential.Text.Trim().Equals("")))
+                        //    objInsProperty.SBArea = Convert.ToDecimal(txtSBAreaResidential.Text.Trim());
+                        //else
+                        //    objInsProperty.SBArea = null;
+                        //if (!(txtSbAreaCommercial.Text.Trim().Equals("")))
+                        //    objInsProperty.SBAreaCommercial = Convert.ToDecimal(txtSbAreaCommercial.Text.Trim());
+                        //else
+                        //    objInsProperty.SBAreaCommercial = null;
+                        //if (!(txtCarpetArea.Text.Trim().Equals("")))
+                        //    objInsProperty.CarpetArea = Convert.ToDecimal(txtCarpetArea.Text.Trim());
+                        //else
+                        //    objInsProperty.CarpetArea = null;
                         objInsProperty.IsActive = true;
                         objInsProperty.LastUpdateOn = DateTime.Now;
                         objInsProperty.PropertyCreatedOn = DateTime.Now;

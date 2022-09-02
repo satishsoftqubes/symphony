@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SQT.Symphony.UI.Web.IRMS {
-    
-    
-    public partial class _Default {
-        
+namespace SQT.Symphony.UI.Web.IRMS
+{
+
+
+    public partial class _Default
+    {
+
         /// <summary>
         /// Link1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlLink Link1;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// srcptmana control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager srcptmana;
-        
+
         /// <summary>
         /// pnlLogni control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel pnlLogni;
-        
+
         /// <summary>
         /// txtUsername control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsername;
-        
+
         /// <summary>
         /// rvfUserName control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfUserName;
-        
+
         /// <summary>
         /// txtPassword control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-        
+
         /// <summary>
         /// rvfPassword control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfPassword;
-        
+
         /// <summary>
         /// chkRememberMe control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkRememberMe;
-        
+
         /// <summary>
         /// Login control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Login;
-        
+
         /// <summary>
         /// Cancel control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Cancel;
-        
+
         /// <summary>
         /// lnkForgotPassword control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkForgotPassword;
-        
+
         /// <summary>
         /// msgbx control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender msgbx;
-        
+
         /// <summary>
         /// hfMessage control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hfMessage;
-        
+
         /// <summary>
         /// pnl control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnl;
-        
+
         /// <summary>
         /// CloseModelPopup control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink CloseModelPopup;
-        
+
         /// <summary>
         /// btnImage control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image btnImage;
-        
+
         /// <summary>
         /// lblErrorMessage control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
-        
+
         /// <summary>
         /// btnAddressOk control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddressOk;
-        
+
         /// <summary>
         /// MessageBox control.
         /// </summary>
@@ -191,5 +193,14 @@ namespace SQT.Symphony.UI.Web.IRMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SQT.Symphony.UI.Web.IRMS.MsgBox.MsgBox MessageBox;
+
+        /// <summary>
+        /// UpdateProgressPropertyList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress UpdateProgressPropertyList;
     }
 }

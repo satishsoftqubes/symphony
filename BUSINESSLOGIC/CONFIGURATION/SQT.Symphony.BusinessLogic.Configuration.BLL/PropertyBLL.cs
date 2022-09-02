@@ -280,6 +280,38 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             }
         }
 
+        /// <summary>
+        /// Update property for purchase schedule
+        /// </summary>
+        /// <param name="businessObject"></param>
+        /// <returns></returns>
+        public static bool UpdatePropertyPurchase(Property businessObject)
+        {
+            PropertyDAL _dataObject = new PropertyDAL();
+            try
+            {
+                if (businessObject != null)
+                {
+                    using (new Tracer((SQTLogType.BusinessLayerTraceLog)))
+                    {
+                        if (!businessObject.IsValid)
+                        {
+                            throw new InvalidBusinessObjectException(businessObject.BrokenRulesList.ToString());
+                        }
+                        return _dataObject.UpdatePropertyPurchase(businessObject);
+                    }
+                }
+                else
+                {
+                    throw new InvalidBusinessObjectException("Object Is NULL");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public static bool Update(Property objUpdateProperty, Address objUpdateAddress, List<Documents> lstUpdateDocuments, List<Documents> lstLandIssueModificationDocuments)
         {
             bool flag = false;
