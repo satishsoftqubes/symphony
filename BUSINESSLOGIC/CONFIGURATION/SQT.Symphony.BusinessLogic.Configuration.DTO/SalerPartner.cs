@@ -9,7 +9,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 {
     [DataContract]
     public class SalerPartner : BusinessObjectBase
-    {
+    {  
+
         #region InnerClass
         public enum SalerPartnerFields
         {

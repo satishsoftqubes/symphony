@@ -13,6 +13,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         #region InnerClass
         public enum VendorDetailes
         {
+
             VendorID,
             CompanyID,
             ContactName,
