@@ -15,6 +15,7 @@ using SQT.Symphony.BusinessLogic.Configuration.DTO;
 
 namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 {
+
     public class VendorDAL : LinqDAL
     {
         DbTransaction dbtr = null;
