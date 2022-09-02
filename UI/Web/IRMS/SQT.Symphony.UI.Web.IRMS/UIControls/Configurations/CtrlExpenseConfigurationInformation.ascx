@@ -30,17 +30,10 @@
         });
         $("#ctl00_ContentPlaceHolder1_CtrlExpenseConfigurationInformation_txtTotalAmountID").val(Amount);
     }
-    $(".ExDocument").click(function () {
+    function ExpenseDocumentUpload() {
         debugger
-        alert('hii');
-    });
-    $("#ctl00_ContentPlaceHolder1_CtrlExpenseConfigurationInformation_gvExpenseModification_ctl02_fileExpenseDocument").click(function () {
-        debugger
-        alert('hii');
-    });
-    function DOCUMENT() {
-        debugger
-        alert('hii');
+        var FileDocument = $(".ExDocument").val().substring($(".ExDocument").val().lastIndexOf("\\") + 1, $(".ExDocument").val().length);
+        $("#ctl00_ContentPlaceHolder1_CtrlExpenseConfigurationInformation_gvExpenseModification_ctl02_expenseDocumentName").val(FileDocument);
     }
 </script>
 <style type="text/css">
@@ -292,9 +285,9 @@
                                                                 </span>
                                                                 <div id='browse_file_grid'>
                                                                     <asp:FileUpload ID="fileExpenseDocument" Class="ExDocument" ToolTip=".pdf|.PDF|.doc|.jpg|.jpeg|.gif|.png|.bmp|.JPG|.JPEG|.GIF|.PNG|.BMP|.TIF|.tif|.DOC|.docx|.DOCX|xlsx|XLSX"
-                                                                        runat="server" Height="22px" size="4" Style="float: left; width: 100px;" onChange="DOCUMENT()" />
+                                                                        runat="server" Height="22px" size="4" Style="float: left; width: 100px;" onChange="ExpenseDocumentUpload()" />
                                                                 </div>
-                                                                <asp:HiddenField ID="expenseDocumentName" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "DocumentName")%>' />
+                                                                <asp:HiddenField ID="expenseDocumentName"  runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "DocumentName")%>' />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                          
