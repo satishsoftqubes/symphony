@@ -13,7 +13,6 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         #region InnerClass
         public enum PropertyExpense
         {
-           
             ExpenseID,
             PropertyID,
             DateOfExpense,
