@@ -5,6 +5,7 @@ using SQT.Symphony.BusinessLogic.IRMS.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -320,6 +321,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         dtCurrentTable.Rows[i]["PurchaseNote"] = box2.Text;
                         FileUpload file = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocument");
                         dtCurrentTable.Rows[i]["DocumentName"] = file.FileName;
+
+                        //HiddenField h2 = (HiddenField)gvExpenseModification.Rows[i].Cells[1].FindControl("expenseDocumentName");
+                        //dtCurrentTable.Rows[i]["DocumentName"] = h2.Value;
                     }
 
                     //Rebind the Grid with the current data to reflect changes   
@@ -475,13 +479,14 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         DropDownList drop2 = (DropDownList)gvExpenseModification.Rows[i].Cells[1].FindControl("ddlItemID");
                         HiddenField h1 = (HiddenField)gvExpenseModification.Rows[i].Cells[1].FindControl("txtExpenseDetaileID");
                         FileUpload file = (FileUpload)gvExpenseModification.Rows[i].Cells[1].FindControl("fileExpenseDocument");
-                        
+                        HiddenField h2 = (HiddenField)gvExpenseModification.Rows[i].Cells[1].FindControl("expenseDocumentName");
                         if (i < dt.Rows.Count - 1)
                         {
                             drop.Text = dt.Rows[i]["VendorID"].ToString();
                             drop1.Text = dt.Rows[i]["PurchaseTypeTerm"].ToString();
                             drop2.Text = dt.Rows[i]["ItemTypeTerm"].ToString();
                             h1.Value = dt.Rows[i]["PropertyExpenseDetailID"].ToString();
+                            h2.Value = dt.Rows[i]["DocumentName"].ToString();
                             //file.FileName = dt.Rows[i]["DocumentName"];
                         }
                         rowIndex++;
@@ -580,7 +585,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             DropDownList ddlPurchase = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlPurchaseID");
                             DropDownList ddlItem = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlItemID");
                             HiddenField h1 = (HiddenField)gvExpenseModification.Rows[i].FindControl("txtExpenseDetaileID");
-                            FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocument");
+                            //FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocument");
                             if (gvExpenseModification.Rows.Count != 0)
                             {
                                 Expense ED = new Expense();
@@ -593,12 +598,13 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                                 //ED.PropertyExpenseDetailID = new Guid(h1.Value);
                                 ExpenseDetail.Add(ED);
                             }
-                            //FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocument");
+                            FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocument");
                             
                             if (fuDocument.FileName != "")
                             {
+
                                 Documents d1 = new Documents();
-                                string FileInCorporatonNo = "PD$" + Guid.NewGuid().ToString().Substring(0, 10) + "$" + fuDocument.FileName.Replace(" ", "_");
+                                string FileInCorporatonNo = "EXPENSE$" + Guid.NewGuid().ToString().Substring(0, 10) + "$" + fuDocument.FileName.Replace(" ", "_");
                                 string path1 = Server.MapPath("~/Document/" + FileInCorporatonNo);
                                 fuDocument.SaveAs(path1);
                                 d1.DocumentName = FileInCorporatonNo;
