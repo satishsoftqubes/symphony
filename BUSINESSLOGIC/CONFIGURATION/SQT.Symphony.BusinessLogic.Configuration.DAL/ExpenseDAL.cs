@@ -18,6 +18,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 {
     public class ExpenseDAL : LinqDAL
     {
+
         DbTransaction dbtr = null;
         #region Constructor
 

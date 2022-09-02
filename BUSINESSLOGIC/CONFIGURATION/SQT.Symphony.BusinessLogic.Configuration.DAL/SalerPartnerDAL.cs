@@ -18,6 +18,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 {
     public class SalerPartnerDAL : LinqDAL
     {
+
         DbTransaction dbtr = null;
         public SalerPartnerDAL() : base()
         {
