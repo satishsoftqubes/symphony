@@ -28,6 +28,18 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             }
         }
 
+        public Guid PartnerID
+        {
+            get
+            {
+                return ViewState["PartnerID"] != null ? new Guid(Convert.ToString(ViewState["PartnerID"])) : Guid.Empty;
+            }
+            set
+            {
+                ViewState["PartnerID"] = value;
+            }
+        }
+
         public Guid PropertyID
         {
             get
@@ -155,12 +167,83 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 PropertyID = Guid.Empty;
             }
 
-            //DataSet ds = PurchaseScheduleBLL.GetPropertyListForPurchaseSchedule(null, this.CompanyID, PropertyName);
-
+            //string FirstName = string.Empty;
+            //string MobileNo = string.Empty;
+            //DataSet ds = SalerPartnerBLL.GetSalerPartnerData(null, null);
             //DataView dv = new DataView(ds.Tables[0]);
-            //dv.Sort = "PropertyName Asc";
-            //grdPropertyPartnerList.DataSource = dv;
-            //grdPropertyPartnerList.DataBind();
+            //dv.Sort = "FirstName Asc";
+            //grdSalerList.DataSource = dv;
+            //grdSalerList.DataBind();
+        }
+
+        protected void grdSalerList_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdSalerList.PageIndex = e.NewPageIndex;
+            BindGrid();
+        }
+
+        protected void grdSalerList_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName.Equals("EDITDATA"))
+                {
+                    Session.Add("PartnerID", new Guid(Convert.ToString(e.CommandArgument)));
+                    Response.Redirect("~/Applications/SetUp/ConfigurationSalerPartner.aspx");
+                }
+                else if (e.CommandName.Equals("DELETEDATA"))
+                {
+                    //Label1.Text = global::Resources.IRMSMsg.DeleteWarMsg.ToString().Trim();
+                    //this.PartnerID = new Guid(Convert.ToString(e.CommandArgument));
+                    //Deletemsgbx.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        //protected void btnSalerYes_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (this.PartnerID != Guid.Empty)
+        //        {
+        //            Deletemsgbx.Hide();
+        //            SalerPartnerBLL.Delete(this.PartnerID);
+        //            IsMessage = true;
+        //            //lblErrorMessage.Text = global::Resources.IRMSMsg.DeleteMsg.ToString().Trim();
+        //        }
+        //        ClearControl();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+        //        MessageBox.Show(ex.Message.ToString());
+        //    }
+        //}
+
+        //protected void btnSalerNo_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        Deletemsgbx.Hide();
+        //        ClearControl();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+        //        MessageBox.Show(ex.Message.ToString());
+        //    }
+        //}
+
+        private void ClearControl()
+        {
+            this.PartnerID = Guid.Empty;
+            Session.Remove("PartnerID");
+            BindGrid();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

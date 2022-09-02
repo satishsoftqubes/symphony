@@ -57,12 +57,144 @@
 
 <asp:UpdatePanel ID="updPropertyPartner" runat="server">
     <ContentTemplate>
+
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td>Property partner form</td>
+                <td class="content" style="padding-left: 0px; width: 66.66%">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
+                        <tr>
+                            <td class="boxtopleft">&nbsp;
+                            </td>
+                            <td class="boxtopcenter">PROPERTY PARTNER
+                            </td>
+                            <td class="boxtopright">&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="boxleft">&nbsp;
+                            </td>
+                            <td>
+                                <table cellpadding="3" cellspacing="3" border="0" width="100%">
+                                    <tr>
+                                        <td colspan="2">
+                                            <div style="height: 26px;">
+                                                <%if (IsMessage)
+                                                    { %>
+                                                <div class="ResetSuccessfully">
+                                                    <div style="float: left; padding-top: 7px; width: 25px; height: 24px; margin-right: 10px;">
+                                                        <img src="../../images/success.png" />
+                                                    </div>
+                                                    <div>
+                                                        <asp:Label ID="lblErrorMessage" runat="server"></asp:Label>
+                                                    </div>
+                                                    <div style="height: 10px;">
+                                                    </div>
+                                                </div>
+                                                <%}%>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div style="float: right;">
+                                                <b>All Bold Fields are Mandatory</b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="litPropertyName" runat="server" Text="Property Name" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rfvPropertyName" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
+                                                    ControlToValidate="ddlPropertyName" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlPropertyName" runat="server" Style="width: 205px;">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="Label1" runat="server" Text="Partner Name" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rfvPartnerName" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
+                                                    ControlToValidate="ddlPartnerName" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlPartnerName" runat="server" Style="width: 205px;">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" valign="top" colspan="2" style="text-align: right;">
+                                            <div style="float: right; width: auto; display: inline-block;">
+                                                <asp:Button ID="btnNew" runat="server" Style="display: inline-block; margin-left: 5px; display: inline;"
+                                                    Text="New" OnClick="btnNew_Click" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                <asp:Button ID="btnSave" Text="Save" Style="display: inline-block; margin-left: 5px;"
+                                                    runat="server" ImageUrl="~/images/save.png" ValidationGroup="Configuration" CausesValidation="true"
+                                                    OnClick="btnSave_Click" OnClientClick="return postbackButtonClick();" />
+                                                <asp:Button ID="btnCancel" Text="Cancel" Style="display: inline-block; margin-left: 5px;"
+                                                    runat="server" ImageUrl="~/images/cancle.png" CausesValidation="false" OnClick="btnCancel_Click" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="boxright">&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="boxbottomleft">&nbsp;
+                            </td>
+                            <td class="boxbottomcenter">&nbsp;
+                            </td>
+                            <td class="boxbottomright">&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="clear_divider">
+                    </div>
+                </td>
+                <td style="width: 2px;">&#160;
+                </td>
+                <td class="content">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
+                        <tr>
+                            <td class="boxtopleft">&nbsp;
+                            </td>
+                            <td class="boxtopcenter">QUICK SEARCH
+                            </td>
+                            <td class="boxtopright">&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="boxleft">&nbsp;
+                            </td>
+                            <td>
+                                <div class="box_leftmargin_content">
+                                </div>
+
+                            </td>
+                            <td class="boxright">&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="boxbottomleft">&nbsp;
+                            </td>
+                            <td class="boxbottomcenter">&nbsp;
+                            </td>
+                            <td class="boxbottomright">&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </td>
             </tr>
         </table>
-
+        <%-- modal popup panel --%>
     </ContentTemplate>
 </asp:UpdatePanel>
 
