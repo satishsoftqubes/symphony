@@ -80,6 +80,7 @@
     <Compile Include="EMailTemplates.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="ExchangeRate.cs" />
+    <Compile Include="Expense.cs" />
     <Compile Include="Floor.cs" />
     <Compile Include="FolioConfig.cs" />
     <Compile Include="HousekeepingConfig.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="RoomTypeAmenities.cs" />
     <Compile Include="RoomTypeDeposit.cs" />
     <Compile Include="RoomTypeServices.cs" />
+    <Compile Include="SalerPartner.cs" />
     <Compile Include="ServiceVendorMaster.cs" />
     <Compile Include="SMSTemplates.cs" />
     <Compile Include="State.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="UOM.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserRole.cs" />
+    <Compile Include="Vendor.cs" />
     <Compile Include="VIPTypes.cs" />
     <Compile Include="Wing.cs" />
     <Compile Include="WingFloorJoin.cs" />
