@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
@@ -49,7 +50,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                     parameterList.Add(dtoObject);
                     SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
 
-                    StoredProcedure(MasterConstant.PropertyInsert)
+                    StoredProcedure(MasterConstant.PropertyPartnerInsert)
                         .AddParameter("@PropertyPartnerID", dtoObject.PropertyPartnerID)
 .AddParameter("@PropertyID", dtoObject.PropertyID)
 .AddParameter("@PartnerID", dtoObject.PartnerID)
@@ -60,7 +61,6 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 .AddParameter("@TotalInvested", dtoObject.TotalInvested)
 .AddParameter("@PartnershipDissolveOn", dtoObject.PartnershipDissolveOn)
 .AddParameter("@StatusTerm", dtoObject.StatusTerm)
-.AddParameter("@SeqNo", dtoObject.SeqNo)
 .AddParameter("@IsActive", dtoObject.IsActive)
 .AddParameter("@PartnerLegalName", dtoObject.PartnerLegalName)
 .AddParameter("@Description", dtoObject.Description)
@@ -100,7 +100,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                     parameterList.Add(dtoObject);
                     SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
 
-                    StoredProcedure(MasterConstant.PropertyUpdate)
+                    StoredProcedure(MasterConstant.PropertyPartnerUpdate)
                         .AddParameter("@PropertyPartnerID", dtoObject.PropertyPartnerID)
 .AddParameter("@PropertyID", dtoObject.PropertyID)
 .AddParameter("@PartnerID", dtoObject.PartnerID)
@@ -152,6 +152,60 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                 }
             }
             return obj;
+        }
+
+        public DataSet SelectPropertyPartnerData(Guid? PropertyPartnerID, string PropertyName, Guid? CompanyID)
+        {
+            DataSet obj = null;
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    obj = StoredProcedure(MasterConstant.PropertyPartnerSelectData)
+                                            .AddParameter("@PropertyPartnerID", PropertyPartnerID)
+                                            .AddParameter("@PropertyName", PropertyName)
+                                            .AddParameter("@CompanyID", CompanyID)
+                                            .WithTransaction(dbtr)
+                                            .FetchDataSet();
+                }
+            }
+            catch (Exception ex)
+            {
+                ////Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+
+        public bool Delete(PropertyPartner dtoObject)
+        {
+            try
+            {
+                StoredProcedure(MasterConstant.PropertyPartnerDeleteByPrimaryKey)
+                    .AddParameter("@PropertyPartnerID", dtoObject.PropertyPartnerID)
+
+                    .WithTransaction(dbtr)
+                    .Execute();
+            }
+            catch (Exception ex)
+            {
+                //Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return true;
         }
     }
 }

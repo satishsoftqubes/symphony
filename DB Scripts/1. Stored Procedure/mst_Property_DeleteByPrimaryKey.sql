@@ -8,6 +8,11 @@ CREATE PROCEDURE [dbo].[mst_Property_DeleteByPrimaryKey]
 )
 AS
 BEGIN
+
+DELETE FROM [dbo].[mst_propertypartner]
+ WHERE 
+	[PropertyID] = @PropertyID AND IsActive = 1
+	
 DELETE FROM [dbo].[propertypurchase_schedule]
  WHERE 
 	[PropertyID] = @PropertyID AND IsActive = 1

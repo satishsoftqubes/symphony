@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
@@ -94,6 +95,19 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             {
                 throw;
             }
+        }
+
+        public static DataSet GetPropertyPartnerData(Guid? PropertyPartnerID, string PropertyName, Guid? CompanyID)
+        {
+            PropertyPartnerDAL _dataObject = new PropertyPartnerDAL();
+            DataSet ds = _dataObject.SelectPropertyPartnerData(PropertyPartnerID, PropertyName, CompanyID);
+            return ds;
+        }
+
+        public static bool Delete(PropertyPartner obj)
+        {
+            PropertyPartnerDAL _dataObject = new PropertyPartnerDAL();
+            return _dataObject.Delete(obj);
         }
 
         #endregion

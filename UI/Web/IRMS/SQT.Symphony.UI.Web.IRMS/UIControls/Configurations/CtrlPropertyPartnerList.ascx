@@ -101,35 +101,14 @@
                                     </tr>
                                     <tr>
                                         <td class="dTableBox" style="padding: 10px 0px">
-                                            <asp:GridView ID="grdSalerList" runat="server" AutoGenerateColumns="False" Width="100%"
-                                                OnPageIndexChanging="grdSalerList_OnPageIndexChanging" OnRowCommand="grdSalerList_RowCommand">
+                                            <asp:GridView ID="grdPropertyPartnerList" runat="server" AutoGenerateColumns="False" Width="100%"
+                                                OnPageIndexChanging="grdPropertyPartnerList_OnPageIndexChanging" OnRowCommand="grdPropertyPartnerList_RowCommand">
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="First Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
                                                         ItemStyle-HorizontalAlign="Left">
                                                         <ItemTemplate>
-                                                            <asp:LinkButton ID="lnkbtnfirstName" Text='<%#DataBinder.Eval(Container.DataItem, "FirstName")%>'
-                                                                runat="server" CommandName="FIRSTNAME" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PartnerID")%>' />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Middle Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
-                                                        ItemStyle-HorizontalAlign="Left">
-                                                        <ItemTemplate>
-                                                            <asp:LinkButton ID="lnkbtnmiddleName" Text='<%#DataBinder.Eval(Container.DataItem, "MiddleName")%>'
-                                                                runat="server" CommandName="MIDDLENAME" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PartnerID")%>' />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Last Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
-                                                        ItemStyle-HorizontalAlign="Left">
-                                                        <ItemTemplate>
-                                                            <asp:LinkButton ID="lnkbtnlastName" Text='<%#DataBinder.Eval(Container.DataItem, "LastName")%>'
-                                                                runat="server" CommandName="LASTNAME" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PartnerID")%>' />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Mobile No" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
-                                                        ItemStyle-HorizontalAlign="Left">
-                                                        <ItemTemplate>
-                                                            <asp:LinkButton ID="lnkbtnmobileNo" Text='<%#DataBinder.Eval(Container.DataItem, "MobileNo")%>'
-                                                                runat="server" CommandName="UNITINFO" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PartnerID")%>' />
+                                                            <asp:LinkButton ID="lnkbtnfirstName" Text='<%#DataBinder.Eval(Container.DataItem, "PropertyName")%>'
+                                                                runat="server" CommandName="FIRSTNAME" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPartnerID")%>' />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Edit/View" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
@@ -137,7 +116,7 @@
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="btnEdit" runat="server" ToolTip="Edit" ImageUrl="~/images/edit.png"
                                                                 Style="border: 0px; vertical-align: middle; margin-top: 2px;" CommandName="EDITDATA"
-                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PartnerID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPartnerID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Delete" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
@@ -145,10 +124,18 @@
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="btnDelete" runat="server" ToolTip="Delete" ImageUrl="~/images/delete_icon.png"
                                                                 Style="border: 0px; vertical-align: middle; margin-top: 1px;" CommandName="DELETEDATA"
-                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PartnerID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPartnerID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>
+                                                <EmptyDataTemplate>
+                                                    <div class="pagecontent_info">
+                                                        <div class="NoItemsFound">
+                                                            <h2>
+                                                                <asp:Literal ID="Literal5" runat="server" Text="No Record Found"></asp:Literal></h2>
+                                                        </div>
+                                                    </div>
+                                                </EmptyDataTemplate>
                                             </asp:GridView>
                                         </td>
                                     </tr>
@@ -176,7 +163,7 @@
                 </td>
             </tr>
         </table>
-        <%--<ajx:ModalPopupExtender ID="Deletemsgbx" runat="server" TargetControlID="hfMessage" PopupControlID="Panel1"
+        <ajx:ModalPopupExtender ID="msgbx" runat="server" TargetControlID="hfMessage" PopupControlID="Panel1"
             BackgroundCssClass="mod_background">
         </ajx:ModalPopupExtender>
         <asp:HiddenField ID="hfMessage" runat="server" />
@@ -184,19 +171,15 @@
             <div style="width: 500px; height: 200px; margin-top: 25px;">
                 <table border="0" cellspacing="0" cellpadding="0" class="modelpopup_box">
                     <tr>
-                        <td class="modelpopup_boxtopleft">
-                            &nbsp;
+                        <td class="modelpopup_boxtopleft">&nbsp;
                         </td>
-                        <td class="modelpopup_boxtopcenter">
-                            &nbsp;
+                        <td class="modelpopup_boxtopcenter">&nbsp;
                         </td>
-                        <td class="modelpopup_boxtopright">
-                            &nbsp;
+                        <td class="modelpopup_boxtopright">&nbsp;
                         </td>
                     </tr>
                     <tr>
-                        <td class="modelpopup_boxleft">
-                            &nbsp;
+                        <td class="modelpopup_boxleft">&nbsp;
                         </td>
                         <td class="modelpopup_box_bg">
                             <div style="width: 100px; float: left; margin-top: 10px;">
@@ -211,31 +194,27 @@
                             <table cellpadding="3" cellspacing="3" width="100%" style="margin-left: 5px; margin-top: 15px;">
                                 <tr>
                                     <td align="center" valign="middle">
-                                        <asp:Button ID="btnSalerYes" Text="Yes" runat="server" ImageUrl="~/images/save.png"
-                                           OnClick="btnSalerYes_Click"  Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
-                                        <asp:Button ID="btnSalerNo" Text="Cancel" runat="server" ImageUrl="~/images/cancle.png"
-                                             OnClick="btnSalerNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                        <asp:Button ID="btnPropertyPartnerYes" Text="Yes" runat="server" ImageUrl="~/images/save.png"
+                                            OnClick="btnPropertyPartnerYes_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                        <asp:Button ID="btnPropertyPartnerNo" Text="Cancel" runat="server" ImageUrl="~/images/cancle.png"
+                                            OnClick="btnPropertyPartnerNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
                                     </td>
                                 </tr>
                             </table>
                         </td>
-                        <td class="modelpopup_boxright">
-                            &nbsp;
+                        <td class="modelpopup_boxright">&nbsp;
                         </td>
                     </tr>
                     <tr>
-                        <td class="modelpopup_boxbottomleft">
-                            &nbsp;
+                        <td class="modelpopup_boxbottomleft">&nbsp;
                         </td>
-                        <td class="modelpopup_boxbottomcenter">
-                        </td>
-                        <td class="modelpopup_boxbottomright">
-                            &nbsp;
+                        <td class="modelpopup_boxbottomcenter"></td>
+                        <td class="modelpopup_boxbottomright">&nbsp;
                         </td>
                     </tr>
                 </table>
             </div>
-        </asp:Panel>--%>
+        </asp:Panel>
     </ContentTemplate>
 </asp:UpdatePanel>
 
