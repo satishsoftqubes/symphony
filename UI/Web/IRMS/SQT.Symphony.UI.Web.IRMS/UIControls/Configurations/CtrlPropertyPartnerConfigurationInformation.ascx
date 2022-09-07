@@ -145,15 +145,9 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Label ID="litTotalToInvest" runat="server" Text="Total To Invest" CssClass="RequireFile"></asp:Label>
-                                            <span class="erroraleart">
-                                                <asp:RequiredFieldValidator ID="rfvTotalToInvest" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtTotalToInvest"
-                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>
+                                            <asp:Label ID="litTotalToInvest" runat="server" Text="Total To Invest"></asp:Label>
                                         </td>
                                         <td>
-                                            <%--<asp:TextBox autocomplete="off" ID="txtTotalToInvest" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>--%>
                                             <asp:TextBox autocomplete="off" ID="txtTotalToInvest" ReadOnly="true" Style="background: #dcdddf;" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
                                         </td>
                                     </tr>

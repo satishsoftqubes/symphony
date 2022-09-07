@@ -17,6 +17,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         {
             PurchaseScheduleID,
             PropertyID,
+            PartnerID,
             InstallmentTypeTerm,
             InstallmentAmount,
             InstallmentInPercentage,
@@ -35,6 +36,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 
         Guid _purchaseScheduleID;
         Guid? _propertyID;
+        Guid? _partnerID;
         string _installmentTypeTerm;
         decimal? _installmentAmount;
         decimal? _installmentInPercentage;
@@ -75,6 +77,20 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 {
                     _propertyID = value;
                     PropertyHasChanged("PropertyID");
+                }
+            }
+        }
+
+        [DataMember]
+        public Guid? PartnerID
+        {
+            get { return _partnerID; }
+            set
+            {
+                if (_partnerID != value)
+                {
+                    _partnerID = value;
+                    PropertyHasChanged("PartnerID");
                 }
             }
         }

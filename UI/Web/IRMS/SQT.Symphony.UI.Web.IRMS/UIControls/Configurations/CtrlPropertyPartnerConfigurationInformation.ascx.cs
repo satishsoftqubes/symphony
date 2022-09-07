@@ -341,7 +341,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             DataSet ds = new DataSet();
             ds = PropertyBLL.GetPropertyData(new Guid(propertyID), this.CompanyID, null, null, null);
             
-            if (txtPartnershipInPercentage.Text != "" && ds.Tables[0].Rows.Count > 0)
+            if (txtPartnershipInPercentage.Text != "" && ds.Tables[0].Rows.Count > 0 && !string.IsNullOrWhiteSpace(ds.Tables[0].Rows[0]["TotalCost"].ToString()))
             {
                 decimal totalCost = Convert.ToDecimal(ds.Tables[0].Rows[0]["TotalCost"]);
                 string pattern = @"^\d+(\.\d+)*$";
@@ -459,6 +459,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             objInsPropertyPartner.Description = null;
 
                         PropertyPartnerBLL.Save(objInsPropertyPartner);
+
                         ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Save", objInsPropertyPartner.ToString(), objInsPropertyPartner.ToString(), "mst_PropertyPartner");
                         IsMessage = true;
                         lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();

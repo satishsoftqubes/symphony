@@ -54,6 +54,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                     StoredProcedure(MasterConstant.PurchaseScheduleInsert)
                             .AddParameter("@PurchaseScheduleID", dtoObject.PurchaseScheduleID)
                             .AddParameter("@PropertyID", dtoObject.PropertyID)
+                            .AddParameter("@PartnerID", dtoObject.PartnerID)
                             .AddParameter("@InstallmentTypeTerm", dtoObject.InstallmentTypeTerm)
                             .AddParameter("@InstallmentAmount", dtoObject.InstallmentAmount)
                             .AddParameter("@InstallmentInPercentage", dtoObject.InstallmentInPercentage)

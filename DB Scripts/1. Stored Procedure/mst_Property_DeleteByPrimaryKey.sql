@@ -20,4 +20,9 @@ DELETE FROM [dbo].[propertypurchase_schedule]
 DELETE FROM [dbo].[mst_Property]
  WHERE 
 	[PropertyID] = @PropertyID AND IsActive = 1
+	
+DELETE FROM [dbo].[purchasepartner_schedule]
+ WHERE 
+	[PropertyID] = @PropertyID AND IsActive = 1
+	
 END

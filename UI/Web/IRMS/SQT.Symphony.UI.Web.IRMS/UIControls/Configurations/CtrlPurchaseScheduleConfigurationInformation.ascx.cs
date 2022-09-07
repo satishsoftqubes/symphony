@@ -535,10 +535,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     else
                         objProperty.TotalCost = null;
 
+                    // Update price, purchase area, total cost in mst_property
                     PropertyBLL.UpdatePropertyPurchase(objProperty);
 
                     // property id for purchase schedule
                     objPurchaseSchedule.PropertyID = new Guid(ddlPropertyName.SelectedValue);
+                   
                     DataSet ds = new DataSet();
                     ds = PurchaseScheduleBLL.GetPurchaseScheduleData(objPurchaseSchedule.PropertyID, this.CompanyID, null);
 
@@ -546,6 +548,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     {
                         for (int i = 0; i < gvPropertyInstallments.Rows.Count; i++)
                         {
+                            DataSet dsPropertyPartner = new DataSet();
+                            dsPropertyPartner = PropertyPartnerBLL.GetPropertyPartnerData(null, Convert.ToString(ddlPropertyName.SelectedItem.Text), this.CompanyID);
+                            objPurchaseSchedule.PartnerID = new Guid(dsPropertyPartner.Tables[0].Rows[i]["PartnerID"].ToString());
+
                             // Payment period
                             DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");
                             objPurchaseSchedule.InstallmentTypeTerm = Convert.ToString(ddlPaymentPeriod.SelectedItem.Text);
