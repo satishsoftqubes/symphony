@@ -104,11 +104,16 @@
                                             <asp:GridView ID="grdPropertyPartnerList" runat="server" AutoGenerateColumns="False" Width="100%"
                                                 OnPageIndexChanging="grdPropertyPartnerList_OnPageIndexChanging" OnRowCommand="grdPropertyPartnerList_RowCommand">
                                                 <Columns>
-                                                    <asp:TemplateField HeaderText="First Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
+                                                    <asp:TemplateField HeaderText="Property Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
                                                         ItemStyle-HorizontalAlign="Left">
                                                         <ItemTemplate>
-                                                            <asp:LinkButton ID="lnkbtnfirstName" Text='<%#DataBinder.Eval(Container.DataItem, "PropertyName")%>'
-                                                                runat="server" CommandName="FIRSTNAME" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPartnerID")%>' />
+                                                            <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "PropertyName")%>'></asp:Literal>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Partner Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
+                                                        ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "PartnerName")%>'></asp:Literal>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Edit/View" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"

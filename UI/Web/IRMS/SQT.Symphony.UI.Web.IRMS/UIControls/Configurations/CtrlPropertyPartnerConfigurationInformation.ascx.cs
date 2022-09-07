@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -163,8 +164,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                 txtPartnershipInPercentage.Text = Convert.ToString(ds.Tables[0].Rows[0]["PartnershipInPercentage"]);
                 txtTotalToInvest.Text = Convert.ToString(ds.Tables[0].Rows[0]["TotalToInvest"]);
-                txtTotalDue.Text = Convert.ToString(ds.Tables[0].Rows[0]["TotalDue"]);
-                txtTotalInvested.Text = Convert.ToString(ds.Tables[0].Rows[0]["TotalInvested"]);
                 txtDescription.Text = Convert.ToString(ds.Tables[0].Rows[0]["Description"]);
             }
         }
@@ -313,8 +312,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             BindPartner();
             txtPartnershipInPercentage.Text = txtPartnershipInPercentage.Text = "";
             txtTotalToInvest.Text = txtTotalToInvest.Text = "";
-            txtTotalDue.Text = txtTotalDue.Text = "";
-            txtTotalInvested.Text = txtTotalInvested.Text = "";
             txtDescription.Text = txtDescription.Text = "";
             this.PropertyPartnerID = Guid.Empty;
         }
@@ -336,6 +333,28 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 Response.Redirect("~/Applications/AccessDenied.aspx");
         }
 
+        // calculate total to invest
+        public void fnCalculateTotalToInvest(object sender, EventArgs e)
+        {
+            string propertyID = ddlPropertyName.SelectedValue;
+
+            DataSet ds = new DataSet();
+            ds = PropertyBLL.GetPropertyData(new Guid(propertyID), this.CompanyID, null, null, null);
+            
+            if (txtPartnershipInPercentage.Text != "" && ds.Tables[0].Rows.Count > 0)
+            {
+                decimal totalCost = Convert.ToDecimal(ds.Tables[0].Rows[0]["TotalCost"]);
+                string pattern = @"^\d+(\.\d+)*$";
+                Regex rg = new Regex(pattern);
+                if (rg.Matches(txtPartnershipInPercentage.Text).Count > 0)
+                {
+                    decimal partnershipPercentage = Convert.ToDecimal(txtPartnershipInPercentage.Text);
+                    decimal totalToInvest = Convert.ToDecimal(totalCost * partnershipPercentage / 100);
+                    txtTotalToInvest.Text = Convert.ToString(totalToInvest);
+                }
+            }
+        }
+
         /// <summary>
         /// Add New Property Partner Into the System 
         /// </summary>
@@ -347,8 +366,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 try
                 {
-                    // Check duplication
-
                     if (this.PropertyPartnerID != Guid.Empty)
                     {
                         PropertyPartner objUpdPropertyPartner = new PropertyPartner();
@@ -369,6 +386,25 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         else
                             objUpdPropertyPartner.PartnerID = null;
 
+                        // Partnership In Percentage                        
+                        if (!(txtPartnershipInPercentage.Text.Trim().Equals("")))
+                            objUpdPropertyPartner.PartnershipInPercentage = Convert.ToDecimal(txtPartnershipInPercentage.Text.Trim());
+                        else
+                            objUpdPropertyPartner.PartnershipInPercentage = null;
+
+                        // Total to invest 
+                        if (!(txtTotalToInvest.Text.Trim().Equals("")))
+                            objUpdPropertyPartner.TotalToInvest = Convert.ToDecimal(txtTotalToInvest.Text.Trim());
+                        else
+                            objUpdPropertyPartner.TotalToInvest = null;
+
+                        //Description
+                        if (!(txtDescription.Text.Trim().Equals("")))
+                            objUpdPropertyPartner.Description = txtDescription.Text.Trim();
+                        else
+                            objUpdPropertyPartner.Description = null;
+
+
                         PropertyPartnerBLL.Update(objUpdPropertyPartner);
                         ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Update", objOldPropertyPartnerData.ToString(), objUpdPropertyPartner.ToString(), "mst_PropertyPartner");
                         IsMessage = true;
@@ -378,6 +414,15 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     }
                     else
                     {
+                        // Check duplication by property and partner
+                        List<PropertyPartner> propertyPartners = new List<PropertyPartner>();
+                        propertyPartners = PropertyPartnerBLL.CheckPropertyPartnerDuplication(new Guid(ddlPropertyName.SelectedValue), new Guid(ddlPartnerName.SelectedValue));
+                        if (propertyPartners[0].PropertyPartnerCount > 0)
+                        {
+                            msgbxCheckDuplicate.Show();
+                            return;
+                        }
+
                         PropertyPartner objInsPropertyPartner = new PropertyPartner();
 
                         // property name
@@ -407,19 +452,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         else
                             objInsPropertyPartner.TotalToInvest = null;
 
-                        // total due
-                        if (!(txtTotalDue.Text.Trim().Equals("")))
-                            objInsPropertyPartner.TotalDue = Convert.ToDecimal(txtTotalDue.Text.Trim());
-                        else
-                            objInsPropertyPartner.TotalDue = null;
-
-                        //total invested
-                        if (!(txtTotalInvested.Text.Trim().Equals("")))
-                            objInsPropertyPartner.TotalInvested = Convert.ToDecimal(txtTotalInvested.Text.Trim());
-                        else
-                            objInsPropertyPartner.TotalInvested = null;
-
-                        //total invested
+                        //Description
                         if (!(txtDescription.Text.Trim().Equals("")))
                             objInsPropertyPartner.Description = txtDescription.Text.Trim();
                         else

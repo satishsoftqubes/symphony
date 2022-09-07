@@ -264,10 +264,12 @@ namespace SQT.Symphony.BusinessLogic.Configuration.COMMON
         public const string PurchaseScheduleDeleteByPrimaryKey = "[dbo].[purchaseScheduleList_DeleteByPrimaryKey]";
 
         //SPs for PropertyPartner
+        public const string PropertyPartnerSelectData = "[dbo].[mst_PropertyPartner_SelectData]";
         public const string PropertyPartnerSelectByPrimaryKey = "[dbo].[mst_PropertyPartner_SelectByPrimaryKey]";
         public const string PropertyPartnerInsert = "[dbo].[mst_PropertyPartner_Insert]";
         public const string PropertyPartnerUpdate = "[dbo].[mst_PropertyPartner_Update]";
-        public const string PropertyPartnerDelete = "[dbo].[mst_PropertyPartner_Delete]";
+        public const string PropertyPartnerDeleteByPrimaryKey = "[dbo].[mst_PropertyPartner_DeleteByPrimaryKey]";
+        public const string PropertyPartnerCheckDuplication = "[dbo].[mst_PropertyPartner_CheckDuplication]";
 
         //SPs for  mst_PropertyConfiguration
         public const string PropertyConfigurationInsert = "[dbo].[mst_PropertyConfiguration_Insert]";

@@ -27,7 +27,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             SeqNo,
             IsActive,
             PartnerLegalName,
-            Description
+            Description,
+            PropertyPartnerCount
         }
 
         #endregion
@@ -36,6 +37,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 
         Guid _propertyPartnerID;
         Guid? _propertyID;
+        int _propertyPartnerCount;
         Guid? _partnerID;
         DateTime? _addedOn;
         decimal? _partnershipInPercentage;
@@ -77,6 +79,20 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 {
                     _propertyID = value;
                     PropertyHasChanged("PropertyID");
+                }
+            }
+        }
+
+        [DataMember]
+        public int PropertyPartnerCount
+        {
+            get { return _propertyPartnerCount; }
+            set
+            {
+                if (_propertyPartnerCount != value)
+                {
+                    _propertyPartnerCount = value;
+                    PropertyHasChanged("PropertyPartnerCount");
                 }
             }
         }

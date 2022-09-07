@@ -111,7 +111,7 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <asp:DropDownList ID="ddlPropertyName" runat="server" Style="width: 205px;">
+                                            <asp:DropDownList ID="ddlPropertyName" AutoPostBack="true" onselectedindexchanged="fnCalculateTotalToInvest" runat="server" Style="width: 205px;">
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
@@ -140,7 +140,7 @@
                                         </td>
                                         <td>
                                             <%--<asp:TextBox autocomplete="off" ID="txtPartnershipInPercentage" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>--%>
-                                            <asp:TextBox autocomplete="off" ID="txtPartnershipInPercentage" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
+                                            <asp:TextBox autocomplete="off" AutoPostBack="true" OnTextChanged="fnCalculateTotalToInvest" ID="txtPartnershipInPercentage" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
@@ -154,35 +154,7 @@
                                         </td>
                                         <td>
                                             <%--<asp:TextBox autocomplete="off" ID="txtTotalToInvest" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>--%>
-                                            <asp:TextBox autocomplete="off" ID="txtTotalToInvest"  SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="litTotalDue" runat="server" Text="Total Due" CssClass="RequireFile"></asp:Label>
-                                            <span class="erroraleart">
-                                                <asp:RequiredFieldValidator ID="rfvTotalDue" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtTotalDue"
-                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <%--<asp:TextBox autocomplete="off" ID="txtTotalToInvest" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>--%>
-                                            <asp:TextBox autocomplete="off" ID="txtTotalDue" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="litTotalInvested" runat="server" Text="Total Invested" CssClass="RequireFile"></asp:Label>
-                                            <span class="erroraleart">
-                                                <asp:RequiredFieldValidator ID="rfvTotalInvested" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtTotalInvested"
-                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <%--<asp:TextBox autocomplete="off" ID="txtTotalToInvest" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>--%>
-                                            <asp:TextBox autocomplete="off" ID="txtTotalInvested"  SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
+                                            <asp:TextBox autocomplete="off" ID="txtTotalToInvest" ReadOnly="true" Style="background: #dcdddf;" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
@@ -271,13 +243,19 @@
                                                         <ItemTemplate>
                                                             <div class="rightmargin_grid">
                                                                 <div class="leftmargin_contentarea">
-                                                                    <strong>
-                                                                        <%#DataBinder.Eval(Container.DataItem, "PropertyName")%></strong><br />
+                                                                    <div>
+                                                                        <p style="color:rgb(0,103,164); font-size: 13px; font-weight:bold;">
+                                                                            <%#DataBinder.Eval(Container.DataItem, "PropertyName")%>
+                                                                        </p>
+                                                                        <p style="margin-top: 5px;">
+                                                                            <%#DataBinder.Eval(Container.DataItem, "PartnerName")%>
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="leftmargin_icons">
                                                                     <asp:ImageButton ID="btnEdit" ToolTip="Edit" runat="server" ImageUrl="~/images/edit.png"
                                                                         Style="border: 0px; vertical-align: middle; margin-top: 7px; margin-right: 7px;"
-                                                                        CommandName="EditData" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                        CommandName="EditData" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPartnerID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
                                                                     <asp:ImageButton ID="btnDelete" ToolTip="Delete" runat="server" ImageUrl="~/images/delete_icon.png"
                                                                         Style="border: 0px; vertical-align: middle; margin-top: 7px; margin-right: 7px;"
                                                                         CommandName="DeleteData" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPartnerID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
@@ -318,11 +296,65 @@
                 </td>
             </tr>
         </table>
-        <ajx:ModalPopupExtender ID="msgbx" runat="server" TargetControlID="hfMessage" PopupControlID="Panel1"
+        
+        <%-- property partner duplication check --%>
+        <ajx:ModalPopupExtender ID="msgbxCheckDuplicate" runat="server" TargetControlID="hfMessageCheckDuplicate" PopupControlID="PanelCheckDuplicate"
+            BackgroundCssClass="mod_background">
+        </ajx:ModalPopupExtender>
+        <asp:HiddenField ID="hfMessageCheckDuplicate" runat="server" />
+        <asp:Panel ID="PanelCheckDuplicate" runat="server" Style="display: none;">
+            <div style="width: 500px; height: 200px; margin-top: 25px;">
+                <table border="0" cellspacing="0" cellpadding="0" class="modelpopup_box">
+                    <tr>
+                        <td class="modelpopup_boxtopleft">&nbsp;
+                        </td>
+                        <td class="modelpopup_boxtopcenter">&nbsp;
+                        </td>
+                        <td class="modelpopup_boxtopright">&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="modelpopup_boxleft">&nbsp;
+                        </td>
+                        <td class="modelpopup_box_bg">
+                            <div style="width: 100px; float: left; margin-top: 10px;">
+                                <asp:HyperLink ID="HyperLink2" runat="server">
+                                    <asp:Image ImageUrl="~/images/error.png" AlternateText="" Height="75px" Width="75px"
+                                        ID="Image2" runat="server" />
+                                </asp:HyperLink>
+                            </div>
+                            <div style="float: left; width: 225px; margin-top: 40px; margin-left: 10px;">
+                                <asp:Label ID="duplicateMsg" runat="server" Text="Property partner already exists!"></asp:Label>
+                            </div>
+                            <table cellpadding="3" cellspacing="3" width="100%" style="margin-left: 5px; margin-top: 15px;">
+                                <tr>
+                                    <td align="center" valign="middle">
+                                        <asp:Button ID="Button2" Text="Ok" runat="server" ImageUrl="~/images/cancle.png"
+                                            OnClick="btnPropertyPartnerNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="modelpopup_boxright">&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="modelpopup_boxbottomleft">&nbsp;
+                        </td>
+                        <td class="modelpopup_boxbottomcenter"></td>
+                        <td class="modelpopup_boxbottomright">&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </asp:Panel>
+
+        <%-- Delete confirmation --%>
+        <ajx:ModalPopupExtender ID="msgbx" runat="server" TargetControlID="hfMessage" PopupControlID="DeletePanel"
             BackgroundCssClass="mod_background">
         </ajx:ModalPopupExtender>
         <asp:HiddenField ID="hfMessage" runat="server" />
-        <asp:Panel ID="Panel1" runat="server" Style="display: none;">
+        <asp:Panel ID="DeletePanel" runat="server" Style="display: none;">
             <div style="width: 500px; height: 200px; margin-top: 25px;">
                 <table border="0" cellspacing="0" cellpadding="0" class="modelpopup_box">
                     <tr>

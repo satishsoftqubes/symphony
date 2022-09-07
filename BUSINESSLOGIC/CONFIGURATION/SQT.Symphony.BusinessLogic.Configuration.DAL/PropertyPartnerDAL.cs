@@ -154,6 +154,34 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return obj;
         }
 
+        public List<PropertyPartner> CheckPropertyPartnerDuplication(Guid? PropertyID, Guid? PartnerID)
+        {
+            List<PropertyPartner> propertyPartners = new List<PropertyPartner>();
+
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    propertyPartners = StoredProcedure(MasterConstant.PropertyPartnerCheckDuplication)
+                                            .AddParameter("@PropertyID", PropertyID)
+                                            .AddParameter("@PartnerID", PartnerID)
+                                            .WithTransaction(dbtr)
+                                            .FetchAll<PropertyPartner>();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            return propertyPartners;
+        }
+
         public DataSet SelectPropertyPartnerData(Guid? PropertyPartnerID, string PropertyName, Guid? CompanyID)
         {
             DataSet obj = null;
