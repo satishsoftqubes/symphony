@@ -10,7 +10,7 @@ CREATE PROCEDURE dbo.mst_PropertyPartner_CheckDuplication
 AS  
 BEGIN  
 
-	SELECT COUNT(PropertyPartnerID) AS PropertyPartnerCount FROM mst_propertypartner WHERE PropertyID = @PropertyID
+	SELECT PropertyPartnerID AS PropertyPartnerCount FROM mst_propertypartner WHERE PropertyID = @PropertyID
 	AND PartnerID = @PartnerID
 
 END

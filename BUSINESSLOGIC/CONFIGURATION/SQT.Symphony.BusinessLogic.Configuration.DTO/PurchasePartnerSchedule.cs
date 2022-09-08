@@ -2,20 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.ServiceModel;
 using System.Text;
 using SQT.FRAMEWORK.DAL.Linq;
 
 namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 {
-    [DataContract]
-    public class PurchaseSchedule : BusinessObjectBase
+    public class PurchasePartnerSchedule : BusinessObjectBase
     {
-        #region InnerClass
-
         public enum PurchaseScheduleFields
         {
-            PurchaseScheduleID,
             PurchasePartnerScheduleID,
             PropertyID,
             PartnerID,
@@ -25,17 +20,15 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             StatusTerm,
             MOPTerm,
             ActualPaymentDate,
+            TotalToInvest,
             TotalPaid,
             TotalDue,
             IsActive,
             SeqNo
         }
 
-        #endregion
-
         #region DataMember
 
-        Guid _purchaseScheduleID;
         Guid _purchasePartnerScheduleID;
         Guid? _propertyID;
         Guid? _partnerID;
@@ -45,6 +38,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         string _statusTerm;
         string _mopTerm;
         DateTime? _actualPaymentDate;
+        decimal _totalToInvest;
         decimal _totalPaid;
         decimal _totalDue;
         bool? _isActive;
@@ -54,20 +48,6 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         #endregion
 
         #region Properties
-
-        [DataMember]
-        public Guid PurchaseScheduleID
-        {
-            get { return _purchaseScheduleID; }
-            set
-            {
-                if (_purchaseScheduleID != value)
-                {
-                    _purchaseScheduleID = value;
-                    PropertyHasChanged("PurchaseScheduleID");
-                }
-            }
-        }
 
         [DataMember]
         public Guid PurchasePartnerScheduleID
@@ -180,7 +160,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 }
             }
         }
-        
+
         [DataMember]
         public DateTime? ActualPaymentDate
         {
@@ -194,7 +174,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 }
             }
         }
-        
+
         [DataMember]
         public decimal TotalPaid
         {
@@ -205,6 +185,20 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 {
                     _totalPaid = value;
                     PropertyHasChanged("TotalPaid");
+                }
+            }
+        }
+
+        [DataMember]
+        public decimal TotalToInvest
+        {
+            get { return _totalToInvest; }
+            set
+            {
+                if (_totalToInvest != value)
+                {
+                    _totalToInvest = value;
+                    PropertyHasChanged("TotalToInvest");
                 }
             }
         }
@@ -267,36 +261,21 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 
         #endregion
 
-        #region Validation
-
-        [OperationContract]
-        protected override void AddValidationRules()
-        {
-            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleNotNull("PurchaseScheduleID", "PurchaseScheduleID"));
-            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleNotNull("PropertyID", "PropertyID"));
-            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("InstallmentTypeTerm", "InstallmentTypeTerm", 39));
-            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("StatusTerm", "StatusTerm", 29));
-            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("MOPTerm", "MOPTerm", 29));
-
-        }
-
-        #endregion
-
         [DataContract]
-        public class PurchaseScheduleKeys
+        public class PurchasePartnerScheduleKeys
         {
 
             #region Data Members
 
-            Guid _purchaseScheduleID;
+            Guid _purchasePartnerScheduleID;
 
             #endregion
 
             #region Constructor
 
-            public PurchaseScheduleKeys(Guid purchaseScheduleID)
+            public PurchasePartnerScheduleKeys(Guid purchasePartnerScheduleID)
             {
-                _purchaseScheduleID = purchaseScheduleID;
+                _purchasePartnerScheduleID = purchasePartnerScheduleID;
             }
 
             #endregion
@@ -304,14 +283,13 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             #region Properties
 
             [DataMember]
-            public Guid PurchaseScheduleID
+            public Guid PurchasePartnerScheduleID
             {
-                get { return _purchaseScheduleID; }
+                get { return _purchasePartnerScheduleID; }
             }
 
             #endregion
 
         }
-
     }
 }

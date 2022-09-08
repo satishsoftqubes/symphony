@@ -5,6 +5,7 @@ GO
 CREATE PROCEDURE dbo.purchaseSchedule_Insert
 (
 	@PurchaseScheduleID uniqueidentifier,
+	@PurchasePartnerScheduleID uniqueidentifier,
 	@PropertyID uniqueidentifier = null,
 	@PartnerID uniqueidentifier = null,
 	@InstallmentTypeTerm VARCHAR(39) = null,
@@ -49,46 +50,49 @@ VALUES
 	1
 )
 
+
+
+
 -- Purchase partner insert
-INSERT [dbo].[purchasepartner_schedule]
-(
-	[PurchaseScheduleID], 
-	[PropertyID] ,
-	[PartnerID],
-	[InstallmentTypeTerm] ,
-	[InstallmentAmount] ,
-	[InstallmentInPercentage] ,
-	[StatusTerm] ,
-	[MOPTerm] ,
-	[ActualPaymentDate] ,
-	[TotalPaid],
-	[TotalDue] ,
-	[IsActive] 
-)
-VALUES
-(
-	@PurchaseScheduleID,
-	@PropertyID,
-	@PartnerID,
-	@InstallmentTypeTerm,
-	@InstallmentAmount,
-	@InstallmentInPercentage,
-	@StatusTerm,
-	@MOPTerm,
-	@ActualPaymentDate,
-	@TotalPaid,
-	@TotalDue,	
-	1
-)
+-- INSERT [dbo].[purchasepartner_schedule]
+-- (
+	-- [PurchasePartnerScheduleID], 
+	-- [PropertyID] ,
+	-- [PartnerID],
+	-- [InstallmentTypeTerm] ,
+	-- [InstallmentAmount] ,
+	-- [InstallmentInPercentage] ,
+	-- [StatusTerm] ,
+	-- [MOPTerm] ,
+	-- [ActualPaymentDate] ,
+	-- [TotalPaid],
+	-- [TotalDue] ,
+	-- [IsActive] 
+-- )
+-- VALUES
+-- (
+	-- @PurchasePartnerScheduleID,
+	-- @PropertyID,
+	-- @PartnerID,
+	-- @InstallmentTypeTerm,
+	-- @InstallmentAmount,
+	-- @InstallmentInPercentage,
+	-- @StatusTerm,
+	-- @MOPTerm,
+	-- @ActualPaymentDate,
+	-- @TotalPaid,
+	-- @TotalDue,	
+	-- 1
+-- )
 
 -- update TotalToInvest in mst_propertypartner
-UPDATE mst_propertypartner
-SET
-	[TotalToInvest] = @TotalToInvest
+-- UPDATE mst_propertypartner
+-- SET
+	-- [TotalToInvest] = @TotalToInvest
 	
- WHERE 
-	[PropertyID] = @PropertyID AND
-	[PartnerID] = @PartnerID AND 
-	IsActive = 1
+ -- WHERE 
+	-- [PropertyID] = @PropertyID AND
+	-- [PartnerID] = @PartnerID AND 
+	-- IsActive = 1
 
 END

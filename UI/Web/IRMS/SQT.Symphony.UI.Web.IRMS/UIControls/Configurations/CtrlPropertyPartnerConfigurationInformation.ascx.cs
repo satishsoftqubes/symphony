@@ -417,7 +417,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         // Check duplication by property and partner
                         List<PropertyPartner> propertyPartners = new List<PropertyPartner>();
                         propertyPartners = PropertyPartnerBLL.CheckPropertyPartnerDuplication(new Guid(ddlPropertyName.SelectedValue), new Guid(ddlPartnerName.SelectedValue));
-                        if (propertyPartners[0].PropertyPartnerCount > 0)
+                        if (propertyPartners.Count > 0)
                         {
                             msgbxCheckDuplicate.Show();
                             return;

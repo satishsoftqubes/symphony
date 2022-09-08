@@ -37,6 +37,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                 if (objSavePurchaseSchedule != null)
                 {
                     objSavePurchaseSchedule.PurchaseScheduleID = Guid.NewGuid();
+                    objSavePurchaseSchedule.PurchasePartnerScheduleID = Guid.NewGuid();
 
                     if (!objSavePurchaseSchedule.IsValid)
                     {

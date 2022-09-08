@@ -263,6 +263,9 @@ namespace SQT.Symphony.BusinessLogic.Configuration.COMMON
         public const string PurchaseschedulePropertyInstallmentGrid_SelectData = "[dbo].[purchaseschedulePropertyInstallmentGrid_SelectData]";
         public const string PurchaseScheduleDeleteByPrimaryKey = "[dbo].[purchaseScheduleList_DeleteByPrimaryKey]";
 
+        //SPs for PurchasePartnerScheduleInsert
+        public const string PurchasePartnerScheduleInsert = "[dbo].[purchasePartnerSchedule_Insert]";
+
         //SPs for PropertyPartner
         public const string PropertyPartnerSelectData = "[dbo].[mst_PropertyPartner_SelectData]";
         public const string PropertyPartnerSelectByPrimaryKey = "[dbo].[mst_PropertyPartner_SelectByPrimaryKey]";

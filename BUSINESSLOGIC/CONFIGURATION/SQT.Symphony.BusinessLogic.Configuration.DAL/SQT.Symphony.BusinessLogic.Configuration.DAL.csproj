@@ -112,6 +112,7 @@
     <Compile Include="PropertyConfigurationDAL.cs" />
     <Compile Include="PropertyDAL.cs" />
     <Compile Include="PropertyPartnerDAL.cs" />
+    <Compile Include="PurchasePartnerScheduleDAL.cs" />
     <Compile Include="PurchaseScheduleDAL.cs" />
     <Compile Include="RateCardDAL.cs" />
     <Compile Include="RateCardDetailsDAL.cs" />
