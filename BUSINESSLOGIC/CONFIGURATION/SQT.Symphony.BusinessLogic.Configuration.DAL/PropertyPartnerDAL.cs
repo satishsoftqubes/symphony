@@ -214,6 +214,38 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return obj;
         }
 
+        public DataSet SelectPropertyPartnerGetData(Guid? PropertyPartnerID, string PropertyName, Guid? CompanyID)
+        {
+            DataSet obj = null;
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    obj = StoredProcedure(MasterConstant.PropertyPartnerGetData)
+                                            .AddParameter("@PropertyPartnerID", PropertyPartnerID)
+                                            .AddParameter("@PropertyName", PropertyName)
+                                            .AddParameter("@CompanyID", CompanyID)
+                                            .WithTransaction(dbtr)
+                                            .FetchDataSet();
+                }
+            }
+            catch (Exception ex)
+            {
+                ////Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+
         public bool Delete(PropertyPartner dtoObject)
         {
             try

@@ -268,6 +268,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.COMMON
 
         //SPs for PropertyPartner
         public const string PropertyPartnerSelectData = "[dbo].[mst_PropertyPartner_SelectData]";
+        public const string PropertyPartnerGetData = "[dbo].[mst_PropertyPartner_GetData]";
         public const string PropertyPartnerSelectByPrimaryKey = "[dbo].[mst_PropertyPartner_SelectByPrimaryKey]";
         public const string PropertyPartnerInsert = "[dbo].[mst_PropertyPartner_Insert]";
         public const string PropertyPartnerUpdate = "[dbo].[mst_PropertyPartner_Update]";

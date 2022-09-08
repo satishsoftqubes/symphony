@@ -147,7 +147,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         private void LoadData()
         {
             DataSet ds = new DataSet();
-            ds = PropertyPartnerBLL.GetPropertyPartnerData(this.PropertyPartnerID,  null, this.CompanyID);
+            ds = PropertyPartnerBLL.GetPropertyPartnerGetData(this.PropertyPartnerID,  null, this.CompanyID);
 
             if (ds.Tables[0].Rows.Count != 0)
             {

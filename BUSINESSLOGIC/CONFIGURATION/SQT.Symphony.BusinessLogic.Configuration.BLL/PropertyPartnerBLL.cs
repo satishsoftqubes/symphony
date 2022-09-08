@@ -111,6 +111,13 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             return ds;
         }
 
+        public static DataSet GetPropertyPartnerGetData(Guid? PropertyPartnerID, string PropertyName, Guid? CompanyID)
+        {
+            PropertyPartnerDAL _dataObject = new PropertyPartnerDAL();
+            DataSet ds = _dataObject.SelectPropertyPartnerGetData(PropertyPartnerID, PropertyName, CompanyID);
+            return ds;
+        }
+
         public static bool Delete(PropertyPartner obj)
         {
             PropertyPartnerDAL _dataObject = new PropertyPartnerDAL();
