@@ -36,11 +36,12 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             return _dataObject.SelectByPrimaryKey(keys);
         }
 
-        public static List<PropertyPartner> CheckPropertyPartnerDuplication(Guid? PropertyID, Guid? PartnerID)
+        public static int CheckPropertyPartnerDuplication(Guid? PropertyID, Guid? PartnerID)
         {
             PropertyPartnerDAL _dataObject = new PropertyPartnerDAL();
-            List<PropertyPartner> propertyPartner = _dataObject.CheckPropertyPartnerDuplication(PropertyID, PartnerID);
-            return propertyPartner;
+            //List<PropertyPartner> propertyPartner = _dataObject.CheckPropertyPartnerDuplication(PropertyID, PartnerID);
+            int propertyPartnerCount = _dataObject.CheckPropertyPartnerDuplication(PropertyID, PartnerID);
+            return propertyPartnerCount;
         }
 
         /// <summary>

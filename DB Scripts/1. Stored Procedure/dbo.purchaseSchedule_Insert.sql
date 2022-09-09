@@ -33,7 +33,8 @@ INSERT [dbo].[propertypurchase_schedule]
 	[ActualPaymentDate] ,
 	[TotalPaid],
 	[TotalDue] ,
-	[IsActive] 
+	[IsActive] ,
+	[UpdateLog]
 )
 VALUES
 (
@@ -46,8 +47,9 @@ VALUES
 	@MOPTerm,
 	@ActualPaymentDate,
 	@TotalPaid,
-	@TotalDue,	
-	1
+	@InstallmentAmount,	-- TotalDue is same as InstallmentAmount
+	1,
+	CURRENT_TIMESTAMP
 )
 
 

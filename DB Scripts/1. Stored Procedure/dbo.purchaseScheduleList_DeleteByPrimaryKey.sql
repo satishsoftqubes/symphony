@@ -9,14 +9,12 @@ CREATE PROCEDURE [dbo].[purchaseScheduleList_DeleteByPrimaryKey]
 AS
 BEGIN
 
+-- purchase schedule
 DELETE FROM [dbo].[propertypurchase_schedule]
  WHERE 
 	[PropertyID] = @PropertyID AND IsActive = 1
-	
-DELETE FROM [dbo].[mst_propertypartner]
-WHERE 
-	[PropertyID] = @PropertyID AND IsActive = 1
-	
+
+-- purchase partner schedule
 DELETE FROM [dbo].[purchasepartner_schedule]
 WHERE 
 	[PropertyID] = @PropertyID AND IsActive = 1

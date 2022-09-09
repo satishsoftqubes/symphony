@@ -34,7 +34,8 @@ INSERT [dbo].[purchasepartner_schedule]
 	[ActualPaymentDate] ,
 	[TotalPaid],
 	[TotalDue] ,
-	[IsActive] 
+	[IsActive] ,
+	[UpdateLog]
 )
 VALUES
 (
@@ -48,8 +49,9 @@ VALUES
 	@MOPTerm,
 	@ActualPaymentDate,
 	@TotalPaid,
-	@TotalDue,	
-	1
+	@InstallmentAmount,	-- Total due is same as InstallmentAmount
+	1,
+	CURRENT_TIMESTAMP
 )
 
  -- update TotalToInvest in mst_propertypartner
