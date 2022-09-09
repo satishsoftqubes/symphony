@@ -1,8 +1,12 @@
-DROP PROCEDURE IF EXISTS dbo.dms_Documents_SelectDocumentGrid
-
+USE [symphony_sakariyagroup]
+GO
+/****** Object:  StoredProcedure [dbo].[dms_Documents_SelectDocumentGrid]    Script Date: 9/1/2022 2:26:54 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE dbo.dms_Documents_SelectDocumentGrid
+ALTER PROCEDURE [dbo].[dms_Documents_SelectDocumentGrid]
 (  
  @DocumentID uniqueidentifier = null,  
  @CategoryID uniqueidentifier = null,  
@@ -92,5 +96,23 @@ ISNULL(CategoryID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627') = ISNULL(@CategoryID, 
 ISNULL(DocumentID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627') = ISNULL(@DocumentID, ISNULL(DocumentID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627'))  
 order by mst_ProjectTerm.SeqNo  
 end  
+
+else if(@Category = 'EXPENSEGRID')  
+begin  
+select mst_ProjectTerm.TermID,mst_ProjectTerm.Term,mst_ProjectTerm.DisplayTerm,dms_Documents.DocumentID,
+      dms_Documents.DocumentName,dms_Documents.TypeID,dms_Documents.Extension,dms_Documents.Notes,tra_propertyexpensesdetail.VendorID,
+	  tra_propertyexpensesdetail.PurchaseNote,tra_propertyexpensesdetail.TotalAmount,tra_propertyexpensesdetail.PurchaseTypeTerm,
+	  tra_propertyexpensesdetail.ItemTypeTerm,tra_propertyexpensesdetail.PropertyExpenseDetailID
+from mst_ProjectTerm  
+left outer join dms_Documents on dms_Documents.TypeID = mst_ProjectTerm.TermID and dms_Documents.AssociationID = @AssociationID  
+left outer join tra_propertyexpensesdetail on tra_propertyexpensesdetail.PropertyExpenseDetailID = dms_Documents.AssociationID  
   
+where mst_ProjectTerm.Category = @Category And  
+mst_ProjectTerm.IsActive = 1 and  
+ISNULL(mst_ProjectTerm.CompanyID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627') = ISNULL(@CompanyID, ISNULL(mst_ProjectTerm.CompanyID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627')) and   
+ISNULL(CategoryID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627') = ISNULL(@CategoryID, ISNULL(CategoryID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627')) and  
+--ISNULL(AssociationID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627') = ISNULL(@AssociationID, ISNULL(AssociationID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627')) and  
+ISNULL(DocumentID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627') = ISNULL(@DocumentID, ISNULL(DocumentID,'DBC06FD8-60D9-4008-BE1B-D24976EF7627'))  
+order by mst_ProjectTerm.SeqNo  
+end  
 END  

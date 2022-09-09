@@ -19,6 +19,6 @@ namespace SQT.Symphony.UI.Web.IRMS.Applications.SetUp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UserControl CtrlExpenseConfigurationInformation;
+        protected global::SQT.Symphony.UI.Web.IRMS.UIControls.Configurations.CtrlExpenseConfigurationInformation CtrlExpenseConfigurationInformation;
     }
 }
