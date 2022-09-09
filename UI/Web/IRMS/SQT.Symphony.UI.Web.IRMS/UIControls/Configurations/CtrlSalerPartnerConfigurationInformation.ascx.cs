@@ -98,7 +98,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             try
             {
                 BindGrid();
-                BindSystemSetupData();
+                //BindSystemSetupData();
 
             }
             catch (Exception)

@@ -285,7 +285,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         }
         private void AddNewRowToGrid()
         {
-
             if (ViewState["CurrentTable"] != null)
             {
                 DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
@@ -302,8 +301,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                     ViewState["CurrentTable"] = dtCurrentTable;
 
-
-                    for (int i = 0;  i < dtCurrentTable.Rows.Count - 1; i++)
+                    for (int i = 0; i < dtCurrentTable.Rows.Count - 1; i++)
                     {
                         //extract the TextBox values   
                         HiddenField h1 = (HiddenField)gvExpenseModification.Rows[i].Cells[1].FindControl("txtExpenseDetaileID");
@@ -326,11 +324,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         TextBox box2 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtPurchaseNoteID");
                         dtCurrentTable.Rows[i]["PurchaseNote"] = box2.Text;
 
-                        //FileUpload UploadImg = (FileUpload)gvExpenseModification.Rows[i].Cells[6].FindControl("fileExpenseDocumentUpload");
-                        //dtCurrentTable.Rows[i - 1]["DocumentName"] = UploadImg;
+                        FileUpload UploadImg = (FileUpload)gvExpenseModification.Rows[i].Cells[6].FindControl("fileExpenseDocumentUpload");
 
-                        HiddenField h2 = (HiddenField)gvExpenseModification.Rows[i].FindControl("expenseDocumentName");
-                        dtCurrentTable.Rows[i]["DocumentName"] = h2.Value;
+                        HiddenField hidexpenseDocument = (HiddenField)gvExpenseModification.Rows[i].FindControl("expenseDocumentName");
+                        dtCurrentTable.Rows[i]["DocumentName"] = hidexpenseDocument.Value;
+                        
                     }
                     gvExpenseModification.DataSource = dtCurrentTable;
                     gvExpenseModification.DataBind();
@@ -485,7 +483,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         DropDownList drop2 = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlItemID");
                         HiddenField h1 = (HiddenField)gvExpenseModification.Rows[i].FindControl("txtExpenseDetaileID");
                         TextBox box2 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtPurchaseNoteID");
-                        
+
                         TextBox box1 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtAmountID");
                         if (i < dt.Rows.Count - 1)
                         {
@@ -514,7 +512,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     if (this.ExpenseID != Guid.Empty)
                     {
                         Expense objExpense = new Expense();
-                        objExpense.DateOfExpense =txtDateOfExpense.Text.Trim();
+                        objExpense.DateOfExpense = txtDateOfExpense.Text.Trim();
                         objExpense.ExpenseAmount = Convert.ToDecimal(txtExpenseAmt.Text.Trim());
                         objExpense.ExpenseDetail = txtExpenseDetail.Text.Trim();
                         objExpense.PropertyID = new Guid(ddlPropertyID.SelectedValue);
@@ -607,7 +605,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                                 ExpenseDetail.Add(ED);
                             }
                             FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocumentUpload");
-                            
+
                             if (fuDocument.FileName != "")
                             {
                                 Documents d1 = new Documents();
@@ -679,7 +677,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
             if (ds.Tables[0].Rows.Count != 0)
             {
-               
+
                 txtDateOfExpense.Text = Convert.ToString(ds.Tables[0].Rows[0]["DateOfExpense"]);
                 txtExpenseAmt.Text = Convert.ToString(ds.Tables[0].Rows[0]["ExpenseAmount"]);
                 txtExpenseDetail.Text = Convert.ToString(ds.Tables[0].Rows[0]["ExpenseDetail"]);
