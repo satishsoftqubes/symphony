@@ -16,28 +16,27 @@ using SQT.Symphony.BusinessLogic.Configuration.DTO;
 
 namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 {
-    public class PurchaseScheduleDAL : LinqDAL
+    public class PropertyPartnerDAL : LinqDAL
     {
         DbTransaction dbtr = null;
-
         #region Constructor
 
-        public PurchaseScheduleDAL() : base()
+        /// <summary>
+        /// Class constructor
+        /// </summary>
+        public PropertyPartnerDAL()
+            : base()
         {
-
+            // Nothing for now.
         }
-
-        public PurchaseScheduleDAL(DbTransaction DbTr)
+        public PropertyPartnerDAL(DbTransaction DbTr)
             : base()
         {
             dbtr = DbTr;
         }
-
         #endregion
 
-        #region Public Methods
-
-        public bool Insert(PurchaseSchedule dtoObject)
+        public bool Insert(PropertyPartner dtoObject)
         {
             try
             {
@@ -51,20 +50,20 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                     parameterList.Add(dtoObject);
                     SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
 
-                    StoredProcedure(MasterConstant.PurchaseScheduleInsert)
-                            .AddParameter("@PurchaseScheduleID", dtoObject.PurchaseScheduleID)
-                            .AddParameter("@PurchasePartnerScheduleID", dtoObject.PurchasePartnerScheduleID)
-                            .AddParameter("@PropertyID", dtoObject.PropertyID)
-                            .AddParameter("@PartnerID", dtoObject.PartnerID)
-                            .AddParameter("@InstallmentTypeTerm", dtoObject.InstallmentTypeTerm)
-                            .AddParameter("@InstallmentAmount", dtoObject.InstallmentAmount)
-                            .AddParameter("@InstallmentInPercentage", dtoObject.InstallmentInPercentage)
-                            .AddParameter("@StatusTerm", dtoObject.StatusTerm)
-                            .AddParameter("@MOPTerm", dtoObject.MOPTerm)
-                            .AddParameter("@ActualPaymentDate", dtoObject.ActualPaymentDate)
-                            .AddParameter("@TotalPaid", dtoObject.TotalPaid)
-                            .AddParameter("@TotalDue", dtoObject.TotalDue)
-                            .AddParameter("@IsActive", dtoObject.IsActive)
+                    StoredProcedure(MasterConstant.PropertyPartnerInsert)
+                        .AddParameter("@PropertyPartnerID", dtoObject.PropertyPartnerID)
+.AddParameter("@PropertyID", dtoObject.PropertyID)
+.AddParameter("@PartnerID", dtoObject.PartnerID)
+.AddParameter("@AddedOn", dtoObject.AddedOn)
+.AddParameter("@PartnershipInPercentage", dtoObject.PartnershipInPercentage)
+.AddParameter("@TotalToInvest", dtoObject.TotalToInvest)
+.AddParameter("@TotalDue", dtoObject.TotalDue)
+.AddParameter("@TotalInvested", dtoObject.TotalInvested)
+.AddParameter("@PartnershipDissolveOn", dtoObject.PartnershipDissolveOn)
+.AddParameter("@StatusTerm", dtoObject.StatusTerm)
+.AddParameter("@IsActive", dtoObject.IsActive)
+.AddParameter("@PartnerLegalName", dtoObject.PartnerLegalName)
+.AddParameter("@Description", dtoObject.Description)
 
                         .WithTransaction(dbtr)
                         .Execute();
@@ -82,7 +81,12 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return true;
         }
 
-        public bool Update(PurchaseSchedule dtoObject)
+        /// <summary>
+        /// update row in the table
+        /// </summary>
+        /// <param name="businessObject">business object</param>
+        /// <returns>true for successfully updated</returns>
+        public bool Update(PropertyPartner dtoObject)
         {
             try
             {
@@ -96,14 +100,21 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                     parameterList.Add(dtoObject);
                     SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
 
-                    StoredProcedure(MasterConstant.PurchaseScheduleUpdate)
-                            .AddParameter("@PurchaseScheduleID", dtoObject.PurchaseScheduleID)
-                            .AddParameter("@PropertyID", dtoObject.PropertyID)
-                            .AddParameter("@InstallmentTypeTerm", dtoObject.InstallmentTypeTerm)
-                            .AddParameter("@InstallmentAmount", dtoObject.InstallmentAmount)
-                            .AddParameter("@InstallmentInPercentage", dtoObject.InstallmentInPercentage)
-                            .AddParameter("@StatusTerm", dtoObject.StatusTerm)
-                            .AddParameter("@MOPTerm", dtoObject.MOPTerm)
+                    StoredProcedure(MasterConstant.PropertyPartnerUpdate)
+                        .AddParameter("@PropertyPartnerID", dtoObject.PropertyPartnerID)
+.AddParameter("@PropertyID", dtoObject.PropertyID)
+.AddParameter("@PartnerID", dtoObject.PartnerID)
+.AddParameter("@AddedOn", dtoObject.AddedOn)
+.AddParameter("@PartnershipInPercentage", dtoObject.PartnershipInPercentage)
+.AddParameter("@TotalToInvest", dtoObject.TotalToInvest)
+.AddParameter("@TotalDue", dtoObject.TotalDue)
+.AddParameter("@TotalInvested", dtoObject.TotalInvested)
+.AddParameter("@PartnershipDissolveOn", dtoObject.PartnershipDissolveOn)
+.AddParameter("@StatusTerm", dtoObject.StatusTerm)
+.AddParameter("@SeqNo", dtoObject.SeqNo)
+.AddParameter("@IsActive", dtoObject.IsActive)
+.AddParameter("@PartnerLegalName", dtoObject.PartnerLegalName)
+.AddParameter("@Description", dtoObject.Description)
 
                         .WithTransaction(dbtr)
                         .Execute();
@@ -121,13 +132,128 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return true;
         }
 
-        public bool Delete(Guid Keys)
+        public PropertyPartner SelectByPrimaryKey(Guid Keys)
         {
+            PropertyPartner obj = null;
             try
             {
-                StoredProcedure(MasterConstant.PurchaseScheduleDeleteByPrimaryKey)
-                    .AddParameter("@PropertyID"
+                obj = StoredProcedure(MasterConstant.PropertyPartnerSelectByPrimaryKey)
+                            .AddParameter("@PropertyPartnerID"
 , Keys)
+                            .Fetch<PropertyPartner>();
+            }
+            catch (Exception ex)
+            {
+                //Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+
+        public int CheckPropertyPartnerDuplication(Guid? PropertyID, Guid? PartnerID)
+        {
+            //List<PropertyPartner> propertyPartners = new List<PropertyPartner>();
+            int propertyPartnerCount = 0;
+
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    propertyPartnerCount = StoredProcedure(MasterConstant.PropertyPartnerCheckDuplication)
+                                            .AddParameter("@PropertyID", PropertyID)
+                                            .AddParameter("@PartnerID", PartnerID)
+                                            .WithTransaction(dbtr)
+                                            .ExecuteScalar<int>();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            return propertyPartnerCount;
+        }
+
+        public DataSet SelectPropertyPartnerData(Guid? PropertyPartnerID, string PropertyName, Guid? CompanyID)
+        {
+            DataSet obj = null;
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    obj = StoredProcedure(MasterConstant.PropertyPartnerSelectData)
+                                            .AddParameter("@PropertyPartnerID", PropertyPartnerID)
+                                            .AddParameter("@PropertyName", PropertyName)
+                                            .AddParameter("@CompanyID", CompanyID)
+                                            .WithTransaction(dbtr)
+                                            .FetchDataSet();
+                }
+            }
+            catch (Exception ex)
+            {
+                ////Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+
+        public DataSet SelectPropertyPartnerGetData(Guid? PropertyPartnerID, string PropertyName, Guid? CompanyID)
+        {
+            DataSet obj = null;
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    obj = StoredProcedure(MasterConstant.PropertyPartnerGetData)
+                                            .AddParameter("@PropertyPartnerID", PropertyPartnerID)
+                                            .AddParameter("@PropertyName", PropertyName)
+                                            .AddParameter("@CompanyID", CompanyID)
+                                            .WithTransaction(dbtr)
+                                            .FetchDataSet();
+                }
+            }
+            catch (Exception ex)
+            {
+                ////Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+
+        public bool Delete(PropertyPartner dtoObject)
+        {
+            try
+            {
+                StoredProcedure(MasterConstant.PropertyPartnerDeleteByPrimaryKey)
+                    .AddParameter("@PropertyPartnerID", dtoObject.PropertyPartnerID)
+
                     .WithTransaction(dbtr)
                     .Execute();
             }
@@ -142,103 +268,5 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             }
             return true;
         }
-
-        public DataSet GetPropertyListForPurchaseSchedule(Guid? PropertyID, Guid? CompanyID, string PropertyName)
-        {
-            DataSet obj = null;
-            try
-            {
-                using (new Tracer((SQTLogType.DataAccessTraceLog)))
-                {
-                    //Log Method Parameteres.
-                    ArrayList parameterList = new ArrayList();
-
-                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
-
-                    obj = StoredProcedure(MasterConstant.PropertyListForPurchaseSchedule)
-                                            .AddParameter("@PropertyID", PropertyID)
-                                            .AddParameter("@CompanyID", CompanyID)
-                                            .AddParameter("@PropertyName", PropertyName)
-                                            .WithTransaction(dbtr)
-                                            .FetchDataSet();
-                }
-            }
-            catch (Exception ex)
-            {
-                ////Log exception at DataAccess Layer.
-                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
-                if (rethrow)
-                {
-                    throw ex;
-                }
-            }
-            return obj;
-        }
-
-        public DataSet SelectPurchaseScheduleData(Guid? PropertyID, Guid? CompanyID, string PropertyName)
-        {
-            DataSet obj = null;
-            try
-            {
-                using (new Tracer((SQTLogType.DataAccessTraceLog)))
-                {
-                    //Log Method Parameteres.
-                    ArrayList parameterList = new ArrayList();
-
-                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
-
-                    obj = StoredProcedure(MasterConstant.PurchaseScheduleSelectData)
-                                            .AddParameter("@PropertyID", PropertyID)
-                                            .AddParameter("@CompanyID", CompanyID)
-                                            .AddParameter("@PropertyName", PropertyName)
-                                            .WithTransaction(dbtr)
-                                            .FetchDataSet();
-                }
-            }
-            catch (Exception ex)
-            {
-                ////Log exception at DataAccess Layer.
-                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
-                if (rethrow)
-                {
-                    throw ex;
-                }
-            }
-            return obj;
-        }
-
-        public DataSet SelectPurchaseSchedulePropertyInstallmentData(Guid? PropertyID, Guid? CompanyID, string PropertyName)
-        {
-            DataSet obj = null;
-            try
-            {
-                using (new Tracer((SQTLogType.DataAccessTraceLog)))
-                {
-                    //Log Method Parameteres.
-                    ArrayList parameterList = new ArrayList();
-
-                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
-
-                    obj = StoredProcedure(MasterConstant.PurchaseschedulePropertyInstallmentGrid_SelectData)
-                                            .AddParameter("@PropertyID", PropertyID)
-                                            .AddParameter("@CompanyID", CompanyID)
-                                            .AddParameter("@PropertyName", PropertyName)
-                                            .WithTransaction(dbtr)
-                                            .FetchDataSet();
-                }
-            }
-            catch (Exception ex)
-            {
-                ////Log exception at DataAccess Layer.
-                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
-                if (rethrow)
-                {
-                    throw ex;
-                }
-            }
-            return obj;
-        }
-
-        #endregion
     }
 }

@@ -110,6 +110,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyBLL.cs" />
     <Compile Include="PropertyConfigurationBLL.cs" />
+    <Compile Include="PropertyPartnerBLL.cs" />
+    <Compile Include="PurchasePartnerScheduleBLL.cs" />
     <Compile Include="PurchaseScheduleBLL.cs" />
     <Compile Include="RateCardBLL.cs" />
     <Compile Include="RateCardDetailsBLL.cs" />

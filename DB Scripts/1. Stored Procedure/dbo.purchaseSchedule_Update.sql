@@ -21,7 +21,8 @@ SET
 	[InstallmentAmount] = @InstallmentAmount,
 	[InstallmentInPercentage] = @InstallmentInPercentage,
 	[StatusTerm] = @StatusTerm,
-	[MOPTerm] = @MOPTerm
+	[MOPTerm] = @MOPTerm,
+	[UpdateLog] = CURRENT_TIMESTAMP
  WHERE 
 	[PurchaseScheduleID] = @PurchaseScheduleID
 END

@@ -88,7 +88,7 @@
                                                         <asp:DropDownList ID="ddlPropertyName" runat="server" Style="width: 165px;">
                                                         </asp:DropDownList>
                                                         <asp:ImageButton ID="btnSearch" CssClass="small_img" Style="border: 0px; vertical-align: middle; margin-left: 5px;"
-                                                        runat="server" ImageUrl="~/images/search-icon.png" OnClick="btnSearch_Click" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                            runat="server" ImageUrl="~/images/search-icon.png" OnClick="btnSearch_Click" OnClientClick="fnDisplayCatchErrorMessage()" />
                                                     </td>
                                                 </tr>
                                             </table>
@@ -101,23 +101,27 @@
                                     </tr>
                                     <tr>
                                         <td class="dTableBox" style="padding: 10px 0px">
-                                            <%--<asp:GridView ID="grdPropertyPartnerList" runat="server" AutoGenerateColumns="False" Width="100%"
-                                                OnPageIndexChanging="grdPropertyPartnerList_OnPageIndexChanging" CssClass="grid_content"
-                                                OnRowDataBound="grdPropertyPartnerList_RowDataBound" OnRowCommand="grdPropertyPartnerList_RowCommand">
+                                            <asp:GridView ID="grdPropertyPartnerList" runat="server" AutoGenerateColumns="False" Width="100%"
+                                                OnPageIndexChanging="grdPropertyPartnerList_OnPageIndexChanging" OnRowCommand="grdPropertyPartnerList_RowCommand">
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="Property Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
                                                         ItemStyle-HorizontalAlign="Left">
                                                         <ItemTemplate>
-                                                            <asp:LinkButton ID="lnkbtnUnitInfo" Text='<%#DataBinder.Eval(Container.DataItem, "PropertyName")%>'
-                                                                runat="server" CommandName="UNITINFO" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyID")%>' />
+                                                            <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "PropertyName")%>'></asp:Literal>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Edit / View" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
+                                                    <asp:TemplateField HeaderText="Partner Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
+                                                        ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "PartnerName")%>'></asp:Literal>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Edit/View" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
                                                         ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="btnEdit" runat="server" ToolTip="Edit" ImageUrl="~/images/edit.png"
                                                                 Style="border: 0px; vertical-align: middle; margin-top: 2px;" CommandName="EDITDATA"
-                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPartnerID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Delete" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
@@ -125,7 +129,7 @@
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="btnDelete" runat="server" ToolTip="Delete" ImageUrl="~/images/delete_icon.png"
                                                                 Style="border: 0px; vertical-align: middle; margin-top: 1px;" CommandName="DELETEDATA"
-                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPartnerID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>
@@ -133,12 +137,11 @@
                                                     <div class="pagecontent_info">
                                                         <div class="NoItemsFound">
                                                             <h2>
-                                                                <asp:Literal ID="Literal5" runat="server" Text="No Record Found"></asp:Literal>
-                                                            </h2>
+                                                                <asp:Literal ID="Literal5" runat="server" Text="No Record Found"></asp:Literal></h2>
                                                         </div>
                                                     </div>
                                                 </EmptyDataTemplate>
-                                            </asp:GridView>--%>
+                                            </asp:GridView>
                                         </td>
                                     </tr>
                                     <tr>
@@ -165,8 +168,58 @@
                 </td>
             </tr>
         </table>
-
-        <%-- modal popup and panel here--%>
+        <ajx:ModalPopupExtender ID="msgbx" runat="server" TargetControlID="hfMessage" PopupControlID="Panel1"
+            BackgroundCssClass="mod_background">
+        </ajx:ModalPopupExtender>
+        <asp:HiddenField ID="hfMessage" runat="server" />
+        <asp:Panel ID="Panel1" runat="server" Style="display: none;">
+            <div style="width: 500px; height: 200px; margin-top: 25px;">
+                <table border="0" cellspacing="0" cellpadding="0" class="modelpopup_box">
+                    <tr>
+                        <td class="modelpopup_boxtopleft">&nbsp;
+                        </td>
+                        <td class="modelpopup_boxtopcenter">&nbsp;
+                        </td>
+                        <td class="modelpopup_boxtopright">&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="modelpopup_boxleft">&nbsp;
+                        </td>
+                        <td class="modelpopup_box_bg">
+                            <div style="width: 100px; float: left; margin-top: 10px;">
+                                <asp:HyperLink ID="HyperLink1" runat="server">
+                                    <asp:Image ImageUrl="~/images/error.png" AlternateText="" Height="75px" Width="75px"
+                                        ID="Image1" runat="server" />
+                                </asp:HyperLink>
+                            </div>
+                            <div style="float: left; width: 225px; margin-top: 40px; margin-left: 10px;">
+                                <asp:Label ID="Label1" runat="server" Text="Sure you want to delete?"></asp:Label>
+                            </div>
+                            <table cellpadding="3" cellspacing="3" width="100%" style="margin-left: 5px; margin-top: 15px;">
+                                <tr>
+                                    <td align="center" valign="middle">
+                                        <asp:Button ID="btnPropertyPartnerYes" Text="Yes" runat="server" ImageUrl="~/images/save.png"
+                                            OnClick="btnPropertyPartnerYes_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                        <asp:Button ID="btnPropertyPartnerNo" Text="Cancel" runat="server" ImageUrl="~/images/cancle.png"
+                                            OnClick="btnPropertyPartnerNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="modelpopup_boxright">&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="modelpopup_boxbottomleft">&nbsp;
+                        </td>
+                        <td class="modelpopup_boxbottomcenter"></td>
+                        <td class="modelpopup_boxbottomright">&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </asp:Panel>
     </ContentTemplate>
 </asp:UpdatePanel>
 

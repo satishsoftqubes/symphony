@@ -100,16 +100,14 @@
                                 Auto Number Setup</a></li>--%>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyList.aspx") %>">Property
                                 Setup</a></li>
+                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyPartnerList.aspx") %>">Property
+                                Partner</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/SalerPartner.aspx") %>">SalerPartner
                                 Setup</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/Vendor.aspx") %>">Vendor
                                 Setup</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/Expense.aspx") %>">Property Expense
                                 </a></li>
-                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PurchaseScheduleList.aspx") %>">Purchase
-                                Schedule</a></li>
-                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyPartnerList.aspx") %>">Property
-                                Partner</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/FloorSetUp.aspx") %>">Block /
                                 Floor Setup</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/RoomTypeSetup.aspx") %>">Unit
