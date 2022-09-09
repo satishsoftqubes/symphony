@@ -41,7 +41,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         #region Data Members
         Guid _ExpenseID;
         Guid _PropertyID;
-        DateTime _DateOfExpense;
+        string _DateOfExpense;
         Guid _ExpenseByAssociationID;
         string _AssociationTypeTerm;
         string _ExpenseTypeTerm;
@@ -91,7 +91,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             }
         }
         [DataMember]
-        public DateTime DateOfExpense
+        public string DateOfExpense
         {
             get { return _DateOfExpense; }
             set

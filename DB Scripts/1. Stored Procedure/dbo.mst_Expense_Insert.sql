@@ -8,7 +8,7 @@ GO
 ALTER PROCEDURE [dbo].[mst_Expense_Insert](
 @ExpenseID uniqueidentifier,
 @PropertyID uniqueidentifier,
-@DateOfExpense DateTime,
+@DateOfExpense VARCHAR(38),
 @AssociationTypeTerm varchar(61),
 @ExpenseTypeTerm varchar(361),
 @ExpenseAmount Decimal(18,2),
