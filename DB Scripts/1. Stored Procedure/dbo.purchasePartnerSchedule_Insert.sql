@@ -44,7 +44,7 @@ VALUES
 	@InstallmentTypeTerm,
 	@InstallmentAmount,
 	@InstallmentInPercentage,
-	@StatusTerm,
+	'Due',
 	@MOPTerm,
 	@ActualPaymentDate,
 	@TotalPaid,
@@ -55,7 +55,8 @@ VALUES
  -- update TotalToInvest in mst_propertypartner
  UPDATE mst_propertypartner
  SET
-	[TotalToInvest] = @TotalToInvest
+	[TotalToInvest] = @TotalToInvest,
+	[TotalDue] = @TotalToInvest -- TotalToInvest is same as TotalDue 
  WHERE 
  [PropertyID] = @PropertyID AND
  [PartnerID] = @PartnerID AND 

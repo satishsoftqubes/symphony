@@ -154,9 +154,10 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return obj;
         }
 
-        public List<PropertyPartner> CheckPropertyPartnerDuplication(Guid? PropertyID, Guid? PartnerID)
+        public int CheckPropertyPartnerDuplication(Guid? PropertyID, Guid? PartnerID)
         {
-            List<PropertyPartner> propertyPartners = new List<PropertyPartner>();
+            //List<PropertyPartner> propertyPartners = new List<PropertyPartner>();
+            int propertyPartnerCount = 0;
 
             try
             {
@@ -167,11 +168,11 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 
                     SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
 
-                    propertyPartners = StoredProcedure(MasterConstant.PropertyPartnerCheckDuplication)
+                    propertyPartnerCount = StoredProcedure(MasterConstant.PropertyPartnerCheckDuplication)
                                             .AddParameter("@PropertyID", PropertyID)
                                             .AddParameter("@PartnerID", PartnerID)
                                             .WithTransaction(dbtr)
-                                            .FetchAll<PropertyPartner>();
+                                            .ExecuteScalar<int>();
                 }
             }
             catch (Exception ex)
@@ -179,7 +180,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 
                 throw;
             }
-            return propertyPartners;
+            return propertyPartnerCount;
         }
 
         public DataSet SelectPropertyPartnerData(Guid? PropertyPartnerID, string PropertyName, Guid? CompanyID)
