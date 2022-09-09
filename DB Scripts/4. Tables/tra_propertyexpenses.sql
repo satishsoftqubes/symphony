@@ -1,8 +1,9 @@
+
 CREATE TABLE dbo.tra_propertyexpenses
 (
 	[ExpenseID]					uniqueidentifier		NOT NULL PRIMARY KEY,	
 	[PropertyID]				uniqueidentifier		NULL DEFAULT NULL,
-	[DateOfExpense]				DATETIME		NULL DEFAULT NULL,
+	[DateOfExpense]				VARCHAR(38)		NULL DEFAULT NULL,
 	[ExpenseByAssociationID]	CHAR(38)		NULL DEFAULT NULL,
 	[AssociationTypeTerm]		VARCHAR(61)		NULL DEFAULT NULL,
 	[ExpenseTypeTerm]			VARCHAR(361)	NULL DEFAULT NULL,

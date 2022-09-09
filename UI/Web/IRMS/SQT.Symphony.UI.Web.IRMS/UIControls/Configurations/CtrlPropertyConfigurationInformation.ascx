@@ -8,6 +8,7 @@
 
     function pageLoad(sender, args) {
         $(document).ready(function () {
+           
             $("#<%=txtCountryName.ClientID%>").autocomplete('AutoComplete.ashx');
             $("#<%=txtStateName.ClientID%>").autocomplete('StateAutoComplete.ashx');
             $("#<%=txtCityName.ClientID%>").autocomplete('CityAutoComplete.ashx');
@@ -567,6 +568,7 @@
                                                                     <asp:ImageButton ID="btnDelete" ToolTip="Delete" runat="server" ImageUrl="~/images/delete_icon.png"
                                                                         Style="border: 0px; vertical-align: middle; margin-top: 7px; margin-right: 7px;"
                                                                         CommandName="DeleteData" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                    
                                                                 </div>
                                                                 <div class="clear">
                                                                 </div>

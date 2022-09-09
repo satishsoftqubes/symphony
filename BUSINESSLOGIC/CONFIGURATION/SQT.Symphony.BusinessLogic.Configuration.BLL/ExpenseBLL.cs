@@ -47,6 +47,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             {
                 lt = LinqSql.CreateTransaction("SQLConStr");
                 _objExpense = new ExpenseDAL(lt.Transaction);
+                _objDocuments = new DocumentsDAL(lt.Transaction);
                 if (objExpense != null)
                 {
                     objExpense.ExpenseID = Guid.NewGuid();
@@ -82,7 +83,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                         foreach (Documents item in expenseModificationDocuments)
                         {
                             item.DocumentID = Guid.NewGuid();
-                            item.PropertyID = objExpense.ExpenseID;
+                            item.PropertyID = objExpense.PropertyID;
                             item.AssociationID = objExpense.ExpenseID;
                             if (!item.IsValid)
                             {

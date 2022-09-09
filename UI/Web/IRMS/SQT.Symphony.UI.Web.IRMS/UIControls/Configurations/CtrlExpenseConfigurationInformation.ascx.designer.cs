@@ -13,13 +13,13 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
     public partial class CtrlExpenseConfigurationInformation {
         
         /// <summary>
-        /// updSaler control.
+        /// updExpense control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updSaler;
+        protected global::System.Web.UI.UpdatePanel updExpense;
         
         /// <summary>
         /// lblErrorMessage control.
@@ -58,6 +58,15 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::System.Web.UI.WebControls.DropDownList ddlPropertyID;
         
         /// <summary>
+        /// Expense_Date control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Expense_Date;
+        
+        /// <summary>
         /// rfvDateOfExpense control.
         /// </summary>
         /// <remarks>
@@ -83,24 +92,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDateOfExpense;
-        
-        /// <summary>
-        /// txtDateOfExpense_ColorPickerExtender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender txtDateOfExpense_ColorPickerExtender;
-        
-        /// <summary>
-        /// imgColor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgColor;
         
         /// <summary>
         /// AssociationTypeTerm control.
@@ -265,6 +256,15 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::System.Web.UI.WebControls.GridView gvExpenseModification;
         
         /// <summary>
+        /// AmountMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AmountMessage;
+        
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -373,12 +373,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::SQT.Symphony.UI.Web.IRMS.MsgBox.MsgBox MessageBox;
         
         /// <summary>
-        /// UpdateProgresSaler control.
+        /// UpdateProgresExpense control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgresSaler;
+        protected global::System.Web.UI.UpdateProgress UpdateProgresExpense;
     }
 }

@@ -5,6 +5,7 @@ using SQT.Symphony.BusinessLogic.IRMS.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -114,6 +115,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         private void LoadLandIssueGrid()
         {
+            Guid? ExpenseID;
+            if (this.ExpenseID != Guid.Empty)
+                ExpenseID = this.ExpenseID;
+            else
+                ExpenseID = null;
 
             DataTable dt = new DataTable();
             DataRow dr = null;
@@ -279,6 +285,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         }
         private void AddNewRowToGrid()
         {
+
             if (ViewState["CurrentTable"] != null)
             {
                 DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
@@ -296,33 +303,35 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     ViewState["CurrentTable"] = dtCurrentTable;
 
 
-                    for (int i = 0; i < dtCurrentTable.Rows.Count - 1; i++)
+                    for (int i = 0;  i < dtCurrentTable.Rows.Count - 1; i++)
                     {
                         //extract the TextBox values   
                         HiddenField h1 = (HiddenField)gvExpenseModification.Rows[i].Cells[1].FindControl("txtExpenseDetaileID");
-                        //if(string.IsNullOrWhiteSpace(h1.Value))
-                        //{ 
-                        //  dtCurrentTable.Rows[i]["PropertyExpenseDetailID"] = new Guid(h1.Value);
-                        //}
                         if (h1.Value != "")
                         {
                             dtCurrentTable.Rows[i]["PropertyExpenseDetailID"] = new Guid(h1.Value);
                         }
-                        DropDownList drop = (gvExpenseModification.Rows[i].Cells[1].FindControl("ddlVendorID") as DropDownList);
+                        DropDownList drop = (gvExpenseModification.Rows[i].FindControl("ddlVendorID") as DropDownList);
                         dtCurrentTable.Rows[i]["VendorID"] = drop.Text;
-                        DropDownList drop1 = (DropDownList)gvExpenseModification.Rows[i].Cells[1].FindControl("ddlPurchaseID");
-                        dtCurrentTable.Rows[i]["PurchaseTypeTerm"] = drop1.Text;
-                        DropDownList drop2 = (DropDownList)gvExpenseModification.Rows[i].Cells[1].FindControl("ddlItemID");
-                        dtCurrentTable.Rows[i]["ItemTypeTerm"] = drop2.Text;
-                        TextBox box1 = (TextBox)gvExpenseModification.Rows[i].Cells[1].FindControl("txtAmountID");
-                        dtCurrentTable.Rows[i]["TotalAmount"] = Convert.ToDecimal(box1.Text);
-                        TextBox box2 = (TextBox)gvExpenseModification.Rows[i].Cells[1].FindControl("txtPurchaseNoteID");
-                        dtCurrentTable.Rows[i]["PurchaseNote"] = box2.Text;
-                        FileUpload file = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocument");
-                        dtCurrentTable.Rows[i]["DocumentName"] = file.FileName;
-                    }
 
-                    //Rebind the Grid with the current data to reflect changes   
+                        DropDownList drop1 = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlPurchaseID");
+                        dtCurrentTable.Rows[i]["PurchaseTypeTerm"] = drop1.Text;
+
+                        DropDownList drop2 = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlItemID");
+                        dtCurrentTable.Rows[i]["ItemTypeTerm"] = drop2.Text;
+
+                        TextBox box1 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtAmountID");
+                        dtCurrentTable.Rows[i]["TotalAmount"] = Convert.ToDecimal(box1.Text);
+
+                        TextBox box2 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtPurchaseNoteID");
+                        dtCurrentTable.Rows[i]["PurchaseNote"] = box2.Text;
+
+                        //FileUpload UploadImg = (FileUpload)gvExpenseModification.Rows[i].Cells[6].FindControl("fileExpenseDocumentUpload");
+                        //dtCurrentTable.Rows[i - 1]["DocumentName"] = UploadImg;
+
+                        HiddenField h2 = (HiddenField)gvExpenseModification.Rows[i].FindControl("expenseDocumentName");
+                        dtCurrentTable.Rows[i]["DocumentName"] = h2.Value;
+                    }
                     gvExpenseModification.DataSource = dtCurrentTable;
                     gvExpenseModification.DataBind();
 
@@ -360,6 +369,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     {
                         imgbtn.Visible = false;
                     }
+
                     List<Expense> lstExpense = null;
                     Expense objExpense = new Expense();
 
@@ -438,7 +448,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 //LoadLandIssueGrid();
             }
         }
-        protected void gvExpenseRowCreated(object sender, GridViewRowEventArgs e)
+        protected void gvExpense_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
@@ -470,19 +480,22 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        DropDownList drop = (DropDownList)gvExpenseModification.Rows[i].Cells[1].FindControl("ddlVendorID");
-                        DropDownList drop1 = (DropDownList)gvExpenseModification.Rows[i].Cells[1].FindControl("ddlPurchaseID");
-                        DropDownList drop2 = (DropDownList)gvExpenseModification.Rows[i].Cells[1].FindControl("ddlItemID");
-                        HiddenField h1 = (HiddenField)gvExpenseModification.Rows[i].Cells[1].FindControl("txtExpenseDetaileID");
-                        FileUpload file = (FileUpload)gvExpenseModification.Rows[i].Cells[1].FindControl("fileExpenseDocument");
+                        DropDownList drop = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlVendorID");
+                        DropDownList drop1 = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlPurchaseID");
+                        DropDownList drop2 = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlItemID");
+                        HiddenField h1 = (HiddenField)gvExpenseModification.Rows[i].FindControl("txtExpenseDetaileID");
+                        TextBox box2 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtPurchaseNoteID");
                         
+                        TextBox box1 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtAmountID");
                         if (i < dt.Rows.Count - 1)
                         {
                             drop.Text = dt.Rows[i]["VendorID"].ToString();
                             drop1.Text = dt.Rows[i]["PurchaseTypeTerm"].ToString();
                             drop2.Text = dt.Rows[i]["ItemTypeTerm"].ToString();
+                            box1.Text = dt.Rows[i]["TotalAmount"].ToString();
+                            box2.Text = dt.Rows[i]["PurchaseNote"].ToString();
                             h1.Value = dt.Rows[i]["PropertyExpenseDetailID"].ToString();
-                            //file.FileName = dt.Rows[i]["DocumentName"];
+                            //file.PostedFile = dt.Rows[i]["DocumentName"];
                         }
                         rowIndex++;
                     }
@@ -501,7 +514,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     if (this.ExpenseID != Guid.Empty)
                     {
                         Expense objExpense = new Expense();
-                        objExpense.DateOfExpense = Convert.ToDateTime(txtDateOfExpense.Text.Trim());
+                        objExpense.DateOfExpense =txtDateOfExpense.Text.Trim();
                         objExpense.ExpenseAmount = Convert.ToDecimal(txtExpenseAmt.Text.Trim());
                         objExpense.ExpenseDetail = txtExpenseDetail.Text.Trim();
                         objExpense.PropertyID = new Guid(ddlPropertyID.SelectedValue);
@@ -531,11 +544,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                                 if (h1.Value != "")
                                 {
                                     ED.PropertyExpenseDetailID = new Guid(h1.Value);
-                                    
+
                                 }
                                 ExpenseDetail.Add(ED);
                             }
-                            FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocument");
+
+                            FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocumentUpload");
 
                             if (fuDocument.FileName != "")
                             {
@@ -564,7 +578,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     else
                     {
                         Expense objExpense = new Expense();
-                        objExpense.DateOfExpense = Convert.ToDateTime(txtDateOfExpense.Text.Trim());
+                        objExpense.DateOfExpense = txtDateOfExpense.Text.Trim();
                         objExpense.ExpenseAmount = Convert.ToDecimal(txtExpenseAmt.Text.Trim());
                         objExpense.ExpenseDetail = txtExpenseDetail.Text.Trim();
                         objExpense.PropertyID = new Guid(ddlPropertyID.SelectedValue);
@@ -580,7 +594,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             DropDownList ddlPurchase = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlPurchaseID");
                             DropDownList ddlItem = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlItemID");
                             HiddenField h1 = (HiddenField)gvExpenseModification.Rows[i].FindControl("txtExpenseDetaileID");
-                            FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocument");
                             if (gvExpenseModification.Rows.Count != 0)
                             {
                                 Expense ED = new Expense();
@@ -593,12 +606,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                                 //ED.PropertyExpenseDetailID = new Guid(h1.Value);
                                 ExpenseDetail.Add(ED);
                             }
-                            //FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocument");
+                            FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocumentUpload");
                             
                             if (fuDocument.FileName != "")
                             {
                                 Documents d1 = new Documents();
-                                string FileInCorporatonNo = "PD$" + Guid.NewGuid().ToString().Substring(0, 10) + "$" + fuDocument.FileName.Replace(" ", "_");
+                                string FileInCorporatonNo = "EXPENSE$" + Guid.NewGuid().ToString().Substring(0, 10) + "$" + fuDocument.FileName.Replace(" ", "_");
                                 string path1 = Server.MapPath("~/Document/" + FileInCorporatonNo);
                                 fuDocument.SaveAs(path1);
                                 d1.DocumentName = FileInCorporatonNo;
@@ -666,6 +679,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
             if (ds.Tables[0].Rows.Count != 0)
             {
+               
                 txtDateOfExpense.Text = Convert.ToString(ds.Tables[0].Rows[0]["DateOfExpense"]);
                 txtExpenseAmt.Text = Convert.ToString(ds.Tables[0].Rows[0]["ExpenseAmount"]);
                 txtExpenseDetail.Text = Convert.ToString(ds.Tables[0].Rows[0]["ExpenseDetail"]);
@@ -700,16 +714,31 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     HiddenField ExpenseDetaileID = (HiddenField)gvExpenseModification.Rows[i].FindControl("txtExpenseDetaileID");
                     ExpenseDetaileID.Value = Convert.ToString(ds.Tables[1].Rows[i]["PropertyExpenseDetailID"]).Trim();
 
-                    //txtTotalAmountID.Text = txtTotalAmountID.Text + Convert.ToDecimal(txtAmount.Text);
+                    HiddenField hidFileUpload = (HiddenField)gvExpenseModification.Rows[i].FindControl("expenseDocumentName");
+                    hidFileUpload.Value = Convert.ToString(ds.Tables[1].Rows[i]["DocumentName"]);
 
-                    //gvExpenseModification.DataSource = ds.Tables[1];
-                    //gvExpenseModification.DataBind();
+                    HtmlAnchor aLandIssueDocumentLink = (HtmlAnchor)gvExpenseModification.Rows[i].FindControl("aLandIssueDocumentLink");
+                    ImageButton imgbtn = (ImageButton)gvExpenseModification.Rows[i].FindControl("btnRemoveRow");
+                    string str = "~/Document/" + hidFileUpload.Value;
+                    if (hidFileUpload.Value != string.Empty && hidFileUpload.Value != null)
+                    {
+                        imgbtn.Visible = Convert.ToBoolean(ViewState["Delete"]);
+                        aLandIssueDocumentLink.Visible = true;
+                        aLandIssueDocumentLink.HRef = str;
+                    }
+                    else
+                    {
+                        imgbtn.Visible = false;
+                    }
+
                 }
                 if (ds.Tables[2].Rows.Count != 0)
                 {
                     txtTotalAmountID.Text = Convert.ToString(ds.Tables[2].Rows[0]["TotalAmount"]);
                 }
             }
+
         }
+
     }
 }
