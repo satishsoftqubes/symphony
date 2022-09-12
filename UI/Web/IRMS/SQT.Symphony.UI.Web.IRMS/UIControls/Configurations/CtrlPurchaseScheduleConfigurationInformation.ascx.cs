@@ -550,17 +550,21 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     {
                         var partnerIdList = new ArrayList();
                         var totalToInvestList = new ArrayList();
+                        var purchaseScheduleIDList = new ArrayList();
                         
                         DataSet dsPropertyPartner = new DataSet();
                         dsPropertyPartner = PropertyPartnerBLL.GetPropertyPartnerData(null, Convert.ToString(ddlPropertyName.SelectedItem.Text), this.CompanyID);
-                        
+
                         for (int i = 0; i < dsPropertyPartner.Tables[0].Rows.Count; i++)
                         {
                             Guid partnerID = new Guid(dsPropertyPartner.Tables[0].Rows[i]["PartnerID"].ToString());
                             decimal partnerPercentage = Convert.ToDecimal(dsPropertyPartner.Tables[0].Rows[i]["PartnershipInPercentage"]);
                             decimal totalToInvest = Convert.ToDecimal(objProperty.TotalCost * partnerPercentage / 100);
+                            //string purchaseScheduleIDs = Convert.ToString(ds.Tables[0].Rows[i]["PurchaseScheduleID"]);
+                            
                             partnerIdList.Add(partnerID);
                             totalToInvestList.Add(totalToInvest);
+                            //purchaseScheduleIDList.Add(purchaseScheduleIDs);
                         }
 
                         for (int i = 0; i < gvPropertyInstallments.Rows.Count; i++)
@@ -606,7 +610,18 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             TextBox txtAmount = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtInstallmentAmount");
                             objPurchasePartnerSchedule.InstallmentAmount = Convert.ToDecimal(txtAmount.Text);
 
-                            // partnerID for purchasepartner_schedule
+                            //purchaseScheduleID
+                            ds = PurchaseScheduleBLL.GetPurchaseScheduleData(objPurchaseSchedule.PropertyID, this.CompanyID, null);
+                            for (int j = 0; j < dsPropertyPartner.Tables[0].Rows.Count; j++)
+                            {
+                                string purchaseScheduleIDs = Convert.ToString(ds.Tables[0].Rows[j]["PurchaseScheduleID"]);
+                                purchaseScheduleIDList.Add(purchaseScheduleIDs);
+                            }
+                            
+                            //purchase schedule id
+                            objPurchasePartnerSchedule.PurchaseScheduleID = new Guid(purchaseScheduleIDList[i].ToString());
+
+                            // partnerID, TotalToInvest for purchasepartner_schedule
                             for (int index = 0; index < partnerIdList.Count; index++)
                             {
                                 objPurchasePartnerSchedule.PartnerID = new Guid(partnerIdList[index].ToString());

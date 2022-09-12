@@ -267,6 +267,11 @@ namespace SQT.Symphony.BusinessLogic.Configuration.COMMON
         public const string PurchasePartnerScheduleInsert = "[dbo].[purchasePartnerSchedule_Insert]";
 
         //SPs for PropertyPartner
+        public const string PartnerPaymentInsert = "[dbo].[PartnerPayment_Insert]";
+        public const string PartnerPaymentUpdate = "[dbo].[PartnerPayment_Update]";
+        public const string PartnerPaymentSelectData = "[dbo].[PartnerPayment_SelectData]";
+
+        //SPs for PropertyPartner
         public const string PropertyPartnerSelectData = "[dbo].[mst_PropertyPartner_SelectData]";
         public const string PropertyPartnerGetData = "[dbo].[mst_PropertyPartner_GetData]";
         public const string PropertyPartnerSelectByPrimaryKey = "[dbo].[mst_PropertyPartner_SelectByPrimaryKey]";

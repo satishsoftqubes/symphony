@@ -29,10 +29,10 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                 lt = LinqSql.CreateTransaction("SQLConStr");
                 _objPurchasePartnerSchedule = new PurchasePartnerScheduleDAL(lt.Transaction);
 
+                objSavePurchasePartnerSchedule.PurchasePartnerScheduleID = Guid.NewGuid();
+
                 if (objSavePurchasePartnerSchedule != null)
                 {
-                    objSavePurchasePartnerSchedule.PurchasePartnerScheduleID = Guid.NewGuid();
-
                     if (!objSavePurchasePartnerSchedule.IsValid)
                     {
                         throw new InvalidBusinessObjectException(objSavePurchasePartnerSchedule.BrokenRulesList.ToString());

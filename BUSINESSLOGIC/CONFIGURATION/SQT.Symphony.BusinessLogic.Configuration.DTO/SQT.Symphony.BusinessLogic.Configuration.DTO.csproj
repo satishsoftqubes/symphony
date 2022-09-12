@@ -92,6 +92,7 @@
     <Compile Include="Language.cs" />
     <Compile Include="LoginLog.cs" />
     <Compile Include="NewsLetters.cs" />
+    <Compile Include="PartnerPayment.cs" />
     <Compile Include="PaymentSlabe.cs" />
     <Compile Include="POSConfig.cs" />
     <Compile Include="POSPoints.cs" />

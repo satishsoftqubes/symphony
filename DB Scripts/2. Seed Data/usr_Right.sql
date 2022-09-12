@@ -76,3 +76,44 @@ VALUES
 	NULL
 )
 
+INSERT [dbo].[usr_Right]
+(
+	[RightID],
+	[CompanyID],
+	[PropertyID],
+	[ReportID],
+	[FormName],
+	[FullName],
+	[MenuName],
+	[ParentID],
+	[MenuParentOrderID],
+	[MenuChileOrderID],
+	[IsMenuOption],
+	[MenuIcon],
+	[IsBlock],
+	[Description],
+	[IsSynch],
+	[SynchOn]
+)
+VALUES
+(
+	'1B70CD33-97FF-4234-82E3-4B546D881523',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	NULL,
+	NULL,
+	'ConfigurationPartnerPaymentInfo.aspx',
+	'~/Applications/SetUp/ConfigurationPartnerPaymentInfo.aspx',
+	'Partner Payment',
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL
+)
+
+
+

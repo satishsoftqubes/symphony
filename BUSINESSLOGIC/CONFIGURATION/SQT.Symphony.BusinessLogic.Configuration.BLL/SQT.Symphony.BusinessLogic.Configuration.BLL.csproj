@@ -102,6 +102,7 @@
     <Compile Include="LanguageBLL.cs" />
     <Compile Include="LoginLogBLL.cs" />
     <Compile Include="NewsLettersBLL.cs" />
+    <Compile Include="PartnerPaymentBLL.cs" />
     <Compile Include="PaymentSlabeBLL.cs" />
     <Compile Include="POSConfigBLL.cs" />
     <Compile Include="POSPointsBLL.cs" />

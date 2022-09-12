@@ -103,6 +103,7 @@
     <Compile Include="LanguageDAL.cs" />
     <Compile Include="LoginLogDAL.cs" />
     <Compile Include="NewsLettersDAL.cs" />
+    <Compile Include="PartnerPaymentDAL.cs" />
     <Compile Include="PaymentSlabeDAL.cs" />
     <Compile Include="POSConfigDAL.cs" />
     <Compile Include="POSPointsDAL.cs" />

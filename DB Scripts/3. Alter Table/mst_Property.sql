@@ -29,4 +29,3 @@ ADD PurchaseArea decimal(18,2)
 -- Total Cost
 ALTER TABLE mst_Property 
 ADD TotalCost decimal(18,2)
-
