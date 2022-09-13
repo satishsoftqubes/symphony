@@ -121,29 +121,32 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
         //    return true;
         //}
 
-        //        public bool Delete(Guid Keys)
-        //        {
-        //            try
-        //            {
-        //                StoredProcedure(MasterConstant.PurchaseScheduleDeleteByPrimaryKey)
-        //                    .AddParameter("@PropertyID"
-        //, Keys)
-        //                    .WithTransaction(dbtr)
-        //                    .Execute();
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                //Log exception at DataAccess Layer.
-        //                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
-        //                if (rethrow)
-        //                {
-        //                    throw ex;
-        //                }
-        //            }
-        //            return true;
-        //        }
+        public bool Delete(Guid PartnerPaymentID, decimal? PaymentAmount, Guid PropertyPurchaseScheduleID, Guid PropertyID, Guid PartnerID)
+        {
+            try
+            {
+                StoredProcedure(MasterConstant.PartnerPaymentDeleteByPrimaryKey)
+                    .AddParameter("@PartnerPaymentID" , PartnerPaymentID)
+                    .AddParameter("@PaymentAmount", PaymentAmount)
+                    .AddParameter("@PropertyPurchaseScheduleID", PropertyPurchaseScheduleID)
+                    .AddParameter("@PropertyID", PropertyID)
+                    .AddParameter("@PartnerID", PartnerID)
+                    .WithTransaction(dbtr)
+                    .Execute();
+            }
+            catch (Exception ex)
+            {
+                //Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return true;
+        }
 
-        public DataSet SelectPartnerPaymentData(Guid? PropertyID, Guid? PartnerID, Guid? PropertyPurchaseScheduleID, Guid? CompanyID)
+        public DataSet SelectPartnerPaymentData(Guid? PropertyID, Guid? PartnerID, Guid? PropertyPurchaseScheduleID, string PropertyName)
         {
             DataSet obj = null;
             try
@@ -156,9 +159,10 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                     SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
 
                     obj = StoredProcedure(MasterConstant.PartnerPaymentSelectData)
-                                            .AddParameter("@PartnerID", PartnerID)
                                             .AddParameter("@PropertyID", PropertyID)
-                                            .AddParameter("@PropertyPurchaseScheduleID", PropertyPurchaseScheduleID)
+                                            .AddParameter("@PartnerID", PartnerID)
+                                            .AddParameter("@PurchaseScheduleID", PropertyPurchaseScheduleID)
+                                            .AddParameter("@PropertyName", PropertyName)
                                             .WithTransaction(dbtr)
                                             .FetchDataSet();
                 }
@@ -166,6 +170,28 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             catch (Exception ex)
             {
                 ////Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+
+        public PartnerPayment SelectByPrimaryKey(Guid Keys)
+        {
+            PartnerPayment obj = null;
+            try
+            {
+                obj = StoredProcedure(MasterConstant.PartnerPaymentSelectByPrimaryKey)
+                            .AddParameter("@PartnerPaymentID"
+, Keys)
+                            .Fetch<PartnerPayment>();
+            }
+            catch (Exception ex)
+            {
+                //Log exception at DataAccess Layer.
                 bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
                 if (rethrow)
                 {

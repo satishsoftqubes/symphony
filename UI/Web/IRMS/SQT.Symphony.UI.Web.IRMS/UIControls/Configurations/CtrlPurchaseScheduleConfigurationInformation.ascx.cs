@@ -281,7 +281,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                 if (dtCurrentTable.Rows.Count > 0)
                 {
-                    drCurrentRow = dtCurrentTable.NewRow();
+                    drCurrentRow = dtCurrentTable.NewRow();                    
                     drCurrentRow["RowNumber"] = "Installment " + Convert.ToInt32(dtCurrentTable.Rows.Count + 1);
 
                     //add new row to DataTable   
@@ -480,7 +480,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             dt.Columns.Add(new DataColumn("InstallmentInPercentage", typeof(string))); //installment percentage
             dt.Columns.Add(new DataColumn("MOPTerm", typeof(string))); // Payment mode
             dt.Columns.Add(new DataColumn("InstallmentAmount", typeof(string))); // Installment amount
-
+            dt.Rows[0]["RowNumber"] = "Installment 1";
             ViewState["CurrentTable"] = dt;
             dsPropertyInstallmentDocumentList.Tables.Clear();
 
@@ -488,6 +488,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             dsPropertyInstallmentDocumentList.Tables.Add(dt);
             gvPropertyInstallments.DataSource = dsPropertyInstallmentDocumentList;
             gvPropertyInstallments.DataBind();
+
 
         }
 
@@ -569,6 +570,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                         for (int i = 0; i < gvPropertyInstallments.Rows.Count; i++)
                         {
+                            // Installment No.
+                            string installmentNo = gvPropertyInstallments.Rows[i].FindControl("RowNumber").ToString();
+                            objPurchaseSchedule.Installment = installmentNo;
+
                             // Payment period
                             DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");
                             objPurchaseSchedule.InstallmentTypeTerm = Convert.ToString(ddlPaymentPeriod.SelectedItem.Text);
@@ -639,6 +644,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         for (int i = 0; i < gvPropertyInstallments.Rows.Count; i++)
                         {
                             HiddenField h1 = (HiddenField)gvPropertyInstallments.Rows[i].FindControl("hdnPurchaseScheduleID");
+
+                            // Installment No.
+
+
 
                             // Payment period
                             DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");

@@ -115,14 +115,24 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
         //    return flag;
         //}
 
-        public static DataSet GetPartnerPaymentData(Guid? PropertyID, Guid? PartnerID, Guid? PropertyPurchaseScheduleID, Guid? CompanyID)
+        public static DataSet GetPartnerPaymentData(Guid? PropertyID, Guid? PartnerID, Guid? PropertyPurchaseScheduleID, string PropertyName)
         {
             PartnerPaymentDAL _dataObject = new PartnerPaymentDAL();
-            DataSet ds = _dataObject.SelectPartnerPaymentData(PropertyID, PartnerID, PropertyPurchaseScheduleID, CompanyID);
+            DataSet ds = _dataObject.SelectPartnerPaymentData(PropertyID, PartnerID, PropertyPurchaseScheduleID, PropertyName);
             return ds;
         }
 
+        public static PartnerPayment GetByPrimaryKey(Guid keys)
+        {
+            PartnerPaymentDAL _dataObject = new PartnerPaymentDAL();
+            return _dataObject.SelectByPrimaryKey(keys);
+        }
 
+        public static bool Delete(Guid PartnerPaymentID, decimal? PaymentAmount, Guid PropertyPurchaseScheduleID, Guid PropertyID, Guid PartnerID)
+        {
+            PartnerPaymentDAL _dataObject = new PartnerPaymentDAL();
+            return _dataObject.Delete(PartnerPaymentID, PaymentAmount, PropertyPurchaseScheduleID, PropertyID, PartnerID);
+        }
 
         #endregion
 
