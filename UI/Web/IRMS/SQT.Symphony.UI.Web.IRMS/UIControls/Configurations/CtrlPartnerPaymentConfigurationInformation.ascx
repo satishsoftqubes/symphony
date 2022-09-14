@@ -95,7 +95,7 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <asp:DropDownList ID="ddlPropertyName" runat="server" Style="width: 205px;">
+                                            <asp:DropDownList ID="ddlPropertyName" AutoPostBack="true" onselectedindexchanged="fnPurchaseScheduleInstallment" runat="server" Style="width: 205px;">
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
@@ -115,7 +115,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Label ID="litPurchaseScheduleName" runat="server" Text="Purchase Schedule" CssClass="RequireFile"></asp:Label>
+                                            <asp:Label ID="litPurchaseScheduleName" runat="server" Text="Installment" CssClass="RequireFile"></asp:Label>
                                             <span class="erroraleart">
                                                 <asp:RequiredFieldValidator ID="rfvPurchaseScheduleName" SetFocusOnError="true" CssClass="rfv_ErrorStar"
                                                     InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
@@ -128,6 +128,48 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>
+                                            <asp:Label ID="litAmount" runat="server" Text="Amount" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rfvAmount" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtAmount"
+                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox autocomplete="off" ID="txtAmount" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="litPaymentMode" runat="server" Text="Payment Mode" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rfvPaymentMode" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
+                                                    ControlToValidate="ddlPaymentMode" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlPaymentMode" Style="width: 205px;" runat="server">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="litDescription" runat="server" Text="Description" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rfvDescription" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtDescription"
+                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox autocomplete="off" ID="txtDescription" SkinID="CmpTextbox" runat="server" MaxLength="3710"></asp:TextBox>
+                                        </td>
+                                    </tr>
+
+
+                                    <%--<tr>
                                         <td colspan="2" class="pagesubheader">
                                             <div class="pagesubheader">
                                                 <asp:Literal ID="Literal3" runat="server" Text="Property Installments"></asp:Literal>
@@ -136,8 +178,8 @@
                                                     OnClientClick="fnDisplayCatchErrorMessage()" />
                                             </div>
                                         </td>
-                                    </tr>
-                                    <tr>
+                                    </tr>--%>
+                                    <%--<tr>
                                         <td colspan="2" class="dTableBox1">
                                             <div class="leftmarginbox_content">
                                                 <asp:GridView ID="grdPartnerPayments" AutoGenerateColumns="false" SkinID="gvNoPaging"
@@ -186,7 +228,7 @@
                                                 </asp:GridView>
                                             </div>
                                         </td>
-                                    </tr>
+                                    </tr>--%>
                                     <tr>
                                         <td align="left" valign="top" colspan="2" style="text-align: right;">
                                             <div style="float: right; width: auto; display: inline-block;">

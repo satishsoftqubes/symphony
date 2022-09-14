@@ -11,7 +11,7 @@ CREATE PROCEDURE dbo.purchaseschedule_SelectData
 AS  
 BEGIN  
 
-	SELECT P.PropertyID, P.PropertyName, P.PurchaseOptionID, P.Price, P.PurchaseArea, P.TotalCost
+	SELECT P.PropertyID, P.PropertyName, P.PurchaseOptionID, P.Price, P.PurchaseArea, P.TotalCost, PS.PurchaseScheduleID, NULLIF(PS.Installment, '') AS 'Installment'
 	-- COUNT(PS.PurchaseScheduleID) AS PurchaseScheduleCount
 		FROM propertypurchase_schedule PS
 		INNER JOIN mst_property P ON P.PropertyID = PS.PropertyID

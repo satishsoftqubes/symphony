@@ -24,6 +24,11 @@ DELETE FROM [dbo].[purchasepartner_schedule]
  WHERE 
 	[PropertyID] = @PropertyID AND IsActive = 1
 	
+-- partner payment
+DELETE FROM [dbo].[tra_partnerpayment]
+ WHERE 
+	[PropertyID] = @PropertyID AND IsActive = 1
+	
 -- property 
 DELETE FROM [dbo].[mst_Property]
  WHERE 

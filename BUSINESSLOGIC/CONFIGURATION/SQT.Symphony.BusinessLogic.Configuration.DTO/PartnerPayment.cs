@@ -49,6 +49,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         byte[] _updateLog;
         string _uploadDocument;
         string _description;
+        string _installment;
 
         #endregion
 
@@ -260,6 +261,20 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 {
                     _description = value;
                     PropertyHasChanged("Description");
+                }
+            }
+        }
+
+        [DataMember]
+        public string Installment
+        {
+            get { return _installment; }
+            set
+            {
+                if (_installment != value)
+                {
+                    _installment = value;
+                    PropertyHasChanged("Installment");
                 }
             }
         }

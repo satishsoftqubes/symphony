@@ -124,59 +124,80 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             BindDDL();
             BindPartner();
             BindPurchaseSchedule();
-            BindPartnerPaymentGrid();
+            BindPaymentMode();
+            //BindPartnerPaymentGrid();
         }
 
-        private void BindPartnerPaymentGrid()
-        {
-            Guid? PropertyID;
-            if (this.PropertyID != Guid.Empty)
-                PropertyID = this.PropertyID;
-            else
-                PropertyID = null;
+        //private void BindPartnerPaymentGrid()
+        //{
+        //    Guid? PropertyID;
+        //    if (this.PropertyID != Guid.Empty)
+        //        PropertyID = this.PropertyID;
+        //    else
+        //        PropertyID = null;
 
-            DataTable dt = new DataTable();
-            DataRow dr = null;
+        //    DataTable dt = new DataTable();
+        //    DataRow dr = null;
 
-            DataSet dsPropertyInstallmentDocumentList = DocumentsBLL.GetDocumentGrid(null, null, this.CompanyID, "PROPERTYINSTALLMENTS", PropertyID);
-            if (dsPropertyInstallmentDocumentList.Tables[0].Rows.Count != 0)
-            {
-                Guid landIssueTypeID = (Guid)dsPropertyInstallmentDocumentList.Tables[0].Rows[0]["TermID"];
-                ViewState["PropertyInstallmentID"] = landIssueTypeID;
-            }
+        //    DataSet dsPropertyInstallmentDocumentList = DocumentsBLL.GetDocumentGrid(null, null, this.CompanyID, "PROPERTYINSTALLMENTS", PropertyID);
+        //    if (dsPropertyInstallmentDocumentList.Tables[0].Rows.Count != 0)
+        //    {
+        //        Guid landIssueTypeID = (Guid)dsPropertyInstallmentDocumentList.Tables[0].Rows[0]["TermID"];
+        //        ViewState["PropertyInstallmentID"] = landIssueTypeID;
+        //    }
 
-            dt = dsPropertyInstallmentDocumentList.Tables[0];
-            dt.Columns.Add(new DataColumn("PartnerPaymentID", typeof(string)));
-            dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
-            dt.Columns.Add(new DataColumn("PaymentAmount", typeof(string))); // Installment amount
-            dt.Columns.Add(new DataColumn("MOPTerm", typeof(string))); // Payment mode
-            dt.Columns.Add(new DataColumn("Description", typeof(string))); //Description
+        //    dt = dsPropertyInstallmentDocumentList.Tables[0];
+        //    dt.Columns.Add(new DataColumn("PartnerPaymentID", typeof(string)));
+        //    dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
+        //    dt.Columns.Add(new DataColumn("PaymentAmount", typeof(string))); // Installment amount
+        //    dt.Columns.Add(new DataColumn("MOPTerm", typeof(string))); // Payment mode
+        //    dt.Columns.Add(new DataColumn("Description", typeof(string))); //Description
 
-            ViewState["CurrentTable"] = dt;
-            dsPropertyInstallmentDocumentList.Tables.Clear();
+        //    ViewState["CurrentTable"] = dt;
+        //    dsPropertyInstallmentDocumentList.Tables.Clear();
 
-            // DataTable to DataSet
-            dsPropertyInstallmentDocumentList.Tables.Add(dt);
-            grdPartnerPayments.DataSource = dsPropertyInstallmentDocumentList;
-            grdPartnerPayments.DataBind();
+        //    // DataTable to DataSet
+        //    dsPropertyInstallmentDocumentList.Tables.Add(dt);
+        //    grdPartnerPayments.DataSource = dsPropertyInstallmentDocumentList;
+        //    grdPartnerPayments.DataBind();
 
-        }
+        //}
 
         public void BindPurchaseSchedule()
         {
             string PurchaseScheduleQuery = string.Empty;
-            PurchaseScheduleQuery = "Select PurchaseScheduleID From propertypurchase_schedule Where IsActive = 1";
-            DataSet Dst = InvestorBLL.GetSearchData(PurchaseScheduleQuery);
-            DataView Dv = new DataView(Dst.Tables[0]);
-            Dv = new DataView(Dst.Tables[0]);
-            if (Dv.Count > 0)
-            {
-                ddlPurchaseSchedule.DataSource = Dv;
-                ddlPurchaseSchedule.DataTextField = "PurchaseScheduleID";
-                ddlPurchaseSchedule.DataValueField = "PurchaseScheduleID";
+            //PurchaseScheduleQuery = "Select PurchaseScheduleID From propertypurchase_schedule Where IsActive = 1";
+            //DataSet Dst = InvestorBLL.GetSearchData(PurchaseScheduleQuery);
+            //DataView Dv = new DataView(Dst.Tables[0]);
+            //Dv = new DataView(Dst.Tables[0]);
+            //if (Dv.Count > 0)
+            //{
+                //ddlPurchaseSchedule.DataSource = Dv;
+                //ddlPurchaseSchedule.DataTextField = "PurchaseScheduleID";
+                //ddlPurchaseSchedule.DataValueField = "PurchaseScheduleID";
                 ddlPurchaseSchedule.DataBind();
                 ddlPurchaseSchedule.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+            //}
+        }
+
+        public void BindPaymentMode()
+        {
+            ProjectTerm PaymentTerm = new ProjectTerm();
+            PaymentTerm.CompanyID = this.CompanyID;
+            PaymentTerm.Category = "PAYMENTMODE";
+            PaymentTerm.IsActive = true;
+
+            List<ProjectTerm> LstPaymentTerm = ProjectTermBLL.GetAll(PaymentTerm);
+            if (LstPaymentTerm.Count > 0)
+            {
+                ddlPaymentMode.DataSource = LstPaymentTerm;
+                ddlPaymentMode.DataTextField = "DisplayTerm";
+                ddlPaymentMode.DataValueField = "TermID";
+                ddlPaymentMode.DataBind();
+                ddlPaymentMode.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
             }
+            else
+                ddlPaymentMode.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
         }
 
         public void BindPartner()
@@ -193,6 +214,28 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 ddlPartnerName.DataValueField = "PartnerID";
                 ddlPartnerName.DataBind();
                 ddlPartnerName.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+            }
+        }
+
+        public void fnPurchaseScheduleInstallment(object sender, EventArgs e)
+        {
+            string propertyID = ddlPropertyName.SelectedValue;
+
+            DataSet ds = new DataSet();
+            ds = PurchaseScheduleBLL.GetPurchaseScheduleData(new Guid(propertyID), this.CompanyID, null);
+            DataView Dv = new DataView(ds.Tables[0]);
+            if (ds.Tables[0].Rows.Count > 0 && ds.Tables[0].Rows[0]["Installment"] != DBNull.Value)
+            {
+                ddlPurchaseSchedule.DataSource = Dv;
+                ddlPurchaseSchedule.DataTextField = "Installment";
+                ddlPurchaseSchedule.DataValueField = "PurchaseScheduleID";
+                ddlPurchaseSchedule.DataBind();
+                ddlPurchaseSchedule.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+            }
+            else
+            {
+                ddlPurchaseSchedule.Items.Clear();
+                BindPurchaseSchedule();
             }
         }
 
@@ -224,46 +267,59 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 try
                 {
                     PartnerPayment objPartnerPayment = new PartnerPayment();
-                    //DataSet ds = new DataSet();
-                    //ds = PartnerPaymentBLL.GetPartnerPaymentData(objPartnerPayment.PropertyID, objPartnerPayment.PartnerID, objPartnerPayment.PropertyPurchaseScheduleID, this.CompanyID);
+                    DataSet ds = new DataSet();
+                    ds = PartnerPaymentBLL.GetPartnerPaymentData(objPartnerPayment.PropertyID, objPartnerPayment.PartnerID, objPartnerPayment.PropertyPurchaseScheduleID, null);
 
-                    if (this.PartnerPaymentID != Guid.Empty)
+                    if (ds.Tables[0].Rows.Count == 0)
                     {
                         objPartnerPayment.PropertyID = new Guid(ddlPropertyName.SelectedValue);
                         objPartnerPayment.PartnerID = new Guid(ddlPartnerName.SelectedValue);
                         objPartnerPayment.PropertyPurchaseScheduleID = new Guid(ddlPurchaseSchedule.SelectedValue);
+                        objPartnerPayment.Installment = ddlPurchaseSchedule.SelectedItem.Text;
 
-                        for (int i = 0; i < grdPartnerPayments.Rows.Count; i++)
-                        {
-                            // Amount
-                            TextBox txtAmount = (TextBox)grdPartnerPayments.Rows[i].FindControl("txtInstallmentAmount");
-                            objPartnerPayment.PaymentAmount = Convert.ToDecimal(txtAmount.Text);
+                        //for (int i = 0; i < grdPartnerPayments.Rows.Count; i++)
+                        //{
+                        //    // Amount
+                        //    TextBox txtAmount = (TextBox)grdPartnerPayments.Rows[i].FindControl("txtInstallmentAmount");
+                        //    objPartnerPayment.PaymentAmount = Convert.ToDecimal(txtAmount.Text);
 
-                            // Payment Mode
-                            DropDownList ddlPaymentMode = (DropDownList)grdPartnerPayments.Rows[i].FindControl("ddlPaymentMode");
-                            objPartnerPayment.MOPTerm = ddlPaymentMode.SelectedItem.Text;
+                        //    // Payment Mode
+                        //    DropDownList ddlPaymentMode = (DropDownList)grdPartnerPayments.Rows[i].FindControl("ddlPaymentMode");
+                        //    objPartnerPayment.MOPTerm = ddlPaymentMode.SelectedItem.Text;
 
-                            // Description
-                            TextBox txtDescription = (TextBox)grdPartnerPayments.Rows[i].FindControl("txtDescription");
-                            objPartnerPayment.Description = txtDescription.Text;
+                        //    // Description
+                        //    TextBox txtDescription = (TextBox)grdPartnerPayments.Rows[i].FindControl("txtDescription");
+                        //    objPartnerPayment.Description = txtDescription.Text;
 
-                            PartnerPaymentBLL.Save(objPartnerPayment);
-                            IsMessage = true;
-                            lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();
-                        }
+                        //    PartnerPaymentBLL.Save(objPartnerPayment);
+                        //    IsMessage = true;
+                        //    lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();
+                        //}
+
+                        // Amount
+                        if (!(txtAmount.Text.Trim().Equals("")))
+                            objPartnerPayment.PaymentAmount = Convert.ToDecimal(txtAmount.Text.Trim());
+                        else
+                            objPartnerPayment.PaymentAmount = null;
+
+                        // Payment Mode
+                        if (ddlPaymentMode.SelectedValue != Guid.Empty.ToString())
+                            objPartnerPayment.MOPTerm = ddlPaymentMode.SelectedValue;
+                        else
+                            objPartnerPayment.MOPTerm = null;
+
+                        // Description
+                        if (!(txtDescription.Text.Trim().Equals("")))
+                            objPartnerPayment.Description = txtDescription.Text.Trim();
+                        else
+                            objPartnerPayment.Description = null;
+
+                        PartnerPaymentBLL.Save(objPartnerPayment);
+                        IsMessage = true;
+                        lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();
                     }
 
-                    //if (ds.Tables[0].Rows.Count == 0)
-                    //{
-                       
-                    //}
-                    //else
-                    //{
-
-                    //}
-
                     LoadData();
-                    //BindGrid();
 
                 }
                 catch (Exception ex)
@@ -296,7 +352,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 //if (Convert.ToString(ds.Tables[0].Rows[0]["PartnerName"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PartnerName"]) != null)
                 //    ddlPartnerName.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PartnerID"]));
 
-                BindPartnerPaymentGrid();
+                //BindPartnerPaymentGrid();
             }
         }
 
@@ -424,7 +480,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 DocumentsBLL.Delete(new Guid(Convert.ToString(e.CommandArgument)));
                 this.PropertyID = this.PropertyID;
                 Session.Add("Property", this.PropertyID);
-                BindPartnerPaymentGrid();
+                //BindPartnerPaymentGrid();
             }
         }
 
@@ -480,109 +536,93 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 #region Payment Mode
 
-                DropDownList ddlPaymentMode = (e.Row.FindControl("ddlPaymentMode") as DropDownList);
-                ProjectTerm PaymentTerm = new ProjectTerm();
-                PaymentTerm.CompanyID = this.CompanyID;
-                PaymentTerm.Category = "PAYMENTMODE";
-                PaymentTerm.IsActive = true;
-
-                List<ProjectTerm> LstPaymentTerm = ProjectTermBLL.GetAll(PaymentTerm);
-                if (LstPaymentTerm.Count > 0)
-                {
-                    ddlPaymentMode.DataSource = LstPaymentTerm;
-                    ddlPaymentMode.DataTextField = "DisplayTerm";
-                    ddlPaymentMode.DataValueField = "TermID";
-                    ddlPaymentMode.DataBind();
-                    ddlPaymentMode.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
-                }
-                else
-                    ddlPaymentMode.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                
 
                 #endregion
             }
         }
 
-        protected void fnAddNewInstallment(object sender, EventArgs e)
-        {
-            AddNewRowToGrid();
-        }
+        //protected void fnAddNewInstallment(object sender, EventArgs e)
+        //{
+        //    AddNewRowToGrid();
+        //}
 
-        private void AddNewRowToGrid()
-        {
-            if (ViewState["CurrentTable"] != null)
-            {
-                DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
-                DataRow drCurrentRow = null;
+        //private void AddNewRowToGrid()
+        //{
+        //    if (ViewState["CurrentTable"] != null)
+        //    {
+        //        DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
+        //        DataRow drCurrentRow = null;
 
-                if (dtCurrentTable.Rows.Count > 0)
-                {
-                    drCurrentRow = dtCurrentTable.NewRow();
-                    drCurrentRow["RowNumber"] = "Installment " + Convert.ToInt32(dtCurrentTable.Rows.Count + 1);
+        //        if (dtCurrentTable.Rows.Count > 0)
+        //        {
+        //            drCurrentRow = dtCurrentTable.NewRow();
+        //            drCurrentRow["RowNumber"] = "Installment " + Convert.ToInt32(dtCurrentTable.Rows.Count + 1);
 
-                    //add new row to DataTable   
-                    dtCurrentTable.Rows.Add(drCurrentRow);
+        //            //add new row to DataTable   
+        //            dtCurrentTable.Rows.Add(drCurrentRow);
 
-                    //Store the current data to ViewState for future reference   
-                    ViewState["CurrentTable"] = dtCurrentTable;
+        //            //Store the current data to ViewState for future reference   
+        //            ViewState["CurrentTable"] = dtCurrentTable;
 
-                    for (int i = 0; i < dtCurrentTable.Rows.Count - 1; i++)
-                    {
-                        HiddenField h1 = (HiddenField)grdPartnerPayments.Rows[i].Cells[1].FindControl("hdnPartnerPaymentID");
-                        dtCurrentTable.Rows[i]["PartnerPaymentID"] = h1.Value;
+        //            for (int i = 0; i < dtCurrentTable.Rows.Count - 1; i++)
+        //            {
+        //                HiddenField h1 = (HiddenField)grdPartnerPayments.Rows[i].Cells[1].FindControl("hdnPartnerPaymentID");
+        //                dtCurrentTable.Rows[i]["PartnerPaymentID"] = h1.Value;
 
-                        // Payment Amount
-                        TextBox amount = (TextBox)grdPartnerPayments.Rows[i].Cells[1].FindControl("txtInstallmentAmount");
-                        dtCurrentTable.Rows[i]["InstallmentAmount"] = amount.Text;
+        //                // Payment Amount
+        //                TextBox amount = (TextBox)grdPartnerPayments.Rows[i].Cells[1].FindControl("txtInstallmentAmount");
+        //                dtCurrentTable.Rows[i]["InstallmentAmount"] = amount.Text;
 
-                        // Payment Period
-                        DropDownList ddlPaymentMode = (grdPartnerPayments.Rows[i].Cells[1].FindControl("ddlPaymentMode") as DropDownList);
-                        dtCurrentTable.Rows[i]["MOPTerm"] = ddlPaymentMode.Text;
+        //                // Payment Period
+        //                DropDownList ddlPaymentMode = (grdPartnerPayments.Rows[i].Cells[1].FindControl("ddlPaymentMode") as DropDownList);
+        //                dtCurrentTable.Rows[i]["MOPTerm"] = ddlPaymentMode.Text;
 
-                        // Description
-                        TextBox description = (TextBox)grdPartnerPayments.Rows[i].Cells[1].FindControl("txtDescription");
-                        dtCurrentTable.Rows[i]["Description"] = description.Text;
-                    }
-                    //Rebind the Grid with the current data to reflect changes   
-                    grdPartnerPayments.DataSource = dtCurrentTable;
-                    grdPartnerPayments.DataBind();
-                }
-            }
-            else
-            {
-                Response.Write("ViewState is null");
+        //                // Description
+        //                TextBox description = (TextBox)grdPartnerPayments.Rows[i].Cells[1].FindControl("txtDescription");
+        //                dtCurrentTable.Rows[i]["Description"] = description.Text;
+        //            }
+        //            //Rebind the Grid with the current data to reflect changes   
+        //            grdPartnerPayments.DataSource = dtCurrentTable;
+        //            grdPartnerPayments.DataBind();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Response.Write("ViewState is null");
 
-            }
-            SetPreviousData();
-        }
+        //    }
+        //    SetPreviousData();
+        //}
 
-        private void SetPreviousData()
-        {
-            int rowIndex = 0;
-            if (ViewState["CurrentTable"] != null)
-            {
-                DataTable dt = (DataTable)ViewState["CurrentTable"];
+        //private void SetPreviousData()
+        //{
+        //    int rowIndex = 0;
+        //    if (ViewState["CurrentTable"] != null)
+        //    {
+        //        DataTable dt = (DataTable)ViewState["CurrentTable"];
 
-                if (dt.Rows.Count > 0)
-                {
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        HiddenField h1 = (HiddenField)grdPartnerPayments.Rows[i].Cells[1].FindControl("hdnPartnerPaymentID");
-                        TextBox amount = (TextBox)grdPartnerPayments.Rows[i].Cells[1].FindControl("txtInstallmentAmount");
-                        DropDownList ddlPaymentMode = (grdPartnerPayments.Rows[i].Cells[1].FindControl("ddlPaymentMode") as DropDownList);
-                        TextBox description = (TextBox)grdPartnerPayments.Rows[i].Cells[1].FindControl("txtDescription");
+        //        if (dt.Rows.Count > 0)
+        //        {
+        //            for (int i = 0; i < dt.Rows.Count; i++)
+        //            {
+        //                HiddenField h1 = (HiddenField)grdPartnerPayments.Rows[i].Cells[1].FindControl("hdnPartnerPaymentID");
+        //                TextBox amount = (TextBox)grdPartnerPayments.Rows[i].Cells[1].FindControl("txtInstallmentAmount");
+        //                DropDownList ddlPaymentMode = (grdPartnerPayments.Rows[i].Cells[1].FindControl("ddlPaymentMode") as DropDownList);
+        //                TextBox description = (TextBox)grdPartnerPayments.Rows[i].Cells[1].FindControl("txtDescription");
 
-                        if (i < dt.Rows.Count - 1)
-                        {
-                            h1.Value = dt.Rows[i]["PartnerPaymentID"].ToString();
-                            amount.Text = dt.Rows[i]["InstallmentAmount"].ToString();
-                            ddlPaymentMode.SelectedValue = dt.Rows[i]["MOPTerm"].ToString();
-                            description.Text = dt.Rows[i]["Description"].ToString();
-                        }
-                        rowIndex++;
-                    }
-                }
-            }
-        }
+        //                if (i < dt.Rows.Count - 1)
+        //                {
+        //                    h1.Value = dt.Rows[i]["PartnerPaymentID"].ToString();
+        //                    amount.Text = dt.Rows[i]["InstallmentAmount"].ToString();
+        //                    ddlPaymentMode.SelectedValue = dt.Rows[i]["MOPTerm"].ToString();
+        //                    description.Text = dt.Rows[i]["Description"].ToString();
+        //                }
+        //                rowIndex++;
+        //            }
+        //        }
+        //    }
+        //}
 
         protected void btnPartnerPaymentNo_Click(object sender, EventArgs e)
         {
@@ -604,7 +644,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             BindDDL();
             BindPartner();
             BindPurchaseSchedule();
-            BindPartnerPaymentGrid();
+            //BindPartnerPaymentGrid();
             //txtTotalToInvest.Text = txtTotalToInvest.Text = "";
             //txtDescription.Text = txtDescription.Text = "";
             this.PartnerPaymentID = Guid.Empty;

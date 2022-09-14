@@ -227,10 +227,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 if (this.PartnerPaymentID != Guid.Empty)
                 {
                     msgbx.Hide();
-                    PartnerPayment objDelete = PartnerPaymentBLL.GetByPrimaryKey(this.PartnerPaymentID);
                     PartnerPayment objOldPartnerPaymentDeleteData = PartnerPaymentBLL.GetByPrimaryKey(this.PartnerPaymentID);
-                    
-                    PartnerPaymentBLL.Delete(this.PartnerPaymentID, objDelete.PaymentAmount, objDelete.PropertyPurchaseScheduleID, objDelete.PropertyID, objDelete.PartnerID);
+                    PartnerPayment objDelete = PartnerPaymentBLL.GetByPrimaryKey(this.PartnerPaymentID);
+                    PurchaseSchedule objPurchaseSchedule  = PurchaseScheduleBLL.GetByPrimaryKey(objDelete.PropertyPurchaseScheduleID);
+                    PartnerPaymentBLL.Delete(this.PartnerPaymentID, objDelete.PaymentAmount, objDelete.PropertyPurchaseScheduleID, objDelete.PropertyID, objDelete.PartnerID, objPurchaseSchedule.Installment);
                     ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Delete", objOldPartnerPaymentDeleteData.ToString(), null, "mst_PropertyPartner");
 
                     IsMessage = true;

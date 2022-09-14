@@ -128,10 +128,10 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             return _dataObject.SelectByPrimaryKey(keys);
         }
 
-        public static bool Delete(Guid PartnerPaymentID, decimal? PaymentAmount, Guid PropertyPurchaseScheduleID, Guid PropertyID, Guid PartnerID)
+        public static bool Delete(Guid PartnerPaymentID, decimal? PaymentAmount, Guid PropertyPurchaseScheduleID, Guid PropertyID, Guid PartnerID, string Installment)
         {
             PartnerPaymentDAL _dataObject = new PartnerPaymentDAL();
-            return _dataObject.Delete(PartnerPaymentID, PaymentAmount, PropertyPurchaseScheduleID, PropertyID, PartnerID);
+            return _dataObject.Delete(PartnerPaymentID, PaymentAmount, PropertyPurchaseScheduleID, PropertyID, PartnerID, Installment);
         }
 
         #endregion

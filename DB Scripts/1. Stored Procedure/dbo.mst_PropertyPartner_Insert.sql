@@ -47,7 +47,7 @@ VALUES
 	@PartnershipInPercentage,
 	@TotalToInvest,
 	@TotalDue,
-	@TotalInvested,
+	0,
 	@PartnershipDissolveOn,
 	'Active',	
 	1,

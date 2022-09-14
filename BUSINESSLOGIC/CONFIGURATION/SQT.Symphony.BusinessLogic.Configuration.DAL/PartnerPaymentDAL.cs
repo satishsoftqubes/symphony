@@ -65,6 +65,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                             .AddParameter("@IsActive", dtoObject.IsActive)
                             .AddParameter("@UploadDocument", dtoObject.UploadDocument)
                             .AddParameter("@Description", dtoObject.Description)
+                            .AddParameter("@Installment", dtoObject.Installment)
 
                         .WithTransaction(dbtr)
                         .Execute();
@@ -121,7 +122,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
         //    return true;
         //}
 
-        public bool Delete(Guid PartnerPaymentID, decimal? PaymentAmount, Guid PropertyPurchaseScheduleID, Guid PropertyID, Guid PartnerID)
+        public bool Delete(Guid PartnerPaymentID, decimal? PaymentAmount, Guid PropertyPurchaseScheduleID, Guid PropertyID, Guid PartnerID, string Installment)
         {
             try
             {
@@ -131,6 +132,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                     .AddParameter("@PropertyPurchaseScheduleID", PropertyPurchaseScheduleID)
                     .AddParameter("@PropertyID", PropertyID)
                     .AddParameter("@PartnerID", PartnerID)
+                    .AddParameter("@Installment", Installment)
                     .WithTransaction(dbtr)
                     .Execute();
             }

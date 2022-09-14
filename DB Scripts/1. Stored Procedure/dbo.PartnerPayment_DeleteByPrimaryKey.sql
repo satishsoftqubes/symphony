@@ -8,7 +8,8 @@ CREATE PROCEDURE [dbo].[PartnerPayment_DeleteByPrimaryKey]
 	@PaymentAmount DECIMAL(18,2),
 	@PropertyPurchaseScheduleID UNIQUEIDENTIFIER,
 	@PropertyID UNIQUEIDENTIFIER,
-	@PartnerID UNIQUEIDENTIFIER
+	@PartnerID UNIQUEIDENTIFIER,
+	@Installment VARCHAR(50)
 )
 AS
 BEGIN
@@ -20,7 +21,8 @@ BEGIN
 
 	UPDATE purchasepartner_schedule
 	SET TotalPaid = TotalPaid - @PaymentAmount, TotalDue = TotalDue + @PaymentAmount
-	WHERE PropertyID = @PropertyID AND PartnerID = @PartnerID AND PurchaseScheduleID = @PropertyPurchaseScheduleID  
+	WHERE PropertyID = @PropertyID AND PartnerID = @PartnerID -- AND PurchaseScheduleID = @PropertyPurchaseScheduleID  
+	AND Installment = @Installment
 	AND IsActive = 1	
 	
 	UPDATE mst_propertypartner

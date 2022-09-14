@@ -35,13 +35,12 @@
             var amount = (parseFloat(totalCost * percentage) / 100);
             currentAmount.value = amount;
         }
-        else{
+        else {
             currentAmount.value = null;
         }
     }
 
-    function disableAmount()
-    {
+    function disableAmount() {
         return false;
     }
 
@@ -172,7 +171,7 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <asp:TextBox  autocomplete="off" ID="txtPurchaseArea" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
+                                            <asp:TextBox autocomplete="off" ID="txtPurchaseArea" AutoPostBack="true" OnTextChanged="fnCalculateTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
@@ -185,8 +184,7 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td class="boxright">
-                            </td>
+                            <td class="boxright"></td>
                         </tr>
                     </table>
                 </td>
@@ -215,6 +213,11 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="RowNumber" HeaderText="Installment" />
+                                <%--<asp:TemplateField HeaderText="Installment">
+                                    <ItemTemplate>
+                                        <asp:Label ID="litInstallment" runat="server"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>--%>
                                 <asp:TemplateField HeaderText="Payment Period">
                                     <ItemTemplate>
                                         <div style="justify-content: space-around; display: flex;">
@@ -232,7 +235,7 @@
                                             <span class="erroralert">
                                                 <asp:RequiredFieldValidator ID="txtInstallmentPercentName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtInstallmentPercent" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                                             </span>
-                                            <asp:TextBox autocomplete="off" onKeyUp="fnCalcInstallmentAmount(this)"  Style="margin-left: 5px;" ID="txtInstallmentPercent" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentInPercentage")%>'></asp:TextBox>
+                                            <asp:TextBox autocomplete="off" onKeyUp="fnCalcInstallmentAmount(this)" Style="margin-left: 5px;" ID="txtInstallmentPercent" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentInPercentage")%>'></asp:TextBox>
                                         </div>
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -253,7 +256,7 @@
                                             <span class="erroralert">
                                                 <asp:RequiredFieldValidator ID="txtInstallmentAmountName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtInstallmentAmount" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                                             </span>
-                                            <asp:TextBox autocomplete="off" disabled="true"  ID="txtInstallmentAmount" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentAmount")%>' Style="background: #dcdddf; margin-left: 5px;"></asp:TextBox>
+                                            <asp:TextBox autocomplete="off" disabled="true" ID="txtInstallmentAmount" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "InstallmentAmount")%>' Style="background: #dcdddf; margin-left: 5px;"></asp:TextBox>
                                         </div>
                                     </ItemTemplate>
                                 </asp:TemplateField>

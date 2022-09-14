@@ -15,7 +15,8 @@ CREATE PROCEDURE dbo.PartnerPayment_Insert
 	@TransactionDate DATETIME = null,
 	@ReceivedBy CHAR(38) = null,
 	@UploadDocument VARCHAR(361) = null,
-	@Description VARCHAR(3710) = null
+	@Description VARCHAR(3710) = null,
+	@Installment VARCHAR(50) = null
 )
 AS
 BEGIN
@@ -62,7 +63,9 @@ BEGIN
 
 	UPDATE purchasepartner_schedule
 	SET TotalPaid = TotalPaid + @PaymentAmount, TotalDue = TotalDue - @PaymentAmount
-	WHERE PropertyID = @PropertyID AND PartnerID = @PartnerID AND PurchaseScheduleID = @PropertyPurchaseScheduleID  
+	WHERE PropertyID = @PropertyID AND PartnerID = @PartnerID 
+	-- AND PurchaseScheduleID = @PropertyPurchaseScheduleID 
+	AND Installment = @Installment
 	AND IsActive = 1	
 	
 	UPDATE mst_propertypartner
