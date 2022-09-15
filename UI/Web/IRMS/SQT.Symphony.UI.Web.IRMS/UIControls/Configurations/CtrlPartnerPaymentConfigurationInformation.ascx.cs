@@ -104,7 +104,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 if (!IsPostBack)
                 {
                     this.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
-                    //LoadDefaultValue();
                     if (Session["PartnerPaymentID"] != null)
                     {
                         this.PartnerPaymentID = new Guid(Convert.ToString(Session["PartnerPaymentID"]));
@@ -172,9 +171,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             //Dv = new DataView(Dst.Tables[0]);
             //if (Dv.Count > 0)
             //{
-                //ddlPurchaseSchedule.DataSource = Dv;
-                //ddlPurchaseSchedule.DataTextField = "PurchaseScheduleID";
-                //ddlPurchaseSchedule.DataValueField = "PurchaseScheduleID";
+            //ddlPurchaseSchedule.DataSource = Dv;
+            //ddlPurchaseSchedule.DataTextField = "PurchaseScheduleID";
+            //ddlPurchaseSchedule.DataValueField = "PurchaseScheduleID";
+                ddlPurchaseSchedule.Items.Clear();
                 ddlPurchaseSchedule.DataBind();
                 ddlPurchaseSchedule.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
             //}
@@ -215,7 +215,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             //    ddlPartnerName.DataBind();
             //    ddlPartnerName.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
             //}
-
+            ddlPartnerName.Items.Clear();
             ddlPartnerName.DataBind();
             ddlPartnerName.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
         }
@@ -259,7 +259,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         private void LoadAccess()
         {
-            DataView DV = RoleRightJoinBLL.GetIUDVAccess("ConfigurationPropertyPartnerInfo.aspx", new Guid(Convert.ToString(Session["UserID"])));
+            DataView DV = RoleRightJoinBLL.GetIUDVAccess("ConfigurationPartnerPaymentInfo.aspx", new Guid(Convert.ToString(Session["UserID"])));
             if (DV.Count > 0)
             {
                 ViewState["Delete"] = Convert.ToBoolean(DV[0]["IsDelete"]);

@@ -102,6 +102,7 @@
     <Compile Include="Property.cs" />
     <Compile Include="PropertyConfiguration.cs" />
     <Compile Include="PropertyPartner.cs" />
+    <Compile Include="PropertyPayment.cs" />
     <Compile Include="PurchasePartnerSchedule.cs" />
     <Compile Include="PurchaseSchedule.cs" />
     <Compile Include="RateCard.cs" />

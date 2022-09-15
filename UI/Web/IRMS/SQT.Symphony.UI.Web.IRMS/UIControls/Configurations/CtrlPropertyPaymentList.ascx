@@ -39,7 +39,7 @@
     }
 </style>
 
-<asp:UpdatePanel ID="updPurchaseScheduleList" runat="server">
+<asp:UpdatePanel ID="updPropertyPaymentList" runat="server">
     <ContentTemplate>
         <table width="100%" border="0" cellspacing="0" cellpadding="0" style="height: 473px;">
             <tr>
@@ -130,3 +130,18 @@
         <%-- modal popup and panel here--%>
     </ContentTemplate>
 </asp:UpdatePanel>
+
+<div id="errormessage" class="clear" style="display: none;">
+    <uc1:MsgBox ID="MessageBox" runat="server" />
+</div>
+<asp:UpdateProgress AssociatedUpdatePanelID="updPropertyPaymentList" ID="UpdateProgressPropertyPaymentList"
+    runat="server">
+    <ProgressTemplate>
+        <div id="progressBackgroundFilter">
+        </div>
+        <div id="processMessage">
+            <center>
+                <img src="../../images/ajax-loader.gif" /></center>
+        </div>
+    </ProgressTemplate>
+</asp:UpdateProgress>

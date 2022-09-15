@@ -22,7 +22,15 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Response.Redirect("~/Applications/SetUp/ConfigurationPropertyPaymentInfo.aspx");
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

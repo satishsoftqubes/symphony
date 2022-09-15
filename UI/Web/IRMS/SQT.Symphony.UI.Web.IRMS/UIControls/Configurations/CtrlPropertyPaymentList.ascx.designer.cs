@@ -15,13 +15,13 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
     {
 
         /// <summary>
-        /// updPurchaseScheduleList control.
+        /// updPropertyPaymentList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updPurchaseScheduleList;
+        protected global::System.Web.UI.UpdatePanel updPropertyPaymentList;
 
         /// <summary>
         /// lblErrorMessage control.
@@ -67,5 +67,23 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdd;
+
+        /// <summary>
+        /// MessageBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SQT.Symphony.UI.Web.IRMS.MsgBox.MsgBox MessageBox;
+
+        /// <summary>
+        /// UpdateProgressPropertyPaymentList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress UpdateProgressPropertyPaymentList;
     }
 }

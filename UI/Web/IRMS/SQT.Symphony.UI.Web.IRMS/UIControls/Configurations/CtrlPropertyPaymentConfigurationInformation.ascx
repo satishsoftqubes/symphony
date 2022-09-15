@@ -1,5 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CtrlPartnerPaymentConfigurationInformation.ascx.cs"
-    Inherits="SQT.Symphony.UI.Web.IRMS.UIControls.Configurations.CtrlPartnerPaymentConfigurationInformation" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CtrlPropertyPaymentConfigurationInformation.ascx.cs" 
+    Inherits="SQT.Symphony.UI.Web.IRMS.UIControls.Configurations.CtrlPropertyPaymentConfigurationInformation" %>
 
 <%@ Register Src="../../MsgBox/MsgBox.ascx" TagName="MsgBox" TagPrefix="uc1" %>
 <script language="javascript" type="text/javascript">
@@ -40,16 +40,16 @@
     }
 </style>
 
-<asp:UpdatePanel ID="updPartnerPayment" runat="server">
+<asp:UpdatePanel ID="updPropertyPayment" runat="server">
     <ContentTemplate>
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td class="content" style="padding-left: 0px;">
+                <td class="content" style="padding-left: 0px; width: 67%;">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
                         <tr>
                             <td class="boxtopleft">&nbsp;
                             </td>
-                            <td class="boxtopcenter">PARTNER PAYMENT
+                            <td class="boxtopcenter">PROPERTY PAYMENT
                             </td>
                             <td class="boxtopright">&nbsp;
                             </td>
@@ -96,20 +96,6 @@
                                         </td>
                                         <td>
                                             <asp:DropDownList ID="ddlPropertyName" AutoPostBack="true" onselectedindexchanged="fnPurchaseScheduleInstallment" runat="server" Style="width: 205px;">
-                                            </asp:DropDownList>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="litPartnerName" runat="server" Text="Partner Name" CssClass="RequireFile"></asp:Label>
-                                            <span class="erroraleart">
-                                                <asp:RequiredFieldValidator ID="rfvPartnerName" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                                    InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
-                                                    ControlToValidate="ddlPartnerName" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <asp:DropDownList ID="ddlPartnerName" runat="server" Style="width: 205px;">
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
@@ -167,68 +153,6 @@
                                             <asp:TextBox TextMode="MultiLine" rows="4" autocomplete="off" ID="txtDescription" SkinID="CmpTextbox" runat="server" MaxLength="3710"></asp:TextBox>
                                         </td>
                                     </tr>
-
-
-                                    <%--<tr>
-                                        <td colspan="2" class="pagesubheader">
-                                            <div class="pagesubheader">
-                                                <asp:Literal ID="Literal3" runat="server" Text="Property Installments"></asp:Literal>
-                                                <asp:ImageButton ID="ButtonAdd" ToolTip="Add" OnClick="fnAddNewInstallment"
-                                                    CommandName="ADDDATA" runat="server" ImageUrl="~/images/add_icon.png" Style="border-radius: 50%; float: right; width: 19px; margin-bottom: 10px; border: 0px;"
-                                                    OnClientClick="fnDisplayCatchErrorMessage()" />
-                                            </div>
-                                        </td>
-                                    </tr>--%>
-                                    <%--<tr>
-                                        <td colspan="2" class="dTableBox1">
-                                            <div class="leftmarginbox_content">
-                                                <asp:GridView ID="grdPartnerPayments" AutoGenerateColumns="false" SkinID="gvNoPaging"
-                                                    runat="server" ShowFooter="true" ShowHeader="true"
-                                                    OnRowDataBound="grdPartnerPaymentList_RowDataBound" OnRowCommand="grdPartnerPaymentList_RowCommand"
-                                                    OnRowCreated="grdPartnerPaymentRowCreated">
-                                                    <Columns>
-                                                        <asp:TemplateField>
-                                                            <ItemTemplate>
-                                                                <asp:HiddenField ID="hdnPartnerPaymentID" runat="server" />
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                        <asp:BoundField DataField="RowNumber" HeaderText="Installment" />
-                                                        <asp:TemplateField HeaderText="Amount">
-                                                            <ItemTemplate>
-                                                                <div style="justify-content: space-around; display: flex;">
-                                                                    <span class="erroralert">
-                                                                        <asp:RequiredFieldValidator ID="txtInstallmentAmountName" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtInstallmentAmount" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                                                    </span>
-                                                                    <asp:TextBox autocomplete="off" ID="txtInstallmentAmount" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "PaymentAmount")%>' Style="margin-left: 5px;"></asp:TextBox>
-                                                                </div>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="Payment Mode">
-                                                            <ItemTemplate>
-                                                                <div style="justify-content: space-around; display: flex;">
-                                                                    <asp:RequiredFieldValidator ID="rfvPaymentMode" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                                                        InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
-                                                                        ControlToValidate="ddlPaymentMode" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                                                    <asp:DropDownList ID="ddlPaymentMode" Style="width: 140px; margin-left: 5px;" runat="server">
-                                                                    </asp:DropDownList>
-                                                                </div>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="Description">
-                                                            <ItemTemplate>
-                                                                <div style="justify-content: space-around; display: flex;">
-                                                                    <asp:RequiredFieldValidator ID="rfvDescription" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                                                        InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
-                                                                        ControlToValidate="txtDescription" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                                                    <asp:TextBox autocomplete="off" ID="txtDescription" SkinID="Search" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "Description")%>' Style="margin-left: 5px;"></asp:TextBox>
-                                                                </div>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                    </Columns>
-                                                </asp:GridView>
-                                            </div>
-                                        </td>
-                                    </tr>--%>
                                     <tr>
                                         <td align="left" valign="top" colspan="2" style="text-align: right;">
                                             <div style="float: right; width: auto; display: inline-block;">
@@ -261,7 +185,96 @@
                 </td>
                 <td style="width: 2px;">&#160;
                 </td>
-                
+                <td class="content">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
+                        <tr>
+                            <td class="boxtopleft">&nbsp;
+                            </td>
+                            <td class="boxtopcenter">QUICK SEARCH
+                            </td>
+                            <td class="boxtopright">&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="boxleft">&nbsp;
+                            </td>
+                            <td>
+                                <div class="box_leftmargin_content">
+                                    <div>
+                                        <table id="tbl" cellpadding="2" cellspacing="0" width="100%" border="0" class="pageinfo">
+                                            <tr>
+                                                <td align="left" valign="middle" style="vertical-align: middle; margin-top: 7px;">Property Name
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox ID="txtSPropertyName" runat="server" Style="vertical-align: middle; margin-top: 7px; width: 125px !important;"
+                                                        MaxLength="65"></asp:TextBox>
+                                                    <asp:ImageButton ID="btnSearch" runat="server" ImageUrl="~/images/search-icon.png"
+                                                        Style="border: 0px; vertical-align: middle; margin-left: 5px;" OnClick="btnSearch_Click" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <div style="height: 775px; overflow: auto;">
+                                            <asp:GridView ID="grdPropertyPaymentList" runat="server" ShowHeader="false" ShowFooter="false"
+                                                SkinID="gvNoPaging" AutoGenerateColumns="false" Width="92%" OnRowCommand="grdPropertyPaymentList_RowCommand"
+                                                OnRowDataBound="grdPropertyPaymentList_RowDataBound">
+                                                <Columns>
+                                                    <asp:TemplateField>
+                                                        <ItemTemplate>
+                                                            <div class="rightmargin_grid">
+                                                                <div class="leftmargin_contentarea">
+                                                                    <div>
+                                                                        <p style="color:rgb(0,103,164); font-size: 13px; font-weight:bold;">
+                                                                            <%#DataBinder.Eval(Container.DataItem, "PropertyName")%>
+                                                                        </p>
+                                                                        <p style="margin-top: 5px;">
+                                                                            <%#DataBinder.Eval(Container.DataItem, "PartnerName")%>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="leftmargin_icons">
+                                                                    <asp:ImageButton ID="btnEdit" ToolTip="Edit" runat="server" ImageUrl="~/images/edit.png"
+                                                                        Style="border: 0px; vertical-align: middle; margin-top: 7px; margin-right: 7px;"
+                                                                        CommandName="EditData" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPaymentID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                    <asp:ImageButton ID="btnDelete" ToolTip="Delete" runat="server" ImageUrl="~/images/delete_icon.png"
+                                                                        Style="border: 0px; vertical-align: middle; margin-top: 7px; margin-right: 7px;"
+                                                                        CommandName="DeleteData" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPaymentID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                </div>
+                                                                <div class="clear">
+                                                                </div>
+                                                            </div>
+                                                            <div class="clear">
+                                                            </div>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EmptyDataTemplate>
+                                                    <div class="pagecontent_info">
+                                                        <div class="NoItemsFound">
+                                                            <h2>
+                                                                <asp:Literal ID="Literal5" runat="server" Text="No Record Found"></asp:Literal></h2>
+                                                        </div>
+                                                    </div>
+                                                </EmptyDataTemplate>
+                                            </asp:GridView>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="boxright">&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="boxbottomleft">&nbsp;
+                            </td>
+                            <td class="boxbottomcenter">&nbsp;
+                            </td>
+                            <td class="boxbottomright">&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </td>
             </tr>
         </table>
        <ajx:ModalPopupExtender ID="msgbx" runat="server" TargetControlID="hfMessage" PopupControlID="Panel1"
@@ -322,7 +335,7 @@
 <div id="errormessage" class="clear" style="display: none;">
     <uc1:MsgBox ID="MessageBox" runat="server" />
 </div>
-<asp:UpdateProgress AssociatedUpdatePanelID="updPartnerPayment" ID="UpdateProgressPartnerPayment"
+<asp:UpdateProgress AssociatedUpdatePanelID="updPropertyPayment" ID="UpdateProgressPropertyPayment"
     runat="server">
     <ProgressTemplate>
         <div id="progressBackgroundFilter">
@@ -333,3 +346,4 @@
         </div>
     </ProgressTemplate>
 </asp:UpdateProgress>
+
