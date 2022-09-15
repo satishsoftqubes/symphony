@@ -145,6 +145,12 @@
                                                             <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "PaymentAmount")%>'></asp:Literal>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Installment" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
+                                                        ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "Installment")%>'></asp:Literal>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
                                                     <%--<asp:TemplateField HeaderText="Edit/View" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
                                                         ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>

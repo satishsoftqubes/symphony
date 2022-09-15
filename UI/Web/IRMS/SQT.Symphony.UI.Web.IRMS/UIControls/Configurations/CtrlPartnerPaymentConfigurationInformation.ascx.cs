@@ -123,7 +123,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         {
             BindDDL();
             BindPartner();
-            BindPurchaseSchedule();
+            BindInstallment();
             BindPaymentMode();
             //BindPartnerPaymentGrid();
         }
@@ -163,9 +163,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         //}
 
-        public void BindPurchaseSchedule()
+        public void BindInstallment()
         {
-            string PurchaseScheduleQuery = string.Empty;
+            //string PurchaseScheduleQuery = string.Empty;
             //PurchaseScheduleQuery = "Select PurchaseScheduleID From propertypurchase_schedule Where IsActive = 1";
             //DataSet Dst = InvestorBLL.GetSearchData(PurchaseScheduleQuery);
             //DataView Dv = new DataView(Dst.Tables[0]);
@@ -202,19 +202,22 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
         public void BindPartner()
         {
-            string PartnerQuery = string.Empty;
-            PartnerQuery = "Select Distinct(DisplayName), PartnerID From mst_partner Where IsActive = 1";
-            DataSet Dst = InvestorBLL.GetSearchData(PartnerQuery);
-            DataView Dv = new DataView(Dst.Tables[0]);
-            Dv = new DataView(Dst.Tables[0]);
-            if (Dv.Count > 0)
-            {
-                ddlPartnerName.DataSource = Dv;
-                ddlPartnerName.DataTextField = "DisplayName";
-                ddlPartnerName.DataValueField = "PartnerID";
-                ddlPartnerName.DataBind();
-                ddlPartnerName.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
-            }
+            //string PartnerQuery = string.Empty;
+            //PartnerQuery = "Select Distinct(DisplayName), PartnerID From mst_partner Where IsActive = 1";
+            //DataSet Dst = InvestorBLL.GetSearchData(PartnerQuery);
+            //DataView Dv = new DataView(Dst.Tables[0]);
+            //Dv = new DataView(Dst.Tables[0]);
+            //if (Dv.Count > 0)
+            //{
+            //    ddlPartnerName.DataSource = Dv;
+            //    ddlPartnerName.DataTextField = "DisplayName";
+            //    ddlPartnerName.DataValueField = "PartnerID";
+            //    ddlPartnerName.DataBind();
+            //    ddlPartnerName.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+            //}
+
+            ddlPartnerName.DataBind();
+            ddlPartnerName.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
         }
 
         public void fnPurchaseScheduleInstallment(object sender, EventArgs e)
@@ -224,18 +227,33 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             DataSet ds = new DataSet();
             ds = PurchaseScheduleBLL.GetPurchaseScheduleData(new Guid(propertyID), this.CompanyID, null);
             DataView Dv = new DataView(ds.Tables[0]);
-            if (ds.Tables[0].Rows.Count > 0 && ds.Tables[0].Rows[0]["Installment"] != DBNull.Value)
+            DataView Dv2 = new DataView(ds.Tables[1]);
+
+            if (ds.Tables[0].Rows.Count > 0 && ds.Tables[1].Rows.Count > 0)
             {
-                ddlPurchaseSchedule.DataSource = Dv;
-                ddlPurchaseSchedule.DataTextField = "Installment";
-                ddlPurchaseSchedule.DataValueField = "PurchaseScheduleID";
-                ddlPurchaseSchedule.DataBind();
-                ddlPurchaseSchedule.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                if (ds.Tables[0].Rows[0]["Installment"] != DBNull.Value)
+                {
+                    ddlPurchaseSchedule.DataSource = Dv;
+                    ddlPurchaseSchedule.DataTextField = "Installment";
+                    ddlPurchaseSchedule.DataValueField = "PurchaseScheduleID";
+                    ddlPurchaseSchedule.DataBind();
+                    ddlPurchaseSchedule.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                }
+                if (ds.Tables[1].Rows[0]["PartnerID"] != DBNull.Value)
+                {
+                    ddlPartnerName.DataSource = Dv2;
+                    ddlPartnerName.DataTextField = "PartnerName";
+                    ddlPartnerName.DataValueField = "PartnerID";
+                    ddlPartnerName.DataBind();
+                    ddlPartnerName.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                }
             }
             else
             {
                 ddlPurchaseSchedule.Items.Clear();
-                BindPurchaseSchedule();
+                ddlPartnerName.Items.Clear();
+                BindInstallment();
+                BindPartner();
             }
         }
 
@@ -268,14 +286,15 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 {
                     PartnerPayment objPartnerPayment = new PartnerPayment();
                     DataSet ds = new DataSet();
-                    ds = PartnerPaymentBLL.GetPartnerPaymentData(objPartnerPayment.PropertyID, objPartnerPayment.PartnerID, objPartnerPayment.PropertyPurchaseScheduleID, null);
+                    objPartnerPayment.PropertyID = new Guid(ddlPropertyName.SelectedValue);
+                    objPartnerPayment.PartnerID = new Guid(ddlPartnerName.SelectedValue);
+                    objPartnerPayment.PropertyPurchaseScheduleID = new Guid(ddlPurchaseSchedule.SelectedValue);
+                    objPartnerPayment.Installment = ddlPurchaseSchedule.SelectedItem.Text;
+                    //ds = PartnerPaymentBLL.GetPartnerPaymentData(objPartnerPayment.PropertyID, objPartnerPayment.PartnerID, objPartnerPayment.PropertyPurchaseScheduleID, null);
 
-                    if (ds.Tables[0].Rows.Count == 0)
-                    {
-                        objPartnerPayment.PropertyID = new Guid(ddlPropertyName.SelectedValue);
-                        objPartnerPayment.PartnerID = new Guid(ddlPartnerName.SelectedValue);
-                        objPartnerPayment.PropertyPurchaseScheduleID = new Guid(ddlPurchaseSchedule.SelectedValue);
-                        objPartnerPayment.Installment = ddlPurchaseSchedule.SelectedItem.Text;
+                    //if (ds.Tables[0].Rows.Count == 0)
+                    //{
+                        
 
                         //for (int i = 0; i < grdPartnerPayments.Rows.Count; i++)
                         //{
@@ -317,9 +336,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         PartnerPaymentBLL.Save(objPartnerPayment);
                         IsMessage = true;
                         lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();
-                    }
+                    //}
 
-                    LoadData();
+                    //LoadData();
+                    Response.Redirect("~/Applications/SetUp/PartnerPaymentList.aspx");
 
                 }
                 catch (Exception ex)
@@ -338,7 +358,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 BindDDL();
                 BindPartner();
-                BindPurchaseSchedule();
+                BindInstallment();
 
                 // property name
                 if (Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]) != null)
@@ -643,7 +663,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         {
             BindDDL();
             BindPartner();
-            BindPurchaseSchedule();
+            BindInstallment();
             //BindPartnerPaymentGrid();
             //txtTotalToInvest.Text = txtTotalToInvest.Text = "";
             //txtDescription.Text = txtDescription.Text = "";
