@@ -1022,6 +1022,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.COMMON
         public const string GetByIdWise_ExpenseData = "[dbo].[mst_Expense_GetByIdWise]";
         public const string Multiple_ExpenseUpdate = "[dbo].[mst_ExpenseDetail_Update]";
         public const string ExpenseDelete_IdWise = "[dbo].[mst_ExpenseDelete_IdWise]";
+        public const string ExpenseDocumentsUpdate = "[dbo].[mst_ExpenseDocuments_Update]";
+        public const string GetPropertyExpenseID = "[dbo].[mst_Expense_GetPropertyExpenseID]";
     }
 }
 

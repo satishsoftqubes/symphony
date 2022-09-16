@@ -112,9 +112,9 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:HiddenField id="hdnPrice" runat="server" />  
-                                            <asp:HiddenField id="hdnPurchaseArea" runat="server" />  
-                                            <asp:HiddenField id="hdnTotalCost" runat="server" />  
+                                            <asp:HiddenField id="hdnPrice" value="0.00" runat="server" />  
+                                            <asp:HiddenField id="hdnPurchaseArea" value="0.00" runat="server" />  
+                                            <asp:HiddenField id="hdnTotalCost" value="0.00" runat="server" />  
                                         </td>
                                     </tr>
                                     <tr>
@@ -334,6 +334,18 @@
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtCityName" SkinID="CmpTextbox" runat="server" MaxLength="78"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td id="tdVillage" runat="server">
+                                            <asp:Label ID="litVillage" runat="server" Text="Village"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtVillage"
+                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator></span>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtVillage" SkinID="CmpTextbox" runat="server" MaxLength="78"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>

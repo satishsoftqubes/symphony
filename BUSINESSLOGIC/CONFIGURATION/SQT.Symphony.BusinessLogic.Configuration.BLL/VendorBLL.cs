@@ -89,5 +89,11 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                 throw;
             }
         }
+        
+        public static List<Vendor> GetAll(Vendor objVendor)
+        {
+            VendorDAL _dataObject = new VendorDAL();
+            return _dataObject.SelectAll(objVendor);
+        }
     }
 }

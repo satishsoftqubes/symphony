@@ -2,13 +2,15 @@ DROP PROCEDURE IF EXISTS dbo.mst_PropertyPurchase_Update
 
 GO
 
-CREATE PROCEDURE dbo.mst_PropertyPurchase_Update
+CREATE PROCEDURE [dbo].[mst_PropertyPurchase_Update]
 (
 	@PropertyID uniqueidentifier,		
 	@PurchaseOptionID uniqueidentifier = null,
 	@Price decimal(18,2) = null,
 	@PurchaseArea decimal(18,2) = null,
-	@TotalCost decimal(18,2) = null	
+	@TotalCost decimal(18,2) = null,
+	@InstallmentTypeTerm varchar(50) = null,
+	@TotalPaymentMonth int = null
 )
 AS
 BEGIN
@@ -17,7 +19,9 @@ SET
 	[PurchaseOptionID] = @PurchaseOptionID,
 	[Price] = @Price,
 	[PurchaseArea] = @PurchaseArea,
-	[TotalCost] = @TotalCost	
+	[TotalCost] = @TotalCost,
+	[InstallmentTypeTerm] = @InstallmentTypeTerm,
+	[TotalPaymentMonth] = @TotalPaymentMonth
 	
  WHERE 
 	[PropertyID] = @PropertyID

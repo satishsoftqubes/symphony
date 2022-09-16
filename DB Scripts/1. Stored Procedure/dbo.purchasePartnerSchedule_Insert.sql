@@ -15,7 +15,8 @@ CREATE PROCEDURE dbo.purchasePartnerSchedule_Insert
 	@ActualPaymentDate DATETIME = null,
 	@TotalToInvest DECIMAL(18,2) = null,
 	@TotalPaid DECIMAL(18,2) = null,
-	@TotalDue DECIMAL(18,2) = null	
+	@TotalDue DECIMAL(18,2) = null,
+	@Date  varchar(50) = null
 )
 AS
 BEGIN
@@ -35,8 +36,8 @@ INSERT [dbo].[purchasepartner_schedule]
 	[TotalPaid],
 	[TotalDue] ,
 	[IsActive] ,
-	[UpdateLog]
-)
+	[UpdateLog],
+	[Date]
 VALUES
 (
 	@PurchasePartnerScheduleID,
@@ -51,7 +52,8 @@ VALUES
 	@TotalPaid,
 	@InstallmentAmount,	-- Total due is same as InstallmentAmount
 	1,
-	CURRENT_TIMESTAMP
+	CURRENT_TIMESTAMP,
+	@Date
 )
 
  -- update TotalToInvest in mst_propertypartner

@@ -32,7 +32,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			UpdateLog,
 			IsSynch,
 			SynchOn,
-			SeqNo
+			SeqNo,
+            Village,
 		}
 		#endregion
 
@@ -55,6 +56,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			bool? _isSynch;
 			DateTime? _synchOn;
 			int? _seqNo;
+           string _Village;
 
 		#endregion
 
@@ -297,13 +299,26 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 				 }
 			 }
 		}
+        [DataMember]
+        public string Village
+        {
+            get { return _Village; }
+            set
+            {
+                if (_Village != value)
+                {
+                    _Village = value;
+                    PropertyHasChanged("Village");
+                }
+            }
+        }
 
 
-		#endregion
+        #endregion
 
-		#region Validation
+        #region Validation
 
-		[OperationContract]
+        [OperationContract]
 		protected override void AddValidationRules()
 		{
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleNotNull("AddressID", "AddressID"));
@@ -312,7 +327,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("Add3", "Add3",220));
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("ZipCode", "ZipCode",13));
 			ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("City", "City",78));
-		}
+            ValidationRules.AddRules(new SQT.FRAMEWORK.DAL.Validation.ValidateRuleStringMaxLength("Village", "Village", 78));
+        }
 
 		[OperationContract]
 		public override string ToString()
@@ -334,8 +350,9 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			"UpdateLog = {13}~\n"+
 			"IsSynch = {14}~\n"+
 			"SynchOn = {15}~\n"+
-			"SeqNo = {16}~\n",
-			AddressID,			CompanyID,			Add1,			Add2,			Add3,			CityID,			ZipCode,			StateID,			CountryID,			City,			AddressTypeTermID,			RetAddressID,			IsActive,			UpdateLog,			IsSynch,			SynchOn,			SeqNo);			return objValue;
+			"SeqNo = {16}~\n"+
+            "Village = {17}~\n",
+            AddressID,			CompanyID,			Add1,			Add2,			Add3,			CityID,			ZipCode,			StateID,			CountryID,			City,			AddressTypeTermID,			RetAddressID,			IsActive,			UpdateLog,			IsSynch,			SynchOn,			SeqNo,         Village);			return objValue;
 		}
 
 		#endregion

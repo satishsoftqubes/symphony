@@ -379,9 +379,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 BindPurchaseOption();
                 BindPaymentTerm();
                 //BindAddressType();
-                hdnPrice.Value = Convert.ToString(ds.Tables[0].Rows[0]["Price"]);
-                hdnPurchaseArea.Value = Convert.ToString(ds.Tables[0].Rows[0]["PurchaseArea"]);
-                hdnTotalCost.Value = Convert.ToString(ds.Tables[0].Rows[0]["TotalCost"]);
+                hdnPrice.Value = Convert.ToString(ds.Tables[0].Rows[0]["Price"]) == "" ? "0.00" : Convert.ToString(ds.Tables[0].Rows[0]["Price"]);
+                hdnPurchaseArea.Value = Convert.ToString(ds.Tables[0].Rows[0]["PurchaseArea"]) == "" ? "0.00" : Convert.ToString(ds.Tables[0].Rows[0]["PurchaseArea"]);
+                hdnTotalCost.Value = Convert.ToString(ds.Tables[0].Rows[0]["TotalCost"]) == "" ? "0.00" : Convert.ToString(ds.Tables[0].Rows[0]["TotalCost"]);
                 txtPropertyName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]);
                 //txtPropertyDisplayName.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyDisplayName"]);
                 txtPropertyCode.Text = Convert.ToString(ds.Tables[0].Rows[0]["PropertyCode"]);
@@ -414,7 +414,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 txtCountryName.Text = Convert.ToString(ds.Tables[0].Rows[0]["CountryName"]);
                 txtStateName.Text = Convert.ToString(ds.Tables[0].Rows[0]["StateName"]);
                 txtCityName.Text = Convert.ToString(ds.Tables[0].Rows[0]["City"]);
-
+                txtVillage.Text = Convert.ToString(ds.Tables[0].Rows[0]["Village"]);
                 if (Convert.ToString(ds.Tables[0].Rows[0]["ProperyType"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["ProperyType"]) != null)
                     ddlPropertyType.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["PropertyTypeID"]));
 
@@ -762,7 +762,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         objUpdAddres.StateID = clsCommon.State(txtStateName.Text.Trim());
                         objUpdAddres.CityID = clsCommon.City(txtCityName.Text.Trim());
                         objUpdAddres.City = txtCityName.Text.Trim();
-
+                        objUpdAddres.Village = txtVillage.Text.Trim();
                         //if (ddlAddressType.SelectedValue != Guid.Empty.ToString())
                         //    objUpdAddres.AddressTypeTermID = new Guid(ddlAddressType.SelectedValue);
                         //else
@@ -942,6 +942,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         objInsAddres.StateID = clsCommon.State(txtStateName.Text.Trim());
                         objInsAddres.CityID = clsCommon.City(txtCityName.Text.Trim());
                         objInsAddres.City = txtCityName.Text.Trim();
+                        objInsAddres.Village = txtVillage.Text.Trim();
 
 
                         for (int i = 0; i < gvDocument.Rows.Count; i++)

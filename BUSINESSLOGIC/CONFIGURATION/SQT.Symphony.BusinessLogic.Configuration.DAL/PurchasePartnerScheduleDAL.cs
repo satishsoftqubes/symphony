@@ -58,6 +58,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                             .AddParameter("@TotalPaid", dtoObject.TotalPaid)
                             .AddParameter("@TotalDue", dtoObject.TotalDue)
                             .AddParameter("@IsActive", dtoObject.IsActive)
+                            .AddParameter("@Date",dtoObject.Date)
 
                         .WithTransaction(dbtr)
                         .Execute();

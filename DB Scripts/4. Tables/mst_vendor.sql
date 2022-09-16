@@ -1,7 +1,7 @@
 USE [symphony_sakariyagroup]
 GO
 
-/****** Object:  Table [dbo].[mst_vendor]    Script Date: 8/30/2022 5:25:47 PM ******/
+/****** Object:  Table [dbo].[mst_vendor]    Script Date: 9/9/2022 5:24:01 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -30,6 +30,7 @@ CREATE TABLE [dbo].[mst_vendor](
 	[PayableAcctID] [uniqueidentifier] NULL,
 	[UpdatedBy] [char](38) NULL,
 	[UpdatedOn] [datetime] NULL,
+	[TypeID] [uniqueidentifier] NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[VendorID] ASC

@@ -2,7 +2,7 @@ DROP PROCEDURE IF EXISTS dbo.purchaseschedule_SelectData
 
 GO
 
-CREATE PROCEDURE dbo.purchaseschedule_SelectData
+CREATE PROCEDURE [dbo].[purchaseschedule_SelectData]
 (  
 	@PropertyID uniqueidentifier = null,  
 	@CompanyID uniqueidentifier = null,  
@@ -11,7 +11,8 @@ CREATE PROCEDURE dbo.purchaseschedule_SelectData
 AS  
 BEGIN  
 
-	SELECT P.PropertyID, P.PropertyName, P.PurchaseOptionID, P.Price, P.PurchaseArea, P.TotalCost
+	SELECT PS.PurchaseScheduleID, P.PropertyID, P.PropertyName, P.PurchaseOptionID, P.Price, P.PurchaseArea, 
+	       P.TotalCost,P.InstallmentTypeTerm,P.TotalPaymentMonth
 	-- COUNT(PS.PurchaseScheduleID) AS PurchaseScheduleCount
 		FROM propertypurchase_schedule PS
 		INNER JOIN mst_property P ON P.PropertyID = PS.PropertyID

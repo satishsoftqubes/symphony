@@ -2,7 +2,9 @@ DROP PROCEDURE IF EXISTS dbo.purchaseSchedule_Insert
 
 GO
 
-CREATE PROCEDURE dbo.purchaseSchedule_Insert
+
+
+CREATE PROCEDURE [dbo].[purchaseSchedule_Insert]
 (
 	@PurchaseScheduleID uniqueidentifier,
 	@PurchasePartnerScheduleID uniqueidentifier,
@@ -15,7 +17,8 @@ CREATE PROCEDURE dbo.purchaseSchedule_Insert
 	@MOPTerm VARCHAR(29) = null,
 	@ActualPaymentDate DATETIME = null,
 	@TotalPaid DECIMAL(18,2) = null,
-	@TotalDue DECIMAL(18,2) = null	
+	@TotalDue DECIMAL(18,2) = null,
+	@Date  VARCHAR(29) = null
 )
 AS
 BEGIN
@@ -34,7 +37,9 @@ INSERT [dbo].[propertypurchase_schedule]
 	[TotalPaid],
 	[TotalDue] ,
 	[IsActive] ,
-	[UpdateLog]
+	[UpdateLog],
+	[Date]
+	
 )
 VALUES
 (
@@ -49,7 +54,9 @@ VALUES
 	@TotalPaid,
 	@InstallmentAmount,	-- TotalDue is same as InstallmentAmount
 	1,
-	CURRENT_TIMESTAMP
+	CURRENT_TIMESTAMP,
+	@Date
+
 )
 
 

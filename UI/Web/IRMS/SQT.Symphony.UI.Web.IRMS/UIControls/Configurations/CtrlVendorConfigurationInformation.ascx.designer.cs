@@ -85,31 +85,31 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations {
         protected global::System.Web.UI.WebControls.TextBox txtContactName;
         
         /// <summary>
-        /// Email control.
+        /// Type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Email;
+        protected global::System.Web.UI.WebControls.Label Type;
         
         /// <summary>
-        /// rfvEmail control.
+        /// rfvTypeID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTypeID;
         
         /// <summary>
-        /// txtEmail control.
+        /// ddlTypeID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTypeID;
         
         /// <summary>
         /// MobileNo control.

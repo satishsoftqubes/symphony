@@ -285,6 +285,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         }
         private void AddNewRowToGrid()
         {
+
             if (ViewState["CurrentTable"] != null)
             {
                 DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
@@ -328,7 +329,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                         HiddenField hidexpenseDocument = (HiddenField)gvExpenseModification.Rows[i].FindControl("expenseDocumentName");
                         dtCurrentTable.Rows[i]["DocumentName"] = hidexpenseDocument.Value;
-                        
+
                     }
                     gvExpenseModification.DataSource = dtCurrentTable;
                     gvExpenseModification.DataBind();
@@ -440,10 +441,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         {
             if (e.CommandName.Equals("DELETEDATA"))
             {
-                //DocumentsBLL.Delete(new Guid(Convert.ToString(e.CommandArgument)));
-                //this.PropertyID = this.PropertyID;
-                //Session.Add("Property", this.PropertyID);
-                //LoadLandIssueGrid();
+                DocumentsBLL.Delete(new Guid(Convert.ToString(e.CommandArgument)));
+                this.ExpenseID = this.ExpenseID;
+                Session.Add("Expense", this.ExpenseID);
+                LoadLandIssueGrid();
             }
         }
         protected void gvExpense_RowCreated(object sender, GridViewRowEventArgs e)
@@ -505,6 +506,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             if (Page.IsValid)
             {
                 List<Documents> ExpenseModificationDocuments = new List<Documents>();
+                List<Documents> UpdateExpenseModificationDocuments = new List<Documents>();
                 List<Expense> ExpenseDetail = new List<Expense>();
                 try
                 {
@@ -544,28 +546,50 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                                     ED.PropertyExpenseDetailID = new Guid(h1.Value);
 
                                 }
+                                if (h1.Value == "")
+                                {
+                                    ED.PropertyExpenseDetailID = Guid.NewGuid();
+                                }
                                 ExpenseDetail.Add(ED);
+                                FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocumentUpload");
+                                HiddenField expenseDocumentName = (HiddenField)gvExpenseModification.Rows[i].FindControl("expenseDocumentName");
+                                if (fuDocument.FileName != "")
+                                {
+                                    Documents d1 = new Documents();
+                                    string FileInCorporatonNo = "PD$" + Guid.NewGuid().ToString().Substring(0, 10) + "$" + fuDocument.FileName.Replace(" ", "_");
+                                    string path1 = Server.MapPath("~/Document/" + FileInCorporatonNo);
+                                    fuDocument.SaveAs(path1);
+                                    d1.DocumentName = FileInCorporatonNo;
+                                    d1.Extension = System.IO.Path.GetExtension(fuDocument.FileName);
+                                    d1.DateOfSubmission = DateTime.Now;
+                                    d1.CreatedOn = DateTime.Now;
+                                    d1.IsActive = true;
+                                    d1.AssociationType = "Expense";
+                                    d1.CreatedBy = new Guid(Convert.ToString(Session["UserID"]));
+                                    d1.TypeID = (Guid)ViewState["LandIssueTypeID"];
+                                    d1.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
+                                    d1.AssociationID = ED.PropertyExpenseDetailID;
+
+                                    ExpenseModificationDocuments.Add(d1);
+                                }
+                                else if (expenseDocumentName.Value != "")
+                                {
+                                    Documents d5 = new Documents();
+                                    d5.DocumentName = expenseDocumentName.Value;
+                                    d5.Extension = System.IO.Path.GetExtension(expenseDocumentName.Value);
+                                    d5.DateOfSubmission = DateTime.Now;
+                                    d5.UpdatedOn = DateTime.Now;
+                                    d5.IsActive = true;
+                                    d5.AssociationType = "Property";
+                                    d5.UpdatedBy = new Guid(Convert.ToString(Session["UserID"]));
+                                    d5.TypeID = (Guid)ViewState["LandIssueTypeID"];
+                                    d5.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
+                                    d5.AssociationID = new Guid(h1.Value);
+                                    ExpenseModificationDocuments.Add(d5);
+
+                                }
                             }
 
-                            FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocumentUpload");
-
-                            if (fuDocument.FileName != "")
-                            {
-                                Documents d1 = new Documents();
-                                string FileInCorporatonNo = "PD$" + Guid.NewGuid().ToString().Substring(0, 10) + "$" + fuDocument.FileName.Replace(" ", "_");
-                                string path1 = Server.MapPath("~/Document/" + FileInCorporatonNo);
-                                fuDocument.SaveAs(path1);
-                                d1.DocumentName = FileInCorporatonNo;
-                                d1.Extension = System.IO.Path.GetExtension(fuDocument.FileName);
-                                d1.DateOfSubmission = DateTime.Now;
-                                d1.CreatedOn = DateTime.Now;
-                                d1.IsActive = true;
-                                d1.AssociationType = "Expense";
-                                d1.CreatedBy = new Guid(Convert.ToString(Session["UserID"]));
-                                d1.TypeID = (Guid)ViewState["LandIssueTypeID"];
-                                d1.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
-                                ExpenseModificationDocuments.Add(d1);
-                            }
                         }
                         ExpenseBLL.Update(objExpense, ExpenseModificationDocuments, ExpenseDetail);
                         ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Save", objExpense.ToString(), objExpense.ToString(), "mst_PropertyExpenses");
@@ -601,28 +625,32 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                                 ED.PurchaseTypeTerm = ddlPurchase.Text.Trim();
                                 ED.ItemTypeTerm = ddlItem.Text.Trim();
                                 ED.PropertyID = new Guid(ddlPropertyID.SelectedValue);
+                                ED.PropertyExpenseDetailID = Guid.NewGuid();
                                 //ED.PropertyExpenseDetailID = new Guid(h1.Value);
                                 ExpenseDetail.Add(ED);
-                            }
-                            FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocumentUpload");
 
-                            if (fuDocument.FileName != "")
-                            {
-                                Documents d1 = new Documents();
-                                string FileInCorporatonNo = "EXPENSE$" + Guid.NewGuid().ToString().Substring(0, 10) + "$" + fuDocument.FileName.Replace(" ", "_");
-                                string path1 = Server.MapPath("~/Document/" + FileInCorporatonNo);
-                                fuDocument.SaveAs(path1);
-                                d1.DocumentName = FileInCorporatonNo;
-                                d1.Extension = System.IO.Path.GetExtension(fuDocument.FileName);
-                                d1.DateOfSubmission = DateTime.Now;
-                                d1.CreatedOn = DateTime.Now;
-                                d1.IsActive = true;
-                                d1.AssociationType = "Expense";
-                                d1.CreatedBy = new Guid(Convert.ToString(Session["UserID"]));
-                                d1.TypeID = (Guid)ViewState["LandIssueTypeID"];
-                                d1.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
-                                ExpenseModificationDocuments.Add(d1);
+                                FileUpload fuDocument = (FileUpload)gvExpenseModification.Rows[i].FindControl("fileExpenseDocumentUpload");
+
+                                if (fuDocument.FileName != "")
+                                {
+                                    Documents d1 = new Documents();
+                                    string FileInCorporatonNo = "EXPENSE$" + Guid.NewGuid().ToString().Substring(0, 10) + "$" + fuDocument.FileName.Replace(" ", "_");
+                                    string path1 = Server.MapPath("~/Document/" + FileInCorporatonNo);
+                                    fuDocument.SaveAs(path1);
+                                    d1.DocumentName = FileInCorporatonNo;
+                                    d1.Extension = System.IO.Path.GetExtension(fuDocument.FileName);
+                                    d1.DateOfSubmission = DateTime.Now;
+                                    d1.CreatedOn = DateTime.Now;
+                                    d1.IsActive = true;
+                                    d1.AssociationType = "Expense";
+                                    d1.CreatedBy = new Guid(Convert.ToString(Session["UserID"]));
+                                    d1.TypeID = (Guid)ViewState["LandIssueTypeID"];
+                                    d1.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
+                                    d1.AssociationID = ED.PropertyExpenseDetailID;
+                                    ExpenseModificationDocuments.Add(d1);
+                                }
                             }
+
                         }
                         ExpenseBLL.Save(objExpense, ExpenseModificationDocuments, ExpenseDetail);
                         ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Save", objExpense.ToString(), objExpense.ToString(), "mst_PropertyExpenses");
@@ -630,6 +658,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();
                         this.ExpenseID = objExpense.ExpenseID;
                     }
+
                 }
                 catch (Exception ex)
                 {
@@ -637,6 +666,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     MessageBox.Show(ex.Message.ToString());
                 }
             }
+            Response.Redirect("~/Applications/SetUp/Expense.aspx");
         }
         protected void btnNew_Click(object sender, EventArgs e)
         {
@@ -717,6 +747,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                     HtmlAnchor aLandIssueDocumentLink = (HtmlAnchor)gvExpenseModification.Rows[i].FindControl("aLandIssueDocumentLink");
                     ImageButton imgbtn = (ImageButton)gvExpenseModification.Rows[i].FindControl("btnRemoveRow");
+                    imgbtn.CommandArgument = Convert.ToString(ds.Tables[1].Rows[i]["PropertyExpenseDetailID"]).Trim();
+
                     string str = "~/Document/" + hidFileUpload.Value;
                     if (hidFileUpload.Value != string.Empty && hidFileUpload.Value != null)
                     {
@@ -728,7 +760,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     {
                         imgbtn.Visible = false;
                     }
-
                 }
                 if (ds.Tables[2].Rows.Count != 0)
                 {

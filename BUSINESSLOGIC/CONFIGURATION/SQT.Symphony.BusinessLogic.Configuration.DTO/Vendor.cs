@@ -31,7 +31,11 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             Status_Term,
             LastBusinessDate,
             TotalBusiness,
-            PayableAcctID
+            PayableAcctID,
+            category,
+            DisplayTerm,
+            TermID,
+            TypeID,
         }
         #endregion
 
@@ -49,6 +53,10 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         DateTime? _UpdatedOn;
         Guid _CreatedBy;
         Guid _UpdatedBy;
+        string _Category;
+        string _DisplayTerm;
+        Guid _TermID;
+        Guid _TypeID;
         #endregion
 
         #region Property
@@ -179,6 +187,59 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 {
                     _UpdatedBy = value;
                     PropertyHasChanged("UpdatedBy");
+                }
+            }
+        }
+        [DataMember]
+        public string category
+        {
+            get { return _Category; }
+            set
+            {
+                if (_Category != value)
+                {
+                    _Category = value;
+                    PropertyHasChanged("Category");
+                }
+            }
+        }
+        [DataMember]
+        public string DisplayTerm
+        {
+            get { return _DisplayTerm; }
+            set
+            {
+                if (_DisplayTerm != value)
+                {
+                    _DisplayTerm = value;
+                    PropertyHasChanged("DisplayTerm");
+                }
+            }
+        }
+        [DataMember]
+        public Guid TermID
+        {
+            get { return _TermID; }
+            set
+            {
+                if (_TermID != value)
+                {
+                    _TermID = value;
+                    PropertyHasChanged("TermID");
+                }
+            }
+        }
+
+        [DataMember]
+        public Guid TypeID
+        {
+            get { return _TypeID; }
+            set
+            {
+                if (_TypeID != value)
+                {
+                    _TypeID = value;
+                    PropertyHasChanged("TypeID");
                 }
             }
         }
