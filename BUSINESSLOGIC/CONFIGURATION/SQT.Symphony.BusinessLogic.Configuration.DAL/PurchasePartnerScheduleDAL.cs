@@ -48,6 +48,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                             .AddParameter("@PurchasePartnerScheduleID", dtoObject.PurchasePartnerScheduleID)
                             .AddParameter("@PropertyID", dtoObject.PropertyID)
                             .AddParameter("@PartnerID", dtoObject.PartnerID)
+                            .AddParameter("@PurchaseScheduleID", dtoObject.PurchaseScheduleID)
                             .AddParameter("@InstallmentTypeTerm", dtoObject.InstallmentTypeTerm)
                             .AddParameter("@InstallmentAmount", dtoObject.InstallmentAmount)
                             .AddParameter("@InstallmentInPercentage", dtoObject.InstallmentInPercentage)
@@ -58,6 +59,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                             .AddParameter("@TotalPaid", dtoObject.TotalPaid)
                             .AddParameter("@TotalDue", dtoObject.TotalDue)
                             .AddParameter("@IsActive", dtoObject.IsActive)
+                            .AddParameter("@Installment", dtoObject.Installment)
 
                         .WithTransaction(dbtr)
                         .Execute();

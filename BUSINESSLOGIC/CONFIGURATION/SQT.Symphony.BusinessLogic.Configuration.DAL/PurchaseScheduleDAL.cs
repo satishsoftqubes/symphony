@@ -37,6 +37,28 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 
         #region Public Methods
 
+        public PurchaseSchedule SelectByPrimaryKey(Guid Keys)
+        {
+            PurchaseSchedule obj = null;
+            try
+            {
+                obj = StoredProcedure(MasterConstant.PurchaseSchedule_SelectByPrimaryKey)
+                            .AddParameter("@PurchaseScheduleID"
+, Keys)
+                            .Fetch<PurchaseSchedule>();
+            }
+            catch (Exception ex)
+            {
+                //Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+
         public bool Insert(PurchaseSchedule dtoObject)
         {
             try
@@ -65,6 +87,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                             .AddParameter("@TotalPaid", dtoObject.TotalPaid)
                             .AddParameter("@TotalDue", dtoObject.TotalDue)
                             .AddParameter("@IsActive", dtoObject.IsActive)
+                            .AddParameter("@Installment", dtoObject.Installment)
 
                         .WithTransaction(dbtr)
                         .Execute();
@@ -104,6 +127,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                             .AddParameter("@InstallmentInPercentage", dtoObject.InstallmentInPercentage)
                             .AddParameter("@StatusTerm", dtoObject.StatusTerm)
                             .AddParameter("@MOPTerm", dtoObject.MOPTerm)
+                            .AddParameter("@Installment", dtoObject.Installment)
 
                         .WithTransaction(dbtr)
                         .Execute();

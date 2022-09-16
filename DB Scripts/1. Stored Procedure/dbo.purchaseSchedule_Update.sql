@@ -10,7 +10,8 @@ CREATE PROCEDURE dbo.purchaseSchedule_Update
 	@InstallmentAmount DECIMAL(18,2) = null,
 	@InstallmentInPercentage DECIMAL(5,2) = null,
 	@StatusTerm VARCHAR(29) = null,
-	@MOPTerm VARCHAR(29) = null	
+	@MOPTerm VARCHAR(29) = null,
+	@Installment VARCHAR(50) = null
 )
 AS
 BEGIN
@@ -21,7 +22,8 @@ SET
 	[InstallmentAmount] = @InstallmentAmount,
 	[InstallmentInPercentage] = @InstallmentInPercentage,
 	[StatusTerm] = @StatusTerm,
-	[MOPTerm] = @MOPTerm,
+	[MOPTerm] = @MOPTerm,		
+	[Installment] = @Installment,
 	[UpdateLog] = CURRENT_TIMESTAMP
  WHERE 
 	[PurchaseScheduleID] = @PurchaseScheduleID

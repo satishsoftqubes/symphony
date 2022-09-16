@@ -70,6 +70,12 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             return flag;
         }
 
+        public static PurchaseSchedule GetByPrimaryKey(Guid keys)
+        {
+            PurchaseScheduleDAL _dataObject = new PurchaseScheduleDAL();
+            return _dataObject.SelectByPrimaryKey(keys);
+        }
+
         public static bool Update(PurchaseSchedule objUpdatePurchaseSchedule)
         {
             bool flag = false;
