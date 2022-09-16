@@ -2,7 +2,7 @@ DROP PROCEDURE IF EXISTS dbo.purchaseschedule_SelectData
 
 GO
 
-CREATE PROCEDURE dbo.purchaseschedule_SelectData
+CREATE PROCEDURE [dbo].[purchaseschedule_SelectData]
 (  
 	@PropertyID uniqueidentifier = null,  
 	@CompanyID uniqueidentifier = null,  
@@ -11,7 +11,9 @@ CREATE PROCEDURE dbo.purchaseschedule_SelectData
 AS  
 BEGIN  
 
-	SELECT P.PropertyID, P.PropertyName, P.PurchaseOptionID, P.Price, P.PurchaseArea, P.TotalCost, PS.PurchaseScheduleID, NULLIF(PS.Installment, '') AS 'Installment'
+
+	SELECT PS.PurchaseScheduleID, P.PropertyID, P.PropertyName, P.PurchaseOptionID, P.Price, P.PurchaseArea, 
+	       P.TotalCost,P.InstallmentTypeTerm,P.TotalPaymentMonth
 		FROM propertypurchase_schedule PS
 		INNER JOIN mst_property P ON P.PropertyID = PS.PropertyID	
 		INNER JOIN tra_partnerpayment PP ON PP.PropertyPurchaseScheduleID != PS.PurchaseScheduleID

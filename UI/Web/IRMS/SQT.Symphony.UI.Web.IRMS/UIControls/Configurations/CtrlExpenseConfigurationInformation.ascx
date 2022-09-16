@@ -45,6 +45,43 @@
 
         }
     }
+
+    //$(function () {
+    //    $("[id*=ButtonAdd]").click(function () {
+    //        debugger;
+    //        var Expense = $("[id*=gvExpenseModification] tbody tr").length;
+    //        for (var i = 0; i < Expense - 1; i++) {
+    //            var row = $("[id*=gvExpenseModification] tr:last").clone();
+    //            //var row = '';
+    //            row += '<tr>'
+    //            row += '<td><span ValidationGroup="Configuration" ControlToValidate="ddlvendorID" ErrorMessage="*" Display="Dynamic"><select id = "ddlvendorID_' + i + '" style="height:25px;width:163px;"><option>-Select-</option><option value="AD">AD</option</span></select></td>';
+    //            row += '<input type="hidden" id = "txtExpenseDetaileID_' + i + '">';
+    //            row += '<td><select id = "ddlPurchaseID_' + i + '" style="height:25px;width:163px;"><option>-Select-</option></select></td >';
+    //            row += '<td><select id = "ddlItemID_' + i + '" style="height:25px;width:163px;"><option>-Select-</option></select></td >';
+    //            row += '<td><input type="text" id = "txtAmountID_' + i + '" Class="TotalSum" value="0.00" style="width:100px;" onkeyUp="CalculateTotalAmount(this)"></td>';
+    //            row += '<td><input type="text" id = "txtPurchaseNoteID_' + i + '" style="width:100px;"></td>';
+    //            row += '<td><div id="browse_file_grid"><input type="file" id = "fileExpenseDocumentUpload_' + i + '"></div></td>';
+    //            row += '<td><a id="aLandIssueDocumentLink_' + i + '" visible="false" ImageUrl="~/images/View.png"></a><Button id = "btnRemoveRow_' + i + '" ImageUrl="~/images/DeleteFile.png" visible="false"></Button ></td>'
+    //            row += '<input type="hidden" id = "expenseDocumentName_' + i + '">';
+    //            row += '</tr >';
+    //            $("[id*=gvExpenseModification] tbody").append(row);
+
+    //        }
+    //        return false;
+    //    });
+    //});
+   <%-- $(function () {
+        $("[id*=ButtonAdd]").click(function () {
+            debugger
+            var $grid = $('#<%=gvExpenseModification.ClientID %>');
+            var $row = $grid.find('tr:last').clone().appendTo($grid);
+            $row.find('select')[0].selectedIndex = 0;
+            return false;
+        })
+    });--%>
+
+
+
     //function GetDocumentFileName(obj) {
     //    for (var i = 0; i < $("[id*=expenseDocumentName]").length; i++) {
     //        var Fileslice = obj.id.slice(0, 89);
@@ -60,7 +97,7 @@
     //    }
     //}
 
-    
+
 </script>
 <style type="text/css">
     #progressBackgroundFilter {
@@ -94,7 +131,7 @@
 </style>
 <asp:UpdatePanel ID="updExpense" runat="server">
     <ContentTemplate>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="height: 473px;">
+        <table id="ExpenseTable" width="100%" border="0" cellspacing="0" cellpadding="0" style="height: 473px;">
             <tr>
                 <td class="content" style="padding-left: 0px; width: 66.66%">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
@@ -161,9 +198,9 @@
                                                 <asp:Literal ID="litDateOfExpense" runat="server" Text="Payment Due Date"></asp:Literal></b>
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="txtDateOfExpense" runat="server"  SkinID="CmpTextbox" placeholder="mm/dd/yyyy" Textmode="Date" ReadOnly = "false"></asp:TextBox>
+                                            <asp:TextBox ID="txtDateOfExpense" runat="server" SkinID="CmpTextbox" placeholder="mm/dd/yyyy" TextMode="Date" ReadOnly="false"></asp:TextBox>
                                         </td>
-                                       <%-- <td>
+                                        <%-- <td>
                                             <asp:TextBox ID="txtDateOfExpense" runat="server" SkinID="CmpTextbox" Enabled="false"></asp:TextBox>
                                             <ajx:CalendarExtender ID="txtDateOfExpense_ColorPickerExtender" runat="server" CssClass="MyCalendar"
                                                 Enabled="True" TargetControlID="txtDateOfExpense" PopupButtonID="imgColor">
@@ -237,6 +274,7 @@
 
                                         </td>
                                     </tr>
+
                                     <tr>
                                         <td colspan="2" class="dTableBox1">
                                             <div class="leftmarginbox_content">
@@ -315,7 +353,7 @@
                                                                 </span>
                                                                 <div id='browse_file_grid'>
                                                                     <asp:FileUpload ID="fileExpenseDocumentUpload" ToolTip=".pdf|.PDF|.doc|.jpg|.jpeg|.gif|.png|.bmp|.JPG|.JPEG|.GIF|.PNG|.BMP|.TIF|.tif|.DOC|.docx|.DOCX|xlsx|XLSX"
-                                                                        runat="server" Height="22px" size="4" Style="float: left; width: 100px;"/>
+                                                                        runat="server" Height="22px" size="4" Style="float: left; width: 100px;" />
                                                                 </div>
                                                                 <asp:HiddenField ID="expenseDocumentName" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "DocumentName")%>' />
                                                             </ItemTemplate>
@@ -325,7 +363,7 @@
                                                             <ItemTemplate>
                                                                 <a id="aLandIssueDocumentLink" runat="server" visible="false" target="_blank">
                                                                     <asp:Image ID="imgView" runat="server" Style="float: left;" ImageUrl="~/images/View.png" /></a>
-                                                                <asp:ImageButton ID="btnRemoveRow" ToolTip="Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"DocumentID") %>'
+                                                                <asp:ImageButton ID="btnRemoveRow" ToolTip="Delete" CommandArgument=""
                                                                     CommandName="DELETEDATA" runat="server" ImageUrl="~/images/DeleteFile.png" Style="float: right; width: 19px; margin-left: 3px; border: 0px;"
                                                                     OnClientClick="fnDisplayCatchErrorMessage()" />
                                                             </ItemTemplate>
@@ -436,7 +474,7 @@
             </div>
         </asp:Panel>
     </ContentTemplate>
-     <Triggers>
+    <Triggers>
         <asp:PostBackTrigger ControlID="btnSave" />
     </Triggers>
 </asp:UpdatePanel>

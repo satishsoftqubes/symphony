@@ -88,6 +88,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                             .AddParameter("@TotalDue", dtoObject.TotalDue)
                             .AddParameter("@IsActive", dtoObject.IsActive)
                             .AddParameter("@Installment", dtoObject.Installment)
+                            .AddParameter("@Date",dtoObject.Date)
+                            
 
                         .WithTransaction(dbtr)
                         .Execute();
@@ -128,6 +130,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                             .AddParameter("@StatusTerm", dtoObject.StatusTerm)
                             .AddParameter("@MOPTerm", dtoObject.MOPTerm)
                             .AddParameter("@Installment", dtoObject.Installment)
+                            .AddParameter("@Date",dtoObject.Date)
+
 
                         .WithTransaction(dbtr)
                         .Execute();

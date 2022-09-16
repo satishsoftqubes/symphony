@@ -2,7 +2,7 @@ DROP PROCEDURE IF EXISTS dbo.purchaseSchedule_Update
 
 GO
 
-CREATE PROCEDURE dbo.purchaseSchedule_Update
+CREATE  PROCEDURE [dbo].[purchaseSchedule_Update]
 (
 	@PurchaseScheduleID uniqueidentifier,
 	@PropertyID uniqueidentifier,
@@ -12,6 +12,7 @@ CREATE PROCEDURE dbo.purchaseSchedule_Update
 	@StatusTerm VARCHAR(29) = null,
 	@MOPTerm VARCHAR(29) = null,
 	@Installment VARCHAR(50) = null
+	@Date varchar(50) = null
 )
 AS
 BEGIN
@@ -22,9 +23,10 @@ SET
 	[InstallmentAmount] = @InstallmentAmount,
 	[InstallmentInPercentage] = @InstallmentInPercentage,
 	[StatusTerm] = @StatusTerm,
-	[MOPTerm] = @MOPTerm,		
 	[Installment] = @Installment,
-	[UpdateLog] = CURRENT_TIMESTAMP
+	[MOPTerm] = @MOPTerm,
+	[UpdateLog] = CURRENT_TIMESTAMP,
+	[Date] = @Date
  WHERE 
 	[PurchaseScheduleID] = @PurchaseScheduleID
 END

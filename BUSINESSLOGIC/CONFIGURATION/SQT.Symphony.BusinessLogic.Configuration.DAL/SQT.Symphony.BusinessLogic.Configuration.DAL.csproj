@@ -173,6 +173,10 @@
       <Project>{F6E4F7D0-70C5-429E-A70E-F473B5ACC038}</Project>
       <Name>SQT.FRAMEWORK.LOGGER</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\IRMS\SQT.Symphony.BusinessLogic.IRMS.DTO\SQT.Symphony.BusinessLogic.IRMS.DTO.csproj">
+      <Project>{6B11022B-F840-4950-A789-DB98DED29EEB}</Project>
+      <Name>SQT.Symphony.BusinessLogic.IRMS.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SQT.Symphony.BusinessLogic.Configuration.COMMON\SQT.Symphony.BusinessLogic.Configuration.COMMON.csproj">
       <Project>{3B16F1E0-5FA6-42B4-BC34-84C89DACD04C}</Project>
       <Name>SQT.Symphony.BusinessLogic.Configuration.COMMON</Name>

@@ -96,6 +96,8 @@
                                 System Setup</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/ProjectTermSetUp.aspx") %>">Infill
                                 Setup</a></li>
+                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/SalerPartner.aspx") %>">Partner
+                                Setup</a></li>
                             <%--<li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/ControlNumberSetup.aspx") %>">
                                 Auto Number Setup</a></li>--%>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PartnerPaymentList.aspx") %>">Partner
@@ -104,8 +106,6 @@
                                 Setup</a></li>
                              <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyPartnerList.aspx") %>">Property
                                 Partner</a></li>
-                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/SalerPartner.aspx") %>">SalerPartner
-                                Setup</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/Vendor.aspx") %>">Vendor
                                 Setup</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/Expense.aspx") %>">Property Expense

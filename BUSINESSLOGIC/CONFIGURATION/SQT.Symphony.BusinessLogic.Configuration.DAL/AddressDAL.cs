@@ -246,6 +246,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 .AddParameter("@IsSynch", dtoObject.IsSynch)
 .AddParameter("@SynchOn", dtoObject.SynchOn)
 .AddParameter("@SeqNo", dtoObject.SeqNo)
+.AddParameter("@Village",dtoObject.Village)
 
                         .WithTransaction(dbtr)
                         .Execute();
@@ -300,6 +301,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 .AddParameter("@IsSynch", dtoObject.IsSynch)
 .AddParameter("@SynchOn", dtoObject.SynchOn)
 .AddParameter("@SeqNo", dtoObject.SeqNo)
+.AddParameter("@Village",dtoObject.Village)
 
                         .WithTransaction(dbtr)
                         .Execute();
