@@ -241,15 +241,6 @@
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="RowNumber" HeaderText="Installment" />
                                 <asp:TemplateField HeaderText="Date">
-                                    <%-- <ItemTemplate>
-                                        <div style="justify-content: space-around; display: flex;">
-                                            <span class="erroralert">
-                                                <asp:RequiredFieldValidator ID="txtDates" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtDate" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </span>
-                                            <asp:TextBox ID="txtDate" runat="server"  SkinID="Search" placeholder="mm/dd/yyyy" Textmode="Date" ReadOnly = "false" Text='<%#DataBinder.Eval(Container.DataItem, "Date")%>'></asp:TextBox>
-                                        </div>
-                                    </ItemTemplate>
-                                </asp:TemplateField>--%>
                                     <ItemTemplate>
                                         <div style="justify-content: space-around; display: flex;">
                                             <span class="erroralert">

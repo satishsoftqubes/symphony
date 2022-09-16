@@ -18,7 +18,9 @@ CREATE PROCEDURE [dbo].[purchaseSchedule_Insert]
 	@ActualPaymentDate DATETIME = null,
 	@TotalPaid DECIMAL(18,2) = null,
 	@TotalDue DECIMAL(18,2) = null,
+	@Installment VARCHAR(50) = null	
 	@Date  VARCHAR(29) = null
+
 )
 AS
 BEGIN
@@ -38,6 +40,7 @@ INSERT [dbo].[propertypurchase_schedule]
 	[TotalDue] ,
 	[IsActive] ,
 	[UpdateLog],
+	[Installment],
 	[Date]
 	
 )
@@ -55,8 +58,8 @@ VALUES
 	@InstallmentAmount,	-- TotalDue is same as InstallmentAmount
 	1,
 	CURRENT_TIMESTAMP,
+	@Installment,
 	@Date
-
 )
 
 

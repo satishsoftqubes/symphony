@@ -1,5 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CtrlPropertyPaymentList.ascx.cs"
-    Inherits="SQT.Symphony.UI.Web.IRMS.UIControls.Configurations.CtrlPropertyPaymentList" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CtrlPartnerPaymentList.ascx.cs" 
+    Inherits="SQT.Symphony.UI.Web.IRMS.UIControls.Configurations.CtrlPartnerPaymentList" %>
 
 <%@ Register Src="../../MsgBox/MsgBox.ascx" TagName="MsgBox" TagPrefix="uc1" %>
 <script language="javascript" type="text/javascript">
@@ -39,7 +39,7 @@
     }
 </style>
 
-<asp:UpdatePanel ID="updPropertyPaymentList" runat="server">
+<asp:UpdatePanel ID="updPartnerPaymentList" runat="server">
     <ContentTemplate>
         <table width="100%" border="0" cellspacing="0" cellpadding="0" style="height: 473px;">
             <tr>
@@ -48,7 +48,7 @@
                         <tr>
                             <td class="boxtopleft">&nbsp;
                             </td>
-                            <td class="boxtopcenter">PROPERTY PAYMENT
+                            <td class="boxtopcenter">PARTNER PAYMENT
                             </td>
                             <td class="boxtopright">&nbsp;
                             </td>
@@ -99,15 +99,50 @@
                                             <asp:Button ID="btnAddTop" runat="server" Text="Add New" OnClick="btnAdd_Click" Style="float: right;" />
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <%--<tr>
                                         <td class="dTableBox" style="padding: 10px 0px">
-                                            <asp:GridView ID="grdPropertyPaymentList" runat="server" AutoGenerateColumns="False" Width="100%"
-                                                OnPageIndexChanging="grdPropertyPaymentList_OnPageIndexChanging" OnRowCommand="grdPropertyPaymentList_RowCommand">
+                                            <asp:GridView ID="grdPartnerPaymentList" runat="server" AutoGenerateColumns="False" Width="100%"
+                                                OnPageIndexChanging="grdPartnerPaymentList_OnPageIndexChanging" OnRowCommand="grdPartnerPaymentList_RowCommand">
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="Property Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
                                                         ItemStyle-HorizontalAlign="Left">
                                                         <ItemTemplate>
                                                             <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "PropertyName")%>'></asp:Literal>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    </Columns>
+                                                <EmptyDataTemplate>
+                                                    <div class="pagecontent_info">
+                                                        <div class="NoItemsFound">
+                                                            <h2>
+                                                                <asp:Literal ID="Literal5" runat="server" Text="No Record Found"></asp:Literal></h2>
+                                                        </div>
+                                                    </div>
+                                                </EmptyDataTemplate>
+                                            </asp:GridView>
+                                        </td>
+                                    </tr>--%>
+                                    <tr>
+                                        <td class="dTableBox" style="padding: 10px 0px">
+                                            <asp:GridView ID="grdPartnerPaymentList" runat="server" AutoGenerateColumns="False" Width="100%"
+                                                OnPageIndexChanging="grdPartnerPaymentList_OnPageIndexChanging" OnRowCommand="grdPartnerPaymentList_RowCommand">
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="Property Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
+                                                        ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "PropertyName")%>'></asp:Literal>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Partner Name" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
+                                                        ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "PartnerName")%>'></asp:Literal>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Payment Amount" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
+                                                        ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "PaymentAmount")%>'></asp:Literal>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Installment" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
@@ -116,26 +151,20 @@
                                                             <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "Installment")%>'></asp:Literal>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Paid Amount" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
-                                                        ItemStyle-HorizontalAlign="Left">
-                                                        <ItemTemplate>
-                                                            <asp:Literal runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "AmountPaid")%>'></asp:Literal>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Edit/View" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
+                                                    <%--<asp:TemplateField HeaderText="Edit/View" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
                                                         ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="btnEdit" runat="server" ToolTip="Edit" ImageUrl="~/images/edit.png"
                                                                 Style="border: 0px; vertical-align: middle; margin-top: 2px;" CommandName="EDITDATA"
-                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPaymentID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PartnerPaymentID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
                                                         </ItemTemplate>
-                                                    </asp:TemplateField>
+                                                    </asp:TemplateField>--%>
                                                     <asp:TemplateField HeaderText="Delete" ItemStyle-Width="20px" HeaderStyle-HorizontalAlign="Center"
                                                         ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="btnDelete" runat="server" ToolTip="Delete" ImageUrl="~/images/delete_icon.png"
                                                                 Style="border: 0px; vertical-align: middle; margin-top: 1px;" CommandName="DELETEDATA"
-                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PropertyPaymentID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
+                                                                CommandArgument='<%#DataBinder.Eval(Container.DataItem, "PartnerPaymentID")%>' OnClientClick="fnDisplayCatchErrorMessage()" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>
@@ -174,7 +203,6 @@
                 </td>
             </tr>
         </table>
-
         <ajx:ModalPopupExtender ID="msgbx" runat="server" TargetControlID="hfMessage" PopupControlID="Panel1"
             BackgroundCssClass="mod_background">
         </ajx:ModalPopupExtender>
@@ -206,10 +234,10 @@
                             <table cellpadding="3" cellspacing="3" width="100%" style="margin-left: 5px; margin-top: 15px;">
                                 <tr>
                                     <td align="center" valign="middle">
-                                        <asp:Button ID="btnPropertyPaymentYes" Text="Yes" runat="server" ImageUrl="~/images/save.png"
-                                            OnClick="btnPropertyPaymentYes_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
-                                        <asp:Button ID="btnPropertyPaymentNo" Text="Cancel" runat="server" ImageUrl="~/images/cancle.png"
-                                            OnClick="btnPropertyPaymentNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                        <asp:Button ID="btnPartnerPaymentYes" Text="Yes" runat="server" ImageUrl="~/images/save.png"
+                                            OnClick="btnPartnerPaymentYes_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                        <asp:Button ID="btnPartnerPaymentNo" Text="Cancel" runat="server" ImageUrl="~/images/cancle.png"
+                                            OnClick="btnPartnerPaymentNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
                                     </td>
                                 </tr>
                             </table>
@@ -233,7 +261,7 @@
 <div id="errormessage" class="clear" style="display: none;">
     <uc1:MsgBox ID="MessageBox" runat="server" />
 </div>
-<asp:UpdateProgress AssociatedUpdatePanelID="updPropertyPaymentList" ID="UpdateProgressPropertyPaymentList"
+<asp:UpdateProgress AssociatedUpdatePanelID="updPartnerPaymentList" ID="UpdateProgressPartnerPaymentList"
     runat="server">
     <ProgressTemplate>
         <div id="progressBackgroundFilter">

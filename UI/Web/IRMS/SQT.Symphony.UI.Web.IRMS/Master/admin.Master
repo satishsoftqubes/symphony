@@ -100,6 +100,8 @@
                                 Setup</a></li>
                             <%--<li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/ControlNumberSetup.aspx") %>">
                                 Auto Number Setup</a></li>--%>
+                            <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PartnerPaymentList.aspx") %>">Partner
+                                Payment</a></li>
                             <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyList.aspx") %>">Property
                                 Setup</a></li>
                              <li><a href="<%=Page.ResolveUrl("~/Applications/SetUp/PropertyPartnerList.aspx") %>">Property

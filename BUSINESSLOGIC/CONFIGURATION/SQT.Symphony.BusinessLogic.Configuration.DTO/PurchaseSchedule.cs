@@ -19,7 +19,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             PurchasePartnerScheduleID,
             PropertyID,
             PartnerID,
-            InstallmentTypeTerm,
+            InstallmentTypeTerm,            
             InstallmentAmount,
             InstallmentInPercentage,
             StatusTerm,
@@ -29,6 +29,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             TotalDue,
             IsActive,
             SeqNo,
+            Installment
             Date,
             TotalPaymentMonth,
         }
@@ -42,6 +43,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         Guid? _propertyID;
         Guid? _partnerID;
         string _installmentTypeTerm;
+        string _installment;
         decimal? _installmentAmount;
         decimal? _installmentInPercentage;
         string _statusTerm;
@@ -124,6 +126,20 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 {
                     _installmentTypeTerm = value;
                     PropertyHasChanged("InstallmentTypeTerm");
+                }
+            }
+        }
+
+        [DataMember]
+        public string Installment
+        {
+            get { return _installment; }
+            set
+            {
+                if (_installment != value)
+                {
+                    _installment = value;
+                    PropertyHasChanged("Installment");
                 }
             }
         }

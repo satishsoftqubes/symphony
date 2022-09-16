@@ -25,7 +25,9 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             TotalDue,
             IsActive,
             SeqNo,
+            PurchaseScheduleID
             Date,
+
         }
 
         #region DataMember
@@ -45,6 +47,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         bool? _isActive;
         int? _seqNo;
         byte[] _updateLog;
+        Guid? _purchaseScheduleID;
+        string _installment;
         string _Date;
         #endregion
 
@@ -269,6 +273,34 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 {
                     _Date = value;
                     PropertyHasChanged("Date");
+                }
+            }
+        }
+
+        [DataMember]
+        public Guid? PurchaseScheduleID
+        {
+            get { return _purchaseScheduleID; }
+            set
+            {
+                if (_purchaseScheduleID != value)
+                {
+                    _purchaseScheduleID = value;
+                    PropertyHasChanged("PurchaseScheduleID");
+                }
+            }
+        }
+
+        [DataMember]
+        public string Installment
+        {
+            get { return _installment; }
+            set
+            {
+                if (_installment != value)
+                {
+                    _installment = value;
+                    PropertyHasChanged("Installment");
                 }
             }
         }
