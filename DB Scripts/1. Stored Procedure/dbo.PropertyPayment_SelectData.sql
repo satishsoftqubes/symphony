@@ -20,9 +20,9 @@ BEGIN
 	LEFT JOIN propertypurchase_schedule PS ON PS.PurchaseScheduleID = PP.PropertyScheduleID
 	
 	WHERE   	
-		PropertyPaymentID = @PropertyPaymentID
+		-- PropertyPaymentID = @PropertyPaymentID
 		-- PP.PartnerID = @PartnerID and
 		-- PP.PropertyID = @PropertyID and
-		-- PP.PropertyPurchaseScheduleID = @PurchaseScheduleID and
-		--ISNULL(PropertyName,'-aa#$$')  like '%'+ ISNULL(@PropertyName, ISNULL(PropertyName,'-aa#$$'))+'%'
+		-- PP.PropertyPurchaseScheduleID = @PurchaseScheduleID and		
+		ISNULL(PropertyName,'-aa#$$')  like '%'+ ISNULL(@PropertyName, ISNULL(PropertyName,'-aa#$$'))+'%'
 END

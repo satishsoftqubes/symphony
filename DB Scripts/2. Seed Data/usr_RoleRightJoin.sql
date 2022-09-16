@@ -60,3 +60,24 @@ VALUES
 	1,
 	1
 )
+
+INSERT [dbo].[usr_RoleRightJoin]
+(
+	[RoleRightJoinID],
+	[RoleID],
+	[RightID],
+	[IsView],
+	[isCreate],
+	[IsUpdate],
+	[IsDelete]
+)
+VALUES
+(
+	'132DD097-4270-4EBD-A4B0-BB197C21F904',
+	'EA87A9F7-7260-478C-9175-FD026D2671AF',
+	'09A26E7E-76DD-4729-B7CA-008BCFE8B282',
+	1,
+	1,
+	1,
+	1
+)

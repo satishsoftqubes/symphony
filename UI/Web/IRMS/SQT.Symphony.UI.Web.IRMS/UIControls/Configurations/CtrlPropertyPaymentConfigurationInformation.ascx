@@ -115,7 +115,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Label ID="litAmount" runat="server" Text="Amount" CssClass="RequireFile"></asp:Label>
+                                            <asp:Label ID="litAmount" runat="server" Text="Paid Amount" CssClass="RequireFile"></asp:Label>
                                             <span class="erroraleart">
                                                 <asp:RequiredFieldValidator ID="rfvAmount" SetFocusOnError="true" CssClass="rfv_ErrorStar"
                                                     runat="server" ValidationGroup="Configuration" ControlToValidate="txtAmount"
@@ -228,9 +228,6 @@
                                                                         <p style="color:rgb(0,103,164); font-size: 13px; font-weight:bold;">
                                                                             <%#DataBinder.Eval(Container.DataItem, "PropertyName")%>
                                                                         </p>
-                                                                        <p style="margin-top: 5px;">
-                                                                            <%#DataBinder.Eval(Container.DataItem, "PartnerName")%>
-                                                                        </p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="leftmargin_icons">
@@ -309,9 +306,9 @@
                                 <tr>
                                     <td align="center" valign="middle">
                                         <asp:Button ID="btnPropertyYes" Text="Yes" runat="server" ImageUrl="~/images/save.png"
-                                            OnClick="btnPropertyYes_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                            OnClick="btnPropertyPartnerYes_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
                                         <asp:Button ID="btnPropertyNo" Text="Cancel" runat="server" ImageUrl="~/images/cancle.png"
-                                            OnClick="btnPropertyNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                            OnClick="btnPropertyPartnerNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
                                     </td>
                                 </tr>
                             </table>

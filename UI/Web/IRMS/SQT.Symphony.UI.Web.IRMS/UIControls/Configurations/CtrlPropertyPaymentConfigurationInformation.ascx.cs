@@ -96,7 +96,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             }
             else
             {
-                if (RoleRightJoinBLL.GetAccessString("ConfigurationPartnerPaymentInfo.aspx", new Guid(Convert.ToString(Session["UserID"]))) == "NO")
+                if (RoleRightJoinBLL.GetAccessString("ConfigurationPropertyPaymentInfo.aspx", new Guid(Convert.ToString(Session["UserID"]))) == "NO")
                     Response.Redirect("~/Applications/AccessDenied.aspx");
                 LoadAccess();
 
@@ -104,11 +104,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 {
                     this.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
                     LoadDefaultValue();
-                    if (Session["PartnerPaymentID"] != null)
+                    if (Session["PropertyPaymentID"] != null)
                     {
-                        this.PropertyPaymentID = new Guid(Convert.ToString(Session["PartnerPaymentID"]));
-                        LoadData();
-                        Session["PartnerPaymentID"] = null;
+                        this.PropertyPaymentID = new Guid(Convert.ToString(Session["PropertyPaymentID"]));
+                        LoadData(sender, e);
+                        Session["PropertyPaymentID"] = null;
                     }
                     else
                         btnSave.Visible = true;
@@ -121,6 +121,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             BindDDL();
             BindInstallment();
             BindPaymentMode();
+            BindGrid();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -129,39 +130,80 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 try
                 {
-                    PropertyPayment objPropertyPayment = new PropertyPayment();
-                    DataSet ds = new DataSet();
-                    // property id
-                    objPropertyPayment.PropertyID = new Guid(ddlPropertyName.SelectedValue);
+                    if (this.PropertyPaymentID != Guid.Empty)
+                    {
+                        PropertyPayment objUpdPropertyPayment = new PropertyPayment();
+                        PropertyPayment objOldPropertyPaymentData = new PropertyPayment();
 
-                    // installment 
-                    objPropertyPayment.PropertyScheduleID = new Guid(ddlPurchaseSchedule.SelectedValue);
-                    //objPartnerPayment.Installment = ddlPurchaseSchedule.SelectedItem.Text;
+                        objUpdPropertyPayment = PropertyPaymentBLL.GetByPrimaryKey(this.PropertyPaymentID);
+                        objOldPropertyPaymentData = PropertyPaymentBLL.GetByPrimaryKey(this.PropertyPaymentID);
 
-                    // Amount
-                    if (!(txtAmount.Text.Trim().Equals("")))
-                        objPropertyPayment.AmountPaid = Convert.ToDecimal(txtAmount.Text.Trim());
+                        // property id
+                        objUpdPropertyPayment.PropertyID = new Guid(ddlPropertyName.SelectedValue);
+
+                        // installment 
+                        objUpdPropertyPayment.PropertyScheduleID = new Guid(ddlPurchaseSchedule.SelectedValue);
+
+                        // Amount
+                        if (!(txtAmount.Text.Trim().Equals("")))
+                            objUpdPropertyPayment.AmountPaid = Convert.ToDecimal(txtAmount.Text.Trim());
+                        else
+                            objUpdPropertyPayment.AmountPaid = null;
+
+                        // Payment Mode
+                        if (ddlPaymentMode.SelectedValue != Guid.Empty.ToString())
+                            objUpdPropertyPayment.MOPTerm = ddlPaymentMode.SelectedValue;
+                        else
+                            objUpdPropertyPayment.MOPTerm = null;
+
+                        // Description
+                        if (!(txtDescription.Text.Trim().Equals("")))
+                            objUpdPropertyPayment.Description = txtDescription.Text.Trim();
+                        else
+                            objUpdPropertyPayment.Description = null;
+
+                        PropertyPaymentBLL.Update(objUpdPropertyPayment);
+                        ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Update", objOldPropertyPaymentData.ToString(), objUpdPropertyPayment.ToString(), "tra_propertypayment");
+                        IsMessage = true;
+                        lblErrorMessage.Text = global::Resources.IRMSMsg.UpdateMsg.ToString().Trim();
+                        this.PropertyPaymentID = objUpdPropertyPayment.PropertyPaymentID;
+                    }
                     else
-                        objPropertyPayment.AmountPaid = null;
+                    {
+                        PropertyPayment objPropertyPayment = new PropertyPayment();
+                        DataSet ds = new DataSet();
 
-                    // Payment Mode
-                    if (ddlPaymentMode.SelectedValue != Guid.Empty.ToString())
-                        objPropertyPayment.MOPTerm = ddlPaymentMode.SelectedValue;
-                    else
-                        objPropertyPayment.MOPTerm = null;
+                        // property id
+                        objPropertyPayment.PropertyID = new Guid(ddlPropertyName.SelectedValue);
 
-                    // Description
-                    if (!(txtDescription.Text.Trim().Equals("")))
-                        objPropertyPayment.Description = txtDescription.Text.Trim();
-                    else
-                        objPropertyPayment.Description = null;
+                        // installment 
+                        objPropertyPayment.PropertyScheduleID = new Guid(ddlPurchaseSchedule.SelectedValue);
 
-                    PropertyPaymentBLL.Save(objPropertyPayment);
-                    IsMessage = true;
-                    lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();
-                    this.PropertyPaymentID = objPropertyPayment.PropertyPaymentID;
-                    LoadData();
+                        // Amount
+                        if (!(txtAmount.Text.Trim().Equals("")))
+                            objPropertyPayment.AmountPaid = Convert.ToDecimal(txtAmount.Text.Trim());
+                        else
+                            objPropertyPayment.AmountPaid = null;
 
+                        // Payment Mode
+                        if (ddlPaymentMode.SelectedValue != Guid.Empty.ToString())
+                            objPropertyPayment.MOPTerm = ddlPaymentMode.SelectedValue;
+                        else
+                            objPropertyPayment.MOPTerm = null;
+
+                        // Description
+                        if (!(txtDescription.Text.Trim().Equals("")))
+                            objPropertyPayment.Description = txtDescription.Text.Trim();
+                        else
+                            objPropertyPayment.Description = null;
+
+                        PropertyPaymentBLL.Save(objPropertyPayment);
+                        IsMessage = true;
+                        lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();
+                        this.PropertyPaymentID = objPropertyPayment.PropertyPaymentID;
+                    }
+                    LoadData(sender, e);
+                    BindGrid();
                 }
                 catch (Exception ex)
                 {
@@ -170,7 +212,41 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             }
         }
 
-        private void LoadData()
+        public void fnPurchaseScheduleInstallment(object sender, EventArgs e)
+        {
+            string propertyID = string.Empty;
+            if (ViewState["PropertyID"] != null)
+            {
+                propertyID = ViewState["PropertyID"].ToString();
+            }
+            else
+            {
+                propertyID = ddlPropertyName.SelectedValue;
+            }
+
+            DataSet ds = new DataSet();
+            ds = PurchaseScheduleBLL.GetPurchaseScheduleData(new Guid(propertyID), this.CompanyID, null);
+            DataView Dv = new DataView(ds.Tables[0]);
+
+            if (ds.Tables[0].Rows.Count > 0 && ds.Tables[1].Rows.Count > 0)
+            {
+                if (ds.Tables[0].Rows[0]["Installment"] != DBNull.Value)
+                {
+                    ddlPurchaseSchedule.DataSource = Dv;
+                    ddlPurchaseSchedule.DataTextField = "Installment";
+                    ddlPurchaseSchedule.DataValueField = "PurchaseScheduleID";
+                    ddlPurchaseSchedule.DataBind();
+                    ddlPurchaseSchedule.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                }
+            }
+            else
+            {
+                ddlPurchaseSchedule.Items.Clear();
+                BindInstallment();
+            }
+        }
+
+        private void LoadData(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
             ds = PropertyPaymentBLL.GetPropertyPaymentData(this.PropertyPaymentID, this.PropertyID, this.PropertyPurchaseScheduleID, null);
@@ -178,12 +254,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             if (ds.Tables[0].Rows.Count != 0)
             {
                 BindDDL();
-                BindInstallment();
-
-
                 // property name
                 if (Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]) != null)
                     ddlPropertyName.SelectedValue = Convert.ToString(ds.Tables[0].Rows[0]["PropertyID"]);
+
+                ViewState["PropertyID"] = ddlPropertyName.SelectedValue;
+                fnPurchaseScheduleInstallment(sender, e);
 
                 // Installment
                 if (Convert.ToString(ds.Tables[0].Rows[0]["Installment"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["Installment"]) != null)
@@ -194,7 +270,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                 // Payment mode
                 if (Convert.ToString(ds.Tables[0].Rows[0]["MOPTerm"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["MOPTerm"]) != null)
-                    ddlPaymentMode.SelectedValue = Convert.ToString(Convert.ToString(ds.Tables[0].Rows[0]["MOPTerm"]));
+                    ddlPaymentMode.SelectedValue = Convert.ToString(ds.Tables[0].Rows[0]["MOPTerm"]);
 
                 // Description
                 txtDescription.Text = ds.Tables[0].Rows[0]["Description"].ToString();
@@ -216,8 +292,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             else
                 PropertyName = null;
 
-            PropertyPartner objUpdPropertyPartner = new PropertyPartner();
-            DataSet ds = PropertyPartnerBLL.GetPropertyPartnerData(null, PropertyName, this.CompanyID);
+            PropertyPayment objUpdPropertyPartner = new PropertyPayment();
+            DataSet ds = PropertyPaymentBLL.GetPropertyPaymentData(null, null, null,  PropertyName);
             DataView dv = new DataView(ds.Tables[0]);
             dv.Sort = "PropertyName Asc";
             grdPropertyPaymentList.DataSource = dv;
@@ -232,7 +308,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 {
                     this.PropertyPaymentID = new Guid(Convert.ToString(e.CommandArgument));
                     LoadAccess();
-                    LoadData();
+                    LoadData(sender, e);
                 }
                 else if (e.CommandName.Equals("DeleteData"))
                 {
@@ -322,53 +398,43 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             }
         }
 
-        protected void btnPropertyYes_Click(object sender, EventArgs e)
+        protected void btnPropertyPartnerYes_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (this.PropertyID != Guid.Empty)
-            //    {
-            //        msgbx.Hide();
-            //        List<Documents> lstDocuments = new List<Documents>();
-            //        Property objDelete = PropertyBLL.GetByPrimaryKey(this.PropertyID);
-            //        Property objOldPropertyDeleteData = PropertyBLL.GetByPrimaryKey(this.PropertyID);
+            try
+            {
+                if (this.PropertyPaymentID != Guid.Empty)
+                {
+                    msgbx.Hide();
+                    PropertyPayment objDelete = PropertyPaymentBLL.GetByPrimaryKey(this.PropertyPaymentID);
+                    PropertyPayment objOldPropertyPaymentDeleteData = PropertyPaymentBLL.GetByPrimaryKey(this.PropertyPaymentID);
 
-            //        objDelete.IsActive = false;
+                    PropertyPaymentBLL.Delete(objDelete.PropertyPaymentID);
+                    ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Delete", objOldPropertyPaymentDeleteData.ToString(), null, "tra_propertypayment");
 
-            //        Guid AddressID = (Guid)(objDelete.AddressID);
-            //        Address objDelAddress = new Address();
-            //        objDelAddress = AddressBLL.GetByPrimaryKey(AddressID);
-            //        objDelAddress.IsActive = false;
-
-            //        //PropertyBLL.Update(objDelete, objDelAddress, lstDocuments);
-            //        PropertyBLL.Delete(objDelete);
-            //        ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Delete", objOldPropertyDeleteData.ToString(), null, "mst_Property");
-
-            //        IsMessage = true;
-            //        lblErrorMessage.Text = "Delete Success.";
-            //    }
-            //    ClearControl();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
-            //    MessageBox.Show(ex.Message.ToString());
-            //}
+                    IsMessage = true;
+                    lblErrorMessage.Text = "Delete Success.";
+                }
+                ClearControl();
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
-        protected void btnPropertyNo_Click(object sender, EventArgs e)
+        protected void btnPropertyPartnerNo_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    msgbx.Hide();
-            //    ClearControl();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
-            //    MessageBox.Show(ex.Message.ToString());
-            //}
-
+            try
+            {
+                msgbx.Hide();
+                ClearControl();
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -393,6 +459,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             BindPaymentMode();
             txtDescription.Text = "";
             this.PropertyPaymentID = Guid.Empty;
+            BindGrid();
         }
 
         public void BindInstallment()
@@ -402,30 +469,5 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             ddlPurchaseSchedule.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
         }
 
-        public void fnPurchaseScheduleInstallment(object sender, EventArgs e)
-        {
-            string propertyID = ddlPropertyName.SelectedValue;
-
-            DataSet ds = new DataSet();
-            ds = PurchaseScheduleBLL.GetPurchaseScheduleData(new Guid(propertyID), this.CompanyID, null);
-            DataView Dv = new DataView(ds.Tables[0]);
-
-            if (ds.Tables[0].Rows.Count > 0 && ds.Tables[1].Rows.Count > 0)
-            {
-                if (ds.Tables[0].Rows[0]["Installment"] != DBNull.Value)
-                {
-                    ddlPurchaseSchedule.DataSource = Dv;
-                    ddlPurchaseSchedule.DataTextField = "Installment";
-                    ddlPurchaseSchedule.DataValueField = "PurchaseScheduleID";
-                    ddlPurchaseSchedule.DataBind();
-                    ddlPurchaseSchedule.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
-                }
-            }
-            else
-            {
-                ddlPurchaseSchedule.Items.Clear();
-                BindInstallment();
-            }
-        }
     }
 }

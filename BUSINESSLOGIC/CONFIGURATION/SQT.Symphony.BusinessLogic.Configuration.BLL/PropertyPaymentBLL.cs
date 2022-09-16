@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using Microsoft.Practices.EnterpriseLibrary.Logging;
 using SQT.FRAMEWORK.DAL.Linq;
 using SQT.FRAMEWORK.DAL.Validation;
+using SQT.FRAMEWORK.LOGGER;
 using SQT.Symphony.BusinessLogic.Configuration.DAL;
 using SQT.Symphony.BusinessLogic.Configuration.DTO;
 
@@ -69,11 +71,50 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             return flag;
         }
 
+        public static bool Update(PropertyPayment businessObject)
+        {
+            PropertyPaymentDAL _dataObject = new PropertyPaymentDAL();
+            try
+            {
+                if (businessObject != null)
+                {
+                    using (new Tracer((SQTLogType.BusinessLayerTraceLog)))
+                    {
+                        if (!businessObject.IsValid)
+                        {
+                            throw new InvalidBusinessObjectException(businessObject.BrokenRulesList.ToString());
+                        }
+                        return _dataObject.Update(businessObject);
+                    }
+                }
+                else
+                {
+                    throw new InvalidBusinessObjectException("Object Is NULL");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public static DataSet GetPropertyPaymentData(Guid? PropertyPaymentID, Guid? PropertyID, Guid? PropertyScheduleID, string PropertyName)
         {
             PropertyPaymentDAL _dataObject = new PropertyPaymentDAL();
             DataSet ds = _dataObject.SelectPropertyPaymentData(PropertyPaymentID, PropertyID, PropertyScheduleID, PropertyName);
             return ds;
+        }
+
+        public static PropertyPayment GetByPrimaryKey(Guid keys)
+        {
+            PropertyPaymentDAL _dataObject = new PropertyPaymentDAL();
+            return _dataObject.SelectByPrimaryKey(keys);
+        }
+
+        public static bool Delete(Guid keys)
+        {
+            PropertyPaymentDAL _dataObject = new PropertyPaymentDAL();
+            return _dataObject.Delete(keys);
         }
 
         #endregion

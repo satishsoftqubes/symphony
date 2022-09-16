@@ -115,5 +115,44 @@ VALUES
 	NULL
 )
 
+INSERT [dbo].[usr_Right]
+(
+	[RightID],
+	[CompanyID],
+	[PropertyID],
+	[ReportID],
+	[FormName],
+	[FullName],
+	[MenuName],
+	[ParentID],
+	[MenuParentOrderID],
+	[MenuChileOrderID],
+	[IsMenuOption],
+	[MenuIcon],
+	[IsBlock],
+	[Description],
+	[IsSynch],
+	[SynchOn]
+)
+VALUES
+(
+	'09A26E7E-76DD-4729-B7CA-008BCFE8B282',
+	'14f1a0dc-3a5b-4e7e-9869-96979a03ea3a',
+	NULL,
+	NULL,
+	'ConfigurationPropertyPaymentInfo.aspx',
+	'~/Applications/SetUp/ConfigurationPropertyPaymentInfo.aspx',
+	'Property Payment',
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL
+)
+
 
 

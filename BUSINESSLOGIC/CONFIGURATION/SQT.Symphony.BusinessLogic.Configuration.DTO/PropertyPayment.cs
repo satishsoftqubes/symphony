@@ -32,8 +32,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         #region Data Members
 
         Guid _propertyPaymentID;
-        Guid _propertyID;
-        Guid _propertyScheduleID;
+        Guid? _propertyID;
+        Guid? _propertyScheduleID;
         decimal? _amountPaid;
         string _mopTerm;
         DateTime? _dateOfTransaction;
@@ -63,7 +63,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         }
 
         [DataMember]
-        public Guid PropertyID
+        public Guid? PropertyID
         {
             get { return _propertyID; }
             set
@@ -77,7 +77,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         }
 
         [DataMember]
-        public Guid PropertyScheduleID
+        public Guid? PropertyScheduleID
         {
             get { return _propertyScheduleID; }
             set
