@@ -79,6 +79,33 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return true;
         }
 
+        public int CheckPropertyPaymentDuplication(Guid? PropertyID, Guid? PropertyScheduleID)
+        {
+            int propertyPaymentCount = 0;
+
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    propertyPaymentCount = StoredProcedure(MasterConstant.PropertyPaymentCheckDuplication)
+                                            .AddParameter("@PropertyID", PropertyID)
+                                            .AddParameter("@PropertyScheduleID", PropertyScheduleID)
+                                            .WithTransaction(dbtr)
+                                            .ExecuteScalar<int>();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            return propertyPaymentCount;
+        }
         public DataSet SelectPropertyPaymentData(Guid? PropertyPaymentID, Guid? PropertyID, Guid? PropertyScheduleID, string PropertyName)
         {
             DataSet obj = null;

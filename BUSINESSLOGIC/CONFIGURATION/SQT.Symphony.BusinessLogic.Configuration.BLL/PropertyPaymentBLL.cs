@@ -71,6 +71,13 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             return flag;
         }
 
+        public static int CheckPropertyPaymentDuplication(Guid? PropertyID, Guid? PropertyScheduleID)
+        {
+            PropertyPaymentDAL _dataObject = new PropertyPaymentDAL();
+            int propertyPaymentCount = _dataObject.CheckPropertyPaymentDuplication(PropertyID, PropertyScheduleID);
+            return propertyPaymentCount;
+        }
+
         public static bool Update(PropertyPayment businessObject)
         {
             PropertyPaymentDAL _dataObject = new PropertyPaymentDAL();

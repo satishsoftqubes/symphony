@@ -280,6 +280,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.COMMON
         public const string PropertyPaymentSelectData = "[dbo].[PropertyPayment_SelectData]";
         public const string PropertyPaymentSelectByPrimaryKey = "[dbo].[PropertyPayment_SelectByPrimaryKey]";
         public const string PropertyPaymentDeleteByPrimaryKey = "[dbo].[PropertyPayment_DeleteByPrimaryKey]";
+        public const string PropertyPaymentCheckDuplication = "[dbo].[PropertyPayment_CheckDuplication]";
 
         //SPs for PropertyPartner
         public const string PropertyPartnerSelectData = "[dbo].[mst_PropertyPartner_SelectData]";

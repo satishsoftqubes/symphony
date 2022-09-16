@@ -228,6 +228,9 @@
                                                                         <p style="color:rgb(0,103,164); font-size: 13px; font-weight:bold;">
                                                                             <%#DataBinder.Eval(Container.DataItem, "PropertyName")%>
                                                                         </p>
+                                                                        <p style="margin-top: 5px;">
+                                                                            <%#DataBinder.Eval(Container.DataItem, "Installment")%>
+                                                                        </p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="leftmargin_icons">
@@ -274,6 +277,60 @@
                 </td>
             </tr>
         </table>
+
+        <%-- Duplication check --%>
+        <ajx:ModalPopupExtender ID="msgbxCheckDuplicate" runat="server" TargetControlID="hfMessageCheckDuplicate" PopupControlID="PanelCheckDuplicate"
+            BackgroundCssClass="mod_background">
+        </ajx:ModalPopupExtender>
+        <asp:HiddenField ID="hfMessageCheckDuplicate" runat="server" />
+        <asp:Panel ID="PanelCheckDuplicate" runat="server" Style="display: none;">
+            <div style="width: 500px; height: 200px; margin-top: 25px;">
+                <table border="0" cellspacing="0" cellpadding="0" class="modelpopup_box">
+                    <tr>
+                        <td class="modelpopup_boxtopleft">&nbsp;
+                        </td>
+                        <td class="modelpopup_boxtopcenter">&nbsp;
+                        </td>
+                        <td class="modelpopup_boxtopright">&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="modelpopup_boxleft">&nbsp;
+                        </td>
+                        <td class="modelpopup_box_bg">
+                            <div style="width: 100px; float: left; margin-top: 10px;">
+                                <asp:HyperLink ID="HyperLink2" runat="server">
+                                    <asp:Image ImageUrl="~/images/error.png" AlternateText="" Height="75px" Width="75px"
+                                        ID="Image2" runat="server" />
+                                </asp:HyperLink>
+                            </div>
+                            <div style="float: left; width: 225px; margin-top: 40px; margin-left: 10px;">
+                                <asp:Label ID="duplicateMsg" runat="server" Text="Property payment already exists!"></asp:Label>
+                            </div>
+                            <table cellpadding="3" cellspacing="3" width="100%" style="margin-left: 5px; margin-top: 15px;">
+                                <tr>
+                                    <td align="center" valign="middle">
+                                        <asp:Button ID="Button2" Text="Ok" runat="server" ImageUrl="~/images/cancle.png"
+                                            OnClick="btnPropertyPaymentNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="modelpopup_boxright">&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="modelpopup_boxbottomleft">&nbsp;
+                        </td>
+                        <td class="modelpopup_boxbottomcenter"></td>
+                        <td class="modelpopup_boxbottomright">&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </asp:Panel>
+
+        <%-- Delete confirmation --%>
        <ajx:ModalPopupExtender ID="msgbx" runat="server" TargetControlID="hfMessage" PopupControlID="Panel1"
             BackgroundCssClass="mod_background">
         </ajx:ModalPopupExtender>
@@ -308,7 +365,7 @@
                                         <asp:Button ID="btnPropertyYes" Text="Yes" runat="server" ImageUrl="~/images/save.png"
                                             OnClick="btnPropertyPartnerYes_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
                                         <asp:Button ID="btnPropertyNo" Text="Cancel" runat="server" ImageUrl="~/images/cancle.png"
-                                            OnClick="btnPropertyPartnerNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
+                                            OnClick="btnPropertyPaymentNo_Click" Style="display: inline-block;" OnClientClick="fnDisplayCatchErrorMessage()" />
                                     </td>
                                 </tr>
                             </table>

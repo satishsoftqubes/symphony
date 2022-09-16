@@ -170,6 +170,14 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     }
                     else
                     {
+                        int propertyPaymentCount = 0;
+                        propertyPaymentCount = PropertyPaymentBLL.CheckPropertyPaymentDuplication(new Guid(ddlPropertyName.SelectedValue), new Guid(ddlPurchaseSchedule.SelectedValue));
+                        if (propertyPaymentCount > 0)
+                        {
+                            msgbxCheckDuplicate.Show();
+                            return;
+                        }
+
                         PropertyPayment objPropertyPayment = new PropertyPayment();
                         DataSet ds = new DataSet();
 
@@ -249,32 +257,29 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         private void LoadData(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-            ds = PropertyPaymentBLL.GetPropertyPaymentData(this.PropertyPaymentID, this.PropertyID, this.PropertyPurchaseScheduleID, null);
+            PropertyPayment propertyPayment = PropertyPaymentBLL.GetByPrimaryKey(this.PropertyPaymentID);
 
-            if (ds.Tables[0].Rows.Count != 0)
+            if (propertyPayment != null)
             {
                 BindDDL();
+
                 // property name
-                if (Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["PropertyName"]) != null)
-                    ddlPropertyName.SelectedValue = Convert.ToString(ds.Tables[0].Rows[0]["PropertyID"]);
+                ddlPropertyName.SelectedValue = Convert.ToString(propertyPayment.PropertyID);
 
                 ViewState["PropertyID"] = ddlPropertyName.SelectedValue;
                 fnPurchaseScheduleInstallment(sender, e);
 
                 // Installment
-                if (Convert.ToString(ds.Tables[0].Rows[0]["Installment"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["Installment"]) != null)
-                    ddlPurchaseSchedule.SelectedValue = Convert.ToString(ds.Tables[0].Rows[0]["PurchaseScheduleID"]);
+                ddlPurchaseSchedule.SelectedValue = Convert.ToString(propertyPayment.PropertyScheduleID);
 
                 // Amount
-                txtAmount.Text = ds.Tables[0].Rows[0]["AmountPaid"].ToString();
+                txtAmount.Text = Convert.ToString(propertyPayment.AmountPaid);
 
                 // Payment mode
-                if (Convert.ToString(ds.Tables[0].Rows[0]["MOPTerm"]) != "" && Convert.ToString(ds.Tables[0].Rows[0]["MOPTerm"]) != null)
-                    ddlPaymentMode.SelectedValue = Convert.ToString(ds.Tables[0].Rows[0]["MOPTerm"]);
+                ddlPaymentMode.SelectedValue = Convert.ToString(propertyPayment.MOPTerm);
 
                 // Description
-                txtDescription.Text = ds.Tables[0].Rows[0]["Description"].ToString();
-
+                txtDescription.Text = Convert.ToString(propertyPayment.Description);
             }
         }
 
@@ -423,7 +428,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             }
         }
 
-        protected void btnPropertyPartnerNo_Click(object sender, EventArgs e)
+        protected void btnPropertyPaymentNo_Click(object sender, EventArgs e)
         {
             try
             {
