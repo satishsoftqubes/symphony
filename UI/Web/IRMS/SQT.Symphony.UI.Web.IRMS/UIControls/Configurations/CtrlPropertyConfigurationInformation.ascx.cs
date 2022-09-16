@@ -530,7 +530,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         //extract the TextBox values   
                         TextBox box1 = (TextBox)gvLandIssueModification.Rows[i].Cells[1].FindControl("txtLandIssueModification");
                         dtCurrentTable.Rows[i]["Notes"] = box1.Text;
-                        
                     }
                     //Rebind the Grid with the current data to reflect changes   
                     gvLandIssueModification.DataSource = dtCurrentTable;

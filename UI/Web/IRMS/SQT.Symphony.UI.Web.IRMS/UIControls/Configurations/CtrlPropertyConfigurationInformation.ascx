@@ -22,6 +22,7 @@
     var updateProgress = null;
 
     function postbackButtonClick() {
+    
         if (Page_ClientValidate("Configuration")) {
             document.getElementById('errormessage').style.display = "block";
             updateProgress = $find("<%= UpdateProgressProperty.ClientID %>");
@@ -449,7 +450,7 @@
                                                                     <asp:FileUpload ID="fuLandIssueDocument" ToolTip=".pdf|.PDF|.doc|.jpg|.jpeg|.gif|.png|.bmp|.JPG|.JPEG|.GIF|.PNG|.BMP|.TIF|.tif|.DOC|.docx|.DOCX|xlsx|XLSX"
                                                                         runat="server" Height="22px" size="4" Style="float: left; width: 100px;" />
                                                                 </div>
-                                                                <asp:HiddenField ID="hdnLandIssueDocumentName" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "DocumentName")%>' />
+                                                                <asp:HiddenField ID="hdnLandIssueDocumentName" runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                         <asp:TemplateField ItemStyle-Width="40px" HeaderText="View" HeaderStyle-HorizontalAlign="Left">
