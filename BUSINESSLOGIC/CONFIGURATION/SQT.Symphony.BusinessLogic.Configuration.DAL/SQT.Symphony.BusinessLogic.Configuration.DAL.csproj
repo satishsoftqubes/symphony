@@ -103,6 +103,7 @@
     <Compile Include="LanguageDAL.cs" />
     <Compile Include="LoginLogDAL.cs" />
     <Compile Include="NewsLettersDAL.cs" />
+    <Compile Include="PartnerPaymentDAL.cs" />
     <Compile Include="PaymentSlabeDAL.cs" />
     <Compile Include="POSConfigDAL.cs" />
     <Compile Include="POSPointsDAL.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="PropertyConfigurationDAL.cs" />
     <Compile Include="PropertyDAL.cs" />
     <Compile Include="PropertyPartnerDAL.cs" />
+    <Compile Include="PropertyPaymentDAL.cs" />
     <Compile Include="PurchasePartnerScheduleDAL.cs" />
     <Compile Include="PurchaseScheduleDAL.cs" />
     <Compile Include="RateCardDAL.cs" />

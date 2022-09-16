@@ -240,6 +240,7 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="RowNumber" HeaderText="Installment" />
+
                                 <asp:TemplateField HeaderText="Date">
                                     <%-- <ItemTemplate>
                                         <div style="justify-content: space-around; display: flex;">
@@ -250,6 +251,14 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:TemplateField>--%>
+
+                                <%--<asp:TemplateField HeaderText="Installment">
+                                    <ItemTemplate>
+                                        <asp:Label ID="litInstallment" runat="server"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>--%>
+                                <asp:TemplateField HeaderText="Payment Period">
+
                                     <ItemTemplate>
                                         <div style="justify-content: space-around; display: flex;">
                                             <span class="erroralert">

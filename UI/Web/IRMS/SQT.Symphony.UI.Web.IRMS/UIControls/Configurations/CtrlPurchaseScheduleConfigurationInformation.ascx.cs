@@ -308,7 +308,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                 if (dtCurrentTable.Rows.Count > 0)
                 {
-                    drCurrentRow = dtCurrentTable.NewRow();
+                    drCurrentRow = dtCurrentTable.NewRow();                    
                     drCurrentRow["RowNumber"] = "Installment " + Convert.ToInt32(dtCurrentTable.Rows.Count + 1);
 
                     //add new row to DataTable   
@@ -509,7 +509,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             dt.Columns.Add(new DataColumn("InstallmentInPercentage", typeof(string))); //installment percentage
             dt.Columns.Add(new DataColumn("MOPTerm", typeof(string))); // Payment mode
             dt.Columns.Add(new DataColumn("InstallmentAmount", typeof(string))); // Installment amount
-
+            dt.Rows[0]["RowNumber"] = "Installment 1";
             ViewState["CurrentTable"] = dt;
             dsPropertyInstallmentDocumentList.Tables.Clear();
 
@@ -517,6 +517,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             dsPropertyInstallmentDocumentList.Tables.Add(dt);
             gvPropertyInstallments.DataSource = dsPropertyInstallmentDocumentList;
             gvPropertyInstallments.DataBind();
+
 
         }
 
@@ -580,7 +581,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     {
                         var partnerIdList = new ArrayList();
                         var totalToInvestList = new ArrayList();
-
+                        var purchaseScheduleIDList = new ArrayList();
+                        var installmentNoList = new ArrayList();
                         DataSet dsPropertyPartner = new DataSet();
                         dsPropertyPartner = PropertyPartnerBLL.GetPropertyPartnerData(null, Convert.ToString(ddlPropertyName.SelectedItem.Text), this.CompanyID);
 
@@ -589,12 +591,17 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             Guid partnerID = new Guid(dsPropertyPartner.Tables[0].Rows[i]["PartnerID"].ToString());
                             decimal partnerPercentage = Convert.ToDecimal(dsPropertyPartner.Tables[0].Rows[i]["PartnershipInPercentage"]);
                             decimal totalToInvest = Convert.ToDecimal(objProperty.TotalCost * partnerPercentage / 100);
+                            
                             partnerIdList.Add(partnerID);
                             totalToInvestList.Add(totalToInvest);
                         }
 
                         for (int i = 0; i < gvPropertyInstallments.Rows.Count; i++)
                         {
+                            // Installment No.
+                            string installmentNo = gvPropertyInstallments.Rows[i].Cells[1].Text;
+                            objPurchaseSchedule.Installment = installmentNo;
+
                             // Payment period
                             //DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");
                             //objPurchaseSchedule.InstallmentTypeTerm = Convert.ToString(ddlPaymentPeriod.SelectedItem.Text);
@@ -638,7 +645,24 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             TextBox txtAmount = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtInstallmentAmount");
                             objPurchasePartnerSchedule.InstallmentAmount = Convert.ToDecimal(txtAmount.Text);
 
-                            // partnerID for purchasepartner_schedule
+                            //purchaseScheduleID
+                            ds = PurchaseScheduleBLL.GetPurchaseScheduleData(objPurchaseSchedule.PropertyID, this.CompanyID, null);
+                            for (int j = 0; j < dsPropertyPartner.Tables[0].Rows.Count; j++)
+                            {
+                                string purchaseScheduleIDs = Convert.ToString(ds.Tables[0].Rows[j]["PurchaseScheduleID"]);
+                                purchaseScheduleIDList.Add(purchaseScheduleIDs);
+
+                                
+                            }
+                            
+                            //purchase schedule id and installment
+                            objPurchasePartnerSchedule.PurchaseScheduleID = new Guid(purchaseScheduleIDList[i].ToString());
+
+                            string installmentNos = Convert.ToString(ds.Tables[0].Rows[i]["Installment"]);
+                            installmentNoList.Add(installmentNos);
+                            objPurchasePartnerSchedule.Installment = installmentNoList[i].ToString();
+
+                            // partnerID, TotalToInvest for purchasepartner_schedule
                             for (int index = 0; index < partnerIdList.Count; index++)
                             {
                                 objPurchasePartnerSchedule.PartnerID = new Guid(partnerIdList[index].ToString());
@@ -656,6 +680,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         for (int i = 0; i < gvPropertyInstallments.Rows.Count; i++)
                         {
                             HiddenField h1 = (HiddenField)gvPropertyInstallments.Rows[i].FindControl("hdnPurchaseScheduleID");
+
+                            // Installment No.
+                            string installmentNo = gvPropertyInstallments.Rows[i].Cells[1].Text;
+                            objPurchaseSchedule.Installment = installmentNo;
 
                             // Payment period
                             //DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");

@@ -11,17 +11,17 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 {
 
 
-    public partial class CtrlPropertyPaymentList
+    public partial class CtrlPartnerPaymentList
     {
 
         /// <summary>
-        /// updPropertyPaymentList control.
+        /// updPartnerPaymentList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updPropertyPaymentList;
+        protected global::System.Web.UI.UpdatePanel updPartnerPaymentList;
 
         /// <summary>
         /// lblErrorMessage control.
@@ -69,13 +69,13 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         protected global::System.Web.UI.WebControls.Button btnAddTop;
 
         /// <summary>
-        /// grdPropertyPaymentList control.
+        /// grdPartnerPaymentList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdPropertyPaymentList;
+        protected global::System.Web.UI.WebControls.GridView grdPartnerPaymentList;
 
         /// <summary>
         /// btnAdd control.
@@ -141,22 +141,22 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// btnPropertyPaymentYes control.
+        /// btnPartnerPaymentYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPropertyPaymentYes;
+        protected global::System.Web.UI.WebControls.Button btnPartnerPaymentYes;
 
         /// <summary>
-        /// btnPropertyPaymentNo control.
+        /// btnPartnerPaymentNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPropertyPaymentNo;
+        protected global::System.Web.UI.WebControls.Button btnPartnerPaymentNo;
 
         /// <summary>
         /// MessageBox control.
@@ -168,12 +168,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         protected global::SQT.Symphony.UI.Web.IRMS.MsgBox.MsgBox MessageBox;
 
         /// <summary>
-        /// UpdateProgressPropertyPaymentList control.
+        /// UpdateProgressPartnerPaymentList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgressPropertyPaymentList;
+        protected global::System.Web.UI.UpdateProgress UpdateProgressPartnerPaymentList;
     }
 }

@@ -12,6 +12,7 @@ CREATE  PROCEDURE [dbo].[purchaseSchedule_Update]
 	@StatusTerm VARCHAR(29) = null,
 	@MOPTerm VARCHAR(29) = null,
 	@Date varchar(50) = null
+	@Installment VARCHAR(50) = null
 )
 AS
 BEGIN
@@ -25,6 +26,9 @@ SET
 	[MOPTerm] = @MOPTerm,
 	[UpdateLog] = CURRENT_TIMESTAMP,
 	[Date] = @Date
+	[MOPTerm] = @MOPTerm,		
+	[Installment] = @Installment,
+	[UpdateLog] = CURRENT_TIMESTAMP
  WHERE 
 	[PurchaseScheduleID] = @PurchaseScheduleID
 END
