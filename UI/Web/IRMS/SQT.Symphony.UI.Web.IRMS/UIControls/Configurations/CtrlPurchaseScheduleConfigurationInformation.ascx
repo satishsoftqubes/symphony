@@ -182,6 +182,33 @@
                                             <asp:TextBox ID="txtTotalCost" SkinID="CmpTextbox" runat="server" MaxLength="10" ReadOnly="true" Style="background: #dcdddf;"></asp:TextBox>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="litPaymentPeriod" runat="server" Text="Payment Period" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rfvInstallmentType" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
+                                                    ControlToValidate="ddlPaymentPeriod" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlPaymentPeriod" Style="width: 205px;" runat="server">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="TotalPaymentMonth" runat="server" Text="TotalPayment_Month" CssClass="RequireFile"></asp:Label>
+                                            <span class="erroraleart">
+                                                <asp:RequiredFieldValidator ID="rfvAmountMonth" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    runat="server" ValidationGroup="Configuration" ControlToValidate="txtTotalPaymentMonth"
+                                                    ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox autocomplete="off" ID="txtTotalPaymentMonth" AutoPostBack="true" SkinID="CmpTextbox" runat="server" OnTextChanged="MonthWiseAddNewGrid"></asp:TextBox>
+                                        </td>
+                                    </tr>
                                 </table>
                             </td>
                             <td class="boxright"></td>
@@ -213,19 +240,37 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="RowNumber" HeaderText="Installment" />
+
+                                <asp:TemplateField HeaderText="Date">
+                                    <%-- <ItemTemplate>
+                                        <div style="justify-content: space-around; display: flex;">
+                                            <span class="erroralert">
+                                                <asp:RequiredFieldValidator ID="txtDates" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtDate" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </span>
+                                            <asp:TextBox ID="txtDate" runat="server"  SkinID="Search" placeholder="mm/dd/yyyy" Textmode="Date" ReadOnly = "false" Text='<%#DataBinder.Eval(Container.DataItem, "Date")%>'></asp:TextBox>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>--%>
+
                                 <%--<asp:TemplateField HeaderText="Installment">
                                     <ItemTemplate>
                                         <asp:Label ID="litInstallment" runat="server"></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>--%>
                                 <asp:TemplateField HeaderText="Payment Period">
+
                                     <ItemTemplate>
                                         <div style="justify-content: space-around; display: flex;">
-                                            <asp:RequiredFieldValidator ID="rfvInstallmentType" SetFocusOnError="true" CssClass="rfv_ErrorStar"
-                                                InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
-                                                ControlToValidate="ddlPaymentPeriod" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                            <asp:DropDownList ID="ddlPaymentPeriod" Style="width: 140px; margin-left: 5px;" runat="server">
-                                            </asp:DropDownList>
+                                            <span class="erroralert">
+                                                <asp:RequiredFieldValidator ID="txtDates" SkinID="Search" SetFocusOnError="true" runat="server" ValidationGroup="Configuration" ControlToValidate="txtDate" ErrorMessage="*" Display="Dynamic">
+                                                </asp:RequiredFieldValidator>
+                                            </span>
+                                            <asp:TextBox ID="txtDate" runat="server" SkinID="CmpTextbox" Enabled="false" Text='<%#DataBinder.Eval(Container.DataItem, "Date")%>'></asp:TextBox>
+                                            <ajx:CalendarExtender runat="server" CssClass="MyCalendar"
+                                                Enabled="True" TargetControlID="txtDate" PopupButtonID="imgColor">
+                                            </ajx:CalendarExtender>
+                                            <asp:Image ID="imgColor" CssClass="small_img" runat="server" ImageUrl="~/images/CalanderIcon.png"
+                                                Height="20px" Width="18px" />
                                         </div>
                                     </ItemTemplate>
                                 </asp:TemplateField>

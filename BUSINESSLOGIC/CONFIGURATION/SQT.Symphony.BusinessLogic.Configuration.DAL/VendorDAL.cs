@@ -42,7 +42,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                     .AddParameter("@CompanyID",objVender.CompanyID)
                     .AddParameter("@VendorName", objVender.VendorName)
                     .AddParameter("@ContactName", objVender.ContactName)
-                    .AddParameter("@Email", objVender.Emaill)
+                    .AddParameter("@TypeID", objVender.TypeID)
                     .AddParameter("@MobileNo", objVender.MobileNo)
                     .AddParameter("@VendorDetail", objVender.VendorDetail)
                     .AddParameter("@CreatedBy", objVender.CreatedBy)
@@ -97,7 +97,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                    .AddParameter("@CompanyID", objVender.CompanyID)
                    .AddParameter("@VendorName", objVender.VendorName)
                    .AddParameter("@ContactName", objVender.ContactName)
-                   .AddParameter("@Email", objVender.Emaill)
+                   .AddParameter("@TypeID", objVender.TypeID)
                    .AddParameter("@MobileNo", objVender.MobileNo)
                    .AddParameter("@VendorDetail", objVender.VendorDetail)
                    .AddParameter("@UpdatedBy", objVender.UpdatedBy)
@@ -116,6 +116,30 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return true;
         }
 
+        public List<Vendor> SelectAll(Vendor objVendor)
+        {
+            List<Vendor> obj = null;
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    obj = StoredProcedure(MasterConstant.ProjectTermSelectAll)
+                    .AddParameter("Category", objVendor.category)
+                    .WithTransaction(dbtr)
+                    .FetchAll<Vendor>();
+                }
+            }
+            catch (Exception ex)
+            {
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+        
         public DataSet GetByIdWise_VendorData(Guid VendorID)
         {
             DataSet obj = null;

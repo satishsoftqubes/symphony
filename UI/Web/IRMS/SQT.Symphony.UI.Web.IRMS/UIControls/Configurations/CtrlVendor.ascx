@@ -113,11 +113,11 @@
                                                                 runat="server" CommandName="CONTACTNAME" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "VendorID")%>'/>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Email" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
+                                                    <asp:TemplateField HeaderText="Type" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"
                                                         ItemStyle-HorizontalAlign="Left">
                                                         <ItemTemplate>
-                                                            <asp:LinkButton ID="lnkbtnemail" Text='<%#DataBinder.Eval(Container.DataItem, "Email")%>' 
-                                                                runat="server" CommandName="EMAIL" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "VendorID")%>'/>
+                                                            <asp:LinkButton ID="lnkbtntype" Text='<%#DataBinder.Eval(Container.DataItem, "DisplayTerm")%>' 
+                                                                runat="server" CommandName="TYPE" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "VendorID")%>'/>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Mobile No" ItemStyle-Width="300px" HeaderStyle-HorizontalAlign="Left"

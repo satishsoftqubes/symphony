@@ -29,6 +29,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             TotalDue,
             IsActive,
             SeqNo,
+            Date,
+            TotalPaymentMonth,
             Installment
         }
 
@@ -52,7 +54,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         bool? _isActive;
         int? _seqNo;
         byte[] _updateLog;
-
+        string _Date;
+        int _TotalPaymentMonth;
         #endregion
 
         #region Properties
@@ -277,6 +280,33 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 {
                     _updateLog = value;
                     PropertyHasChanged("UpdateLog");
+                }
+            }
+        }
+
+        [DataMember]
+        public string Date
+        {
+            get { return _Date; }
+            set
+            {
+                if (_Date != value)
+                {
+                    _Date = value;
+                    PropertyHasChanged("Date");
+                }
+            }
+        }
+        [DataMember]
+        public int TotalPaymentMonth
+        {
+            get { return _TotalPaymentMonth; }
+            set
+            {
+                if (_TotalPaymentMonth != value)
+                {
+                    _TotalPaymentMonth = value;
+                    PropertyHasChanged("TotalPaymentMonth");
                 }
             }
         }

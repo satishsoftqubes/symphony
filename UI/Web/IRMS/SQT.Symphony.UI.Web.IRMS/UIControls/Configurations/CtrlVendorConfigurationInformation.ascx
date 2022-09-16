@@ -122,14 +122,15 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Label ID="Email" runat="server" Text="Email" CssClass="RequireFile"></asp:Label>
+                                            <asp:Label ID="Type" runat="server" Text="Type" CssClass="RequireFile"></asp:Label>
                                             <span class="erroraleart">
-                                                <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"
-                                                    SetFocusOnError="true" CssClass="rfv_ErrorStar" ErrorMessage="*" ValidationGroup="Configuration" Display="Dynamic">
-                                                </asp:RequiredFieldValidator></span>
+                                                <asp:RequiredFieldValidator ID="rfvTypeID" SetFocusOnError="true" CssClass="rfv_ErrorStar"
+                                                    InitialValue="00000000-0000-0000-0000-000000000000" runat="server" ValidationGroup="Configuration"
+                                                    ControlToValidate="ddlTypeID" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="txtEmail" runat="server" SkinID="CmpTextbox" MaxLength="137"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlTypeID" Style="width: 202px;" runat="server">
+                                            </asp:DropDownList>
                                         </td>
                                     </tr>
                                     <tr>
@@ -218,7 +219,7 @@
                                                                 <strong>
                                                                 <%#DataBinder.Eval(Container.DataItem, "VendorName")%></strong><br />
                                                                 <%#DataBinder.Eval(Container.DataItem, "MobileNo")%><br />
-                                                                <%#DataBinder.Eval(Container.DataItem, "Email")%></strong><br />
+                                                                <%#DataBinder.Eval(Container.DataItem, "DisplayTerm")%></strong><br />
                                                             </div>
                                                             <div class="leftmargin_icons">
                                                                 <asp:ImageButton ID="btnEdit" ToolTip="Edit" runat="server" ImageUrl="~/images/edit.png"

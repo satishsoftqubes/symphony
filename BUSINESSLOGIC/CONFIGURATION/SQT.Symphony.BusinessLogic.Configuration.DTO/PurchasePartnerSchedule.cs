@@ -25,6 +25,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             TotalDue,
             IsActive,
             SeqNo,
+            Date,
             PurchaseScheduleID
         }
 
@@ -45,6 +46,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
         bool? _isActive;
         int? _seqNo;
         byte[] _updateLog;
+        string _Date;
         Guid? _purchaseScheduleID;
         string _installment;
 
@@ -258,6 +260,19 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
                 {
                     _updateLog = value;
                     PropertyHasChanged("UpdateLog");
+                }
+            }
+        }
+        [DataMember]
+        public string Date
+        {
+            get { return _Date; }
+            set
+            {
+                if (_Date != value)
+                {
+                    _Date = value;
+                    PropertyHasChanged("Date");
                 }
             }
         }

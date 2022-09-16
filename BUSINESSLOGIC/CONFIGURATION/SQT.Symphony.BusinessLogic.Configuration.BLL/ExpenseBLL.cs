@@ -42,7 +42,6 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
             ExpenseDAL _objExpense = null;
             DocumentsDAL _objDocuments = null;
             LinqTransaction lt = null;
-           
             try
             {
                 lt = LinqSql.CreateTransaction("SQLConStr");
@@ -57,13 +56,14 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                         throw new InvalidBusinessObjectException(objExpense.BrokenRulesList.ToString());
                     }
                     flag = _objExpense.Insert(objExpense);
-                   
-                    if(expenseDetail != null && expenseDetail.Count != 0)
+
+                    if (expenseDetail != null && expenseDetail.Count != 0)
                     {
-                       
+
                         foreach (Expense ExDetail in expenseDetail)
                         {
-                            ExDetail.PropertyExpenseDetailID = Guid.NewGuid();
+                            //ExDetail.PropertyExpenseDetailID = Guid.NewGuid();
+                            ExDetail.PropertyExpenseDetailID = ExDetail.PropertyExpenseDetailID;
                             ExDetail.ExpenseID = objExpense.ExpenseID;
                             ExDetail.PropertyID = objExpense.PropertyID;
                             ExDetail.VendorID = ExDetail.VendorID;
@@ -76,20 +76,23 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                                 throw new InvalidBusinessObjectException(ExDetail.BrokenRulesList.ToString());
                             }
                             flag = _objExpense.MultiPleExpense_Insert(ExDetail);
+
                         }
                     }
                     if (expenseModificationDocuments != null && expenseModificationDocuments.Count != 0)
                     {
                         foreach (Documents item in expenseModificationDocuments)
                         {
+
                             item.DocumentID = Guid.NewGuid();
                             item.PropertyID = objExpense.PropertyID;
-                            item.AssociationID = objExpense.ExpenseID;
+                            item.AssociationID = item.AssociationID;
                             if (!item.IsValid)
                             {
                                 throw new InvalidBusinessObjectException(item.BrokenRulesList.ToString());
                             }
                             flag = _objDocuments.Insert(item);
+
                         }
                     }
 
@@ -110,7 +113,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                     throw new InvalidBusinessObjectException("Object Is NULL");
                 }
             }
-            catch {
+            catch
+            {
                 lt.Rollback();
                 throw;
             }
@@ -157,9 +161,11 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
 
                         foreach (Expense ExDetail in expenseDetail)
                         {
-                            if (ExDetail.PropertyExpenseDetailID != new Guid())
+                            ExpenseDAL _dataObject = new ExpenseDAL();
+                            DataSet ds = _dataObject.GetPropertyExpenseID(ExDetail.PropertyExpenseDetailID);
+                            
+                            if (ds.Tables[0].Rows.Count != 0)
                             {
-                                //objExpense.PropertyExpenseDetailID = Guid.NewGuid();
                                 ExDetail.PropertyExpenseDetailID = ExDetail.PropertyExpenseDetailID;
                                 ExDetail.ExpenseID = objExpense.ExpenseID;
                                 ExDetail.PropertyID = ExDetail.PropertyID;
@@ -173,10 +179,12 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                                     throw new InvalidBusinessObjectException(ExDetail.BrokenRulesList.ToString());
                                 }
                                 flag = _objExpense.MultiPleExpense_Update(ExDetail);
+                                _objDocuments = new DocumentsDAL(lt.Transaction);
+                                _objDocuments.DeleteByAssociationID(ExDetail.PropertyExpenseDetailID);
                             }
                             else
                             {
-                                ExDetail.PropertyExpenseDetailID = Guid.NewGuid();
+                                ExDetail.PropertyExpenseDetailID = ExDetail.PropertyExpenseDetailID;
                                 ExDetail.ExpenseID = objExpense.ExpenseID;
                                 ExDetail.PropertyID = objExpense.PropertyID;
                                 ExDetail.VendorID = ExDetail.VendorID;
@@ -192,13 +200,15 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                             }
                         }
                     }
+
                     if (expenseModificationDocuments != null && expenseModificationDocuments.Count != 0)
                     {
                         foreach (Documents item in expenseModificationDocuments)
                         {
+
                             item.DocumentID = Guid.NewGuid();
                             item.PropertyID = objExpense.ExpenseID;
-                            item.AssociationID = objExpense.ExpenseID;
+                            item.AssociationID = item.AssociationID;
                             if (!item.IsValid)
                             {
                                 throw new InvalidBusinessObjectException(item.BrokenRulesList.ToString());
@@ -206,7 +216,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                             flag = _objDocuments.Insert(item);
                         }
                     }
-
+                   
                     if (flag)
                     {
                         lt.Commit();

@@ -13,6 +13,7 @@ CREATE TABLE dbo.purchasepartner_schedule
 	[TotalDue]			 			DECIMAL(18,2)		NULL DEFAULT NULL,	
 	[IsActive]			 			BIT					NULL DEFAULT NULL,	
 	[SeqNo]							INT					IDENTITY(1,1) NOT NULL,
-	[UpdateLog]						DATETIME			NULL DEFAULT NULL	
+	[UpdateLog]						DATETIME			NULL DEFAULT NULL,
+	[Date]                          VARCHAR(29)         NULL DEFAULT NULL,
 )
 GO

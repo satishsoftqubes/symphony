@@ -75,8 +75,9 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 txtContactName.Text = Convert.ToString(ds.Tables[0].Rows[0]["ContactName"]);
                 txtVendorName.Text = Convert.ToString(ds.Tables[0].Rows[0]["VendorName"]);
-                txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0]["Email"]);
                 //txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0]["Email"]);
+                //txtEmail.Text = Convert.ToString(ds.Tables[0].Rows[0]["Email"]);
+                ddlTypeID.SelectedValue = Convert.ToString(ds.Tables[0].Rows[0]["TypeID"]);
                 txtVendorDetail.Text = Convert.ToString(ds.Tables[0].Rows[0]["VendorDetail"]);
                 txtMobileNo.Text = Convert.ToString(ds.Tables[0].Rows[0]["MobileNo"]);
                
@@ -99,13 +100,38 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         {
             try
             {
+                VendorType();
                 BindGrid();
+                
                 //BindSystemSetupData();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "fnDisplayCatchErrorMessage();", true);
-                //MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+        private void VendorType()
+        {
+            List<Vendor> lstVendor = null;
+            Vendor objVendor = new Vendor();
+
+            objVendor.category = "VENDORTYPE_TERM";
+            lstVendor = VendorBLL.GetAll(objVendor);
+            if (lstVendor.Count != 0)
+            {
+                lstVendor.Sort((Vendor p1, Vendor p2) => p1.DisplayTerm.CompareTo(p2.DisplayTerm));
+
+                ddlTypeID.DataSource = lstVendor;
+                ddlTypeID.DataTextField = "DisplayTerm";
+                ddlTypeID.DataValueField = "TermID";
+                ddlTypeID.DataBind();
+                ddlTypeID.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+            }
+            else
+            {
+                ddlTypeID.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                ddlTypeID.Items.Insert(0, new ListItem("-ALL-", Guid.Empty.ToString()));
             }
         }
         private void BindGrid()
@@ -147,12 +173,13 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         Vendor objVender = new Vendor();
                         objVender.VendorName = txtVendorName.Text.Trim();
                         objVender.ContactName = txtContactName.Text.Trim();
-                        objVender.Emaill = txtEmail.Text.Trim();
+                        //objVender.Emaill = txtEmail.Text.Trim();
                         objVender.MobileNo = txtMobileNo.Text.Trim();
                         objVender.VendorDetail = txtVendorDetail.Text.Trim();
                         objVender.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
                         objVender.UpdatedBy = new Guid(Convert.ToString(Session["UserID"]));
                         objVender.VendorID = this.VendorID;
+                        objVender.TypeID = new Guid(ddlTypeID.SelectedValue);
                         VendorBLL.Update(objVender);
                         ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Save", objVender.ToString(), objVender.ToString(), "mst_Vendor");
 
@@ -168,11 +195,12 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         Vendor objVender = new Vendor();
                         objVender.VendorName = txtVendorName.Text.Trim();
                         objVender.ContactName = txtContactName.Text.Trim();
-                        objVender.Emaill = txtEmail.Text.Trim();
+                        //objVender.Emaill = txtEmail.Text.Trim();
                         objVender.MobileNo = txtMobileNo.Text.Trim();
                         objVender.VendorDetail = txtVendorDetail.Text.Trim();
                         objVender.CompanyID = new Guid(Convert.ToString(Session["CompanyID"]));
                         objVender.CreatedBy = new Guid(Convert.ToString(Session["UserID"]));
+                        objVender.TypeID = new Guid(ddlTypeID.SelectedValue);
                         VendorBLL.Insert(objVender);
                         ActionLogBLL.Save(new Guid(Convert.ToString(Session["UserID"])), "Save", objVender.ToString(), objVender.ToString(), "mst_Vendor");
 
@@ -232,6 +260,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     EditImg.ToolTip = "View";
             }
 
+
         }
         protected void btnNew_Click(object sender, EventArgs e)
         {
@@ -243,7 +272,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         {
             txtContactName.Text = "";
             txtVendorName.Text = "";
-            txtEmail.Text = "";
+            //txtEmail.Text = "";
             txtMobileNo.Text = "";
             txtVendorDetail.Text = "";
             BindGrid();

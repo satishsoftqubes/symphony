@@ -97,6 +97,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             {
                 BindDDL();
                 BindPurchaseOption();
+                PaymentPeriod();
                 LoadPropertyInstallmentGrid();
             }
             catch (Exception ex)
@@ -105,6 +106,29 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+        private void PaymentPeriod()
+        {
+            ProjectTerm InstallmentType = new ProjectTerm();
+            InstallmentType.CompanyID = this.CompanyID;
+            InstallmentType.Category = "PAYMENTPERIOD";
+            InstallmentType.IsActive = true;
+
+            List<ProjectTerm> LstInstallmentType = ProjectTermBLL.GetAll(InstallmentType);
+            if (LstInstallmentType.Count > 0)
+            {
+                ddlPaymentPeriod.DataSource = LstInstallmentType;
+                ddlPaymentPeriod.DataTextField = "DisplayTerm";
+                ddlPaymentPeriod.DataValueField = "TermID";
+                ddlPaymentPeriod.DataBind();
+                ddlPaymentPeriod.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+            }
+            else
+            {
+                ddlPaymentPeriod.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+            }
+        }
+
+
 
         /// <summary>
         /// Load Default Value
@@ -116,7 +140,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                 BindDDL();
                 LoadPropertyInstallmentGrid();
                 BindPurchaseOption();
-
+                PaymentPeriod();
                 DataSet ds = new DataSet();
                 DataSet dsPropertyInstallment = new DataSet();
                 DataTable dt = new DataTable();
@@ -132,7 +156,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     txtPrice.Text = Convert.ToString(ds.Tables[0].Rows[0]["Price"]);
                     txtPurchaseArea.Text = Convert.ToString(ds.Tables[0].Rows[0]["PurchaseArea"]);
                     txtTotalCost.Text = Convert.ToString(ds.Tables[0].Rows[0]["TotalCost"]);
-
+                    ddlPaymentPeriod.SelectedValue = Convert.ToString(ds.Tables[0].Rows[0]["InstallmentTypeTerm"]);
+                    txtTotalPaymentMonth.Text = Convert.ToString(ds.Tables[0].Rows[0]["TotalPaymentMonth"]);
                     // Bind property installment grid
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
@@ -143,8 +168,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         HiddenField hdnPurchaseScheduleID = (HiddenField)gvPropertyInstallments.Rows[i].Cells[1].FindControl("hdnPurchaseScheduleID");
                         hdnPurchaseScheduleID.Value = Convert.ToString(dsPropertyInstallment.Tables[0].Rows[i]["PurchaseScheduleID"]).Trim();
 
-                        DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentPeriod");
-                        ddlPaymentPeriod.Text = Convert.ToString(dsPropertyInstallment.Tables[0].Rows[i]["InstallmentTypeTermID"]);
+                        TextBox date = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtDate");
+                        date.Text = Convert.ToString(dsPropertyInstallment.Tables[0].Rows[i]["Date"]);
+                        //DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentPeriod");
+                        //ddlPaymentPeriod.Text = Convert.ToString(dsPropertyInstallment.Tables[0].Rows[i]["InstallmentTypeTermID"]);
 
                         TextBox percentage = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtInstallmentPercent");
                         percentage.Text = Convert.ToString(dsPropertyInstallment.Tables[0].Rows[i]["InstallmentInPercentage"]);
@@ -296,9 +323,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         dtCurrentTable.Rows[i]["PurchaseScheduleID"] = h1.Value;
 
                         // Payment Period
-                        DropDownList ddlPaymentPeriod = (gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentPeriod") as DropDownList);
-                        dtCurrentTable.Rows[i]["InstallmentTypeTerm"] = ddlPaymentPeriod.Text;
+                        //DropDownList ddlPaymentPeriod = (gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentPeriod") as DropDownList);
+                        //dtCurrentTable.Rows[i]["InstallmentTypeTerm"] = ddlPaymentPeriod.Text;
 
+                        TextBox Date = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtDate");
+                        dtCurrentTable.Rows[i]["Date"] = Date.Text;
                         // Percentage
                         TextBox percentage = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtInstallmentPercent");
                         dtCurrentTable.Rows[i]["InstallmentInPercentage"] = percentage.Text;
@@ -336,7 +365,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
 
-                        DropDownList ddlPaymentPeriod = (gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentPeriod") as DropDownList);
+                        //DropDownList ddlPaymentPeriod = (gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentPeriod") as DropDownList);
                         TextBox percentage = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtInstallmentPercent");
                         DropDownList ddlPaymentMode = (gvPropertyInstallments.Rows[i].Cells[1].FindControl("ddlPaymentMode") as DropDownList);
                         TextBox amount = (TextBox)gvPropertyInstallments.Rows[i].Cells[1].FindControl("txtInstallmentAmount");
@@ -345,7 +374,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         if (i < dt.Rows.Count - 1)
                         {
                             h1.Value = dt.Rows[i]["PurchaseScheduleID"].ToString();
-                            ddlPaymentPeriod.SelectedValue = dt.Rows[i]["InstallmentTypeTerm"].ToString();
+                            //ddlPaymentPeriod.SelectedValue = dt.Rows[i]["InstallmentTypeTerm"].ToString();
                             percentage.Text = dt.Rows[i]["InstallmentInPercentage"].ToString();
                             ddlPaymentMode.SelectedValue = dt.Rows[i]["MOPTerm"].ToString();
                             amount.Text = dt.Rows[i]["InstallmentAmount"].ToString();
@@ -385,27 +414,27 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                     #endregion
 
-                    #region Payment period
+                    //#region Payment period
 
-                    DropDownList ddlPaymentPeriod = (e.Row.FindControl("ddlPaymentPeriod") as DropDownList);
-                    ProjectTerm InstallmentType = new ProjectTerm();
-                    InstallmentType.CompanyID = this.CompanyID;
-                    InstallmentType.Category = "PAYMENTPERIOD";
-                    InstallmentType.IsActive = true;
+                    //DropDownList ddlPaymentPeriod = (e.Row.FindControl("ddlPaymentPeriod") as DropDownList);
+                    //ProjectTerm InstallmentType = new ProjectTerm();
+                    //InstallmentType.CompanyID = this.CompanyID;
+                    //InstallmentType.Category = "PAYMENTPERIOD";
+                    //InstallmentType.IsActive = true;
 
-                    List<ProjectTerm> LstInstallmentType = ProjectTermBLL.GetAll(InstallmentType);
-                    if (LstInstallmentType.Count > 0)
-                    {
-                        ddlPaymentPeriod.DataSource = LstInstallmentType;
-                        ddlPaymentPeriod.DataTextField = "DisplayTerm";
-                        ddlPaymentPeriod.DataValueField = "TermID";
-                        ddlPaymentPeriod.DataBind();
-                        ddlPaymentPeriod.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
-                    }
-                    else
-                        ddlPaymentPeriod.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                    //List<ProjectTerm> LstInstallmentType = ProjectTermBLL.GetAll(InstallmentType);
+                    //if (LstInstallmentType.Count > 0)
+                    //{
+                    //    ddlPaymentPeriod.DataSource = LstInstallmentType;
+                    //    ddlPaymentPeriod.DataTextField = "DisplayTerm";
+                    //    ddlPaymentPeriod.DataValueField = "TermID";
+                    //    ddlPaymentPeriod.DataBind();
+                    //    ddlPaymentPeriod.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
+                    //}
+                    //else
+                    //    ddlPaymentPeriod.Items.Insert(0, new ListItem("-Select-", Guid.Empty.ToString()));
 
-                    #endregion
+                    //#endregion
                 }
             }
             catch (Exception ex)
@@ -476,7 +505,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
             dt = dsPropertyInstallmentDocumentList.Tables[0];
             dt.Columns.Add(new DataColumn("PurchaseScheduleID", typeof(string)));
             dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
-            dt.Columns.Add(new DataColumn("InstallmentTypeTerm", typeof(string))); //Installment type
+            dt.Columns.Add(new DataColumn("Date", typeof(string))); //Installment type
             dt.Columns.Add(new DataColumn("InstallmentInPercentage", typeof(string))); //installment percentage
             dt.Columns.Add(new DataColumn("MOPTerm", typeof(string))); // Payment mode
             dt.Columns.Add(new DataColumn("InstallmentAmount", typeof(string))); // Installment amount
@@ -513,7 +542,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     //    objProperty.PropertyID = new Guid(ddlPropertyName.SelectedValue);
                     // property id
                     objProperty.PropertyID = new Guid(ddlPropertyName.SelectedValue);
-
+                    objProperty.InstallmentTypeTerm = ddlPaymentPeriod.SelectedValue;
+                    objProperty.TotalPaymentMonth = Convert.ToInt16(txtTotalPaymentMonth.Text);
                     // purchase option
                     if (ddlPurchaseOption.SelectedValue != Guid.Empty.ToString())
                         objProperty.PurchaseOptionID = new Guid(ddlPurchaseOption.SelectedValue);
@@ -543,7 +573,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
 
                     // property id for purchase schedule
                     objPurchaseSchedule.PropertyID = new Guid(ddlPropertyName.SelectedValue);
-                   
+
                     DataSet ds = new DataSet();
                     ds = PurchaseScheduleBLL.GetPurchaseScheduleData(objPurchaseSchedule.PropertyID, this.CompanyID, null);
 
@@ -553,7 +583,6 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         var totalToInvestList = new ArrayList();
                         var purchaseScheduleIDList = new ArrayList();
                         var installmentNoList = new ArrayList();
-                        
                         DataSet dsPropertyPartner = new DataSet();
                         dsPropertyPartner = PropertyPartnerBLL.GetPropertyPartnerData(null, Convert.ToString(ddlPropertyName.SelectedItem.Text), this.CompanyID);
 
@@ -574,9 +603,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             objPurchaseSchedule.Installment = installmentNo;
 
                             // Payment period
-                            DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");
-                            objPurchaseSchedule.InstallmentTypeTerm = Convert.ToString(ddlPaymentPeriod.SelectedItem.Text);
-
+                            //DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");
+                            //objPurchaseSchedule.InstallmentTypeTerm = Convert.ToString(ddlPaymentPeriod.SelectedItem.Text);
+                            TextBox txtdate = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtDate");
+                            objPurchaseSchedule.Date = txtdate.Text;
                             // Installment Percentage
                             TextBox txtInstallmentPercent = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtInstallmentPercent");
                             objPurchaseSchedule.InstallmentInPercentage = Convert.ToDecimal(txtInstallmentPercent.Text);
@@ -588,7 +618,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             // Installment Amount
                             TextBox txtAmount = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtInstallmentAmount");
                             objPurchaseSchedule.InstallmentAmount = Convert.ToDecimal(txtAmount.Text);
-                            
+
                             PurchaseScheduleBLL.Save(objPurchaseSchedule);
                         }
 
@@ -597,10 +627,11 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         {
                             // property id
                             objPurchasePartnerSchedule.PropertyID = new Guid(ddlPropertyName.SelectedValue);
-
+                            TextBox txtdate = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtDate");
+                            objPurchaseSchedule.Date = txtdate.Text;
                             // Payment period
-                            DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");
-                            objPurchasePartnerSchedule.InstallmentTypeTerm = Convert.ToString(ddlPaymentPeriod.SelectedItem.Text);
+                            //DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");
+                            //objPurchasePartnerSchedule.InstallmentTypeTerm = Convert.ToString(ddlPaymentPeriod.SelectedItem.Text);
 
                             // Installment Percentage
                             TextBox txtInstallmentPercent = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtInstallmentPercent");
@@ -641,7 +672,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             IsMessage = true;
                             lblErrorMessage.Text = global::Resources.IRMSMsg.SaveMsg.ToString().Trim();
                         }
-                        
+
                         //Response.Redirect("~/Applications/SetUp/PurchaseScheduleList.aspx");
                     }
                     else
@@ -655,9 +686,10 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             objPurchaseSchedule.Installment = installmentNo;
 
                             // Payment period
-                            DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");
-                            objPurchaseSchedule.InstallmentTypeTerm = ddlPaymentPeriod.SelectedItem.Text;
-
+                            //DropDownList ddlPaymentPeriod = (DropDownList)gvPropertyInstallments.Rows[i].FindControl("ddlPaymentPeriod");
+                            //objPurchaseSchedule.InstallmentTypeTerm = ddlPaymentPeriod.SelectedItem.Text;
+                            TextBox txtdate = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtDate");
+                            objPurchaseSchedule.Date = txtdate.Text;
                             // Installment Percentage
                             TextBox txtInstallmentPercent = (TextBox)gvPropertyInstallments.Rows[i].FindControl("txtInstallmentPercent");
                             objPurchaseSchedule.InstallmentInPercentage = Convert.ToDecimal(txtInstallmentPercent.Text);
@@ -730,11 +762,65 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         {
             BindDDL();
             BindPurchaseOption();
+            PaymentPeriod();
             txtPrice.Text = "";
             txtPurchaseArea.Text = "";
             txtTotalCost.Text = "";
+            txtTotalPaymentMonth.Text = "";
+            
             this.PropertyID = Guid.Empty;
             LoadPropertyInstallmentGrid();
+        }
+
+        public void MonthWiseAddNewGrid(object sender, EventArgs e)
+        {
+            var MonthlyPayment = ddlPaymentPeriod.SelectedItem.Text;
+            if (MonthlyPayment != "-Select-")
+            {
+
+                //SixMonthly
+                if (MonthlyPayment == "Sixmonthly")
+                {
+                    //var PaymentMonth = Convert.ToInt16(txtTotalPaymentMonth.Text);
+                    for (int i = 0; i < 1; i++)
+                    {
+                        AddNewRowToGrid();
+                    }
+                }
+                //Monthly
+                else if (MonthlyPayment == "Monthly")
+                {
+                    for (int i = 0; i < 11; i++)
+                    {
+                        AddNewRowToGrid();
+                    }
+                }
+                //BiMonthly
+                else if (MonthlyPayment == "BiMonthly")
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        AddNewRowToGrid();
+                    }
+                }
+                //ThreeMonth
+                else if (MonthlyPayment == "Three Month")
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        AddNewRowToGrid();
+                    }
+                }
+                //Quaterly
+                else if (MonthlyPayment == "Quaterly")
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        AddNewRowToGrid();
+                    }
+                }
+                
+            }
         }
     }
 }

@@ -444,6 +444,8 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
                         .AddParameter("@Price", dtoObject.Price)
                         .AddParameter("@PurchaseArea", dtoObject.PurchaseArea)
                         .AddParameter("@TotalCost", dtoObject.TotalCost)
+                        .AddParameter("@InstallmentTypeTerm",dtoObject.InstallmentTypeTerm)
+                        .AddParameter("@TotalPaymentMonth",dtoObject.TotalPaymentMonth)
                         .WithTransaction(dbtr)
                         .Execute();
                 }

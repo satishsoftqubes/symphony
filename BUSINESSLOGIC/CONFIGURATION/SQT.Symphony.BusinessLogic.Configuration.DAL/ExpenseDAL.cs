@@ -6,6 +6,8 @@ using SQT.FRAMEWORK.EXCEPTION;
 using SQT.FRAMEWORK.LOGGER;
 using SQT.Symphony.BusinessLogic.Configuration.COMMON;
 using SQT.Symphony.BusinessLogic.Configuration.DTO;
+using SQT.Symphony.BusinessLogic.IRMS.COMMON;
+using SQT.Symphony.BusinessLogic.IRMS.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -186,6 +188,37 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return obj;
         }
 
+        public DataSet GetPropertyExpenseID(Guid propertyExpenseDetailID)
+        {
+            DataSet obj = null;
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    obj = StoredProcedure(MasterConstant.GetPropertyExpenseID)
+                                            .AddParameter("@PropertyExpenseDetailID", propertyExpenseDetailID)
+                                            .WithTransaction(dbtr)
+                                            .FetchDataSet();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ////Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return obj;
+        }
+
         public bool Update(Expense objExpense)
         {
             try
@@ -251,6 +284,47 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             }
             catch (Exception ex)
             {
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return true;
+        }
+
+        public bool DocumentUpdate(Documents dtoObject)
+        {
+            try
+            {
+                using (new Tracer((SQTLogType.DataAccessTraceLog)))
+                {
+                    if (dtoObject == null)
+                        throw (new ParameterNullException("Object can not be null"));
+
+                    //Log Method Parameteres.
+                    ArrayList parameterList = new ArrayList();
+                    parameterList.Add(dtoObject);
+                    SQTLogger.WriteLog(LogMessageType.MethodStart, parameterList, Common.GetMethodName, SQTLogType.DataAccessTraceLog);
+
+                    StoredProcedure(MasterConstant.ExpenseDocumentsUpdate)
+                        
+                        .AddParameter("@TypeID", dtoObject.TypeID)
+                        .AddParameter("@DocumentName", dtoObject.DocumentName)
+                        .AddParameter("@AssociationID", dtoObject.AssociationID)
+                        .AddParameter("@AssociationType", dtoObject.AssociationType)
+                        .AddParameter("@UpdatedOn", dtoObject.UpdatedOn)
+                        .AddParameter("@UpdatedBy", dtoObject.UpdatedBy)
+                        .AddParameter("@PropertyID", dtoObject.PropertyID)
+                        .AddParameter("@CompanyID", dtoObject.CompanyID)
+
+                        .WithTransaction(dbtr)
+                        .Execute();
+                }
+            }
+            catch (Exception ex)
+            {
+                //Log exception at DataAccess Layer.
                 bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
                 if (rethrow)
                 {
@@ -327,5 +401,6 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             }
             return obj;
         }
+        
     }
 }

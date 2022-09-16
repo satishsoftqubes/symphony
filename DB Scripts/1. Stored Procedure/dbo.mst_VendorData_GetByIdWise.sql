@@ -6,8 +6,8 @@ CREATE PROCEDURE [dbo].[mst_VendorData_GetByIdWise](
 )
 AS
 BEGIN
-SELECT VendorID,VendorName,ContactName,Email,MobileNo,vendorDetail
-FROM mst_vendor
-WHERE IsActive = 1 
+SELECT VendorID,VendorName,ContactName,Email,MobileNo,vendorDetail,DisplayTerm,TypeID
+FROM mst_vendor mv LEFT JOIN mst_ProjectTerm mp ON mp.TermID = mv.TypeID
+WHERE mv.IsActive = 1 
 AND VendorID = @VendorID
 END

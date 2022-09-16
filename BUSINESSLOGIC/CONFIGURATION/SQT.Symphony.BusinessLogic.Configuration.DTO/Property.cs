@@ -63,8 +63,10 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			PropertyStatusID,
 			Price,
 			PurchaseArea,
-			TotalCost
-		}
+			TotalCost,
+            InstallmentTypeTerm,
+            TotalPaymentMonth,
+        }
 		#endregion
 
 		#region Data Members
@@ -117,12 +119,13 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			decimal? _price;
 			decimal? _purchaseArea;
 			decimal? _totalCost;
+            string _installmentTypeTerm;
+            int _TotalPaymentMonth;
+        #endregion
 
-		#endregion
+        #region Properties
 
-		#region Properties
-
-	[DataMember]
+        [DataMember]
 		public Guid  PropertyID
 		{
 			 get { return _propertyID; }
@@ -766,7 +769,34 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
 			}
 		}
 
-		public decimal? PurchaseArea
+        [DataMember]
+        public string InstallmentTypeTerm
+        {
+            get { return _installmentTypeTerm; }
+            set
+            {
+                if (_installmentTypeTerm != value)
+                {
+                    _installmentTypeTerm = value;
+                    PropertyHasChanged("InstallmentTypeTerm");
+                }
+            }
+        }
+
+        [DataMember]
+        public int TotalPaymentMonth
+        {
+            get { return _TotalPaymentMonth; }
+            set
+            {
+                if (_TotalPaymentMonth != value)
+                {
+                    _TotalPaymentMonth = value;
+                    PropertyHasChanged("TotalPaymentMonth");
+                }
+            }
+        }
+        public decimal? PurchaseArea
 		{
 			get { return _purchaseArea; }
 			set
