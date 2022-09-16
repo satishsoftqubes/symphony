@@ -6,15 +6,12 @@ using SQT.FRAMEWORK.EXCEPTION;
 using SQT.FRAMEWORK.LOGGER;
 using SQT.Symphony.BusinessLogic.Configuration.COMMON;
 using SQT.Symphony.BusinessLogic.Configuration.DTO;
-using SQT.Symphony.BusinessLogic.IRMS.COMMON;
 using SQT.Symphony.BusinessLogic.IRMS.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
 
 namespace SQT.Symphony.BusinessLogic.Configuration.DAL
 {
