@@ -70,32 +70,6 @@
     //        return false;
     //    });
     //});
-   <%-- $(function () {
-        $("[id*=ButtonAdd]").click(function () {
-            debugger
-            var $grid = $('#<%=gvExpenseModification.ClientID %>');
-            var $row = $grid.find('tr:last').clone().appendTo($grid);
-            $row.find('select')[0].selectedIndex = 0;
-            return false;
-        })
-    });--%>
-
-
-
-    //function GetDocumentFileName(obj) {
-    //    for (var i = 0; i < $("[id*=expenseDocumentName]").length; i++) {
-    //        var Fileslice = obj.id.slice(0, 89);
-    //        var nextId = $("[id*=expenseDocumentName]")[i];
-    //        var Doc = nextId.id.slice(0, 89);
-    //        if (Fileslice == Doc) {
-    //            var eid = obj.value.substring(obj.value.lastIndexOf("\\") + 1, obj.value.length);;
-    //            $(nextId).val(eid);
-    //        }
-    //        else {
-
-    //        }
-    //    }
-    //}
 
 
 </script>
@@ -363,9 +337,10 @@
                                                             <ItemTemplate>
                                                                 <a id="aLandIssueDocumentLink" runat="server" visible="false" target="_blank">
                                                                     <asp:Image ID="imgView" runat="server" Style="float: left;" ImageUrl="~/images/View.png" /></a>
-                                                                <asp:ImageButton ID="btnRemoveRow" ToolTip="Delete" CommandArgument=""
-                                                                    CommandName="DELETEDATA" runat="server" ImageUrl="~/images/DeleteFile.png" Style="float: right; width: 19px; margin-left: 3px; border: 0px;"
+                                                                <asp:ImageButton ID="btnRemoveRow" ToolTip="Delete" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "DocumentID")%>'
+                                                                   CommandName="DELETEDATA" runat="server" ImageUrl="~/images/DeleteFile.png" Style="float: right; width: 19px; margin-left: 3px; border: 0px;"
                                                                     OnClientClick="fnDisplayCatchErrorMessage()" />
+
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                     </Columns>

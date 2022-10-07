@@ -401,7 +401,7 @@ namespace SQT.Symphony.BusinessLogic.IRMS.DAL
             {
                 StoredProcedure(MasterDALConstant.DocumentsDeleteByPrimaryKey)
                     .AddParameter("@DocumentID"
-,Keys)
+                    ,Keys)
                     .WithTransaction(dbtr)
                     .Execute();
             }

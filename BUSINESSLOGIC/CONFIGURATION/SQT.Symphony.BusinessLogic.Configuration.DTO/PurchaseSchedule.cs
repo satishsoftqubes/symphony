@@ -29,7 +29,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             TotalDue,
             IsActive,
             SeqNo,
-            Installment
+            Installment,
             Date,
             TotalPaymentMonth,
         }

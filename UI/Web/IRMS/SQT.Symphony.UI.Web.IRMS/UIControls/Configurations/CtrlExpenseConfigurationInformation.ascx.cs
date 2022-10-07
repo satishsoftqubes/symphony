@@ -320,15 +320,21 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         dtCurrentTable.Rows[i]["ItemTypeTerm"] = drop2.Text;
 
                         TextBox box1 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtAmountID");
-                        dtCurrentTable.Rows[i]["TotalAmount"] = Convert.ToDecimal(box1.Text);
-
+                        if (box1.Text != "")
+                        {
+                            dtCurrentTable.Rows[i]["TotalAmount"] = Convert.ToDecimal(box1.Text);
+                        }
                         TextBox box2 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtPurchaseNoteID");
                         dtCurrentTable.Rows[i]["PurchaseNote"] = box2.Text;
 
-                        FileUpload UploadImg = (FileUpload)gvExpenseModification.Rows[i].Cells[6].FindControl("fileExpenseDocumentUpload");
-
                         HiddenField hidexpenseDocument = (HiddenField)gvExpenseModification.Rows[i].FindControl("expenseDocumentName");
                         dtCurrentTable.Rows[i]["DocumentName"] = hidexpenseDocument.Value;
+
+                        ImageButton imgbtn = (ImageButton)gvExpenseModification.Rows[i].FindControl("btnRemoveRow");
+                        if (imgbtn.CommandArgument != "")
+                        {
+                            dtCurrentTable.Rows[i]["DocumentID"] = new Guid(imgbtn.CommandArgument);
+                        }
 
                     }
                     gvExpenseModification.DataSource = dtCurrentTable;
@@ -439,14 +445,37 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
         }
         protected void gvExpense_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+
             if (e.CommandName.Equals("DELETEDATA"))
             {
-                DocumentsBLL.Delete(new Guid(Convert.ToString(e.CommandArgument)));
-                this.ExpenseID = this.ExpenseID;
-                Session.Add("Expense", this.ExpenseID);
-                LoadLandIssueGrid();
+                int iCount = gvExpenseModification.Rows.Count;
+                DataTable dt = (DataTable)ViewState["CurrentTable"];
+                for (int i = 1; i <= iCount; i++)
+                {
+                   
+                    if (iCount == dt.Rows.Count)
+                    {
+                        var Id = (HiddenField)gvExpenseModification.Rows[i].FindControl("txtExpenseDetaileID");
+                        var ExpenseID = Id.Value.Trim();
+                        if (Convert.ToString(ExpenseID) == Convert.ToString(e.CommandArgument))
+                        {
+                            ExpenseBLL.DocumrntDelete(new Guid(Convert.ToString(e.CommandArgument)));
+                            dt.Rows.Remove(dt.Rows[i]);
+                        }
+                    }
+                    ViewState["CurrentTable"] = dt;
+                    //Re bind the GridView for the updated data
+                    
+                }
+                gvExpenseModification.DataSource = dt;
+                gvExpenseModification.DataBind();
             }
+            
+            this.ExpenseID = this.ExpenseID;
+            Session.Add("Expense", this.ExpenseID);
+            LoadData();
         }
+
         protected void gvExpense_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -484,8 +513,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                         DropDownList drop2 = (DropDownList)gvExpenseModification.Rows[i].FindControl("ddlItemID");
                         HiddenField h1 = (HiddenField)gvExpenseModification.Rows[i].FindControl("txtExpenseDetaileID");
                         TextBox box2 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtPurchaseNoteID");
-
                         TextBox box1 = (TextBox)gvExpenseModification.Rows[i].FindControl("txtAmountID");
+                        ImageButton DocumentID = (ImageButton)gvExpenseModification.Rows[i].FindControl("btnRemoveRow");
                         if (i < dt.Rows.Count - 1)
                         {
                             drop.Text = dt.Rows[i]["VendorID"].ToString();
@@ -494,6 +523,7 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                             box1.Text = dt.Rows[i]["TotalAmount"].ToString();
                             box2.Text = dt.Rows[i]["PurchaseNote"].ToString();
                             h1.Value = dt.Rows[i]["PropertyExpenseDetailID"].ToString();
+                            DocumentID.CommandArgument = dt.Rows[i]["DocumentID"].ToString();
                             //file.PostedFile = dt.Rows[i]["DocumentName"];
                         }
                         rowIndex++;
@@ -748,6 +778,8 @@ namespace SQT.Symphony.UI.Web.IRMS.UIControls.Configurations
                     HtmlAnchor aLandIssueDocumentLink = (HtmlAnchor)gvExpenseModification.Rows[i].FindControl("aLandIssueDocumentLink");
                     ImageButton imgbtn = (ImageButton)gvExpenseModification.Rows[i].FindControl("btnRemoveRow");
                     imgbtn.CommandArgument = Convert.ToString(ds.Tables[1].Rows[i]["PropertyExpenseDetailID"]).Trim();
+                    var commandArgs = imgbtn.CommandArgument[i];
+
 
                     string str = "~/Document/" + hidFileUpload.Value;
                     if (hidFileUpload.Value != string.Empty && hidFileUpload.Value != null)

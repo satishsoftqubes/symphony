@@ -213,6 +213,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
                             {
                                 throw new InvalidBusinessObjectException(item.BrokenRulesList.ToString());
                             }
+                            _objDocuments = new DocumentsDAL(lt.Transaction);
                             flag = _objDocuments.Insert(item);
                         }
                     }
@@ -246,6 +247,12 @@ namespace SQT.Symphony.BusinessLogic.Configuration.BLL
         {
             ExpenseDAL _dataObject = new ExpenseDAL();
             return _dataObject.Delete(keys);
+        }
+
+        public static bool DocumrntDelete(Guid keys)
+        {
+            ExpenseDAL _dataObject = new ExpenseDAL();
+            return _dataObject.DocumentDelete(keys);
         }
     }
 }

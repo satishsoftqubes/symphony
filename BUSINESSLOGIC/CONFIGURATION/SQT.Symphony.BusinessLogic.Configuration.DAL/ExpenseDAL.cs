@@ -352,6 +352,27 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DAL
             return true;
         }
 
+        public bool DocumentDelete(Guid Keys)
+        {
+            try
+            {
+                StoredProcedure(MasterConstant.DocumentDelete)
+                    .AddParameter("@DocumentID"
+                    , Keys)
+                    .WithTransaction(dbtr)
+                    .Execute();
+            }
+            catch (Exception ex)
+            {
+                //Log exception at DataAccess Layer.
+                bool rethrow = ExceptionPolicy.HandleException(ex, SQTLogType.DataAccessLayerLog);
+                if (rethrow)
+                {
+                    throw ex;
+                }
+            }
+            return true;
+        }
         public DataSet GetExpenseData(string PropertyName)
         {
             DataSet obj = null;
