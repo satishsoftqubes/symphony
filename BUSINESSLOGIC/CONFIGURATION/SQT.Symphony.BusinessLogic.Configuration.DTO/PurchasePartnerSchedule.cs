@@ -25,7 +25,7 @@ namespace SQT.Symphony.BusinessLogic.Configuration.DTO
             TotalDue,
             IsActive,
             SeqNo,
-            PurchaseScheduleID
+            PurchaseScheduleID,
             Date,
 
         }

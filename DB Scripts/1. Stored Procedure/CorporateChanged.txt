@@ -1,0 +1,4 @@
+1 : Based On Corporate Room Type Should One
+2 : Remove Discount When Corporate CheckBox Click Time
+3 : Guest Name With Corporate Folio
+4 : Need Lock Account Option From QuickPost
